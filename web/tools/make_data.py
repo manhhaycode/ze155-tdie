@@ -11,6 +11,7 @@ Port of web/dot1/gen_drafts.py. Any unresolved name or broken exclusion rule sto
 import argparse
 import collections as C
 import json
+import math
 import os
 import re
 import sys
@@ -19,6 +20,8 @@ WEB = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '
 WS = os.path.dirname(WEB)
 BUILD = os.path.join(WEB, 'build') + os.sep
 FIXED = ['FULL', 'CUT_FEED', 'CUT_Z_BARREL', 'CUT_X2450', 'CUT_X4120']
+# FLOW (web/PLAN-FLOW.md) is a fixed state too, but it is derived here (build_flow), not read from the contract
+FIXED_STATE_IDS = FIXED + ['FLOW']
 VARIANT_SUFFIXES = ['_lo', '_y0', '_x2450', '_x4120']
 # Output keys that may differ from the web/dot1 drafts on purpose (see web/build/REPORT-A.md).
 INTENDED_DRAFT_DIFFS = {
@@ -69,6 +72,47 @@ CAMERA_OVERRIDES = {
                   'source': 'web override (review I2 + M5/Codex review): direction of shots.json still ST3, '
                             '1.7 m instead of 1.13 m, 35 mm lens and target lowered to 1.36 m so both screw profiles, '
                             'the whole barrel section and the bottom of the cut face fit at 1920 and 1366 px'},
+}
+
+# PLAN-FLOW §4.1: every state button says what the viewer will see; coordinates and zone codes only in the
+# tooltip. Overrides the contract label_vi (the contract stays untouched) and adds tooltip_vi.
+_NB = ' '  # no-break space inside numbers, as in the UI (fmtInt)
+LABEL_OVERRIDES = {
+    'FULL': ('Toàn bộ máy', 'Nhìn toàn dây chuyền, không cắt'),
+    'CUT_FEED': ('Phễu nạp hạt', 'Bổ dọc phễu và cột nạp, thấy đường hạt rơi vào xi lanh (mặt cắt Y = 0)'),
+    'CUT_Z_BARREL': ('Bên trong xi lanh', f'Mở nắp xi lanh, thấy hai trục vít đang quay (mặt cắt Z = 1{_NB}200)'),
+    'CUT_X2450': ('Lát cắt hai trục vít',
+                  f'Cắt ngang xi lanh B3, thấy lỗ hình số 8 và hai trục vít ăn khớp (X = 2{_NB}450 mm)'),
+    'CUT_X4120': ('Lát cắt chỗ hút ẩm',
+                  f'Cắt ngang ở lỗ hút chân không thứ 2 của xi lanh B5, nơi hơi ẩm được rút ra (X = 4{_NB}120 mm)'),
+    'FREE': ('Tự cắt', 'Tự chọn hướng và vị trí dao cắt'),
+    'FLOW': ('Quy trình: hạt → film',
+             'Bổ dọc cả dây chuyền, xem hạt nhựa chảy ra rồi thành tấm film (mặt cắt Y = 0)'),
+}
+
+# ---------------------------------------------------------------- FLOW (web/PLAN-FLOW.md §2)
+# One vertical cut at Blender Y = 0 (three z >= 0 kept) through the whole line. The lists are derived from the
+# bbox of every exterior part plus the swaps / pre-cut sets of CUT_FEED, CUT_Z_BARREL, FREE and the Đợt 2
+# drafts CUT_PUMP / CUT_DIE_AA (web/dot2/states.dot2.json, read only for these two states).
+FLOW_PLANE = {'normal': [0.0, 0.0, 1.0], 'constant': 0.0}
+FLOW_CUT_ONLY_FROM = ['CUT_PUMP', 'CUT_DIE_AA']  # their pre-cut cut_only nodes are shown in FLOW too
+FLOW_FREE_SWAPS = ['barrel_vent_dome', 'barrel_vent_dome_2', 'melt_head_adapter', 'melt_startup_valve', 'melt_sc_adapter_in']
+FLOW_CAMERA = {'pos': [6.0, 4.5, -19.0], 'target': [6.0, 1.4, 0.0], 'lens_mm': 35,
+               'source': 'PLAN-FLOW §2.1: side view from the operator side, slightly high, the whole material path '
+                         'x -0.6 ... 12.65 m between the side panels at 1920 x 1080'}
+# §2.2 step 3: closed parts crossing the plane whose volume fills > 80 % of their bbox. Clipped, they become
+# large hatched slabs (lesson of review I1), so these are hidden; each entry says why.
+FLOW_SOLID_HIDE = {
+    **{n: 'review I1: solid barrel cover box (and its joint face); its cap would cover barrel and screw' for n in COVERS},
+    'ctrl_machine_cabinet': 'solid cabinet box in front of the barrel; its cap would hide the line behind it',
+    'melt_drain_chute': 'solid chute block under the start-up valve; its cap would hide the valve section',
+}
+# solids that stay clipped after the visual check of §7 step 2 (any other solid prints a warning)
+FLOW_SOLID_CLIP = {}
+# exterior parts hidden although the bbox rule keeps them (one line of reason each)
+FLOW_EXTRA_HIDE = {
+    'melt_screen_changer_logo_in': 'logo plate of the screen changer body, which is a ghost in FLOW (as in GHOST_SC)',
+    'melt_screen_changer_logo_out': 'logo plate of the screen changer body, which is a ghost in FLOW (as in GHOST_SC)',
 }
 
 
@@ -196,8 +240,12 @@ def build(analysis):
         'clip': FREE_CLIP_NOTE, 'caps': 'parts with closed=true or cap=force',
         'camera': None,
         'note': 'Đợt 1 exports all interior items, so every FREE swap value resolves (no missing_target exception).'}
-    cut_states = {'version': 1, 'slice': 1,
-                  'generated_from': 'model-contract.json cut_states + free_swap, names resolved against the exported GLBs (web/build/reports/glb_analysis.json, from tools/check_glb.mjs analyze); cameras from anim/shots.json converted to three (x, z, -y); web overrides from tools/make_data.py (CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES)',
+    states['FLOW'] = build_flow(states, files, con, names, key)
+    for sid, (label, tip) in LABEL_OVERRIDES.items():  # PLAN-FLOW §4.1
+        states[sid]['label_vi'] = label
+        states[sid]['tooltip_vi'] = tip
+    cut_states = {'version': 1, 'flow_version': 1, 'slice': 1,
+                  'generated_from': 'model-contract.json cut_states + free_swap, names resolved against the exported GLBs (web/build/reports/glb_analysis.json, from tools/check_glb.mjs analyze); cameras from anim/shots.json converted to three (x, z, -y); web overrides from tools/make_data.py (CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES, LABEL_OVERRIDES); FLOW from build_flow (PLAN-FLOW §2: bbox rule + CUT_FEED / CUT_Z_BARREL / FREE swaps + web/dot2/states.dot2.json CUT_PUMP / CUT_DIE_AA)',
                   'name_rule': 'contract p_<name> -> <name> (exported Blender object name); rot_screw_a|b -> int_screw_axis_a|b; NN..MM ranges expanded',
                   'plane_rule': 'three.js keeps points with normal . p + constant >= 0',
                   'states': states}
@@ -334,7 +382,189 @@ def build(analysis):
 
     out = {'cut_states': cut_states, 'node_map': node_map, 'rotors': rotors_json, 'devices': devices_json, 'materials': materials_json}
     check_states(states, nodes)
+    check_flow(states['FLOW'], nodes, files)
     return out
+
+
+def build_flow(states, files, con, names, key):
+    """PLAN-FLOW §2.2 + §3.6: the FLOW state (lists, camera, labels come from LABEL_OVERRIDES) and its `flow` block."""
+    dot2 = load('web/dot2/states.dot2.json')
+    D = dot2['states']
+    split = dot2['name_rules']['virtual_split_parts']  # step 5: split names -> whole nodes (no runtime splits)
+
+    def whole(lst, ctx):
+        out = []
+        for n in lst:
+            n = split.get(n, n)
+            if n not in out:
+                out.append(n)
+        return names(out, ctx)
+
+    an_line = files['line']['nodes']
+    # step 1: swaps (never the _lo variants)
+    swap = {}
+    swap.update(states['CUT_FEED']['swap'])
+    for i in range(1, 7):
+        swap[f'barrel_b{i}'] = states['CUT_Z_BARREL']['swap'][f'barrel_b{i}']
+    for k in FLOW_FREE_SWAPS:
+        swap[k] = states['FREE']['swap'][k]
+    swap[key('melt_screen_changer', 'FLOW.swap')] = names(D['GHOST_SC']['swap']['melt_screen_changer'], 'GHOST_SC.swap')
+    for sid in FLOW_CUT_ONLY_FROM:
+        for k, v in D[sid]['swap'].items():
+            swap[key(k, f'{sid}.swap')] = names(v, f'{sid}.swap[{k}]')
+    # step 2: bbox rule on every exterior mesh part that is not a swap key (three z: zmax <= 0 is the removed half)
+    hide, clip, kept = [], [], []
+    for n in files['line']['names']:
+        a = an_line[n]
+        if a['type'] != 'mesh' or n in swap:
+            continue
+        zmin, zmax = a['bbox'][2], a['bbox'][5]
+        (hide if zmax <= 0 else clip if zmin < 0 < zmax else kept).append(n)
+    counts = {'bbox_hide': len(hide), 'bbox_clip': len(clip), 'bbox_kept': len(kept), 'swap_keys': len(swap)}
+    # step 3: solids
+    for n, why in FLOW_SOLID_HIDE.items():
+        if n not in clip:
+            raise DataError(f'FLOW_SOLID_HIDE: {n} does not cross the plane ({why}); update the table')
+        clip.remove(n)
+        hide.append(n)
+    for n in FLOW_SOLID_CLIP:
+        if n not in clip:
+            raise DataError(f'FLOW_SOLID_CLIP: {n} is not clipped in FLOW; update the table')
+    for n, why in FLOW_EXTRA_HIDE.items():
+        if n not in kept:
+            raise DataError(f'FLOW_EXTRA_HIDE: {n} is not kept by the bbox rule ({why}); update the table')
+        hide.append(n)
+    warn = []
+    for n in clip:
+        a = an_line[n]
+        b = a['bbox']
+        v = (b[3] - b[0]) * (b[4] - b[1]) * (b[5] - b[2])
+        if a.get('closed') and v > 0 and a.get('vol', 0) / v > 0.8 and n not in FLOW_SOLID_CLIP:
+            warn.append(f'{n} ({a["vol"] / v:.2f})')
+    if warn:
+        print('make_data WARNING FLOW: solid parts clipped, check them by eye (PLAN-FLOW §2.2 step 3):', ', '.join(warn), file=sys.stderr)
+    # step 4: interior
+    screw_b = [f'int_screw_elem_b_{i:02d}' for i in range(1, 33)]
+    screw_a = [f'int_screw_elem_a_{i:02d}' for i in range(1, 33)]
+    show_whole = []
+    for sid in FLOW_CUT_ONLY_FROM:
+        show_whole += whole(D[sid]['show_whole'], f'{sid}.show_whole')
+    show_whole += names(['int_screw_axis_b'] + screw_b, 'FLOW.show_whole')
+    hollow = [v for k in ['feed_throat'] + [f'barrel_b{i}' for i in range(1, 7)] + FLOW_FREE_SWAPS for v in swap[k]]
+    sc = ['int_sc_disc'] + [f'int_sc_screens_{i:02d}' for i in range(1, 13)] + \
+         ['int_sc_channels', 'int_sc_backflush_piston', 'int_fill_sc', 'int_fill_sc_cavities']
+    fills = [f'int_fill_screw_{z}' for z in ('z01_feed', 'z02_melt', 'z03_vent1', 'z04_convey', 'z05_mix', 'z06_seal2',
+                                             'z07_vent2', 'z08_meter', 'z09_pump')]
+    show_clipped = names(hollow + fills + sc, 'FLOW.show_clipped')
+    ghost = names(D['GHOST_SC']['ghost'], 'GHOST_SC.ghost')
+    hide += names(['int_screw_axis_a'] + screw_a + ['int_fill_valve_drain_bolt', 'int_fill_valve_drain_port'], 'FLOW.hide')
+    hide += whole(D['CUT_DIE_AA']['hide'], 'CUT_DIE_AA.hide')
+    for sid in FLOW_CUT_ONLY_FROM:  # step 5: the pre-cut states' clip lists (ctx_sheet, ctx_melt_curtain, rolls ...)
+        clip += whole(D[sid]['clip'], f'{sid}.clip')
+    shown = set(show_whole) | set(show_clipped) | set(ghost)
+    hide = [n for i, n in enumerate(hide) if n not in hide[:i] and n not in shown]
+    clip = [n for i, n in enumerate(clip) if n not in clip[:i] and n not in hide and n not in shown and n not in swap]
+
+    fl = dot2['fills']
+    zones = [{k: z[k] for k in ('zone', 'x_m', 'temp_c', 'pitch_m', 'speed', 'phase') if k in z} for z in fl['zones']]
+    rpm = abs(next(r for r in con['rotors'] if r['node'] == 'rot_screw_b')['rpm'])
+    sh = fl['sheet']
+    L1 = round(math.pi * 0.4005, 4)
+    flow = {
+        'doc': 'PLAN-FLOW §3: illustration with numbers, not CFD. Temperatures are the zone set points (assumed, '
+               'design-anim §2), not the pellet core temperature. Speeds: screw zones pitch * rpm / 60 * kScrew '
+               '(kScrew off 0, slow 1/20, real 1); rolls * kRoll (off 0, slow 1, real 1).',
+        'screw_rpm': rpm,
+        'phase_ramp_x_m': fl['phase_ramp_x_m'],
+        'colors': {**fl['colors'], 'sheet_clear': '#E8EEF0'},
+        'opacity': fl['opacity'], 'opacity_solid': 0.08,
+        'heat_stops': [[20, '#2F5DA8'], [120, '#4FB0C6'], [220, '#F2C94C'], [300, '#D7301F']],
+        'heat_range_c': [20, 300],
+        'zones': zones,
+        'melt': {'stripe_m': 0.12, 'speed_zone': 'z09_pump', 'source': fl['speeds']['melt']},
+        'die': {'origin_m': fl['die']['origin_m'], 'radius_m': fl['die']['radius_m'], 'temp_c': fl['die']['temp_c']},
+        'curtain': {'x_m': [9.576, 9.776], 'temp_c': [270, 250], 'speed_m_s_real': 0.347, 'stripe_m': 0.05,
+                    'source': fl['speeds']['roll_lip'] + '; temperatures assumed'},
+        'sheet': {'path_three_xy': sh['path_three_xy'], 'select_rule': sh['select_rule'], 'stripe_m': sh['stripe_m'],
+                  'stripe_width': sh['stripe_width'], 'speed_m_s_real': sh['speed_m_s_real'], 'clear_at_m': 0.3,
+                  'lengths_m': [L1, L1, round(12.5 - 9.776, 4)],
+                  'temp_profile': [[0, 250], [L1, 70], [2 * L1, 50], [round(2 * L1 + 12.5 - 9.776, 4), 35]],
+                  'source': sh['source'] + '; temperatures 250 -> 70 -> 50 -> 35 °C assumed'},
+        'pellets': {
+            'N': 2000, 'size_m': 0.009, 'scale_note': 'PET pellet about 3 mm, drawn x3',
+            'fall_speed_m_s': 0.6,
+            'path_a_xy': [[-0.45, 2.8], [-0.45, 2.45], [0.09, 2.01], [0.3, 1.8], [0.34, 1.55]],
+            'path_a_source': 'build/models line.glb vertices at |z| < 0.2 m: downpipe vertical part x -0.575 ... -0.325 '
+                             'down to y 2.36, then inclined to its lower end (0.00 ... 0.18, 1.92 ... 2.10); hopper '
+                             'body x 0.15 ... 0.53 at y 1.64 ... 1.95; throat x 0.09 ... 0.59 at y 1.455 ... 1.64',
+            'spread_m': 0.025, 'z_m': [0.01, 0.045],
+            'land_x_m': [0.16, 0.52], 'bed_y_m': [1.118, 1.165], 'bed_z_m': [0.005, 0.145],
+            'bore': {'centre_y_m': 1.2, 'centre_z_m': 0.071, 'r_m': 0.084,
+                     'source': 'screw B pivot (0, 1.2, 0.071); bed = int_fill_screw_z01_feed layer y 1.116 ... 1.166 (about 30 % fill*)'},
+            'melt_x_m': [1.521, 1.9], 'temp_fall_c': 30,
+        },
+    }
+    mats = {}
+    vis = [n for n in files['line']['names'] if an_line[n]['type'] == 'mesh' and n not in hide and n not in swap] + \
+          [n for n in show_whole + show_clipped if n not in files['line']['names']]
+    an_all = {**an_line, **files['interior']['nodes']}
+    die_nodes = set(fl['die']['nodes'])
+    for n in vis:
+        m = an_all[n].get('materials', [])
+        if 'za_fill_melt' in m:
+            mats[n] = 'die' if n in die_nodes else 'line'
+        elif 'ze_melt_curtain' in m:
+            mats[n] = 'curtain'
+        elif 'ze_sheet_pet' in m:
+            mats[n] = 'sheet'
+    flow['materials'] = mats
+    return {'label_vi': '', 'plane': FLOW_PLANE, 'needs_interior': True,
+            'hide': hide, 'swap': swap, 'clip': clip, 'show_whole': show_whole, 'show_clipped': show_clipped,
+            'ghost': ghost, 'peel': None, 'camera': {**{k: FLOW_CAMERA[k] for k in ('pos', 'target', 'lens_mm')}, 'sensor_mm': 36,
+                                                     'source': FLOW_CAMERA['source']},
+            'cut_only_from': FLOW_CUT_ONLY_FROM,
+            'counts': counts,
+            'flow': flow}
+
+
+def check_flow(s, nodes, files):
+    """PLAN-FLOW §2.5 checks that check_states does not cover. Raises DataError."""
+    errs = []
+    shown = set(s['show_whole']) | set(s['show_clipped']) | set(s['ghost'])
+    lists = {k: s[k] for k in ('hide', 'clip', 'show_whole', 'show_clipped', 'ghost')}
+    lists['swap keys'] = list(s['swap'])
+    seen = {}
+    for k, lst in lists.items():
+        for n in lst:
+            if n in seen:
+                errs.append(f'FLOW: {n} in {seen[n]} and in {k}')
+            seen.setdefault(n, k)
+            if n not in nodes:
+                errs.append(f'FLOW: {n} ({k}) is not in node_map')
+    vis = {n for n in nodes if nodes[n]['file'] == 'line' and nodes[n]['kind'] == 'part' and n not in s['hide'] and n not in s['swap']} | \
+          {n for n in shown if nodes[n]['kind'] != 'pivot'}
+    a_on = [n for n in vis if n.startswith('int_screw_elem_a_')]
+    b_on = [n for n in vis if n.startswith('int_screw_elem_b_')]
+    if a_on and b_on:
+        errs.append(f'FLOW: screw A {a_on[:3]} and screw B shown together')
+    drain = [n for n in vis if 'valve_drain' in n]
+    run = [n for n in vis if 'valve_run' in n]
+    if drain and run:
+        errs.append(f'FLOW: valve drain set {drain} and run set {run} shown together')
+    zones = [z for z in s['flow']['zones'] if z['speed'] != 'roll_lip']
+    an_all = {**files['line']['nodes'], **files['interior']['nodes']}
+    for n in vis:
+        if 'za_fill_melt' not in an_all[n].get('materials', []):
+            continue
+        kind = s['flow']['materials'].get(n)
+        if kind == 'die':
+            continue
+        b = an_all[n]['bbox']
+        cx = (b[0] + b[3]) / 2
+        if kind != 'line' or not any(z['x_m'][0] - 1e-3 <= cx <= z['x_m'][1] + 1e-3 for z in zones):
+            errs.append(f'FLOW: fill {n} (x centre {cx:.3f}) has no zone in flow.zones and is not the die')
+    if errs:
+        raise DataError('FLOW checks failed:\n  ' + '\n  '.join(errs))
 
 
 def check_states(states, nodes):
@@ -369,7 +599,8 @@ def check_states(states, nodes):
             errs += [f'{sid}: swap value {v} (of {k}) is not shown' for v in vs if v not in vis]
         for n in sorted(vis):
             r = nodes[n]
-            if r['file'] == 'interior' and r.get('role') == 'cut_only' and sid not in r.get('states', []):
+            allowed = [sid] + s.get('cut_only_from', [])  # FLOW also shows the pre-cut sets of CUT_PUMP / CUT_DIE_AA
+            if r['file'] == 'interior' and r.get('role') == 'cut_only' and not set(allowed) & set(r.get('states', [])):
                 errs.append(f'{sid}: cut_only node {n} shown outside its states {r.get("states")}')
         for fam in families:
             on = [n for n in fam if n in vis]
@@ -389,6 +620,11 @@ def intended_diff(k, p):
         return why
     if k != 'cut_states':
         return None
+    if p in ('states.FLOW', 'flow_version'):
+        return 'PLAN-FLOW: new FLOW state (build_flow) and its data version'
+    m = re.match(r'^states\.(\w+)\.(label_vi|tooltip_vi)$', p)
+    if m and m.group(1) in LABEL_OVERRIDES:
+        return 'PLAN-FLOW §4.1: button label / tooltip says what the viewer sees (LABEL_OVERRIDES)'
     for sid, ns in CLIP_TO_HIDE.items():
         for lst in ('hide', 'clip'):
             q = f'states.{sid}.{lst}'

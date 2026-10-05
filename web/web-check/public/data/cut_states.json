@@ -1,12 +1,13 @@
 {
  "version": 1,
+ "flow_version": 1,
  "slice": 1,
- "generated_from": "model-contract.json cut_states + free_swap, names resolved against the exported GLBs (web/build/reports/glb_analysis.json, from tools/check_glb.mjs analyze); cameras from anim/shots.json converted to three (x, z, -y); web overrides from tools/make_data.py (CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES)",
+ "generated_from": "model-contract.json cut_states + free_swap, names resolved against the exported GLBs (web/build/reports/glb_analysis.json, from tools/check_glb.mjs analyze); cameras from anim/shots.json converted to three (x, z, -y); web overrides from tools/make_data.py (CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES, LABEL_OVERRIDES); FLOW from build_flow (PLAN-FLOW §2: bbox rule + CUT_FEED / CUT_Z_BARREL / FREE swaps + web/dot2/states.dot2.json CUT_PUMP / CUT_DIE_AA)",
  "name_rule": "contract p_<name> -> <name> (exported Blender object name); rot_screw_a|b -> int_screw_axis_a|b; NN..MM ranges expanded",
  "plane_rule": "three.js keeps points with normal . p + constant >= 0",
  "states": {
   "FULL": {
-   "label_vi": "Toàn bộ (không cắt)",
+   "label_vi": "Toàn bộ máy",
    "plane": null,
    "needs_interior": false,
    "hide": [],
@@ -32,10 +33,11 @@
     "source": "web override (review M1): hero-like view of the whole line from the die end, operator side, like out/renders/ze155-hero.png (35 mm, elevation 16 deg); the camera is on the +X side, so the FREE default cut X = 3 000 faces it (review M4)",
     "replaces": "shots.json S01 key 2 (frame 151)"
    },
-   "note": "load state: interior hidden; every recorded change undone (resetCuts)"
+   "note": "load state: interior hidden; every recorded change undone (resetCuts)",
+   "tooltip_vi": "Nhìn toàn dây chuyền, không cắt"
   },
   "CUT_FEED": {
-   "label_vi": "Cột cấp liệu cắt dọc (Y = 0)",
+   "label_vi": "Phễu nạp hạt",
    "plane": {
     "normal": [
      0.0,
@@ -85,10 +87,11 @@
     "lens_mm": 40,
     "sensor_mm": 36,
     "source": "shots.json S03b key 2 (frame 900)"
-   }
+   },
+   "tooltip_vi": "Bổ dọc phễu và cột nạp, thấy đường hạt rơi vào xi lanh (mặt cắt Y = 0)"
   },
   "CUT_Z_BARREL": {
-   "label_vi": "Xi lanh mở nửa trên (Z = 1 200)",
+   "label_vi": "Bên trong xi lanh",
    "plane": {
     "normal": [
      0.0,
@@ -341,10 +344,11 @@
     "lens_mm": 40,
     "sensor_mm": 36,
     "source": "shots.json S04 key 3 (frame 1161) = look A1a-S04-f1161"
-   }
+   },
+   "tooltip_vi": "Mở nắp xi lanh, thấy hai trục vít đang quay (mặt cắt Z = 1 200)"
   },
   "CUT_X2450": {
-   "label_vi": "Mặt cắt ngang B3 (X = 2 450)",
+   "label_vi": "Lát cắt hai trục vít",
    "plane": {
     "normal": [
      -1.0,
@@ -494,10 +498,11 @@
     "sensor_mm": 36,
     "source": "web override (review I2): direction of shots.json still ST2, 1.75 m instead of 0.77 m and 40 mm instead of 60 mm, so the flange, the figure-8 bore and some barrel fit between the panels",
     "replaces": "shots.json still ST2 (= S05 key 2)"
-   }
+   },
+   "tooltip_vi": "Cắt ngang xi lanh B3, thấy lỗ hình số 8 và hai trục vít ăn khớp (X = 2 450 mm)"
   },
   "CUT_X4120": {
-   "label_vi": "Mặt cắt ngang vùng chân không 2 (X = 4 120)",
+   "label_vi": "Lát cắt chỗ hút ẩm",
    "plane": {
     "normal": [
      -1.0,
@@ -649,10 +654,11 @@
     "sensor_mm": 36,
     "source": "web override (review I2 + M5/Codex review): direction of shots.json still ST3, 1.7 m instead of 1.13 m, 35 mm lens and target lowered to 1.36 m so both screw profiles, the whole barrel section and the bottom of the cut face fit at 1920 and 1366 px",
     "replaces": "shots.json still ST3 (= S07 key 2)"
-   }
+   },
+   "tooltip_vi": "Cắt ngang ở lỗ hút chân không thứ 2 của xi lanh B5, nơi hơi ẩm được rút ra (X = 4 120 mm)"
   },
   "FREE": {
-   "label_vi": "Mặt cắt tự do",
+   "label_vi": "Tự cắt",
    "plane": null,
    "needs_interior": true,
    "axis_default": "x",
@@ -783,7 +789,1100 @@
    "clip": "all visible parts: one shared local THREE.Plane (freePlane) set as material.clippingPlanes on the clipped variants of the visible parts; never renderer.clippingPlanes (that would also cut the ground, Box3Helper and outline hulls)",
    "caps": "parts with closed=true or cap=force",
    "camera": null,
-   "note": "Đợt 1 exports all interior items, so every FREE swap value resolves (no missing_target exception)."
+   "note": "Đợt 1 exports all interior items, so every FREE swap value resolves (no missing_target exception).",
+   "tooltip_vi": "Tự chọn hướng và vị trí dao cắt"
+  },
+  "FLOW": {
+   "label_vi": "Quy trình: hạt → film",
+   "plane": {
+    "normal": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "constant": 0.0
+   },
+   "needs_interior": true,
+   "hide": [
+    "anim_roll_markers_bottom_pos",
+    "anim_roll_markers_middle_pos",
+    "anim_roll_markers_top_pos",
+    "barrel_cable_duct_op",
+    "barrel_cable_duct_op_perf",
+    "barrel_cable_gland_boxes_op",
+    "barrel_cable_glands_op",
+    "barrel_cw_coil_cables",
+    "barrel_cw_return",
+    "barrel_cw_return_fit",
+    "barrel_cw_supply",
+    "barrel_cw_supply_fit",
+    "barrel_cw_supports",
+    "barrel_cw_valves",
+    "barrel_heater_cables_op",
+    "barrel_tc_leads_op",
+    "ctrl_cable_duct_drive_op",
+    "ctrl_cable_estops_cover",
+    "ctrl_cable_lube_motor",
+    "ctrl_cable_sidefeed",
+    "ctrl_estop_die",
+    "ctrl_estop_melt",
+    "ctrl_estop_platform",
+    "ctrl_estops",
+    "ctrl_hmi",
+    "ctrl_hmi_cable",
+    "ctrl_hmi_floor_cover",
+    "ctrl_machine_cabinet_logo_y",
+    "ctx_roll_cw_headers",
+    "ctx_roll_hoses",
+    "ctx_roll_stand_logo_op",
+    "ctx_roll_unions",
+    "die_end_plate_op",
+    "drive_coupling_guard_mesh",
+    "feed_additive_feeder",
+    "feed_additive_tube",
+    "feed_control_cabinet",
+    "feed_platform_columns_front",
+    "gbx_ports",
+    "lube_filter_duplex",
+    "lube_filter_fittings",
+    "lube_oil_cooler",
+    "lube_pipe_filter_cooler",
+    "lube_pipe_filter_cooler_fit",
+    "lube_pipe_hw",
+    "lube_pipe_pressure",
+    "lube_pipe_pressure_fit",
+    "lube_pipe_pump_filter",
+    "lube_pipe_pump_filter_fit",
+    "lube_pipe_return",
+    "lube_pipe_return_fit",
+    "lube_pipe_support",
+    "lube_pump",
+    "lube_pump_motor",
+    "lube_tray",
+    "lube_tray_mat",
+    "melt_sc_backflush",
+    "sidefeed_adapter",
+    "sidefeed_barrel",
+    "sidefeed_cart",
+    "sidefeed_downpipe",
+    "sidefeed_downpipe_flex",
+    "sidefeed_downpipe_hw",
+    "sidefeed_feeder",
+    "sidefeed_feeder_hopper",
+    "sidefeed_gearbox",
+    "sidefeed_hopper",
+    "sidefeed_motor",
+    "util_cw_lube_hoses",
+    "util_cw_motor_hoses",
+    "util_cw_motor_lube_hw",
+    "util_cw_return_riser",
+    "util_cw_return_riser_fit",
+    "util_cw_risers_hw",
+    "util_cw_sidefeed_hoses",
+    "util_cw_supply_riser",
+    "util_cw_supply_riser_fit",
+    "util_cw_throat_hoses",
+    "barrel_cover_c1",
+    "barrel_cover_c1_hw",
+    "barrel_cover_c2",
+    "barrel_cover_c2_hw",
+    "barrel_cover_c3",
+    "barrel_cover_c3_hw",
+    "barrel_cover_c4",
+    "barrel_cover_c4_hw",
+    "barrel_cover_c5",
+    "barrel_cover_c5_hw",
+    "barrel_cover_c6",
+    "barrel_cover_c6_hw",
+    "ctrl_machine_cabinet",
+    "melt_drain_chute",
+    "melt_screen_changer_logo_in",
+    "melt_screen_changer_logo_out",
+    "int_screw_axis_a",
+    "int_screw_elem_a_01",
+    "int_screw_elem_a_02",
+    "int_screw_elem_a_03",
+    "int_screw_elem_a_04",
+    "int_screw_elem_a_05",
+    "int_screw_elem_a_06",
+    "int_screw_elem_a_07",
+    "int_screw_elem_a_08",
+    "int_screw_elem_a_09",
+    "int_screw_elem_a_10",
+    "int_screw_elem_a_11",
+    "int_screw_elem_a_12",
+    "int_screw_elem_a_13",
+    "int_screw_elem_a_14",
+    "int_screw_elem_a_15",
+    "int_screw_elem_a_16",
+    "int_screw_elem_a_17",
+    "int_screw_elem_a_18",
+    "int_screw_elem_a_19",
+    "int_screw_elem_a_20",
+    "int_screw_elem_a_21",
+    "int_screw_elem_a_22",
+    "int_screw_elem_a_23",
+    "int_screw_elem_a_24",
+    "int_screw_elem_a_25",
+    "int_screw_elem_a_26",
+    "int_screw_elem_a_27",
+    "int_screw_elem_a_28",
+    "int_screw_elem_a_29",
+    "int_screw_elem_a_30",
+    "int_screw_elem_a_31",
+    "int_screw_elem_a_32",
+    "int_fill_valve_drain_bolt",
+    "int_fill_valve_drain_port",
+    "die_body_bolts"
+   ],
+   "swap": {
+    "feed_throat": [
+     "int_feed_column_hollow"
+    ],
+    "feed_hopper": [],
+    "feed_flex_sleeve": [],
+    "feed_downpipe": [],
+    "barrel_b1": [
+     "int_barrel_hollow_b1"
+    ],
+    "barrel_b2": [
+     "int_barrel_hollow_b2"
+    ],
+    "barrel_b3": [
+     "int_barrel_hollow_b3"
+    ],
+    "barrel_b4": [
+     "int_barrel_hollow_b4"
+    ],
+    "barrel_b5": [
+     "int_barrel_hollow_b5"
+    ],
+    "barrel_b6": [
+     "int_barrel_hollow_b6"
+    ],
+    "barrel_vent_dome": [
+     "int_dome_hollow_2"
+    ],
+    "barrel_vent_dome_2": [
+     "int_dome_hollow_1"
+    ],
+    "melt_head_adapter": [
+     "int_head_hollow",
+     "int_fill_head"
+    ],
+    "melt_startup_valve": [
+     "int_valve_body",
+     "int_valve_bolt",
+     "int_fill_valve_in",
+     "int_fill_valve_run_bolt",
+     "int_fill_valve_run_out"
+    ],
+    "melt_sc_adapter_in": [
+     "int_melt_adapters_hollow_sc_in",
+     "int_fill_adapter_sc_in"
+    ],
+    "melt_screen_changer": [
+     "anim_ghost_sc"
+    ],
+    "melt_gear_pump": [
+     "int_pump_body_cut"
+    ],
+    "melt_pump_adapter_in": [
+     "int_melt_adapters_hollow_pump_in_y0",
+     "int_fill_adapter_pump_in_y0",
+     "int_fill_pump_in_y0"
+    ],
+    "melt_pump_adapter_out": [
+     "int_melt_adapters_hollow_pump_out_y0",
+     "int_fill_adapter_pump_out_y0",
+     "int_fill_pump_out_y0"
+    ],
+    "die_body_upper": [
+     "int_die_section_upper"
+    ],
+    "die_flex_lip": [],
+    "die_thermal_bolts": [
+     "int_die_thermal_bolts_y0",
+     "int_die_thermal_bolt_y0"
+    ],
+    "die_choker_bolts": [
+     "int_die_choker_bolt_y0",
+     "int_die_choker_bar_y0"
+    ],
+    "die_body_lower": [
+     "int_die_section_lower",
+     "int_fill_die_y0"
+    ],
+    "melt_die_adapter": [
+     "int_melt_adapters_hollow_die_y0",
+     "int_fill_adapter_die_y0"
+    ],
+    "melt_pipe": [
+     "int_pipe_mixer_section_y0",
+     "int_fill_pipe_y0"
+    ],
+    "melt_static_mixer": [
+     "int_pipe_mixer_elements_y0"
+    ]
+   },
+   "clip": [
+    "anim_ctx_scanner",
+    "anim_ctx_scanner_head",
+    "barrel_cw_hoses",
+    "barrel_heater_cables",
+    "barrel_heater_shells",
+    "barrel_joint_1",
+    "barrel_joint_2",
+    "barrel_joint_3",
+    "barrel_joint_4",
+    "barrel_joint_5",
+    "barrel_joint_head",
+    "barrel_joint_lantern",
+    "barrel_support_1",
+    "barrel_support_2",
+    "barrel_support_3",
+    "barrel_thermocouples",
+    "ctrl_cable_drive_signals",
+    "ctrl_cable_encoder_link",
+    "ctrl_cable_estops",
+    "ctrl_cable_estops_hw",
+    "ctrl_cable_feed",
+    "ctrl_cable_glands_drive",
+    "ctrl_cable_misc_hw",
+    "ctrl_cable_tray_feed",
+    "ctrl_machine_cabinet_hw",
+    "ctrl_machine_cabinet_skin",
+    "ctrl_signal_tower",
+    "ctx_melt_curtain",
+    "ctx_roll_bottom",
+    "ctx_roll_middle",
+    "ctx_roll_rails",
+    "ctx_roll_stand",
+    "ctx_roll_top",
+    "ctx_sheet",
+    "ctx_takeoff_brackets",
+    "ctx_takeoff_conveyor",
+    "ctx_takeoff_idler",
+    "ctx_takeoff_rollers",
+    "die_bolt_actuator_rail",
+    "die_cart",
+    "die_cart_rails",
+    "die_deckles",
+    "die_drip_pan",
+    "die_heater_boxes",
+    "die_lifting_lugs",
+    "drive_coupling_guard",
+    "drive_coupling_guard_hw",
+    "drive_encoder",
+    "drive_encoder_cable",
+    "drive_flex_coupling",
+    "drive_motor_base",
+    "drive_motor_base_hw",
+    "drive_motor_body",
+    "drive_motor_cooler",
+    "drive_motor_endshields",
+    "drive_motor_fan_cover",
+    "drive_motor_fan_grille",
+    "drive_motor_hw",
+    "drive_motor_louvres",
+    "drive_motor_shaft",
+    "drive_safety_coupling",
+    "feed_conveying_line",
+    "feed_downpipe_hw",
+    "feed_feeder_sleeves",
+    "feed_feeder_sleeves_clamps",
+    "feed_flex_sleeve_clamps",
+    "feed_main_feeder",
+    "feed_main_hopper",
+    "feed_platform_deck",
+    "feed_platform_grating",
+    "feed_platform_grating_x",
+    "feed_platform_railing",
+    "feed_vacuum_loader",
+    "frame_drip_tray",
+    "frame_drip_tray_collars",
+    "frame_drive_body",
+    "frame_drive_door_hw",
+    "frame_drive_door_seams",
+    "frame_drive_doors",
+    "frame_drive_plugs",
+    "frame_drive_welds",
+    "frame_feet",
+    "frame_feet_anchors",
+    "frame_joint_x330",
+    "frame_process_body",
+    "frame_process_door_hw",
+    "frame_process_door_seams",
+    "frame_process_doors",
+    "frame_process_endplate",
+    "frame_process_louvres",
+    "frame_process_plugs",
+    "frame_process_welds",
+    "gbx_bolts",
+    "gbx_castings",
+    "gbx_covers",
+    "gbx_housing",
+    "gbx_hw",
+    "lantern_body",
+    "lantern_bolts",
+    "lantern_door",
+    "lantern_flange",
+    "melt_heater_bands",
+    "melt_pipe_saddles",
+    "melt_purge_cart",
+    "melt_sensor_cables",
+    "melt_sensor_die",
+    "melt_sensor_head",
+    "melt_sensor_p2",
+    "melt_sensor_p3",
+    "melt_sensor_p4",
+    "melt_stand_pump",
+    "melt_stand_sc",
+    "melt_valve_support",
+    "vac_bellows",
+    "vac_gauge_dome",
+    "vac_gauge_dome_2",
+    "vac_valve"
+   ],
+   "show_whole": [
+    "int_pump_body_cut",
+    "int_melt_adapters_hollow_pump_in_y0",
+    "int_fill_adapter_pump_in_y0",
+    "int_fill_pump_in_y0",
+    "int_melt_adapters_hollow_pump_out_y0",
+    "int_fill_adapter_pump_out_y0",
+    "int_fill_pump_out_y0",
+    "int_pump_gear_top",
+    "int_fill_pump_pockets_top",
+    "int_pump_gear_bottom",
+    "int_fill_pump_pockets_bottom",
+    "int_die_section_upper",
+    "int_die_thermal_bolts_y0",
+    "int_die_thermal_bolt_y0",
+    "int_die_choker_bolt_y0",
+    "int_die_choker_bar_y0",
+    "int_die_section_lower",
+    "int_fill_die_y0",
+    "int_melt_adapters_hollow_die_y0",
+    "int_fill_adapter_die_y0",
+    "int_pipe_mixer_section_y0",
+    "int_fill_pipe_y0",
+    "int_pipe_mixer_elements_y0",
+    "anim_roll_markers_bottom_aa",
+    "anim_roll_markers_middle_aa",
+    "anim_roll_markers_top_aa",
+    "int_screw_axis_b",
+    "int_screw_elem_b_01",
+    "int_screw_elem_b_02",
+    "int_screw_elem_b_03",
+    "int_screw_elem_b_04",
+    "int_screw_elem_b_05",
+    "int_screw_elem_b_06",
+    "int_screw_elem_b_07",
+    "int_screw_elem_b_08",
+    "int_screw_elem_b_09",
+    "int_screw_elem_b_10",
+    "int_screw_elem_b_11",
+    "int_screw_elem_b_12",
+    "int_screw_elem_b_13",
+    "int_screw_elem_b_14",
+    "int_screw_elem_b_15",
+    "int_screw_elem_b_16",
+    "int_screw_elem_b_17",
+    "int_screw_elem_b_18",
+    "int_screw_elem_b_19",
+    "int_screw_elem_b_20",
+    "int_screw_elem_b_21",
+    "int_screw_elem_b_22",
+    "int_screw_elem_b_23",
+    "int_screw_elem_b_24",
+    "int_screw_elem_b_25",
+    "int_screw_elem_b_26",
+    "int_screw_elem_b_27",
+    "int_screw_elem_b_28",
+    "int_screw_elem_b_29",
+    "int_screw_elem_b_30",
+    "int_screw_elem_b_31",
+    "int_screw_elem_b_32"
+   ],
+   "show_clipped": [
+    "int_feed_column_hollow",
+    "int_barrel_hollow_b1",
+    "int_barrel_hollow_b2",
+    "int_barrel_hollow_b3",
+    "int_barrel_hollow_b4",
+    "int_barrel_hollow_b5",
+    "int_barrel_hollow_b6",
+    "int_dome_hollow_2",
+    "int_dome_hollow_1",
+    "int_head_hollow",
+    "int_fill_head",
+    "int_valve_body",
+    "int_valve_bolt",
+    "int_fill_valve_in",
+    "int_fill_valve_run_bolt",
+    "int_fill_valve_run_out",
+    "int_melt_adapters_hollow_sc_in",
+    "int_fill_adapter_sc_in",
+    "int_fill_screw_z01_feed",
+    "int_fill_screw_z02_melt",
+    "int_fill_screw_z03_vent1",
+    "int_fill_screw_z04_convey",
+    "int_fill_screw_z05_mix",
+    "int_fill_screw_z06_seal2",
+    "int_fill_screw_z07_vent2",
+    "int_fill_screw_z08_meter",
+    "int_fill_screw_z09_pump",
+    "int_sc_disc",
+    "int_sc_screens_01",
+    "int_sc_screens_02",
+    "int_sc_screens_03",
+    "int_sc_screens_04",
+    "int_sc_screens_05",
+    "int_sc_screens_06",
+    "int_sc_screens_07",
+    "int_sc_screens_08",
+    "int_sc_screens_09",
+    "int_sc_screens_10",
+    "int_sc_screens_11",
+    "int_sc_screens_12",
+    "int_sc_channels",
+    "int_sc_backflush_piston",
+    "int_fill_sc",
+    "int_fill_sc_cavities"
+   ],
+   "ghost": [
+    "anim_ghost_sc"
+   ],
+   "peel": null,
+   "camera": {
+    "pos": [
+     6.0,
+     4.5,
+     -19.0
+    ],
+    "target": [
+     6.0,
+     1.4,
+     0.0
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "PLAN-FLOW §2.1: side view from the operator side, slightly high, the whole material path x -0.6 ... 12.65 m between the side panels at 1920 x 1080"
+   },
+   "cut_only_from": [
+    "CUT_PUMP",
+    "CUT_DIE_AA"
+   ],
+   "counts": {
+    "bbox_hide": 81,
+    "bbox_clip": 132,
+    "bbox_kept": 111,
+    "swap_keys": 27
+   },
+   "flow": {
+    "doc": "PLAN-FLOW §3: illustration with numbers, not CFD. Temperatures are the zone set points (assumed, design-anim §2), not the pellet core temperature. Speeds: screw zones pitch * rpm / 60 * kScrew (kScrew off 0, slow 1/20, real 1); rolls * kRoll (off 0, slow 1, real 1).",
+    "screw_rpm": 300,
+    "phase_ramp_x_m": [
+     1.52,
+     1.9
+    ],
+    "colors": {
+     "pellet": "#DBD6C2",
+     "melt": "#D95709",
+     "sheet_clear": "#E8EEF0"
+    },
+    "opacity": 0.6,
+    "opacity_solid": 0.08,
+    "heat_stops": [
+     [
+      20,
+      "#2F5DA8"
+     ],
+     [
+      120,
+      "#4FB0C6"
+     ],
+     [
+      220,
+      "#F2C94C"
+     ],
+     [
+      300,
+      "#D7301F"
+     ]
+    ],
+    "heat_range_c": [
+     20,
+     300
+    ],
+    "zones": [
+     {
+      "zone": "z01_feed",
+      "x_m": [
+       0,
+       1.521
+      ],
+      "temp_c": [
+       50,
+       260
+      ],
+      "pitch_m": 0.2535,
+      "speed": "screw",
+      "phase": "pellet"
+     },
+     {
+      "zone": "z02_melt",
+      "x_m": [
+       1.521,
+       1.98575
+      ],
+      "temp_c": [
+       260,
+       275
+      ],
+      "pitch_m": 0.169,
+      "speed": "screw",
+      "phase": "mixed"
+     },
+     {
+      "zone": "z03_vent1",
+      "x_m": [
+       1.98575,
+       2.49275
+      ],
+      "temp_c": [
+       275,
+       275
+      ],
+      "pitch_m": 0.2535,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z04_convey",
+      "x_m": [
+       2.49275,
+       2.83075
+      ],
+      "temp_c": [
+       275,
+       270
+      ],
+      "pitch_m": 0.169,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z05_mix",
+      "x_m": [
+       2.83075,
+       3.16875
+      ],
+      "temp_c": [
+       270,
+       270
+      ],
+      "pitch_m": 0.169,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z06_seal2",
+      "x_m": [
+       3.16875,
+       3.718
+      ],
+      "temp_c": [
+       270,
+       270
+      ],
+      "pitch_m": 0.169,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z07_vent2",
+      "x_m": [
+       3.718,
+       4.4785
+      ],
+      "temp_c": [
+       270,
+       270
+      ],
+      "pitch_m": 0.2535,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z08_meter",
+      "x_m": [
+       4.4785,
+       5.1545
+      ],
+      "temp_c": [
+       275,
+       280
+      ],
+      "pitch_m": 0.15,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "z09_pump",
+      "x_m": [
+       5.1545,
+       5.746
+      ],
+      "temp_c": [
+       280,
+       285
+      ],
+      "pitch_m": 0.1268,
+      "speed": "screw",
+      "phase": "melt"
+     },
+     {
+      "zone": "head",
+      "x_m": [
+       5.746,
+       5.996
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "valve_in",
+      "x_m": [
+       5.996,
+       6.1406
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "valve_run_bolt",
+      "x_m": [
+       6.122,
+       6.32
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "valve_drain_bolt",
+      "x_m": [
+       6.122,
+       6.2805
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "valve_drain_port",
+      "x_m": [
+       6.1615,
+       6.2805
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "valve_run_out",
+      "x_m": [
+       6.3014,
+       6.446
+      ],
+      "temp_c": [
+       285,
+       285
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "adapter_sc_in",
+      "x_m": [
+       6.446,
+       6.596
+      ],
+      "temp_c": [
+       282,
+       282
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "sc",
+      "x_m": [
+       6.596,
+       7.301
+      ],
+      "temp_c": [
+       280,
+       280
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "sc_cavities",
+      "x_m": [
+       6.9105,
+       6.9895
+      ],
+      "temp_c": [
+       280,
+       280
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "adapter_pump_in",
+      "x_m": [
+       7.301,
+       7.476
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "pump_in",
+      "x_m": [
+       7.476,
+       7.668
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "pump_pockets_bottom",
+      "x_m": [
+       7.631,
+       7.771
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "pump_pockets_top",
+      "x_m": [
+       7.6311,
+       7.7709
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "pump_out",
+      "x_m": [
+       7.734,
+       7.926
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "adapter_pump_out",
+      "x_m": [
+       7.926,
+       8.076
+      ],
+      "temp_c": [
+       278,
+       278
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "pipe",
+      "x_m": [
+       8.076,
+       8.926
+      ],
+      "temp_c": [
+       275,
+       275
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "adapter_die",
+      "x_m": [
+       8.926,
+       9.126
+      ],
+      "temp_c": [
+       275,
+       275
+      ],
+      "pitch_m": 0.12,
+      "speed": "melt",
+      "phase": "melt"
+     },
+     {
+      "zone": "curtain",
+      "x_m": [
+       9.576,
+       9.776
+      ],
+      "temp_c": [
+       270,
+       250
+      ],
+      "pitch_m": 0.05,
+      "speed": "roll_lip",
+      "phase": "melt"
+     }
+    ],
+    "melt": {
+     "stripe_m": 0.12,
+     "speed_zone": "z09_pump",
+     "source": "stripe 0.12 m at the speed of zone z09 (0.1268 m pitch): illustrative, proportional to throughput"
+    },
+    "die": {
+     "origin_m": [
+      9.126,
+      1.2,
+      0.0
+     ],
+     "radius_m": 1.25,
+     "temp_c": [
+      275,
+      275
+     ]
+    },
+    "curtain": {
+     "x_m": [
+      9.576,
+      9.776
+     ],
+     "temp_c": [
+      270,
+      250
+     ],
+     "speed_m_s_real": 0.347,
+     "stripe_m": 0.05,
+     "source": "0.347 m/s real (20.8 m/min) * roll factor (rolls display_slow 1); temperatures assumed"
+    },
+    "sheet": {
+     "path_three_xy": [
+      {
+       "seg": "wrap",
+       "centre": [
+        9.776,
+        1.601
+       ],
+       "r": 0.4005,
+       "from_deg": -90,
+       "to_deg": 90,
+       "sense": "ccw",
+       "note": "middle roll, nip at the bottom, sheet over the +X side (middle rpm -9.95: bottom surface moves +X)"
+      },
+      {
+       "seg": "wrap",
+       "centre": [
+        9.776,
+        2.403
+       ],
+       "r": 0.4005,
+       "from_deg": -90,
+       "to_deg": 90,
+       "sense": "cw_via_180",
+       "note": "top roll, sheet over the -X side (bbox min x 9.37)"
+      },
+      {
+       "seg": "line",
+       "from": [
+        9.776,
+        2.805
+       ],
+       "to": [
+        12.5,
+        2.805
+       ],
+       "note": "take-off run"
+      }
+     ],
+     "select_rule": "y > 2.79 and x > 9.776 -> line; else y < 2.002 -> middle wrap; else top wrap",
+     "stripe_m": 0.3,
+     "stripe_width": 0.12,
+     "speed_m_s_real": 0.4168,
+     "clear_at_m": 0.3,
+     "lengths_m": [
+      1.2582,
+      1.2582,
+      2.724
+     ],
+     "temp_profile": [
+      [
+       0,
+       250
+      ],
+      [
+       1.2582,
+       70
+      ],
+      [
+       2.5164,
+       50
+      ],
+      [
+       5.2404,
+       35
+      ]
+     ],
+     "source": "design-anim §2 (rolls 9.9 rpm, sheet about 25 m/min); ctx_sheet has POSITION + NORMAL only (no UV), so the pattern is procedural; temperatures 250 -> 70 -> 50 -> 35 °C assumed"
+    },
+    "pellets": {
+     "N": 2000,
+     "size_m": 0.009,
+     "scale_note": "PET pellet about 3 mm, drawn x3",
+     "fall_speed_m_s": 0.6,
+     "path_a_xy": [
+      [
+       -0.45,
+       2.8
+      ],
+      [
+       -0.45,
+       2.45
+      ],
+      [
+       0.09,
+       2.01
+      ],
+      [
+       0.3,
+       1.8
+      ],
+      [
+       0.34,
+       1.55
+      ]
+     ],
+     "path_a_source": "build/models line.glb vertices at |z| < 0.2 m: downpipe vertical part x -0.575 ... -0.325 down to y 2.36, then inclined to its lower end (0.00 ... 0.18, 1.92 ... 2.10); hopper body x 0.15 ... 0.53 at y 1.64 ... 1.95; throat x 0.09 ... 0.59 at y 1.455 ... 1.64",
+     "spread_m": 0.025,
+     "z_m": [
+      0.01,
+      0.045
+     ],
+     "land_x_m": [
+      0.16,
+      0.52
+     ],
+     "bed_y_m": [
+      1.118,
+      1.165
+     ],
+     "bed_z_m": [
+      0.005,
+      0.145
+     ],
+     "bore": {
+      "centre_y_m": 1.2,
+      "centre_z_m": 0.071,
+      "r_m": 0.084,
+      "source": "screw B pivot (0, 1.2, 0.071); bed = int_fill_screw_z01_feed layer y 1.116 ... 1.166 (about 30 % fill*)"
+     },
+     "melt_x_m": [
+      1.521,
+      1.9
+     ],
+     "temp_fall_c": 30
+    },
+    "materials": {
+     "ctx_melt_curtain": "curtain",
+     "ctx_sheet": "sheet",
+     "int_fill_adapter_pump_in_y0": "line",
+     "int_fill_pump_in_y0": "line",
+     "int_fill_adapter_pump_out_y0": "line",
+     "int_fill_pump_out_y0": "line",
+     "int_fill_pump_pockets_top": "line",
+     "int_fill_pump_pockets_bottom": "line",
+     "int_fill_die_y0": "die",
+     "int_fill_adapter_die_y0": "line",
+     "int_fill_pipe_y0": "line",
+     "int_fill_head": "line",
+     "int_fill_valve_in": "line",
+     "int_fill_valve_run_bolt": "line",
+     "int_fill_valve_run_out": "line",
+     "int_fill_adapter_sc_in": "line",
+     "int_fill_screw_z01_feed": "line",
+     "int_fill_screw_z02_melt": "line",
+     "int_fill_screw_z03_vent1": "line",
+     "int_fill_screw_z04_convey": "line",
+     "int_fill_screw_z05_mix": "line",
+     "int_fill_screw_z06_seal2": "line",
+     "int_fill_screw_z07_vent2": "line",
+     "int_fill_screw_z08_meter": "line",
+     "int_fill_screw_z09_pump": "line",
+     "int_fill_sc": "line",
+     "int_fill_sc_cavities": "line"
+    }
+   },
+   "tooltip_vi": "Bổ dọc cả dây chuyền, xem hạt nhựa chảy ra rồi thành tấm film (mặt cắt Y = 0)"
   }
  }
 }

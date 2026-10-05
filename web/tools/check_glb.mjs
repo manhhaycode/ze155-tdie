@@ -403,7 +403,8 @@ async function verify() {
   // 4. cut states: every name resolves; exclusion rules (PLAN §3.3.5)
   const S = D.cut_states.states
   const resolve = (n, ctx) => { if (!NM[n] || !where.has(n)) fail('STATE_NAME', n, ctx); return !!NM[n] }
-  const fixedIds = ['FULL', 'CUT_FEED', 'CUT_Z_BARREL', 'CUT_X2450', 'CUT_X4120']
+  // FLOW (PLAN-FLOW §2): the whole line cut at Y = 0, derived by make_data.py build_flow
+  const fixedIds = ['FULL', 'CUT_FEED', 'CUT_Z_BARREL', 'CUT_X2450', 'CUT_X4120', 'FLOW']
   for (const id of [...fixedIds, 'FREE']) if (!S[id]) fail('STATE_MISSING', id, '')
   const allNames = Object.keys(NM)
   // variant families: X with X_lo / X_y0 / X_x2450 / X_x4120 (covers int_screw_elem_*_12 / _12_x2450 and _22 / _22_x4120)
@@ -442,7 +443,9 @@ async function verify() {
     for (const [k, vs] of Object.entries(s.swap || {})) for (const v of vs) if (!vis.has(v)) fail('SWAP_VALUE_NOT_SHOWN', v, `${id} swap[${k}]`)
     for (const n of vis) {
       const r = NM[n]
-      if (r.file === 'interior' && r.role === 'cut_only' && !(r.states || []).includes(id)) fail('CUT_ONLY_OUTSIDE_STATES', n, id)
+      // FLOW lists cut_only_from: it also shows the pre-cut sets of CUT_PUMP / CUT_DIE_AA
+      const allowed = [id, ...(s.cut_only_from || [])]
+      if (r.file === 'interior' && r.role === 'cut_only' && !allowed.some((a) => (r.states || []).includes(a))) fail('CUT_ONLY_OUTSIDE_STATES', n, id)
     }
     for (const fam of families) {
       const shownFam = fam.filter((n) => vis.has(n))
