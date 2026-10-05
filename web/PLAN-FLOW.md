@@ -8,6 +8,7 @@ Bản 1.0, 2026-10-05. Thiết kế đã được người dùng duyệt trong h
 - **Mặt cắt đứng dọc Y = 0**, nhìn từ phía vận hành.
 - **Chỉ màu.** Không tooltip, không dải biên dạng, không HUD.
 - **Bản đủ, cộng một reviewer độc lập**, rồi sửa lỗi.
+- **Đổi nhãn mọi nút mặt cắt sang kiểu "thấy gì"** (2026-10-06, §4.1). Lý do: nhãn cũ ghi toạ độ và mã đoạn ("Y = 0", "B3"), người dùng thấy khó hiểu.
 
 **Ngoài phạm vi:**
 - 6 trạng thái Đợt 2, 3 clip (`valve_run`, `sc_index`, `die_open`), khe môi (morph), tách node lúc chạy (splits);
@@ -33,7 +34,7 @@ Bản 1.0, 2026-10-05. Thiết kế đã được người dùng duyệt trong h
 | F7 | So ảnh | Sau freeze, ở preset FLOW và khi zoom vào từng cụm, ở 1920 × 1080 và 1366 × 768. Thấy liền mạch:<br>• hạt trong cột cấp liệu;<br>• trục vít B trong lỗ;<br>• màu đổi ở khối nhào;<br>• van, lọc, bơm, ống;<br>• khuôn A-A có nhựa;<br>• màn nhựa;<br>• tấm ôm trục và ra băng tải.<br>Không có khối đặc phủ kênh nhựa, không z-fighting, không hai bản ở một chỗ. So với ảnh tham chiếu:<br>• cụm khuôn ↔ `anim/look/A1b-S12-f3351-ev-r2.png`;<br>• cụm bơm ↔ `A1b-S10-f2701-ev-r3.png`;<br>• cột cấp liệu ↔ `A1a-feedcol-ext-wb.png` |
 | F8 | Hiệu năng | FLOW ≥ 45 fps, ≤ 1 000 draw call, tam giác hiện ≤ 1,7 triệu, heap ≤ 600 MB |
 | F9 | Hồi quy Đợt 1 | 6 trạng thái cũ không đổi:<br>• `capCheck` D4 6/6;<br>• `cutRoundTrip` D6;<br>• console 0 lỗi (D11);<br>• chỉ request tới localhost (D12).<br>`SELFTEST.json` cập nhật mục FLOW |
-| F10 | Ngôn ngữ | Mọi chữ mới có bản tiếng Việt và tiếng Nhật; đổi ngôn ngữ ở FLOW không mất trạng thái màu |
+| F10 | Ngôn ngữ, nhãn | • Mọi chữ mới có bản tiếng Việt và tiếng Nhật; đổi ngôn ngữ ở FLOW không mất trạng thái màu.<br>• 7 nút trạng thái và 3 nút hướng cắt hiện đúng nhãn và tooltip của §4.1 ở cả hai ngôn ngữ; không nút nào còn toạ độ trên chữ.<br>• Toolbar ≤ 2 hàng ở 1920 px, ≤ 3 hàng ở 1366 px |
 
 ---
 
@@ -41,9 +42,7 @@ Bản 1.0, 2026-10-05. Thiết kế đã được người dùng duyệt trong h
 
 ### 2.1 Mặt phẳng và camera
 - **Mặt phẳng:** three `normal [0, 0, 1]`, `constant 0`. Giữ phần three z ≥ 0, tức Blender Y ≤ 0, là nửa xa phía người vận hành. Đúng bằng mặt phẳng của CUT_FEED, CUT_PUMP và CUT_DIE_AA, nên các bản cắt sẵn `_y0` khớp chính xác.
-- **Nhãn:**
-  - `label_vi` "Quy trình: hạt → film (Y = 0)", `label_short_vi` "Quy trình";
-  - `label_ja` "工程フロー：ペレット→フィルム（Y = 0）", ngắn "工程フロー".
+- **Nhãn:** theo §4.1. Nút ghi "Quy trình: hạt → film"; tooltip ghi "Bổ dọc cả dây chuyền, xem hạt nhựa chảy ra rồi thành tấm film".
 - **Camera** (three, ống kính 35 mm):
   - nhìn ngang từ phía vận hành, hơi cao, khung trọn đường vật liệu X −0,6 … 12,65 m trong vùng canvas giữa hai panel;
   - giá trị khởi điểm: pos `[6.0, 4.5, −19.0]`, target `[6.0, 1.4, 0.0]`;
@@ -224,7 +223,32 @@ Mọi số đều ghi `source`.
 ---
 
 ## 4. Giao diện
-- **Toolbar** thêm nút `data-state="FLOW"` (chữ ngắn "Quy trình" / "工程フロー"; tooltip là nhãn đầy đủ), nằm sau CUT_X4120.
+
+### 4.1 Nhãn nút trạng thái (áp cho cả 7 nút)
+**Nguyên tắc:** chữ trên nút nói người xem sẽ thấy gì. Toạ độ, mã đoạn và thuật ngữ chỉ nằm trong tooltip.
+
+| Id | Nút (VI) | Tooltip (VI) | Nút (JA) | Tooltip (JA) |
+|---|---|---|---|---|
+| FULL | Toàn bộ máy | Nhìn toàn dây chuyền, không cắt | 全体 | ライン全体（断面なし） |
+| CUT_FEED | Phễu nạp hạt | Bổ dọc phễu và cột nạp, thấy đường hạt rơi vào xi lanh (mặt cắt Y = 0) | 投入ホッパー | ホッパーと投入口を縦に切断し、ペレットがバレルへ落ちる経路を表示（Y = 0） |
+| CUT_Z_BARREL | Bên trong xi lanh | Mở nắp xi lanh, thấy hai trục vít đang quay (mặt cắt Z = 1 200) | バレル内部 | バレル上半分を外し、回転する2本のスクリューを表示（Z = 1 200） |
+| CUT_X2450 | Lát cắt hai trục vít | Cắt ngang xi lanh B3, thấy lỗ hình số 8 và hai trục vít ăn khớp (X = 2 450 mm) | スクリュー断面 | B3 バレルの横断面：8の字の穴と噛み合う2本のスクリュー（X = 2 450 mm） |
+| CUT_X4120 | Lát cắt chỗ hút ẩm | Cắt ngang ở lỗ hút chân không thứ 2 của xi lanh B5, nơi hơi ẩm được rút ra (X = 4 120 mm) | 脱気部の断面 | B5 の第2真空ベントの横断面：水分を吸い出す部分（X = 4 120 mm） |
+| FREE | Tự cắt | Tự chọn hướng và vị trí dao cắt | 自由断面 | 切断方向と位置を自由に選択 |
+| FLOW | Quy trình: hạt → film | Bổ dọc cả dây chuyền, xem hạt nhựa chảy ra rồi thành tấm film (mặt cắt Y = 0) | 工程：ペレット→フィルム | ライン全体を縦に切断し、ペレットが溶けてフィルムになるまでを表示（Y = 0） |
+
+**Cách làm:**
+- `make_data.py` thêm bảng `LABEL_OVERRIDES` (giống `CAMERA_OVERRIDES`): ghi đè `label_vi`, thêm `tooltip_vi`. Contract giữ nguyên.
+- `ui/text.ts`: `T_JA.states` đổi theo bảng, thêm `T_JA.stateTips`.
+- Toolbar: nút hiện nhãn, `title` lấy tooltip.
+
+**Ba nút hướng cắt trong "Tự cắt":**
+- Chữ trên nút đổi: X → "Cắt ngang" / 「横断」, Y → "Bổ dọc" / 「縦断」, Z → "Cắt nằm" / 「水平」.
+- Tooltip giữ chữ trục và giải thích, ví dụ "Trục Y: bổ dọc máy, nhìn từ bên hông".
+- Dòng số đo của thanh trượt giữ nguyên dạng "Y = 0 mm". `data-axis` và `data-axis-blender` không đổi, để hook test vẫn chạy.
+
+### 4.2 Nút FLOW và điều khiển màu
+- **Toolbar** thêm nút `data-state="FLOW"` (nhãn theo §4.1), nằm sau CUT_X4120.
 - **Dòng ngữ cảnh**, chỉ hiện ở FLOW:
   - "Màu:" kèm hai nút bật/tắt [Pha] [Nhiệt độ] (`aria-pressed`) / 「色:」[相] [温度];
   - thang màu nhỏ: ở chế độ pha là 3 ô màu "Hạt rắn · Nhựa chảy · Tấm PET" / 「ペレット・溶融樹脂・PETシート」; ở chế độ nhiệt là dải màu 20 – 300 °C;
@@ -239,7 +263,7 @@ Mọi số đều ghi `source`.
 
 | File | Mới / sửa | Việc |
 |---|---|---|
-| `tools/make_data.py` | sửa | `build_flow()` §2.2, `FLOW` trong `FIXED`, phép kiểm §2.5, khoá `flow` §3.6 |
+| `tools/make_data.py` | sửa | `build_flow()` §2.2, `FLOW` trong `FIXED`, phép kiểm §2.5, khoá `flow` §3.6, `LABEL_OVERRIDES` §4.1 |
 | `src/data.ts` | sửa | `StateId` / `FIXED_STATE_IDS` thêm `FLOW`; kiểu `FlowParams` |
 | `src/scene/Cuts.ts` | sửa nhỏ | export `setMaterial` có ghi lại; không đổi gì khác |
 | `src/scene/heat.ts` | mới | `heatColor(T)`, chuỗi GLSL `HEAT_GLSL`, `zoneAt(x)`, `tempAt(x)` |
@@ -250,7 +274,7 @@ Mọi số đều ghi `source`.
 | `src/store.ts` | sửa | `flowColor`, `frozen`, gọi lớp flow sau `applyState('FLOW')` |
 | `src/scene/Rotors.tsx` | sửa nhỏ | tôn trọng `frozen` |
 | `src/scene/precompile.ts` | sửa | duyệt cả FLOW, gồm các chương trình `ze-fill-*`, `ze-sheet`, hạt; ≤ 1,5 s |
-| `src/ui/Toolbar.tsx`, `ui/text.ts`, `ui/ui.css` | sửa | §4 |
+| `src/ui/Toolbar.tsx`, `ui/text.ts`, `ui/i18n.ts`, `ui/ui.css` | sửa | §4: nhãn và tooltip 7 nút, nhãn 3 nút hướng cắt, nút FLOW, dòng màu |
 | `src/test/hooks.ts` | sửa | §6 |
 | `README.md` (web-check), `DECISIONS.md` | sửa | bảng Use; quyết định 33 |
 
