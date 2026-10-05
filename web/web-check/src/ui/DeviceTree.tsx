@@ -1,9 +1,9 @@
-// Device tree (left): 10 sections, devices sorted by name_vi, accent-insensitive search (PLAN-DOT1 §4.2.10).
+// Device tree (left): 10 sections, devices sorted by name (vi/ja), accent-insensitive search (PLAN-DOT1 §4.2.10).
 import { use, useDeferredValue, useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import { dataPromise, type DeviceRec } from '../data'
 import { useUi } from './bind'
-import { buildIndex, byNameVi, search } from './search'
-import { T } from './text'
+import { useLoc } from './i18n'
+import { buildIndex, search } from './search'
 import './ui.css'
 
 export function DeviceTree() {
@@ -13,6 +13,8 @@ export function DeviceTree() {
   const select = useUi((s) => s.select)
   const zoomTo = useUi((s) => s.zoomTo)
   const hover = useUi((s) => s.hover)
+  const loc = useLoc()
+  const { T } = loc
 
   const [query, setQuery] = useState('')
   const q = useDeferredValue(query)
@@ -21,17 +23,22 @@ export function DeviceTree() {
   const [collapsed, setCollapsed] = useState(false)
   const listRef = useRef<HTMLDivElement>(null)
 
-  const index = useMemo(() => buildIndex(data.devices.devices), [data])
+  // Japanese UI: the Japanese name is searchable too (the Vietnamese, English and id stay searchable)
+  const devices = useMemo(
+    () => (loc.lang === 'ja' ? data.devices.devices.map((d) => ({ ...d, name_ja: loc.name(d) })) : data.devices.devices),
+    [data, loc],
+  )
+  const index = useMemo(() => buildIndex(devices), [devices])
   const total = data.devices.devices.length
   const searching = q.trim().length > 0
   // matching devices per section: ranked while searching, alphabetical otherwise
   const bySection = useMemo(() => {
-    const hits = searching ? search(index, q) : [...data.devices.devices].sort(byNameVi)
+    const hits = searching ? search(index, q, loc.compare) : [...devices].sort(loc.compare)
     const m = new Map<string, DeviceRec[]>()
     for (const s of data.devices.sections) m.set(s.group, [])
     for (const d of hits) m.get(d.group)?.push(d)
     return { m, count: hits.length, first: hits[0] as DeviceRec | undefined }
-  }, [index, q, searching, data])
+  }, [index, q, searching, data, devices, loc])
 
   const selectedGroup = selected ? data.deviceById.get(selected)?.group : undefined
 
@@ -108,7 +115,7 @@ export function DeviceTree() {
           if (searching && devs.length === 0) return null
           const isOpen = searching || !!open[sec.group]
           return (
-            <section key={sec.group} className="ze-sec" aria-label={sec.name_vi}>
+            <section key={sec.group} className="ze-sec" aria-label={loc.section(sec)}>
               <button
                 type="button"
                 className="ze-sec-head"
@@ -117,7 +124,7 @@ export function DeviceTree() {
                 disabled={searching}
               >
                 <span className="ze-caret" aria-hidden="true">{isOpen ? '▾' : '▸'}</span>
-                <span className="ze-sec-name">{sec.name_vi}</span>
+                <span className="ze-sec-name">{loc.section(sec)}</span>
                 <span className="ze-muted">{devs.length}</span>
               </button>
               {isOpen && (
@@ -135,7 +142,7 @@ export function DeviceTree() {
                         onMouseEnter={() => hover(d.device_id)}
                         onMouseLeave={() => hover(null)}
                       >
-                        <span className="ze-item-name">{d.name_vi}</span>
+                        <span className="ze-item-name">{loc.name(d)}</span>
                         {d.has_interior && <span className="ze-badge-int" role="img" title={T.tree.hasInterior} aria-label={T.tree.hasInterior}>◐</span>}
                       </button>
                     </li>

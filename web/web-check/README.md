@@ -29,6 +29,7 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | Esc, or click on empty space | Clears the selection |
 | Toolbar | The 6 states, FREE axis / position / flip, rotor speed (off / 20× slower / real), and "Về góc nhìn của trạng thái" |
 | FREE axes | Blender names, like the state buttons: X along the flow, Y across the line ("Y = 0" = the feed-column plane), Z height ("Z = 1 200" = the barrel axis plane). Unflipped, the part with the Blender coordinate ≤ the value is kept; the flip tooltip says which side. Internally the store and the hooks keep three axes: Blender X = three `x`, Blender Y = three `−z` (`data-axis="z"`), Blender Z = three `y` |
+| VI / 日本語 (toolbar, right) | Switches the overlay language (Vietnamese / Japanese). Remembered in `localStorage` (`ze-lang`); `?lang=vi` or `?lang=ja` in the URL wins. Japanese device texts come from `public/i18n/devices.ja.json`, any missing field falls back to Vietnamese. In Japanese the device search also matches the Japanese names |
 | ▲ next to the device count | Folds the device tree to its header (useful below 1600 px, where the panels are also narrower) |
 
 ## Code map (`src/`)
@@ -50,6 +51,8 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | `scene/Models.tsx` | `LineModel` and `InteriorLoader` (mounted only after the first state that needs the interior) |
 | `test/hooks.ts` | `window.__ze`, see below |
 | `ui/*` | Builder A's Toolbar, DeviceTree and InfoPanel |
+| `ui/i18n.ts`, `ui/text.ts` | Language store `useLang`, `useLoc()` accessors (names, texts, sections, state labels, sort order); `T` (vi) and `T_JA` UI strings |
+| `public/brand/toyobo-official.svg` | Customer logo shown at the left of the toolbar |
 
 **Hot reload.** Any change under `src/` other than `src/ui/**` and CSS forces a full page reload, through a plugin in `vite.config.ts`. A fresh registry is therefore never left next to cached scenes (review M3).
 

@@ -2,7 +2,8 @@
 import { use } from 'react'
 import { dataPromise } from '../data'
 import { reg, useUi } from './bind'
-import { fmtInt, T } from './text'
+import { useLoc } from './i18n'
+import { fmtInt } from './text'
 import './ui.css'
 
 /** true when the device has no visible mesh in the current state (e.g. `screws` at FULL) */
@@ -18,6 +19,8 @@ export function InfoPanel() {
   const select = useUi((s) => s.select)
   const zoomTo = useUi((s) => s.zoomTo)
   const clear = useUi((s) => s.clear)
+  const loc = useLoc()
+  const { T } = loc
   // subscribed so the "inside" note follows the visibility after a state change or the interior load
   useUi((s) => s.cutVersion)
   useUi((s) => s.interiorLoaded)
@@ -36,7 +39,7 @@ export function InfoPanel() {
       ) : (
         <>
           <div className="ze-info-head">
-            <h2 className="ze-info-title">{dev.name_vi}</h2>
+            <h2 className="ze-info-title">{loc.name(dev)}</h2>
             <div className="ze-info-actions">
               <button type="button" className="ze-btn ze-btn-sm" onClick={() => zoomTo(dev.device_id)}>{T.info.zoom}</button>
               <button type="button" className="ze-btn ze-btn-sm" onClick={() => clear()}>{T.info.deselect}</button>
@@ -44,7 +47,7 @@ export function InfoPanel() {
           </div>
           <p className="ze-info-en">{dev.name_en}</p>
           <p className="ze-info-meta">
-            <span className="ze-muted">{T.info.group}: </span>{section?.name_vi ?? dev.group}
+            <span className="ze-muted">{T.info.group}: </span>{section ? loc.section(section) : dev.group}
             <code className="ze-id">{dev.device_id}</code>
           </p>
           {part && <p className="ze-info-part">{T.info.part(part)}</p>}
@@ -53,7 +56,7 @@ export function InfoPanel() {
           {dev.function_vi ? (
             <section className="ze-info-sec">
               <h3 className="ze-h3">{T.info.function}</h3>
-              <p>{dev.function_vi}</p>
+              <p>{loc.func(dev)}</p>
             </section>
           ) : (
             dev.synthetic && <p className="ze-muted">{T.info.synthetic}</p>
@@ -63,7 +66,7 @@ export function InfoPanel() {
             <section className="ze-info-sec">
               <h3 className="ze-h3">{T.info.details}</h3>
               <ul className="ze-list">
-                {dev.details_vi.map((t, i) => <li key={i}>{t}</li>)}
+                {loc.details(dev)?.map((t, i) => <li key={i}>{t}</li>)}
               </ul>
             </section>
           )}
@@ -87,12 +90,12 @@ export function InfoPanel() {
                             pick(other.device_id)
                           }}
                         >
-                          {other.name_vi}
+                          {loc.name(other)}
                         </a>
                       ) : (
                         <span>{T.info.otherTargets[c.part] ?? c.part.replace(/_/g, ' ')}</span>
                       )}
-                      {c.interface_vi && <span className="ze-muted"> – {c.interface_vi}</span>}
+                      {c.interface_vi && <span className="ze-muted"> – {loc.iface(dev, i)}</span>}
                     </li>
                   )
                 })}

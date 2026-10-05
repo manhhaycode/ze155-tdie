@@ -1,8 +1,9 @@
-// Toolbar (top): cut states, FREE plane controls with the cap legend, rotor mode, camera preset (PLAN-DOT1 §4.2.10).
+// Toolbar (top): customer logo, cut states, FREE plane controls with the cap legend, rotor mode, camera preset,
+// language switch (PLAN-DOT1 §4.2.10).
 import { use, useLayoutEffect, useRef } from 'react'
 import { dataPromise, STATE_IDS, type Axis } from '../data'
 import { useUi } from './bind'
-import { T } from './text'
+import { LANGS, useLang, useLoc } from './i18n'
 import './ui.css'
 
 // FREE axes in Blender names, like the state buttons ("Y = 0" vertical along the line, "Z = 1 200" height).
@@ -29,6 +30,9 @@ export function Toolbar() {
   const setRotorMode = useUi((s) => s.setRotorMode)
   const resetView = useUi((s) => s.resetView)
   const pending = useUi((s) => s.pending)
+  const loc = useLoc()
+  const { T } = loc
+  const setLang = useLang((s) => s.setLang)
 
   // publish the toolbar height so the side panels start below it (the FREE row makes it taller)
   const ref = useRef<HTMLElement>(null)
@@ -55,6 +59,8 @@ export function Toolbar() {
   return (
     <header ref={ref} className="ze-panel ze-toolbar">
       <div className="ze-row">
+        <img className="ze-brand" src="/brand/toyobo-official.svg" alt={T.brand} width={133} height={51} draggable={false} />
+        <span className="ze-sep" />
         <div className="ze-group" role="group" aria-label={T.toolbar.states}>
           {STATE_IDS.map((id) => (
             <button
@@ -66,7 +72,7 @@ export function Toolbar() {
               data-pending={pending === id || undefined}
               onClick={() => void setStateId(id)}
             >
-              {data.states[id].label_vi}
+              {loc.state(id, data.states[id])}
             </button>
           ))}
         </div>
@@ -84,12 +90,30 @@ export function Toolbar() {
         <button type="button" className="ze-btn" data-action="reset-view" onClick={() => resetView()}>
           {T.toolbar.resetView}
         </button>
-        {(loading || busy) && (
-          <span className="ze-busy" role="status">
-            <span className="ze-spinner" aria-hidden="true" />
-            {loading ? T.toolbar.loadingInterior : T.toolbar.busy}
-          </span>
-        )}
+        <div className="ze-end">
+          {(loading || busy) && (
+            <span className="ze-busy" role="status">
+              <span className="ze-spinner" aria-hidden="true" />
+              {loading ? T.toolbar.loadingInterior : T.toolbar.busy}
+            </span>
+          )}
+          <div className="ze-group ze-lang" role="group" aria-label={T.lang}>
+            {LANGS.map((l) => (
+              <button
+                key={l.id}
+                type="button"
+                className="ze-btn ze-btn-sm"
+                data-lang={l.id}
+                lang={l.id}
+                title={l.label}
+                aria-pressed={loc.lang === l.id}
+                onClick={() => setLang(l.id)}
+              >
+                {l.short}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {state !== 'FULL' && (
