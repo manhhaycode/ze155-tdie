@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-05T10:04:12.820066+00:00",
+  "scope": "approved focus occlusion + X4120 fix, round 1",
+  "build": {
+    "command": "npm run build",
+    "cwd": "web/web-check",
+    "exit_code": 0,
+    "tool_output": "tsc -b && vite build; 591 modules transformed; built in 267ms",
+    "warning": "existing chunk >500kB warning"
+  },
+  "data_publish_command": "make -C web data verify publish",
+  "data_matches": {
+    "cut_states.json": {
+      "match": true,
+      "sha256": "d7eaf81354614c522289822553d65a1afdc3790f8ef012013a3381cf37d15c85"
+    },
+    "devices.json": {
+      "match": true,
+      "sha256": "cdb0be09c7b678bd7ed2369081ed80c40a88be138c91fbfa495f1a20f5b0b354"
+    },
+    "materials.json": {
+      "match": true,
+      "sha256": "980c37fe0da0032b50ac5d3ca49f896b0be88027360ca7af6b191dc041a50b4b"
+    },
+    "node_map.json": {
+      "match": true,
+      "sha256": "eb43f92487e26ff15b156d261553714a12b2778c76cc844a793c8881a05dd184"
+    },
+    "rotors.json": {
+      "match": true,
+      "sha256": "602f2dc3310384266b04d7e9295eb9d3b1906b8ec2785dab8339dee77a99a428"
+    }
+  },
+  "data_report": {
+    "path": "web/build/reports/check.json",
+    "ok": true,
+    "failures": [],
+    "counts": {
+      "nodes": 561,
+      "line": 354,
+      "interior": 207,
+      "devices": 190,
+      "devices_with_line": 189,
+      "missing": 0,
+      "orphans": 0,
+      "meshes": 1209,
+      "meshes_mapped": 1209,
+      "variant_families": 36,
+      "swap_pairs": 38,
+      "visible_per_state": {
+        "FULL": 351,
+        "CUT_FEED": 348,
+        "CUT_Z_BARREL": 372,
+        "CUT_X2450": 371,
+        "CUT_X4120": 393,
+        "FREE": 435
+      }
+    }
+  },
+  "console": {
+    "path": "console-warnings-errors.json",
+    "errors": 0,
+    "warnings": 9,
+    "message": "THREE.Clock deprecated"
+  },
+  "pinch_real_input_verified": false
+}

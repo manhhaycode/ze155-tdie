@@ -1,0 +1,12 @@
+{
+  "name": "ze155-web-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build tools for the ZE 155 web (Đợt 1): gltf-transform compression and check_glb analyze/verify. Installed once with npm ci; never fetched via npx.",
+  "type": "module",
+  "dependencies": {
+    "@gltf-transform/cli": "4.5.1",
+    "three": "0.186.1",
+    "three-mesh-bvh": "0.8.3"
+  }
+}

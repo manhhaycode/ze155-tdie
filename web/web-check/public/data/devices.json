@@ -1,0 +1,8294 @@
+{
+"version": 1,
+"slice": 1,
+"size_mm_axes": "three X (along flow), Y (height), Z (depth)",
+"sections": [
+{
+"group": "base",
+"name_vi": "Khung đế"
+},
+{
+"group": "drive",
+"name_vi": "Truyền động"
+},
+{
+"group": "feed",
+"name_vi": "Cấp liệu"
+},
+{
+"group": "barrel",
+"name_vi": "Xi lanh và trục vít"
+},
+{
+"group": "vacuum",
+"name_vi": "Hút chân không"
+},
+{
+"group": "melt",
+"name_vi": "Đường nhựa nóng chảy"
+},
+{
+"group": "die",
+"name_vi": "Khuôn phẳng"
+},
+{
+"group": "control",
+"name_vi": "Điều khiển và cáp"
+},
+{
+"group": "util",
+"name_vi": "Khí nén và nước làm mát"
+},
+{
+"group": "context",
+"name_vi": "Cán, tấm và đo (ngữ cảnh)"
+}
+],
+"devices": [
+{
+"device_id": "barrel_b1",
+"group": "barrel",
+"name_vi": "Xi lanh B1 – cấp liệu 4D",
+"name_en": "Barrel B1, feed barrel 4D (water-cooled)",
+"synthetic": false,
+"function_vi": "Nhận hạt PET từ miệng cấp liệu; làm mát bằng nước để hạt không chảy sớm.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"Lỗ nạp trên đỉnh 360 × 300 tại X 160–520, mặt gia công phẳng cho hộp miệng nạp.",
+"Không có băng nhiệt; áo nước làm mát, 2 đầu nối nước ở đáy tại X = 200 (vào) và 476 (ra).",
+"Đầu X = 0: bích Ø640 bắt 20 bulông cấy M24 trên PCD 560 vào lantern, đai ốc 12 cạnh phía B1.",
+"Cặp nhiệt B1 cắm nghiêng 40° ở góc trên phía −Y, chân tại (X 338, Y -167, Z 1399), để tránh hộp miệng nạp."
+],
+"connects_to": [
+{
+"part": "lantern",
+"interface_vi": "mặt bích, 20 bulông cấy M24 trên PCD 560"
+},
+{
+"part": "feed_throat",
+"interface_vi": "mặt gia công đỉnh, 8 bulông M20"
+},
+{
+"part": "barrel_joint_1",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nhanh nước vào ở đáy"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nhanh nước ra ở đáy"
+}
+],
+"bbox_m": [
+-0.092,
+0.88,
+-0.32,
+0.676,
+1.52,
+0.32
+],
+"size_mm": [
+768,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"barrel_b1",
+"barrel_joint_lantern",
+"int_barrel_hollow_b1"
+]
+},
+{
+"device_id": "barrel_b2",
+"group": "barrel",
+"name_vi": "Xi lanh B2 – 6D mở bên (side feeder)",
+"name_en": "Barrel B2, 6D side-open (combination) barrel",
+"synthetic": false,
+"function_vi": "Vận chuyển hạt, nhận liệu phụ từ side feeder qua cửa bên +Y, bắt đầu nóng chảy ở cuối đoạn.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"Cửa bên +Y 340 × 260 tại X 1 180–1 520 (hình số 8 nhìn ngang) có mặt bích cho side feeder.",
+"2 băng nhiệt có cửa sổ tránh cửa bên; lỗ khoan nước làm mát dọc thân.",
+"2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 876 (vào) và 1490 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_joint_1",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "barrel_joint_2",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước vào, góc dưới +Y 45°"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước ra, góc dưới +Y 45°"
+},
+{
+"part": "sidefeed_adapter",
+"interface_vi": "mặt bích cửa bên +Y"
+},
+{
+"part": "barrel_support_1",
+"interface_vi": "tấm trượt"
+}
+],
+"bbox_m": [
+0.676,
+0.88,
+-0.32,
+1.69,
+1.52,
+0.32
+],
+"size_mm": [
+1014,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"barrel_b2",
+"int_barrel_hollow_b2"
+]
+},
+{
+"device_id": "barrel_b3",
+"group": "barrel",
+"name_vi": "Xi lanh B3 – 6D thoát khí chân không vùng 1",
+"name_en": "Barrel B3, 6D top-open (first vacuum vent)",
+"synthetic": false,
+"function_vi": "Nóng chảy (khối nhào) rồi hút chân không nhẹ (≈ 50 mbar) ngay khi nhựa vừa chảy, rút phần lớn hơi nước trước khi PET bị thuỷ phân và không cho không khí lọt vào.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"Lỗ trên đỉnh 320 × 280 tại X 1 990–2 310 với tấm lót (vent insert); vòm chân không 2 lắp trên.",
+"2 băng nhiệt có khe tại lỗ.",
+"2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 1890 (vào) và 2504 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_joint_2",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "barrel_joint_3",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước vào, góc dưới +Y 45°"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước ra, góc dưới +Y 45°"
+},
+{
+"part": "barrel_vent_dome_2",
+"interface_vi": "mặt bích vent insert"
+}
+],
+"bbox_m": [
+1.69,
+0.88,
+-0.32,
+2.704,
+1.52,
+0.32
+],
+"size_mm": [
+1014,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"anim_vent_window_1",
+"barrel_b3",
+"int_barrel_hollow_b3"
+]
+},
+{
+"device_id": "barrel_b4",
+"group": "barrel",
+"name_vi": "Xi lanh B4 – 6D kín",
+"name_en": "Barrel B4, 6D closed",
+"synthetic": false,
+"function_vi": "Trộn, đồng nhất nhựa nóng chảy; trước B5 có phần tử nghịch tạo nút nhựa kín chân không.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"2 băng nhiệt, lỗ khoan nước làm mát, 1 cặp nhiệt.",
+"2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 2904 (vào) và 3518 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_joint_3",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "barrel_joint_4",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước vào, góc dưới +Y 45°"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước ra, góc dưới +Y 45°"
+},
+{
+"part": "barrel_support_2",
+"interface_vi": "tấm trượt"
+}
+],
+"bbox_m": [
+2.704,
+0.88,
+-0.32,
+3.718,
+1.52,
+0.32
+],
+"size_mm": [
+1014,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"barrel_b4",
+"int_barrel_hollow_b4"
+]
+},
+{
+"device_id": "barrel_b5",
+"group": "barrel",
+"name_vi": "Xi lanh B5 – 6D thoát khí chân không sâu (vùng 2)",
+"name_en": "Barrel B5, 6D top-open (deep vacuum vent)",
+"synthetic": false,
+"function_vi": "Hút chân không sâu (5–20 mbar) để khử nốt ẩm, acetaldehyde và oligome của PET không sấy.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"Lỗ trên đỉnh 520 × 280 tại X 3 860–4 380 (≈ 3D) với tấm lót (vent insert); vòm chân không lắp trên.",
+"2 băng nhiệt có khe tại lỗ.",
+"2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 3918 (vào) và 4532 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_joint_4",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "barrel_joint_5",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước vào, góc dưới +Y 45°"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước ra, góc dưới +Y 45°"
+},
+{
+"part": "barrel_vent_dome",
+"interface_vi": "mặt bích vent insert"
+}
+],
+"bbox_m": [
+3.718,
+0.88,
+-0.32,
+4.732,
+1.52,
+0.32
+],
+"size_mm": [
+1014,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"anim_vent_window_2",
+"barrel_b5",
+"int_barrel_hollow_b5"
+]
+},
+{
+"device_id": "barrel_b6",
+"group": "barrel",
+"name_vi": "Xi lanh B6 – 6D kín tăng áp",
+"name_en": "Barrel B6, 6D closed (pressure build-up)",
+"synthetic": false,
+"function_vi": "Tăng áp đẩy nhựa vào đầu xi lanh.",
+"details_vi": [
+"Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+"Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+"Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+"Cổng bên +Y bịt mặt bích tròn (cổng phun lỏng dự phòng) tại X ≈ 5 400, Z = 1 200 – thấy qua tấm tròn 10 bulông của vỏ che C1 (trang 9).",
+"Mặt bích ra X = 5 746: 20 bulông cấy M24 trên PCD 560 vào bích đầu xi lanh.",
+"2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 4932 (vào) và 5546 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_joint_5",
+"interface_vi": "mặt bích Ø640, 20 bulông cấy M24"
+},
+{
+"part": "melt_head_adapter",
+"interface_vi": "mặt bích, 20 bulông cấy M24 trên PCD 560"
+},
+{
+"part": "screws",
+"interface_vi": "lỗ hình số 8 chứa 2 trục vít"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước vào, góc dưới +Y 45°"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối nước ra, góc dưới +Y 45°"
+},
+{
+"part": "barrel_support_3",
+"interface_vi": "tấm trượt"
+}
+],
+"bbox_m": [
+4.732,
+0.88,
+-0.32,
+5.828,
+1.52,
+0.32
+],
+"size_mm": [
+1096,
+640,
+640
+],
+"has_interior": true,
+"nodes": [
+"barrel_b6",
+"barrel_joint_head",
+"int_barrel_hollow_b6"
+]
+},
+{
+"device_id": "barrel_cable_tray",
+"group": "barrel",
+"name_vi": "Máng cáp nhiệt",
+"name_en": "Heater cable tray",
+"synthetic": false,
+"function_vi": "Dẫn cáp nhiệt, cặp nhiệt, cảm biến dọc máy về tủ điện.",
+"details_vi": [
+"Máng đục lỗ mạ kẽm 300 × 100 có nắp, chạy X −1 000 … 5 800 trên mép −Y của khung."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "giá đỡ trên mặt khung"
+},
+{
+"part": "base_frame_process",
+"interface_vi": "giá đỡ trên mặt khung"
+},
+{
+"part": "ctrl_cable_drop",
+"interface_vi": "nối máng đứng"
+}
+],
+"bbox_m": [
+-1.004,
+0.53,
+-1.055,
+5.804,
+0.753,
+1.006
+],
+"size_mm": [
+6808,
+223,
+2061
+],
+"has_interior": false,
+"nodes": [
+"barrel_cable_duct_op",
+"barrel_cable_duct_op_perf",
+"barrel_cable_tray",
+"barrel_cable_tray_perf"
+]
+},
+{
+"device_id": "barrel_cover_c1",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C1",
+"name_en": "Barrel insulation cover box C1",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào.",
+"Tấm đầu X = 5 746–5 760 có lỗ tròn Ø660 (bích Ø640); mặt +Y có tấm tròn Ø420 bắt 10 bulông tại X ≈ 5 400, Z = 1 200 (trang 9) che cổng bên B6, cùng một hộp đấu dây nhỏ phía dưới."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+},
+{
+"part": "melt_head_adapter",
+"interface_vi": "tấm đầu có lỗ Ø660 quanh bích đầu xi lanh"
+}
+],
+"bbox_m": [
+5.092,
+0.65,
+-0.54,
+5.758,
+1.691,
+0.484
+],
+"size_mm": [
+666,
+1041,
+1024
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c1",
+"barrel_cover_c1_hw"
+]
+},
+{
+"device_id": "barrel_cover_c2",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C2",
+"name_en": "Barrel insulation cover box C2",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+}
+],
+"bbox_m": [
+4.452,
+0.65,
+-0.521,
+5.098,
+1.691,
+0.484
+],
+"size_mm": [
+646,
+1041,
+1005
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c2",
+"barrel_cover_c2_hw"
+]
+},
+{
+"device_id": "barrel_cover_c3",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C3",
+"name_en": "Barrel insulation cover box C3",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào.",
+"Lỗ khoét 620 × 420 cho vòm chân không."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+},
+{
+"part": "barrel_vent_dome",
+"interface_vi": "lỗ khoét 620 × 420 ôm vòm"
+}
+],
+"bbox_m": [
+3.72,
+0.65,
+-0.521,
+4.448,
+1.65,
+0.484
+],
+"size_mm": [
+728,
+1000,
+1005
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c3",
+"barrel_cover_c3_hw"
+]
+},
+{
+"device_id": "barrel_cover_c4",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C4",
+"name_en": "Barrel insulation cover box C4",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+}
+],
+"bbox_m": [
+3.044,
+0.65,
+-0.521,
+3.716,
+1.691,
+0.484
+],
+"size_mm": [
+672,
+1041,
+1005
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c4",
+"barrel_cover_c4_hw"
+]
+},
+{
+"device_id": "barrel_cover_c5",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C5",
+"name_en": "Barrel insulation cover box C5",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+}
+],
+"bbox_m": [
+2.368,
+0.65,
+-0.521,
+3.04,
+1.691,
+0.484
+],
+"size_mm": [
+672,
+1041,
+1005
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c5",
+"barrel_cover_c5_hw"
+]
+},
+{
+"device_id": "barrel_cover_c6",
+"group": "barrel",
+"name_vi": "Vỏ che xi lanh C6",
+"name_en": "Barrel insulation cover box C6",
+"synthetic": false,
+"function_vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+"details_vi": [
+"Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+"Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+"Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+"Khe dưới hai bên cho ống nước và cáp nhiệt đi vào.",
+"Lỗ khoét 420 × 380 (X 1 940–2 360) cho vòm chân không vùng 1.",
+"Tấm đầu phía X = 1 690 có lỗ Ø660 ôm vành bích Ø640 và đai ốc của mối nối 2 (nửa mối nối nằm ngoài vỏ, phía vùng nạp để lộ)."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "chân vỏ bắt vít vào mép khung"
+},
+{
+"part": "barrel_vent_dome_2",
+"interface_vi": "lỗ khoét 420 × 380 ôm vòm vùng 1"
+}
+],
+"bbox_m": [
+1.692,
+0.65,
+-0.521,
+2.364,
+1.65,
+0.484
+],
+"size_mm": [
+672,
+1000,
+1005
+],
+"has_interior": false,
+"nodes": [
+"barrel_cover_c6",
+"barrel_cover_c6_hw"
+]
+},
+{
+"device_id": "barrel_cw_hoses",
+"group": "barrel",
+"name_vi": "Ống mềm nước tới xi lanh",
+"name_en": "Armoured cooling hoses to barrels",
+"synthetic": false,
+"function_vi": "Dẫn nước từ cụm van lên lỗ khoan làm mát xi lanh và về.",
+"details_vi": [
+"12 ống mềm inox bọc lưới DN15 (OD 24), mỗi đoạn 1 ống vào + 1 ống ra (đường đi trong paths_mm).",
+"Ống vào: từ đỉnh cụm van (X tâm − 40) chéo tới X = đầu đoạn + 200, xuyên tấm dưới của vỏ che ở Y 480, Z ≈ 990, rồi vào đầu nối 45° dưới +Y; ống ra đối xứng ở X = cuối đoạn − 200.",
+"B1: hai đầu nối ở đáy tại X 200 và 476; không ống nào đi dưới gối đỡ."
+],
+"connects_to": [
+{
+"part": "barrel_cw_valves",
+"interface_vi": "đầu nối ren trên đỉnh cụm van"
+},
+{
+"part": "barrel_b1",
+"interface_vi": "khớp nối nhanh ở đáy"
+},
+{
+"part": "barrel_b2",
+"interface_vi": "khớp nối nhanh góc dưới +Y"
+},
+{
+"part": "barrel_b3",
+"interface_vi": "khớp nối nhanh góc dưới +Y"
+},
+{
+"part": "barrel_b4",
+"interface_vi": "khớp nối nhanh góc dưới +Y"
+},
+{
+"part": "barrel_b5",
+"interface_vi": "khớp nối nhanh góc dưới +Y"
+},
+{
+"part": "barrel_b6",
+"interface_vi": "khớp nối nhanh góc dưới +Y"
+}
+],
+"bbox_m": [
+0.1889,
+0.8328,
+-0.922,
+5.558,
+1.0632,
+0.012
+],
+"size_mm": [
+5369,
+230,
+934
+],
+"has_interior": false,
+"nodes": [
+"barrel_cw_hoses"
+]
+},
+{
+"device_id": "barrel_cw_return",
+"group": "barrel",
+"name_vi": "Ống góp nước hồi",
+"name_en": "Cooling-water return header",
+"synthetic": false,
+"function_vi": "Gom nước hồi từ các vùng xi lanh.",
+"details_vi": [
+"Ống inox DN50 (OD 60) song song phía ngoài ống cấp, Z = 800."
+],
+"connects_to": [
+{
+"part": "util_cw_return_riser",
+"interface_vi": "mặt bích DN50"
+},
+{
+"part": "barrel_cw_valves",
+"interface_vi": "6 nhánh T"
+}
+],
+"bbox_m": [
+-0.3,
+0.7597,
+-0.9953,
+5.4,
+0.8403,
+-0.9047
+],
+"size_mm": [
+5700,
+81,
+91
+],
+"has_interior": false,
+"nodes": [
+"barrel_cw_return",
+"barrel_cw_return_fit"
+]
+},
+{
+"device_id": "barrel_cw_supply",
+"group": "barrel",
+"name_vi": "Ống góp nước cấp",
+"name_en": "Cooling-water supply header",
+"synthetic": false,
+"function_vi": "Phân phối nước làm mát tới các vùng xi lanh.",
+"details_vi": [
+"Ống inox DN50 (OD 60), mũi tên chiều dòng, gá trên bát đỡ cách mặt khung 30 mm."
+],
+"connects_to": [
+{
+"part": "util_cw_supply_riser",
+"interface_vi": "mặt bích DN50"
+},
+{
+"part": "barrel_cw_valves",
+"interface_vi": "6 nhánh T"
+}
+],
+"bbox_m": [
+-0.3,
+0.65,
+-0.99,
+5.4,
+0.965,
+-0.8347
+],
+"size_mm": [
+5700,
+315,
+155
+],
+"has_interior": false,
+"nodes": [
+"barrel_cw_supply",
+"barrel_cw_supply_fit",
+"barrel_cw_supports"
+]
+},
+{
+"device_id": "barrel_cw_valves",
+"group": "barrel",
+"name_vi": "Cụm van điện từ nước làm mát",
+"name_en": "Cooling-water solenoid valve stations",
+"synthetic": false,
+"function_vi": "Đóng/mở nước làm mát từng vùng theo lệnh bộ điều nhiệt.",
+"details_vi": [
+"6 cụm tại X = 338, 1 183, 2 197, 3 211, 4 225, 5 239; mỗi cụm: van bi tay đỏ, lọc Y, van điện từ (cuộn đen), van tiết lưu, chỉ báo dòng chảy.",
+"1 đồng hồ áp trên ống cấp, 1 trên ống hồi."
+],
+"connects_to": [
+{
+"part": "barrel_cw_supply",
+"interface_vi": "nhánh T"
+},
+{
+"part": "barrel_cw_return",
+"interface_vi": "nhánh T"
+},
+{
+"part": "barrel_cw_hoses",
+"interface_vi": "đầu nối ống mềm trên đỉnh cụm"
+},
+{
+"part": "base_frame_process",
+"interface_vi": "bát gá trên mặt khung"
+}
+],
+"bbox_m": [
+0.2035,
+0.6206,
+-1.0448,
+5.309,
+1.0,
+-0.868
+],
+"size_mm": [
+5106,
+379,
+177
+],
+"has_interior": false,
+"nodes": [
+"barrel_cw_coil_cables",
+"barrel_cw_valves"
+]
+},
+{
+"device_id": "barrel_heater_jboxes",
+"group": "barrel",
+"name_vi": "Hộp đấu dây nhiệt",
+"name_en": "Heater junction boxes",
+"synthetic": false,
+"function_vi": "Đấu cáp băng nhiệt và cặp nhiệt của từng vùng vào cáp chính.",
+"details_vi": [
+"7 hộp inox 180 × 120 × 200 có nắp kính nhỏ / ổ cắm công nghiệp, tại X = 338, 1 183, 2 197, 3 211, 4 225, 5 239, 5 700 (đầu xi lanh)."
+],
+"connects_to": [
+{
+"part": "barrel_cable_tray",
+"interface_vi": "giá gá trên máng cáp"
+}
+],
+"bbox_m": [
+0.248,
+0.7,
+0.547,
+5.79,
+0.96,
+0.7
+],
+"size_mm": [
+5542,
+260,
+153
+],
+"has_interior": false,
+"nodes": [
+"barrel_heater_conduits",
+"barrel_heater_jboxes"
+]
+},
+{
+"device_id": "barrel_heater_shells",
+"group": "barrel",
+"name_vi": "Băng nhiệt gốm bọc inox",
+"name_en": "Ceramic band heater shells",
+"synthetic": false,
+"function_vi": "Gia nhiệt xi lanh B2–B6, mỗi đoạn 6D một vùng nhiệt ≈ 25 kW.",
+"details_vi": [
+"10 vỏ (2 mỗi đoạn 6D), mỗi vỏ Ø580 dài 380, gồm 2 nửa bản lề, kẹp bằng 2 bulông, mép có vòng gân đục lỗ.",
+"Mỗi vỏ bắt đầu cách mặt đầu đoạn 90 mm (chừa chỗ đai ốc của mối nối bích); giữa hai vỏ của một đoạn có băng thân trần 74 mm cho gối đỡ.",
+"Vỏ có cửa sổ tại cửa bên B2 và lỗ đỉnh B3/B5; rãnh 50 mm ở góc dưới +Y tại X = đầu đoạn + 200 và cuối đoạn − 200 cho đầu nối nước.",
+"Hộp đấu nhỏ trên mỗi vỏ, cáp bọc lưới inox đi xuống hộp đấu dây phía −Y."
+],
+"connects_to": [
+{
+"part": "barrel_b2",
+"interface_vi": "kẹp bulông quanh thân"
+},
+{
+"part": "barrel_b3",
+"interface_vi": "kẹp bulông quanh thân"
+},
+{
+"part": "barrel_b4",
+"interface_vi": "kẹp bulông quanh thân"
+},
+{
+"part": "barrel_b5",
+"interface_vi": "kẹp bulông quanh thân"
+},
+{
+"part": "barrel_b6",
+"interface_vi": "kẹp bulông quanh thân"
+}
+],
+"bbox_m": [
+0.332,
+0.62,
+-1.0386,
+5.656,
+1.5783,
+0.625
+],
+"size_mm": [
+5324,
+958,
+1664
+],
+"has_interior": false,
+"nodes": [
+"barrel_cable_gland_boxes_op",
+"barrel_cable_glands_op",
+"barrel_heater_cables",
+"barrel_heater_cables_op",
+"barrel_heater_shells"
+]
+},
+{
+"device_id": "barrel_joint_1",
+"group": "barrel",
+"name_vi": "Mối nối bích bắt bulông 1 (X = 676)",
+"name_en": "Bolted flange joint 1",
+"synthetic": false,
+"function_vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+"details_vi": [
+"20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+"Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+"Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+"Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+"Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520."
+],
+"connects_to": [
+{
+"part": "barrel_b1",
+"interface_vi": "mặt bích đoạn trước, 20 lỗ Ø26"
+},
+{
+"part": "barrel_b2",
+"interface_vi": "mặt bích đoạn sau, 20 lỗ Ø26"
+}
+],
+"bbox_m": [
+0.594,
+0.9024,
+-0.2976,
+0.758,
+1.4976,
+0.2976
+],
+"size_mm": [
+164,
+595,
+595
+],
+"has_interior": false,
+"nodes": [
+"barrel_joint_1"
+]
+},
+{
+"device_id": "barrel_joint_2",
+"group": "barrel",
+"name_vi": "Mối nối bích bắt bulông 2 (X = 1690)",
+"name_en": "Bolted flange joint 2",
+"synthetic": false,
+"function_vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+"details_vi": [
+"20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+"Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+"Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+"Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+"Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520."
+],
+"connects_to": [
+{
+"part": "barrel_b2",
+"interface_vi": "mặt bích đoạn trước, 20 lỗ Ø26"
+},
+{
+"part": "barrel_b3",
+"interface_vi": "mặt bích đoạn sau, 20 lỗ Ø26"
+}
+],
+"bbox_m": [
+1.608,
+0.9024,
+-0.2976,
+1.772,
+1.4976,
+0.2976
+],
+"size_mm": [
+164,
+595,
+595
+],
+"has_interior": false,
+"nodes": [
+"barrel_joint_2"
+]
+},
+{
+"device_id": "barrel_joint_3",
+"group": "barrel",
+"name_vi": "Mối nối bích bắt bulông 3 (X = 2704)",
+"name_en": "Bolted flange joint 3",
+"synthetic": false,
+"function_vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+"details_vi": [
+"20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+"Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+"Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+"Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+"Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520."
+],
+"connects_to": [
+{
+"part": "barrel_b3",
+"interface_vi": "mặt bích đoạn trước, 20 lỗ Ø26"
+},
+{
+"part": "barrel_b4",
+"interface_vi": "mặt bích đoạn sau, 20 lỗ Ø26"
+}
+],
+"bbox_m": [
+2.622,
+0.9024,
+-0.2976,
+2.786,
+1.4976,
+0.2976
+],
+"size_mm": [
+164,
+595,
+595
+],
+"has_interior": false,
+"nodes": [
+"barrel_joint_3"
+]
+},
+{
+"device_id": "barrel_joint_4",
+"group": "barrel",
+"name_vi": "Mối nối bích bắt bulông 4 (X = 3718)",
+"name_en": "Bolted flange joint 4",
+"synthetic": false,
+"function_vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+"details_vi": [
+"20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+"Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+"Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+"Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+"Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520."
+],
+"connects_to": [
+{
+"part": "barrel_b4",
+"interface_vi": "mặt bích đoạn trước, 20 lỗ Ø26"
+},
+{
+"part": "barrel_b5",
+"interface_vi": "mặt bích đoạn sau, 20 lỗ Ø26"
+}
+],
+"bbox_m": [
+3.636,
+0.9024,
+-0.2976,
+3.8,
+1.4976,
+0.2976
+],
+"size_mm": [
+164,
+595,
+595
+],
+"has_interior": false,
+"nodes": [
+"barrel_joint_4"
+]
+},
+{
+"device_id": "barrel_joint_5",
+"group": "barrel",
+"name_vi": "Mối nối bích bắt bulông 5 (X = 4732)",
+"name_en": "Bolted flange joint 5",
+"synthetic": false,
+"function_vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+"details_vi": [
+"20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+"Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+"Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+"Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+"Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520."
+],
+"connects_to": [
+{
+"part": "barrel_b5",
+"interface_vi": "mặt bích đoạn trước, 20 lỗ Ø26"
+},
+{
+"part": "barrel_b6",
+"interface_vi": "mặt bích đoạn sau, 20 lỗ Ø26"
+}
+],
+"bbox_m": [
+4.65,
+0.9024,
+-0.2976,
+4.814,
+1.4976,
+0.2976
+],
+"size_mm": [
+164,
+595,
+595
+],
+"has_interior": false,
+"nodes": [
+"barrel_joint_5"
+]
+},
+{
+"device_id": "barrel_thermocouples",
+"group": "barrel",
+"name_vi": "Cặp nhiệt xi lanh",
+"name_en": "Barrel thermocouples",
+"synthetic": false,
+"function_vi": "Đo nhiệt độ từng vùng xi lanh cho bộ điều nhiệt.",
+"details_vi": [
+"6 cặp nhiệt loại J Ø30 dài 90 (35 mm nằm trong thành xi lanh, 55 mm lộ ra): B1 cắm nghiêng 40° so với phương đứng về phía −Y, chân tại (338, -167, 1399) trên mặt thân, đầu dưới đáy hộp miệng nạp; còn lại cắm đứng trên đỉnh thân tại X = 1 450, 2 450, 3 211, 4 600, 5 239 (xuyên lỗ trên vỏ nhiệt), nắp lưỡi lê, cáp bọc lưới inox.",
+"item_mm = [Ø, Ø, dài] theo hệ trục riêng; trục từng cái trong item_axes."
+],
+"connects_to": [
+{
+"part": "barrel_b1",
+"interface_vi": "ren M14 lắp lưỡi lê, cắm nghiêng góc trên −Y"
+},
+{
+"part": "barrel_b4",
+"interface_vi": "ren M14"
+},
+{
+"part": "barrel_b6",
+"interface_vi": "ren M14"
+}
+],
+"bbox_m": [
+0.325,
+0.6207,
+-1.033,
+5.6205,
+1.5475,
+0.2118
+],
+"size_mm": [
+5296,
+927,
+1245
+],
+"has_interior": false,
+"nodes": [
+"barrel_tc_leads_op",
+"barrel_thermocouples"
+]
+},
+{
+"device_id": "barrel_vent_dome",
+"group": "barrel",
+"name_vi": "Vòm thoát khí chân không (B5)",
+"name_en": "Vacuum vent dome on B5",
+"synthetic": false,
+"function_vi": "Tạo buồng kín trên lỗ thoát khí B5 để hút chân không; kính quan sát cho thấy nhựa không trào lên.",
+"details_vi": [
+"Thân hộp inox 600 × 400, bo góc R40, từ Z 1 460 lên 2 100; nắp 640 × 450 dày 50 kẹp bằng 4 bulông bướm, 2 tai (lugs) trên nắp.",
+"2 kính quan sát Ø160 có vành kẹp trên mặt +Y tại X = 3 970 và 4 270, Z = 1 880.",
+"Đầu ra chân không DN150 ở giữa nắp (X 4 120, Y 0, Z 2 150), đi thẳng lên van chặn; mặt −Y của vòm phẳng, không có cổng.",
+"Tay nắm nâng nắp, đèn soi kính (tuỳ chọn)."
+],
+"connects_to": [
+{
+"part": "barrel_b5",
+"interface_vi": "mặt bích vent insert 8 bulông"
+},
+{
+"part": "vac_valve",
+"interface_vi": "mặt bích DN150 PN16 trên nắp"
+},
+{
+"part": "barrel_cover_c3",
+"interface_vi": "xuyên qua lỗ khoét trên vỏ che"
+},
+{
+"part": "vac_gauge_dome",
+"interface_vi": "ren trên nắp"
+}
+],
+"bbox_m": [
+3.79,
+1.455,
+-0.26,
+4.45,
+2.205,
+0.225
+],
+"size_mm": [
+660,
+750,
+485
+],
+"has_interior": true,
+"nodes": [
+"anim_ghost_vent_2",
+"barrel_vent_dome",
+"int_dome_hollow_2"
+]
+},
+{
+"device_id": "barrel_vent_dome_2",
+"group": "barrel",
+"name_vi": "Vòm thoát khí chân không vùng 1 (B3)",
+"name_en": "First vacuum vent dome on B3",
+"synthetic": false,
+"function_vi": "Buồng kín trên lỗ B3, hút chân không nhẹ (≈ 50 mbar) để rút hơi nước ngay sau vùng chảy.",
+"details_vi": [
+"Thân hộp inox 400 × 360 bo góc R30 từ Z 1 460 lên 1 920; nắp dày 40 (Z 1 920–1 960) kẹp 4 bulông bướm, 2 tai.",
+"1 kính quan sát Ø120 có vành kẹp trên mặt +Y tại X 2 150, Z 1 750.",
+"Đầu ra DN100 có bích Ø220 trên mặt −Y tại X 2 150, Z 1 800."
+],
+"connects_to": [
+{
+"part": "barrel_b3",
+"interface_vi": "mặt bích vent insert 8 bulông"
+},
+{
+"part": "barrel_cover_c6",
+"interface_vi": "xuyên qua lỗ khoét 420 × 380"
+},
+{
+"part": "vac_valve_2",
+"interface_vi": "bích DN100 phía −Y"
+},
+{
+"part": "vac_gauge_dome_2",
+"interface_vi": "ren trên nắp"
+}
+],
+"bbox_m": [
+1.92,
+1.455,
+-0.22,
+2.38,
+2.012,
+0.243
+],
+"size_mm": [
+460,
+557,
+463
+],
+"has_interior": true,
+"nodes": [
+"anim_ghost_vent_1",
+"barrel_vent_dome_2",
+"int_dome_hollow_1"
+]
+},
+{
+"device_id": "barrel_support_1",
+"group": "base",
+"name_vi": "Gối đỡ xi lanh số 1",
+"name_en": "Barrel support saddle 1",
+"synthetic": false,
+"function_vi": "Đỡ xi lanh từ dưới, cho phép xi lanh giãn nở nhiệt trượt theo X (điểm cố định ở lantern X = 0).",
+"details_vi": [
+"Gối đúc hình chữ A, tấm đế 700 × 250, lỗ tròn Ø120 giữa thân tại Z ≈ 800.",
+"Lòng đỡ cong bán kính 260 ôm đáy thân xi lanh, có tấm trượt (slide pad) mỏng.",
+"Đệm trên của gối rộng 70 mm (X), tì vào băng thân trần rộng 74 mm giữa hai vỏ nhiệt của đoạn."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "bắt 4 bulông M30, lỗ ô van cho chỉnh"
+},
+{
+"part": "barrel_b2",
+"interface_vi": "tấm trượt đồng/PTFE dưới thân xi lanh, kẹp giữ Y nhưng tự do X"
+}
+],
+"bbox_m": [
+1.058,
+0.65,
+-0.35,
+1.308,
+1.071,
+0.35
+],
+"size_mm": [
+250,
+421,
+700
+],
+"has_interior": false,
+"nodes": [
+"barrel_support_1"
+]
+},
+{
+"device_id": "barrel_support_2",
+"group": "base",
+"name_vi": "Gối đỡ xi lanh số 2",
+"name_en": "Barrel support saddle 2",
+"synthetic": false,
+"function_vi": "Đỡ xi lanh từ dưới, cho phép xi lanh giãn nở nhiệt trượt theo X (điểm cố định ở lantern X = 0).",
+"details_vi": [
+"Gối đúc hình chữ A, tấm đế 700 × 250, lỗ tròn Ø120 giữa thân tại Z ≈ 800.",
+"Lòng đỡ cong bán kính 260 ôm đáy thân xi lanh, có tấm trượt (slide pad) mỏng.",
+"Đệm trên của gối rộng 70 mm (X), tì vào băng thân trần rộng 74 mm giữa hai vỏ nhiệt của đoạn."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "bắt 4 bulông M30, lỗ ô van cho chỉnh"
+},
+{
+"part": "barrel_b4",
+"interface_vi": "tấm trượt đồng/PTFE dưới thân xi lanh, kẹp giữ Y nhưng tự do X"
+}
+],
+"bbox_m": [
+3.086,
+0.65,
+-0.35,
+3.336,
+1.071,
+0.35
+],
+"size_mm": [
+250,
+421,
+700
+],
+"has_interior": false,
+"nodes": [
+"barrel_support_2"
+]
+},
+{
+"device_id": "barrel_support_3",
+"group": "base",
+"name_vi": "Gối đỡ xi lanh số 3",
+"name_en": "Barrel support saddle 3",
+"synthetic": false,
+"function_vi": "Đỡ xi lanh từ dưới, cho phép xi lanh giãn nở nhiệt trượt theo X (điểm cố định ở lantern X = 0).",
+"details_vi": [
+"Gối đúc hình chữ A, tấm đế 700 × 250, lỗ tròn Ø120 giữa thân tại Z ≈ 800.",
+"Lòng đỡ cong bán kính 260 ôm đáy thân xi lanh, có tấm trượt (slide pad) mỏng.",
+"Đệm trên của gối rộng 70 mm (X), tì vào băng thân trần rộng 74 mm giữa hai vỏ nhiệt của đoạn."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "bắt 4 bulông M30, lỗ ô van cho chỉnh"
+},
+{
+"part": "barrel_b6",
+"interface_vi": "tấm trượt đồng/PTFE dưới thân xi lanh, kẹp giữ Y nhưng tự do X"
+}
+],
+"bbox_m": [
+5.114,
+0.65,
+-0.35,
+5.364,
+1.071,
+0.35
+],
+"size_mm": [
+250,
+421,
+700
+],
+"has_interior": false,
+"nodes": [
+"barrel_support_3"
+]
+},
+{
+"device_id": "base_drip_tray",
+"group": "base",
+"name_vi": "Khay hứng nhỏ giọt trên khung",
+"name_en": "Drip tray on frame top",
+"synthetic": false,
+"function_vi": "Hứng nước, dầu, nhựa rơi dưới xi lanh để không chảy vào hộp tủ.",
+"details_vi": [
+"Tôn inox 3 mm, mép gập cao 40 mm, có lỗ xả ở đầu X = 5 900."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "đặt trên mặt khung, mép gập 40 mm"
+}
+],
+"bbox_m": [
+0.4,
+0.648,
+-0.44,
+5.96,
+0.692,
+0.44
+],
+"size_mm": [
+5560,
+44,
+880
+],
+"has_interior": false,
+"nodes": [
+"frame_drip_tray",
+"frame_drip_tray_collars"
+]
+},
+{
+"device_id": "base_feet",
+"group": "base",
+"name_vi": "Chân chỉnh cao / bulông neo",
+"name_en": "Levelling feet and anchors",
+"synthetic": false,
+"function_vi": "Chỉnh cao và neo khung đế xuống nền, hấp thụ rung.",
+"details_vi": [
+"22 chân Ø200 × 60 (đĩa đệm cao su + vít chỉnh M30), mỗi bên 11 chân tại Y = ±900.",
+"X = −5 050, −3 900, −2 700, −1 500, −300, 600, 1 700, 2 800, 3 900, 5 000, 5 850."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "bulông chỉnh cao M30 xuyên dầm"
+},
+{
+"part": "base_frame_process",
+"interface_vi": "bulông chỉnh cao M30"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "bulông neo hoá chất M24"
+}
+],
+"bbox_m": [
+-5.15,
+0.0,
+-1.02,
+5.95,
+0.1,
+1.02
+],
+"size_mm": [
+11100,
+100,
+2040
+],
+"has_interior": false,
+"nodes": [
+"frame_feet",
+"frame_feet_anchors"
+]
+},
+{
+"device_id": "base_frame_drive",
+"group": "base",
+"name_vi": "Khung đế đoạn truyền động",
+"name_en": "Base frame, drive segment",
+"synthetic": false,
+"function_vi": "Đỡ hộp số, động cơ, lantern, vỏ khớp nối và cụm dầu; truyền tải trọng xuống chân đế.",
+"details_vi": [
+"Dầm trên (top beam) hộp hàn Z 450–650, mặt trên gia công phẳng có các tấm đệm cho hộp số, đế động cơ, lantern.",
+"Hộp tủ dưới (cabinet box) Z 60–450 lùi vào 50 mm mỗi bên, cửa bản lề rộng 520 mm bước ≈ 860 mm, tay nắm lõm, hai bên ±Y.",
+"Lỗ tròn vận chuyển Ø140 có nút nhựa vàng tại X = −541 và −3 858, cả hai mặt bên (theo trang 9).",
+"Mối hàn dọc trên dầm trên bước ≈ 1 050 mm (theo trang 9).",
+"Bên trong hộp tủ: kênh cáp ngang nối phía +Y với phía −Y (cho cáp HMI, side feeder, nút dừng khẩn)."
+],
+"connects_to": [
+{
+"part": "base_feet",
+"interface_vi": "bulông chân chỉnh cao M30"
+},
+{
+"part": "base_frame_process",
+"interface_vi": "mặt bích nối khung 12 bulông M24 tại X = 330"
+},
+{
+"part": "gearbox",
+"interface_vi": "chân hộp số bắt 8 bulông M42 lên tấm gia công"
+},
+{
+"part": "drive_motor_base",
+"interface_vi": "đế động cơ bắt bulông, chêm căn chỉnh"
+},
+{
+"part": "lantern",
+"interface_vi": "chân lantern bắt bulông"
+},
+{
+"part": "drive_coupling_guard",
+"interface_vi": "thanh góc chân vỏ che bắt vít"
+},
+{
+"part": "lube_unit_frame",
+"interface_vi": "khay dầu bắt vít lên mặt khung"
+},
+{
+"part": "ctrl_machine_cabinet",
+"interface_vi": "tủ áp sát đầu khung, bắt 4 vít"
+}
+],
+"bbox_m": [
+-5.15,
+0.06,
+-1.003,
+0.33,
+0.65,
+1.003
+],
+"size_mm": [
+5480,
+590,
+2006
+],
+"has_interior": false,
+"nodes": [
+"frame_drive_body",
+"frame_drive_door_hw",
+"frame_drive_door_seams",
+"frame_drive_doors",
+"frame_drive_plugs",
+"frame_drive_welds"
+]
+},
+{
+"device_id": "base_frame_process",
+"group": "base",
+"name_vi": "Khung đế đoạn gia công",
+"name_en": "Base frame, processing segment",
+"synthetic": false,
+"function_vi": "Đỡ các gối xi lanh, vỏ che, ống góp nước, máng cáp và hộp đấu dây suốt 34D.",
+"details_vi": [
+"Cùng tiết diện với đoạn truyền động: dầm trên Z 450–650, hộp tủ Z 60–450 có cửa và lỗ tròn Ø140 tại X = 1 185 và 5 170.",
+"Trong hộp tủ chứa bộ điều nhiệt / phân phối nước (temperature control unit) như catalogue c034; cửa có lưới thông gió.",
+"Đầu khung phía khuôn (X = 5 950) có tấm bịt và 2 tai cẩu."
+],
+"connects_to": [
+{
+"part": "base_feet",
+"interface_vi": "bulông chân chỉnh cao M30"
+},
+{
+"part": "base_frame_drive",
+"interface_vi": "mặt bích nối khung tại X = 330"
+},
+{
+"part": "base_drip_tray",
+"interface_vi": "khay đặt trên mặt khung, hàn kín mép"
+},
+{
+"part": "barrel_support_1",
+"interface_vi": "gối bắt 4 bulông M30 + chốt định vị"
+},
+{
+"part": "barrel_support_2",
+"interface_vi": "gối bắt 4 bulông M30"
+},
+{
+"part": "barrel_support_3",
+"interface_vi": "gối bắt 4 bulông M30"
+},
+{
+"part": "barrel_cover_c1",
+"interface_vi": "chân vỏ che bắt vít vào mép khung"
+}
+],
+"bbox_m": [
+0.27,
+0.06,
+-1.03,
+6.0,
+0.65,
+1.03
+],
+"size_mm": [
+5730,
+590,
+2060
+],
+"has_interior": false,
+"nodes": [
+"frame_joint_x330",
+"frame_process_body",
+"frame_process_door_hw",
+"frame_process_door_seams",
+"frame_process_doors",
+"frame_process_endplate",
+"frame_process_louvres",
+"frame_process_plugs",
+"frame_process_welds"
+]
+},
+{
+"device_id": "melt_pipe_saddles",
+"group": "base",
+"name_vi": "Gối đỡ ống nhựa",
+"name_en": "Melt pipe saddles",
+"synthetic": false,
+"function_vi": "Đỡ ống nhựa và bộ trộn tĩnh, cho trượt theo X khi giãn nở.",
+"details_vi": [
+"2 gối chữ V 150 × 240 cao 80 tại X = 8 250 (ống) và 8 560 (bộ trộn), mặt trượt cho X."
+],
+"connects_to": [
+{
+"part": "melt_stand_pump",
+"interface_vi": "bắt vít lên mặt khung"
+},
+{
+"part": "melt_pipe",
+"interface_vi": "gối chữ V có đệm cách nhiệt"
+},
+{
+"part": "melt_static_mixer",
+"interface_vi": "gối chữ V có đệm cách nhiệt"
+}
+],
+"bbox_m": [
+8.175,
+0.97,
+-0.12,
+8.635,
+1.0518,
+0.12
+],
+"size_mm": [
+460,
+82,
+240
+],
+"has_interior": false,
+"nodes": [
+"melt_pipe_saddles"
+]
+},
+{
+"device_id": "melt_stand_pump",
+"group": "base",
+"name_vi": "Giá đỡ bơm nhựa và ống",
+"name_en": "Gear pump and melt pipe stand",
+"synthetic": false,
+"function_vi": "Đỡ bơm bánh răng, ống nhựa và bộ trộn tĩnh.",
+"details_vi": [
+"Khung thép hộp 6 chân, mặt đỉnh 1 250 × 900, Z = 970; kết thúc ở X = 8 650 để chừa chỗ cho đế xe khuôn.",
+"Bơm đặt trên tấm trượt PTFE (tự do X ±40, dẫn hướng Y); chỉ tấm đế được neo."
+],
+"connects_to": [
+{
+"part": "melt_gear_pump",
+"interface_vi": "chân bơm trên tấm trượt PTFE"
+},
+{
+"part": "melt_pipe_saddles",
+"interface_vi": "gối ống bắt vít lên mặt đỉnh"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế bắt bulông neo"
+}
+],
+"bbox_m": [
+7.38,
+0.0,
+-0.47,
+8.67,
+1.01,
+0.47
+],
+"size_mm": [
+1290,
+1010,
+940
+],
+"has_interior": false,
+"nodes": [
+"melt_stand_pump"
+]
+},
+{
+"device_id": "melt_stand_sc",
+"group": "base",
+"name_vi": "Giá đỡ bộ lọc lưới",
+"name_en": "Screen changer stand",
+"synthetic": false,
+"function_vi": "Đỡ bộ lọc lưới 3,8 t và giữ tâm dòng chảy ở Z = 1 200.",
+"details_vi": [
+"Khung thép hộp 4 chân, tấm đỉnh 800 × 1 200 × 30, giằng chéo hai bên.",
+"Mặt đỉnh Z = 650 trùng đáy thân bộ lọc; giữa bộ lọc và tấm đỉnh có tấm trượt PTFE: tự do theo X ±40 mm (giãn nở của xi lanh + đường chảy), dẫn hướng theo Y.",
+"Chỉ tấm đế (sole plate) được neo xuống sàn; mặt −Y mang hộp đấu nhiệt đường chảy."
+],
+"connects_to": [
+{
+"part": "melt_screen_changer",
+"interface_vi": "tấm trượt PTFE, chốt dẫn hướng Y"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế bắt bulông neo"
+},
+{
+"part": "melt_heater_jbox",
+"interface_vi": "giá gá mặt −Y"
+}
+],
+"bbox_m": [
+6.52,
+0.0,
+-0.63,
+7.38,
+0.9,
+0.63
+],
+"size_mm": [
+860,
+900,
+1260
+],
+"has_interior": false,
+"nodes": [
+"melt_stand_sc"
+]
+},
+{
+"device_id": "melt_valve_support",
+"group": "base",
+"name_vi": "Giá đỡ van khởi động",
+"name_en": "Diverter valve support bracket",
+"synthetic": false,
+"function_vi": "Đỡ van khởi động và đầu xi lanh (≈ 1,3 t) đang treo ngoài gối đỡ cuối; con lăn/PTFE cho phép giãn nở theo X.",
+"details_vi": [
+"Hai tai thép chữ L tại Y = ±(150…260), bắt vào mặt đầu khung (Z 560–650) rồi vươn lên Z 940; mỗi tai mang 1 đệm PTFE 90 × 110.",
+"Chừa giữa Y ±150 cho máng xả nhựa; đáy giá ở Z 560, trên miệng xe hứng (Z 520)."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "bắt 4 bulông vào tấm đầu khung X = 5 950"
+},
+{
+"part": "melt_startup_valve",
+"interface_vi": "2 đệm PTFE dưới đáy van tại Y = ±205"
+}
+],
+"bbox_m": [
+6.0,
+0.555,
+-0.27,
+6.09,
+0.94,
+0.27
+],
+"size_mm": [
+90,
+385,
+540
+],
+"has_interior": false,
+"nodes": [
+"melt_valve_support"
+]
+},
+{
+"device_id": "pump_drive_pedestal",
+"group": "base",
+"name_vi": "Bệ hộp giảm tốc bơm",
+"name_en": "Gear pump drive pedestal",
+"synthetic": false,
+"function_vi": "Đỡ hộp giảm tốc và động cơ bơm nhựa phía sau (−Y).",
+"details_vi": [
+"Khung hộp thép 500 × 450, cao 950."
+],
+"connects_to": [
+{
+"part": "melt_pump_gearbox",
+"interface_vi": "4 bulông M24"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "bulông neo"
+}
+],
+"bbox_m": [
+7.431,
+0.0,
+1.28,
+7.971,
+0.95,
+1.77
+],
+"size_mm": [
+540,
+950,
+490
+],
+"has_interior": false,
+"nodes": [
+"pump_drive_pedestal"
+]
+},
+{
+"device_id": "ctx_roll_bottom",
+"group": "context",
+"name_vi": "Trục cán láng dưới",
+"name_en": "Polishing roll (bottom)",
+"synthetic": false,
+"function_vi": "Làm nguội và cán bóng tấm nhựa.",
+"details_vi": [
+"Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 799."
+],
+"connects_to": [
+{
+"part": "ctx_roll_stand",
+"interface_vi": "gối đỡ trục trong khung"
+}
+],
+"bbox_m": [
+9.376,
+0.399,
+-1.6,
+10.176,
+1.2,
+1.6
+],
+"size_mm": [
+800,
+801,
+3200
+],
+"has_interior": false,
+"nodes": [
+"anim_roll_axis_bottom",
+"anim_roll_markers_bottom_aa",
+"anim_roll_markers_bottom_neg",
+"anim_roll_markers_bottom_pos",
+"ctx_roll_bottom"
+]
+},
+{
+"device_id": "ctx_roll_drives",
+"group": "context",
+"name_vi": "Động cơ trục cán",
+"name_en": "Roll drives",
+"synthetic": false,
+"function_vi": "Quay 3 trục cán.",
+"details_vi": [
+"3 động cơ hộp số 450 × 600 × 500 phía −Y, đồng trục với từng trục cán."
+],
+"connects_to": [
+{
+"part": "ctx_roll_stand",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+9.566,
+0.008,
+1.752,
+10.16,
+2.633,
+2.352
+],
+"size_mm": [
+594,
+2625,
+600
+],
+"has_interior": false,
+"nodes": [
+"ctx_roll_cable_glands",
+"ctx_roll_cable_ladder",
+"ctx_roll_drive_cables",
+"ctx_roll_drives"
+]
+},
+{
+"device_id": "ctx_roll_middle",
+"group": "context",
+"name_vi": "Trục cán láng giữa",
+"name_en": "Polishing roll (middle)",
+"synthetic": false,
+"function_vi": "Làm nguội và cán bóng tấm nhựa.",
+"details_vi": [
+"Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 1601."
+],
+"connects_to": [
+{
+"part": "ctx_roll_stand",
+"interface_vi": "gối đỡ trục trong khung"
+},
+{
+"part": "ctx_sheet",
+"interface_vi": "tấm ôm trục giữa"
+}
+],
+"bbox_m": [
+9.376,
+1.201,
+-1.6,
+10.176,
+2.002,
+1.6
+],
+"size_mm": [
+800,
+801,
+3200
+],
+"has_interior": false,
+"nodes": [
+"anim_roll_axis_middle",
+"anim_roll_markers_middle_aa",
+"anim_roll_markers_middle_neg",
+"anim_roll_markers_middle_pos",
+"ctx_roll_middle"
+]
+},
+{
+"device_id": "ctx_roll_rails",
+"group": "context",
+"name_vi": "Ray cụm trục cán",
+"name_en": "Roll stack floor rails",
+"synthetic": false,
+"function_vi": "Cho cụm trục lùi theo +X.",
+"details_vi": [
+"2 ray 60 × 60 dài 2 950 tại Y = ±1 550."
+],
+"connects_to": [
+{
+"part": "ctx_roll_stand",
+"interface_vi": "bánh xe"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "bulông neo"
+}
+],
+"bbox_m": [
+9.55,
+0.0,
+-1.63,
+12.5,
+0.12,
+1.63
+],
+"size_mm": [
+2950,
+120,
+3260
+],
+"has_interior": false,
+"nodes": [
+"ctx_roll_rails"
+]
+},
+{
+"device_id": "ctx_roll_stand",
+"group": "context",
+"name_vi": "Khung cụm trục cán",
+"name_en": "Roll stack stand",
+"synthetic": false,
+"function_vi": "Đỡ 3 trục, chỉnh khe trục, chạy trên ray để lùi xa khuôn.",
+"details_vi": [
+"2 khung bên dày 350 tại Y ±(1 400…1 750), dầm ngang phía sau, xi lanh ép khe trục, dải xanh KM có chữ KraussMaffei.",
+"Mép trước khung bên ở X 9 540 tại gối trục dưới và trục giữa, nhưng lõm vào tới X 9 800 trong dải Z 1 060–1 340 quanh khe trục, để núm deckle và tấm đầu khuôn có khe hở thật (≈ 280 mm).",
+"outline_mm là hình bên của khung +Y (Y 1 400…1 750); khung −Y đối xứng qua Y = 0."
+],
+"connects_to": [
+{
+"part": "ctx_roll_middle",
+"interface_vi": "gối trục"
+},
+{
+"part": "ctx_roll_rails",
+"interface_vi": "bánh xe"
+}
+],
+"bbox_m": [
+9.54,
+0.0,
+-2.031,
+11.2,
+3.1,
+1.9
+],
+"size_mm": [
+1660,
+3100,
+3931
+],
+"has_interior": false,
+"nodes": [
+"ctx_roll_cw_headers",
+"ctx_roll_hoses",
+"ctx_roll_stand",
+"ctx_roll_stand_logo_op",
+"ctx_roll_stand_logo_rear",
+"ctx_roll_unions"
+]
+},
+{
+"device_id": "ctx_roll_top",
+"group": "context",
+"name_vi": "Trục cán láng trên",
+"name_en": "Polishing roll (top)",
+"synthetic": false,
+"function_vi": "Làm nguội và cán bóng tấm nhựa.",
+"details_vi": [
+"Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 2403."
+],
+"connects_to": [
+{
+"part": "ctx_roll_stand",
+"interface_vi": "gối đỡ trục trong khung"
+},
+{
+"part": "ctx_sheet",
+"interface_vi": "tấm ôm nửa −X trục trên"
+}
+],
+"bbox_m": [
+9.376,
+2.003,
+-1.6,
+10.176,
+2.804,
+1.6
+],
+"size_mm": [
+800,
+801,
+3200
+],
+"has_interior": false,
+"nodes": [
+"anim_roll_axis_top",
+"anim_roll_markers_top_aa",
+"anim_roll_markers_top_neg",
+"anim_roll_markers_top_pos",
+"ctx_roll_top"
+]
+},
+{
+"device_id": "ctx_sheet",
+"group": "context",
+"name_vi": "Màn nhựa / tấm",
+"name_en": "Melt curtain and sheet",
+"synthetic": false,
+"function_vi": "Màn nhựa từ môi khuôn vào khe trục giữa–dưới, ôm nửa +X trục giữa, ôm nửa −X trục trên rồi ra theo +X (đường chữ S).",
+"details_vi": [
+"Tấm rộng 2 100, dày 1 mm; đường tâm trong path_mm (mặt XZ, Y = 0): môi khuôn (9 576, 1 200) → khe trục (9 776, 1 200) → ôm nửa +X trục giữa tới đỉnh (9 776, 2 002) → ôm nửa −X trục trên (qua X 9 375) tới đỉnh (9 776, 2 804) → ra +X ở Z 2 804.",
+"Đầu đo chiều dày quét ngang (traversing gauge) cho điều khiển profin đặt sau cụm trục, không dựng."
+],
+"connects_to": [
+{
+"part": "die_flex_lip",
+"interface_vi": "khe môi"
+},
+{
+"part": "ctx_roll_middle",
+"interface_vi": "ôm trục"
+},
+{
+"part": "ctx_roll_top",
+"interface_vi": "ôm trục"
+}
+],
+"bbox_m": [
+9.3737,
+1.1503,
+-1.1,
+12.5,
+2.8053,
+1.1
+],
+"size_mm": [
+3126,
+1655,
+2200
+],
+"has_interior": false,
+"nodes": [
+"ctx_melt_curtain",
+"ctx_sheet"
+]
+},
+{
+"device_id": "x_takeoff",
+"group": "context",
+"name_vi": "Băng tải và con lăn kéo tấm",
+"name_en": "Sheet take-off conveyor and rollers",
+"synthetic": true,
+"function_vi": "",
+"details_vi": [],
+"connects_to": [],
+"bbox_m": [
+11.12,
+0.0,
+-1.545,
+12.65,
+2.802,
+1.545
+],
+"size_mm": [
+1530,
+2802,
+3090
+],
+"has_interior": false,
+"nodes": [
+"ctx_takeoff_brackets",
+"ctx_takeoff_conveyor",
+"ctx_takeoff_idler",
+"ctx_takeoff_rollers"
+]
+},
+{
+"device_id": "x_thickness_scanner",
+"group": "context",
+"name_vi": "Đầu đo chiều dày quét ngang (giả định)",
+"name_en": "Traversing thickness gauge (assumed)",
+"synthetic": true,
+"function_vi": "",
+"details_vi": [],
+"connects_to": [],
+"bbox_m": [
+12.05,
+0.0,
+-1.59,
+12.35,
+1.56,
+1.59
+],
+"size_mm": [
+300,
+1560,
+3180
+],
+"has_interior": false,
+"nodes": [
+"anim_ctx_scanner",
+"anim_ctx_scanner_head"
+]
+},
+{
+"device_id": "ctrl_cable_drop",
+"group": "control",
+"name_vi": "Máng cáp đứng",
+"name_en": "Vertical cable drop",
+"synthetic": false,
+"function_vi": "Đưa cáp từ máng trên khung xuống sàn.",
+"details_vi": [
+"Máng đứng 300 × 100 áp mặt bên khung."
+],
+"connects_to": [
+{
+"part": "barrel_cable_tray",
+"interface_vi": "nối máng"
+},
+{
+"part": "ctrl_floor_duct",
+"interface_vi": "nối máng sàn"
+}
+],
+"bbox_m": [
+-1.15,
+0.0,
+1.0,
+-0.85,
+0.75,
+1.1
+],
+"size_mm": [
+300,
+750,
+100
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_drop"
+]
+},
+{
+"device_id": "ctrl_cable_mv",
+"group": "control",
+"name_vi": "Cáp trung thế động cơ (đoạn lên)",
+"name_en": "MV motor cable riser",
+"synthetic": false,
+"function_vi": "Đưa cáp trung thế từ hào lên hộp đấu dây động cơ.",
+"details_vi": [
+"3 cáp trung thế trong ống bảo vệ Ø80 dựng lên sát mặt bên khung (Y −1 100) rồi vào đáy hộp đấu dây."
+],
+"connects_to": [
+{
+"part": "ctrl_trench_mv",
+"interface_vi": "ra khỏi hào"
+},
+{
+"part": "drive_motor_terminal_box",
+"interface_vi": "ốc siết cáp"
+}
+],
+"bbox_m": [
+-4.1367,
+0.008,
+0.7731,
+-3.8633,
+1.031,
+1.18
+],
+"size_mm": [
+273,
+1023,
+407
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_mv",
+"ctrl_cable_mv_conduit"
+]
+},
+{
+"device_id": "ctrl_die_bolt_cabinet",
+"group": "control",
+"name_vi": "Tủ điều khiển bulông nhiệt",
+"name_en": "Thermal-bolt controller cabinet",
+"synthetic": false,
+"function_vi": "Điều khiển 94 thanh nhiệt bulông theo profin chiều dày (bộ điều khiển riêng của hệ bulông nhiệt).",
+"details_vi": [
+"Tủ 800 × 600 × 2 000 RAL 7035, màn hình profin trên cửa."
+],
+"connects_to": [
+{
+"part": "ctrl_heater_cabinet",
+"interface_vi": "đặt sát cạnh"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "đế"
+}
+],
+"bbox_m": [
+0.8,
+0.0,
+3.684,
+1.6,
+2.0,
+4.3
+],
+"size_mm": [
+800,
+2000,
+616
+],
+"has_interior": false,
+"nodes": [
+"ctrl_die_bolt_cabinet"
+]
+},
+{
+"device_id": "ctrl_drive_cabinet",
+"group": "control",
+"name_vi": "Tủ biến tần trung thế",
+"name_en": "MV drive converter cabinet",
+"synthetic": false,
+"function_vi": "Biến tần điều khiển tốc độ động cơ chính 1 500 kW.",
+"details_vi": [
+"6 khoang RAL 7035 rộng 600, sâu 1 200, cao 2 400 kể cả đế, cửa mở về +Y có lưới thông gió, đèn báo; trước cửa chừa ≥ 1 000 mm."
+],
+"connects_to": [
+{
+"part": "ctrl_heater_cabinet",
+"interface_vi": "đặt sát cạnh"
+},
+{
+"part": "ctrl_trench_mv",
+"interface_vi": "cáp ra đáy vào hào"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "đế 100"
+}
+],
+"bbox_m": [
+-5.208,
+0.0,
+3.666,
+-1.592,
+2.6368,
+4.908
+],
+"size_mm": [
+3616,
+2637,
+1242
+],
+"has_interior": false,
+"nodes": [
+"ctrl_drive_cabinet",
+"ctrl_drive_cabinet_doors",
+"ctrl_drive_cabinet_hw",
+"ctrl_drive_cabinet_seams"
+]
+},
+{
+"device_id": "ctrl_estop_die",
+"group": "control",
+"name_vi": "Hộp dừng khẩn tại khuôn (+Y)",
+"name_en": "Emergency stop at die, operator side",
+"synthetic": false,
+"function_vi": "Dừng khẩn khi chỉnh môi, deckle, xử lý màn nhựa ở phía vận hành.",
+"details_vi": [
+"Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (9 250, 1 450, 1 100), trên cột ống Ø50 dựng từ tay đòn thấp (Z 300–400) gá vào đầu +Y của xe khuôn; nằm ngoài tấm đầu khuôn (|Y| > 1 375) và trước khung cụm trục.",
+"Cáp nối bằng phích cắm qua hộp đấu dây khuôn để xe khuôn kéo đi được.",
+"outline_mm (mặt YZ) là hình chữ L: tay đòn thấp Y 1 200–1 475, Z 300–400; cột Y 1 425–1 475 lên Z 1 030; hộp Y 1 410–1 490, Z 1 030–1 170."
+],
+"connects_to": [
+{
+"part": "die_cart",
+"interface_vi": "tay đòn gá trên đầu +Y của xe khuôn"
+}
+],
+"bbox_m": [
+9.2,
+0.2,
+-1.514,
+9.3,
+1.17,
+-1.2
+],
+"size_mm": [
+100,
+970,
+314
+],
+"has_interior": false,
+"nodes": [
+"ctrl_estop_die"
+]
+},
+{
+"device_id": "ctrl_estop_melt",
+"group": "control",
+"name_vi": "Hộp dừng khẩn tại bộ lọc (+Y)",
+"name_en": "Emergency stop at screen changer, operator side",
+"synthetic": false,
+"function_vi": "Dừng khẩn khi thay lưới / xử lý ở bộ lọc phía vận hành.",
+"details_vi": [
+"Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (7 320, 650, 1 100), trên cột 60 × 60 gá vào mặt +Y của giá bộ lọc, ngay sau cụm xả ngược (X ≤ 7 200)."
+],
+"connects_to": [
+{
+"part": "melt_stand_sc",
+"interface_vi": "cột gá trên mặt +Y giá bộ lọc"
+}
+],
+"bbox_m": [
+7.27,
+0.3,
+-0.714,
+7.37,
+1.17,
+-0.6
+],
+"size_mm": [
+100,
+870,
+114
+],
+"has_interior": false,
+"nodes": [
+"ctrl_estop_melt"
+]
+},
+{
+"device_id": "ctrl_estop_platform",
+"group": "control",
+"name_vi": "Hộp dừng khẩn trên sàn thao tác",
+"name_en": "Emergency stop on mezzanine railing",
+"synthetic": false,
+"function_vi": "Dừng khẩn từ sàn cân cấp liệu.",
+"details_vi": [
+"Hộp vàng 100 × 80 × 140 có nút nấm đỏ trên cột lan can mép +Y."
+],
+"connects_to": [
+{
+"part": "feed_platform_railing",
+"interface_vi": "kẹp lên cột lan can"
+}
+],
+"bbox_m": [
+-0.5,
+3.93,
+-1.446,
+-0.4,
+4.07,
+-1.35
+],
+"size_mm": [
+100,
+140,
+96
+],
+"has_interior": false,
+"nodes": [
+"ctrl_estop_platform"
+]
+},
+{
+"device_id": "ctrl_estops",
+"group": "control",
+"name_vi": "Hộp nút dừng khẩn dọc máy",
+"name_en": "Emergency-stop stations along the machine",
+"synthetic": false,
+"function_vi": "Dừng khẩn toàn dây chuyền từ dọc máy phía vận hành, ở tầm tay.",
+"details_vi": [
+"3 hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm Z 1 120 (tầm 1,05–1,19 m): X 600 trên cột gá 60 × 60 từ mặt khung (vùng nạp để lộ), X 3 700 trên tấm dưới vỏ C4, X 5 700 trên tấm dưới vỏ C1.",
+"Thêm nút trên HMI, tủ đầu máy, hộp đấu dây khuôn (−Y), lan can sàn thao tác (ctrl_estop_platform), khuôn phía +Y (ctrl_estop_die) và bộ lọc phía +Y (ctrl_estop_melt)."
+],
+"connects_to": [
+{
+"part": "base_frame_process",
+"interface_vi": "cột gá trên mặt khung"
+},
+{
+"part": "barrel_cover_c4",
+"interface_vi": "giá gá trên tấm dưới vỏ che"
+},
+{
+"part": "barrel_cover_c1",
+"interface_vi": "giá gá trên tấm dưới vỏ che"
+}
+],
+"bbox_m": [
+-0.67,
+0.0,
+-1.47,
+9.398,
+3.929,
+1.566
+],
+"size_mm": [
+10068,
+3929,
+3036
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_estops",
+"ctrl_cable_estops_cover",
+"ctrl_cable_estops_hw",
+"ctrl_estops"
+]
+},
+{
+"device_id": "ctrl_floor_duct",
+"group": "control",
+"name_vi": "Hào cáp tới tủ điều khiển",
+"name_en": "Covered floor trench to control cabinets",
+"synthetic": false,
+"function_vi": "Dẫn cáp từ máy về tủ điều khiển, nắp phẳng sàn.",
+"details_vi": [
+"Hào cáp có nắp tôn mạ kẽm chống trượt rộng 400, phẳng sàn (nắp dày 10)."
+],
+"connects_to": [
+{
+"part": "ctrl_heater_cabinet",
+"interface_vi": "vào đáy tủ"
+},
+{
+"part": "ctrl_cable_drop",
+"interface_vi": "nối máng đứng"
+},
+{
+"part": "ctrl_floor_trench",
+"interface_vi": "nối hào cáp"
+}
+],
+"bbox_m": [
+-1.2,
+0.0,
+1.1,
+-0.8,
+0.01,
+3.7
+],
+"size_mm": [
+400,
+10,
+2600
+],
+"has_interior": false,
+"nodes": [
+"ctrl_floor_duct"
+]
+},
+{
+"device_id": "ctrl_floor_trench",
+"group": "control",
+"name_vi": "Hào cáp có nắp dọc dây chuyền",
+"name_en": "Covered floor cable trench along the line",
+"synthetic": false,
+"function_vi": "Dẫn cáp động lực/tín hiệu tới bơm nhựa, hộp nhiệt đường chảy, HPU, cụm chân không, khuôn.",
+"details_vi": [
+"Nắp tôn chống trượt rộng 200 phẳng sàn; kết thúc ở X 8 700, trước ray xe khuôn."
+],
+"connects_to": [
+{
+"part": "ctrl_floor_duct",
+"interface_vi": "nối"
+},
+{
+"part": "ctrl_trench_die_branch",
+"interface_vi": "nối"
+}
+],
+"bbox_m": [
+-0.8,
+0.0,
+0.68,
+10.15,
+0.01,
+2.65
+],
+"size_mm": [
+10950,
+10,
+1970
+],
+"has_interior": false,
+"nodes": [
+"ctrl_floor_trench",
+"ctrl_trench_stub_column",
+"ctrl_trench_stub_hpu",
+"ctrl_trench_stub_meltjbox",
+"ctrl_trench_stub_rolls",
+"ctrl_trench_stub_vac"
+]
+},
+{
+"device_id": "ctrl_heater_cabinet",
+"group": "control",
+"name_vi": "Tủ điều khiển + nhiệt",
+"name_en": "Control and heater cabinets (PLC, heater zones, MCC)",
+"synthetic": false,
+"function_vi": "PLC, rơ-le bán dẫn cho vùng nhiệt xi lanh/đường chảy/khuôn, khởi động động cơ phụ.",
+"details_vi": [
+"4 khoang 600 × 600 × 2 200 RAL 7035, khoang đầu có dải xanh KM và logo; cửa mở về +Y."
+],
+"connects_to": [
+{
+"part": "ctrl_drive_cabinet",
+"interface_vi": "đặt sát cạnh"
+},
+{
+"part": "ctrl_floor_duct",
+"interface_vi": "cáp ra đáy"
+},
+{
+"part": "ctrl_die_bolt_cabinet",
+"interface_vi": "đặt sát cạnh"
+}
+],
+"bbox_m": [
+-1.608,
+0.0,
+3.666,
+0.808,
+2.2784,
+4.308
+],
+"size_mm": [
+2416,
+2278,
+642
+],
+"has_interior": false,
+"nodes": [
+"ctrl_heater_cabinet",
+"ctrl_heater_cabinet_doors",
+"ctrl_heater_cabinet_hw",
+"ctrl_heater_cabinet_logo",
+"ctrl_heater_cabinet_seams"
+]
+},
+{
+"device_id": "ctrl_hmi",
+"group": "control",
+"name_vi": "Bảng điều khiển HMI trên chân đế xoay",
+"name_en": "Operator HMI on swivel pedestal",
+"synthetic": false,
+"function_vi": "Màn hình cảm ứng + bàn phím màng điều khiển toàn dây chuyền; nút dừng khẩn.",
+"details_vi": [
+"Chân đế ống Ø120 cao 1 300 có khớp xoay đen, tay xoay ngắn; tấm HMI 800 × 510 × 120 nghiêng 15°, mặt hướng +Y.",
+"Nút dừng khẩn đỏ trên vỏ HMI."
+],
+"connects_to": [
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế bắt bulông neo"
+}
+],
+"bbox_m": [
+-1.71,
+0.0,
+-1.677,
+-0.89,
+1.8541,
+-0.955
+],
+"size_mm": [
+820,
+1854,
+722
+],
+"has_interior": false,
+"nodes": [
+"ctrl_hmi",
+"ctrl_hmi_cable",
+"ctrl_hmi_floor_cover"
+]
+},
+{
+"device_id": "ctrl_infeed_lv",
+"group": "control",
+"name_vi": "Hào cáp hạ thế cấp vào",
+"name_en": "Incoming LV feed trench",
+"synthetic": false,
+"function_vi": "Đưa cáp hạ thế 400 V từ tủ phân phối nhà máy vào tủ điều khiển + nhiệt.",
+"details_vi": [
+"Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ tủ phân phối' (tuyến tiếp theo thuộc nhà xưởng)."
+],
+"connects_to": [
+{
+"part": "ctrl_heater_cabinet",
+"interface_vi": "vào đáy tủ"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "nắp phẳng sàn"
+}
+],
+"bbox_m": [
+-0.6,
+0.0,
+4.308,
+-0.2,
+0.01,
+4.5
+],
+"size_mm": [
+400,
+10,
+192
+],
+"has_interior": false,
+"nodes": [
+"ctrl_infeed_lv"
+]
+},
+{
+"device_id": "ctrl_infeed_mv",
+"group": "control",
+"name_vi": "Hào cáp trung thế cấp vào",
+"name_en": "Incoming MV feed trench",
+"synthetic": false,
+"function_vi": "Đưa cáp trung thế 3 kV từ trạm biến áp nhà máy vào tủ biến tần.",
+"details_vi": [
+"Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ trạm biến áp' (tuyến tiếp theo thuộc nhà xưởng)."
+],
+"connects_to": [
+{
+"part": "ctrl_drive_cabinet",
+"interface_vi": "vào đáy tủ"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "nắp phẳng sàn"
+}
+],
+"bbox_m": [
+-3.6,
+0.0,
+4.908,
+-3.2,
+0.01,
+5.1
+],
+"size_mm": [
+400,
+10,
+192
+],
+"has_interior": false,
+"nodes": [
+"ctrl_infeed_mv"
+]
+},
+{
+"device_id": "ctrl_machine_cabinet",
+"group": "control",
+"name_vi": "Tủ đầu máy (khối cao cuối máy)",
+"name_en": "Machine-end terminal cabinet",
+"synthetic": false,
+"function_vi": "Tủ đấu dây tại chỗ cho truyền động: cấp nguồn cụm dầu, encoder, cảm biến hộp số, an toàn.",
+"details_vi": [
+"Tủ 500 × 1 000 × 2 000, mặt +Y và −X sơn xanh KM có chữ KraussMaffei trắng chạy dọc, còn lại trắng; nút dừng khẩn trên mặt +Y."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "áp sát đầu khung"
+},
+{
+"part": "ctrl_signal_tower",
+"interface_vi": "bắt trên nóc"
+}
+],
+"bbox_m": [
+-5.68,
+0.0,
+-1.0336,
+-2.25,
+2.0,
+1.033
+],
+"size_mm": [
+3430,
+2000,
+2067
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_drive_signals",
+"ctrl_cable_duct_drive_op",
+"ctrl_cable_duct_drive_rear",
+"ctrl_cable_glands_drive",
+"ctrl_machine_cabinet",
+"ctrl_machine_cabinet_hw",
+"ctrl_machine_cabinet_logo_x",
+"ctrl_machine_cabinet_logo_y",
+"ctrl_machine_cabinet_skin"
+]
+},
+{
+"device_id": "ctrl_signal_tower",
+"group": "control",
+"name_vi": "Đèn tháp báo trạng thái",
+"name_en": "Signal tower",
+"synthetic": false,
+"function_vi": "Báo trạng thái máy (đỏ/vàng/xanh/còi).",
+"details_vi": [
+"4 tầng đèn Ø70 + còi, cột Ø40."
+],
+"connects_to": [
+{
+"part": "ctrl_machine_cabinet",
+"interface_vi": "chân đế"
+}
+],
+"bbox_m": [
+-5.44,
+2.0,
+-0.04,
+-5.36,
+2.65,
+0.04
+],
+"size_mm": [
+80,
+650,
+80
+],
+"has_interior": false,
+"nodes": [
+"ctrl_signal_tower"
+]
+},
+{
+"device_id": "ctrl_trench_die_branch",
+"group": "control",
+"name_vi": "Nhánh hào cáp tới hộp khuôn",
+"name_en": "Cable trench branch to die junction box",
+"synthetic": false,
+"function_vi": "Đưa cáp từ hào chính tới hộp đấu dây khuôn đặt trên sàn.",
+"details_vi": [
+"Nắp tôn rộng 200 phẳng sàn."
+],
+"connects_to": [
+{
+"part": "ctrl_floor_trench",
+"interface_vi": "nối"
+},
+{
+"part": "die_junction_box",
+"interface_vi": "cáp vào đáy hộp"
+}
+],
+"bbox_m": [
+8.5,
+0.0,
+1.25,
+8.7,
+0.01,
+2.15
+],
+"size_mm": [
+200,
+10,
+900
+],
+"has_interior": false,
+"nodes": [
+"ctrl_trench_die_branch"
+]
+},
+{
+"device_id": "ctrl_trench_mv",
+"group": "control",
+"name_vi": "Hào cáp trung thế",
+"name_en": "MV cable trench",
+"synthetic": false,
+"function_vi": "Dẫn cáp trung thế từ tủ biến tần tới động cơ dưới sàn, không vắt qua lối đi.",
+"details_vi": [
+"Hào có nắp tôn mạ kẽm rộng 400 phẳng sàn."
+],
+"connects_to": [
+{
+"part": "ctrl_drive_cabinet",
+"interface_vi": "vào đáy tủ"
+},
+{
+"part": "ctrl_cable_mv",
+"interface_vi": "cáp lên"
+}
+],
+"bbox_m": [
+-4.2,
+0.0,
+1.05,
+-3.8,
+0.01,
+3.7
+],
+"size_mm": [
+400,
+10,
+2650
+],
+"has_interior": false,
+"nodes": [
+"ctrl_trench_mv"
+]
+},
+{
+"device_id": "x_ctrl_cabling",
+"group": "control",
+"name_vi": "Cáp và máng cáp điều khiển chung",
+"name_en": "General control cabling",
+"synthetic": true,
+"function_vi": "",
+"details_vi": [],
+"connects_to": [],
+"bbox_m": [
+-2.1176,
+0.008,
+-1.27,
+8.7,
+3.001,
+2.67
+],
+"size_mm": [
+10818,
+2993,
+3940
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_misc_hw",
+"ctrl_cable_stubs",
+"ctrl_cable_stubs_hw"
+]
+},
+{
+"device_id": "die_body_bolts",
+"group": "die",
+"name_vi": "Bulông thân khuôn M30",
+"name_en": "Die body bolts (M30 socket-head cap screws)",
+"synthetic": false,
+"function_vi": "Kẹp hai nửa khuôn vào nhau, chịu lực tách ≈ 7 MN do áp nhựa trong ống phân phối và preland.",
+"details_vi": [
+"94 vít lục giác chìm M30 cấp 10.9 dài 260, đầu Ø45 nằm chìm trong lỗ khoét bậc Ø48 × 32 (mặt khuôn phẳng); positions_mm là tâm đầu vít (đầu cao 30).",
+"Mặt đỉnh nửa trên: hàng X 9 160 (24 vít, Y = −1 265 … +1 265 bước 110) và hàng X 9 210 (23 vít, Y = −1 210 … +1 210), cả hai nằm sau hàng bulông thanh chắn (X 9 240–9 270) và máng bulông nhiệt (X 9 285–9 345).",
+"Mặt đáy nửa dưới: hàng X 9 160 (23 vít, Y = −1 210 …) và hàng X 9 270 (24 vít, Y = −1 265 …), tức cách mép trước mặt đáy (X 9 330) 170 và 60 mm.",
+"Vít từ trên ren vào nửa dưới, vít từ dưới ren vào nửa trên; các hàng lệch nhau 55 mm theo Y nên thân vít đi song song không chạm nhau.",
+"Lực kẹp ≈ 94 × 330 kN ≈ 31 MN, gấp ≈ 4 lần lực tách; ống phân phối (G) phải đi giữa và trước các hàng vít (xem design.md §9)."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "lỗ khoét bậc trên mặt đỉnh / lỗ ren nhận bulông từ dưới"
+},
+{
+"part": "die_body_lower",
+"interface_vi": "lỗ khoét bậc ở mặt đáy / lỗ ren nhận bulông từ trên"
+}
+],
+"bbox_m": [
+9.136,
+0.9486,
+-1.289,
+9.294,
+1.4514,
+1.289
+],
+"size_mm": [
+158,
+503,
+2578
+],
+"has_interior": false,
+"nodes": [
+"die_body_bolts"
+]
+},
+{
+"device_id": "die_body_lower",
+"group": "die",
+"name_vi": "Nửa khuôn dưới",
+"name_en": "Lower die body",
+"synthetic": false,
+"function_vi": "Nửa dưới ống phân phối, môi dưới thay được.",
+"details_vi": [
+"Cao 250 (Z 950–1 200); 9 vùng thanh nhiệt.",
+"Môi dưới (lower lip) là thanh chèn thay được dọc mũi, X 9 446–9 576 × cao 60, bắt 24 vít M12 lục giác chìm từ mặt vát dưới (bước 100)."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "mặt phân khuôn"
+},
+{
+"part": "die_cart",
+"interface_vi": "2 đệm đỡ"
+},
+{
+"part": "melt_die_adapter",
+"interface_vi": "bích"
+},
+{
+"part": "die_end_plate_op",
+"interface_vi": "bulông"
+},
+{
+"part": "die_end_plate_rear",
+"interface_vi": "bulông"
+},
+{
+"part": "die_heater_boxes",
+"interface_vi": "bắt mặt sau"
+}
+],
+"bbox_m": [
+9.126,
+0.95,
+-1.3,
+9.576,
+1.2,
+1.3
+],
+"size_mm": [
+450,
+250,
+2600
+],
+"has_interior": true,
+"nodes": [
+"die_body_lower",
+"int_die_lower_face",
+"int_die_section_lower",
+"int_fill_die",
+"int_fill_die_lo",
+"int_fill_die_y0"
+]
+},
+{
+"device_id": "die_body_upper",
+"group": "die",
+"name_vi": "Nửa khuôn trên (có môi mềm)",
+"name_en": "Upper die body (with flex lip)",
+"synthetic": false,
+"function_vi": "Nửa trên ống phân phối móc áo (coat-hanger manifold), mang môi mềm, thanh chắn và bulông chỉnh.",
+"details_vi": [
+"Rộng 2 600 (Y ±1 300), cao 250 (Z 1 200–1 450), sâu 450 (X 9 126–9 576), mũi vát 30° về phía khe trục.",
+"Mạ crôm bóng; 9 vùng thanh nhiệt cắm từ mặt sau.",
+"Rãnh bản lề môi mềm (flex-lip hinge slot) hở, chạy suốt bề rộng 2 400 tại X 9 392–9 404 (rộng 12), cắt từ mặt vát xuống tới Z 1 212, để lại gân bản lề dày 12 mm trên mặt chảy (Z 1 200); phần sau rãnh là môi mềm. Đầu bulông nhiệt tì lên môi tại X 9 440, cách gân 36 mm.",
+"Mặt đỉnh từ sau ra trước: hộp nhiệt mặt sau (X ≤ 9 126), tai cẩu ở tấm đầu, hàng bulông thanh chắn X 9 255 (thanh chắn trong thân X 9 240–9 270), máng bulông nhiệt X 9 285–9 345, rồi mặt vát mang 94 bulông nhiệt."
+],
+"connects_to": [
+{
+"part": "die_body_lower",
+"interface_vi": "mặt phân khuôn, bulông M24 bước 100"
+},
+{
+"part": "melt_die_adapter",
+"interface_vi": "bích cửa vào"
+},
+{
+"part": "die_end_plate_op",
+"interface_vi": "bulông"
+},
+{
+"part": "die_end_plate_rear",
+"interface_vi": "bulông"
+},
+{
+"part": "die_thermal_bolts",
+"interface_vi": "lỗ ren trong thân"
+},
+{
+"part": "die_choker_bolts",
+"interface_vi": "lỗ ren mặt đỉnh"
+},
+{
+"part": "die_bolt_actuator_rail",
+"interface_vi": "bắt vít lên mặt đỉnh"
+},
+{
+"part": "die_flex_lip",
+"interface_vi": "liền khối, rãnh bản lề"
+},
+{
+"part": "die_heater_boxes",
+"interface_vi": "bắt mặt sau"
+}
+],
+"bbox_m": [
+8.975,
+0.974,
+-1.3,
+9.576,
+1.531,
+1.68
+],
+"size_mm": [
+601,
+557,
+2980
+],
+"has_interior": true,
+"nodes": [
+"die_body_upper",
+"die_plugs",
+"int_die_section_upper"
+]
+},
+{
+"device_id": "die_bolt_actuator_rail",
+"group": "die",
+"name_vi": "Thanh cơ cấu bulông nhiệt + máng cáp + ống gió",
+"name_en": "Thermal-bolt actuator rail with cable duct and air duct",
+"synthetic": false,
+"function_vi": "Gom cáp 94 thanh nhiệt bulông và dẫn gió làm mát bulông.",
+"details_vi": [
+"Máng inox 60 × 90 dài 2 500 trên dải trước của mặt đỉnh (X 9 285–9 345), ngay sau đầu trên các bulông nhiệt; trong máng: cáp 94 thanh nhiệt (tầng trên) và ống gió làm mát (tầng dưới).",
+"2 ổ cắm nhiều chân đánh số ở đầu −Y; nắp máng tháo được để chừa lối vặn bulông thanh chắn ngay phía sau."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "bắt vít"
+},
+{
+"part": "die_thermal_bolts",
+"interface_vi": "khối gia nhiệt"
+},
+{
+"part": "die_cable_harness",
+"interface_vi": "ổ cắm đầu −Y"
+},
+{
+"part": "util_air_hose_die",
+"interface_vi": "đầu nối khí"
+}
+],
+"bbox_m": [
+9.2796,
+1.45,
+-1.252,
+9.347,
+1.55,
+1.308
+],
+"size_mm": [
+67,
+100,
+2560
+],
+"has_interior": false,
+"nodes": [
+"die_bolt_actuator_rail"
+]
+},
+{
+"device_id": "die_cable_harness",
+"group": "die",
+"name_vi": "Bó cáp khuôn (cắm rút)",
+"name_en": "Die cable harness (plug-in)",
+"synthetic": false,
+"function_vi": "Dẫn cáp bulông nhiệt và cảm biến khuôn xuống hộp đấu dây khuôn; rút phích ra khi kéo khuôn đi.",
+"details_vi": [
+"Ống luồn cáp mềm Ø60 đi xuống phía −Y rồi chéo về nóc hộp đấu dây khuôn; 2 phích nhiều chân đánh số ở đầu hộp."
+],
+"connects_to": [
+{
+"part": "die_bolt_actuator_rail",
+"interface_vi": "ổ cắm"
+},
+{
+"part": "die_junction_box",
+"interface_vi": "phích cắm nhiều chân trên nóc hộp"
+}
+],
+"bbox_m": [
+9.07,
+1.0319,
+1.29,
+9.32,
+1.5235,
+1.6785
+],
+"size_mm": [
+250,
+492,
+389
+],
+"has_interior": false,
+"nodes": [
+"die_cable_harness"
+]
+},
+{
+"device_id": "die_cart",
+"group": "die",
+"name_vi": "Xe đỡ khuôn chỉnh cao",
+"name_en": "Die support cart with height adjustment",
+"synthetic": false,
+"function_vi": "Đỡ khuôn ≈ 3,4 t, chỉnh cao ±50 mm bằng kích vít, tự do ±40 mm theo X (giãn nở), kéo khuôn ra theo +Y trên ray.",
+"details_vi": [
+"Đế thép hộp rộng X 8 700–9 380, Z 60–300, luồn dưới bộ trộn và bích khuôn; 4 bánh: 2 bánh trụ trên ray phẳng X 8 760, 2 bánh rãnh V trên ray dẫn hướng X 9 320 (khổ 560).",
+"Hai cột kích vít có tay quay ở X 9 150–9 350, xà đỡ trên có bàn trượt ±40 mm theo X và 2 đệm tại Y = ±700.",
+"Phía trước đế không vượt X 9 380 dưới Z 600 (trục dưới ở X ≥ 9 429 tại Z 600); khoá bánh khi chạy.",
+"Phải lùi cụm trục cán trước khi kéo khuôn ra theo +Y."
+],
+"connects_to": [
+{
+"part": "die_body_lower",
+"interface_vi": "2 đệm trên bàn trượt"
+},
+{
+"part": "die_cart_rails",
+"interface_vi": "4 bánh xe"
+}
+],
+"bbox_m": [
+8.7,
+0.06,
+-1.2,
+9.38,
+0.95,
+1.3
+],
+"size_mm": [
+680,
+890,
+2500
+],
+"has_interior": false,
+"nodes": [
+"die_cart"
+]
+},
+{
+"device_id": "die_cart_rails",
+"group": "die",
+"name_vi": "Ray xe khuôn",
+"name_en": "Die cart rails",
+"synthetic": false,
+"function_vi": "Dẫn xe khuôn ra phía +Y khi bảo trì.",
+"details_vi": [
+"2 ray dài 4 300 theo Y: ray phẳng tại X 8 760, ray có gờ dẫn hướng tại X 9 320 (khổ 560); khoá sàn ở vị trí làm việc."
+],
+"connects_to": [
+{
+"part": "die_cart",
+"interface_vi": "bánh xe"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "bulông neo"
+}
+],
+"bbox_m": [
+8.7,
+0.0,
+-2.8,
+9.38,
+0.065,
+1.5
+],
+"size_mm": [
+680,
+65,
+4300
+],
+"has_interior": false,
+"nodes": [
+"die_cart_rails"
+]
+},
+{
+"device_id": "die_choker_bolts",
+"group": "die",
+"name_vi": "Bulông chỉnh thanh chắn",
+"name_en": "Choker (restrictor) bar adjusting bolts",
+"synthetic": false,
+"function_vi": "Chỉnh thô dòng chảy ngang khuôn qua thanh chắn (restrictor bar) nằm sau ống phân phối, trước vùng preland.",
+"details_vi": [
+"33 bulông đầu đen Ø30 cao 80 đặt đứng trên mặt đỉnh tại X 9 255, ngay trên thanh chắn (X 9 240–9 270), Y = −1 200 + 75·k (k = 0…32), đai ốc khoá; bulông đẩy/kéo thẳng thanh chắn như khuôn môi mềm thông thường.",
+"Vặn bằng khẩu từ trên xuống; khe 15 mm tới máng bulông nhiệt phía trước (X 9 285)."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "lỗ ren mặt đỉnh, đẩy thẳng đứng xuống thanh chắn"
+}
+],
+"bbox_m": [
+9.2351,
+1.45,
+-1.2228,
+9.2749,
+1.5308,
+1.2228
+],
+"size_mm": [
+40,
+81,
+2446
+],
+"has_interior": true,
+"nodes": [
+"die_choker_bolts",
+"int_die_choker_bar",
+"int_die_choker_bar_y0",
+"int_die_choker_bolt_y0"
+]
+},
+{
+"device_id": "die_deckles",
+"group": "die",
+"name_vi": "Thanh deckle chỉnh bề rộng",
+"name_en": "Deckle rods (internal/external)",
+"synthetic": false,
+"function_vi": "Thu hẹp bề rộng màn nhựa ở hai đầu khi đổi khổ tấm.",
+"details_vi": [
+"Mỗi đầu 1 thanh Ø30 nhô 150 ngoài tấm đầu (tới |Y| 1 525) tại X 9 480, có núm vặn + thước; lưỡi deckle trong nằm trong khuôn, không vượt X 9 520 (tránh khung cụm trục)."
+],
+"connects_to": [
+{
+"part": "die_end_plate_op",
+"interface_vi": "lỗ dẫn"
+},
+{
+"part": "die_end_plate_rear",
+"interface_vi": "lỗ dẫn"
+}
+],
+"bbox_m": [
+9.4407,
+1.1601,
+-1.525,
+9.5193,
+1.2399,
+1.525
+],
+"size_mm": [
+79,
+80,
+3050
+],
+"has_interior": false,
+"nodes": [
+"die_deckles"
+]
+},
+{
+"device_id": "die_drip_pan",
+"group": "die",
+"name_vi": "Khay hứng dưới môi khuôn",
+"name_en": "Drip pan under die lip",
+"synthetic": false,
+"function_vi": "Hứng nhựa rơi khi khởi động màn nhựa.",
+"details_vi": [
+"Khay inox 324 × 2 700 cao 80."
+],
+"connects_to": [
+{
+"part": "ctx_floor",
+"interface_vi": "đặt trên sàn"
+}
+],
+"bbox_m": [
+9.576,
+0.0,
+-1.35,
+9.9,
+0.08,
+1.35
+],
+"size_mm": [
+324,
+80,
+2700
+],
+"has_interior": false,
+"nodes": [
+"die_drip_pan"
+]
+},
+{
+"device_id": "die_end_plate_op",
+"group": "die",
+"name_vi": "Tấm đầu khuôn (+Y)",
+"name_en": "Die end plate (operator side)",
+"synthetic": false,
+"function_vi": "Bịt hai đầu ống phân phối, mang thanh deckle và hộp đấu nhiệt tấm đầu.",
+"details_vi": [
+"Tấm thép 75 mm, khối đầu nối thanh nhiệt (terminal block) 6 lỗ, 1 vùng nhiệt."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "bulông"
+},
+{
+"part": "die_body_lower",
+"interface_vi": "bulông"
+},
+{
+"part": "die_deckles",
+"interface_vi": "lỗ dẫn hướng"
+},
+{
+"part": "die_lifting_lugs",
+"interface_vi": "lỗ ren tai cẩu"
+}
+],
+"bbox_m": [
+9.126,
+0.95,
+-1.429,
+9.56,
+1.45,
+-1.3
+],
+"size_mm": [
+434,
+500,
+129
+],
+"has_interior": false,
+"nodes": [
+"die_end_plate_op"
+]
+},
+{
+"device_id": "die_end_plate_rear",
+"group": "die",
+"name_vi": "Tấm đầu khuôn (−Y)",
+"name_en": "Die end plate (rear side)",
+"synthetic": false,
+"function_vi": "Bịt hai đầu ống phân phối, mang thanh deckle và hộp đấu nhiệt tấm đầu.",
+"details_vi": [
+"Tấm thép 75 mm, khối đầu nối thanh nhiệt (terminal block) 6 lỗ, 1 vùng nhiệt."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "bulông"
+},
+{
+"part": "die_body_lower",
+"interface_vi": "bulông"
+},
+{
+"part": "die_deckles",
+"interface_vi": "lỗ dẫn hướng"
+},
+{
+"part": "die_lifting_lugs",
+"interface_vi": "lỗ ren tai cẩu"
+}
+],
+"bbox_m": [
+9.126,
+0.95,
+1.3,
+9.56,
+1.45,
+1.429
+],
+"size_mm": [
+434,
+500,
+129
+],
+"has_interior": false,
+"nodes": [
+"die_end_plate_rear"
+]
+},
+{
+"device_id": "die_flex_lip",
+"group": "die",
+"name_vi": "Môi mềm khuôn",
+"name_en": "Flex lip",
+"synthetic": false,
+"function_vi": "Chỉnh khe môi cục bộ (hành trình ≈ 1–2,5 mm) để đều chiều dày tấm.",
+"details_vi": [
+"Dải môi rộng 2 400, khe làm việc 0,5–2 mm tại Z = 1 200, X = 9 576; là phần mũi của nửa trên phía sau rãnh bản lề hở (X 9 392–9 404, suốt bề rộng, gân 12 mm).",
+"Bulông nhiệt bắc qua rãnh (ren trong thân phía trước rãnh), đầu bulông tì lên môi tại X 9 440 (cách gân 36 mm), nên môi uốn quanh gân."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "liền khối qua rãnh bản lề"
+},
+{
+"part": "die_thermal_bolts",
+"interface_vi": "đầu bulông đẩy"
+},
+{
+"part": "ctx_sheet",
+"interface_vi": "khe môi → màn nhựa"
+}
+],
+"bbox_m": [
+9.404,
+1.1992,
+-1.2,
+9.5766,
+1.3475,
+1.2
+],
+"size_mm": [
+173,
+148,
+2400
+],
+"has_interior": false,
+"nodes": [
+"die_flex_lip"
+]
+},
+{
+"device_id": "die_heater_boxes",
+"group": "die",
+"name_vi": "Hộp đầu nối nhiệt khuôn",
+"name_en": "Die heater terminal boxes",
+"synthetic": false,
+"function_vi": "Đấu dây 20 vùng nhiệt khuôn (≈ 50 kW).",
+"details_vi": [
+"2 hộp dài (trên Z 1 330–1 440, dưới Z 960–1 070) chạy Y ±1 250, chừa giữa ±260 cho bích vào; tem cảnh báo vàng."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "bắt mặt sau"
+},
+{
+"part": "die_body_lower",
+"interface_vi": "bắt mặt sau"
+},
+{
+"part": "die_heater_conduit",
+"interface_vi": "ống luồn cáp"
+}
+],
+"bbox_m": [
+9.043,
+0.96,
+-1.25,
+9.126,
+1.44,
+1.29
+],
+"size_mm": [
+83,
+480,
+2540
+],
+"has_interior": false,
+"nodes": [
+"die_heater_boxes"
+]
+},
+{
+"device_id": "die_heater_conduit",
+"group": "die",
+"name_vi": "Ống luồn cáp nhiệt khuôn (cắm rút)",
+"name_en": "Die heater cable conduit (plug-in)",
+"synthetic": false,
+"function_vi": "Dẫn cáp 20 vùng nhiệt khuôn từ hộp đầu nối tới hộp đấu dây khuôn; có phích cắm để tách khuôn.",
+"details_vi": [
+"Ống mềm kim loại Ø40."
+],
+"connects_to": [
+{
+"part": "die_heater_boxes",
+"interface_vi": "ốc siết cáp"
+},
+{
+"part": "die_junction_box",
+"interface_vi": "phích cắm"
+}
+],
+"bbox_m": [
+8.98,
+0.981,
+1.27,
+9.11,
+1.0939,
+1.6692
+],
+"size_mm": [
+130,
+113,
+399
+],
+"has_interior": false,
+"nodes": [
+"die_heater_conduit"
+]
+},
+{
+"device_id": "die_junction_box",
+"group": "die",
+"name_vi": "Hộp đấu dây khuôn",
+"name_en": "Die junction box",
+"synthetic": false,
+"function_vi": "Tập trung cáp nhiệt khuôn (20 vùng), 94 mạch bulông nhiệt, cảm biến; phích cắm để tách khuôn; nút dừng khẩn.",
+"details_vi": [
+"Tủ đứng RAL 7035 600 × 300 × 1 000 trên sàn, cửa hướng +Y, đặt ngoài ray xe khuôn để không đi theo xe.",
+"Nóc: 2 ổ cắm nhiều chân cho bó cáp bulông nhiệt, 1 ổ cho cáp nhiệt khuôn; nút dừng khẩn đỏ trên cửa."
+],
+"connects_to": [
+{
+"part": "die_cable_harness",
+"interface_vi": "phích cắm"
+},
+{
+"part": "die_heater_conduit",
+"interface_vi": "phích cắm"
+},
+{
+"part": "ctrl_trench_die_branch",
+"interface_vi": "cáp vào đáy"
+},
+{
+"part": "util_frl",
+"interface_vi": "giá gá mặt +X"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "đế"
+}
+],
+"bbox_m": [
+8.6106,
+0.0,
+1.556,
+9.31,
+1.045,
+1.9
+],
+"size_mm": [
+699,
+1045,
+344
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_die_jbox",
+"die_junction_box"
+]
+},
+{
+"device_id": "die_lifting_lugs",
+"group": "die",
+"name_vi": "Tai cẩu khuôn",
+"name_en": "Die lifting eyes",
+"synthetic": false,
+"function_vi": "Cẩu khuôn khi lắp/tháo.",
+"details_vi": [
+"4 tai cẩu M36 cao 130, 2 trên mỗi tấm đầu tại X 9 190 và 9 470, |Y| = 1 337 (ngoài mặt trục ±1 300, trước cổ trục X ≥ 9 626)."
+],
+"connects_to": [
+{
+"part": "die_end_plate_op",
+"interface_vi": "ren M36"
+},
+{
+"part": "die_end_plate_rear",
+"interface_vi": "ren M36"
+}
+],
+"bbox_m": [
+9.1343,
+1.45,
+-1.3748,
+9.3307,
+1.5775,
+1.3748
+],
+"size_mm": [
+196,
+127,
+2750
+],
+"has_interior": false,
+"nodes": [
+"die_lifting_lugs"
+]
+},
+{
+"device_id": "die_thermal_bolts",
+"group": "die",
+"name_vi": "Bulông nhiệt chỉnh môi",
+"name_en": "Thermal lip-adjust bolts",
+"synthetic": false,
+"function_vi": "Đẩy môi mềm theo điều khiển tự động (giãn nở nhiệt), chỉnh profin chiều dày ngang tấm.",
+"details_vi": [
+"94 bulông, y = −1 181 + 25,4·k (k = 0…93); mỗi bulông Ø30 (thân Ø16 trong ống gia nhiệt 80 W) dài 170, trục từ (9 440, y, 1 295) tới (9 342, y, 1 434), tức 35° so với phương đứng, nằm dọc mặt vát của nửa trên.",
+"Đầu bulông nằm trong rãnh phay, nhô tối đa 30 mm khỏi mặt vát, còn ≈ 20 mm khe hở tới trục giữa (đã kiểm tra bằng hình học).",
+"positions_mm là tâm bulông; item_mm = [Ø, Ø, dài] theo hệ trục riêng của bulông, trục dài là item_axis."
+],
+"connects_to": [
+{
+"part": "die_body_upper",
+"interface_vi": "lỗ ren"
+},
+{
+"part": "die_flex_lip",
+"interface_vi": "đầu đẩy"
+},
+{
+"part": "die_bolt_actuator_rail",
+"interface_vi": "khối gia nhiệt + ống gió"
+}
+],
+"bbox_m": [
+9.3351,
+1.2909,
+-1.1928,
+9.4461,
+1.452,
+1.1926
+],
+"size_mm": [
+111,
+161,
+2385
+],
+"has_interior": true,
+"nodes": [
+"die_thermal_bolts",
+"int_die_thermal_bolt_y0",
+"int_die_thermal_bolts_y0"
+]
+},
+{
+"device_id": "drive_coupling_guard",
+"group": "drive",
+"name_vi": "Vỏ che khớp nối",
+"name_en": "Coupling guard",
+"synthetic": false,
+"function_vi": "Che phần quay giữa động cơ và hộp số, có khoá liên động.",
+"details_vi": [
+"Tôn 3 mm, tấm hông +Y tháo được có ô lưới quan sát, móc cẩu trên nóc.",
+"Công tắc liên động (interlock) cấm chạy khi mở nắp."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "thanh góc chân bắt vít"
+},
+{
+"part": "gearbox",
+"interface_vi": "áp vào mặt hộp số"
+}
+],
+"bbox_m": [
+-3.168,
+0.65,
+-0.5,
+-2.3,
+1.772,
+0.51
+],
+"size_mm": [
+868,
+1122,
+1010
+],
+"has_interior": false,
+"nodes": [
+"drive_coupling_guard",
+"drive_coupling_guard_hw",
+"drive_coupling_guard_mesh"
+]
+},
+{
+"device_id": "drive_encoder",
+"group": "drive",
+"name_vi": "Encoder tốc độ",
+"name_en": "Speed encoder",
+"synthetic": false,
+"function_vi": "Đo tốc độ / vị trí trục động cơ cho biến tần điều khiển vector.",
+"details_vi": [
+"Vỏ Ø160 × 100, đầu cáp tín hiệu."
+],
+"connects_to": [
+{
+"part": "drive_motor",
+"interface_vi": "bích + khớp nối nhỏ ở đầu trục NDE"
+}
+],
+"bbox_m": [
+-5.1509,
+0.65,
+-0.08,
+-4.975,
+1.3854,
+0.08
+],
+"size_mm": [
+176,
+735,
+160
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_encoder_link",
+"drive_encoder",
+"drive_encoder_cable"
+]
+},
+{
+"device_id": "drive_flex_coupling",
+"group": "drive",
+"name_vi": "Khớp nối đàn hồi",
+"name_en": "Flexible coupling",
+"synthetic": false,
+"function_vi": "Bù lệch tâm giữa trục động cơ và trục vào hộp số, giảm va đập.",
+"details_vi": [
+"Hai moay-ơ thép + bộ đĩa lò xo, Ø560."
+],
+"connects_to": [
+{
+"part": "drive_motor",
+"interface_vi": "moay-ơ trên trục động cơ Ø140"
+},
+{
+"part": "drive_safety_coupling",
+"interface_vi": "mặt bích 12 bulông"
+}
+],
+"bbox_m": [
+-2.95,
+0.92,
+-0.28,
+-2.7,
+1.48,
+0.28
+],
+"size_mm": [
+250,
+560,
+560
+],
+"has_interior": false,
+"nodes": [
+"drive_flex_coupling"
+]
+},
+{
+"device_id": "drive_motor",
+"group": "drive",
+"name_vi": "Động cơ chính 1 500 kW, làm mát gió–nước trên nóc",
+"name_en": "Main AC motor 1 500 kW, IC81W top air-to-water cooler (ABB AMI 450L4 frame)",
+"synthetic": false,
+"function_vi": "Động cơ cảm ứng trung thế 4 cực, chạy biến tần, quay trục vít qua khớp nối và hộp số; bộ làm mát gió–nước trên nóc thải nhiệt vào nước, không thổi gió nóng vào xưởng.",
+"details_vi": [
+"Thân hộp có gân Z 750–1 680; trên nóc là hộp bộ làm mát gió–nước (IC81W top air-to-water cooler) Z 1 680–2 610, X −4 800 … −3 300: vỏ hộp kín, 2 nắp thăm ống trao đổi nhiệt ở đầu −X, không có cửa gió hở.",
+"Hai bích nước DN40 trên mặt +Y của hộp làm mát: vào tại X −3 500, Z 2 300; ra tại X −3 700, Z 2 400; cảm biến rò nước ở đáy hộp.",
+"Đầu trục Ø140 dài 200 ở phía hộp số; nắp ổ NDE nhô 75 mm mang encoder.",
+"4 tai cẩu, biển tên, cọc tiếp địa; tâm trục Z = 1 200 (H 450 trên mặt đế Z 750)."
+],
+"connects_to": [
+{
+"part": "drive_motor_base",
+"interface_vi": "4 chân bắt bulông M36 (B 1 400 × A 850)"
+},
+{
+"part": "drive_flex_coupling",
+"interface_vi": "đầu trục Ø140"
+},
+{
+"part": "drive_motor_terminal_box",
+"interface_vi": "hộp đấu dây bắt mặt bên −Y"
+},
+{
+"part": "drive_encoder",
+"interface_vi": "bích encoder ở đầu NDE"
+},
+{
+"part": "util_cw_motor_hoses",
+"interface_vi": "2 bích nước DN40 trên mặt +Y bộ làm mát"
+}
+],
+"bbox_m": [
+-4.975,
+0.75,
+-0.605,
+-2.9,
+2.61,
+0.605
+],
+"size_mm": [
+2075,
+1860,
+1210
+],
+"has_interior": false,
+"nodes": [
+"drive_motor_body",
+"drive_motor_cooler",
+"drive_motor_endshields",
+"drive_motor_fan_cover",
+"drive_motor_fan_grille",
+"drive_motor_hw",
+"drive_motor_louvres",
+"drive_motor_shaft"
+]
+},
+{
+"device_id": "drive_motor_base",
+"group": "drive",
+"name_vi": "Đế động cơ",
+"name_en": "Motor sub-base",
+"synthetic": false,
+"function_vi": "Nâng động cơ để tâm trục khớp Z = 1 200, cho phép căn chỉnh đồng tâm.",
+"details_vi": [
+"Hai ray thép dày 100 có vít đẩy (jack screws) căn chỉnh ngang."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "bắt bulông, chêm căn"
+},
+{
+"part": "drive_motor",
+"interface_vi": "4 chân động cơ, vít đẩy căn chỉnh"
+}
+],
+"bbox_m": [
+-5.0,
+0.65,
+-0.61,
+-3.0,
+0.86,
+0.61
+],
+"size_mm": [
+2000,
+210,
+1220
+],
+"has_interior": false,
+"nodes": [
+"drive_motor_base",
+"drive_motor_base_hw"
+]
+},
+{
+"device_id": "drive_motor_terminal_box",
+"group": "drive",
+"name_vi": "Hộp đấu dây động cơ",
+"name_en": "Motor terminal box",
+"synthetic": false,
+"function_vi": "Đấu cáp trung thế từ biến tần vào động cơ.",
+"details_vi": [
+"Hộp thép 600 × 350 × 500, nắp 12 vít, ốc siết cáp ở đáy."
+],
+"connects_to": [
+{
+"part": "drive_motor",
+"interface_vi": "bắt bulông lên thân"
+},
+{
+"part": "ctrl_cable_mv",
+"interface_vi": "đầu cáp vào qua đáy hộp"
+}
+],
+"bbox_m": [
+-4.3,
+1.03,
+0.488,
+-3.7,
+1.6,
+0.933
+],
+"size_mm": [
+600,
+570,
+445
+],
+"has_interior": false,
+"nodes": [
+"drive_motor_terminal_box"
+]
+},
+{
+"device_id": "drive_safety_coupling",
+"group": "drive",
+"name_vi": "Khớp an toàn giới hạn mômen",
+"name_en": "Torque-limiting safety coupling",
+"synthetic": false,
+"function_vi": "Tách động cơ khỏi hộp số khi quá tải (vít kẹt, vật lạ) để bảo vệ trục vít và hộp số.",
+"details_vi": [
+"Đĩa thép bạc Ø640 có rãnh vòng (như ảnh p19), vòng bulông 12 lỗ, công tắc giám sát nhả khớp."
+],
+"connects_to": [
+{
+"part": "gearbox",
+"interface_vi": "moay-ơ côn trên trục vào"
+},
+{
+"part": "drive_flex_coupling",
+"interface_vi": "mặt bích 12 bulông"
+}
+],
+"bbox_m": [
+-2.717,
+0.65,
+-0.32,
+-2.2999,
+1.52,
+0.43
+],
+"size_mm": [
+417,
+870,
+750
+],
+"has_interior": false,
+"nodes": [
+"drive_safety_coupling",
+"drive_safety_coupling_switch"
+]
+},
+{
+"device_id": "gearbox",
+"group": "drive",
+"name_vi": "Hộp số chia công suất",
+"name_en": "Power-split twin-screw gearbox",
+"synthetic": false,
+"function_vi": "Giảm tốc từ động cơ (≈ 1 490 v/ph) xuống tối đa 400 v/ph và chia mômen 2 × 35 kNm ra hai trục vít đồng hướng.",
+"details_vi": [
+"Vỏ gang hộp có gân, phần bướu trên cao Z 1 720 bao 2 trục ra ở đầu X −1 250 … −750.",
+"Nắp ổ trục vào tròn Ø500 nhô 50 mm ở đầu X = −2 300 quanh Z = 1 200.",
+"4 tai cẩu (lifting eyes) trên nóc, nắp thăm chữ nhật trên nóc, ống thở (breather), kính thăm mức dầu phía +Y, nút xả dầu ở đáy.",
+"Biển tên, tem cảnh báo vàng; cảm biến nhiệt dầu PT100 cạnh cổng dầu.",
+"Tỷ số truyền ≈ 3,73 (1 490/400)."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "8 chân bắt bulông M42"
+},
+{
+"part": "lantern",
+"interface_vi": "mặt bích ra"
+},
+{
+"part": "drive_safety_coupling",
+"interface_vi": "trục vào Ø160 có then, nắp ổ trục vào"
+},
+{
+"part": "lube_pipe_pressure",
+"interface_vi": "cổng dầu áp lực G1¼ phía +Y"
+},
+{
+"part": "lube_pipe_return",
+"interface_vi": "cổng hút đáy carter G2 phía +Y"
+},
+{
+"part": "drive_coupling_guard",
+"interface_vi": "vỏ che áp mặt hộp số"
+}
+],
+"bbox_m": [
+-2.35,
+0.65,
+-0.81,
+-0.74,
+1.86,
+0.7
+],
+"size_mm": [
+1610,
+1210,
+1510
+],
+"has_interior": true,
+"nodes": [
+"anim_ghost_drive_gbx",
+"gbx_bolts",
+"gbx_castings",
+"gbx_covers",
+"gbx_housing",
+"gbx_hw",
+"gbx_ports",
+"int_gbx_schematic_bearings",
+"int_gbx_schematic_counter",
+"int_gbx_schematic_input",
+"int_gbx_schematic_out_a",
+"int_gbx_schematic_out_b"
+]
+},
+{
+"device_id": "lantern",
+"group": "drive",
+"name_vi": "Lantern (hộp nối hộp số – xi lanh)",
+"name_en": "Lantern / intermediate housing",
+"synthetic": false,
+"function_vi": "Nối mặt bích ra hộp số với xi lanh B1; chứa khớp then hoa nối trục ra hộp số với trục vít; có cửa thăm.",
+"details_vi": [
+"Cửa thăm chữ nhật bo góc 380 × 250 trên mặt +Y, tâm X = −375, Z = 1 200, 8 vít + tay nắm.",
+"Vành mặt bích Ø700 dày 60 ở đầu X = 0: 20 lỗ ren M24 trên PCD 560 nhận bulông cấy từ bích B1 (đai ốc 12 cạnh nằm phía B1).",
+"Ống xả dầu rò rỉ ở đáy, tai cẩu trên nóc.",
+"Trong: 2 khớp then hoa (spline coupling) tại Y = ±71."
+],
+"connects_to": [
+{
+"part": "gearbox",
+"interface_vi": "mặt bích 16 bulông M30 tại X = −750"
+},
+{
+"part": "barrel_b1",
+"interface_vi": "mặt bích Ø700, 20 bulông cấy M24 trên PCD 560 tại X = 0"
+},
+{
+"part": "base_frame_drive",
+"interface_vi": "chân lantern bắt 4 bulông"
+},
+{
+"part": "screws",
+"interface_vi": "ống then hoa (spline sleeve) bên trong"
+}
+],
+"bbox_m": [
+-0.75,
+0.65,
+-0.492,
+0.0,
+1.7587,
+0.5
+],
+"size_mm": [
+750,
+1109,
+992
+],
+"has_interior": false,
+"nodes": [
+"lantern_body",
+"lantern_bolts",
+"lantern_door",
+"lantern_drain",
+"lantern_drain_valve",
+"lantern_flange"
+]
+},
+{
+"device_id": "lube_filter_duplex",
+"group": "drive",
+"name_vi": "Lọc dầu kép",
+"name_en": "Duplex oil filter",
+"synthetic": false,
+"function_vi": "Lọc dầu, đổi bầu lọc khi máy chạy.",
+"details_vi": [
+"2 bầu lọc đứng Ø110, tay gạt chuyển đổi, chỉ báo chênh áp, đồng hồ áp."
+],
+"connects_to": [
+{
+"part": "lube_pump_motor",
+"interface_vi": "ống nối"
+},
+{
+"part": "lube_oil_cooler",
+"interface_vi": "ống nối"
+},
+{
+"part": "lube_unit_frame",
+"interface_vi": "giá đỡ"
+}
+],
+"bbox_m": [
+-3.199,
+0.664,
+-0.941,
+-2.893,
+1.42,
+-0.7
+],
+"size_mm": [
+306,
+756,
+241
+],
+"has_interior": false,
+"nodes": [
+"lube_filter_duplex",
+"lube_filter_fittings"
+]
+},
+{
+"device_id": "lube_oil_cooler",
+"group": "drive",
+"name_vi": "Bộ làm mát dầu tấm",
+"name_en": "Plate oil cooler (oil/water)",
+"synthetic": false,
+"function_vi": "Giải nhiệt dầu hộp số bằng nước làm mát.",
+"details_vi": [
+"Khối tấm hàn inox 350 × 250 × 350, 4 cổng ren F1–F4 trên mặt +Y."
+],
+"connects_to": [
+{
+"part": "lube_filter_duplex",
+"interface_vi": "ống nối"
+},
+{
+"part": "lube_pipe_pressure",
+"interface_vi": "cổng dầu ra F3"
+},
+{
+"part": "util_cw_lube_hoses",
+"interface_vi": "cổng nước F2/F4"
+},
+{
+"part": "lube_unit_frame",
+"interface_vi": "giá đỡ"
+}
+],
+"bbox_m": [
+-2.945,
+0.664,
+-0.94,
+-2.605,
+1.04,
+-0.65
+],
+"size_mm": [
+340,
+376,
+290
+],
+"has_interior": false,
+"nodes": [
+"lube_oil_cooler"
+]
+},
+{
+"device_id": "lube_pipe_pressure",
+"group": "drive",
+"name_vi": "Ống dầu áp lực tới hộp số",
+"name_en": "Lube pressure line",
+"synthetic": false,
+"function_vi": "Dẫn dầu đã lọc, làm mát tới hệ phun trong hộp số.",
+"details_vi": [
+"Ống thép DN32 (OD 42) sơn xanh; công tắc áp suất (PS, khoá khởi động truyền động) gần cổng vào hộp số, tín hiệu về tủ đầu máy (s_14)."
+],
+"connects_to": [
+{
+"part": "lube_oil_cooler",
+"interface_vi": "ren G1¼"
+},
+{
+"part": "gearbox",
+"interface_vi": "ren G1¼"
+}
+],
+"bbox_m": [
+-3.244,
+0.65,
+-1.01,
+-1.75,
+1.63,
+-0.7
+],
+"size_mm": [
+1494,
+980,
+310
+],
+"has_interior": false,
+"nodes": [
+"lube_pipe_filter_cooler",
+"lube_pipe_filter_cooler_fit",
+"lube_pipe_hw",
+"lube_pipe_pressure",
+"lube_pipe_pressure_fit",
+"lube_pipe_pump_filter",
+"lube_pipe_pump_filter_fit",
+"lube_pipe_support"
+]
+},
+{
+"device_id": "lube_pipe_return",
+"group": "drive",
+"name_vi": "Ống hút dầu từ carter",
+"name_en": "Lube suction line",
+"synthetic": false,
+"function_vi": "Dẫn dầu từ carter hộp số về bơm.",
+"details_vi": [
+"Ống thép DN40 (OD 50) chạy dọc mép +Y của khung, Z = 760."
+],
+"connects_to": [
+{
+"part": "gearbox",
+"interface_vi": "ren G2 đáy carter"
+},
+{
+"part": "lube_pump_motor",
+"interface_vi": "cổng hút"
+}
+],
+"bbox_m": [
+-3.3836,
+0.7223,
+-1.015,
+-1.4664,
+0.7978,
+-0.7
+],
+"size_mm": [
+1917,
+75,
+315
+],
+"has_interior": false,
+"nodes": [
+"lube_pipe_return",
+"lube_pipe_return_fit"
+]
+},
+{
+"device_id": "lube_pump_motor",
+"group": "drive",
+"name_vi": "Bơm dầu + động cơ mặt bích đứng",
+"name_en": "Lube oil pump with vertical flange motor",
+"synthetic": false,
+"function_vi": "Hút dầu từ carter hộp số và đẩy qua lọc, bộ làm mát tới vòi phun bánh răng/ổ trục.",
+"details_vi": [
+"Động cơ 4 kW đặt đứng Ø260 có nắp quạt, chuông nối, bơm bánh răng ở đáy; 2 đồng hồ áp.",
+"Van an toàn (relief valve) tích hợp trên thân bơm xả về carter; lọc hút (suction strainer) trên ống hút ngay trước bơm."
+],
+"connects_to": [
+{
+"part": "lube_unit_frame",
+"interface_vi": "chân bơm bắt bulông"
+},
+{
+"part": "lube_filter_duplex",
+"interface_vi": "ống nối ren"
+},
+{
+"part": "lube_pipe_return",
+"interface_vi": "cổng hút"
+}
+],
+"bbox_m": [
+-3.5,
+0.6149,
+-1.025,
+-3.2,
+1.446,
+-0.65
+],
+"size_mm": [
+300,
+831,
+375
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_lube_motor",
+"lube_pump",
+"lube_pump_motor"
+]
+},
+{
+"device_id": "lube_unit_frame",
+"group": "drive",
+"name_vi": "Khay đế cụm dầu bôi trơn",
+"name_en": "Lube unit tray",
+"synthetic": false,
+"function_vi": "Đế và khay hứng dầu cho cụm bơm, lọc, làm mát dầu hộp số.",
+"details_vi": [
+"Khay có mép gập, tấm thấm dầu vàng như web-03."
+],
+"connects_to": [
+{
+"part": "base_frame_drive",
+"interface_vi": "bắt vít lên mặt khung"
+},
+{
+"part": "lube_pump_motor",
+"interface_vi": "bắt bulông"
+},
+{
+"part": "lube_filter_duplex",
+"interface_vi": "giá đỡ bắt vít"
+},
+{
+"part": "lube_oil_cooler",
+"interface_vi": "giá đỡ bắt vít"
+}
+],
+"bbox_m": [
+-3.6,
+0.65,
+-1.0,
+-2.45,
+0.7,
+-0.6
+],
+"size_mm": [
+1150,
+50,
+400
+],
+"has_interior": false,
+"nodes": [
+"lube_tray",
+"lube_tray_mat"
+]
+},
+{
+"device_id": "feed_additive_feeder",
+"group": "feed",
+"name_vi": "Cân phụ gia / masterbatch",
+"name_en": "Additive micro-feeder",
+"synthetic": false,
+"function_vi": "Định lượng phụ gia (masterbatch, chất chống dính) vào ống rơi chính.",
+"details_vi": [
+"Cân trục vít đôi 700 × 500 × 600 + phễu Ø500 cao 600 trên đỉnh."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "khung cân bắt lên sàn"
+},
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "cửa xả, ống mềm cách cân"
+}
+],
+"bbox_m": [
+-1.0,
+3.0,
+-1.108,
+-0.3819,
+4.2,
+-0.592
+],
+"size_mm": [
+618,
+1200,
+516
+],
+"has_interior": false,
+"nodes": [
+"feed_additive_feeder"
+]
+},
+{
+"device_id": "feed_additive_tube",
+"group": "feed",
+"name_vi": "Ống phụ gia",
+"name_en": "Additive feed tube",
+"synthetic": false,
+"function_vi": "Dẫn phụ gia vào nhánh Y của ống rơi chính.",
+"details_vi": [
+"Ống inox Ø80 bắt đầu dưới ống mềm cách cân (Z 2 850)."
+],
+"connects_to": [
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "đai kẹp, ống mềm cách cân"
+},
+{
+"part": "feed_downpipe",
+"interface_vi": "nhánh Y"
+}
+],
+"bbox_m": [
+-0.69,
+2.661,
+-0.89,
+-0.4518,
+2.85,
+-0.136
+],
+"size_mm": [
+238,
+189,
+754
+],
+"has_interior": false,
+"nodes": [
+"feed_additive_tube"
+]
+},
+{
+"device_id": "feed_control_cabinet",
+"group": "feed",
+"name_vi": "Tủ điều khiển cân cấp liệu",
+"name_en": "Feeder control cabinet",
+"synthetic": false,
+"function_vi": "Bộ điều khiển các cân (KCM), cấp nguồn máy hút liệu.",
+"details_vi": [
+"Tủ 600 × 300 × 1 400 RAL 7035 có màn hình nhỏ ở cửa."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "chân tủ bắt lên sàn"
+}
+],
+"bbox_m": [
+-2.41,
+-0.0015,
+-1.35,
+-0.55,
+4.4,
+2.65
+],
+"size_mm": [
+1860,
+4402,
+4000
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_feed",
+"ctrl_cable_tray_feed",
+"feed_control_cabinet"
+]
+},
+{
+"device_id": "feed_conveying_line",
+"group": "feed",
+"name_vi": "Ống hút liệu từ silo",
+"name_en": "Pneumatic conveying line (stub)",
+"synthetic": false,
+"function_vi": "Ống vận chuyển hạt từ silo tới máy hút liệu (vẽ tới mép trên khung nhìn).",
+"details_vi": [
+"Ống inox DN80 (OD 80), đầu trên để hở ký hiệu 'tới silo'."
+],
+"connects_to": [
+{
+"part": "feed_vacuum_loader",
+"interface_vi": "khớp nối nhanh"
+}
+],
+"bbox_m": [
+-0.525,
+5.46,
+-0.74,
+-0.375,
+6.0987,
+0.9159
+],
+"size_mm": [
+150,
+639,
+1656
+],
+"has_interior": false,
+"nodes": [
+"feed_conveying_hose",
+"feed_conveying_hose_end",
+"feed_conveying_line",
+"feed_conveying_line_end"
+]
+},
+{
+"device_id": "feed_downpipe",
+"group": "feed",
+"name_vi": "Ống rơi liệu chính",
+"name_en": "Main feed down-pipe",
+"synthetic": false,
+"function_vi": "Dẫn hạt từ cân cấp liệu trên sàn thao tác xuống phễu.",
+"details_vi": [
+"Ống inox Ø250: đoạn đứng từ Z 2 850 (dưới ống mềm cách cân) xuống Z 2 550, rồi nghiêng 45° xuống tới phễu; treo bằng giá dưới dầm sàn, vành chắn ở lỗ sàn không chạm ống.",
+"Nhánh Y cho ống phụ gia tại Z = 2 700, cửa thăm có nắp."
+],
+"connects_to": [
+{
+"part": "feed_flex_sleeve",
+"interface_vi": "đai kẹp"
+},
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "đai kẹp, ống mềm cách cân"
+},
+{
+"part": "feed_additive_tube",
+"interface_vi": "nhánh chữ Y"
+}
+],
+"bbox_m": [
+-0.583,
+1.9184,
+-0.175,
+0.1816,
+2.85,
+0.175
+],
+"size_mm": [
+765,
+932,
+350
+],
+"has_interior": false,
+"nodes": [
+"feed_downpipe",
+"feed_downpipe_hw"
+]
+},
+{
+"device_id": "feed_feeder_sleeves",
+"group": "feed",
+"name_vi": "Ống mềm cách cân ở cửa xả",
+"name_en": "Feeder outlet flexible sleeves",
+"synthetic": false,
+"function_vi": "Tách cửa xả của các cân loss-in-weight khỏi ống cứng để ống không tì lên cân, giữ độ chính xác định lượng.",
+"details_vi": [
+"3 ống bạt trắng dài 150 (Z 2 850–3 000) nằm trong lỗ sàn: Ø270 tại (−450, 0), Ø100 tại (−650, 850), Ø170 tại (1 350, 950); mỗi ống 2 đai kẹp inox."
+],
+"connects_to": [
+{
+"part": "feed_main_feeder",
+"interface_vi": "đai kẹp cửa xả"
+},
+{
+"part": "feed_downpipe",
+"interface_vi": "đai kẹp"
+},
+{
+"part": "feed_additive_feeder",
+"interface_vi": "đai kẹp cửa xả"
+},
+{
+"part": "feed_additive_tube",
+"interface_vi": "đai kẹp"
+},
+{
+"part": "sidefeed_feeder",
+"interface_vi": "đai kẹp cửa xả"
+},
+{
+"part": "sidefeed_downpipe",
+"interface_vi": "đai kẹp"
+}
+],
+"bbox_m": [
+-0.704,
+2.85,
+-1.039,
+1.439,
+3.0,
+0.139
+],
+"size_mm": [
+2143,
+150,
+1178
+],
+"has_interior": false,
+"nodes": [
+"feed_feeder_sleeves",
+"feed_feeder_sleeves_clamps"
+]
+},
+{
+"device_id": "feed_flex_sleeve",
+"group": "feed",
+"name_vi": "Ống mềm nối phễu",
+"name_en": "Flexible sleeve",
+"synthetic": false,
+"function_vi": "Nối mềm ống rơi với phễu, cách rung và cho phép tháo nhanh.",
+"details_vi": [
+"Ống bạt trắng Ø260 dài 155 với 2 đai kẹp inox."
+],
+"connects_to": [
+{
+"part": "feed_hopper",
+"interface_vi": "đai kẹp"
+},
+{
+"part": "feed_downpipe",
+"interface_vi": "đai kẹp"
+}
+],
+"bbox_m": [
+0.0044,
+1.8272,
+-0.16,
+0.2728,
+2.0956,
+0.134
+],
+"size_mm": [
+268,
+268,
+294
+],
+"has_interior": false,
+"nodes": [
+"feed_flex_sleeve",
+"feed_flex_sleeve_clamps"
+]
+},
+{
+"device_id": "feed_hopper",
+"group": "feed",
+"name_vi": "Phễu nạp có cổng nghiêng 45°",
+"name_en": "Feed hopper with 45° inlet",
+"synthetic": false,
+"function_vi": "Gom hạt từ ống rơi xuống miệng nạp; cổng nghiêng 45° về phía hộp số.",
+"details_vi": [
+"Phễu hình chóp ngược inox: đỉnh 500 × 500, đáy 360 × 300 (côn cả theo Y).",
+"Nắp đỉnh có cổ nghiêng 45° Ø250 hướng −X, cổng khí N₂ (inert) nhỏ, kính thăm và cảm biến mức."
+],
+"connects_to": [
+{
+"part": "feed_throat",
+"interface_vi": "mặt bích vuông"
+},
+{
+"part": "feed_flex_sleeve",
+"interface_vi": "cổ nghiêng 45° Ø250"
+}
+],
+"bbox_m": [
+0.0823,
+1.64,
+-0.25,
+0.59,
+2.0177,
+0.271
+],
+"size_mm": [
+508,
+378,
+521
+],
+"has_interior": false,
+"nodes": [
+"feed_hopper"
+]
+},
+{
+"device_id": "feed_main_feeder",
+"group": "feed",
+"name_vi": "Cân cấp liệu chính (loss-in-weight)",
+"name_en": "Main loss-in-weight feeder (K-Tron BSP-150-S)",
+"synthetic": false,
+"function_vi": "Định lượng 3 500 kg/h hạt PET theo khối lượng hao hụt.",
+"details_vi": [
+"Thân bơm rắn BSP trên khung 3 cảm biến cân (load cells), động cơ hộp số phía −Y, hộp điều khiển KCM nhỏ phía +Y.",
+"Cửa xả đáy tại X = −450, Y = 0."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "khung 3 cảm biến cân bắt lên sàn"
+},
+{
+"part": "feed_main_hopper",
+"interface_vi": "mặt bích + ống mềm cách cân"
+},
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "cửa xả đáy, ống mềm cách cân"
+}
+],
+"bbox_m": [
+-0.94,
+3.0,
+-0.444,
+0.06,
+3.7,
+0.43
+],
+"size_mm": [
+1000,
+700,
+874
+],
+"has_interior": false,
+"nodes": [
+"feed_main_feeder"
+]
+},
+{
+"device_id": "feed_main_hopper",
+"group": "feed",
+"name_vi": "Phễu cân chính",
+"name_en": "Main feeder extension hopper",
+"synthetic": false,
+"function_vi": "Chứa hạt cho cân, ≈ 450 L (≈ 6 phút ở 3,5 t/h).",
+"details_vi": [
+"Côn 400 + trụ Ø900 cao 800, kính thăm mức, cảm biến mức cao/thấp."
+],
+"connects_to": [
+{
+"part": "feed_main_feeder",
+"interface_vi": "mặt bích"
+},
+{
+"part": "feed_vacuum_loader",
+"interface_vi": "van nạp"
+}
+],
+"bbox_m": [
+-0.912,
+3.7,
+-0.473,
+0.012,
+4.9,
+0.462
+],
+"size_mm": [
+924,
+1200,
+935
+],
+"has_interior": false,
+"nodes": [
+"feed_main_hopper"
+]
+},
+{
+"device_id": "feed_platform_columns_front",
+"group": "feed",
+"name_vi": "Cột sàn thao tác (phía vận hành +Y)",
+"name_en": "Mezzanine columns, front row",
+"synthetic": false,
+"function_vi": "Đỡ sàn thao tác xuống nền.",
+"details_vi": [
+"3 cột HEB200 tại X = −2 600, −450, 1 750; Y = 1300; tấm đế 400 × 400, giằng góc dưới dầm."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "đỉnh cột bắt dầm"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế + bulông neo"
+}
+],
+"bbox_m": [
+-2.8,
+0.0,
+-1.5,
+1.95,
+2.8031,
+-0.8016
+],
+"size_mm": [
+4750,
+2803,
+698
+],
+"has_interior": false,
+"nodes": [
+"feed_platform_columns_front"
+]
+},
+{
+"device_id": "feed_platform_columns_rear",
+"group": "feed",
+"name_vi": "Cột sàn thao tác (phía sau −Y)",
+"name_en": "Mezzanine columns, rear row",
+"synthetic": false,
+"function_vi": "Đỡ sàn thao tác xuống nền.",
+"details_vi": [
+"3 cột HEB200 tại X = −2 600, −450, 1 750; Y = -2600; tấm đế 400 × 400, giằng góc dưới dầm."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "đỉnh cột bắt dầm"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế + bulông neo"
+}
+],
+"bbox_m": [
+-2.8,
+0.0,
+2.1016,
+1.95,
+2.8031,
+2.8
+],
+"size_mm": [
+4750,
+2803,
+698
+],
+"has_interior": false,
+"nodes": [
+"feed_platform_columns_rear"
+]
+},
+{
+"device_id": "feed_platform_deck",
+"group": "feed",
+"name_vi": "Sàn thao tác cân cấp liệu",
+"name_en": "Feeder mezzanine deck",
+"synthetic": false,
+"function_vi": "Mặt bằng đặt các cân cấp liệu, lối đi bảo trì trên cao.",
+"details_vi": [
+"Dầm chính HEA180 (Z 2 780–2 960) + sàn lưới mạ kẽm 40 mm (Z 2 960–3 000).",
+"Lỗ sàn có vành chắn cho ống mềm cách cân của ống rơi chính (X −450, Y 0), ống phụ gia (X −650, Y 850), ống side feeder (X 1 350, Y 950); vành không chạm ống.",
+"Diện tích 4 550 × 4 100 (Y −2 700 … 1 400), phủ trên lantern, hộp số, B1, B2; mép sau lùi ra để lối đi phía −Y rộng ≥ 950.",
+"Bố trí dầm (beams_mm, tâm dầm Z 2 870): dầm biên HEA180 theo X trên hai hàng cột (Y −2 600 và 1 300); dầm chính HEA180 theo Y trên các đường cột X −2 600, −450, 1 750.",
+"Dầm chính X −450 bị ngắt tại Y ±260 quanh lỗ ống rơi chính (Ø270 + vành chắn); hai dầm viền (trimmer) HEA180 theo X ở Y ±260 từ X −760 tới −140 đỡ hai đầu dầm ngắt; đầu dầm viền tựa lên hai dầm phụ IPE160 theo Y tại X −760 và −140.",
+"Dầm phụ IPE160 theo Y tại X −1 900, −1 200, 300, 1 000 đỡ tấm lưới (khoảng ≤ 750); lỗ ống phụ gia (−650, 850) và ống side feeder (1 350, 950) nằm giữa các dầm phụ."
+],
+"connects_to": [
+{
+"part": "feed_platform_columns_rear",
+"interface_vi": "dầm bắt bulông lên đỉnh cột"
+},
+{
+"part": "feed_platform_columns_front",
+"interface_vi": "dầm bắt bulông lên đỉnh cột"
+},
+{
+"part": "feed_platform_railing",
+"interface_vi": "cột lan can bắt mép dầm"
+},
+{
+"part": "feed_stair",
+"interface_vi": "chiếu nghỉ đầu cầu thang"
+},
+{
+"part": "feed_main_feeder",
+"interface_vi": "đỡ cân"
+}
+],
+"bbox_m": [
+-2.7,
+2.7845,
+-1.4,
+1.85,
+3.05,
+2.7
+],
+"size_mm": [
+4550,
+265,
+4100
+],
+"has_interior": false,
+"nodes": [
+"feed_platform_deck",
+"feed_platform_grating",
+"feed_platform_grating_x"
+]
+},
+{
+"device_id": "feed_platform_railing",
+"group": "feed",
+"name_vi": "Lan can sàn thao tác",
+"name_en": "Mezzanine railing with kick plates",
+"synthetic": false,
+"function_vi": "Chống ngã từ sàn cao 3 m.",
+"details_vi": [
+"Tay vịn ống Ø42 cao 1 100, thanh giữa 550, tấm chắn chân 150, cột bước ≤ 1 500, màu vàng an toàn.",
+"Chừa lối lên cầu thang ở mép −X đoạn Y −2 650 … −1 950."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "cột lan can bắt mép dầm"
+},
+{
+"part": "ctrl_estop_platform",
+"interface_vi": "hộp dừng khẩn trên cột lan can"
+}
+],
+"bbox_m": [
+-2.71,
+3.0,
+-1.41,
+1.86,
+4.121,
+2.71
+],
+"size_mm": [
+4570,
+1121,
+4120
+],
+"has_interior": false,
+"nodes": [
+"feed_platform_railing"
+]
+},
+{
+"device_id": "feed_stair",
+"group": "feed",
+"name_vi": "Cầu thang lên sàn",
+"name_en": "Mezzanine stair",
+"synthetic": false,
+"function_vi": "Lối lên sàn cân cấp liệu (45°).",
+"details_vi": [
+"Rộng 700, 45°, 15 bậc lưới cao 200, hai dầm thang (stringers) thép mạ kẽm, tay vịn vàng hai bên cao 1 000.",
+"Outline XZ là hình bao bên: mép dưới dầm thang từ (−5 400, 0) tới (−2 700, 2 700), tay vịn từ (−5 700, 1 000) tới (−2 700, 4 000)."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "chiếu nghỉ trên bắt vào dầm sàn"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "chân thang bắt bulông neo"
+}
+],
+"bbox_m": [
+-5.72,
+-0.0069,
+1.911,
+-2.63,
+4.0138,
+2.701
+],
+"size_mm": [
+3090,
+4021,
+790
+],
+"has_interior": false,
+"nodes": [
+"feed_stair"
+]
+},
+{
+"device_id": "feed_throat",
+"group": "feed",
+"name_vi": "Hộp miệng nạp",
+"name_en": "Feed throat housing",
+"synthetic": false,
+"function_vi": "Nối phễu với lỗ nạp B1, có áo nước làm mát chống dính hạt.",
+"details_vi": [
+"Khối inox 500 × 420 × 185, lỗ trong 360 × 300, 2 đầu nối nước làm mát."
+],
+"connects_to": [
+{
+"part": "barrel_b1",
+"interface_vi": "8 bulông M20 trên mặt gia công"
+},
+{
+"part": "feed_hopper",
+"interface_vi": "mặt bích vuông"
+}
+],
+"bbox_m": [
+0.09,
+1.455,
+-0.23,
+0.59,
+1.64,
+0.21
+],
+"size_mm": [
+500,
+185,
+440
+],
+"has_interior": true,
+"nodes": [
+"feed_throat",
+"int_feed_column_hollow"
+]
+},
+{
+"device_id": "feed_vacuum_loader",
+"group": "feed",
+"name_vi": "Máy hút liệu chân không",
+"name_en": "Vacuum loader / receiver",
+"synthetic": false,
+"function_vi": "Hút hạt từ silo và nạp lại phễu cân.",
+"details_vi": [
+"Bình Ø640 cao 900 với nắp lọc, van lật đáy, cổng liệu vào bên +Y, cổng hút khí trên nắp."
+],
+"connects_to": [
+{
+"part": "feed_main_hopper",
+"interface_vi": "van lật xả"
+},
+{
+"part": "feed_conveying_line",
+"interface_vi": "cổng vào liệu"
+}
+],
+"bbox_m": [
+-0.78,
+4.8981,
+-0.37,
+-0.12,
+5.8,
+0.39
+],
+"size_mm": [
+660,
+902,
+760
+],
+"has_interior": false,
+"nodes": [
+"feed_vacuum_loader"
+]
+},
+{
+"device_id": "sidefeed_adapter",
+"group": "feed",
+"name_vi": "Bích cửa bên B2",
+"name_en": "Side-feeder adapter plate",
+"synthetic": false,
+"function_vi": "Nối thân side feeder vào cửa bên +Y của B2.",
+"details_vi": [
+"Tấm thép 370 × 80 × 320 lỗ hình số 8."
+],
+"connects_to": [
+{
+"part": "barrel_b2",
+"interface_vi": "8 bulông M24 quanh cửa bên"
+},
+{
+"part": "sidefeed_barrel",
+"interface_vi": "8 bulông M24"
+}
+],
+"bbox_m": [
+1.165,
+1.04,
+-0.35,
+1.535,
+1.36,
+-0.252
+],
+"size_mm": [
+370,
+320,
+98
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_adapter"
+]
+},
+{
+"device_id": "sidefeed_barrel",
+"group": "feed",
+"name_vi": "Thân side feeder trục vít đôi (ZSB)",
+"name_en": "Twin-screw side feeder barrel (ZSB, size assumed)",
+"synthetic": false,
+"function_vi": "Ép liệu phụ (mảnh vụn biên tấm, phụ gia bột) vào cửa bên B2.",
+"details_vi": [
+"Thân hình số 8 ngang 330 × 260 dài 770 theo Y: hai cung tròn R130 tâm X 1 315 và 1 385 (outline_mm), eo nhỏ trên và dưới tại X 1 350; 2 lỗ trục vít Ø112 tâm X 1 305 và 1 395, trục theo Y tại Z = 1 200.",
+"Lỗ nạp đỉnh gần đầu ngoài, áo nước làm mát, bích hai đầu."
+],
+"connects_to": [
+{
+"part": "sidefeed_adapter",
+"interface_vi": "mặt bích"
+},
+{
+"part": "sidefeed_gearbox",
+"interface_vi": "mặt bích + khớp then"
+},
+{
+"part": "sidefeed_hopper",
+"interface_vi": "lỗ nạp đỉnh"
+}
+],
+"bbox_m": [
+1.175,
+1.052,
+-1.103,
+1.525,
+1.345,
+-0.327
+],
+"size_mm": [
+350,
+293,
+776
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_barrel"
+]
+},
+{
+"device_id": "sidefeed_cart",
+"group": "feed",
+"name_vi": "Xe đỡ side feeder",
+"name_en": "Side-feeder wheeled cart",
+"synthetic": false,
+"function_vi": "Đỡ hộp số + động cơ, cho phép kéo side feeder ra theo +Y khi bảo trì.",
+"details_vi": [
+"Khung thép trắng 500 × 1 090 cao 1 000, 4 bánh xe có khoá, tem cảnh báo điện."
+],
+"connects_to": [
+{
+"part": "sidefeed_gearbox",
+"interface_vi": "tấm đỉnh"
+},
+{
+"part": "sidefeed_motor",
+"interface_vi": "tấm đỉnh"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "4 bánh xe khoá"
+}
+],
+"bbox_m": [
+1.085,
+0.0,
+-2.14,
+1.615,
+1.0,
+-0.97
+],
+"size_mm": [
+530,
+1000,
+1170
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_cart"
+]
+},
+{
+"device_id": "sidefeed_downpipe",
+"group": "feed",
+"name_vi": "Ống rơi side feeder",
+"name_en": "Side-feeder down-pipe",
+"synthetic": false,
+"function_vi": "Dẫn liệu phụ từ cân trên sàn xuống phễu side feeder.",
+"details_vi": [
+"Ống inox Ø150 có đoạn ống mềm ở đáy."
+],
+"connects_to": [
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "đai kẹp, ống mềm cách cân"
+},
+{
+"part": "sidefeed_hopper",
+"interface_vi": "cổ ống"
+}
+],
+"bbox_m": [
+1.266,
+1.612,
+-1.034,
+1.434,
+2.85,
+-0.866
+],
+"size_mm": [
+168,
+1238,
+168
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_downpipe",
+"sidefeed_downpipe_flex",
+"sidefeed_downpipe_hw"
+]
+},
+{
+"device_id": "sidefeed_feeder",
+"group": "feed",
+"name_vi": "Cân cấp liệu side feeder",
+"name_en": "Side-feeder loss-in-weight feeder",
+"synthetic": false,
+"function_vi": "Định lượng liệu phụ cho side feeder.",
+"details_vi": [
+"Cân trục vít đôi trên 3 cảm biến cân, động cơ phía −X."
+],
+"connects_to": [
+{
+"part": "feed_platform_deck",
+"interface_vi": "khung cân"
+},
+{
+"part": "feed_feeder_sleeves",
+"interface_vi": "cửa xả, ống mềm cách cân"
+},
+{
+"part": "sidefeed_feeder_hopper",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+0.999,
+3.0,
+-1.25,
+1.65,
+3.55,
+-0.7
+],
+"size_mm": [
+651,
+550,
+550
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_feeder"
+]
+},
+{
+"device_id": "sidefeed_feeder_hopper",
+"group": "feed",
+"name_vi": "Phễu cân side feeder",
+"name_en": "Side-feeder feeder hopper",
+"synthetic": false,
+"function_vi": "Chứa liệu phụ.",
+"details_vi": [
+"Phễu Ø600 cao 700 có nắp."
+],
+"connects_to": [
+{
+"part": "sidefeed_feeder",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+1.04,
+3.55,
+-1.26,
+1.66,
+4.25,
+-0.64
+],
+"size_mm": [
+620,
+700,
+620
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_feeder_hopper"
+]
+},
+{
+"device_id": "sidefeed_gearbox",
+"group": "feed",
+"name_vi": "Hộp số side feeder",
+"name_en": "Side-feeder gearbox",
+"synthetic": false,
+"function_vi": "Giảm tốc và chia mômen ra 2 trục vít side feeder.",
+"details_vi": [
+"Hộp 350 × 350 × 400, nút thăm dầu."
+],
+"connects_to": [
+{
+"part": "sidefeed_barrel",
+"interface_vi": "mặt bích"
+},
+{
+"part": "sidefeed_motor",
+"interface_vi": "mặt bích động cơ"
+},
+{
+"part": "sidefeed_cart",
+"interface_vi": "chân hộp số bắt lên xe"
+}
+],
+"bbox_m": [
+1.165,
+1.0,
+-1.45,
+1.535,
+1.43,
+-1.075
+],
+"size_mm": [
+370,
+430,
+375
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_gearbox"
+]
+},
+{
+"device_id": "sidefeed_hopper",
+"group": "feed",
+"name_vi": "Phễu side feeder",
+"name_en": "Side-feeder inlet hopper",
+"synthetic": false,
+"function_vi": "Nhận liệu từ cân phụ.",
+"details_vi": [
+"Phễu inox 300 × 260 cao 270, kính thăm."
+],
+"connects_to": [
+{
+"part": "sidefeed_barrel",
+"interface_vi": "mặt bích"
+},
+{
+"part": "sidefeed_downpipe",
+"interface_vi": "cổ ống"
+}
+],
+"bbox_m": [
+1.2,
+1.33,
+-1.08,
+1.5,
+1.614,
+-0.82
+],
+"size_mm": [
+300,
+284,
+260
+],
+"has_interior": false,
+"nodes": [
+"sidefeed_hopper"
+]
+},
+{
+"device_id": "sidefeed_motor",
+"group": "feed",
+"name_vi": "Động cơ side feeder 22 kW",
+"name_en": "Side-feeder motor 22 kW",
+"synthetic": false,
+"function_vi": "Quay trục vít side feeder.",
+"details_vi": [
+"Động cơ nằm Ø360 dài 600, nắp quạt, hộp đấu dây trên nóc."
+],
+"connects_to": [
+{
+"part": "sidefeed_gearbox",
+"interface_vi": "mặt bích B5"
+},
+{
+"part": "sidefeed_cart",
+"interface_vi": "chân đỡ"
+}
+],
+"bbox_m": [
+1.0189,
+0.0263,
+-2.05,
+1.6548,
+1.44,
+-0.9563
+],
+"size_mm": [
+636,
+1414,
+1094
+],
+"has_interior": false,
+"nodes": [
+"ctrl_cable_sidefeed",
+"sidefeed_motor"
+]
+},
+{
+"device_id": "melt_die_adapter",
+"group": "melt",
+"name_vi": "Bích chuyển vào khuôn",
+"name_en": "Die inlet adapter",
+"synthetic": false,
+"function_vi": "Chuyển lỗ tròn Ø100 sang cửa vào khuôn ở giữa mặt sau khuôn.",
+"details_vi": [
+"Cổ tròn Ø300 nở thành bích chữ nhật 500 × 360 ở mặt khuôn, 1 băng nhiệt."
+],
+"connects_to": [
+{
+"part": "melt_static_mixer",
+"interface_vi": "bích"
+},
+{
+"part": "die_body_upper",
+"interface_vi": "bích chữ nhật 8 bulông"
+},
+{
+"part": "die_body_lower",
+"interface_vi": "bích chữ nhật 8 bulông"
+},
+{
+"part": "melt_sensor_die",
+"interface_vi": "lỗ ren"
+}
+],
+"bbox_m": [
+8.926,
+1.02,
+-0.25,
+9.126,
+1.38,
+0.25
+],
+"size_mm": [
+200,
+360,
+500
+],
+"has_interior": true,
+"nodes": [
+"int_fill_adapter_die",
+"int_fill_adapter_die_lo",
+"int_fill_adapter_die_y0",
+"int_melt_adapters_hollow_die",
+"int_melt_adapters_hollow_die_lo",
+"int_melt_adapters_hollow_die_y0",
+"melt_die_adapter"
+]
+},
+{
+"device_id": "melt_drain_chute",
+"group": "melt",
+"name_vi": "Máng xả nhựa khởi động",
+"name_en": "Start-up drain chute",
+"synthetic": false,
+"function_vi": "Dẫn nhựa xả khi khởi động xuống xe hứng.",
+"details_vi": [
+"Máng inox 250 × 250, có tấm chắn bắn."
+],
+"connects_to": [
+{
+"part": "melt_startup_valve",
+"interface_vi": "bích cổng xả"
+},
+{
+"part": "melt_purge_cart",
+"interface_vi": "miệng xe"
+}
+],
+"bbox_m": [
+6.096,
+0.519,
+-0.125,
+6.346,
+0.922,
+0.125
+],
+"size_mm": [
+250,
+403,
+250
+],
+"has_interior": false,
+"nodes": [
+"melt_drain_chute"
+]
+},
+{
+"device_id": "melt_gear_pump",
+"group": "melt",
+"name_vi": "Bơm bánh răng nhựa",
+"name_en": "Melt gear pump (Maag extrex6 GU 100/125)",
+"synthetic": false,
+"function_vi": "Tạo áp ổn định không dao động (≈ 250 bar) cho khuôn, tách áp trục vít khỏi khuôn.",
+"details_vi": [
+"Khối thép 420 × 460 × 460, mặt bên vòng 12 bulông lục giác chìm, đĩa bích tròn lớn Ø360 trên mặt vào/ra (như web-14).",
+"Đầu trục dẫn động nhô ra phía −Y tại Z = 1 250; lỗ thanh nhiệt cắm."
+],
+"connects_to": [
+{
+"part": "melt_pump_adapter_in",
+"interface_vi": "bích vào"
+},
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "bích ra"
+},
+{
+"part": "melt_stand_pump",
+"interface_vi": "chân bơm trên tấm trượt"
+},
+{
+"part": "melt_pump_cardan",
+"interface_vi": "đầu trục then"
+}
+],
+"bbox_m": [
+7.475,
+0.97,
+-0.248,
+7.927,
+1.448,
+0.3
+],
+"size_mm": [
+452,
+478,
+548
+],
+"has_interior": true,
+"nodes": [
+"int_fill_pump_in",
+"int_fill_pump_in_lo",
+"int_fill_pump_in_y0",
+"int_fill_pump_out",
+"int_fill_pump_out_lo",
+"int_fill_pump_out_y0",
+"int_fill_pump_pockets_bottom",
+"int_fill_pump_pockets_top",
+"int_pump_body_cut",
+"int_pump_body_hollow",
+"int_pump_body_lo",
+"int_pump_gear_bottom",
+"int_pump_gear_bottom_full",
+"int_pump_gear_top",
+"int_pump_gear_top_full",
+"melt_gear_pump"
+]
+},
+{
+"device_id": "melt_head_adapter",
+"group": "melt",
+"name_vi": "Đầu xi lanh / bích chuyển",
+"name_en": "Barrel head adapter (figure-8 to round)",
+"synthetic": false,
+"function_vi": "Chuyển dòng từ lỗ số 8 sang lỗ tròn Ø120, nối van khởi động.",
+"details_vi": [
+"Bích Ø640 × 60 nhận 20 bulông cấy M24 trên PCD 560 từ B6 (đai ốc phía B6), thân côn Ø520 → Ø400, bích ra Ø420 × 50 có 12 lỗ ren M24 (vít bắt từ phía van, không có đai ốc sau bích nên không chạm thân côn); 2 băng nhiệt."
+],
+"connects_to": [
+{
+"part": "barrel_b6",
+"interface_vi": "20 bulông cấy M24 trên PCD 560"
+},
+{
+"part": "melt_startup_valve",
+"interface_vi": "12 vít M24 lục giác chìm từ phía van vào lỗ ren của bích ra"
+},
+{
+"part": "melt_sensor_head",
+"interface_vi": "2 lỗ ren 1/2\"-20UNF"
+},
+{
+"part": "melt_rupture_disc",
+"interface_vi": "lỗ ren bên −Y"
+},
+{
+"part": "barrel_cover_c1",
+"interface_vi": "xuyên qua tấm đầu vỏ che"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu băng nhiệt"
+}
+],
+"bbox_m": [
+5.746,
+0.8785,
+-0.3215,
+5.996,
+1.5215,
+0.3215
+],
+"size_mm": [
+250,
+643,
+643
+],
+"has_interior": true,
+"nodes": [
+"int_fill_head",
+"int_fill_head_lo",
+"int_head_hollow",
+"int_head_hollow_lo",
+"melt_head_adapter"
+]
+},
+{
+"device_id": "melt_heater_bands",
+"group": "melt",
+"name_vi": "Băng nhiệt đường chảy (lộ ra ngoài)",
+"name_en": "Melt line heater bands (visible)",
+"synthetic": false,
+"function_vi": "Giữ nhiệt các bích chuyển và đầu xi lanh.",
+"details_vi": [
+"6 băng mica/gốm rộng 70 có hộp đấu nhỏ và cáp bọc lưới: đầu xi lanh X 5 836 (Ø514) và 5 906 (Ø454, khe dưới 2 cảm biến), bích vào lọc X 6 521 (Ø380, khe dưới P2), bích vào bơm X 7 388 (Ø320, khe dưới P3), bích ra bơm X 8 001 (Ø260, khe dưới P4), cổ bích khuôn X 9 000 (Ø320).",
+"7 băng trên ống và bộ trộn nằm dưới vỏ inox Ø300, không dựng thành vòng (xem melt_pipe, melt_static_mixer)."
+],
+"connects_to": [
+{
+"part": "melt_head_adapter",
+"interface_vi": "kẹp"
+},
+{
+"part": "melt_sc_adapter_in",
+"interface_vi": "kẹp"
+},
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "kẹp"
+},
+{
+"part": "melt_die_adapter",
+"interface_vi": "kẹp"
+}
+],
+"bbox_m": [
+5.801,
+0.943,
+-0.257,
+9.035,
+1.4671,
+0.2896
+],
+"size_mm": [
+3234,
+524,
+547
+],
+"has_interior": false,
+"nodes": [
+"melt_heater_band_cables",
+"melt_heater_bands"
+]
+},
+{
+"device_id": "melt_heater_conduits",
+"group": "melt",
+"name_vi": "Ống luồn cáp nhiệt đường chảy",
+"name_en": "Melt-line heater conduits",
+"synthetic": false,
+"function_vi": "Dẫn cáp nhiệt từ hộp đấu tới từng vùng nhiệt của đường chảy.",
+"details_vi": [
+"7 ống luồn kim loại mềm Ø30 (đường đi trong paths_mm): bộ lọc, van khởi động, đầu xi lanh, bích vào bơm, bích ra bơm (kèm thanh nhiệt thân bơm), ống nhựa, bộ trộn; đi thấp ở Z 750–900 phía −Y rồi lên hộp đấu từng vùng."
+],
+"connects_to": [
+{
+"part": "melt_heater_jbox",
+"interface_vi": "ốc siết"
+},
+{
+"part": "melt_screen_changer",
+"interface_vi": "hộp nhiệt 6 vùng"
+},
+{
+"part": "melt_startup_valve",
+"interface_vi": "hộp đấu"
+},
+{
+"part": "melt_head_adapter",
+"interface_vi": "băng nhiệt"
+},
+{
+"part": "melt_pump_adapter_in",
+"interface_vi": "băng nhiệt"
+},
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "băng nhiệt + bơm"
+},
+{
+"part": "melt_pipe",
+"interface_vi": "hộp đấu vỏ bọc"
+},
+{
+"part": "melt_static_mixer",
+"interface_vi": "hộp đấu vỏ bọc"
+}
+],
+"bbox_m": [
+5.8165,
+0.645,
+0.144,
+8.6955,
+1.128,
+0.88
+],
+"size_mm": [
+2879,
+483,
+736
+],
+"has_interior": false,
+"nodes": [
+"melt_heater_conduits",
+"melt_heater_conduits_fit"
+]
+},
+{
+"device_id": "melt_heater_jbox",
+"group": "melt",
+"name_vi": "Hộp đấu nhiệt đường chảy",
+"name_en": "Melt-line heater junction box",
+"synthetic": false,
+"function_vi": "Đấu nguồn nhiệt và cặp nhiệt cho bộ lọc (6 vùng, 39 kW), van khởi động, bơm, các bích và ống (≈ 75 kW tổng).",
+"details_vi": [
+"Hộp RAL 7035 600 × 250 × 800 dưới tay quay bộ lọc; cửa bản lề, ổ cắm công nghiệp nhiều chân, tem cảnh báo điện; cáp nguồn vào từ hào cáp qua đáy."
+],
+"connects_to": [
+{
+"part": "melt_stand_sc",
+"interface_vi": "bắt mặt −Y giá bộ lọc"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "ốc siết ống luồn"
+}
+],
+"bbox_m": [
+6.65,
+-0.005,
+0.612,
+7.25,
+0.95,
+0.916
+],
+"size_mm": [
+600,
+955,
+304
+],
+"has_interior": false,
+"nodes": [
+"melt_heater_jbox",
+"melt_heater_jbox_cable"
+]
+},
+{
+"device_id": "melt_hpu",
+"group": "melt",
+"name_vi": "Bộ nguồn thuỷ lực",
+"name_en": "Hydraulic power unit",
+"synthetic": false,
+"function_vi": "Cấp dầu thuỷ lực cho xi lanh bộ lọc và van khởi động.",
+"details_vi": [
+"Thùng dầu 250 L, động cơ-bơm 7,5 kW đứng, khối van, bình tích áp, lọc, đồng hồ áp, nhiệt-mức kế.",
+"Làm mát dầu bằng quạt gió–dầu gắn trên nắp (không cần nước); mặt khối van hướng +Y ra lối đi."
+],
+"connects_to": [
+{
+"part": "melt_hyd_hoses_sc",
+"interface_vi": "khối van"
+},
+{
+"part": "melt_hyd_hoses_suv",
+"interface_vi": "khối van"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "khung đế"
+}
+],
+"bbox_m": [
+6.4,
+0.0,
+2.0,
+7.25,
+1.29,
+2.72
+],
+"size_mm": [
+850,
+1290,
+720
+],
+"has_interior": false,
+"nodes": [
+"melt_hpu"
+]
+},
+{
+"device_id": "melt_hyd_hoses_sc",
+"group": "melt",
+"name_vi": "Ống thuỷ lực bộ lọc",
+"name_en": "Screen changer hydraulic hoses",
+"synthetic": false,
+"function_vi": "Dẫn dầu áp lực/hồi tới xi lanh bộ lọc.",
+"details_vi": [
+"2 ống mềm thuỷ lực DN12 (P, T), cách nhau 80 mm, treo trên giá ở Z 1 150 qua lối đi."
+],
+"connects_to": [
+{
+"part": "melt_hpu",
+"interface_vi": "đầu nối"
+},
+{
+"part": "melt_sc_drive",
+"interface_vi": "đầu nối"
+}
+],
+"bbox_m": [
+6.212,
+0.0,
+0.8466,
+6.97,
+1.246,
+2.0
+],
+"size_mm": [
+758,
+1246,
+1153
+],
+"has_interior": false,
+"nodes": [
+"melt_hyd_hose_fittings",
+"melt_hyd_hoses_sc"
+]
+},
+{
+"device_id": "melt_hyd_hoses_suv",
+"group": "melt",
+"name_vi": "Ống thuỷ lực van khởi động",
+"name_en": "Diverter valve hydraulic hoses",
+"synthetic": false,
+"function_vi": "Dẫn dầu tới xi lanh van khởi động.",
+"details_vi": [
+"2 ống mềm DN10."
+],
+"connects_to": [
+{
+"part": "melt_hpu",
+"interface_vi": "đầu nối"
+},
+{
+"part": "melt_startup_cyl",
+"interface_vi": "đầu nối"
+}
+],
+"bbox_m": [
+6.2139,
+1.0676,
+0.8483,
+6.553,
+1.2425,
+2.0
+],
+"size_mm": [
+339,
+175,
+1152
+],
+"has_interior": false,
+"nodes": [
+"melt_hyd_hoses_suv"
+]
+},
+{
+"device_id": "melt_pipe",
+"group": "melt",
+"name_vi": "Ống nhựa nóng có gia nhiệt",
+"name_en": "Heated melt pipe",
+"synthetic": false,
+"function_vi": "Dẫn nhựa từ bơm tới bộ trộn tĩnh, giữ nhiệt ≈ 280 °C.",
+"details_vi": [
+"Ống DN100 (lỗ Ø100); 3 băng nhiệt nằm dưới lớp cách nhiệt và vỏ inox Ø300 (không thấy từ ngoài); 1 hộp đấu nhỏ 120 × 80 trên vỏ bọc phía −Y tại X 8 250."
+],
+"connects_to": [
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "bích"
+},
+{
+"part": "melt_static_mixer",
+"interface_vi": "bích"
+},
+{
+"part": "melt_pipe_saddles",
+"interface_vi": "gối"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu trên vỏ bọc −Y"
+}
+],
+"bbox_m": [
+8.076,
+1.048,
+-0.152,
+8.48,
+1.352,
+0.188
+],
+"size_mm": [
+404,
+304,
+340
+],
+"has_interior": false,
+"nodes": [
+"melt_pipe"
+]
+},
+{
+"device_id": "melt_pump_adapter_in",
+"group": "melt",
+"name_vi": "Bích chuyển vào bơm (P3)",
+"name_en": "Gear pump inlet adapter",
+"synthetic": false,
+"function_vi": "Nối bộ lọc với bơm; mang cảm biến P3 (áp hút bơm, điều khiển tốc độ bơm bánh răng).",
+"details_vi": [
+"Ống bích Ø360 dài 175, 1 băng nhiệt."
+],
+"connects_to": [
+{
+"part": "melt_screen_changer",
+"interface_vi": "bích ra"
+},
+{
+"part": "melt_gear_pump",
+"interface_vi": "bích vào"
+},
+{
+"part": "melt_sensor_p3",
+"interface_vi": "lỗ ren"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu băng nhiệt"
+}
+],
+"bbox_m": [
+7.301,
+1.02,
+-0.18,
+7.476,
+1.38,
+0.18
+],
+"size_mm": [
+175,
+360,
+360
+],
+"has_interior": true,
+"nodes": [
+"int_fill_adapter_pump_in",
+"int_fill_adapter_pump_in_lo",
+"int_fill_adapter_pump_in_y0",
+"int_melt_adapters_hollow_pump_in",
+"int_melt_adapters_hollow_pump_in_lo",
+"int_melt_adapters_hollow_pump_in_y0",
+"melt_pump_adapter_in"
+]
+},
+{
+"device_id": "melt_pump_adapter_out",
+"group": "melt",
+"name_vi": "Bích ra bơm (P4)",
+"name_en": "Gear pump outlet adapter",
+"synthetic": false,
+"function_vi": "Nối bơm với ống nhựa; mang cảm biến P4 (áp ra bơm).",
+"details_vi": [
+"Ống bích Ø300 dài 150, 1 băng nhiệt; lỗ cảm biến P4 trên đỉnh và lỗ đĩa nổ 2 bên −Y."
+],
+"connects_to": [
+{
+"part": "melt_gear_pump",
+"interface_vi": "bích ra"
+},
+{
+"part": "melt_pipe",
+"interface_vi": "bích"
+},
+{
+"part": "melt_sensor_p4",
+"interface_vi": "lỗ ren"
+},
+{
+"part": "melt_rupture_disc_2",
+"interface_vi": "lỗ ren bên −Y"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu băng nhiệt + thanh nhiệt bơm"
+}
+],
+"bbox_m": [
+7.926,
+1.05,
+-0.15,
+8.13,
+1.35,
+0.15
+],
+"size_mm": [
+204,
+300,
+300
+],
+"has_interior": true,
+"nodes": [
+"int_fill_adapter_pump_out",
+"int_fill_adapter_pump_out_lo",
+"int_fill_adapter_pump_out_y0",
+"int_melt_adapters_hollow_pump_out",
+"int_melt_adapters_hollow_pump_out_lo",
+"int_melt_adapters_hollow_pump_out_y0",
+"melt_pump_adapter_out"
+]
+},
+{
+"device_id": "melt_pump_cardan",
+"group": "melt",
+"name_vi": "Trục các-đăng + vỏ che",
+"name_en": "Cardan shaft with guard",
+"synthetic": false,
+"function_vi": "Truyền mômen từ hộp giảm tốc tới trục bơm, bù lệch.",
+"details_vi": [
+"Vỏ che tôn 300 × 300 có ô lưới, trục các-đăng bên trong."
+],
+"connects_to": [
+{
+"part": "melt_gear_pump",
+"interface_vi": "khớp then"
+},
+{
+"part": "melt_pump_gearbox",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+7.546,
+1.095,
+0.3,
+7.856,
+1.405,
+1.29
+],
+"size_mm": [
+310,
+310,
+990
+],
+"has_interior": false,
+"nodes": [
+"melt_pump_cardan"
+]
+},
+{
+"device_id": "melt_pump_gearbox",
+"group": "melt",
+"name_vi": "Hộp giảm tốc bơm",
+"name_en": "Gear pump reducer (bevel-helical)",
+"synthetic": false,
+"function_vi": "Giảm tốc động cơ 1 480 → ≈ 105 v/ph.",
+"details_vi": [
+"Hộp góc côn-trụ 500 × 450 × 500, i ≈ 14."
+],
+"connects_to": [
+{
+"part": "melt_pump_cardan",
+"interface_vi": "trục ra"
+},
+{
+"part": "pump_drive_pedestal",
+"interface_vi": "4 bulông"
+},
+{
+"part": "melt_pump_motor",
+"interface_vi": "mặt bích động cơ"
+}
+],
+"bbox_m": [
+7.451,
+0.95,
+1.29,
+7.951,
+1.46,
+1.7532
+],
+"size_mm": [
+500,
+510,
+463
+],
+"has_interior": false,
+"nodes": [
+"melt_pump_gearbox"
+]
+},
+{
+"device_id": "melt_pump_motor",
+"group": "melt",
+"name_vi": "Động cơ bơm 45 kW",
+"name_en": "Gear pump motor 45 kW (vertical)",
+"synthetic": false,
+"function_vi": "Quay bơm bánh răng qua hộp giảm tốc.",
+"details_vi": [
+"Động cơ đứng Ø440 cao 850, nắp quạt trên đỉnh, hộp đấu dây bên."
+],
+"connects_to": [
+{
+"part": "melt_pump_gearbox",
+"interface_vi": "mặt bích V1"
+}
+],
+"bbox_m": [
+7.501,
+1.45,
+1.325,
+7.921,
+2.3035,
+1.725
+],
+"size_mm": [
+420,
+854,
+400
+],
+"has_interior": false,
+"nodes": [
+"melt_pump_motor"
+]
+},
+{
+"device_id": "melt_purge_cart",
+"group": "melt",
+"name_vi": "Xe hứng nhựa xả",
+"name_en": "Purge cart",
+"synthetic": false,
+"function_vi": "Hứng cục nhựa xả khi khởi động/đổi màu.",
+"details_vi": [
+"Thùng thép 520 × 800 × 450 trên 4 bánh xe, tay kéo phía −Y."
+],
+"connects_to": [
+{
+"part": "melt_drain_chute",
+"interface_vi": "miệng xe"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "4 bánh xe"
+}
+],
+"bbox_m": [
+5.985,
+0.0,
+-0.385,
+6.495,
+0.526,
+0.4
+],
+"size_mm": [
+510,
+526,
+785
+],
+"has_interior": false,
+"nodes": [
+"melt_purge_cart"
+]
+},
+{
+"device_id": "melt_rupture_disc",
+"group": "melt",
+"name_vi": "Đĩa nổ an toàn",
+"name_en": "Rupture disc",
+"synthetic": false,
+"function_vi": "Xả áp khi áp suất đầu xi lanh vượt giới hạn (bảo vệ quá áp).",
+"details_vi": [
+"Đầu đĩa nổ Ø40 có nắp chụp hướng xuống, đặt phía −Y."
+],
+"connects_to": [
+{
+"part": "melt_head_adapter",
+"interface_vi": "ren 1/2\"-20UNF"
+}
+],
+"bbox_m": [
+5.876,
+1.162,
+0.215,
+5.916,
+1.22,
+0.33
+],
+"size_mm": [
+40,
+58,
+115
+],
+"has_interior": false,
+"nodes": [
+"melt_rupture_disc"
+]
+},
+{
+"device_id": "melt_rupture_disc_2",
+"group": "melt",
+"name_vi": "Đĩa nổ sau bơm",
+"name_en": "Rupture disc after gear pump",
+"synthetic": false,
+"function_vi": "Bảo vệ cơ khí ống, bộ trộn và khuôn khi khuôn bị nghẹt (bơm tạo được tới 370 bar).",
+"details_vi": [
+"Đầu đĩa nổ Ø40 dài 120 theo −Y, áp nổ 350 bar, nắp chụp hướng xuống; tín hiệu đứt đĩa về tủ điều khiển."
+],
+"connects_to": [
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "ren 1/2\"-20UNF"
+}
+],
+"bbox_m": [
+7.981,
+1.162,
+0.12,
+8.021,
+1.26,
+0.27
+],
+"size_mm": [
+40,
+98,
+150
+],
+"has_interior": false,
+"nodes": [
+"melt_rupture_disc_2"
+]
+},
+{
+"device_id": "melt_sc_adapter_in",
+"group": "melt",
+"name_vi": "Bích chuyển vào bộ lọc (P2)",
+"name_en": "Screen changer inlet adapter",
+"synthetic": false,
+"function_vi": "Nối van khởi động với bộ lọc; mang cảm biến áp P2 trước lưới.",
+"details_vi": [
+"Ống bích Ø420 dài 150, 1 băng nhiệt."
+],
+"connects_to": [
+{
+"part": "melt_startup_valve",
+"interface_vi": "12 vít M24 từ phía van"
+},
+{
+"part": "melt_screen_changer",
+"interface_vi": "8 bulông"
+},
+{
+"part": "melt_sensor_p2",
+"interface_vi": "lỗ ren"
+}
+],
+"bbox_m": [
+6.446,
+0.99,
+-0.21,
+6.596,
+1.41,
+0.21
+],
+"size_mm": [
+150,
+420,
+420
+],
+"has_interior": true,
+"nodes": [
+"int_fill_adapter_sc_in",
+"int_fill_adapter_sc_in_lo",
+"int_melt_adapters_hollow_sc_in",
+"int_melt_adapters_hollow_sc_in_lo",
+"melt_sc_adapter_in"
+]
+},
+{
+"device_id": "melt_sc_backflush",
+"group": "melt",
+"name_vi": "Cụm xả ngược + cửa thay lưới",
+"name_en": "Backflush unit and screen access hatch",
+"synthetic": false,
+"function_vi": "Đẩy nhựa sạch ngược qua lưới để làm sạch, xả ra máng; cửa thay lưới.",
+"details_vi": [
+"Khối mũi nhọn 500 × 350 có piston xả ngược, cửa bản lề thay lưới, máng xả nhỏ hướng xuống."
+],
+"connects_to": [
+{
+"part": "melt_screen_changer",
+"interface_vi": "bắt mặt +Y"
+}
+],
+"bbox_m": [
+6.74,
+1.049,
+-0.87,
+7.16,
+1.415,
+-0.52
+],
+"size_mm": [
+420,
+366,
+350
+],
+"has_interior": false,
+"nodes": [
+"melt_sc_backflush"
+]
+},
+{
+"device_id": "melt_sc_drive",
+"group": "melt",
+"name_vi": "Tay quay thuỷ lực bộ lọc",
+"name_en": "Screen changer hydraulic drive arm",
+"synthetic": false,
+"function_vi": "Xoay đĩa lưới từng bước bằng xi lanh thuỷ lực.",
+"details_vi": [
+"Tay đòn + xi lanh Ø100 nằm theo Y, nhô 565 mm phía −Y."
+],
+"connects_to": [
+{
+"part": "melt_screen_changer",
+"interface_vi": "trục đĩa lưới"
+},
+{
+"part": "melt_hyd_hoses_sc",
+"interface_vi": "cổng thuỷ lực"
+}
+],
+"bbox_m": [
+6.83,
+1.055,
+0.532,
+7.07,
+1.35,
+1.089
+],
+"size_mm": [
+240,
+295,
+557
+],
+"has_interior": false,
+"nodes": [
+"melt_sc_drive"
+]
+},
+{
+"device_id": "melt_screen_changer",
+"group": "melt",
+"name_vi": "Bộ lọc lưới quay xả ngược",
+"name_en": "Backflush screen changer (Gneuss RSFgenius 200)",
+"synthetic": false,
+"function_vi": "Lọc tạp chất khỏi nhựa (lưới 60 µm, 970 cm²) liên tục, tự làm sạch bằng xả ngược.",
+"details_vi": [
+"Thân hộp inox rộng 1 040 (Y), dày 705 (X), mũ nghiêng có khe thông gió lên tới Z 2 079, logo đỏ Gneuss trên mũ.",
+"Bích vào/ra tròn 8 bulông ở giữa mặt trước/sau, tại Z = 1 200.",
+"Tấm hông phẳng phải, hộp đầu nối nhiệt 6 vùng."
+],
+"connects_to": [
+{
+"part": "melt_stand_sc",
+"interface_vi": "4 bulông"
+},
+{
+"part": "melt_sc_adapter_in",
+"interface_vi": "bích vào"
+},
+{
+"part": "melt_pump_adapter_in",
+"interface_vi": "bích ra"
+},
+{
+"part": "melt_sc_drive",
+"interface_vi": "trục quay đĩa lưới"
+},
+{
+"part": "melt_sc_backflush",
+"interface_vi": "bắt mặt +Y"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đầu nối nhiệt 6 vùng mặt −Y"
+}
+],
+"bbox_m": [
+6.5952,
+0.65,
+-0.56,
+7.3018,
+2.0789,
+0.605
+],
+"size_mm": [
+707,
+1429,
+1165
+],
+"has_interior": true,
+"nodes": [
+"anim_ghost_sc",
+"int_fill_sc",
+"int_fill_sc_cavities",
+"int_sc_backflush_piston",
+"int_sc_channels",
+"int_sc_disc",
+"int_sc_screens_01",
+"int_sc_screens_02",
+"int_sc_screens_03",
+"int_sc_screens_04",
+"int_sc_screens_05",
+"int_sc_screens_06",
+"int_sc_screens_07",
+"int_sc_screens_08",
+"int_sc_screens_09",
+"int_sc_screens_10",
+"int_sc_screens_11",
+"int_sc_screens_12",
+"melt_screen_changer",
+"melt_screen_changer_logo_in",
+"melt_screen_changer_logo_out"
+]
+},
+{
+"device_id": "melt_sensor_die",
+"group": "melt",
+"name_vi": "Cảm biến áp + nhiệt vào khuôn (P5, T5)",
+"name_en": "Die inlet pressure + temperature (P5, T5)",
+"synthetic": false,
+"function_vi": "Đo áp và nhiệt nhựa vào khuôn.",
+"details_vi": [
+"2 cảm biến tại X = 9 006 và 9 046."
+],
+"connects_to": [
+{
+"part": "melt_die_adapter",
+"interface_vi": "ren"
+}
+],
+"bbox_m": [
+8.985,
+1.345,
+-0.021,
+9.061,
+1.62,
+0.021
+],
+"size_mm": [
+76,
+275,
+42
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_die"
+]
+},
+{
+"device_id": "melt_sensor_head",
+"group": "melt",
+"name_vi": "Cảm biến áp suất + nhiệt nhựa đầu xi lanh (P1, T1)",
+"name_en": "Head melt pressure + temperature (P1, T1)",
+"synthetic": false,
+"function_vi": "Đo áp và nhiệt nhựa ra khỏi trục vít; P1 dùng cho khoá quá áp.",
+"details_vi": [
+"2 thân cảm biến Ø25 có cổ mềm, đầu điện tử Ø40 cao tới Z 1 700, X = 5 876 và 5 916 (băng nhiệt X 5 906 có khe tại hai lỗ)."
+],
+"connects_to": [
+{
+"part": "melt_head_adapter",
+"interface_vi": "ren 1/2\"-20UNF"
+}
+],
+"bbox_m": [
+5.855,
+1.415,
+-0.021,
+5.931,
+1.7,
+0.021
+],
+"size_mm": [
+76,
+285,
+42
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_head"
+]
+},
+{
+"device_id": "melt_sensor_p2",
+"group": "melt",
+"name_vi": "Cảm biến áp suất trước lọc (P2)",
+"name_en": "Pressure transducer before screen changer (P2)",
+"synthetic": false,
+"function_vi": "Đo áp trước lưới để điều khiển xả ngược / đổi lưới.",
+"details_vi": [
+"Thân Ø25, đầu Ø40."
+],
+"connects_to": [
+{
+"part": "melt_sc_adapter_in",
+"interface_vi": "ren 1/2\"-20UNF"
+}
+],
+"bbox_m": [
+6.5,
+1.38,
+-0.021,
+6.542,
+1.65,
+0.021
+],
+"size_mm": [
+42,
+270,
+42
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_p2"
+]
+},
+{
+"device_id": "melt_sensor_p3",
+"group": "melt",
+"name_vi": "Cảm biến áp suất hút bơm (P3)",
+"name_en": "Pump inlet pressure transducer (P3)",
+"synthetic": false,
+"function_vi": "Giữ áp hút bơm ổn định (≈ 50 bar) bằng cách chỉnh tốc độ bơm bánh răng; lưu lượng do các cân loss-in-weight quyết định.",
+"details_vi": [
+"Thân Ø25, đầu Ø40."
+],
+"connects_to": [
+{
+"part": "melt_pump_adapter_in",
+"interface_vi": "ren"
+}
+],
+"bbox_m": [
+7.367,
+1.35,
+-0.021,
+7.409,
+1.595,
+0.021
+],
+"size_mm": [
+42,
+245,
+42
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_p3"
+]
+},
+{
+"device_id": "melt_sensor_p4",
+"group": "melt",
+"name_vi": "Cảm biến áp suất ra bơm (P4)",
+"name_en": "Pump outlet pressure transducer (P4)",
+"synthetic": false,
+"function_vi": "Giám sát áp ra bơm, ngắt bơm và trục vít khi vượt 330 bar.",
+"details_vi": [
+"Thân Ø25, đầu Ø40."
+],
+"connects_to": [
+{
+"part": "melt_pump_adapter_out",
+"interface_vi": "ren"
+}
+],
+"bbox_m": [
+7.98,
+1.32,
+-0.021,
+8.022,
+1.565,
+0.021
+],
+"size_mm": [
+42,
+245,
+42
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_p4"
+]
+},
+{
+"device_id": "melt_startup_cyl",
+"group": "melt",
+"name_vi": "Xi lanh thuỷ lực van khởi động",
+"name_en": "Diverter valve hydraulic cylinder",
+"synthetic": false,
+"function_vi": "Xoay chốt van giữa vị trí xả và vị trí chạy.",
+"details_vi": [
+"Xi lanh Ø160 dài 600 nằm theo Y, 2 công tắc hành trình."
+],
+"connects_to": [
+{
+"part": "melt_startup_valve",
+"interface_vi": "chạc nối"
+},
+{
+"part": "melt_hyd_hoses_suv",
+"interface_vi": "cổng thuỷ lực"
+}
+],
+"bbox_m": [
+6.146,
+1.125,
+0.252,
+6.296,
+1.28,
+0.873
+],
+"size_mm": [
+150,
+155,
+621
+],
+"has_interior": false,
+"nodes": [
+"melt_startup_cyl"
+]
+},
+{
+"device_id": "melt_startup_valve",
+"group": "melt",
+"name_vi": "Van khởi động / chuyển hướng",
+"name_en": "Start-up (diverter) valve",
+"synthetic": false,
+"function_vi": "Khi khởi động xả nhựa xuống máng; khi chạy cho nhựa đi tiếp vào bộ lọc.",
+"details_vi": [
+"Khối thép 450 × 520 × 520 có thanh nhiệt cắm, tấm cách nhiệt, cổng xả đáy, chốt xoay (rotary bolt) theo Y.",
+"Hai mặt bích là mặt phẳng của khối van có 12 lỗ khoét bậc (counterbore) cho vít M24 bắt vào bích kề; đáy tì lên giá đỡ PTFE."
+],
+"connects_to": [
+{
+"part": "melt_head_adapter",
+"interface_vi": "12 vít M24 lục giác chìm qua lỗ khoét bậc trên thân van"
+},
+{
+"part": "melt_sc_adapter_in",
+"interface_vi": "12 vít M24 lục giác chìm qua lỗ khoét bậc trên thân van"
+},
+{
+"part": "melt_startup_cyl",
+"interface_vi": "chạc nối cần piston"
+},
+{
+"part": "melt_drain_chute",
+"interface_vi": "cổng xả đáy"
+},
+{
+"part": "melt_valve_support",
+"interface_vi": "2 đệm PTFE dưới đáy"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu thanh nhiệt"
+}
+],
+"bbox_m": [
+5.996,
+0.912,
+-0.2645,
+6.446,
+1.5516,
+0.28
+],
+"size_mm": [
+450,
+640,
+544
+],
+"has_interior": true,
+"nodes": [
+"int_fill_valve_drain_bolt",
+"int_fill_valve_drain_bolt_lo",
+"int_fill_valve_drain_port",
+"int_fill_valve_drain_port_lo",
+"int_fill_valve_in",
+"int_fill_valve_in_lo",
+"int_fill_valve_run_bolt",
+"int_fill_valve_run_bolt_lo",
+"int_fill_valve_run_out",
+"int_fill_valve_run_out_lo",
+"int_valve_body",
+"int_valve_body_lo",
+"int_valve_bolt",
+"int_valve_bolt_lo",
+"melt_startup_valve"
+]
+},
+{
+"device_id": "melt_static_mixer",
+"group": "melt",
+"name_vi": "Bộ trộn tĩnh",
+"name_en": "Static mixer",
+"synthetic": false,
+"function_vi": "Đồng nhất nhiệt độ nhựa trước khuôn.",
+"details_vi": [
+"Vỏ DN100 với 6 phần tử trộn; 4 băng nhiệt dưới vỏ inox Ø300 (không thấy từ ngoài), 1 hộp đấu trên vỏ bọc phía −Y tại X 8 676; bích hai đầu."
+],
+"connects_to": [
+{
+"part": "melt_pipe",
+"interface_vi": "bích"
+},
+{
+"part": "melt_die_adapter",
+"interface_vi": "bích"
+},
+{
+"part": "melt_pipe_saddles",
+"interface_vi": "gối"
+},
+{
+"part": "melt_heater_conduits",
+"interface_vi": "hộp đấu trên vỏ bọc −Y"
+}
+],
+"bbox_m": [
+8.426,
+1.048,
+-0.152,
+8.98,
+1.352,
+0.188
+],
+"size_mm": [
+554,
+304,
+340
+],
+"has_interior": true,
+"nodes": [
+"int_fill_pipe",
+"int_fill_pipe_lo",
+"int_fill_pipe_y0",
+"int_pipe_mixer_elements",
+"int_pipe_mixer_elements_lo",
+"int_pipe_mixer_elements_y0",
+"int_pipe_mixer_section_lo",
+"int_pipe_mixer_section_y0",
+"melt_static_mixer"
+]
+},
+{
+"device_id": "x_melt_sensor_cabling",
+"group": "melt",
+"name_vi": "Cáp cảm biến đường chảy",
+"name_en": "Melt-line sensor cabling",
+"synthetic": true,
+"function_vi": "",
+"details_vi": [],
+"connects_to": [],
+"bbox_m": [
+5.85,
+0.63,
+-0.0035,
+9.051,
+1.7207,
+0.6169
+],
+"size_mm": [
+3201,
+1091,
+620
+],
+"has_interior": false,
+"nodes": [
+"melt_sensor_cable_glands",
+"melt_sensor_cables",
+"melt_sensor_tray"
+]
+},
+{
+"device_id": "util_air_drop",
+"group": "util",
+"name_vi": "Ống khí nén xuống khuôn",
+"name_en": "Compressed-air drop at die",
+"synthetic": false,
+"function_vi": "Cấp khí nén 6 bar từ đường trên cao cho làm mát bulông nhiệt.",
+"details_vi": [
+"Ống thép mạ Ø30, đầu trên để hở 'từ đường khí nhà máy'."
+],
+"connects_to": [
+{
+"part": "util_frl",
+"interface_vi": "đầu nối ren"
+}
+],
+"bbox_m": [
+9.3,
+0.9,
+1.657,
+9.9814,
+3.188,
+1.753
+],
+"size_mm": [
+681,
+2288,
+96
+],
+"has_interior": false,
+"nodes": [
+"util_air_drop",
+"util_air_drop_fit",
+"util_air_drop_hw"
+]
+},
+{
+"device_id": "util_air_drop_2",
+"group": "util",
+"name_vi": "Ống khí nén xuống cột sàn",
+"name_en": "Compressed-air drop at mezzanine column",
+"synthetic": false,
+"function_vi": "Cấp khí nén cho van chân không và thiết bị cấp liệu.",
+"details_vi": [
+"Ống thép mạ Ø30 dọc cột sàn X −450, Y −2 600, xuyên sàn; đầu trên để hở 'từ đường khí nhà máy'."
+],
+"connects_to": [
+{
+"part": "util_frl_2",
+"interface_vi": "đầu nối ren"
+}
+],
+"bbox_m": [
+-0.33,
+1.6,
+2.104,
+-0.27,
+2.985,
+2.7427
+],
+"size_mm": [
+60,
+1385,
+639
+],
+"has_interior": false,
+"nodes": [
+"util_air_drop_2",
+"util_air_drop_2_clips",
+"util_air_drop_2_fit"
+]
+},
+{
+"device_id": "util_air_hose_die",
+"group": "util",
+"name_vi": "Ống khí làm mát bulông nhiệt",
+"name_en": "Cooling-air hose to thermal bolts",
+"synthetic": false,
+"function_vi": "Dẫn khí làm mát tới ống gió của thanh bulông nhiệt.",
+"details_vi": [
+"Ống mềm PU Ø24, khớp nối nhanh ở đầu thanh để tách khuôn."
+],
+"connects_to": [
+{
+"part": "util_frl",
+"interface_vi": "cổng ra"
+},
+{
+"part": "die_bolt_actuator_rail",
+"interface_vi": "đầu nối khí"
+}
+],
+"bbox_m": [
+9.278,
+0.868,
+1.228,
+9.372,
+1.612,
+1.645
+],
+"size_mm": [
+94,
+744,
+417
+],
+"has_interior": false,
+"nodes": [
+"util_air_hose_die"
+]
+},
+{
+"device_id": "util_air_tube_loader",
+"group": "util",
+"name_vi": "Ống khí tới máy hút liệu",
+"name_en": "Air tube to vacuum loader",
+"synthetic": false,
+"function_vi": "Cấp khí cho van lật xả của máy hút liệu và van nạp của cân.",
+"details_vi": [
+"Ống PU Ø12 lên dọc cột, đi trên mặt sàn, rồi dọc phễu cân lên van máy hút liệu."
+],
+"connects_to": [
+{
+"part": "util_frl_2",
+"interface_vi": "cổng ra"
+},
+{
+"part": "feed_vacuum_loader",
+"interface_vi": "van lật xả"
+}
+],
+"bbox_m": [
+-0.456,
+1.5954,
+0.305,
+-0.294,
+4.951,
+2.5538
+],
+"size_mm": [
+162,
+3356,
+2249
+],
+"has_interior": false,
+"nodes": [
+"util_air_tube_loader"
+]
+},
+{
+"device_id": "util_air_tube_vac",
+"group": "util",
+"name_vi": "Ống khí tới van chân không",
+"name_en": "Air tube to vacuum valve actuator",
+"synthetic": false,
+"function_vi": "Cấp khí cho bộ tác động van bướm chân không vùng 2.",
+"details_vi": [
+"Ống PU Ø12 đi trên máng nhỏ dưới sàn thao tác ở Z 2 450 rồi tới bộ tác động van."
+],
+"connects_to": [
+{
+"part": "util_frl_2",
+"interface_vi": "cổng ra"
+},
+{
+"part": "vac_valve",
+"interface_vi": "bộ tác động"
+}
+],
+"bbox_m": [
+-0.462,
+1.494,
+0.2443,
+4.0611,
+2.8,
+2.66
+],
+"size_mm": [
+4523,
+1306,
+2416
+],
+"has_interior": false,
+"nodes": [
+"util_air_tube_vac",
+"util_air_tube_vac_clips"
+]
+},
+{
+"device_id": "util_cw_lube_hoses",
+"group": "util",
+"name_vi": "Ống nước làm mát dầu hộp số",
+"name_en": "Cooling water to lube oil cooler",
+"synthetic": false,
+"function_vi": "Cấp/hồi nước cho bộ làm mát dầu hộp số.",
+"details_vi": [
+"2 ống mềm DN25 chạy ngoài mép +Y của khung: cấp ở Y 1 060, Z 380; hồi ở Y 1 130, Z 440; lên và vào cổng F2/F4 của bộ làm mát.",
+"Van bi tay đỏ trên mỗi ống ngay trước bộ làm mát; van điều nhiệt nước trên ống hồi."
+],
+"connects_to": [
+{
+"part": "util_cw_supply_riser",
+"interface_vi": "nhánh T (cấp)"
+},
+{
+"part": "util_cw_return_riser",
+"interface_vi": "nhánh T (hồi)"
+},
+{
+"part": "lube_oil_cooler",
+"interface_vi": "cổng F2/F4"
+}
+],
+"bbox_m": [
+-2.894,
+0.361,
+-1.15,
+-0.862,
+0.7841,
+-1.011
+],
+"size_mm": [
+2032,
+423,
+139
+],
+"has_interior": false,
+"nodes": [
+"util_cw_lube_hoses"
+]
+},
+{
+"device_id": "util_cw_motor_hoses",
+"group": "util",
+"name_vi": "Ống nước bộ làm mát động cơ",
+"name_en": "Cooling water to motor top cooler",
+"synthetic": false,
+"function_vi": "Cấp/hồi nước cho bộ làm mát gió–nước trên nóc động cơ chính (IC81W).",
+"details_vi": [
+"2 ống inox DN40 (OD 48) chạy thấp ngoài mép +Y khung (cấp Y 1 060 Z 250, hồi Y 1 130 Z 150), dựng lên tại X −3 500 / −3 700 cạnh cụm dầu, rồi vào bích trên mặt +Y bộ làm mát động cơ ở Z 2 300 / 2 400; van bi tay đỏ ở mỗi ống."
+],
+"connects_to": [
+{
+"part": "util_cw_supply_riser",
+"interface_vi": "nhánh T (cấp)"
+},
+{
+"part": "util_cw_return_riser",
+"interface_vi": "nhánh T (hồi)"
+},
+{
+"part": "drive_motor",
+"interface_vi": "bích DN40 trên mặt +Y bộ làm mát"
+}
+],
+"bbox_m": [
+-3.775,
+0.0,
+-1.191,
+-0.838,
+2.475,
+-0.573
+],
+"size_mm": [
+2937,
+2475,
+618
+],
+"has_interior": false,
+"nodes": [
+"util_cw_motor_hoses",
+"util_cw_motor_lube_hw"
+]
+},
+{
+"device_id": "util_cw_return_riser",
+"group": "util",
+"name_vi": "Ống nước hồi về nhà máy",
+"name_en": "Plant cooling-water return riser",
+"synthetic": false,
+"function_vi": "Trả nước hồi về đường ống nhà máy.",
+"details_vi": [
+"DN50 có van bi tay đỏ và nhiệt kế."
+],
+"connects_to": [
+{
+"part": "ctx_floor",
+"interface_vi": "bích sàn"
+},
+{
+"part": "barrel_cw_return",
+"interface_vi": "bích DN50"
+},
+{
+"part": "util_cw_lube_hoses",
+"interface_vi": "nhánh T"
+},
+{
+"part": "util_cw_motor_hoses",
+"interface_vi": "nhánh T"
+}
+],
+"bbox_m": [
+-0.9003,
+0.0,
+-1.1753,
+-0.3,
+0.8403,
+-0.9047
+],
+"size_mm": [
+600,
+840,
+271
+],
+"has_interior": false,
+"nodes": [
+"util_cw_return_riser",
+"util_cw_return_riser_fit"
+]
+},
+{
+"device_id": "util_cw_sidefeed_hoses",
+"group": "util",
+"name_vi": "Ống nước áo side feeder",
+"name_en": "Cooling water to side-feeder jacket",
+"synthetic": false,
+"function_vi": "Làm mát thân side feeder.",
+"details_vi": [
+"2 ống mềm inox DN15 từ đỉnh cụm van 2 vào mặt dưới thân side feeder."
+],
+"connects_to": [
+{
+"part": "barrel_cw_valves",
+"interface_vi": "cụm van 2 (nhánh thứ hai)"
+},
+{
+"part": "sidefeed_barrel",
+"interface_vi": "2 đầu nối dưới thân"
+}
+],
+"bbox_m": [
+1.151,
+0.998,
+-0.9934,
+1.4117,
+1.052,
+-0.8881
+],
+"size_mm": [
+261,
+54,
+105
+],
+"has_interior": false,
+"nodes": [
+"util_cw_sidefeed_hoses"
+]
+},
+{
+"device_id": "util_cw_supply_riser",
+"group": "util",
+"name_vi": "Ống nước cấp từ nhà máy",
+"name_en": "Plant cooling-water supply riser",
+"synthetic": false,
+"function_vi": "Đưa nước làm mát (≈ 15 °C, 4 bar) từ đường ống nhà máy lên ống góp.",
+"details_vi": [
+"DN50 có van bi tay đỏ, lọc Y và đồng hồ áp ở đoạn đứng."
+],
+"connects_to": [
+{
+"part": "ctx_floor",
+"interface_vi": "bích sàn"
+},
+{
+"part": "barrel_cw_supply",
+"interface_vi": "bích DN50"
+},
+{
+"part": "util_cw_lube_hoses",
+"interface_vi": "nhánh T"
+},
+{
+"part": "util_cw_motor_hoses",
+"interface_vi": "nhánh T"
+}
+],
+"bbox_m": [
+-0.938,
+-0.0081,
+-1.2724,
+-0.3,
+0.7503,
+-0.8347
+],
+"size_mm": [
+638,
+758,
+438
+],
+"has_interior": false,
+"nodes": [
+"util_cw_risers_hw",
+"util_cw_supply_riser",
+"util_cw_supply_riser_fit"
+]
+},
+{
+"device_id": "util_cw_throat_hoses",
+"group": "util",
+"name_vi": "Ống nước áo hộp miệng nạp",
+"name_en": "Cooling water to feed throat jacket",
+"synthetic": false,
+"function_vi": "Làm mát hộp miệng nạp để hạt không dính chảy ở miệng.",
+"details_vi": [
+"2 ống mềm inox DN20 từ đỉnh cụm van 1 lên Z 1 550/1 600 rồi vào mặt +Y hộp miệng nạp."
+],
+"connects_to": [
+{
+"part": "barrel_cw_valves",
+"interface_vi": "cụm van 1 (nhánh thứ hai)"
+},
+{
+"part": "feed_throat",
+"interface_vi": "2 đầu nối nước mặt +Y"
+}
+],
+"bbox_m": [
+0.303,
+0.9985,
+-1.015,
+0.373,
+1.6217,
+-0.2346
+],
+"size_mm": [
+70,
+623,
+780
+],
+"has_interior": false,
+"nodes": [
+"util_cw_throat_hoses"
+]
+},
+{
+"device_id": "util_cw_vac_hoses",
+"group": "util",
+"name_vi": "Ống nước cụm chân không",
+"name_en": "Cooling water to vacuum separator and pump skid",
+"synthetic": false,
+"function_vi": "Cấp/hồi nước cho ống xoắn ngưng của bình tách và cho bơm Roots/bơm khô làm mát nước.",
+"details_vi": [
+"4 ống inox DN25 (OD 32) đứng lên từ hai cặp đầu nối sàn giữa bình tách và skid: cặp cho bình tách vào Z 1 000 / ra Z 1 100, cặp cho skid vào/ra ở Z 400; van bi tay đỏ ở chân mỗi ống."
+],
+"connects_to": [
+{
+"part": "ctx_floor",
+"interface_vi": "đầu nối nước nhà máy dưới sàn"
+},
+{
+"part": "vac_separator",
+"interface_vi": "cổng ống xoắn"
+},
+{
+"part": "vac_pump_unit",
+"interface_vi": "ống góp nước skid"
+}
+],
+"bbox_m": [
+4.4146,
+-0.0045,
+2.31,
+4.6127,
+1.1159,
+3.09
+],
+"size_mm": [
+198,
+1120,
+780
+],
+"has_interior": false,
+"nodes": [
+"util_cw_vac_hoses_0",
+"util_cw_vac_hoses_1",
+"util_cw_vac_hoses_2",
+"util_cw_vac_hoses_3",
+"util_cw_vac_hoses_hw"
+]
+},
+{
+"device_id": "util_frl",
+"group": "util",
+"name_vi": "Bộ lọc–điều áp khí nén (khuôn)",
+"name_en": "Air filter-regulator at die (FRL)",
+"synthetic": false,
+"function_vi": "Lọc, điều áp khí làm mát bulông nhiệt.",
+"details_vi": [
+"Bộ lọc + van điều áp + đồng hồ, van khoá tay."
+],
+"connects_to": [
+{
+"part": "die_junction_box",
+"interface_vi": "giá gá mặt +X hộp khuôn"
+},
+{
+"part": "util_air_drop",
+"interface_vi": "cổng vào"
+},
+{
+"part": "util_air_hose_die",
+"interface_vi": "cổng ra"
+}
+],
+"bbox_m": [
+9.31,
+0.64,
+1.613,
+9.42,
+0.9,
+1.735
+],
+"size_mm": [
+110,
+260,
+122
+],
+"has_interior": false,
+"nodes": [
+"util_frl"
+]
+},
+{
+"device_id": "util_frl_2",
+"group": "util",
+"name_vi": "Bộ lọc–điều áp khí nén (cấp liệu, chân không)",
+"name_en": "Air filter-regulator at mezzanine column",
+"synthetic": false,
+"function_vi": "Lọc, điều áp khí cho van bướm chân không, van nạp máy hút liệu, van cân.",
+"details_vi": [
+"Bộ lọc + van điều áp + đồng hồ, van khoá tay, cao 1,35–1,6 m."
+],
+"connects_to": [
+{
+"part": "feed_platform_columns_rear",
+"interface_vi": "giá gá mặt +X cột"
+},
+{
+"part": "util_air_drop_2",
+"interface_vi": "cổng vào"
+},
+{
+"part": "util_air_tube_vac",
+"interface_vi": "cổng ra"
+},
+{
+"part": "util_air_tube_loader",
+"interface_vi": "cổng ra"
+}
+],
+"bbox_m": [
+-0.35,
+1.34,
+2.5138,
+-0.235,
+1.615,
+2.65
+],
+"size_mm": [
+115,
+275,
+136
+],
+"has_interior": false,
+"nodes": [
+"util_frl_2"
+]
+},
+{
+"device_id": "vac_bellows",
+"group": "vacuum",
+"name_vi": "Cút + khớp giãn nở chân không",
+"name_en": "Vacuum elbow with bellows",
+"synthetic": false,
+"function_vi": "Đổi hướng từ đứng sang ngang và hấp thụ giãn nở nhiệt, rung giữa vòm và ống.",
+"details_vi": [
+"Cút 90° DN150 từ đỉnh van (Z 2 260) lên tâm Z 2 300 rồi quay về −Y; ống xếp inox DN150 dài 200 (Y −120 … −320), 2 bích."
+],
+"connects_to": [
+{
+"part": "vac_valve",
+"interface_vi": "mặt bích"
+},
+{
+"part": "vac_pipe",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+4.008,
+2.188,
+-0.112,
+4.232,
+2.412,
+0.3372
+],
+"size_mm": [
+224,
+224,
+449
+],
+"has_interior": false,
+"nodes": [
+"vac_bellows"
+]
+},
+{
+"device_id": "vac_bellows_2",
+"group": "vacuum",
+"name_vi": "Khớp giãn nở chân không DN100",
+"name_en": "Vacuum bellows DN100 (zone 1)",
+"synthetic": false,
+"function_vi": "Hấp thụ giãn nở nhiệt giữa vòm B3 và ống.",
+"details_vi": [
+"Ống xếp inox DN100 dài 160."
+],
+"connects_to": [
+{
+"part": "vac_valve_2",
+"interface_vi": "bích"
+},
+{
+"part": "vac_pipe_3",
+"interface_vi": "bích"
+}
+],
+"bbox_m": [
+2.04,
+1.69,
+0.3128,
+2.26,
+1.91,
+0.4872
+],
+"size_mm": [
+220,
+220,
+174
+],
+"has_interior": false,
+"nodes": [
+"vac_bellows_2"
+]
+},
+{
+"device_id": "vac_bleed_valve",
+"group": "vacuum",
+"name_vi": "Van điều chỉnh / xả chân không",
+"name_en": "Vacuum bleed valve",
+"synthetic": false,
+"function_vi": "Chỉnh mức chân không chung và phá chân không trước khi mở vòm.",
+"details_vi": [
+"Van kim + van bi nhỏ tay đỏ trên đỉnh ống ra, cao ≈ 1,7 m để thao tác từ sàn."
+],
+"connects_to": [
+{
+"part": "vac_pipe_2",
+"interface_vi": "măng sông ren"
+}
+],
+"bbox_m": [
+4.618,
+1.655,
+2.6246,
+4.6735,
+1.7923,
+2.722
+],
+"size_mm": [
+55,
+137,
+97
+],
+"has_interior": false,
+"nodes": [
+"vac_bleed_valve"
+]
+},
+{
+"device_id": "vac_control_box",
+"group": "vacuum",
+"name_vi": "Hộp điều khiển cụm chân không",
+"name_en": "Vacuum unit control box",
+"synthetic": false,
+"function_vi": "Khởi động bơm, đo áp, khoá liên động.",
+"details_vi": [
+"Hộp 400 × 200 × 800, công tắc chính đỏ-vàng, đèn báo; mặt hướng +Y ra lối đi."
+],
+"connects_to": [
+{
+"part": "vac_pump_unit",
+"interface_vi": "bắt lên khung skid"
+}
+],
+"bbox_m": [
+5.9,
+0.1,
+1.945,
+6.3,
+1.5,
+2.24
+],
+"size_mm": [
+400,
+1400,
+295
+],
+"has_interior": false,
+"nodes": [
+"vac_control_box"
+]
+},
+{
+"device_id": "vac_drain",
+"group": "vacuum",
+"name_vi": "Nồi xả ngưng kiểu khoá (lock pot)",
+"name_en": "Condensate lock pot",
+"synthetic": false,
+"function_vi": "Xả nước ngưng khi máy đang chạy mà không phá chân không.",
+"details_vi": [
+"Nồi Ø300 cao 350 (Z 50–400) trên 3 chân ngắn, nằm giữa 3 chân bình tách.",
+"Van trên (thường mở) ở Z 400–450, van thông hơi trên nắp nồi, van xả đáy; 3 tay van màu đỏ.",
+"Xả: đóng van trên, mở thông hơi, mở van xả; xong đóng lại rồi mở van trên."
+],
+"connects_to": [
+{
+"part": "vac_separator",
+"interface_vi": "van trên (thường mở)"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "3 chân ngắn"
+}
+],
+"bbox_m": [
+3.97,
+0.0,
+2.55,
+4.343,
+0.471,
+2.85
+],
+"size_mm": [
+373,
+471,
+300
+],
+"has_interior": false,
+"nodes": [
+"vac_drain"
+]
+},
+{
+"device_id": "vac_exhaust",
+"group": "vacuum",
+"name_vi": "Ống xả bơm chân không",
+"name_en": "Vacuum pump exhaust",
+"synthetic": false,
+"function_vi": "Xả khí sau bơm ra ngoài nhà xưởng.",
+"details_vi": [
+"Ống DN100 đứng có bình giảm thanh, đầu trên để hở 'ra ngoài'."
+],
+"connects_to": [
+{
+"part": "vac_pump_unit",
+"interface_vi": "mặt bích"
+}
+],
+"bbox_m": [
+6.04,
+1.4948,
+2.99,
+6.26,
+3.5,
+3.21
+],
+"size_mm": [
+220,
+2005,
+220
+],
+"has_interior": false,
+"nodes": [
+"vac_exhaust",
+"vac_exhaust_hw"
+]
+},
+{
+"device_id": "vac_gauge_dome",
+"group": "vacuum",
+"name_vi": "Đồng hồ chân không trên vòm B5",
+"name_en": "Vacuum gauge on dome (zone 2)",
+"synthetic": false,
+"function_vi": "Hiển thị mức chân không tại vòm cho người vận hành.",
+"details_vi": [
+"Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất tuyệt đối (truyền tín hiệu)."
+],
+"connects_to": [
+{
+"part": "barrel_vent_dome",
+"interface_vi": "ren trên nắp"
+}
+],
+"bbox_m": [
+4.25,
+2.15,
+-0.021,
+4.36,
+2.3,
+0.018
+],
+"size_mm": [
+110,
+150,
+39
+],
+"has_interior": false,
+"nodes": [
+"vac_gauge_dome"
+]
+},
+{
+"device_id": "vac_gauge_dome_2",
+"group": "vacuum",
+"name_vi": "Đồng hồ chân không trên vòm B3",
+"name_en": "Vacuum gauge on dome (zone 1)",
+"synthetic": false,
+"function_vi": "Hiển thị mức chân không vùng 1.",
+"details_vi": [
+"Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất."
+],
+"connects_to": [
+{
+"part": "barrel_vent_dome_2",
+"interface_vi": "ren trên nắp"
+}
+],
+"bbox_m": [
+2.22,
+1.96,
+-0.021,
+2.33,
+2.11,
+0.018
+],
+"size_mm": [
+110,
+150,
+39
+],
+"has_interior": false,
+"nodes": [
+"vac_gauge_dome_2"
+]
+},
+{
+"device_id": "vac_pipe",
+"group": "vacuum",
+"name_vi": "Ống hút chân không DN150 (vùng 2)",
+"name_en": "Vacuum line DN150 (zone 2)",
+"synthetic": false,
+"function_vi": "Dẫn hơi và khí từ vòm B5 tới bình tách ngưng.",
+"details_vi": [
+"Ống inox DN150 (OD 168) đi ngang theo −Y ở tâm Z 2 300 (đáy ống Z 2 216, trên lối đi 2 100), xuống bình tách tại Y −2 700."
+],
+"connects_to": [
+{
+"part": "vac_bellows",
+"interface_vi": "mặt bích"
+},
+{
+"part": "vac_separator",
+"interface_vi": "mặt bích nắp"
+},
+{
+"part": "vac_pipe_support",
+"interface_vi": "đai ôm"
+}
+],
+"bbox_m": [
+4.008,
+1.91,
+0.3228,
+4.232,
+2.412,
+2.784
+],
+"size_mm": [
+224,
+502,
+2461
+],
+"has_interior": false,
+"nodes": [
+"vac_pipe",
+"vac_pipe_hw"
+]
+},
+{
+"device_id": "vac_pipe_2",
+"group": "vacuum",
+"name_vi": "Ống chân không tới bơm",
+"name_en": "Vacuum line to pump",
+"synthetic": false,
+"function_vi": "Dẫn khí sau tách ngưng tới bơm Roots.",
+"details_vi": [
+"Ống inox DN150 (OD 168), bằng cỡ bích hút của bơm Roots; vận tốc ≈ 30 m/s ở 2 000 m³/h."
+],
+"connects_to": [
+{
+"part": "vac_separator",
+"interface_vi": "cổng ra"
+},
+{
+"part": "vac_pump_unit",
+"interface_vi": "cổng hút bơm Roots"
+},
+{
+"part": "vac_bleed_valve",
+"interface_vi": "măng sông"
+}
+],
+"bbox_m": [
+4.4328,
+1.4998,
+2.6,
+4.96,
+1.7,
+2.8
+],
+"size_mm": [
+527,
+200,
+200
+],
+"has_interior": false,
+"nodes": [
+"vac_pipe_2",
+"vac_pipe_2_hw"
+]
+},
+{
+"device_id": "vac_pipe_3",
+"group": "vacuum",
+"name_vi": "Ống hút chân không DN100 (vùng 1)",
+"name_en": "Vacuum line DN100 (zone 1)",
+"synthetic": false,
+"function_vi": "Dẫn hơi nước từ vòm B3 tới cổng bên của bình tách ngưng.",
+"details_vi": [
+"Ống inox DN100 (OD 114): lên đứng ngoài vỏ che tại Y −560 tới Z 2 250, đi ngang về −Y tới Y −2 700, theo +X tới X 3 700, xuống tới Z 1 400 rồi vào bình tách."
+],
+"connects_to": [
+{
+"part": "vac_bellows_2",
+"interface_vi": "bích"
+},
+{
+"part": "vac_separator",
+"interface_vi": "cổng vào bên −X"
+},
+{
+"part": "vac_reg_valve_2",
+"interface_vi": "bích"
+}
+],
+"bbox_m": [
+2.03,
+0.0,
+0.4728,
+3.815,
+2.317,
+2.82
+],
+"size_mm": [
+1785,
+2317,
+2347
+],
+"has_interior": false,
+"nodes": [
+"vac_pipe_3",
+"vac_pipe_3_hw"
+]
+},
+{
+"device_id": "vac_pipe_support",
+"group": "vacuum",
+"name_vi": "Cột đỡ ống chân không",
+"name_en": "Vacuum pipe support post",
+"synthetic": false,
+"function_vi": "Đỡ đoạn ống ngang DN150.",
+"details_vi": [
+"Ống thép Ø100 có tấm đế và đai ôm trên đỉnh, tại Y −1 900 (ngoài lối đi dọc khung)."
+],
+"connects_to": [
+{
+"part": "vac_pipe",
+"interface_vi": "đai ôm"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "tấm đế"
+}
+],
+"bbox_m": [
+3.97,
+0.0,
+1.75,
+4.27,
+2.398,
+2.05
+],
+"size_mm": [
+300,
+2398,
+300
+],
+"has_interior": false,
+"nodes": [
+"vac_pipe_support",
+"vac_pipe_support_clamp"
+]
+},
+{
+"device_id": "vac_pump_unit",
+"group": "vacuum",
+"name_vi": "Cụm bơm chân không",
+"name_en": "Vacuum pump unit (Roots + dry backing pump)",
+"synthetic": false,
+"function_vi": "Tạo chân không 5–20 mbar cho vòm B5 và ≈ 50 mbar (qua van tiết lưu) cho vòm B3.",
+"details_vi": [
+"Khung skid thép đen 1 800 × 1 100: bơm Roots ≈ 2 000 m³/h trên bơm trục vít khô ≈ 400 m³/h làm mát bằng nước, động cơ, giảm thanh.",
+"Vỏ bơm đen/cam như web-15; ống góp nước vào/ra ở mặt −X, Z 400."
+],
+"connects_to": [
+{
+"part": "vac_pipe_2",
+"interface_vi": "cổng hút"
+},
+{
+"part": "vac_exhaust",
+"interface_vi": "cổng xả"
+},
+{
+"part": "vac_control_box",
+"interface_vi": "bắt lên khung skid"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "khung skid"
+},
+{
+"part": "util_cw_vac_hoses",
+"interface_vi": "ống góp nước của skid"
+}
+],
+"bbox_m": [
+4.4775,
+0.0,
+2.2,
+6.3,
+1.5,
+3.3
+],
+"size_mm": [
+1822,
+1500,
+1100
+],
+"has_interior": false,
+"nodes": [
+"vac_pump_unit"
+]
+},
+{
+"device_id": "vac_reg_valve_2",
+"group": "vacuum",
+"name_vi": "Van tiết lưu chân không vùng 1",
+"name_en": "Zone-1 vacuum regulating valve",
+"synthetic": false,
+"function_vi": "Tiết lưu để vùng 1 giữ ≈ 50 mbar trong khi vùng 2 vẫn đạt 5–20 mbar trên cùng cụm bơm.",
+"details_vi": [
+"Van tiết lưu tay quay DN100 trên đoạn ống đứng, tay quay hướng +Y ở cao 1,65 m; đồng hồ chân không nhỏ bên cạnh."
+],
+"connects_to": [
+{
+"part": "vac_pipe_3",
+"interface_vi": "bích DN100"
+}
+],
+"bbox_m": [
+3.59,
+1.575,
+2.568,
+3.81,
+1.792,
+2.81
+],
+"size_mm": [
+220,
+217,
+242
+],
+"has_interior": false,
+"nodes": [
+"vac_reg_valve_2"
+]
+},
+{
+"device_id": "vac_separator",
+"group": "vacuum",
+"name_vi": "Bình tách ngưng",
+"name_en": "Condensate separator / knock-out vessel",
+"synthetic": false,
+"function_vi": "Ngưng và gom hơi nước, oligome, bụi của cả hai vùng chân không trước bơm.",
+"details_vi": [
+"Bình đứng Ø600 cao 1 450 (Z 450–1 900) trên 3 chân cao 450 (nâng 150 để đặt nồi xả), nắp bích bắt bulông, ống xoắn làm mát bên trong (nước 10–15 °C), kính thăm mức, đồng hồ chân không.",
+"Cổng: nắp (vùng 2, DN150), bên −X ở Z 1 400 (vùng 1, DN100), ra bên +X ở Z 1 600 (DN150), 2 cổng nước bên +X ở Z 1 000 và 1 100."
+],
+"connects_to": [
+{
+"part": "vac_pipe",
+"interface_vi": "mặt bích nắp (vùng 2)"
+},
+{
+"part": "vac_pipe_3",
+"interface_vi": "cổng vào bên −X (vùng 1)"
+},
+{
+"part": "vac_pipe_2",
+"interface_vi": "cổng ra bên +X"
+},
+{
+"part": "vac_drain",
+"interface_vi": "van trên của nồi xả"
+},
+{
+"part": "util_cw_vac_hoses",
+"interface_vi": "cổng nước ống xoắn"
+},
+{
+"part": "ctx_floor",
+"interface_vi": "3 chân"
+}
+],
+"bbox_m": [
+3.77,
+0.0,
+2.317,
+4.455,
+1.9072,
+3.035
+],
+"size_mm": [
+685,
+1907,
+718
+],
+"has_interior": false,
+"nodes": [
+"vac_separator"
+]
+},
+{
+"device_id": "vac_valve",
+"group": "vacuum",
+"name_vi": "Van chặn chân không DN150 (vùng 2)",
+"name_en": "Vacuum shut-off valve DN150 (zone 2)",
+"synthetic": false,
+"function_vi": "Cách ly vòm B5 với đường hút khi mở vòm hoặc khởi động.",
+"details_vi": [
+"Van bướm DN150 đặt đứng trên nắp vòm (Z 2 150–2 260), bộ tác động khí nén vuông nằm ngang phía −Y (Y −300 … −110).",
+"Ống khí Ø12 tới bộ tác động (util_air_tube_vac)."
+],
+"connects_to": [
+{
+"part": "barrel_vent_dome",
+"interface_vi": "mặt bích DN150 trên nắp vòm"
+},
+{
+"part": "vac_bellows",
+"interface_vi": "mặt bích DN150"
+}
+],
+"bbox_m": [
+4.008,
+2.1428,
+-0.112,
+4.232,
+2.27,
+0.304
+],
+"size_mm": [
+224,
+127,
+416
+],
+"has_interior": false,
+"nodes": [
+"vac_valve"
+]
+},
+{
+"device_id": "vac_valve_2",
+"group": "vacuum",
+"name_vi": "Van chặn chân không DN100 (vùng 1)",
+"name_en": "Vacuum shut-off valve DN100 (zone 1)",
+"synthetic": false,
+"function_vi": "Cách ly vòm B3 với đường hút.",
+"details_vi": [
+"Van bi DN100 tay gạt đỏ."
+],
+"connects_to": [
+{
+"part": "barrel_vent_dome_2",
+"interface_vi": "bích DN100"
+},
+{
+"part": "vac_bellows_2",
+"interface_vi": "bích DN100"
+}
+],
+"bbox_m": [
+2.04,
+1.69,
+0.2328,
+2.43,
+1.928,
+0.3272
+],
+"size_mm": [
+390,
+238,
+94
+],
+"has_interior": false,
+"nodes": [
+"vac_valve_2"
+]
+},
+{
+"device_id": "screws",
+"group": "barrel",
+"name_vi": "Hai trục vít đồng hướng",
+"name_en": "Co-rotating twin screws",
+"synthetic": false,
+"function_vi": "Vận chuyển, nóng chảy, trộn, khử khí và tăng áp nhựa; tự làm sạch lẫn nhau.",
+"details_vi": [
+"2 trục tại Y = ±71, Z = 1 200, Ø ngoài 167,5, lõi 114,6, 2 đầu ren (2-flight).",
+"Trình tự phần tử (X từ–tới): −400–0 trục then hoa trong lantern; 0–1 100 vận chuyển bước 1,5D (miệng nạp 160–520); 1 100–1 560 vận chuyển bước 1,5D dưới cửa side feeder (1 180–1 520); 1 560–1 880 khối nhào KB 45°/5 (nóng chảy); 1 880–1 950 KB 90° (nút nhựa, kết thúc trước lỗ vùng 1 ở 1 990); 1 950–2 420 vận chuyển bước rộng 1,5D dưới lỗ vùng 1 (1 990–2 310); 2 420–2 900 vận chuyển 1D; 2 900–3 380 khối nhào KB 45°/5 + KB 90° (trộn); 3 380–3 620 vận chuyển 1D; 3 620–3 720 phần tử nghịch LH (nút nhựa trước vùng 2); 3 720–4 450 vận chuyển bước rộng 1,5D dưới lỗ vùng 2 (3 860–4 380); 4 450–5 746 vận chuyển 1D → 0,75D (tăng áp).",
+"Thấy được qua miệng nạp B1, cửa B3 và vòm B5; cho bản vẽ cắt riêng (cut-away)."
+],
+"connects_to": [
+{
+"part": "lantern",
+"interface_vi": "trục then hoa 24 răng vào ống then hoa"
+},
+{
+"part": "barrel_b1",
+"interface_vi": "nằm trong lỗ số 8"
+},
+{
+"part": "barrel_b5",
+"interface_vi": "thấy qua lỗ thoát khí"
+}
+],
+"bbox_m": [
+-0.75,
+1.116,
+-0.155,
+5.746,
+1.284,
+0.155
+],
+"size_mm": [
+6496,
+168,
+310
+],
+"has_interior": true,
+"nodes": [
+"int_fill_screw_x2450",
+"int_fill_screw_x4120",
+"int_fill_screw_z01_feed",
+"int_fill_screw_z01_feed_lo",
+"int_fill_screw_z02_melt",
+"int_fill_screw_z02_melt_lo",
+"int_fill_screw_z03_vent1",
+"int_fill_screw_z03_vent1_lo",
+"int_fill_screw_z04_convey",
+"int_fill_screw_z04_convey_lo",
+"int_fill_screw_z05_mix",
+"int_fill_screw_z05_mix_lo",
+"int_fill_screw_z06_seal2",
+"int_fill_screw_z06_seal2_lo",
+"int_fill_screw_z07_vent2",
+"int_fill_screw_z07_vent2_lo",
+"int_fill_screw_z08_meter",
+"int_fill_screw_z08_meter_lo",
+"int_fill_screw_z09_pump",
+"int_fill_screw_z09_pump_lo",
+"int_screw_axis_a",
+"int_screw_axis_b",
+"int_screw_elem_a_01",
+"int_screw_elem_a_02",
+"int_screw_elem_a_03",
+"int_screw_elem_a_04",
+"int_screw_elem_a_05",
+"int_screw_elem_a_06",
+"int_screw_elem_a_07",
+"int_screw_elem_a_08",
+"int_screw_elem_a_09",
+"int_screw_elem_a_10",
+"int_screw_elem_a_11",
+"int_screw_elem_a_12",
+"int_screw_elem_a_12_x2450",
+"int_screw_elem_a_13",
+"int_screw_elem_a_14",
+"int_screw_elem_a_15",
+"int_screw_elem_a_16",
+"int_screw_elem_a_17",
+"int_screw_elem_a_18",
+"int_screw_elem_a_19",
+"int_screw_elem_a_20",
+"int_screw_elem_a_21",
+"int_screw_elem_a_22",
+"int_screw_elem_a_22_x4120",
+"int_screw_elem_a_23",
+"int_screw_elem_a_24",
+"int_screw_elem_a_25",
+"int_screw_elem_a_26",
+"int_screw_elem_a_27",
+"int_screw_elem_a_28",
+"int_screw_elem_a_29",
+"int_screw_elem_a_30",
+"int_screw_elem_a_31",
+"int_screw_elem_a_32",
+"int_screw_elem_b_01",
+"int_screw_elem_b_02",
+"int_screw_elem_b_03",
+"int_screw_elem_b_04",
+"int_screw_elem_b_05",
+"int_screw_elem_b_06",
+"int_screw_elem_b_07",
+"int_screw_elem_b_08",
+"int_screw_elem_b_09",
+"int_screw_elem_b_10",
+"int_screw_elem_b_11",
+"int_screw_elem_b_12",
+"int_screw_elem_b_12_x2450",
+"int_screw_elem_b_13",
+"int_screw_elem_b_14",
+"int_screw_elem_b_15",
+"int_screw_elem_b_16",
+"int_screw_elem_b_17",
+"int_screw_elem_b_18",
+"int_screw_elem_b_19",
+"int_screw_elem_b_20",
+"int_screw_elem_b_21",
+"int_screw_elem_b_22",
+"int_screw_elem_b_22_x4120",
+"int_screw_elem_b_23",
+"int_screw_elem_b_24",
+"int_screw_elem_b_25",
+"int_screw_elem_b_26",
+"int_screw_elem_b_27",
+"int_screw_elem_b_28",
+"int_screw_elem_b_29",
+"int_screw_elem_b_30",
+"int_screw_elem_b_31",
+"int_screw_elem_b_32",
+"int_spline_shaft_a",
+"int_spline_shaft_b",
+"int_xsec_a_2450",
+"int_xsec_a_4120",
+"int_xsec_b_2450",
+"int_xsec_b_4120"
+]
+}
+]
+}

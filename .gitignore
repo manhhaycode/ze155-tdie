@@ -1,0 +1,50 @@
+# Dependencies, build output and local tooling
+node_modules/
+dist/
+dist-ssr/
+.vite/
+.vercel/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+*.local
+
+# Generated Blender, animation and packaging output
+*.blend
+*.blend[0-9]
+*.mp4
+*.mov
+*.avi
+*.exr
+*.zip
+/web/build/
+/anim/tmp/
+/anim/post/test/
+/anim/storyboard/*.png
+
+# Keep the references used by the current visual review
+/anim/look/*
+!/anim/look/A1a-S04-f1161-ev-r2.png
+!/anim/look/A1a-x2450-S05b-ev-r2.png
+!/anim/look/A1a-x4120-S07b-ev-r2.png
+!/anim/look/A1a-feedcol-ext-wb.png
+/out/*
+!/out/renders/
+/out/renders/*
+!/out/renders/ze155-hero.png
+
+# Older generated review captures; retain the current round's evidence
+/web/review/**/*.png
+/web/review/**/*.jpg
+/web/review/**/*.jpeg
+!/web/review/dot1/codex-fix-02/*.jpg
+/web/web-check/selftest/

@@ -1,0 +1,1774 @@
+{
+ "version": 2,
+ "draft_of": "PLAN-DOT2.md §2 (planner draft; make_data.py is the real generator)",
+ "name_rules": {
+  "from_dot1": "p_<x> -> <x>; rot_screw_a|b -> int_screw_axis_a|b; NN..MM expanded",
+  "drop_runtime_names": {
+   "rot_gbx_input": "int_gbx_schematic_input",
+   "rot_gbx_counter": "int_gbx_schematic_counter",
+   "rot_pump_gear_top": "int_pump_gear_top",
+   "rot_pump_gear_bottom": "int_pump_gear_bottom",
+   "anim_sc_disc": "int_sc_disc",
+   "anim_sc_piston": "int_sc_backflush_piston",
+   "anim_die_choker_bar": "int_die_choker_bar"
+  },
+  "virtual_split_parts": {
+   "melt_heater_bands__head1": "melt_heater_bands",
+   "melt_heater_bands__head2": "melt_heater_bands",
+   "melt_heater_bands__scin": "melt_heater_bands",
+   "melt_heater_bands__pumpin": "melt_heater_bands",
+   "melt_heater_bands__pumpout": "melt_heater_bands",
+   "melt_heater_bands__dieadapter": "melt_heater_bands",
+   "die_body_bolts__top": "die_body_bolts",
+   "die_body_bolts__bottom": "die_body_bolts",
+   "die_heater_boxes__top": "die_heater_boxes",
+   "die_heater_boxes__bottom": "die_heater_boxes"
+  }
+ },
+ "states": {
+  "GHOST_DRIVE": {
+   "label_vi": "Truyền động: vỏ trong suốt",
+   "label_short_vi": "Hộp số (vỏ trong suốt)",
+   "group": "drive",
+   "plane": null,
+   "needs_interior": true,
+   "hide": [
+    "gbx_housing",
+    "gbx_castings",
+    "gbx_covers"
+   ],
+   "swap": {
+    "gbx_housing": [
+     "anim_ghost_drive_gbx"
+    ],
+    "gbx_castings": [],
+    "gbx_covers": []
+   },
+   "clip": [],
+   "show_whole": [
+    "anim_ghost_drive_gbx",
+    "int_gbx_schematic_input",
+    "int_gbx_schematic_counter",
+    "int_gbx_schematic_bearings",
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_gbx_schematic_out_a",
+    "int_gbx_schematic_out_b",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b"
+   ],
+   "show_clipped": [],
+   "ghost": [
+    "anim_ghost_drive_gbx",
+    "lantern_body",
+    "lantern_door",
+    "lantern_flange",
+    "lantern_bolts",
+    "drive_coupling_guard",
+    "drive_coupling_guard_hw",
+    "drive_coupling_guard_mesh",
+    "gbx_bolts",
+    "gbx_hw",
+    "gbx_ports"
+   ],
+   "peel": null,
+   "clips_on_enter": [],
+   "camera": {
+    "pos": [
+     -3.6,
+     2.4,
+     -4.2
+    ],
+    "target": [
+     -2.6,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "shots.json S02 key 1 (frame 301); wider key: gearbox + lantern + couplings; key 2 cuts the gearbox"
+   },
+   "frame_box_m": {
+    "min": [
+     -2.35,
+     0.65,
+     -0.81
+    ],
+    "max": [
+     -0.74,
+     1.86,
+     0.7
+    ],
+    "source": "devices.json gearbox.bbox_m"
+   },
+   "counts": {
+    "hide": 3,
+    "swap": 3,
+    "clip": 0,
+    "show_whole": 10,
+    "show_clipped": 0,
+    "ghost": 11
+   },
+   "visible_parts_estimate": 363
+  },
+  "GHOST_SC": {
+   "label_vi": "Bộ lọc: vỏ trong suốt",
+   "label_short_vi": "Bộ lọc (vỏ trong suốt)",
+   "group": "melt",
+   "plane": null,
+   "needs_interior": true,
+   "hide": [
+    "melt_screen_changer",
+    "melt_screen_changer_logo_in",
+    "melt_screen_changer_logo_out"
+   ],
+   "swap": {
+    "melt_screen_changer": [
+     "anim_ghost_sc"
+    ]
+   },
+   "clip": [],
+   "show_whole": [
+    "anim_ghost_sc",
+    "int_sc_disc",
+    "int_sc_screens_01",
+    "int_sc_screens_02",
+    "int_sc_screens_03",
+    "int_sc_screens_04",
+    "int_sc_screens_05",
+    "int_sc_screens_06",
+    "int_sc_screens_07",
+    "int_sc_screens_08",
+    "int_sc_screens_09",
+    "int_sc_screens_10",
+    "int_sc_screens_11",
+    "int_sc_screens_12",
+    "int_fill_sc_cavities",
+    "int_sc_channels",
+    "int_sc_backflush_piston",
+    "int_fill_sc"
+   ],
+   "show_clipped": [],
+   "ghost": [
+    "anim_ghost_sc"
+   ],
+   "peel": null,
+   "clips_on_enter": [
+    "sc_index"
+   ],
+   "camera": {
+    "pos": [
+     6.2,
+     1.85,
+     -1.9
+    ],
+    "target": [
+     6.95,
+     1.45,
+     -0.05
+    ],
+    "lens_mm": 38,
+    "sensor_mm": 36,
+    "source": "shots.json still ST6; disc, screens, channels and piston under the raised ghost hood"
+   },
+   "frame_box_m": {
+    "min": [
+     6.5952,
+     0.65,
+     -0.56
+    ],
+    "max": [
+     7.3018,
+     2.0789,
+     0.605
+    ],
+    "source": "devices.json melt_screen_changer.bbox_m"
+   },
+   "counts": {
+    "hide": 3,
+    "swap": 1,
+    "clip": 0,
+    "show_whole": 18,
+    "show_clipped": 0,
+    "ghost": 1
+   },
+   "visible_parts_estimate": 373
+  },
+  "CUT_PUMP": {
+   "label_vi": "Bơm bánh răng cắt dọc (Y = 0)",
+   "label_short_vi": "Bơm cắt Y = 0",
+   "group": "melt",
+   "plane": {
+    "normal": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "constant": 0.0
+   },
+   "needs_interior": true,
+   "hide": [],
+   "swap": {
+    "melt_gear_pump": [
+     "int_pump_body_cut"
+    ],
+    "melt_pump_adapter_in": [
+     "int_melt_adapters_hollow_pump_in_y0",
+     "int_fill_adapter_pump_in_y0",
+     "int_fill_pump_in_y0"
+    ],
+    "melt_pump_adapter_out": [
+     "int_melt_adapters_hollow_pump_out_y0",
+     "int_fill_adapter_pump_out_y0",
+     "int_fill_pump_out_y0"
+    ]
+   },
+   "clip": [
+    "melt_sensor_p3",
+    "melt_sensor_p4",
+    "melt_heater_bands__pumpin",
+    "melt_heater_bands__pumpout"
+   ],
+   "show_whole": [
+    "int_pump_body_cut",
+    "int_melt_adapters_hollow_pump_in_y0",
+    "int_fill_adapter_pump_in_y0",
+    "int_fill_pump_in_y0",
+    "int_melt_adapters_hollow_pump_out_y0",
+    "int_fill_adapter_pump_out_y0",
+    "int_fill_pump_out_y0",
+    "int_pump_gear_top",
+    "int_fill_pump_pockets_top",
+    "int_pump_gear_bottom",
+    "int_fill_pump_pockets_bottom"
+   ],
+   "show_clipped": [],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     0,
+     0,
+     -1.2
+    ],
+    "duration_s": 1.5
+   },
+   "clips_on_enter": [],
+   "camera": {
+    "pos": [
+     7.7,
+     1.5,
+     -1.75
+    ],
+    "target": [
+     7.7,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 45,
+    "sensor_mm": 36,
+    "source": "shots.json S10 key 1 (frame 2701); 45 mm at 1.78 m; ST7 / S10 key 2 (55 mm at 1.2 m) is as tight as the rejected X2450 preset"
+   },
+   "frame_box_m": {
+    "min": [
+     7.25,
+     0.95,
+     -1.0
+    ],
+    "max": [
+     8.15,
+     1.65,
+     0.0
+    ],
+    "source": "contract box_m"
+   },
+   "counts": {
+    "hide": 0,
+    "swap": 3,
+    "clip": 4,
+    "show_whole": 11,
+    "show_clipped": 0,
+    "ghost": 0
+   },
+   "visible_parts_estimate": 366
+  },
+  "CUT_DIE_PLAN": {
+   "label_vi": "Mặt phân khuôn (Z = 1 200)",
+   "label_short_vi": "Mặt phân khuôn Z = 1 200",
+   "group": "die",
+   "plane": {
+    "normal": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "constant": 1.2
+   },
+   "needs_interior": true,
+   "hide": [
+    "melt_sensor_die"
+   ],
+   "swap": {
+    "die_body_lower": [
+     "int_die_lower_face",
+     "int_fill_die_lo"
+    ],
+    "melt_die_adapter": [
+     "int_melt_adapters_hollow_die_lo",
+     "int_fill_adapter_die_lo"
+    ]
+   },
+   "clip": [
+    "die_deckles",
+    "die_end_plate_op",
+    "die_end_plate_rear"
+   ],
+   "show_whole": [
+    "int_die_lower_face",
+    "int_fill_die_lo",
+    "int_melt_adapters_hollow_die_lo",
+    "int_fill_adapter_die_lo",
+    "int_die_choker_bar"
+   ],
+   "show_clipped": [],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     0,
+     0.9,
+     0.0
+    ],
+    "duration_s": 2.4
+   },
+   "clips_on_enter": [
+    "die_open"
+   ],
+   "camera": {
+    "pos": [
+     8.35,
+     3.3,
+     -1.6
+    ],
+    "target": [
+     9.35,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 26,
+    "sensor_mm": 36,
+    "source": "shots.json S11 key 2 (frame 3201); oblique from upstream so the lifted upper half (+0.9 m) does not cover the lower face"
+   },
+   "frame_box_m": {
+    "min": [
+     8.9,
+     1.2,
+     -1.6
+    ],
+    "max": [
+     9.6,
+     2.0,
+     1.6
+    ],
+    "source": "contract box_m"
+   },
+   "counts": {
+    "hide": 1,
+    "swap": 2,
+    "clip": 3,
+    "show_whole": 5,
+    "show_clipped": 0,
+    "ghost": 0
+   },
+   "visible_parts_estimate": 360
+  },
+  "CUT_DIE_AA": {
+   "label_vi": "Khuôn cắt A-A (Y = 0)",
+   "label_short_vi": "Khuôn A-A Y = 0",
+   "group": "die",
+   "plane": {
+    "normal": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "constant": 0.0
+   },
+   "needs_interior": true,
+   "hide": [
+    "die_end_plate_op",
+    "ctx_roll_cw_headers",
+    "ctx_roll_hoses",
+    "ctx_roll_unions",
+    "ctrl_estop_die",
+    "die_body_bolts__top",
+    "die_body_bolts__bottom",
+    "anim_roll_markers_bottom_pos",
+    "anim_roll_markers_middle_pos",
+    "anim_roll_markers_top_pos"
+   ],
+   "swap": {
+    "die_body_upper": [
+     "int_die_section_upper"
+    ],
+    "die_flex_lip": [],
+    "die_thermal_bolts": [
+     "int_die_thermal_bolts_y0",
+     "int_die_thermal_bolt_y0"
+    ],
+    "die_choker_bolts": [
+     "int_die_choker_bolt_y0",
+     "int_die_choker_bar_y0"
+    ],
+    "die_body_lower": [
+     "int_die_section_lower",
+     "int_fill_die_y0"
+    ],
+    "melt_die_adapter": [
+     "int_melt_adapters_hollow_die_y0",
+     "int_fill_adapter_die_y0"
+    ],
+    "melt_pipe": [
+     "int_pipe_mixer_section_y0",
+     "int_fill_pipe_y0"
+    ],
+    "melt_static_mixer": [
+     "int_pipe_mixer_elements_y0"
+    ]
+   },
+   "clip": [
+    "die_bolt_actuator_rail",
+    "die_lifting_lugs",
+    "die_deckles",
+    "die_drip_pan",
+    "melt_pipe_saddles",
+    "melt_sensor_die",
+    "ctx_roll_bottom",
+    "ctx_roll_middle",
+    "ctx_roll_top",
+    "ctx_roll_stand",
+    "die_cart",
+    "die_cart_rails",
+    "die_heater_boxes__top",
+    "die_heater_boxes__bottom",
+    "melt_heater_bands__dieadapter",
+    "ctx_sheet",
+    "ctx_melt_curtain"
+   ],
+   "show_whole": [
+    "int_die_section_upper",
+    "int_die_thermal_bolts_y0",
+    "int_die_thermal_bolt_y0",
+    "int_die_choker_bolt_y0",
+    "int_die_choker_bar_y0",
+    "int_die_section_lower",
+    "int_fill_die_y0",
+    "int_melt_adapters_hollow_die_y0",
+    "int_fill_adapter_die_y0",
+    "int_pipe_mixer_section_y0",
+    "int_fill_pipe_y0",
+    "int_pipe_mixer_elements_y0",
+    "anim_roll_markers_bottom_aa",
+    "anim_roll_markers_middle_aa",
+    "anim_roll_markers_top_aa"
+   ],
+   "show_clipped": [],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     0,
+     0,
+     -1.2
+    ],
+    "duration_s": 1.5
+   },
+   "clips_on_enter": [],
+   "camera": {
+    "pos": [
+     9.4,
+     1.5,
+     -1.65
+    ],
+    "target": [
+     9.42,
+     1.25,
+     0.0
+    ],
+    "lens_mm": 45,
+    "sensor_mm": 36,
+    "source": "shots.json S12 key 1 (frame 3351); whole A-A section with rolls; keys 2-3 are close-ups of the lip"
+   },
+   "frame_box_m": {
+    "min": [
+     8.4,
+     0.0,
+     -2.1
+    ],
+    "max": [
+     10.4,
+     2.9,
+     0.0
+    ],
+    "source": "contract box_m"
+   },
+   "planner_fix": "the translucent sheet and curtain span z -1.1...1.1 and would tint the A-A section; cap_color null -> clipped without a cap",
+   "morphs": {
+    "keys": [
+     "gap_x10",
+     "lip_push"
+    ],
+    "nodes": [
+     "int_die_section_upper",
+     "int_die_thermal_bolts_y0",
+     "int_die_thermal_bolt_y0",
+     "int_fill_die_y0"
+    ],
+    "rule": "all meshes of the 4 nodes together; lip_push only with gap_x10 = 1 (alone it would close the 1.0 mm gap past zero)",
+    "readout": {
+     "true_gap_mm": "1.00 - 0.15 * lip_push",
+     "drawn_gap_mm": "1.00 + 8.975 * gap_x10 - 1.5 * lip_push",
+     "source": "anim/log.md A1b: lip gap 1.000 mm, 9.975 mm with gap_x10 = 1, lip_push tip down 1.5 mm drawn; design-anim §2 thermal bolt stroke 0.3 mm = ±0.15 mm"
+    },
+    "tween_s": 0.6
+   },
+   "counts": {
+    "hide": 10,
+    "swap": 8,
+    "clip": 17,
+    "show_whole": 15,
+    "show_clipped": 0,
+    "ghost": 0
+   },
+   "visible_parts_estimate": 352
+  },
+  "ST1_Z_FULL": {
+   "label_vi": "Toàn tuyến cắt nửa trên (Z = 1 200)",
+   "label_short_vi": "Toàn tuyến Z = 1 200",
+   "group": "line",
+   "plane": {
+    "normal": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "constant": 1.2
+   },
+   "needs_interior": true,
+   "hide": [
+    "ctrl_cable_feed",
+    "ctrl_cable_tray_feed",
+    "ctrl_estop_platform",
+    "feed_additive_feeder",
+    "feed_additive_tube",
+    "feed_control_cabinet",
+    "feed_conveying_hose",
+    "feed_conveying_hose_end",
+    "feed_conveying_line",
+    "feed_conveying_line_end",
+    "feed_feeder_sleeves",
+    "feed_feeder_sleeves_clamps",
+    "feed_main_feeder",
+    "feed_main_hopper",
+    "feed_platform_columns_front",
+    "feed_platform_columns_rear",
+    "feed_platform_deck",
+    "feed_platform_grating",
+    "feed_platform_grating_x",
+    "feed_platform_railing",
+    "feed_stair",
+    "feed_vacuum_loader",
+    "sidefeed_downpipe",
+    "sidefeed_downpipe_flex",
+    "sidefeed_downpipe_hw",
+    "sidefeed_feeder",
+    "sidefeed_feeder_hopper",
+    "util_air_drop_2",
+    "util_air_drop_2_clips",
+    "util_air_drop_2_fit",
+    "util_air_tube_loader",
+    "util_frl_2",
+    "feed_flex_sleeve",
+    "feed_flex_sleeve_clamps",
+    "feed_hopper",
+    "feed_throat",
+    "barrel_thermocouples",
+    "barrel_vent_dome",
+    "barrel_vent_dome_2",
+    "util_air_tube_vac",
+    "util_air_tube_vac_clips",
+    "vac_bellows",
+    "vac_bellows_2",
+    "vac_gauge_dome",
+    "vac_gauge_dome_2",
+    "vac_pipe",
+    "vac_pipe_3",
+    "vac_pipe_3_hw",
+    "vac_pipe_hw",
+    "vac_valve",
+    "vac_valve_2",
+    "melt_sensor_head",
+    "melt_sensor_p2",
+    "melt_screen_changer_logo_in",
+    "melt_screen_changer_logo_out",
+    "melt_sensor_p3",
+    "melt_sensor_p4",
+    "melt_sensor_die",
+    "die_body_upper",
+    "die_bolt_actuator_rail",
+    "die_choker_bolts",
+    "die_lifting_lugs",
+    "die_thermal_bolts",
+    "die_body_bolts__top",
+    "die_heater_boxes__top",
+    "barrel_cover_c1",
+    "barrel_cover_c1_hw",
+    "barrel_cover_c2",
+    "barrel_cover_c2_hw",
+    "barrel_cover_c3",
+    "barrel_cover_c3_hw",
+    "barrel_cover_c4",
+    "barrel_cover_c4_hw",
+    "barrel_cover_c5",
+    "barrel_cover_c5_hw",
+    "barrel_cover_c6",
+    "barrel_cover_c6_hw"
+   ],
+   "swap": {
+    "barrel_b1": [
+     "int_barrel_hollow_b1"
+    ],
+    "barrel_b2": [
+     "int_barrel_hollow_b2"
+    ],
+    "barrel_b3": [
+     "int_barrel_hollow_b3"
+    ],
+    "barrel_b4": [
+     "int_barrel_hollow_b4"
+    ],
+    "barrel_b5": [
+     "int_barrel_hollow_b5"
+    ],
+    "barrel_b6": [
+     "int_barrel_hollow_b6"
+    ],
+    "melt_head_adapter": [
+     "int_head_hollow_lo",
+     "int_fill_head_lo"
+    ],
+    "melt_startup_valve": [
+     "int_valve_body_lo",
+     "int_valve_bolt_lo",
+     "int_fill_valve_in_lo",
+     "int_fill_valve_run_bolt_lo",
+     "int_fill_valve_run_out_lo"
+    ],
+    "melt_sc_adapter_in": [
+     "int_melt_adapters_hollow_sc_in_lo",
+     "int_fill_adapter_sc_in_lo"
+    ],
+    "melt_gear_pump": [
+     "int_pump_body_lo",
+     "int_fill_pump_in_lo",
+     "int_fill_pump_out_lo"
+    ],
+    "melt_pump_adapter_in": [
+     "int_melt_adapters_hollow_pump_in_lo",
+     "int_fill_adapter_pump_in_lo"
+    ],
+    "melt_pump_adapter_out": [
+     "int_melt_adapters_hollow_pump_out_lo",
+     "int_fill_adapter_pump_out_lo"
+    ],
+    "melt_pipe": [
+     "int_pipe_mixer_section_lo",
+     "int_fill_pipe_lo"
+    ],
+    "melt_static_mixer": [
+     "int_pipe_mixer_elements_lo"
+    ],
+    "melt_die_adapter": [
+     "int_melt_adapters_hollow_die_lo",
+     "int_fill_adapter_die_lo"
+    ],
+    "die_body_lower": [
+     "int_die_lower_face",
+     "int_fill_die_lo"
+    ],
+    "melt_screen_changer": [
+     "anim_ghost_sc"
+    ]
+   },
+   "clip": [
+    "barrel_cable_gland_boxes_op",
+    "barrel_heater_cables",
+    "barrel_heater_cables_op",
+    "barrel_heater_shells",
+    "barrel_joint_1",
+    "barrel_joint_2",
+    "barrel_joint_3",
+    "barrel_joint_4",
+    "barrel_joint_5",
+    "barrel_joint_head",
+    "barrel_joint_lantern",
+    "sidefeed_adapter",
+    "melt_rupture_disc",
+    "melt_sensor_cables",
+    "die_cable_harness",
+    "die_flex_lip",
+    "die_plugs",
+    "util_air_hose_die",
+    "die_deckles",
+    "die_end_plate_op",
+    "die_end_plate_rear"
+   ],
+   "show_whole": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_screw_elem_a_01",
+    "int_screw_elem_a_02",
+    "int_screw_elem_a_03",
+    "int_screw_elem_a_04",
+    "int_screw_elem_a_05",
+    "int_screw_elem_a_06",
+    "int_screw_elem_a_07",
+    "int_screw_elem_a_08",
+    "int_screw_elem_a_09",
+    "int_screw_elem_a_10",
+    "int_screw_elem_a_11",
+    "int_screw_elem_a_12",
+    "int_screw_elem_a_13",
+    "int_screw_elem_a_14",
+    "int_screw_elem_a_15",
+    "int_screw_elem_a_16",
+    "int_screw_elem_a_17",
+    "int_screw_elem_a_18",
+    "int_screw_elem_a_19",
+    "int_screw_elem_a_20",
+    "int_screw_elem_a_21",
+    "int_screw_elem_a_22",
+    "int_screw_elem_a_23",
+    "int_screw_elem_a_24",
+    "int_screw_elem_a_25",
+    "int_screw_elem_a_26",
+    "int_screw_elem_a_27",
+    "int_screw_elem_a_28",
+    "int_screw_elem_a_29",
+    "int_screw_elem_a_30",
+    "int_screw_elem_a_31",
+    "int_screw_elem_a_32",
+    "int_screw_elem_b_01",
+    "int_screw_elem_b_02",
+    "int_screw_elem_b_03",
+    "int_screw_elem_b_04",
+    "int_screw_elem_b_05",
+    "int_screw_elem_b_06",
+    "int_screw_elem_b_07",
+    "int_screw_elem_b_08",
+    "int_screw_elem_b_09",
+    "int_screw_elem_b_10",
+    "int_screw_elem_b_11",
+    "int_screw_elem_b_12",
+    "int_screw_elem_b_13",
+    "int_screw_elem_b_14",
+    "int_screw_elem_b_15",
+    "int_screw_elem_b_16",
+    "int_screw_elem_b_17",
+    "int_screw_elem_b_18",
+    "int_screw_elem_b_19",
+    "int_screw_elem_b_20",
+    "int_screw_elem_b_21",
+    "int_screw_elem_b_22",
+    "int_screw_elem_b_23",
+    "int_screw_elem_b_24",
+    "int_screw_elem_b_25",
+    "int_screw_elem_b_26",
+    "int_screw_elem_b_27",
+    "int_screw_elem_b_28",
+    "int_screw_elem_b_29",
+    "int_screw_elem_b_30",
+    "int_screw_elem_b_31",
+    "int_screw_elem_b_32",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b",
+    "int_fill_screw_z01_feed_lo",
+    "int_fill_screw_z02_melt_lo",
+    "int_fill_screw_z03_vent1_lo",
+    "int_fill_screw_z04_convey_lo",
+    "int_fill_screw_z05_mix_lo",
+    "int_fill_screw_z06_seal2_lo",
+    "int_fill_screw_z07_vent2_lo",
+    "int_fill_screw_z08_meter_lo",
+    "int_fill_screw_z09_pump_lo",
+    "int_head_hollow_lo",
+    "int_fill_head_lo",
+    "int_valve_body_lo",
+    "int_valve_bolt_lo",
+    "int_fill_valve_in_lo",
+    "int_fill_valve_run_bolt_lo",
+    "int_fill_valve_run_out_lo",
+    "int_melt_adapters_hollow_sc_in_lo",
+    "int_fill_adapter_sc_in_lo",
+    "anim_ghost_vent_1",
+    "anim_ghost_vent_2",
+    "anim_vent_window_1",
+    "anim_vent_window_2",
+    "int_pump_body_lo",
+    "int_fill_pump_in_lo",
+    "int_fill_pump_out_lo",
+    "int_melt_adapters_hollow_pump_in_lo",
+    "int_fill_adapter_pump_in_lo",
+    "int_melt_adapters_hollow_pump_out_lo",
+    "int_fill_adapter_pump_out_lo",
+    "int_pipe_mixer_section_lo",
+    "int_fill_pipe_lo",
+    "int_pipe_mixer_elements_lo",
+    "int_melt_adapters_hollow_die_lo",
+    "int_fill_adapter_die_lo",
+    "int_die_lower_face",
+    "int_fill_die_lo",
+    "anim_ghost_sc",
+    "int_sc_disc",
+    "int_sc_screens_01",
+    "int_sc_screens_02",
+    "int_sc_screens_03",
+    "int_sc_screens_04",
+    "int_sc_screens_05",
+    "int_sc_screens_06",
+    "int_sc_screens_07",
+    "int_sc_screens_08",
+    "int_sc_screens_09",
+    "int_sc_screens_10",
+    "int_sc_screens_11",
+    "int_sc_screens_12",
+    "int_fill_sc_cavities",
+    "int_sc_channels",
+    "int_sc_backflush_piston",
+    "int_fill_sc"
+   ],
+   "show_clipped": [
+    "int_barrel_hollow_b1",
+    "int_barrel_hollow_b2",
+    "int_barrel_hollow_b3",
+    "int_barrel_hollow_b4",
+    "int_barrel_hollow_b5",
+    "int_barrel_hollow_b6",
+    "int_pump_gear_top_full",
+    "int_pump_gear_bottom_full"
+   ],
+   "ghost": [
+    "anim_ghost_vent_1",
+    "anim_ghost_vent_2",
+    "anim_ghost_sc"
+   ],
+   "peel": null,
+   "clips_on_enter": [],
+   "camera": {
+    "pos": [
+     2.0,
+     11.0,
+     -11.5
+    ],
+    "target": [
+     2.5,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "shots.json still ST1; whole line half-section from above"
+   },
+   "frame_box_m": {
+    "min": [
+     -0.05,
+     1.2,
+     -1.4
+    ],
+    "max": [
+     9.58,
+     2.8,
+     1.4
+    ],
+    "source": "contract box_m"
+   },
+   "planner_fix": "review-dot1-impl-01 I1: solid cover boxes (volume / bbox 0.88-0.97) draw full-section slabs; hide them as in the Đợt 1 fix",
+   "counts": {
+    "hide": 77,
+    "swap": 17,
+    "clip": 21,
+    "show_whole": 122,
+    "show_clipped": 8,
+    "ghost": 3
+   },
+   "visible_parts_estimate": 392
+  }
+ },
+ "clips": {
+  "valve_run": {
+   "label_vi": "Van khởi động: XẢ → CHẠY",
+   "states": [
+    "CUT_Z_BARREL",
+    "ST1_Z_FULL",
+    "FREE"
+   ],
+   "camera_on_play": {
+    "pos": [
+     6.4,
+     2.1,
+     -1.6
+    ],
+    "target": [
+     6.2,
+     1.15,
+     0.0
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "shots.json S08 key 3 (frame 2400); valve close-up; only from CUT_Z_BARREL",
+    "only_from": [
+     "CUT_Z_BARREL"
+    ]
+   },
+   "movers": [
+    {
+     "id": "valve_bolt",
+     "attach": [
+      "int_valve_bolt"
+     ],
+     "device_id": "melt_startup_valve",
+     "pivot_m": [
+      0,
+      0,
+      0
+     ],
+     "kind": "translate"
+    }
+   ],
+   "tracks": [
+    {
+     "mover": "valve_bolt",
+     "offset_from_m": [
+      0.0,
+      0.0,
+      0.2
+     ],
+     "offset_to_m": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "t0_s": 1.0,
+     "t1_s": 2.2,
+     "ease": "inOutCubic"
+    }
+   ],
+   "duration_s": 2.2,
+   "loop": false,
+   "rest": "offset 0 = RUN (the bolt is exported at RUN)",
+   "fill_switch": {
+    "drain_set": [
+     "int_fill_valve_in",
+     "int_fill_valve_drain_bolt",
+     "int_fill_valve_drain_port"
+    ],
+    "run_set": [
+     "int_fill_valve_in",
+     "int_fill_valve_run_bolt",
+     "int_fill_valve_run_out"
+    ],
+    "drain_until_s": 2.2,
+    "variant_rule": "toggle the variant that the current state shows: _lo in CUT_Z_BARREL and ST1_Z_FULL, the full name in FREE",
+    "rule": "drain set while t < drain_until_s, run set at the end and at rest; never both; through setVisible (recorded)"
+   },
+   "source": "contract clips.valve_run (from [6.221, 1.2, 0.2] to [6.221, 1.2, 0] in 1.2 s) + 1.0 s hold at DRAIN so the elbow can be seen"
+  },
+  "sc_index": {
+   "label_vi": "Đĩa lọc quay từng bước",
+   "states": [
+    "GHOST_SC"
+   ],
+   "movers": [
+    {
+     "id": "sc_disc",
+     "attach": [
+      "int_sc_disc"
+     ],
+     "device_id": "melt_screen_changer",
+     "pivot_m": [
+      6.95,
+      1.545,
+      0
+     ],
+     "axis": [
+      1,
+      0,
+      0
+     ],
+     "kind": "rotate"
+    },
+    {
+     "id": "sc_piston",
+     "attach": [
+      "int_sc_backflush_piston"
+     ],
+     "device_id": "melt_screen_changer",
+     "pivot_m": [
+      0,
+      0,
+      0
+     ],
+     "kind": "translate"
+    }
+   ],
+   "tracks": [
+    {
+     "mover": "sc_disc",
+     "step_deg": 30,
+     "steps": 12,
+     "step_time_s": 0.48,
+     "period_s": 3.0,
+     "ease": "inOutCubic",
+     "step_at_s": 0.0
+    },
+    {
+     "mover": "sc_piston",
+     "offset_to_m": [
+      0.0,
+      0.0,
+      0.06
+     ],
+     "out_s": [
+      0.8,
+      1.4
+     ],
+     "back_s": [
+      1.4,
+      2.0
+     ],
+     "per_period": true
+    }
+   ],
+   "duration_s": 36.0,
+   "loop": true,
+   "dirt": {
+    "nodes": [
+     "int_sc_screens_01",
+     "int_sc_screens_02",
+     "int_sc_screens_03",
+     "int_sc_screens_04",
+     "int_sc_screens_05",
+     "int_sc_screens_06",
+     "int_sc_screens_07",
+     "int_sc_screens_08",
+     "int_sc_screens_09",
+     "int_sc_screens_10",
+     "int_sc_screens_11",
+     "int_sc_screens_12"
+    ],
+    "material": "za_sc_screenpack",
+    "cavity_angle_deg_from": "node extras cavity_angle_deg (01 = 0 ... 12 = -30)",
+    "flow_window_deg": [
+     -150,
+     -30
+    ],
+    "backflush_deg": 0,
+    "rule": "angle = cavity_angle_deg + 30 * completed steps (wrapped to -180...180). In the flow window: dirt ramps from i/5 to (i+1)/5 over the dwell (i = (angle + 150) / 30). At 0 deg: dirt goes to 0 during the piston stroke (out_s). Elsewhere: unchanged (dirty from -30 to 0, clean after the backflush).",
+    "colors": {
+     "clean": "#A8B0B8",
+     "dirty": "#4A3320"
+    }
+   },
+   "source": "contract clips.sc_index; anim/log.md A1b (cavities at 0...330 deg, flow window -150...-30, backflush at 0)"
+  },
+  "die_open": {
+   "label_vi": "Nhấc nửa khuôn trên",
+   "states": [
+    "CUT_DIE_PLAN"
+   ],
+   "device_groups": [
+    "die_body_upper",
+    "die_flex_lip",
+    "die_thermal_bolts",
+    "die_choker_bolts",
+    "die_bolt_actuator_rail",
+    "die_lifting_lugs",
+    "die_cable_harness",
+    "die_heater_conduit",
+    "util_air_hose_die"
+   ],
+   "movers": [
+    {
+     "id": "lift_die_body_bolts__top",
+     "attach": [
+      "die_body_bolts__top"
+     ],
+     "device_id": "die_body_bolts",
+     "pivot_m": [
+      0,
+      0,
+      0
+     ],
+     "kind": "translate"
+    },
+    {
+     "id": "lift_die_heater_boxes__top",
+     "attach": [
+      "die_heater_boxes__top"
+     ],
+     "device_id": "die_heater_boxes",
+     "pivot_m": [
+      0,
+      0,
+      0
+     ],
+     "kind": "translate"
+    }
+   ],
+   "tracks": [
+    {
+     "targets": "device_groups + movers",
+     "offset_from_m": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "offset_to_m": [
+      0,
+      0.9,
+      0.0
+     ],
+     "t0_s": 0.0,
+     "t1_s": 2.4,
+     "ease": "inOutCubic"
+    },
+    {
+     "fill_front": "die",
+     "from": 0.0,
+     "to": 1.0,
+     "t0_s": 2.4,
+     "t1_s": 4.4
+    }
+   ],
+   "duration_s": 4.4,
+   "loop": false,
+   "rule": "device groups are runtime groups at identity: tween group.position directly. Targets are never hidden or clipped in CUT_DIE_PLAN.",
+   "source": "contract clips.die_open (+0.9 m in 2.4 s) + fills die front 0 -> 1 (contract fills int_fill_die note)"
+  }
+ },
+ "fills": {
+  "phase_ramp_x_m": [
+   1.52,
+   1.9
+  ],
+  "colors": {
+   "pellet": "#DBD6C2",
+   "melt": "#D95709"
+  },
+  "opacity": 0.6,
+  "temp_legend_c": [
+   50,
+   300
+  ],
+  "speeds": {
+   "screw": "pitch_m * rpm_screw / 60 / slow_screw (rotor mode: off 0, slow 1/20, real 1)",
+   "melt": "stripe 0.12 m at the speed of zone z09 (0.1268 m pitch): illustrative, proportional to throughput",
+   "roll_lip": "0.347 m/s real (20.8 m/min) * roll factor (rolls display_slow 1)"
+  },
+  "zones": [
+   {
+    "zone": "z01_feed",
+    "x_m": [
+     0,
+     1.521
+    ],
+    "temp_c": [
+     50,
+     260
+    ],
+    "pitch_m": 0.2535,
+    "speed": "screw",
+    "phase": "pellet"
+   },
+   {
+    "zone": "z02_melt",
+    "x_m": [
+     1.521,
+     1.98575
+    ],
+    "temp_c": [
+     260,
+     275
+    ],
+    "pitch_m": 0.169,
+    "speed": "screw",
+    "phase": "mixed"
+   },
+   {
+    "zone": "z03_vent1",
+    "x_m": [
+     1.98575,
+     2.49275
+    ],
+    "temp_c": [
+     275,
+     275
+    ],
+    "pitch_m": 0.2535,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z04_convey",
+    "x_m": [
+     2.49275,
+     2.83075
+    ],
+    "temp_c": [
+     275,
+     270
+    ],
+    "pitch_m": 0.169,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z05_mix",
+    "x_m": [
+     2.83075,
+     3.16875
+    ],
+    "temp_c": [
+     270,
+     270
+    ],
+    "pitch_m": 0.169,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z06_seal2",
+    "x_m": [
+     3.16875,
+     3.718
+    ],
+    "temp_c": [
+     270,
+     270
+    ],
+    "pitch_m": 0.169,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z07_vent2",
+    "x_m": [
+     3.718,
+     4.4785
+    ],
+    "temp_c": [
+     270,
+     270
+    ],
+    "pitch_m": 0.2535,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z08_meter",
+    "x_m": [
+     4.4785,
+     5.1545
+    ],
+    "temp_c": [
+     275,
+     280
+    ],
+    "pitch_m": 0.15,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "z09_pump",
+    "x_m": [
+     5.1545,
+     5.746
+    ],
+    "temp_c": [
+     280,
+     285
+    ],
+    "pitch_m": 0.1268,
+    "speed": "screw",
+    "phase": "melt"
+   },
+   {
+    "zone": "head",
+    "x_m": [
+     5.746,
+     5.996
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "valve_in",
+    "x_m": [
+     5.996,
+     6.1406
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "valve_run_bolt",
+    "x_m": [
+     6.122,
+     6.32
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "valve_drain_bolt",
+    "x_m": [
+     6.122,
+     6.2805
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "valve_drain_port",
+    "x_m": [
+     6.1615,
+     6.2805
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "valve_run_out",
+    "x_m": [
+     6.3014,
+     6.446
+    ],
+    "temp_c": [
+     285,
+     285
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "adapter_sc_in",
+    "x_m": [
+     6.446,
+     6.596
+    ],
+    "temp_c": [
+     282,
+     282
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "sc",
+    "x_m": [
+     6.596,
+     7.301
+    ],
+    "temp_c": [
+     280,
+     280
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "sc_cavities",
+    "x_m": [
+     6.9105,
+     6.9895
+    ],
+    "temp_c": [
+     280,
+     280
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "adapter_pump_in",
+    "x_m": [
+     7.301,
+     7.476
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "pump_in",
+    "x_m": [
+     7.476,
+     7.668
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "pump_pockets_bottom",
+    "x_m": [
+     7.631,
+     7.771
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "pump_pockets_top",
+    "x_m": [
+     7.6311,
+     7.7709
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "pump_out",
+    "x_m": [
+     7.734,
+     7.926
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "adapter_pump_out",
+    "x_m": [
+     7.926,
+     8.076
+    ],
+    "temp_c": [
+     278,
+     278
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "pipe",
+    "x_m": [
+     8.076,
+     8.926
+    ],
+    "temp_c": [
+     275,
+     275
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "adapter_die",
+    "x_m": [
+     8.926,
+     9.126
+    ],
+    "temp_c": [
+     275,
+     275
+    ],
+    "pitch_m": 0.12,
+    "speed": "melt",
+    "phase": "melt"
+   },
+   {
+    "zone": "curtain",
+    "x_m": [
+     9.576,
+     9.776
+    ],
+    "temp_c": [
+     270,
+     250
+    ],
+    "pitch_m": 0.05,
+    "speed": "roll_lip",
+    "phase": "melt",
+    "note": "ctx_melt_curtain; temperatures assumed (*), lip exit 20.8 m/min (design-anim §2)"
+   }
+  ],
+  "die": {
+   "nodes": [
+    "int_fill_die",
+    "int_fill_die_lo",
+    "int_fill_die_y0"
+   ],
+   "origin_m": [
+    9.126,
+    1.2,
+    0.0
+   ],
+   "radius_m": 1.25,
+   "temp_c": [
+    275,
+    275
+   ],
+   "front_default": 1.0
+  },
+  "nodes": {
+   "int_fill_adapter_die": "line",
+   "int_fill_adapter_die_lo": "line",
+   "int_fill_adapter_die_y0": "line",
+   "int_fill_adapter_pump_in": "line",
+   "int_fill_adapter_pump_in_lo": "line",
+   "int_fill_adapter_pump_in_y0": "line",
+   "int_fill_adapter_pump_out": "line",
+   "int_fill_adapter_pump_out_lo": "line",
+   "int_fill_adapter_pump_out_y0": "line",
+   "int_fill_adapter_sc_in": "line",
+   "int_fill_adapter_sc_in_lo": "line",
+   "int_fill_die": "die",
+   "int_fill_die_lo": "die",
+   "int_fill_die_y0": "die",
+   "int_fill_head": "line",
+   "int_fill_head_lo": "line",
+   "int_fill_pipe": "line",
+   "int_fill_pipe_lo": "line",
+   "int_fill_pipe_y0": "line",
+   "int_fill_pump_in": "line",
+   "int_fill_pump_in_lo": "line",
+   "int_fill_pump_in_y0": "line",
+   "int_fill_pump_out": "line",
+   "int_fill_pump_out_lo": "line",
+   "int_fill_pump_out_y0": "line",
+   "int_fill_pump_pockets_bottom": "line",
+   "int_fill_pump_pockets_top": "line",
+   "int_fill_sc": "line",
+   "int_fill_sc_cavities": "line",
+   "int_fill_screw_x2450": "line",
+   "int_fill_screw_x4120": "line",
+   "int_fill_screw_z01_feed": "line",
+   "int_fill_screw_z01_feed_lo": "line",
+   "int_fill_screw_z02_melt": "line",
+   "int_fill_screw_z02_melt_lo": "line",
+   "int_fill_screw_z03_vent1": "line",
+   "int_fill_screw_z03_vent1_lo": "line",
+   "int_fill_screw_z04_convey": "line",
+   "int_fill_screw_z04_convey_lo": "line",
+   "int_fill_screw_z05_mix": "line",
+   "int_fill_screw_z05_mix_lo": "line",
+   "int_fill_screw_z06_seal2": "line",
+   "int_fill_screw_z06_seal2_lo": "line",
+   "int_fill_screw_z07_vent2": "line",
+   "int_fill_screw_z07_vent2_lo": "line",
+   "int_fill_screw_z08_meter": "line",
+   "int_fill_screw_z08_meter_lo": "line",
+   "int_fill_screw_z09_pump": "line",
+   "int_fill_screw_z09_pump_lo": "line",
+   "int_fill_valve_drain_bolt": "line",
+   "int_fill_valve_drain_bolt_lo": "line",
+   "int_fill_valve_drain_port": "line",
+   "int_fill_valve_drain_port_lo": "line",
+   "int_fill_valve_in": "line",
+   "int_fill_valve_in_lo": "line",
+   "int_fill_valve_run_bolt": "line",
+   "int_fill_valve_run_bolt_lo": "line",
+   "int_fill_valve_run_out": "line",
+   "int_fill_valve_run_out_lo": "line",
+   "ctx_melt_curtain": "line"
+  },
+  "sheet": {
+   "node": "ctx_sheet",
+   "material": "ze_sheet_pet",
+   "speed_m_s_real": 0.4168,
+   "stripe_m": 0.3,
+   "stripe_width": 0.12,
+   "path_three_xy": [
+    {
+     "seg": "wrap",
+     "centre": [
+      9.776,
+      1.601
+     ],
+     "r": 0.4005,
+     "from_deg": -90,
+     "to_deg": 90,
+     "sense": "ccw",
+     "note": "middle roll, nip at the bottom, sheet over the +X side (middle rpm -9.95: bottom surface moves +X)"
+    },
+    {
+     "seg": "wrap",
+     "centre": [
+      9.776,
+      2.403
+     ],
+     "r": 0.4005,
+     "from_deg": -90,
+     "to_deg": 90,
+     "sense": "cw_via_180",
+     "note": "top roll, sheet over the -X side (bbox min x 9.37)"
+    },
+    {
+     "seg": "line",
+     "from": [
+      9.776,
+      2.805
+     ],
+     "to": [
+      12.5,
+      2.805
+     ],
+     "note": "take-off run"
+    }
+   ],
+   "select_rule": "y > 2.79 and x > 9.776 -> line; else y < 2.002 -> middle wrap; else top wrap",
+   "source": "design-anim §2 (rolls 9.9 rpm, sheet about 25 m/min); ctx_sheet has POSITION + NORMAL only (no UV), so the pattern is procedural"
+  }
+ },
+ "splits": {
+  "melt_heater_bands": {
+   "by": "x_nearest",
+   "centres_x_m": {
+    "melt_heater_bands__head1": 5.836,
+    "melt_heater_bands__head2": 5.906,
+    "melt_heater_bands__scin": 6.521,
+    "melt_heater_bands__pumpin": 7.388,
+    "melt_heater_bands__pumpout": 8.001,
+    "melt_heater_bands__dieadapter": 9.0
+   },
+   "device_id": "melt_heater_bands",
+   "source_tris": 6996,
+   "source_meshes": 3,
+   "materials": [
+    "ze_polished",
+    "ze_steel",
+    "ze_terminal_grey"
+   ],
+   "island": "connected triangles over position-welded vertices (1e-5 m), classified by island bbox centre",
+   "ambiguity_check": "x_nearest: fail if the two nearest centres are closer than 10 mm to each other for any island"
+  },
+  "die_body_bolts": {
+   "by": "y_threshold",
+   "y_m": 1.2,
+   "above": "die_body_bolts__top",
+   "below": "die_body_bolts__bottom",
+   "note": "contract: Blender Z of the island bbox centre > 1.2 -> top; three Y = Blender Z",
+   "device_id": "die_body_bolts",
+   "source_tris": 16168,
+   "source_meshes": 2,
+   "materials": [
+    "ze_black",
+    "ze_steel_dark"
+   ],
+   "island": "connected triangles over position-welded vertices (1e-5 m), classified by island bbox centre",
+   "ambiguity_check": "x_nearest: fail if the two nearest centres are closer than 10 mm to each other for any island"
+  },
+  "die_heater_boxes": {
+   "by": "y_threshold",
+   "y_m": 1.2,
+   "above": "die_heater_boxes__top",
+   "below": "die_heater_boxes__bottom",
+   "note": "contract: Blender Z of the island bbox centre > 1.2 -> top; three Y = Blender Z",
+   "device_id": "die_heater_boxes",
+   "source_tris": 21704,
+   "source_meshes": 4,
+   "materials": [
+    "ze_stainless",
+    "ze_steel",
+    "ze_black",
+    "ze_yellow"
+   ],
+   "island": "connected triangles over position-welded vertices (1e-5 m), classified by island bbox centre",
+   "ambiguity_check": "x_nearest: fail if the two nearest centres are closer than 10 mm to each other for any island"
+  }
+ },
+ "rotors": {
+  "enable_slice": [
+   1,
+   2
+  ],
+  "new": [
+   "pump_gear_top",
+   "pump_gear_bottom",
+   "gbx_input",
+   "gbx_counter"
+  ],
+  "expected_deg_s_slow": {
+   "pump_gear_top": 103.5,
+   "pump_gear_bottom": -103.5,
+   "gbx_input": -335.4,
+   "gbx_counter": 171.42
+  },
+  "note": "int_gbx_schematic_out_a/b are children of int_screw_axis_a/b in interior.glb and turn with the screws"
+ },
+ "notes": [
+  "CUT_DIE_PLAN.show_whole: dropped runtime name anim_die_choker_bar (real node int_die_choker_bar listed)",
+  "CUT_PUMP.show_whole: dropped runtime name rot_pump_gear_bottom (real node int_pump_gear_bottom listed)",
+  "CUT_PUMP.show_whole: dropped runtime name rot_pump_gear_top (real node int_pump_gear_top listed)",
+  "GHOST_DRIVE.show_whole: dropped runtime name rot_gbx_counter (real node int_gbx_schematic_counter listed)",
+  "GHOST_DRIVE.show_whole: dropped runtime name rot_gbx_input (real node int_gbx_schematic_input listed)",
+  "GHOST_SC.show_whole: dropped runtime name anim_sc_disc (real node int_sc_disc listed)",
+  "GHOST_SC.show_whole: dropped runtime name anim_sc_piston (real node int_sc_backflush_piston listed)",
+  "ST1_Z_FULL.show_clipped: dropped runtime name rot_pump_gear_bottom (real node int_pump_gear_bottom listed)",
+  "ST1_Z_FULL.show_clipped: dropped runtime name rot_pump_gear_top (real node int_pump_gear_top listed)",
+  "ST1_Z_FULL.show_whole: dropped runtime name anim_sc_disc (real node int_sc_disc listed)",
+  "ST1_Z_FULL.show_whole: dropped runtime name anim_sc_piston (real node int_sc_backflush_piston listed)",
+  "die_open: anim_die_choker_bar dropped, int_die_choker_bar rides with dev_die_choker_bolts"
+ ]
+}

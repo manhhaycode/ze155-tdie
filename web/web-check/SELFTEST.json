@@ -1,0 +1,819 @@
+{
+ "generated": "2026-10-05T08:37:57.744Z",
+ "by": "fixer round 1 self-test after review-dot1-impl-01 fixes (not a certification; the independent reviewer re-checks)",
+ "url": "http://localhost:5178/?selfcheck=1",
+ "env": "Chrome via chrome-devtools MCP, viewport 1920x1080 DPR 1, npm run dev (StrictMode), Apple M3 Pro",
+ "data": "public/models + public/data from `make -C web data verify publish` (data-only path; GLBs unchanged, 5 793 436 / 1 982 388 B); cut_states.json with the make_data.py web overrides CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES",
+ "summary": {
+  "D1": true,
+  "D2": true,
+  "D3": true,
+  "D4": true,
+  "D5": true,
+  "D6": true,
+  "D7": true,
+  "D8": true,
+  "D9": true,
+  "D10": true,
+  "D11": true,
+  "D12": true,
+  "D13": true,
+  "D14": true,
+  "D15": true
+ },
+ "criteria": {
+  "D1": {
+   "ok": true,
+   "line_first_frame_ms": 1221.6,
+   "interior_ready_ms": 417.7,
+   "bvh_ms": 429.6,
+   "limits": "<=4000 / <=1500 / <=800"
+  },
+  "D2": {
+   "ok": true,
+   "selectAll": {
+    "ok": 190,
+    "total": 190,
+    "failed": []
+   },
+   "gate": "AMENDMENTS I1: selectAll 190/190 + selection from builder A's DeviceTree (tree click calls select+zoomTo); pickSweep deferred to 1b"
+  },
+  "D3": {
+   "ok": true,
+   "devices_clicked": 10,
+   "note": "click/Alt+click/Esc on 10 devices at the FULL preset, dblclick and F zoom (camera target lands on the device), click on empty space clears; outline colours 2 px #9fd3ff hover / 3 px #ff8a1f select, see selftest/shot-D3-*.png",
+   "real_input": "fixer: real F key (chrome-devtools press_key) on melt_gear_pump at the FULL preset: target 0 mm from the bbox centre, view direction kept"
+  },
+  "D4": {
+   "ok": true,
+   "passed": "6/6",
+   "cases": [
+    "CUT_FEED/feed_throat: 22/22, click -> feed_throat",
+    "CUT_Z_BARREL/barrel_b3: 40/40, click -> barrel_b3",
+    "CUT_X2450/barrel_b3: 89/89, click -> barrel_b3",
+    "CUT_X4120/barrel_b5: 38/38, click -> barrel_b5",
+    "CUT_X2450/screws: 32/32, click -> screws",
+    "FREE/barrel_b4: 56/56, click -> barrel_b4"
+   ],
+   "extra_free": [
+    "FREE/barrel_b3 three-axis y = 1.2: 58/58",
+    "FREE/barrel_b4 three-axis z = 0: 207/207"
+   ],
+   "repeat_runs": "fixer: the 6 cases 4 more times in a row with different start delays: 24/24 ok (X2450/screws 29-31 px, all correct)",
+   "note": "review I1: the covers are hidden in the cut states, so the internal cover joint face no longer crosses the screw bore; review M8: capCheck sets rotorMode off while it samples and restores it"
+  },
+  "D5": {
+   "rayUnfiltered": 0,
+   "rayUnfilteredEmpties": 0,
+   "ok": true
+  },
+  "D6": {
+   "ok": true,
+   "bad": [],
+   "glClippingPlanes": 0,
+   "freePlaneRefs": 0,
+   "changedMaterialsAtEnd": 0,
+   "changedVisibilityAtEnd": 0
+  },
+  "D7": {
+   "ok": true,
+   "timeState_ms": {
+    "FULL": 16.9,
+    "CUT_FEED": 16.5,
+    "CUT_Z_BARREL": 17.3,
+    "CUT_X2450": 16.6,
+    "CUT_X4120": 17,
+    "FREE": 17.9
+   },
+   "slider": {
+    "js_ms_max": 0.3,
+    "frame_ms_avg": 8.34,
+    "frame_ms_max": 9.3
+   },
+   "note": "2 rAF at 120 Hz is ~16.7 ms, so every state switch completes within the next frame (precompile ran once after the interior load, inside the state queue)"
+  },
+  "D8": {
+   "ok": true,
+   "screw_deg_per_s": [
+    -89.81,
+    -89.81
+   ],
+   "max_err": 0.0021
+  },
+  "D9": {
+   "ok": true,
+   "states": [
+    {
+     "state": "FULL",
+     "fps": 120,
+     "calls": 775,
+     "triangles": 1190872,
+     "heap_mb": 113,
+     "ok": true
+    },
+    {
+     "state": "CUT_FEED",
+     "fps": 120.3,
+     "calls": 204,
+     "triangles": 428216,
+     "heap_mb": 117.5,
+     "ok": true
+    },
+    {
+     "state": "CUT_Z_BARREL",
+     "fps": 120.3,
+     "calls": 185,
+     "triangles": 422078,
+     "heap_mb": 131.8,
+     "ok": true
+    },
+    {
+     "state": "CUT_X2450",
+     "fps": 120.3,
+     "calls": 287,
+     "triangles": 576678,
+     "heap_mb": 132.2,
+     "ok": true
+    },
+    {
+     "state": "CUT_X4120",
+     "fps": 120.3,
+     "calls": 261,
+     "triangles": 530118,
+     "heap_mb": 127,
+     "ok": true
+    },
+    {
+     "state": "FREE_x3000",
+     "fps": 90.6,
+     "calls": 958,
+     "triangles": 1363080,
+     "heap_mb": 123.9,
+     "ok": true
+    }
+   ],
+   "note": "read after 3 s at each state camera preset (FREE x = 3.0 at the FULL preset camera), DPR 1, 1920x1080. FULL is now the hero-like whole-line preset (review M1): 775 calls, budget 850"
+  },
+  "D10": {
+   "ok": true,
+   "sizes_bytes": {
+    "line": 5793436,
+    "interior": 1982388
+   },
+   "source": "web/build/reports/check.json + transfer sizes in raw.D12_page"
+  },
+  "D11": {
+   "ok": true,
+   "console": "fixer: after load, selftest, all states, FREE axes, wheel/pinch tests, F key, ?selfcheck=show: 0 errors; 1 library warning (THREE.Clock deprecated, from R3F 9.8.1), unchanged"
+  },
+  "D12": {
+   "ok": true,
+   "requests": 54,
+   "glb": [
+    {
+     "url": "http://localhost:5178/models/line.glb",
+     "encodedBodySize": 5793436,
+     "decodedBodySize": 5793436
+    },
+    {
+     "url": "http://localhost:5178/models/interior.glb",
+     "encodedBodySize": 1982388,
+     "decodedBodySize": 1982388
+    }
+   ],
+   "non_localhost": []
+  },
+  "D13": {
+   "ok": true,
+   "screenshots": [
+    "../review/dot1/fix-01/fix-FULL.png",
+    "../review/dot1/fix-01/fix-CUT_Z_BARREL.png",
+    "../review/dot1/fix-01/fix-CUT_X2450.png",
+    "../review/dot1/fix-01/fix-CUT_X4120.png",
+    "../review/dot1/fix-01/fix-FREE-enter-from-FULL.png",
+    "../review/dot1/fix-01/fix-FREE-x3000-close.png",
+    "../review/dot1/fix-01/fix-FREE-z1200.png"
+   ],
+   "note": "visual comparison is for the reviewer. Covers hidden in CUT_Z_BARREL / X2450 / X4120 / FREE (review I1, M2); wider X2450 and X4120 presets (I2); hero-like FULL (M1). The older selftest/shot-*.png predate these fixes.",
+   "review": {
+    "status": "passed_with_notes",
+    "reviewed_on": "2026-10-05",
+    "reviewer": "gpt-5.6-luna / explorer_session (independent visual review)",
+    "integrated_by": "Codex main; read the D13 definition and rechecked X4120 screenshots against the reference",
+    "env": "Codex Computer Use, In-app Browser, http://127.0.0.1:5178/, viewports 1366x768 and 1920x1080; npm run dev",
+    "criterion": "web/PLAN-DOT1.md D13; visual comparison of preset states with A1a and hero references",
+    "report": "../review/dot1/codex-fix-02/review.md",
+    "scope": "D13 visual closure after the approved focus/X4120 fixes. Root generated/by/env/raw and all other criterion results remain historical; this is not a new full performance certification.",
+    "references": [
+     "../../anim/look/A1a-S04-f1161-ev-r2.png",
+     "../../anim/look/A1a-x2450-S05b-ev-r2.png",
+     "../../anim/look/A1a-x4120-S07b-ev-r2.png",
+     "../../anim/look/A1a-feedcol-ext-wb.png",
+     "../../out/renders/ze155-hero.png"
+    ],
+    "screenshots": [
+     "../review/dot1/codex-fix-02/FULL-1366.jpg",
+     "../review/dot1/codex-fix-02/FULL-1920.jpg",
+     "../review/dot1/codex-fix-02/CUT_Z_BARREL-1366.jpg",
+     "../review/dot1/codex-fix-02/CUT_X2450-1366.jpg",
+     "../review/dot1/codex-fix-02/CUT_X4120-1366.jpg",
+     "../review/dot1/codex-fix-02/CUT_X4120-1920.jpg",
+     "../review/dot1/codex-fix-02/CUT_FEED-1366.jpg",
+     "../review/dot1/codex-fix-02/FREE-entry-1366.jpg",
+     "../review/dot1/codex-fix-02/FREE-Z1250-1366.jpg"
+    ],
+    "critical_findings": [],
+    "important_findings": [],
+    "minor_notes": [
+     "CUT_FEED hopper framing remains tight near the toolbar; outside the approved fix scope.",
+     "FREE entry retains the FULL camera, so the default cut face is small; existing behavior."
+    ],
+    "pinch_real_input_verified": false
+   }
+  },
+  "D14": {
+   "ok": true,
+   "check_json_failures": [],
+   "runtime": {
+    "devices": 190,
+    "unknownNodes": 0,
+    "missingNodes": 0,
+    "orphans": 0,
+    "ok": true
+   }
+  },
+  "D15": {
+   "ok": true,
+   "blend_unchanged": true,
+   "blend_mtime": 1791173730.6735456,
+   "blend_size": 29470668,
+   "note": "fixer ran only the data-only make path (no Blender); stat -f \"%m %z\" out/ze155_anim.blend = 1791173730 29470668 before and after"
+  }
+ },
+ "raw": {
+  "started": "2026-10-05T08:37:31.399Z",
+  "selfcheck_start": {
+   "devices": 190,
+   "parts": 354,
+   "unknownNodes": 0,
+   "missingNodes": 0,
+   "orphans": 0,
+   "orphanNames": [],
+   "rayUnfiltered": 0,
+   "rayUnfilteredEmpties": 0,
+   "interiorLoaded": false,
+   "rotorsReady": 6,
+   "dataVersion": {
+    "devices": 1,
+    "node_map": 1,
+    "cut_states": 1,
+    "rotors": 1,
+    "materials": 1
+   },
+   "quantizeSplit": [],
+   "unknownMaterials": [],
+   "devicesWithoutLineMeshes": [
+    "screws"
+   ],
+   "bvh_ms": 354.7,
+   "state": "FULL"
+  },
+  "stats_FULL": {
+   "state": "FULL",
+   "fps": 120,
+   "calls": 775,
+   "triangles": 1190872,
+   "geometries": 779,
+   "textures": 4,
+   "programs": 11,
+   "devices": 190,
+   "heap_mb": 113,
+   "dpr": 1,
+   "size": {
+    "w": 1920,
+    "h": 1080
+   },
+   "load": {
+    "line_first_frame_ms": 1221.6,
+    "interior_ready_ms": null,
+    "bvh_ms": 354.7,
+    "line_rig_ms": 358.7,
+    "interior_rig_ms": null
+   },
+   "precompile": {
+    "ran": false,
+    "ms": 0,
+    "programs_before": 0,
+    "programs_after": 0
+   }
+  },
+  "D2_selectAll": {
+   "ok": 190,
+   "total": 190,
+   "failed": []
+  },
+  "D3": {
+   "devices": [
+    {
+     "id": "barrel_support_1",
+     "x": 1219,
+     "y": 588,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "barrel_support_1",
+     "esc_ok": true
+    },
+    {
+     "id": "drive_coupling_guard",
+     "x": 1423,
+     "y": 508,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "drive_coupling_guard_mesh",
+     "esc_ok": true
+    },
+    {
+     "id": "feed_additive_feeder",
+     "x": 1364,
+     "y": 383,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "feed_additive_feeder",
+     "esc_ok": true
+    },
+    {
+     "id": "barrel_b1",
+     "x": 1274,
+     "y": 550,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "barrel_b1",
+     "esc_ok": true
+    },
+    {
+     "id": "vac_bellows",
+     "x": 1051,
+     "y": 520,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "vac_bellows",
+     "esc_ok": true
+    },
+    {
+     "id": "melt_drain_chute",
+     "x": 928,
+     "y": 672,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "melt_drain_chute",
+     "esc_ok": true
+    },
+    {
+     "id": "die_body_lower",
+     "x": 760,
+     "y": 737,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "die_body_lower",
+     "esc_ok": true
+    },
+    {
+     "id": "ctrl_die_bolt_cabinet",
+     "x": 1029,
+     "y": 522,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "ctrl_die_bolt_cabinet",
+     "esc_ok": true
+    },
+    {
+     "id": "util_air_drop",
+     "x": 623,
+     "y": 532,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "util_air_drop",
+     "esc_ok": true
+    },
+    {
+     "id": "ctx_roll_bottom",
+     "x": 669,
+     "y": 734,
+     "click_ok": true,
+     "alt_ok": true,
+     "alt_part": "ctx_roll_bottom",
+     "esc_ok": true
+    }
+   ],
+   "dbl_device": "barrel_support_1",
+   "dbl_target_dist_m": 0,
+   "dbl_ok": true,
+   "f_device": "ctx_roll_bottom",
+   "f_target_dist_m": 0,
+   "f_ok": true,
+   "empty": {
+    "x": 340,
+    "y": 120
+   },
+   "empty_click_clears": true,
+   "ok": true
+  },
+  "D4": {
+   "cases": [
+    {
+     "state": "CUT_FEED",
+     "device": "feed_throat",
+     "capPixels": 22,
+     "correct": 22,
+     "wrong": {},
+     "sample": {
+      "x": 799,
+      "y": 346
+     },
+     "clickSelected": "feed_throat",
+     "ok": true
+    },
+    {
+     "state": "CUT_Z_BARREL",
+     "device": "barrel_b3",
+     "capPixels": 40,
+     "correct": 40,
+     "wrong": {},
+     "sample": {
+      "x": 797,
+      "y": 659
+     },
+     "clickSelected": "barrel_b3",
+     "ok": true
+    },
+    {
+     "state": "CUT_X2450",
+     "device": "barrel_b3",
+     "capPixels": 89,
+     "correct": 89,
+     "wrong": {},
+     "sample": {
+      "x": 974,
+      "y": 452
+     },
+     "clickSelected": "barrel_b3",
+     "ok": true
+    },
+    {
+     "state": "CUT_X4120",
+     "device": "barrel_b5",
+     "capPixels": 38,
+     "correct": 38,
+     "wrong": {},
+     "sample": {
+      "x": 929,
+      "y": 864
+     },
+     "clickSelected": "barrel_b5",
+     "ok": true
+    },
+    {
+     "state": "CUT_X2450",
+     "device": "screws",
+     "capPixels": 32,
+     "correct": 32,
+     "wrong": {},
+     "sample": {
+      "x": 955,
+      "y": 557
+     },
+     "clickSelected": "screws",
+     "ok": true
+    },
+    {
+     "state": "FREE",
+     "device": "barrel_b4",
+     "axis": "x",
+     "offset": 3,
+     "capPixels": 56,
+     "correct": 56,
+     "wrong": {},
+     "sample": {
+      "x": 985,
+      "y": 554
+     },
+     "clickSelected": "barrel_b4",
+     "ok": true
+    }
+   ],
+   "ok": true,
+   "extra_free_y_z": [
+    {
+     "state": "FREE",
+     "device": "barrel_b3",
+     "axis": "y",
+     "offset": 1.2,
+     "capPixels": 58,
+     "correct": 58,
+     "wrong": {},
+     "sample": {
+      "x": 860,
+      "y": 480
+     },
+     "clickSelected": "barrel_b3",
+     "ok": true
+    },
+    {
+     "state": "FREE",
+     "device": "barrel_b4",
+     "axis": "z",
+     "offset": 0,
+     "capPixels": 207,
+     "correct": 207,
+     "wrong": {},
+     "sample": {
+      "x": 991,
+      "y": 492
+     },
+     "clickSelected": "barrel_b4",
+     "ok": true
+    }
+   ]
+  },
+  "D9": {
+   "states": [
+    {
+     "state": "FULL",
+     "fps": 120,
+     "calls": 775,
+     "triangles": 1190872,
+     "heap_mb": 113,
+     "ok": true
+    },
+    {
+     "state": "CUT_FEED",
+     "fps": 120.3,
+     "calls": 204,
+     "triangles": 428216,
+     "heap_mb": 117.5,
+     "ok": true
+    },
+    {
+     "state": "CUT_Z_BARREL",
+     "fps": 120.3,
+     "calls": 185,
+     "triangles": 422078,
+     "heap_mb": 131.8,
+     "ok": true
+    },
+    {
+     "state": "CUT_X2450",
+     "fps": 120.3,
+     "calls": 287,
+     "triangles": 576678,
+     "heap_mb": 132.2,
+     "ok": true
+    },
+    {
+     "state": "CUT_X4120",
+     "fps": 120.3,
+     "calls": 261,
+     "triangles": 530118,
+     "heap_mb": 127,
+     "ok": true
+    },
+    {
+     "state": "FREE_x3000",
+     "fps": 90.6,
+     "calls": 958,
+     "triangles": 1363080,
+     "heap_mb": 123.9,
+     "ok": true
+    }
+   ],
+   "ok": true,
+   "note": "read after 3 s at each state camera preset (FREE x = 3.0 at the FULL preset camera), DPR 1, 1920x1080"
+  },
+  "D7": {
+   "times": [
+    {
+     "id": "FULL",
+     "ms": 16.9,
+     "first_ms": 15.2,
+     "ok": true
+    },
+    {
+     "id": "CUT_FEED",
+     "ms": 16.5,
+     "first_ms": 16.1,
+     "ok": true
+    },
+    {
+     "id": "CUT_Z_BARREL",
+     "ms": 17.3,
+     "first_ms": 16.4,
+     "ok": true
+    },
+    {
+     "id": "CUT_X2450",
+     "ms": 16.6,
+     "first_ms": 17.6,
+     "ok": true
+    },
+    {
+     "id": "CUT_X4120",
+     "ms": 17,
+     "first_ms": 16,
+     "ok": true
+    },
+    {
+     "id": "FREE",
+     "ms": 17.9,
+     "first_ms": 17.9,
+     "ok": true
+    }
+   ],
+   "slider": {
+    "js_ms_max": 0.3,
+    "frame_ms_avg": 8.34,
+    "frame_ms_max": 9.3
+   },
+   "ok": true
+  },
+  "D6": {
+   "ok": true,
+   "bad": [],
+   "glClippingPlanes": 0,
+   "freePlaneRefs": 0,
+   "changedMaterialsAtEnd": 0,
+   "changedVisibilityAtEnd": 0
+  },
+  "D8": {
+   "seconds": 2.001,
+   "rotors": [
+    {
+     "id": "motor_shaft",
+     "ready": true,
+     "deg_per_s": -335,
+     "expected": -11.7211,
+     "measured": -11.6965,
+     "err": 0.0021
+    },
+    {
+     "id": "flex_coupling",
+     "ready": true,
+     "deg_per_s": -335,
+     "expected": -11.7211,
+     "measured": -11.6965,
+     "err": 0.0021
+    },
+    {
+     "id": "safety_coupling",
+     "ready": true,
+     "deg_per_s": -335,
+     "expected": -11.7211,
+     "measured": -11.6965,
+     "err": 0.0021
+    },
+    {
+     "id": "roll_bottom",
+     "ready": true,
+     "deg_per_s": 59.57,
+     "expected": 2.0844,
+     "measured": 2.0801,
+     "err": 0.0021
+    },
+    {
+     "id": "roll_middle",
+     "ready": true,
+     "deg_per_s": -59.57,
+     "expected": -2.0844,
+     "measured": -2.0801,
+     "err": 0.0021
+    },
+    {
+     "id": "roll_top",
+     "ready": true,
+     "deg_per_s": 59.57,
+     "expected": 2.0844,
+     "measured": 2.0801,
+     "err": 0.0021
+    },
+    {
+     "id": "screw_a",
+     "ready": true,
+     "deg_per_s": -89.81,
+     "expected": -3.1424,
+     "measured": -3.1358,
+     "err": 0.0021
+    },
+    {
+     "id": "screw_b",
+     "ready": true,
+     "deg_per_s": -89.81,
+     "expected": -3.1424,
+     "measured": -3.1358,
+     "err": 0.0021
+    }
+   ],
+   "ok": true
+  },
+  "D5": {
+   "rayUnfiltered": 0,
+   "rayUnfilteredEmpties": 0,
+   "ok": true
+  },
+  "selfcheck_end": {
+   "devices": 190,
+   "parts": 561,
+   "unknownNodes": 0,
+   "missingNodes": 0,
+   "orphans": 0,
+   "orphanNames": [],
+   "rayUnfiltered": 0,
+   "rayUnfilteredEmpties": 0,
+   "interiorLoaded": true,
+   "rotorsReady": 8,
+   "dataVersion": {
+    "devices": 1,
+    "node_map": 1,
+    "cut_states": 1,
+    "rotors": 1,
+    "materials": 1
+   },
+   "quantizeSplit": [
+    "int_pump_gear_bottom",
+    "int_pump_gear_top",
+    "int_sc_disc",
+    "int_valve_bolt"
+   ],
+   "unknownMaterials": [],
+   "devicesWithoutLineMeshes": [
+    "screws"
+   ],
+   "bvh_ms": 429.6,
+   "state": "FULL"
+  },
+  "D1": {
+   "line_first_frame_ms": 1221.6,
+   "interior_ready_ms": 417.7,
+   "bvh_ms": 429.6,
+   "ok": true
+  },
+  "D14_runtime": {
+   "devices": 190,
+   "unknownNodes": 0,
+   "missingNodes": 0,
+   "orphans": 0,
+   "ok": true
+  },
+  "finished": "2026-10-05T08:37:57.744Z",
+  "D12_page": {
+   "requests": 54,
+   "glb": [
+    {
+     "url": "http://localhost:5178/models/line.glb",
+     "encodedBodySize": 5793436,
+     "decodedBodySize": 5793436
+    },
+    {
+     "url": "http://localhost:5178/models/interior.glb",
+     "encodedBodySize": 1982388,
+     "decodedBodySize": 1982388
+    }
+   ],
+   "non_localhost": []
+  }
+ },
+ "fixer_round_1": {
+  "zoom": {
+   "tuning": "CameraControls smoothTime 0.2, draggingSmoothTime 0.08, dollySpeed 2, dollyToCursor, infinityDolly, minDistance 0.05; auto-depth retarget at the start of a zoom-in gesture; ctrl+wheel (pinch) dollies to the cursor",
+   "wheel_from_FULL_to_barrel_cover_c4": {
+    "old_settings": "120 events of deltaY -10: 24.0 -> 2.01 m, stalls at the orbit target; the point under the cursor drifts 2.4 m",
+    "new": "24.0 -> 3.09 m after 20 events, 0.39 m after 40, 0.044 m after 60, then pushes through; the point stays under the cursor (10 mm)"
+   },
+   "pinch": "ctrl+wheel deltaY -4 x 25 from FULL: 19.0 -> 3.47 m, camera.zoom stays 1, default prevented (no page zoom)",
+   "preset_flights_ms": {
+    "FULL->CUT_Z_BARREL": [
+     474,
+     657
+    ],
+    "CUT_Z_BARREL->CUT_X2450": [
+     634,
+     826
+    ],
+    "CUT_X2450->CUT_X4120": [
+     475,
+     667
+    ],
+    "CUT_X4120->FULL": [
+     485,
+     668
+    ],
+    "FULL->CUT_FEED": [
+     473,
+     665
+    ],
+    "unit": "[95 %, 99 %] of the path"
+   },
+   "note": "the chrome-devtools MCP has no wheel input, so the wheel and pinch events were DOM WheelEvents dispatched on the canvas (the same listeners run: the fixer listener on the canvas, camera-controls on the wrapper); the old-settings run dispatched on the wrapper, bypassing the new listener"
+  },
+  "layout_1366x768": "toolbar 87 px (was 106), tree 236 px + info 272 px, canvas between the panels 842 px (was 726); the tree folds to its header (button next to the count)",
+  "selfcheck_panel": "<pre id=\"selfcheck\"> visually hidden (still in the DOM and the accessibility tree, SELFCHECK DONE); ?selfcheck=show shows it; the normal URL has no white element over the canvas"
+ }
+}

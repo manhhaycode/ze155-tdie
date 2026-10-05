@@ -1,0 +1,170 @@
+{
+  "front": {
+    "image": "views/front.png",
+    "width_px": 3760,
+    "height_px": 1380,
+    "px_per_mm": 0.2,
+    "center_mm": [
+      3400.0,
+      0.0,
+      3150.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "rear": {
+    "image": "views/rear.png",
+    "width_px": 3760,
+    "height_px": 1380,
+    "px_per_mm": 0.2,
+    "center_mm": [
+      3400.0,
+      0.0,
+      3150.0
+    ],
+    "right": "+X",
+    "up": "+Z",
+    "look": "+Y"
+  },
+  "top": {
+    "image": "views/top.png",
+    "width_px": 3760,
+    "height_px": 1660,
+    "px_per_mm": 0.2,
+    "center_mm": [
+      3400.0,
+      -1050.0,
+      0.0
+    ],
+    "right": "-X",
+    "up": "-Y",
+    "look": "-Z"
+  },
+  "die_end": {
+    "image": "views/die_end.png",
+    "width_px": 1660,
+    "height_px": 1380,
+    "px_per_mm": 0.2,
+    "center_mm": [
+      0.0,
+      -1050.0,
+      3150.0
+    ],
+    "right": "+Y",
+    "up": "+Z",
+    "look": "-X"
+  },
+  "drive_end": {
+    "image": "views/drive_end.png",
+    "width_px": 1660,
+    "height_px": 1380,
+    "px_per_mm": 0.2,
+    "center_mm": [
+      0.0,
+      -1050.0,
+      3150.0
+    ],
+    "right": "-Y",
+    "up": "+Z",
+    "look": "+X"
+  },
+  "drive_front": {
+    "image": "views/drive_front.png",
+    "width_px": 3150,
+    "height_px": 1450,
+    "px_per_mm": 0.5,
+    "center_mm": [
+      -2650.0,
+      0.0,
+      1350.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "barrel_front": {
+    "image": "views/barrel_front.png",
+    "width_px": 3125,
+    "height_px": 1200,
+    "px_per_mm": 0.5,
+    "center_mm": [
+      2975.0,
+      0.0,
+      1100.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "feed_front": {
+    "image": "views/feed_front.png",
+    "width_px": 1625,
+    "height_px": 2550,
+    "px_per_mm": 0.5,
+    "center_mm": [
+      375.0,
+      0.0,
+      3850.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "melt_front": {
+    "image": "views/melt_front.png",
+    "width_px": 3600,
+    "height_px": 2450,
+    "px_per_mm": 1.0,
+    "center_mm": [
+      7450.0,
+      0.0,
+      1175.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "die_front": {
+    "image": "views/die_front.png",
+    "width_px": 1400,
+    "height_px": 3050,
+    "px_per_mm": 1.0,
+    "center_mm": [
+      9650.0,
+      0.0,
+      1475.0
+    ],
+    "right": "-X",
+    "up": "+Z",
+    "look": "-Y"
+  },
+  "die_end_detail": {
+    "image": "views/die_end_detail.png",
+    "width_px": 2750,
+    "height_px": 1625,
+    "px_per_mm": 0.5,
+    "center_mm": [
+      0.0,
+      250.0,
+      1575.0
+    ],
+    "right": "+Y",
+    "up": "+Z",
+    "look": "-X"
+  },
+  "melt_top": {
+    "image": "views/melt_top.png",
+    "width_px": 3440,
+    "height_px": 3680,
+    "px_per_mm": 0.8,
+    "center_mm": [
+      7800.0,
+      -600.0,
+      0.0
+    ],
+    "right": "-X",
+    "up": "-Y",
+    "look": "-Z"
+  }
+}

@@ -1,0 +1,1984 @@
+{
+ "meta": {
+  "title": "ZE 155 animation – interior parts (anim-only geometry)",
+  "units": "mm (model coordinates, same as design/parts.json)",
+  "coordinates": "X along the screws, +X = flow, X = 0 at the drive-side face of B1; +Y operator side; Z = 0 floor; screw axes at Y ±71, Z 1200",
+  "naming": "int_ = new interior geometry, anim_ = anim-only helpers and context. All live in collections of scene ze155_anim only.",
+  "hidden_rule": "Interior parts are hidden unless a shot lists them (shots.json visible.show).",
+  "D_mm": 169.0,
+  "barrel_layout": "B1 4D + B2…B6 6D = 34D = 5746 mm",
+  "total_tri_budget": 363600,
+  "note": "Cut copies of exterior parts (anim_cut_*) are made by builder A3 and are not listed here; budget about 150 k triangles."
+ },
+ "screw_profile": {
+  "name": "Erdmenger self-wiping profile, 2 flights (n = 2), co-rotating",
+  "centre_distance_a_mm": 142.0,
+  "outer_radius_Ro_mm": 83.75,
+  "root_radius_Rr_mm": 58.25,
+  "tip_angle_psi_deg": 25.94,
+  "flank_angle_deg": 64.06,
+  "polar_definition": [
+   "Theta measured from the centre of one tip, about the screw axis (+X), counter-clockwise when looking from +X.",
+   "Tip arcs: |theta| <= psi/2 and |theta-180| <= psi/2 -> r = Ro = 83.75.",
+   "Root arcs: |theta-90| <= psi/2 and |theta-270| <= psi/2 -> r = Rr = a - Ro = 58.25.",
+   "Flank from theta = psi/2 to 90-psi/2: r(theta) = Ro*cos(theta-g) + sqrt(a^2 - Ro^2*sin^2(theta-g)), with g = psi/2 - 115.94 deg (the flank is an arc of radius a whose centre lies on the circle r = Ro). Check: r(psi/2) = Ro, r(90-psi/2) = Rr. The other three flanks follow by mirror symmetry about theta = 0 and theta = 90.",
+   "Scale the profile by 0.995 about the axis to leave a visible clearance between the two screws and to the bore (real tip clearance about 0.75 mm)."
+  ],
+  "note_vi": "design.md dùng D = 169 là đường kính vít (bảng KM) và lõi 114,6 (rãnh 27,2): 84,5 + 57,3 = 141,8 < 142, cũng là một cặp tự làm sạch hợp lệ. Mô hình anim coi 169 là lỗ xi lanh, vít Ø167,5, lõi 116,5 (= a − Ro). Chênh 1,9 mm, không thấy được; không phải design sai.",
+  "shaft_B_rule": "Shaft B uses the same profile and the same element list, rotated +90 deg about its own axis relative to shaft A at every X (phase_B = phase_A + 90).",
+  "helix_rule": "RH element: the profile angle increases (positive about +X) as X increases, d(phase)/dX = +360/pitch. LH element: d(phase)/dX = -360/pitch. KB: straight discs, disc k (k = 0..4) at phase_start + k*stagger; the next element starts at the last disc angle.",
+  "rotation_rule": "Both shafts rotate the same way (co-rotating): rotation_euler[0] = -2*pi*(rpm_shown/60)*t on the axis empties int_screw_axis_a / _b. With RH elements built as above, the flights then appear to travel toward +X (material flows to the die); LH elements appear to travel toward -X. Reviewer checks this by stepping frames."
+ },
+ "screw_elements": {
+  "columns": "no, type (SE conveying / KB kneading / LH left-handed / TIP), mesh_key, hand, X start/end in mm and D, length, pitch, flights, KB stagger/discs, barrel, phase of shaft A at t = 0 (deg, mod 360), schematic fill degree, material state, function",
+  "check": {
+   "sum_length_D": 34.0,
+   "feed_opening_mm": [
+    160,
+    520
+   ],
+   "side_port_mm": [
+    1180,
+    1520
+   ],
+   "vent1_mm": [
+    1990,
+    2310
+   ],
+   "vent2_mm": [
+    3860,
+    4380
+   ],
+   "seal1_before_vent1": "elements 9–10 end at X 1985.75 < 1990",
+   "seal2_before_vent2": "element 20 ends at X 3718 = end of B4 < 3860"
+  },
+  "deviation_from_parts_json": "Boundaries snapped to whole element lengths (0.25D steps): melting KB 1521–1859 (parts.json 1560–1880), seal 1859–1986 (1880–1950, plus a 0.25D LH element), mixing 2831–3338 (2900–3380), LH seal 3634–3718 (3620–3720), vent-2 conveying 3718–4479 (3720–4450). All shifts ≤ 70 mm; openings and barrel functions unchanged.",
+  "rows": [
+   {
+    "no": 1,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 0.0,
+    "x_end_mm": 253.5,
+    "x_start_D": 0.0,
+    "x_end_D": 1.5,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B1",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "vận chuyển hạt dưới họng nạp (feed 160–520)"
+   },
+   {
+    "no": 2,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 253.5,
+    "x_end_mm": 507.0,
+    "x_start_D": 1.5,
+    "x_end_D": 3.0,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B1",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "vận chuyển hạt dưới họng nạp"
+   },
+   {
+    "no": 3,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 507.0,
+    "x_end_mm": 760.5,
+    "x_start_D": 3.0,
+    "x_end_D": 4.5,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B1/B2",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "vận chuyển hạt, qua mối nối B1/B2"
+   },
+   {
+    "no": 4,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 760.5,
+    "x_end_mm": 1014.0,
+    "x_start_D": 4.5,
+    "x_end_D": 6.0,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B2",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "vận chuyển hạt"
+   },
+   {
+    "no": 5,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 1014.0,
+    "x_end_mm": 1267.5,
+    "x_start_D": 6.0,
+    "x_end_D": 7.5,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B2",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "nhận liệu phụ từ side feeder (cửa 1180–1520), độ điền thấp"
+   },
+   {
+    "no": 6,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 1267.5,
+    "x_end_mm": 1521.0,
+    "x_start_D": 7.5,
+    "x_end_D": 9.0,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B2",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "hạt rắn (solid pellets)",
+    "function_vi": "nhận liệu phụ từ side feeder"
+   },
+   {
+    "no": 7,
+    "type": "KB",
+    "mesh_key": "KB45_5_10D",
+    "hand": "fwd",
+    "x_start_mm": 1521.0,
+    "x_end_mm": 1690.0,
+    "x_start_D": 9.0,
+    "x_end_D": 10.0,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 45,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 33.8,
+    "barrel": "B2",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "đang chảy (hạt → nhựa)",
+    "function_vi": "nóng chảy: khối nhào thuận 45°/5 (cuối B2)"
+   },
+   {
+    "no": 8,
+    "type": "KB",
+    "mesh_key": "KB45_5_10D",
+    "hand": "fwd",
+    "x_start_mm": 1690.0,
+    "x_end_mm": 1859.0,
+    "x_start_D": 10.0,
+    "x_end_D": 11.0,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 45,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 33.8,
+    "barrel": "B3",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "đang chảy (hạt → nhựa)",
+    "function_vi": "nóng chảy: khối nhào thuận 45°/5 (đầu B3)"
+   },
+   {
+    "no": 9,
+    "type": "KB",
+    "mesh_key": "KB90_5_05D",
+    "hand": "neutral",
+    "x_start_mm": 1859.0,
+    "x_end_mm": 1943.5,
+    "x_start_D": 11.0,
+    "x_end_D": 11.5,
+    "length_D": 0.5,
+    "length_mm": 84.5,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 90,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 16.9,
+    "barrel": "B3",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, nút kín",
+    "function_vi": "nút nhựa 1: khối nhào trung tính 90°"
+   },
+   {
+    "no": 10,
+    "type": "LH",
+    "mesh_key": "LH_p05_L025",
+    "hand": "LH",
+    "x_start_mm": 1943.5,
+    "x_end_mm": 1985.75,
+    "x_start_D": 11.5,
+    "x_end_D": 11.75,
+    "length_D": 0.25,
+    "length_mm": 42.25,
+    "pitch_D": 0.5,
+    "pitch_mm": 84.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B3",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, nút kín",
+    "function_vi": "nút nhựa 1: ren trái đẩy ngược, kín trước lỗ chân không 1"
+   },
+   {
+    "no": 11,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 1985.75,
+    "x_end_mm": 2239.25,
+    "x_start_D": 11.75,
+    "x_end_D": 13.25,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B3",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "nhựa chảy, độ điền thấp (vent 1)",
+    "function_vi": "dưới lỗ chân không 1 (1990–2310), độ điền thấp"
+   },
+   {
+    "no": 12,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 2239.25,
+    "x_end_mm": 2492.75,
+    "x_start_D": 13.25,
+    "x_end_D": 14.75,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B3",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 0.3,
+    "material_state": "nhựa chảy, độ điền thấp (vent 1)",
+    "function_vi": "sau lỗ chân không 1"
+   },
+   {
+    "no": 13,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 2492.75,
+    "x_end_mm": 2661.75,
+    "x_start_D": 14.75,
+    "x_end_D": 15.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B3",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 0.45,
+    "material_state": "nhựa chảy",
+    "function_vi": "vận chuyển nhựa chảy"
+   },
+   {
+    "no": 14,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 2661.75,
+    "x_end_mm": 2830.75,
+    "x_start_D": 15.75,
+    "x_end_D": 16.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B3/B4",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 0.45,
+    "material_state": "nhựa chảy",
+    "function_vi": "vận chuyển nhựa chảy, qua mối nối B3/B4"
+   },
+   {
+    "no": 15,
+    "type": "KB",
+    "mesh_key": "KB45_5_10D",
+    "hand": "fwd",
+    "x_start_mm": 2830.75,
+    "x_end_mm": 2999.75,
+    "x_start_D": 16.75,
+    "x_end_D": 17.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 45,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 33.8,
+    "barrel": "B4",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 0.0,
+    "fill_degree_schematic": 0.8,
+    "material_state": "nhựa chảy, trộn / tích trước nút",
+    "function_vi": "trộn: khối nhào thuận 45°/5"
+   },
+   {
+    "no": 16,
+    "type": "KB",
+    "mesh_key": "KB45_5_10D",
+    "hand": "fwd",
+    "x_start_mm": 2999.75,
+    "x_end_mm": 3168.75,
+    "x_start_D": 17.75,
+    "x_end_D": 18.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 45,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 33.8,
+    "barrel": "B4",
+    "phase_A_start_deg": 0.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 0.8,
+    "material_state": "nhựa chảy, trộn / tích trước nút",
+    "function_vi": "trộn: khối nhào thuận 45°/5"
+   },
+   {
+    "no": 17,
+    "type": "KB",
+    "mesh_key": "KB90_5_10D",
+    "hand": "neutral",
+    "x_start_mm": 3168.75,
+    "x_end_mm": 3337.75,
+    "x_start_D": 18.75,
+    "x_end_D": 19.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": null,
+    "pitch_mm": null,
+    "flights": 2,
+    "kb_stagger_deg": 90,
+    "kb_discs": 5,
+    "kb_disc_width_mm": 33.8,
+    "barrel": "B4",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, trộn / tích trước nút",
+    "function_vi": "trộn: khối nhào trung tính 90°/5 (đầy)"
+   },
+   {
+    "no": 18,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 3337.75,
+    "x_end_mm": 3506.75,
+    "x_start_D": 19.75,
+    "x_end_D": 20.75,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B4",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 180.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, trộn / tích trước nút",
+    "function_vi": "vận chuyển, tích nhựa trước nút"
+   },
+   {
+    "no": 19,
+    "type": "SE",
+    "mesh_key": "SE_p10_L075",
+    "hand": "RH",
+    "x_start_mm": 3506.75,
+    "x_end_mm": 3633.5,
+    "x_start_D": 20.75,
+    "x_end_D": 21.5,
+    "length_D": 0.75,
+    "length_mm": 126.75,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B4",
+    "phase_A_start_deg": 180.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, trộn / tích trước nút",
+    "function_vi": "vận chuyển, tích nhựa trước nút"
+   },
+   {
+    "no": 20,
+    "type": "LH",
+    "mesh_key": "LH_p05_L05",
+    "hand": "LH",
+    "x_start_mm": 3633.5,
+    "x_end_mm": 3718.0,
+    "x_start_D": 21.5,
+    "x_end_D": 22.0,
+    "length_D": 0.5,
+    "length_mm": 84.5,
+    "pitch_D": 0.5,
+    "pitch_mm": 84.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B4",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, nút kín",
+    "function_vi": "nút nhựa 2: ren trái cuối B4, kín trước vùng chân không sâu"
+   },
+   {
+    "no": 21,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 3718.0,
+    "x_end_mm": 3971.5,
+    "x_start_D": 22.0,
+    "x_end_D": 23.5,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B5",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.25,
+    "material_state": "nhựa chảy, độ điền thấp (vent 2)",
+    "function_vi": "dưới lỗ chân không 2 (3860–4380), độ điền thấp"
+   },
+   {
+    "no": 22,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 3971.5,
+    "x_end_mm": 4225.0,
+    "x_start_D": 23.5,
+    "x_end_D": 25.0,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B5",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.25,
+    "material_state": "nhựa chảy, độ điền thấp (vent 2)",
+    "function_vi": "dưới lỗ chân không 2, mặt nhựa làm mới"
+   },
+   {
+    "no": 23,
+    "type": "SE",
+    "mesh_key": "SE_p15_L15",
+    "hand": "RH",
+    "x_start_mm": 4225.0,
+    "x_end_mm": 4478.5,
+    "x_start_D": 25.0,
+    "x_end_D": 26.5,
+    "length_D": 1.5,
+    "length_mm": 253.5,
+    "pitch_D": 1.5,
+    "pitch_mm": 253.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B5",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.25,
+    "material_state": "nhựa chảy, độ điền thấp (vent 2)",
+    "function_vi": "dưới lỗ chân không 2"
+   },
+   {
+    "no": 24,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 4478.5,
+    "x_end_mm": 4647.5,
+    "x_start_D": 26.5,
+    "x_end_D": 27.5,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B5",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.56,
+    "material_state": "nhựa chảy, điền tăng dần",
+    "function_vi": "định lượng / tăng áp"
+   },
+   {
+    "no": 25,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 4647.5,
+    "x_end_mm": 4816.5,
+    "x_start_D": 27.5,
+    "x_end_D": 28.5,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B5/B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.69,
+    "material_state": "nhựa chảy, điền tăng dần",
+    "function_vi": "định lượng / tăng áp, qua mối nối B5/B6"
+   },
+   {
+    "no": 26,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 4816.5,
+    "x_end_mm": 4985.5,
+    "x_start_D": 28.5,
+    "x_end_D": 29.5,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.81,
+    "material_state": "nhựa chảy, điền tăng dần",
+    "function_vi": "tăng áp"
+   },
+   {
+    "no": 27,
+    "type": "SE",
+    "mesh_key": "SE_p10_L10",
+    "hand": "RH",
+    "x_start_mm": 4985.5,
+    "x_end_mm": 5154.5,
+    "x_start_D": 29.5,
+    "x_end_D": 30.5,
+    "length_D": 1.0,
+    "length_mm": 169.0,
+    "pitch_D": 1.0,
+    "pitch_mm": 169.0,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 0.94,
+    "material_state": "nhựa chảy, điền tăng dần",
+    "function_vi": "tăng áp"
+   },
+   {
+    "no": 28,
+    "type": "SE",
+    "mesh_key": "SE_p075_L075",
+    "hand": "RH",
+    "x_start_mm": 5154.5,
+    "x_end_mm": 5281.25,
+    "x_start_D": 30.5,
+    "x_end_D": 31.25,
+    "length_D": 0.75,
+    "length_mm": 126.75,
+    "pitch_D": 0.75,
+    "pitch_mm": 126.75,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, đầy 100 %",
+    "function_vi": "tăng áp, đầy 100 %"
+   },
+   {
+    "no": 29,
+    "type": "SE",
+    "mesh_key": "SE_p075_L075",
+    "hand": "RH",
+    "x_start_mm": 5281.25,
+    "x_end_mm": 5408.0,
+    "x_start_D": 31.25,
+    "x_end_D": 32.0,
+    "length_D": 0.75,
+    "length_mm": 126.75,
+    "pitch_D": 0.75,
+    "pitch_mm": 126.75,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, đầy 100 %",
+    "function_vi": "tăng áp, đầy 100 %"
+   },
+   {
+    "no": 30,
+    "type": "SE",
+    "mesh_key": "SE_p075_L075",
+    "hand": "RH",
+    "x_start_mm": 5408.0,
+    "x_end_mm": 5534.75,
+    "x_start_D": 32.0,
+    "x_end_D": 32.75,
+    "length_D": 0.75,
+    "length_mm": 126.75,
+    "pitch_D": 0.75,
+    "pitch_mm": 126.75,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, đầy 100 %",
+    "function_vi": "tăng áp, đầy 100 %"
+   },
+   {
+    "no": 31,
+    "type": "SE",
+    "mesh_key": "SE_p075_L075",
+    "hand": "RH",
+    "x_start_mm": 5534.75,
+    "x_end_mm": 5661.5,
+    "x_start_D": 32.75,
+    "x_end_D": 33.5,
+    "length_D": 0.75,
+    "length_mm": 126.75,
+    "pitch_D": 0.75,
+    "pitch_mm": 126.75,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, đầy 100 %",
+    "function_vi": "tăng áp, đầy 100 %"
+   },
+   {
+    "no": 32,
+    "type": "TIP",
+    "mesh_key": "TIP_p05_L05",
+    "hand": "RH",
+    "x_start_mm": 5661.5,
+    "x_end_mm": 5746.0,
+    "x_start_D": 33.5,
+    "x_end_D": 34.0,
+    "length_D": 0.5,
+    "length_mm": 84.5,
+    "pitch_D": 0.5,
+    "pitch_mm": 84.5,
+    "flights": 2,
+    "kb_stagger_deg": null,
+    "kb_discs": null,
+    "kb_disc_width_mm": null,
+    "barrel": "B6",
+    "phase_A_start_deg": 90.0,
+    "phase_A_end_deg": 90.0,
+    "fill_degree_schematic": 1.0,
+    "material_state": "nhựa chảy, đầy 100 %",
+    "function_vi": "đầu vít (screw tip), đẩy vào đầu xi lanh"
+   }
+  ]
+ },
+ "parts": [
+  {
+   "name": "int_screw_axis_a",
+   "group": "screws",
+   "kind": "empty",
+   "purpose_vi": "Trục quay của vít A (empty), mang driver quay",
+   "dims_mm": {
+    "empty": "plain axes 0.3 m"
+   },
+   "position_mm": {
+    "at": [
+     0,
+     71,
+     1200
+    ],
+    "axis": "+X"
+   },
+   "connects_to": [
+    "int_screw_elem_a_*"
+   ],
+   "details": "Empty at the screw axis; every element instance of shaft A is parented to it. Driver on rotation_euler[0] (see profile.rotation_rule).",
+   "visible_in": [
+    "S02",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 0,
+   "builder": "A1"
+  },
+  {
+   "name": "int_screw_axis_b",
+   "group": "screws",
+   "kind": "empty",
+   "purpose_vi": "Trục quay của vít B (empty)",
+   "dims_mm": {
+    "empty": "plain axes 0.3 m"
+   },
+   "position_mm": {
+    "at": [
+     0,
+     -71,
+     1200
+    ],
+    "axis": "+X"
+   },
+   "connects_to": [
+    "int_screw_elem_b_*"
+   ],
+   "details": "Same driver as A (same sign, same speed).",
+   "visible_in": [
+    "S02",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 0,
+   "builder": "A1"
+  },
+  {
+   "name": "int_screw_elem_<a|b>_<NN>",
+   "group": "screws",
+   "kind": "mesh",
+   "purpose_vi": "32 phần tử vít mỗi trục, theo bảng screw_elements",
+   "dims_mm": {
+    "OD": 167.5,
+    "core": 116.5,
+    "centre_distance": 142,
+    "flights": 2
+   },
+   "position_mm": {
+    "x_from_table": true,
+    "y": "±71",
+    "z": 1200
+   },
+   "connects_to": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_barrel_hollow_b1..b6"
+   ],
+   "details": "10 unique meshes (mesh_key in the table), 64 instances as linked duplicates. Conveying: sweep the profile along X with twist; 64 profile points, 40 twist steps per pitch. KB: straight discs with 1 mm gaps between discs drawn as a 1 mm chamfer so the stagger reads. TIP: last 0.5D with a 30 deg conical nose. Material: dark steel with slightly polished flight tips (lighter roughness on r > 82 mm) so the helix reads. Replaces screws_a / screws_b, which stay hidden in ze155_anim.",
+   "visible_in": [
+    "S02",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 190000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_spline_shaft_<a|b>",
+   "group": "screws",
+   "kind": "mesh",
+   "purpose_vi": "Trục then hoa trong lantern, nối hộp số với vít",
+   "dims_mm": {
+    "d": 72,
+    "length": 750,
+    "teeth": 24
+   },
+   "position_mm": {
+    "x": [
+     -750,
+     0
+    ],
+    "y": "±71",
+    "z": 1200
+   },
+   "connects_to": [
+    "int_gbx_schematic",
+    "int_screw_elem_*_01"
+   ],
+   "details": "Cylinder Ø72 with 24 shallow spline grooves; parented to the screw axis empty.",
+   "visible_in": [
+    "S02"
+   ],
+   "tri_budget": 3000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b1",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B1 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 676
+   },
+   "position_mm": {
+    "x": [
+     0,
+     676
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b1",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b1 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: feed opening on top 360 × 300 at X 160–520 (whole width through the wall into the bore). A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b2",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B2 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 1014
+   },
+   "position_mm": {
+    "x": [
+     676,
+     1690
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b2",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b2 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: side port +Y 340 × 260 at X 1180–1520, Z 1070–1330. A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b3",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B3 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 1014
+   },
+   "position_mm": {
+    "x": [
+     1690,
+     2704
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b3",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b3 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: vent opening on top 320 × 280 at X 1990–2310 with contoured vent insert. A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b4",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B4 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 1014
+   },
+   "position_mm": {
+    "x": [
+     2704,
+     3718
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b4",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b4 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: none. A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b5",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B5 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 1014
+   },
+   "position_mm": {
+    "x": [
+     3718,
+     4732
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b5",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b5 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: vent opening on top 520 × 280 at X 3860–4380 with contoured vent insert. A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_barrel_hollow_b6",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Thân xi lanh B6 rỗng có lỗ hình số 8, để cắt",
+   "dims_mm": {
+    "body_d": 520,
+    "flange_d": 640,
+    "flange_t": 50,
+    "bore": "2 × Ø169 at Y ±71 (311 × 169)",
+    "length": 1014
+   },
+   "position_mm": {
+    "x": [
+     4732,
+     5746
+    ],
+    "y": [
+     -320,
+     320
+    ],
+    "z": [
+     880,
+     1520
+    ]
+   },
+   "connects_to": [
+    "barrel_b6",
+    "int_screw_elem_*"
+   ],
+   "details": "Closed manifold solid: same outer silhouette as barrel_b6 (body Ø520, relief neck Ø500 × 40 behind each flange, Ø640 × 50 flanges, bosses), minus the figure-8 bore and 8 cooling bores Ø18 on PCD 430 (B1: water jacket instead). Openings: none (blind liquid-injection port +Y at X ≈ 5400 drawn as a plugged bore). A3 derives the cut variants _lo (Z < 1200), _hi (Z > 1200) and the X-section variants with Blender bisect + fill.",
+   "visible_in": [
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "ST1",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 4500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_dome_hollow_<1|2>",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Vòm chân không rỗng (vách 10 mm) để cắt ngang",
+   "dims_mm": {
+    "dome1": "400 × 360 × 505",
+    "dome2": "640 × 450 × 695",
+    "wall": 10
+   },
+   "position_mm": {
+    "dome1_x": [
+     1950,
+     2350
+    ],
+    "dome2_x": [
+     3800,
+     4440
+    ],
+    "z": [
+     1455,
+     2150
+    ]
+   },
+   "connects_to": [
+    "barrel_vent_dome_2",
+    "barrel_vent_dome",
+    "vac_valve"
+   ],
+   "details": "Hollow copies of the two vent domes: inner cavity, DN100 / DN150 outlet bores, sight-glass holes with glass discs, vent-insert flange. Only dome 2 is cut in the animation (S07, ST3); dome 1 is optional (ST1 shows it removed).",
+   "visible_in": [
+    "S07",
+    "ST3"
+   ],
+   "tri_budget": 8000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_feed_column_hollow",
+   "group": "feed",
+   "kind": "mesh",
+   "purpose_vi": "Ống rơi, ống mềm, phễu và họng nạp rỗng để cắt dọc",
+   "dims_mm": {
+    "downpipe": "Ø250",
+    "throat_opening": "360 × 300",
+    "wall": 6
+   },
+   "position_mm": {
+    "x": [
+     -575,
+     590
+    ],
+    "y": [
+     -271,
+     250
+    ],
+    "z": [
+     1455,
+     2850
+    ]
+   },
+   "connects_to": [
+    "feed_downpipe",
+    "feed_flex_sleeve",
+    "feed_hopper",
+    "feed_throat",
+    "int_barrel_hollow_b1"
+   ],
+   "details": "Hollow shells of the four feed parts with the cooling jacket of the throat as a 15 mm gap. Cut with SEC_Y0 in S03.",
+   "visible_in": [
+    "S03"
+   ],
+   "tri_budget": 4000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_head_hollow",
+   "group": "melt",
+   "kind": "mesh",
+   "purpose_vi": "Đầu xi lanh rỗng: lỗ số 8 chuyển sang tròn Ø120",
+   "dims_mm": {
+    "length": 250,
+    "in": "311 × 169 figure-8",
+    "out": "Ø120"
+   },
+   "position_mm": {
+    "x": [
+     5746,
+     5996
+    ],
+    "z": 1200
+   },
+   "connects_to": [
+    "melt_head_adapter",
+    "int_barrel_hollow_b6",
+    "int_valve_body"
+   ],
+   "details": "Outer silhouette of melt_head_adapter; inner loft from the figure-8 (with the screw-tip cone recess) to Ø120 over 250 mm.",
+   "visible_in": [
+    "S08",
+    "ST1"
+   ],
+   "tri_budget": 3000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_valve_body",
+   "group": "melt",
+   "kind": "mesh",
+   "purpose_vi": "Thân van khởi động rỗng với lỗ chạy và lỗ xả",
+   "dims_mm": {
+    "block": "450 × 520 × 520",
+    "bores": "run Ø120 along X, drain Ø120 down to the bottom port"
+   },
+   "position_mm": {
+    "x": [
+     5996,
+     6446
+    ],
+    "y": [
+     -260,
+     260
+    ],
+    "z": [
+     940,
+     1460
+    ]
+   },
+   "connects_to": [
+    "melt_startup_valve",
+    "int_valve_bolt",
+    "melt_drain_chute"
+   ],
+   "details": "Block with a Ø200 bolt bore along Y (Y −260…+260).",
+   "visible_in": [
+    "S08",
+    "ST1"
+   ],
+   "tri_budget": 2500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_valve_bolt",
+   "group": "melt",
+   "kind": "mesh",
+   "purpose_vi": "Chốt trượt của van khởi động (CHẠY / XẢ)",
+   "dims_mm": {
+    "d": 198,
+    "length": 600,
+    "stroke": 200
+   },
+   "position_mm": {
+    "axis": "Y",
+    "bolt_location_y_run": 0,
+    "bolt_location_y_drain": -200,
+    "centre": [
+     6221,
+     0,
+     1200
+    ]
+   },
+   "connects_to": [
+    "int_valve_body",
+    "melt_startup_cyl"
+   ],
+   "details": "Cylinder with two channels in its own frame: a straight Ø120 run channel along X at local Y = 0, and a 90° elbow channel (in from −X, out downward) at local Y = +200. DRAIN = bolt pulled to Y −200 by the −Y cylinder (elbow on the melt axis); RUN = bolt at Y 0 (straight channel on the axis). Animate location[1] −0.200 → 0.000 m. Anim assumption: sliding bolt (design text says 'rotary bolt', but the cylinder along Y pushes the bolt end directly).",
+   "visible_in": [
+    "S08"
+   ],
+   "tri_budget": 2500,
+   "builder": "A1"
+  },
+  {
+   "name": "int_melt_adapters_hollow",
+   "group": "melt",
+   "kind": "mesh",
+   "purpose_vi": "Các bích chuyển rỗng có lỗ Ø100–120 để cắt",
+   "dims_mm": {
+    "items": "sc_adapter_in Ø420 × 150, pump_adapter_in Ø360 × 175, pump_adapter_out Ø300 × 150, die_adapter round Ø300 → rect 500 × 360"
+   },
+   "position_mm": {
+    "x": [
+     6446,
+     9126
+    ],
+    "z": 1200
+   },
+   "connects_to": [
+    "melt_sc_adapter_in",
+    "melt_pump_adapter_in",
+    "melt_pump_adapter_out",
+    "melt_die_adapter"
+   ],
+   "details": "Simple revolves / lofts with Ø120 (Ø100 after the pump) bores; the die adapter keeps a round Ø100 bore up to the die back face (same as the die inlet).",
+   "visible_in": [
+    "S10",
+    "S12",
+    "ST1",
+    "ST4",
+    "ST7"
+   ],
+   "tri_budget": 4000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_sc_disc",
+   "group": "screen_changer",
+   "kind": "mesh",
+   "purpose_vi": "Đĩa lưới quay của bộ lọc Gneuss RSFgenius",
+   "dims_mm": {
+    "d": 930,
+    "thickness": 80,
+    "cavities": "12 × Ø157 on R 345, 30° pitch"
+   },
+   "position_mm": {
+    "axis": "X",
+    "centre": [
+     6950,
+     0,
+     1545
+    ]
+   },
+   "connects_to": [
+    "melt_screen_changer",
+    "int_sc_screens",
+    "melt_sc_drive"
+   ],
+   "details": "Disc axis parallel to the melt flow (+X), offset 345 mm above the melt axis so the lowest cavity sits on Z 1200. The 5 cavities at −150…−30 deg (measured from +Y toward +Z) are in the melt channel. Ratchet teeth on the rim on the −Y side where melt_sc_drive acts (assumption: design.md places the 'disc shaft' on the −Y face; physically the disc axis must be parallel to the flow).",
+   "visible_in": [
+    "S09",
+    "ST6"
+   ],
+   "tri_budget": 9000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_sc_screens",
+   "group": "screen_changer",
+   "kind": "mesh",
+   "purpose_vi": "12 lưới lọc + tấm đỡ trong các lỗ đĩa",
+   "dims_mm": {
+    "d": 157,
+    "screen": "60 µm (texture)",
+    "breaker_plate": "Ø157 × 20, 4 mm holes"
+   },
+   "position_mm": {
+    "in": "int_sc_disc cavities"
+   },
+   "connects_to": [
+    "int_sc_disc"
+   ],
+   "details": "Screen pack as a disc with a fine woven texture and a perforated breaker plate behind it. A 'dirt' mask attribute 0…1 per screen drives dark specks.",
+   "visible_in": [
+    "S09",
+    "ST6"
+   ],
+   "tri_budget": 6000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_sc_channels",
+   "group": "screen_changer",
+   "kind": "mesh",
+   "purpose_vi": "Rãnh phân phối hình thận vào/ra và kênh xả ngược",
+   "dims_mm": {
+    "kidney": "covers 5 cavities (−150…−30 deg)",
+    "backflush": "Ø40 channel from the cavity at 0 deg to the backflush spout"
+   },
+   "position_mm": {
+    "x": [
+     6596,
+     7301
+    ]
+   },
+   "connects_to": [
+    "melt_sc_adapter_in",
+    "melt_pump_adapter_in",
+    "melt_sc_backflush"
+   ],
+   "details": "Inlet bore Ø120 → kidney channel in the inlet plate, outlet kidney → Ø120 bore. Backflush station at 0 deg (Y +345, Z 1545): piston Ø40 in a bore toward +Y, channel to the spout of melt_sc_backflush.",
+   "visible_in": [
+    "S09",
+    "ST6"
+   ],
+   "tri_budget": 5000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_pump_gear_<top|bottom>",
+   "group": "pump",
+   "kind": "mesh",
+   "purpose_vi": "Cặp bánh răng bơm nhựa",
+   "dims_mm": {
+    "teeth": 16,
+    "module": 7.8,
+    "pitch_d": 125,
+    "od": 140.6,
+    "face_width": 125
+   },
+   "position_mm": {
+    "axis": "Y",
+    "top_centre": [
+     7701,
+     0,
+     1262.5
+    ],
+    "bottom_centre": [
+     7701,
+     0,
+     1137.5
+    ]
+   },
+   "connects_to": [
+    "melt_gear_pump",
+    "melt_pump_cardan"
+   ],
+   "details": "Spur gears with involute-like teeth (12 points per flank), shafts Ø60 through the body. The mesh line lies on Z 1200 (melt axis). Top gear is the driven gear on the −Y shaft (external stub is at Z 1250, 12.5 mm higher; accepted). Rotation: top +, bottom − about +Y, so the tooth gaps carry melt over the top and under the bottom from inlet (−X) to outlet (+X). Bottom gear phase offset half a tooth (11.25 deg). Size assumed to match 764 cm³/rev (c047).",
+   "visible_in": [
+    "S10",
+    "ST7"
+   ],
+   "tri_budget": 12000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_pump_body_cut",
+   "group": "pump",
+   "kind": "mesh",
+   "purpose_vi": "Thân bơm rỗng: buồng bánh răng hình số 8 + cửa vào/ra",
+   "dims_mm": {
+    "block": "450 × 530 × 460",
+    "chamber": "two Ø141 bores, centre distance 125"
+   },
+   "position_mm": {
+    "x": [
+     7476,
+     7926
+    ],
+    "y": [
+     -300,
+     230
+    ],
+    "z": [
+     970,
+     1430
+    ]
+   },
+   "connects_to": [
+    "melt_gear_pump",
+    "int_pump_gear_top",
+    "int_pump_gear_bottom"
+   ],
+   "details": "Cut variant (−Y half, SEC_Y0) built from an outer block copy minus the gear chamber and Ø120 → 120 × 125 rectangular ports.",
+   "visible_in": [
+    "S10",
+    "ST7"
+   ],
+   "tri_budget": 3000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_pipe_mixer_section",
+   "group": "melt",
+   "kind": "mesh",
+   "purpose_vi": "Ống nhựa DN100 và bộ trộn tĩnh để cắt (lớp thép, băng nhiệt, cách nhiệt, vỏ inox)",
+   "dims_mm": {
+    "bore": 100,
+    "layers": "steel to Ø150, heater 10, insulation to Ø290, cladding Ø300",
+    "mixer": "6 SMX-type elements Ø100 × 83, each rotated 90°"
+   },
+   "position_mm": {
+    "x": [
+     8076,
+     8926
+    ],
+    "z": 1200
+   },
+   "connects_to": [
+    "melt_pipe",
+    "melt_static_mixer"
+   ],
+   "details": "Only used with a section plane (ST1, S12 background).",
+   "visible_in": [
+    "S12",
+    "ST1",
+    "ST4"
+   ],
+   "tri_budget": 9000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_die_lower_face",
+   "group": "die",
+   "kind": "mesh",
+   "purpose_vi": "Nửa khuôn dưới có rãnh móc áo trên mặt phân khuôn",
+   "dims_mm": {
+    "body": "450 × 2600 × 250",
+    "manifold": "Ø72 at centre → Ø28 at Y ±1200 (half in this face)",
+    "preland_gap": 4,
+    "land_gap": 1.0
+   },
+   "position_mm": {
+    "x": [
+     9126,
+     9576
+    ],
+    "y": [
+     -1300,
+     1300
+    ],
+    "z": [
+     950,
+     1200
+    ]
+   },
+   "connects_to": [
+    "die_body_lower",
+    "int_die_choker_bar",
+    "melt_die_adapter"
+   ],
+   "details": "Outer shape = die_body_lower. Milled into the Z 1200 face: inlet half-bore Ø100 from X 9126 to the manifold apex (Ø100 matches the die adapter bore); manifold half-groove, centreline X 9172 at Y 0 (10 mm wall to the back face) curving to X 9215 at Y ±1200, radius 36 → 14; preland recess 2 mm deep from the manifold to the choker line X 9240 (preland ≈ 32 mm at the centre, ≈ 11 mm at the edges: reads close to a T-manifold, see brief Q2); flow gap 1.5 mm deep from X 9270 to the hinge line X 9392; land 0.5 mm deep X 9404–9576. Regions get separate material slots so the plan view reads (manifold darker, preland mid, land light). This is 28 mm upstream of the manifold position on sheet 05 A-A (X 9200) so the coat-hanger fits in front of the external choker bolts (X 9255).",
+   "visible_in": [
+    "S11",
+    "ST1",
+    "ST5"
+   ],
+   "tri_budget": 8000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_die_section_<upper|lower>",
+   "group": "die",
+   "kind": "mesh",
+   "purpose_vi": "Hai nửa khuôn (phía −Y) có mặt cắt A-A tại Y = 0",
+   "dims_mm": {
+    "profile": "sheet-05 section A-A",
+    "extent_y": [
+     -1300,
+     0
+    ]
+   },
+   "position_mm": {
+    "x": [
+     9126,
+     9576
+    ],
+    "z": [
+     950,
+     1450
+    ]
+   },
+   "connects_to": [
+    "die_body_upper",
+    "die_body_lower",
+    "die_flex_lip",
+    "die_thermal_bolts",
+    "die_choker_bolts"
+   ],
+   "details": "Extrude the A-A outline (inlet, manifold, preland, choker slot, flow gap, open hinge slot X 9392–9404 with the 12 mm web, flex lip, land, lower lip insert, 30° nose) along −Y; subtract the true tapered manifold tube. Two shape keys for S12 only: 'gap_x10' raises the flex-lip land by 9 mm (land gap drawn 10 mm instead of 1.0 mm), and 'lip_push' lowers the lip tip by 1.5 mm (= ±0.15 mm real × 10). Gap and travel use the same factor 10, so the drawn gap stays 8.5–11.5 mm and never closes. ST4 uses neither key (true 1.0 mm gap). Real thermal-bolt stroke 300 µm total = ±0.15 mm (c054).",
+   "visible_in": [
+    "S12",
+    "ST4"
+   ],
+   "tri_budget": 6000,
+   "builder": "A1"
+  },
+  {
+   "name": "int_die_choker_bar",
+   "group": "die",
+   "kind": "mesh",
+   "purpose_vi": "Thanh chặn (choker / restrictor bar)",
+   "dims_mm": {
+    "section": "30 × 94",
+    "length": 2400,
+    "tip_gap": "3 mm above Z 1200 (adjustable 2–5)"
+   },
+   "position_mm": {
+    "x": [
+     9240,
+     9270
+    ],
+    "y": [
+     -1200,
+     1200
+    ],
+    "z": [
+     1203,
+     1297
+    ]
+   },
+   "connects_to": [
+    "die_choker_bolts",
+    "int_die_section_upper"
+   ],
+   "details": "Sits under the 33 choker bolts.",
+   "visible_in": [
+    "S11",
+    "S12",
+    "ST4",
+    "ST5"
+   ],
+   "tri_budget": 600,
+   "builder": "A1"
+  },
+  {
+   "name": "int_fill_<zone>",
+   "group": "fill",
+   "kind": "mesh",
+   "purpose_vi": "Khối nhựa/hạt chiếm chỗ để thể hiện dòng chảy",
+   "dims_mm": {
+    "zones": "feed column, screw channels per zone (see screw table fill_degree), head, valve (run and drain), screen kidneys, pump inlet/outlet + 32 tooth pockets, pipe, mixer, die channels"
+   },
+   "position_mm": {
+    "along": "Z 1200 axis"
+   },
+   "connects_to": [
+    "int_*"
+   ],
+   "details": "Screw zone: figure-8 free volume clipped at Z = 1200 − 169·(0.5 − fill) for partial fill (melt pools at the bottom), full figure-8 for fill = 1; the rotating screws pass through it (translucent material, no boolean). Variants: _lo (clipped at Z ≤ 1200, used in every SEC_Z1200 state so no amber volume sits above the open screws), _x2450 / _x4120 (clipped at the X planes). Pump pockets are parented to the gears. Shader in design-anim.md §Kỹ thuật.",
+   "visible_in": [
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "ST1",
+    "ST2",
+    "ST3",
+    "ST4",
+    "ST5",
+    "ST6",
+    "ST7"
+   ],
+   "tri_budget": 35000,
+   "builder": "A1 geometry, A2 shaders"
+  },
+  {
+   "name": "int_xsec_<a|b>_<2450|4120>",
+   "group": "screws",
+   "kind": "mesh",
+   "purpose_vi": "Nắp mặt cắt của vít tại mặt cắt ngang (proxy)",
+   "dims_mm": {
+    "thickness": 2
+   },
+   "position_mm": {
+    "x": [
+     2450,
+     4120
+    ],
+    "y": "±71",
+    "z": 1200
+   },
+   "connects_to": [
+    "int_screw_axis_a",
+    "int_screw_axis_b"
+   ],
+   "details": "2 mm slab of the exact profile, parented to the axis empty, base rotation = phase at that X: X 2450 → A 119.3°, B 209.3°; X 4120 → A 300.9°, B 30.9° (phase_A = element start phase + 360·(X − x_start)/pitch). Cap material. Lets the cut screws look solid without booleans.",
+   "visible_in": [
+    "S05",
+    "S07",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 800,
+   "builder": "A1"
+  },
+  {
+   "name": "int_gbx_schematic",
+   "group": "drive",
+   "kind": "mesh",
+   "purpose_vi": "Sơ đồ nguyên lý hộp số chia công suất (không phải bản vẽ hãng)",
+   "dims_mm": {
+    "input": "pinion z 23 on Z 1200",
+    "stage1": "gear z 43 + pinion z 21",
+    "outputs": "2 gears z 40 on the shafts at Y ±71, axially staggered 180 mm"
+   },
+   "position_mm": {
+    "x": [
+     -2300,
+     -750
+    ],
+    "y": [
+     -600,
+     600
+    ],
+    "z": [
+     750,
+     1650
+    ]
+   },
+   "connects_to": [
+    "drive_safety_coupling",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b"
+   ],
+   "details": "Low-poly gears (cylinders with 1-segment teeth), overall ratio ≈ 3.73 (23→43 then 21→40 ≈ 3.56; tune to 3.73). Shown inside a ghosted gearbox; label says 'sơ đồ nguyên lý (giả định)'. The torque split is shown by the two output gears both driven by the stage-1 pinion.",
+   "visible_in": [
+    "S02"
+   ],
+   "tri_budget": 12000,
+   "builder": "A1"
+  },
+  {
+   "name": "anim_ctx_scanner",
+   "group": "context",
+   "kind": "mesh",
+   "purpose_vi": "Đầu đo chiều dày quét ngang (O-frame)",
+   "dims_mm": {
+    "frame": "2 beams 3 000 × 120 × 120, gap 300",
+    "head": "200 × 160 × 120"
+   },
+   "position_mm": {
+    "x": [
+     12100,
+     12300
+    ],
+    "y": [
+     -1500,
+     1500
+    ],
+    "z": [
+     0,
+     1600
+    ]
+   },
+   "connects_to": [
+    "ctx_takeoff_conveyor",
+    "anim_sheet"
+   ],
+   "details": "Not in design (design.md says not built). O-frame over the take-off conveyor; heads above and below the sheet (Z 1150) traverse Y −1050…+1050.",
+   "visible_in": [
+    "S13",
+    "S14"
+   ],
+   "tri_budget": 3000,
+   "builder": "A1"
+  },
+  {
+   "name": "anim_roll_markers",
+   "group": "context",
+   "kind": "mesh",
+   "purpose_vi": "Vạch đánh dấu trên đầu trục cán để thấy chiều quay",
+   "dims_mm": {
+    "marker": "120 × 30 dark stripe on each journal end"
+   },
+   "position_mm": {
+    "x": 9776,
+    "z": [
+     799,
+     1601,
+     2403
+    ]
+   },
+   "connects_to": [
+    "ctx_roll_bottom",
+    "ctx_roll_middle",
+    "ctx_roll_top"
+   ],
+   "details": "Parented to rotation empties at the roll axes; the chrome rolls themselves are not rotated (their origin is at world zero).",
+   "visible_in": [
+    "S12",
+    "S13"
+   ],
+   "tri_budget": 200,
+   "builder": "A2"
+  },
+  {
+   "name": "int_screw_elem_<a|b>_12_x2450 / _22_x4120",
+   "group": "screws",
+   "kind": "mesh",
+   "purpose_vi": "Phần tử vít cắt sẵn tại mặt cắt ngang (I3)",
+   "dims_mm": {
+    "from": "element 12 (2239.25–2492.75) and element 22 (3971.5–4225)"
+   },
+   "position_mm": {
+    "x_keep": [
+     "2239.25–2450",
+     "3971.5–4120"
+    ],
+    "y": "±71",
+    "z": 1200
+   },
+   "connects_to": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_xsec_*"
+   ],
+   "details": "Bisect copies of the element mesh at X 2450 / 4120, keep −X. Parented to the axis empty like the whole element, so the cut face stays on the plane while it spins (plane ⟂ axis). In CUT_X2450 the whole element 12 and elements 13–32 are hidden; in CUT_X4120 element 22 and 23–32.",
+   "visible_in": [
+    "S05",
+    "S07",
+    "ST2",
+    "ST3"
+   ],
+   "tri_budget": 6000,
+   "builder": "A1"
+  },
+  {
+   "name": "anim_ghost_vent_<1|2> + anim_vent_window_<1|2>",
+   "group": "barrel",
+   "kind": "mesh",
+   "purpose_vi": "Vòm chân không vẽ mờ và dải cửa sổ lỗ thoát khí trên xi lanh đã cắt (I5)",
+   "dims_mm": {
+    "window_1": "X 1990–2310 × 280 wide",
+    "window_2": "X 3860–4380 × 280 wide"
+   },
+   "position_mm": {
+    "window_z": [
+     1200,
+     1215
+    ],
+    "y": [
+     -140,
+     140
+    ]
+   },
+   "connects_to": [
+    "barrel_vent_dome_2",
+    "barrel_vent_dome",
+    "int_barrel_hollow_b3_lo",
+    "int_barrel_hollow_b5_lo"
+   ],
+   "details": "Ghost: copies of the two domes with a ghost material (alpha 0.15, edge outline), shown in CUT_Z_BARREL. Window: 15 mm purple translucent slab lying on the cut face over the bore, marks exactly where each vent opens relative to the LH seals.",
+   "visible_in": [
+    "S04",
+    "S06"
+   ],
+   "tri_budget": 4000,
+   "builder": "A3"
+  },
+  {
+   "name": "anim_split_*",
+   "group": "split",
+   "kind": "mesh",
+   "purpose_vi": "Bản sao tách của các vật dùng chung nhiều nhóm (I2)",
+   "dims_mm": {
+    "items": "melt_heater_bands → 6 bands; die_body_bolts → top/bottom rows; die_heater_boxes → top/bottom"
+   },
+   "position_mm": {
+    "from": "mesh islands"
+   },
+   "connects_to": [
+    "melt_heater_bands",
+    "die_body_bolts",
+    "die_heater_boxes"
+   ],
+   "details": "Separate the evaluated mesh of each source object by loose parts; group islands by X (bands: head1 5836, head2 5906, scin 6521, pumpin 7388, pumpout 8001, dieadapter 9000) or by island centre Z (die bolts and heater boxes: > 1200 top, < 1200 bottom). Each split copy joins the visibility group of the part it sits on; the source objects stay hidden in ze155_anim.",
+   "visible_in": [
+    "all"
+   ],
+   "tri_budget": 0,
+   "builder": "A2"
+  }
+ ]
+}

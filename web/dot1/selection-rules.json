@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "doc": "Export selection rules for web/dot1/export_glb.py (Đợt 1, option C). Read by the background Blender process. Collections are matched by exact name and taken recursively (collection.all_objects). The process works on an in-memory copy of out/ze155_anim.blend and never saves it.",
+  "source_blend": "out/ze155_anim.blend",
+  "scene": "ze155_anim",
+  "object_types": ["MESH", "CURVE", "EMPTY"],
+  "never_collections": ["anim_rig", "anim_cutters", "anim_fx"],
+  "files": {
+    "line": {
+      "include_collections": ["anim_ax", "anim_int_context"],
+      "exclude_collections": [],
+      "exclude_objects": ["screws_a", "screws_b", "ctx_floor"],
+      "expect": {"objects": 354, "empties": 3, "curves": 59},
+      "notes": [
+        "anim_ax = the 18 ax_* collections = the 343 exterior objects of ze155 (one ax_* group each).",
+        "ax_always_replaced is hidden in the file (collection hide_render + layer hide_viewport); the script un-hides it in memory. screws_a/screws_b are left out (the interior screws replace them). ctx_sheet, ctx_melt_curtain, melt_heater_bands, die_body_bolts and die_heater_boxes are exported as-is (no split in Đợt 1; the web overrides the sheet and curtain materials).",
+        "ctx_floor is left out: procedural floor material, the web draws its own ground.",
+        "anim_int_context = A1b context objects that belong to the line: anim_ctx_scanner, anim_ctx_scanner_head, the 3 roll-axis empties anim_roll_axis_* (used as runtime pivots) with their 9 anim_roll_markers_* children."
+      ]
+    },
+    "interior": {
+      "include_collections": ["anim_int", "anim_cut"],
+      "exclude_collections": ["anim_int_context"],
+      "exclude_objects": [],
+      "expect": {"objects": 207, "empties": 2, "curves": 0},
+      "notes": [
+        "All A1a + A1b interior objects (slice 1 and 2) are exported once: the export is one cheap re-runnable command, and the interior file is lazy-loaded. The web wires only the Đợt 1 states.",
+        "anim_cut holds only anim_cut_ghost_sc (anim_ghost_sc) and anim_cut_ghost_drive (anim_ghost_drive_gbx); the other anim_cut_* collections are empty.",
+        "int_screw_axis_a / int_screw_axis_b are the screw pivots (empties at Blender (0, ±0.071, 1.2)); their children (64 elements, 2 spline shafts, 4 pre-cut elements, 4 xsec caps, 2 gearbox output gears) rotate with them."
+      ]
+    }
+  },
+  "in_memory_only": [
+    "window scene = ze155_anim",
+    "for the included collections: layer_collection.exclude = False, layer_collection.hide_viewport = False, collection.hide_viewport = False",
+    "included objects: hide_set(False), hide_viewport = False",
+    "rotor empties int_screw_axis_a/b and anim_roll_axis_* rotation_euler = (0, 0, 0) (rest pose; already 0 in the saved file)",
+    "a temporary collection __web_<file> (not linked to the scene) holds the selected objects; it is passed as the exporter 'collection' argument",
+    "bpy.data.filepath, mtime and size of the .blend are checked before and after; no save call exists in the script"
+  ]
+}

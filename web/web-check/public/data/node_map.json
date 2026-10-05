@@ -1,0 +1,4274 @@
+{
+"version": 1,
+"slice": 1,
+"doc": "exported node name (= Blender object name = three userData.name) -> runtime metadata. kind part = exterior mesh node; interior = interior mesh node; pivot = exported empty used only as a rotation parent. closed = position-welded closed test on the RAW GLB (no boundary edge, consistent winding, signed volume > 0). Runtime keeps these under userData.ze.",
+"counts": {
+"line": 354,
+"interior": 207,
+"devices": 190
+},
+"nodes": {
+"anim_ctx_scanner": {
+"file": "line",
+"device_id": "x_thickness_scanner",
+"kind": "part",
+"closed": true
+},
+"anim_ctx_scanner_head": {
+"file": "line",
+"device_id": "x_thickness_scanner",
+"kind": "part",
+"closed": true
+},
+"anim_roll_axis_bottom": {
+"file": "line",
+"device_id": "ctx_roll_bottom",
+"kind": "pivot"
+},
+"anim_roll_axis_middle": {
+"file": "line",
+"device_id": "ctx_roll_middle",
+"kind": "pivot"
+},
+"anim_roll_axis_top": {
+"file": "line",
+"device_id": "ctx_roll_top",
+"kind": "pivot"
+},
+"anim_roll_markers_bottom_aa": {
+"file": "line",
+"device_id": "ctx_roll_bottom",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_bottom_neg": {
+"file": "line",
+"device_id": "ctx_roll_bottom",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_bottom_pos": {
+"file": "line",
+"device_id": "ctx_roll_bottom",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_middle_aa": {
+"file": "line",
+"device_id": "ctx_roll_middle",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_middle_neg": {
+"file": "line",
+"device_id": "ctx_roll_middle",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_middle_pos": {
+"file": "line",
+"device_id": "ctx_roll_middle",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_top_aa": {
+"file": "line",
+"device_id": "ctx_roll_top",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_top_neg": {
+"file": "line",
+"device_id": "ctx_roll_top",
+"kind": "part",
+"closed": true
+},
+"anim_roll_markers_top_pos": {
+"file": "line",
+"device_id": "ctx_roll_top",
+"kind": "part",
+"closed": true
+},
+"barrel_b1": {
+"file": "line",
+"device_id": "barrel_b1",
+"kind": "part",
+"closed": true
+},
+"barrel_b2": {
+"file": "line",
+"device_id": "barrel_b2",
+"kind": "part",
+"closed": true
+},
+"barrel_b3": {
+"file": "line",
+"device_id": "barrel_b3",
+"kind": "part",
+"closed": true
+},
+"barrel_b4": {
+"file": "line",
+"device_id": "barrel_b4",
+"kind": "part",
+"closed": true
+},
+"barrel_b5": {
+"file": "line",
+"device_id": "barrel_b5",
+"kind": "part",
+"closed": true
+},
+"barrel_b6": {
+"file": "line",
+"device_id": "barrel_b6",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_duct_op": {
+"file": "line",
+"device_id": "barrel_cable_tray",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_duct_op_perf": {
+"file": "line",
+"device_id": "barrel_cable_tray",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_gland_boxes_op": {
+"file": "line",
+"device_id": "barrel_heater_shells",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_glands_op": {
+"file": "line",
+"device_id": "barrel_heater_shells",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_tray": {
+"file": "line",
+"device_id": "barrel_cable_tray",
+"kind": "part",
+"closed": true
+},
+"barrel_cable_tray_perf": {
+"file": "line",
+"device_id": "barrel_cable_tray",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c1": {
+"file": "line",
+"device_id": "barrel_cover_c1",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c1_hw": {
+"file": "line",
+"device_id": "barrel_cover_c1",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c2": {
+"file": "line",
+"device_id": "barrel_cover_c2",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c2_hw": {
+"file": "line",
+"device_id": "barrel_cover_c2",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c3": {
+"file": "line",
+"device_id": "barrel_cover_c3",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c3_hw": {
+"file": "line",
+"device_id": "barrel_cover_c3",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c4": {
+"file": "line",
+"device_id": "barrel_cover_c4",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c4_hw": {
+"file": "line",
+"device_id": "barrel_cover_c4",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c5": {
+"file": "line",
+"device_id": "barrel_cover_c5",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c5_hw": {
+"file": "line",
+"device_id": "barrel_cover_c5",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c6": {
+"file": "line",
+"device_id": "barrel_cover_c6",
+"kind": "part",
+"closed": true
+},
+"barrel_cover_c6_hw": {
+"file": "line",
+"device_id": "barrel_cover_c6",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_coil_cables": {
+"file": "line",
+"device_id": "barrel_cw_valves",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_hoses": {
+"file": "line",
+"device_id": "barrel_cw_hoses",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_return": {
+"file": "line",
+"device_id": "barrel_cw_return",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_return_fit": {
+"file": "line",
+"device_id": "barrel_cw_return",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_supply": {
+"file": "line",
+"device_id": "barrel_cw_supply",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_supply_fit": {
+"file": "line",
+"device_id": "barrel_cw_supply",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_supports": {
+"file": "line",
+"device_id": "barrel_cw_supply",
+"kind": "part",
+"closed": true
+},
+"barrel_cw_valves": {
+"file": "line",
+"device_id": "barrel_cw_valves",
+"kind": "part",
+"closed": true
+},
+"barrel_heater_cables": {
+"file": "line",
+"device_id": "barrel_heater_shells",
+"kind": "part",
+"closed": true
+},
+"barrel_heater_cables_op": {
+"file": "line",
+"device_id": "barrel_heater_shells",
+"kind": "part",
+"closed": true
+},
+"barrel_heater_conduits": {
+"file": "line",
+"device_id": "barrel_heater_jboxes",
+"kind": "part",
+"closed": true
+},
+"barrel_heater_jboxes": {
+"file": "line",
+"device_id": "barrel_heater_jboxes",
+"kind": "part",
+"closed": true
+},
+"barrel_heater_shells": {
+"file": "line",
+"device_id": "barrel_heater_shells",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_1": {
+"file": "line",
+"device_id": "barrel_joint_1",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_2": {
+"file": "line",
+"device_id": "barrel_joint_2",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_3": {
+"file": "line",
+"device_id": "barrel_joint_3",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_4": {
+"file": "line",
+"device_id": "barrel_joint_4",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_5": {
+"file": "line",
+"device_id": "barrel_joint_5",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_head": {
+"file": "line",
+"device_id": "barrel_b6",
+"kind": "part",
+"closed": true
+},
+"barrel_joint_lantern": {
+"file": "line",
+"device_id": "barrel_b1",
+"kind": "part",
+"closed": true
+},
+"barrel_support_1": {
+"file": "line",
+"device_id": "barrel_support_1",
+"kind": "part",
+"closed": true
+},
+"barrel_support_2": {
+"file": "line",
+"device_id": "barrel_support_2",
+"kind": "part",
+"closed": true
+},
+"barrel_support_3": {
+"file": "line",
+"device_id": "barrel_support_3",
+"kind": "part",
+"closed": true
+},
+"barrel_tc_leads_op": {
+"file": "line",
+"device_id": "barrel_thermocouples",
+"kind": "part",
+"closed": true
+},
+"barrel_thermocouples": {
+"file": "line",
+"device_id": "barrel_thermocouples",
+"kind": "part",
+"closed": true
+},
+"barrel_vent_dome": {
+"file": "line",
+"device_id": "barrel_vent_dome",
+"kind": "part",
+"closed": true
+},
+"barrel_vent_dome_2": {
+"file": "line",
+"device_id": "barrel_vent_dome_2",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_die_jbox": {
+"file": "line",
+"device_id": "die_junction_box",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_drive_signals": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_drop": {
+"file": "line",
+"device_id": "ctrl_cable_drop",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_duct_drive_op": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_duct_drive_rear": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_encoder_link": {
+"file": "line",
+"device_id": "drive_encoder",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_estops": {
+"file": "line",
+"device_id": "ctrl_estops",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_estops_cover": {
+"file": "line",
+"device_id": "ctrl_estops",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_estops_hw": {
+"file": "line",
+"device_id": "ctrl_estops",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_feed": {
+"file": "line",
+"device_id": "feed_control_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_glands_drive": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_lube_motor": {
+"file": "line",
+"device_id": "lube_pump_motor",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_misc_hw": {
+"file": "line",
+"device_id": "x_ctrl_cabling",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_mv": {
+"file": "line",
+"device_id": "ctrl_cable_mv",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_mv_conduit": {
+"file": "line",
+"device_id": "ctrl_cable_mv",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_sidefeed": {
+"file": "line",
+"device_id": "sidefeed_motor",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_stubs": {
+"file": "line",
+"device_id": "x_ctrl_cabling",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_stubs_hw": {
+"file": "line",
+"device_id": "x_ctrl_cabling",
+"kind": "part",
+"closed": true
+},
+"ctrl_cable_tray_feed": {
+"file": "line",
+"device_id": "feed_control_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_die_bolt_cabinet": {
+"file": "line",
+"device_id": "ctrl_die_bolt_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_drive_cabinet": {
+"file": "line",
+"device_id": "ctrl_drive_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_drive_cabinet_doors": {
+"file": "line",
+"device_id": "ctrl_drive_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_drive_cabinet_hw": {
+"file": "line",
+"device_id": "ctrl_drive_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_drive_cabinet_seams": {
+"file": "line",
+"device_id": "ctrl_drive_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_estop_die": {
+"file": "line",
+"device_id": "ctrl_estop_die",
+"kind": "part",
+"closed": true
+},
+"ctrl_estop_melt": {
+"file": "line",
+"device_id": "ctrl_estop_melt",
+"kind": "part",
+"closed": true
+},
+"ctrl_estop_platform": {
+"file": "line",
+"device_id": "ctrl_estop_platform",
+"kind": "part",
+"closed": true
+},
+"ctrl_estops": {
+"file": "line",
+"device_id": "ctrl_estops",
+"kind": "part",
+"closed": true
+},
+"ctrl_floor_duct": {
+"file": "line",
+"device_id": "ctrl_floor_duct",
+"kind": "part",
+"closed": true
+},
+"ctrl_floor_trench": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctrl_heater_cabinet": {
+"file": "line",
+"device_id": "ctrl_heater_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_heater_cabinet_doors": {
+"file": "line",
+"device_id": "ctrl_heater_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_heater_cabinet_hw": {
+"file": "line",
+"device_id": "ctrl_heater_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_heater_cabinet_logo": {
+"file": "line",
+"device_id": "ctrl_heater_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_heater_cabinet_seams": {
+"file": "line",
+"device_id": "ctrl_heater_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_hmi": {
+"file": "line",
+"device_id": "ctrl_hmi",
+"kind": "part",
+"closed": true
+},
+"ctrl_hmi_cable": {
+"file": "line",
+"device_id": "ctrl_hmi",
+"kind": "part",
+"closed": true
+},
+"ctrl_hmi_floor_cover": {
+"file": "line",
+"device_id": "ctrl_hmi",
+"kind": "part",
+"closed": true
+},
+"ctrl_infeed_lv": {
+"file": "line",
+"device_id": "ctrl_infeed_lv",
+"kind": "part",
+"closed": true
+},
+"ctrl_infeed_mv": {
+"file": "line",
+"device_id": "ctrl_infeed_mv",
+"kind": "part",
+"closed": true
+},
+"ctrl_machine_cabinet": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_machine_cabinet_hw": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_machine_cabinet_logo_x": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_machine_cabinet_logo_y": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_machine_cabinet_skin": {
+"file": "line",
+"device_id": "ctrl_machine_cabinet",
+"kind": "part",
+"closed": true
+},
+"ctrl_signal_tower": {
+"file": "line",
+"device_id": "ctrl_signal_tower",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_die_branch": {
+"file": "line",
+"device_id": "ctrl_trench_die_branch",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_mv": {
+"file": "line",
+"device_id": "ctrl_trench_mv",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_stub_column": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_stub_hpu": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_stub_meltjbox": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_stub_rolls": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctrl_trench_stub_vac": {
+"file": "line",
+"device_id": "ctrl_floor_trench",
+"kind": "part",
+"closed": true
+},
+"ctx_melt_curtain": {
+"file": "line",
+"device_id": "ctx_sheet",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_bottom": {
+"file": "line",
+"device_id": "ctx_roll_bottom",
+"kind": "part",
+"closed": false,
+"cap": "force"
+},
+"ctx_roll_cable_glands": {
+"file": "line",
+"device_id": "ctx_roll_drives",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_cable_ladder": {
+"file": "line",
+"device_id": "ctx_roll_drives",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_cw_headers": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_drive_cables": {
+"file": "line",
+"device_id": "ctx_roll_drives",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_drives": {
+"file": "line",
+"device_id": "ctx_roll_drives",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_hoses": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_middle": {
+"file": "line",
+"device_id": "ctx_roll_middle",
+"kind": "part",
+"closed": false,
+"cap": "force"
+},
+"ctx_roll_rails": {
+"file": "line",
+"device_id": "ctx_roll_rails",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_stand": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_stand_logo_op": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_stand_logo_rear": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_roll_top": {
+"file": "line",
+"device_id": "ctx_roll_top",
+"kind": "part",
+"closed": false,
+"cap": "force"
+},
+"ctx_roll_unions": {
+"file": "line",
+"device_id": "ctx_roll_stand",
+"kind": "part",
+"closed": true
+},
+"ctx_sheet": {
+"file": "line",
+"device_id": "ctx_sheet",
+"kind": "part",
+"closed": true
+},
+"ctx_takeoff_brackets": {
+"file": "line",
+"device_id": "x_takeoff",
+"kind": "part",
+"closed": true
+},
+"ctx_takeoff_conveyor": {
+"file": "line",
+"device_id": "x_takeoff",
+"kind": "part",
+"closed": true
+},
+"ctx_takeoff_idler": {
+"file": "line",
+"device_id": "x_takeoff",
+"kind": "part",
+"closed": true
+},
+"ctx_takeoff_rollers": {
+"file": "line",
+"device_id": "x_takeoff",
+"kind": "part",
+"closed": true
+},
+"die_body_bolts": {
+"file": "line",
+"device_id": "die_body_bolts",
+"kind": "part",
+"closed": true
+},
+"die_body_lower": {
+"file": "line",
+"device_id": "die_body_lower",
+"kind": "part",
+"closed": true
+},
+"die_body_upper": {
+"file": "line",
+"device_id": "die_body_upper",
+"kind": "part",
+"closed": true
+},
+"die_bolt_actuator_rail": {
+"file": "line",
+"device_id": "die_bolt_actuator_rail",
+"kind": "part",
+"closed": true
+},
+"die_cable_harness": {
+"file": "line",
+"device_id": "die_cable_harness",
+"kind": "part",
+"closed": true
+},
+"die_cart": {
+"file": "line",
+"device_id": "die_cart",
+"kind": "part",
+"closed": true
+},
+"die_cart_rails": {
+"file": "line",
+"device_id": "die_cart_rails",
+"kind": "part",
+"closed": true
+},
+"die_choker_bolts": {
+"file": "line",
+"device_id": "die_choker_bolts",
+"kind": "part",
+"closed": true
+},
+"die_deckles": {
+"file": "line",
+"device_id": "die_deckles",
+"kind": "part",
+"closed": true
+},
+"die_drip_pan": {
+"file": "line",
+"device_id": "die_drip_pan",
+"kind": "part",
+"closed": true
+},
+"die_end_plate_op": {
+"file": "line",
+"device_id": "die_end_plate_op",
+"kind": "part",
+"closed": true
+},
+"die_end_plate_rear": {
+"file": "line",
+"device_id": "die_end_plate_rear",
+"kind": "part",
+"closed": true
+},
+"die_flex_lip": {
+"file": "line",
+"device_id": "die_flex_lip",
+"kind": "part",
+"closed": true
+},
+"die_heater_boxes": {
+"file": "line",
+"device_id": "die_heater_boxes",
+"kind": "part",
+"closed": true
+},
+"die_heater_conduit": {
+"file": "line",
+"device_id": "die_heater_conduit",
+"kind": "part",
+"closed": true
+},
+"die_junction_box": {
+"file": "line",
+"device_id": "die_junction_box",
+"kind": "part",
+"closed": true
+},
+"die_lifting_lugs": {
+"file": "line",
+"device_id": "die_lifting_lugs",
+"kind": "part",
+"closed": true
+},
+"die_plugs": {
+"file": "line",
+"device_id": "die_body_upper",
+"kind": "part",
+"closed": true
+},
+"die_thermal_bolts": {
+"file": "line",
+"device_id": "die_thermal_bolts",
+"kind": "part",
+"closed": true
+},
+"drive_coupling_guard": {
+"file": "line",
+"device_id": "drive_coupling_guard",
+"kind": "part",
+"closed": true
+},
+"drive_coupling_guard_hw": {
+"file": "line",
+"device_id": "drive_coupling_guard",
+"kind": "part",
+"closed": true
+},
+"drive_coupling_guard_mesh": {
+"file": "line",
+"device_id": "drive_coupling_guard",
+"kind": "part",
+"closed": true
+},
+"drive_encoder": {
+"file": "line",
+"device_id": "drive_encoder",
+"kind": "part",
+"closed": true
+},
+"drive_encoder_cable": {
+"file": "line",
+"device_id": "drive_encoder",
+"kind": "part",
+"closed": true
+},
+"drive_flex_coupling": {
+"file": "line",
+"device_id": "drive_flex_coupling",
+"kind": "part",
+"closed": true
+},
+"drive_motor_base": {
+"file": "line",
+"device_id": "drive_motor_base",
+"kind": "part",
+"closed": true
+},
+"drive_motor_base_hw": {
+"file": "line",
+"device_id": "drive_motor_base",
+"kind": "part",
+"closed": true
+},
+"drive_motor_body": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_cooler": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_endshields": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_fan_cover": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_fan_grille": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_hw": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_louvres": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_shaft": {
+"file": "line",
+"device_id": "drive_motor",
+"kind": "part",
+"closed": true
+},
+"drive_motor_terminal_box": {
+"file": "line",
+"device_id": "drive_motor_terminal_box",
+"kind": "part",
+"closed": true
+},
+"drive_safety_coupling": {
+"file": "line",
+"device_id": "drive_safety_coupling",
+"kind": "part",
+"closed": true
+},
+"drive_safety_coupling_switch": {
+"file": "line",
+"device_id": "drive_safety_coupling",
+"kind": "part",
+"closed": true
+},
+"feed_additive_feeder": {
+"file": "line",
+"device_id": "feed_additive_feeder",
+"kind": "part",
+"closed": true
+},
+"feed_additive_tube": {
+"file": "line",
+"device_id": "feed_additive_tube",
+"kind": "part",
+"closed": true
+},
+"feed_control_cabinet": {
+"file": "line",
+"device_id": "feed_control_cabinet",
+"kind": "part",
+"closed": true
+},
+"feed_conveying_hose": {
+"file": "line",
+"device_id": "feed_conveying_line",
+"kind": "part",
+"closed": true
+},
+"feed_conveying_hose_end": {
+"file": "line",
+"device_id": "feed_conveying_line",
+"kind": "part",
+"closed": true
+},
+"feed_conveying_line": {
+"file": "line",
+"device_id": "feed_conveying_line",
+"kind": "part",
+"closed": true
+},
+"feed_conveying_line_end": {
+"file": "line",
+"device_id": "feed_conveying_line",
+"kind": "part",
+"closed": true
+},
+"feed_downpipe": {
+"file": "line",
+"device_id": "feed_downpipe",
+"kind": "part",
+"closed": true
+},
+"feed_downpipe_hw": {
+"file": "line",
+"device_id": "feed_downpipe",
+"kind": "part",
+"closed": true
+},
+"feed_feeder_sleeves": {
+"file": "line",
+"device_id": "feed_feeder_sleeves",
+"kind": "part",
+"closed": true
+},
+"feed_feeder_sleeves_clamps": {
+"file": "line",
+"device_id": "feed_feeder_sleeves",
+"kind": "part",
+"closed": true
+},
+"feed_flex_sleeve": {
+"file": "line",
+"device_id": "feed_flex_sleeve",
+"kind": "part",
+"closed": true
+},
+"feed_flex_sleeve_clamps": {
+"file": "line",
+"device_id": "feed_flex_sleeve",
+"kind": "part",
+"closed": true
+},
+"feed_hopper": {
+"file": "line",
+"device_id": "feed_hopper",
+"kind": "part",
+"closed": true
+},
+"feed_main_feeder": {
+"file": "line",
+"device_id": "feed_main_feeder",
+"kind": "part",
+"closed": true
+},
+"feed_main_hopper": {
+"file": "line",
+"device_id": "feed_main_hopper",
+"kind": "part",
+"closed": true
+},
+"feed_platform_columns_front": {
+"file": "line",
+"device_id": "feed_platform_columns_front",
+"kind": "part",
+"closed": true
+},
+"feed_platform_columns_rear": {
+"file": "line",
+"device_id": "feed_platform_columns_rear",
+"kind": "part",
+"closed": true
+},
+"feed_platform_deck": {
+"file": "line",
+"device_id": "feed_platform_deck",
+"kind": "part",
+"closed": false
+},
+"feed_platform_grating": {
+"file": "line",
+"device_id": "feed_platform_deck",
+"kind": "part",
+"closed": true
+},
+"feed_platform_grating_x": {
+"file": "line",
+"device_id": "feed_platform_deck",
+"kind": "part",
+"closed": true
+},
+"feed_platform_railing": {
+"file": "line",
+"device_id": "feed_platform_railing",
+"kind": "part",
+"closed": true
+},
+"feed_stair": {
+"file": "line",
+"device_id": "feed_stair",
+"kind": "part",
+"closed": true
+},
+"feed_throat": {
+"file": "line",
+"device_id": "feed_throat",
+"kind": "part",
+"closed": true
+},
+"feed_vacuum_loader": {
+"file": "line",
+"device_id": "feed_vacuum_loader",
+"kind": "part",
+"closed": true
+},
+"frame_drip_tray": {
+"file": "line",
+"device_id": "base_drip_tray",
+"kind": "part",
+"closed": true
+},
+"frame_drip_tray_collars": {
+"file": "line",
+"device_id": "base_drip_tray",
+"kind": "part",
+"closed": true
+},
+"frame_drive_body": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_drive_door_hw": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_drive_door_seams": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_drive_doors": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_drive_plugs": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_drive_welds": {
+"file": "line",
+"device_id": "base_frame_drive",
+"kind": "part",
+"closed": true
+},
+"frame_feet": {
+"file": "line",
+"device_id": "base_feet",
+"kind": "part",
+"closed": true
+},
+"frame_feet_anchors": {
+"file": "line",
+"device_id": "base_feet",
+"kind": "part",
+"closed": true
+},
+"frame_joint_x330": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_body": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_door_hw": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_door_seams": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_doors": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_endplate": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_louvres": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_plugs": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"frame_process_welds": {
+"file": "line",
+"device_id": "base_frame_process",
+"kind": "part",
+"closed": true
+},
+"gbx_bolts": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"gbx_castings": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"gbx_covers": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"gbx_housing": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"gbx_hw": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"gbx_ports": {
+"file": "line",
+"device_id": "gearbox",
+"kind": "part",
+"closed": true
+},
+"lantern_body": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lantern_bolts": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lantern_door": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lantern_drain": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lantern_drain_valve": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lantern_flange": {
+"file": "line",
+"device_id": "lantern",
+"kind": "part",
+"closed": true
+},
+"lube_filter_duplex": {
+"file": "line",
+"device_id": "lube_filter_duplex",
+"kind": "part",
+"closed": true
+},
+"lube_filter_fittings": {
+"file": "line",
+"device_id": "lube_filter_duplex",
+"kind": "part",
+"closed": true
+},
+"lube_oil_cooler": {
+"file": "line",
+"device_id": "lube_oil_cooler",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_filter_cooler": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_filter_cooler_fit": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_hw": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_pressure": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_pressure_fit": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_pump_filter": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_pump_filter_fit": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_return": {
+"file": "line",
+"device_id": "lube_pipe_return",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_return_fit": {
+"file": "line",
+"device_id": "lube_pipe_return",
+"kind": "part",
+"closed": true
+},
+"lube_pipe_support": {
+"file": "line",
+"device_id": "lube_pipe_pressure",
+"kind": "part",
+"closed": true
+},
+"lube_pump": {
+"file": "line",
+"device_id": "lube_pump_motor",
+"kind": "part",
+"closed": true
+},
+"lube_pump_motor": {
+"file": "line",
+"device_id": "lube_pump_motor",
+"kind": "part",
+"closed": true
+},
+"lube_tray": {
+"file": "line",
+"device_id": "lube_unit_frame",
+"kind": "part",
+"closed": true
+},
+"lube_tray_mat": {
+"file": "line",
+"device_id": "lube_unit_frame",
+"kind": "part",
+"closed": true
+},
+"melt_die_adapter": {
+"file": "line",
+"device_id": "melt_die_adapter",
+"kind": "part",
+"closed": true
+},
+"melt_drain_chute": {
+"file": "line",
+"device_id": "melt_drain_chute",
+"kind": "part",
+"closed": true
+},
+"melt_gear_pump": {
+"file": "line",
+"device_id": "melt_gear_pump",
+"kind": "part",
+"closed": true
+},
+"melt_head_adapter": {
+"file": "line",
+"device_id": "melt_head_adapter",
+"kind": "part",
+"closed": true
+},
+"melt_heater_band_cables": {
+"file": "line",
+"device_id": "melt_heater_bands",
+"kind": "part",
+"closed": true
+},
+"melt_heater_bands": {
+"file": "line",
+"device_id": "melt_heater_bands",
+"kind": "part",
+"closed": true
+},
+"melt_heater_conduits": {
+"file": "line",
+"device_id": "melt_heater_conduits",
+"kind": "part",
+"closed": true
+},
+"melt_heater_conduits_fit": {
+"file": "line",
+"device_id": "melt_heater_conduits",
+"kind": "part",
+"closed": true
+},
+"melt_heater_jbox": {
+"file": "line",
+"device_id": "melt_heater_jbox",
+"kind": "part",
+"closed": true
+},
+"melt_heater_jbox_cable": {
+"file": "line",
+"device_id": "melt_heater_jbox",
+"kind": "part",
+"closed": true
+},
+"melt_hpu": {
+"file": "line",
+"device_id": "melt_hpu",
+"kind": "part",
+"closed": true
+},
+"melt_hyd_hose_fittings": {
+"file": "line",
+"device_id": "melt_hyd_hoses_sc",
+"kind": "part",
+"closed": true
+},
+"melt_hyd_hoses_sc": {
+"file": "line",
+"device_id": "melt_hyd_hoses_sc",
+"kind": "part",
+"closed": true
+},
+"melt_hyd_hoses_suv": {
+"file": "line",
+"device_id": "melt_hyd_hoses_suv",
+"kind": "part",
+"closed": true
+},
+"melt_pipe": {
+"file": "line",
+"device_id": "melt_pipe",
+"kind": "part",
+"closed": false
+},
+"melt_pipe_saddles": {
+"file": "line",
+"device_id": "melt_pipe_saddles",
+"kind": "part",
+"closed": true
+},
+"melt_pump_adapter_in": {
+"file": "line",
+"device_id": "melt_pump_adapter_in",
+"kind": "part",
+"closed": true
+},
+"melt_pump_adapter_out": {
+"file": "line",
+"device_id": "melt_pump_adapter_out",
+"kind": "part",
+"closed": true
+},
+"melt_pump_cardan": {
+"file": "line",
+"device_id": "melt_pump_cardan",
+"kind": "part",
+"closed": true
+},
+"melt_pump_gearbox": {
+"file": "line",
+"device_id": "melt_pump_gearbox",
+"kind": "part",
+"closed": true
+},
+"melt_pump_motor": {
+"file": "line",
+"device_id": "melt_pump_motor",
+"kind": "part",
+"closed": true
+},
+"melt_purge_cart": {
+"file": "line",
+"device_id": "melt_purge_cart",
+"kind": "part",
+"closed": true
+},
+"melt_rupture_disc": {
+"file": "line",
+"device_id": "melt_rupture_disc",
+"kind": "part",
+"closed": true
+},
+"melt_rupture_disc_2": {
+"file": "line",
+"device_id": "melt_rupture_disc_2",
+"kind": "part",
+"closed": true
+},
+"melt_sc_adapter_in": {
+"file": "line",
+"device_id": "melt_sc_adapter_in",
+"kind": "part",
+"closed": true
+},
+"melt_sc_backflush": {
+"file": "line",
+"device_id": "melt_sc_backflush",
+"kind": "part",
+"closed": true
+},
+"melt_sc_drive": {
+"file": "line",
+"device_id": "melt_sc_drive",
+"kind": "part",
+"closed": true
+},
+"melt_screen_changer": {
+"file": "line",
+"device_id": "melt_screen_changer",
+"kind": "part",
+"closed": true
+},
+"melt_screen_changer_logo_in": {
+"file": "line",
+"device_id": "melt_screen_changer",
+"kind": "part",
+"closed": true
+},
+"melt_screen_changer_logo_out": {
+"file": "line",
+"device_id": "melt_screen_changer",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_cable_glands": {
+"file": "line",
+"device_id": "x_melt_sensor_cabling",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_cables": {
+"file": "line",
+"device_id": "x_melt_sensor_cabling",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_die": {
+"file": "line",
+"device_id": "melt_sensor_die",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_head": {
+"file": "line",
+"device_id": "melt_sensor_head",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_p2": {
+"file": "line",
+"device_id": "melt_sensor_p2",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_p3": {
+"file": "line",
+"device_id": "melt_sensor_p3",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_p4": {
+"file": "line",
+"device_id": "melt_sensor_p4",
+"kind": "part",
+"closed": true
+},
+"melt_sensor_tray": {
+"file": "line",
+"device_id": "x_melt_sensor_cabling",
+"kind": "part",
+"closed": true
+},
+"melt_stand_pump": {
+"file": "line",
+"device_id": "melt_stand_pump",
+"kind": "part",
+"closed": true
+},
+"melt_stand_sc": {
+"file": "line",
+"device_id": "melt_stand_sc",
+"kind": "part",
+"closed": true
+},
+"melt_startup_cyl": {
+"file": "line",
+"device_id": "melt_startup_cyl",
+"kind": "part",
+"closed": true
+},
+"melt_startup_valve": {
+"file": "line",
+"device_id": "melt_startup_valve",
+"kind": "part",
+"closed": true
+},
+"melt_static_mixer": {
+"file": "line",
+"device_id": "melt_static_mixer",
+"kind": "part",
+"closed": false
+},
+"melt_valve_support": {
+"file": "line",
+"device_id": "melt_valve_support",
+"kind": "part",
+"closed": true
+},
+"pump_drive_pedestal": {
+"file": "line",
+"device_id": "pump_drive_pedestal",
+"kind": "part",
+"closed": true
+},
+"sidefeed_adapter": {
+"file": "line",
+"device_id": "sidefeed_adapter",
+"kind": "part",
+"closed": true
+},
+"sidefeed_barrel": {
+"file": "line",
+"device_id": "sidefeed_barrel",
+"kind": "part",
+"closed": true
+},
+"sidefeed_cart": {
+"file": "line",
+"device_id": "sidefeed_cart",
+"kind": "part",
+"closed": true
+},
+"sidefeed_downpipe": {
+"file": "line",
+"device_id": "sidefeed_downpipe",
+"kind": "part",
+"closed": true
+},
+"sidefeed_downpipe_flex": {
+"file": "line",
+"device_id": "sidefeed_downpipe",
+"kind": "part",
+"closed": true
+},
+"sidefeed_downpipe_hw": {
+"file": "line",
+"device_id": "sidefeed_downpipe",
+"kind": "part",
+"closed": true
+},
+"sidefeed_feeder": {
+"file": "line",
+"device_id": "sidefeed_feeder",
+"kind": "part",
+"closed": true
+},
+"sidefeed_feeder_hopper": {
+"file": "line",
+"device_id": "sidefeed_feeder_hopper",
+"kind": "part",
+"closed": true
+},
+"sidefeed_gearbox": {
+"file": "line",
+"device_id": "sidefeed_gearbox",
+"kind": "part",
+"closed": true
+},
+"sidefeed_hopper": {
+"file": "line",
+"device_id": "sidefeed_hopper",
+"kind": "part",
+"closed": true
+},
+"sidefeed_motor": {
+"file": "line",
+"device_id": "sidefeed_motor",
+"kind": "part",
+"closed": true
+},
+"util_air_drop": {
+"file": "line",
+"device_id": "util_air_drop",
+"kind": "part",
+"closed": true
+},
+"util_air_drop_2": {
+"file": "line",
+"device_id": "util_air_drop_2",
+"kind": "part",
+"closed": true
+},
+"util_air_drop_2_clips": {
+"file": "line",
+"device_id": "util_air_drop_2",
+"kind": "part",
+"closed": true
+},
+"util_air_drop_2_fit": {
+"file": "line",
+"device_id": "util_air_drop_2",
+"kind": "part",
+"closed": true
+},
+"util_air_drop_fit": {
+"file": "line",
+"device_id": "util_air_drop",
+"kind": "part",
+"closed": true
+},
+"util_air_drop_hw": {
+"file": "line",
+"device_id": "util_air_drop",
+"kind": "part",
+"closed": true
+},
+"util_air_hose_die": {
+"file": "line",
+"device_id": "util_air_hose_die",
+"kind": "part",
+"closed": true
+},
+"util_air_tube_loader": {
+"file": "line",
+"device_id": "util_air_tube_loader",
+"kind": "part",
+"closed": true
+},
+"util_air_tube_vac": {
+"file": "line",
+"device_id": "util_air_tube_vac",
+"kind": "part",
+"closed": true
+},
+"util_air_tube_vac_clips": {
+"file": "line",
+"device_id": "util_air_tube_vac",
+"kind": "part",
+"closed": true
+},
+"util_cw_lube_hoses": {
+"file": "line",
+"device_id": "util_cw_lube_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_motor_hoses": {
+"file": "line",
+"device_id": "util_cw_motor_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_motor_lube_hw": {
+"file": "line",
+"device_id": "util_cw_motor_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_return_riser": {
+"file": "line",
+"device_id": "util_cw_return_riser",
+"kind": "part",
+"closed": true
+},
+"util_cw_return_riser_fit": {
+"file": "line",
+"device_id": "util_cw_return_riser",
+"kind": "part",
+"closed": true
+},
+"util_cw_risers_hw": {
+"file": "line",
+"device_id": "util_cw_supply_riser",
+"kind": "part",
+"closed": true
+},
+"util_cw_sidefeed_hoses": {
+"file": "line",
+"device_id": "util_cw_sidefeed_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_supply_riser": {
+"file": "line",
+"device_id": "util_cw_supply_riser",
+"kind": "part",
+"closed": true
+},
+"util_cw_supply_riser_fit": {
+"file": "line",
+"device_id": "util_cw_supply_riser",
+"kind": "part",
+"closed": true
+},
+"util_cw_throat_hoses": {
+"file": "line",
+"device_id": "util_cw_throat_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_vac_hoses_0": {
+"file": "line",
+"device_id": "util_cw_vac_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_vac_hoses_1": {
+"file": "line",
+"device_id": "util_cw_vac_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_vac_hoses_2": {
+"file": "line",
+"device_id": "util_cw_vac_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_vac_hoses_3": {
+"file": "line",
+"device_id": "util_cw_vac_hoses",
+"kind": "part",
+"closed": true
+},
+"util_cw_vac_hoses_hw": {
+"file": "line",
+"device_id": "util_cw_vac_hoses",
+"kind": "part",
+"closed": true
+},
+"util_frl": {
+"file": "line",
+"device_id": "util_frl",
+"kind": "part",
+"closed": true
+},
+"util_frl_2": {
+"file": "line",
+"device_id": "util_frl_2",
+"kind": "part",
+"closed": true
+},
+"vac_bellows": {
+"file": "line",
+"device_id": "vac_bellows",
+"kind": "part",
+"closed": true
+},
+"vac_bellows_2": {
+"file": "line",
+"device_id": "vac_bellows_2",
+"kind": "part",
+"closed": true
+},
+"vac_bleed_valve": {
+"file": "line",
+"device_id": "vac_bleed_valve",
+"kind": "part",
+"closed": true
+},
+"vac_control_box": {
+"file": "line",
+"device_id": "vac_control_box",
+"kind": "part",
+"closed": true
+},
+"vac_drain": {
+"file": "line",
+"device_id": "vac_drain",
+"kind": "part",
+"closed": true
+},
+"vac_exhaust": {
+"file": "line",
+"device_id": "vac_exhaust",
+"kind": "part",
+"closed": true
+},
+"vac_exhaust_hw": {
+"file": "line",
+"device_id": "vac_exhaust",
+"kind": "part",
+"closed": true
+},
+"vac_gauge_dome": {
+"file": "line",
+"device_id": "vac_gauge_dome",
+"kind": "part",
+"closed": true
+},
+"vac_gauge_dome_2": {
+"file": "line",
+"device_id": "vac_gauge_dome_2",
+"kind": "part",
+"closed": true
+},
+"vac_pipe": {
+"file": "line",
+"device_id": "vac_pipe",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_2": {
+"file": "line",
+"device_id": "vac_pipe_2",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_2_hw": {
+"file": "line",
+"device_id": "vac_pipe_2",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_3": {
+"file": "line",
+"device_id": "vac_pipe_3",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_3_hw": {
+"file": "line",
+"device_id": "vac_pipe_3",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_hw": {
+"file": "line",
+"device_id": "vac_pipe",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_support": {
+"file": "line",
+"device_id": "vac_pipe_support",
+"kind": "part",
+"closed": true
+},
+"vac_pipe_support_clamp": {
+"file": "line",
+"device_id": "vac_pipe_support",
+"kind": "part",
+"closed": true
+},
+"vac_pump_unit": {
+"file": "line",
+"device_id": "vac_pump_unit",
+"kind": "part",
+"closed": true
+},
+"vac_reg_valve_2": {
+"file": "line",
+"device_id": "vac_reg_valve_2",
+"kind": "part",
+"closed": false
+},
+"vac_separator": {
+"file": "line",
+"device_id": "vac_separator",
+"kind": "part",
+"closed": true
+},
+"vac_valve": {
+"file": "line",
+"device_id": "vac_valve",
+"kind": "part",
+"closed": true
+},
+"vac_valve_2": {
+"file": "line",
+"device_id": "vac_valve_2",
+"kind": "part",
+"closed": true
+},
+"anim_ghost_drive_gbx": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "ghost",
+"slice": 2,
+"states": [
+"GHOST_DRIVE"
+],
+"closed": true
+},
+"anim_ghost_sc": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "ghost",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"anim_ghost_vent_1": {
+"file": "interior",
+"device_id": "barrel_vent_dome_2",
+"kind": "interior",
+"role": "ghost",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"anim_ghost_vent_2": {
+"file": "interior",
+"device_id": "barrel_vent_dome",
+"kind": "interior",
+"role": "ghost",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"anim_vent_window_1": {
+"file": "interior",
+"device_id": "barrel_b3",
+"kind": "interior",
+"role": "marker",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"anim_vent_window_2": {
+"file": "interior",
+"device_id": "barrel_b5",
+"kind": "interior",
+"role": "marker",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_barrel_hollow_b1": {
+"file": "interior",
+"device_id": "barrel_b1",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_barrel_hollow_b2": {
+"file": "interior",
+"device_id": "barrel_b2",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_barrel_hollow_b3": {
+"file": "interior",
+"device_id": "barrel_b3",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE",
+"CUT_X2450"
+],
+"closed": true
+},
+"int_barrel_hollow_b4": {
+"file": "interior",
+"device_id": "barrel_b4",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_barrel_hollow_b5": {
+"file": "interior",
+"device_id": "barrel_b5",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE",
+"CUT_X4120"
+],
+"closed": true
+},
+"int_barrel_hollow_b6": {
+"file": "interior",
+"device_id": "barrel_b6",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_die_choker_bar": {
+"file": "interior",
+"device_id": "die_choker_bolts",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_PLAN"
+],
+"closed": true
+},
+"int_die_choker_bar_y0": {
+"file": "interior",
+"device_id": "die_choker_bolts",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_die_choker_bolt_y0": {
+"file": "interior",
+"device_id": "die_choker_bolts",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_die_lower_face": {
+"file": "interior",
+"device_id": "die_body_lower",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_PLAN",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_die_section_lower": {
+"file": "interior",
+"device_id": "die_body_lower",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_die_section_upper": {
+"file": "interior",
+"device_id": "die_body_upper",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_die_thermal_bolt_y0": {
+"file": "interior",
+"device_id": "die_thermal_bolts",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_die_thermal_bolts_y0": {
+"file": "interior",
+"device_id": "die_thermal_bolts",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_dome_hollow_1": {
+"file": "interior",
+"device_id": "barrel_vent_dome_2",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_dome_hollow_2": {
+"file": "interior",
+"device_id": "barrel_vent_dome",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_X4120",
+"FREE"
+],
+"closed": true
+},
+"int_feed_column_hollow": {
+"file": "interior",
+"device_id": "feed_throat",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"CUT_FEED",
+"FREE"
+],
+"closed": true
+},
+"int_fill_adapter_die": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_adapter_die_lo": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL",
+"CUT_DIE_PLAN"
+],
+"closed": false
+},
+"int_fill_adapter_die_y0": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": false
+},
+"int_fill_adapter_pump_in": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_adapter_pump_in_lo": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_adapter_pump_in_y0": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": false
+},
+"int_fill_adapter_pump_out": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_adapter_pump_out_lo": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_adapter_pump_out_y0": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": false
+},
+"int_fill_adapter_sc_in": {
+"file": "interior",
+"device_id": "melt_sc_adapter_in",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_adapter_sc_in_lo": {
+"file": "interior",
+"device_id": "melt_sc_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_die": {
+"file": "interior",
+"device_id": "die_body_lower",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_die_lo": {
+"file": "interior",
+"device_id": "die_body_lower",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_PLAN",
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_die_y0": {
+"file": "interior",
+"device_id": "die_body_lower",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": false
+},
+"int_fill_head": {
+"file": "interior",
+"device_id": "melt_head_adapter",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_head_lo": {
+"file": "interior",
+"device_id": "melt_head_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_pipe": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_pipe_lo": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_pipe_y0": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": false
+},
+"int_fill_pump_in": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_pump_in_lo": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_pump_in_y0": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": false
+},
+"int_fill_pump_out": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_pump_out_lo": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_pump_out_y0": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_fill_pump_pockets_bottom": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_fill_pump_pockets_top": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_fill_sc": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": false
+},
+"int_fill_sc_cavities": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_x2450": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X2450"
+],
+"closed": true
+},
+"int_fill_screw_x4120": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X4120"
+],
+"closed": true
+},
+"int_fill_screw_z01_feed": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z01_feed_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z02_melt": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z02_melt_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z03_vent1": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z03_vent1_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z04_convey": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z04_convey_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z05_mix": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z05_mix_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z06_seal2": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z06_seal2_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z07_vent2": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z07_vent2_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z08_meter": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z08_meter_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_screw_z09_pump": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_screw_z09_pump_lo": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_valve_drain_bolt": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"closed": true
+},
+"int_fill_valve_drain_bolt_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_valve_drain_port": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"closed": true
+},
+"int_fill_valve_drain_port_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_valve_in": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": false
+},
+"int_fill_valve_in_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_fill_valve_run_bolt": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"closed": true
+},
+"int_fill_valve_run_bolt_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_fill_valve_run_out": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_fill_valve_run_out_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_gbx_schematic_bearings": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_DRIVE",
+"FREE"
+],
+"closed": true
+},
+"int_gbx_schematic_counter": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_DRIVE",
+"FREE"
+],
+"moves_in_dot2": "rotor",
+"closed": true
+},
+"int_gbx_schematic_input": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_DRIVE",
+"FREE"
+],
+"moves_in_dot2": "rotor",
+"closed": true
+},
+"int_gbx_schematic_out_a": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_DRIVE",
+"FREE"
+],
+"closed": true
+},
+"int_gbx_schematic_out_b": {
+"file": "interior",
+"device_id": "gearbox",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_DRIVE",
+"FREE"
+],
+"closed": true
+},
+"int_head_hollow": {
+"file": "interior",
+"device_id": "melt_head_adapter",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_head_hollow_lo": {
+"file": "interior",
+"device_id": "melt_head_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_die": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_die_lo": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL",
+"CUT_DIE_PLAN"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_die_y0": {
+"file": "interior",
+"device_id": "melt_die_adapter",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": false
+},
+"int_melt_adapters_hollow_pump_in": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_pump_in_lo": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_pump_in_y0": {
+"file": "interior",
+"device_id": "melt_pump_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_pump_out": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_pump_out_lo": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_pump_out_y0": {
+"file": "interior",
+"device_id": "melt_pump_adapter_out",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_sc_in": {
+"file": "interior",
+"device_id": "melt_sc_adapter_in",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_melt_adapters_hollow_sc_in_lo": {
+"file": "interior",
+"device_id": "melt_sc_adapter_in",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_pipe_mixer_elements": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_pipe_mixer_elements_lo": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_pipe_mixer_elements_y0": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_pipe_mixer_section_lo": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_pipe_mixer_section_y0": {
+"file": "interior",
+"device_id": "melt_static_mixer",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_DIE_AA"
+],
+"closed": true
+},
+"int_pump_body_cut": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"closed": true
+},
+"int_pump_body_hollow": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_pump_body_lo": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"ST1_Z_FULL"
+],
+"closed": false
+},
+"int_pump_gear_bottom": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"moves_in_dot2": "rotor",
+"closed": true
+},
+"int_pump_gear_bottom_full": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_pump_gear_top": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "cut_only",
+"slice": 2,
+"states": [
+"CUT_PUMP"
+],
+"moves_in_dot2": "rotor",
+"closed": true
+},
+"int_pump_gear_top_full": {
+"file": "interior",
+"device_id": "melt_gear_pump",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_sc_backflush_piston": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL",
+"FREE"
+],
+"moves_in_dot2": "anim_target",
+"closed": true
+},
+"int_sc_channels": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL",
+"FREE"
+],
+"closed": true
+},
+"int_sc_disc": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"moves_in_dot2": "anim_target",
+"closed": true
+},
+"int_sc_screens_01": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_02": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_03": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_04": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_05": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_06": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_07": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_08": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_09": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_10": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_11": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_sc_screens_12": {
+"file": "interior",
+"device_id": "melt_screen_changer",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"GHOST_SC",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_screw_axis_a": {
+"file": "interior",
+"device_id": "screws",
+"kind": "pivot",
+"role": "pivot",
+"slice": 1
+},
+"int_screw_axis_b": {
+"file": "interior",
+"device_id": "screws",
+"kind": "pivot",
+"role": "pivot",
+"slice": 1
+},
+"int_screw_elem_a_01": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_02": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_03": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_04": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_05": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_06": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_07": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_08": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_09": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_10": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_11": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_12": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_12_x2450": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X2450"
+],
+"closed": true
+},
+"int_screw_elem_a_13": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_14": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_15": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_16": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_17": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_18": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_19": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_20": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_21": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_22": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_22_x4120": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X4120"
+],
+"closed": true
+},
+"int_screw_elem_a_23": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_24": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_25": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_26": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_27": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_28": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_29": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_30": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_31": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_a_32": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_01": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_02": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_03": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_04": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_05": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_06": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_07": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_08": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_09": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_10": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_11": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_12": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_12_x2450": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X2450"
+],
+"closed": true
+},
+"int_screw_elem_b_13": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_14": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_15": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_16": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_17": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_18": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_19": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_20": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_21": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_22": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_22_x4120": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X4120"
+],
+"closed": true
+},
+"int_screw_elem_b_23": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_24": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_25": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_26": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_27": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_28": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_29": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_30": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_31": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_screw_elem_b_32": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_spline_shaft_a": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_spline_shaft_b": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"closed": true
+},
+"int_valve_body": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 2,
+"states": [
+"FREE"
+],
+"closed": true
+},
+"int_valve_body_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_valve_bolt": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "full",
+"slice": 1,
+"moves_in_dot2": "anim_target",
+"closed": true
+},
+"int_valve_bolt_lo": {
+"file": "interior",
+"device_id": "melt_startup_valve",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_Z_BARREL",
+"ST1_Z_FULL"
+],
+"closed": true
+},
+"int_xsec_a_2450": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X2450"
+],
+"closed": true
+},
+"int_xsec_a_4120": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X4120"
+],
+"closed": true
+},
+"int_xsec_b_2450": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X2450"
+],
+"closed": true
+},
+"int_xsec_b_4120": {
+"file": "interior",
+"device_id": "screws",
+"kind": "interior",
+"role": "cut_only",
+"slice": 1,
+"states": [
+"CUT_X4120"
+],
+"closed": true
+}
+}
+}

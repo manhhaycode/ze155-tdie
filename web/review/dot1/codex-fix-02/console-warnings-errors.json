@@ -1,0 +1,56 @@
+[
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:39:40.301Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:40:04.135Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:40:10.999Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:40:20.054Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:40:30.936Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:41:12.416Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:44:03.743Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:44:09.010Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-10-05T09:45:23.802Z",
+    "url": "http://127.0.0.1:5178/@vite/client"
+  }
+]

@@ -1,0 +1,3210 @@
+{
+ "meta": {
+  "title": "ZE 155 sheet line – animation shot list (rev 2, after review-anim-01)",
+  "scene": "ze155_anim, created in the open session; saved only to out/ze155_anim.blend with bpy.data.libraries.write (never over out/ze155.blend)",
+  "units": "metres (Blender), world axes as in BRIEF.md: +X flow, +Y operator side, Z up, screw axes at Y ±0.071, Z 1.2",
+  "fps": 25,
+  "resolution": [
+   1920,
+   1080
+  ],
+  "frame_start": 1,
+  "frame_end": 5275,
+  "total_duration_s": 211.0,
+  "shot_count": 16,
+  "visibility_groups": {
+   "ax_static": {
+    "members": "every render-visible object of ze155_parts / ze155_context not listed below",
+    "note": "never hidden"
+   },
+   "ax_drive_housing": {
+    "members": [
+     "gbx_housing",
+     "gbx_castings",
+     "gbx_covers",
+     "gbx_bolts",
+     "gbx_hw",
+     "gbx_ports",
+     "lantern_body",
+     "lantern_bolts",
+     "lantern_door",
+     "lantern_flange",
+     "drive_coupling_guard",
+     "drive_coupling_guard_hw",
+     "drive_coupling_guard_mesh"
+    ],
+    "replaced_by": "anim_ghost_* copies (S02)"
+   },
+   "ax_drive_rot": {
+    "members": [
+     "drive_flex_coupling",
+     "drive_safety_coupling",
+     "drive_motor_shaft"
+    ],
+    "replaced_by": "anim_rot_* copies with origin on the motor axis (S02 only; elsewhere these groups stay visible)"
+   },
+   "ax_feed_platform": {
+    "members": [
+     "feed_platform_deck",
+     "feed_platform_grating",
+     "feed_platform_grating_x",
+     "feed_platform_columns_front",
+     "feed_platform_columns_rear",
+     "feed_platform_railing",
+     "feed_stair",
+     "feed_main_feeder",
+     "feed_main_hopper",
+     "feed_vacuum_loader",
+     "feed_conveying_line",
+     "feed_conveying_line_end",
+     "feed_conveying_hose",
+     "feed_conveying_hose_end",
+     "feed_additive_feeder",
+     "feed_additive_tube",
+     "feed_feeder_sleeves",
+     "feed_feeder_sleeves_clamps",
+     "feed_control_cabinet",
+     "ctrl_estop_platform",
+     "util_air_drop_2",
+     "util_air_drop_2_clips",
+     "util_air_drop_2_fit",
+     "util_air_tube_loader"
+    ]
+   },
+   "ax_feed_column": {
+    "members": [
+     "feed_downpipe",
+     "feed_downpipe_hw",
+     "feed_flex_sleeve",
+     "feed_flex_sleeve_clamps",
+     "feed_hopper",
+     "feed_throat"
+    ]
+   },
+   "ax_barrel_shell": {
+    "members": [
+     "barrel_b1",
+     "barrel_b2",
+     "barrel_b3",
+     "barrel_b4",
+     "barrel_b5",
+     "barrel_b6",
+     "barrel_joint_1",
+     "barrel_joint_2",
+     "barrel_joint_3",
+     "barrel_joint_4",
+     "barrel_joint_5",
+     "barrel_joint_lantern",
+     "barrel_joint_head",
+     "barrel_heater_shells",
+     "barrel_cover_c1",
+     "barrel_cover_c1_hw",
+     "barrel_cover_c2",
+     "barrel_cover_c2_hw",
+     "barrel_cover_c3",
+     "barrel_cover_c3_hw",
+     "barrel_cover_c4",
+     "barrel_cover_c4_hw",
+     "barrel_cover_c5",
+     "barrel_cover_c5_hw",
+     "barrel_cover_c6",
+     "barrel_cover_c6_hw",
+     "barrel_thermocouples",
+     "barrel_heater_cables",
+     "barrel_heater_cables_op",
+     "barrel_tc_leads_op",
+     "barrel_cable_gland_boxes_op",
+     "barrel_cable_glands_op",
+     "barrel_cw_hoses",
+     "sidefeed_adapter"
+    ]
+   },
+   "ax_vents": {
+    "members": [
+     "barrel_vent_dome",
+     "barrel_vent_dome_2",
+     "vac_valve",
+     "vac_valve_2",
+     "vac_bellows",
+     "vac_bellows_2",
+     "vac_gauge_dome",
+     "vac_gauge_dome_2",
+     "vac_pipe",
+     "vac_pipe_hw",
+     "vac_pipe_3",
+     "vac_pipe_3_hw",
+     "util_air_tube_vac",
+     "util_air_tube_vac_clips"
+    ]
+   },
+   "ax_head_valve": {
+    "members": [
+     "melt_head_adapter",
+     "melt_sensor_head",
+     "melt_rupture_disc",
+     "melt_startup_valve",
+     "melt_sc_adapter_in",
+     "melt_sensor_p2"
+    ]
+   },
+   "ax_melt_cables": {
+    "members": [
+     "melt_sensor_cables",
+     "melt_sensor_cable_glands"
+    ],
+    "note": "cables leave the top sensors; hidden whenever their sensors are cut away"
+   },
+   "ax_sc": {
+    "members": [
+     "melt_screen_changer",
+     "melt_screen_changer_logo_in",
+     "melt_screen_changer_logo_out"
+    ]
+   },
+   "ax_pump": {
+    "members": [
+     "melt_gear_pump",
+     "melt_pump_adapter_in",
+     "melt_pump_adapter_out",
+     "melt_sensor_p3",
+     "melt_sensor_p4"
+    ]
+   },
+   "ax_pipe": {
+    "members": [
+     "melt_pipe",
+     "melt_static_mixer",
+     "melt_die_adapter",
+     "melt_sensor_die",
+     "melt_pipe_saddles"
+    ]
+   },
+   "ax_die_upper": {
+    "members": [
+     "die_body_upper",
+     "die_flex_lip",
+     "die_thermal_bolts",
+     "die_choker_bolts",
+     "die_bolt_actuator_rail",
+     "die_lifting_lugs",
+     "die_cable_harness",
+     "die_heater_conduit",
+     "die_plugs",
+     "util_air_hose_die"
+    ]
+   },
+   "ax_die_lower": {
+    "members": [
+     "die_body_lower",
+     "die_end_plate_op",
+     "die_end_plate_rear",
+     "die_deckles",
+     "die_drip_pan"
+    ]
+   },
+   "ax_die_cart": {
+    "members": [
+     "die_cart",
+     "die_cart_rails",
+     "ctrl_estop_die"
+    ]
+   },
+   "ax_rolls": {
+    "members": [
+     "ctx_roll_bottom",
+     "ctx_roll_middle",
+     "ctx_roll_top",
+     "ctx_roll_stand",
+     "ctx_roll_stand_logo_op",
+     "ctx_roll_unions",
+     "ctx_roll_hoses",
+     "ctx_roll_cw_headers"
+    ]
+   },
+   "ax_always_replaced": {
+    "members": [
+     "screws_a",
+     "screws_b",
+     "ctx_sheet",
+     "ctx_melt_curtain",
+     "melt_heater_bands",
+     "die_body_bolts",
+     "die_heater_boxes"
+    ],
+    "replaced_by": "int_screw_*; anim_sheet, anim_curtain; split copies anim_split_band_head1/head2/scin/pumpin/pumpout/dieadapter (each joins the group of the part it clamps: head_valve, head_valve, head_valve, pump, pump, pipe); anim_split_die_bolts_top/_bottom and anim_split_die_heater_boxes_top/_bottom (split by island centre Z; top → ax_die_upper, bottom → ax_die_lower)",
+    "note": "hidden in every shot of ze155_anim"
+   }
+  },
+  "visibility_rule": "Only collection-level hide_render / hide_viewport of the ax_* and anim_* collections are keyed (CONSTANT). Never key or change hide_render of a ze155 object. anim-only objects (int_*, anim_*) may be keyed per object. A builder script applies STATES from this file at each shot's first frame and prints the resolved member list (prefix matches) to anim/log.md.",
+  "cut_rule": "Inside a section box, keep geometry where dot(p − point, normal) ≤ 0. For every member of a hidden group whose evaluated bbox centre lies inside the box: (1) if it straddles the plane → bisected copies anim_cut_<state>_<name>_keep / _rm (curves are converted to mesh first, modifiers applied, caps filled); (2) if it is fully on the keep side → an unchanged copy _keep; (3) if it is fully on the removed side → only _rm (used by the peel) or nothing. Members whose bbox centre is outside the box get an unchanged _keep copy. The _keep copies are shown in that state, so a hidden group never blanks parts that should stay.",
+  "states": {
+   "FULL": {
+    "hide_groups": [],
+    "desc": "full model (always_replaced only)"
+   },
+   "GHOST_DRIVE": {
+    "hide_groups": [
+     "ax_drive_housing",
+     "ax_drive_rot"
+    ],
+    "show": [
+     "anim_ghost_drive_*",
+     "anim_rot_*",
+     "int_gbx_schematic",
+     "int_spline_shaft_*",
+     "anim_fx_power"
+    ]
+   },
+   "CUT_FEED": {
+    "hide_groups": [
+     "ax_feed_column"
+    ],
+    "section": "SEC_Y0",
+    "box_min": [
+     -1.0,
+     0.0,
+     1.45
+    ],
+    "box_max": [
+     0.75,
+     1.3,
+     3.0
+    ],
+    "show": [
+     "anim_cut_feed_* (from int_feed_column_hollow)"
+    ]
+   },
+   "CUT_Z_BARREL": {
+    "hide_groups": [
+     "ax_feed_platform",
+     "ax_feed_column",
+     "ax_barrel_shell",
+     "ax_vents",
+     "ax_head_valve",
+     "ax_melt_cables"
+    ],
+    "section": "SEC_Z1200",
+    "box_min": [
+     -0.05,
+     -0.5,
+     1.2
+    ],
+    "box_max": [
+     6.5,
+     0.5,
+     2.6
+    ],
+    "show": [
+     "anim_cut_zb_*_keep",
+     "int_barrel_hollow_b1..b6_lo",
+     "int_head_hollow_lo",
+     "int_valve_body_lo",
+     "int_valve_bolt",
+     "int_screw_*",
+     "int_fill_*_lo",
+     "anim_ghost_vent_1",
+     "anim_ghost_vent_2",
+     "anim_vent_window_1",
+     "anim_vent_window_2"
+    ],
+    "note": "feed platform and vacuum pipes hidden (I4, M7); the vents stay as ghosts plus a purple window band on the cut barrel (I5)"
+   },
+   "CUT_X2450": {
+    "hide_groups": [
+     "ax_barrel_shell",
+     "ax_vents"
+    ],
+    "section": "SEC_X2450",
+    "box_min": [
+     2.45,
+     -1.0,
+     0.6
+    ],
+    "box_max": [
+     3.8,
+     1.0,
+     2.4
+    ],
+    "show": [
+     "anim_cut_x2450_*_keep",
+     "int_barrel_hollow_b3_x2450",
+     "int_screw_elem_*_01..11",
+     "int_screw_elem_<a|b>_12_x2450",
+     "int_xsec_a_2450",
+     "int_xsec_b_2450",
+     "int_fill_screw_x2450"
+    ],
+    "hide_int": [
+     "int_screw_elem_*_13..32",
+     "int_screw_elem_*_12 (whole)"
+    ],
+    "note": "screws pre-cut at the plane (I3)"
+   },
+   "CUT_X4120": {
+    "hide_groups": [
+     "ax_barrel_shell",
+     "ax_vents"
+    ],
+    "section": "SEC_X4120",
+    "box_min": [
+     4.12,
+     -1.0,
+     0.65
+    ],
+    "box_max": [
+     5.0,
+     1.0,
+     2.6
+    ],
+    "show": [
+     "anim_cut_x4120_*_keep",
+     "int_barrel_hollow_b5_x4120",
+     "int_dome_hollow_2_x4120",
+     "int_screw_elem_*_01..21",
+     "int_screw_elem_<a|b>_22_x4120",
+     "int_xsec_a_4120",
+     "int_xsec_b_4120",
+     "int_fill_screw_x4120",
+     "anim_bubbles_vent2",
+     "anim_fx_vapour"
+    ],
+    "hide_int": [
+     "int_screw_elem_*_23..32",
+     "int_screw_elem_*_22 (whole)"
+    ]
+   },
+   "GHOST_SC": {
+    "hide_groups": [
+     "ax_sc"
+    ],
+    "show": [
+     "anim_ghost_sc",
+     "int_sc_disc",
+     "int_sc_screens",
+     "int_sc_channels",
+     "int_fill_sc",
+     "anim_dirt",
+     "anim_backflush_jet"
+    ]
+   },
+   "CUT_PUMP": {
+    "hide_groups": [
+     "ax_pump"
+    ],
+    "section": "SEC_Y0",
+    "box_min": [
+     7.25,
+     0.0,
+     0.95
+    ],
+    "box_max": [
+     8.15,
+     1.0,
+     1.65
+    ],
+    "show": [
+     "anim_cut_pump_*_keep",
+     "int_pump_body_cut",
+     "int_pump_gear_top",
+     "int_pump_gear_bottom",
+     "int_fill_pump_*",
+     "int_melt_adapters_hollow (cut)"
+    ]
+   },
+   "CUT_DIE_PLAN": {
+    "hide_groups": [
+     "ax_die_upper",
+     "ax_die_lower",
+     "ax_pipe"
+    ],
+    "section": "SEC_Z1200",
+    "box_min": [
+     8.9,
+     -1.6,
+     1.2
+    ],
+    "box_max": [
+     9.6,
+     1.6,
+     2.0
+    ],
+    "show": [
+     "anim_cut_dp_*_keep",
+     "anim_cut_dp_*_rm (peel)",
+     "int_die_lower_face",
+     "int_die_choker_bar (peels with the upper half)",
+     "int_fill_die",
+     "anim_curtain"
+    ]
+   },
+   "CUT_DIE_AA": {
+    "hide_groups": [
+     "ax_die_upper",
+     "ax_die_lower",
+     "ax_pipe",
+     "ax_rolls",
+     "ax_die_cart"
+    ],
+    "section": "SEC_Y0",
+    "box_min": [
+     8.4,
+     0.0,
+     0.0
+    ],
+    "box_max": [
+     10.4,
+     2.1,
+     2.9
+    ],
+    "show": [
+     "anim_cut_aa_*_keep",
+     "int_die_section_upper",
+     "int_die_section_lower",
+     "int_die_choker_bar",
+     "int_fill_die",
+     "anim_curtain_aa",
+     "anim_sheet_aa",
+     "int_melt_adapters_hollow (cut)",
+     "int_pipe_mixer_section"
+    ]
+   },
+   "FLOWS": {
+    "hide_groups": [],
+    "show": [
+     "anim_flow_*",
+     "anim_heat_halo_*",
+     "anim_loop_arcs",
+     "anim_ctx_scanner"
+    ]
+   }
+  },
+  "section_planes": {
+   "SEC_Z1200": {
+    "point": [
+     0,
+     0,
+     1.2
+    ],
+    "normal": [
+     0,
+     0,
+     1
+    ],
+    "desc": "mặt phẳng ngang qua 2 trục vít = mặt phân khuôn; bỏ nửa trên"
+   },
+   "SEC_Y0": {
+    "point": [
+     0,
+     0,
+     0
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "desc": "mặt phẳng đứng giữa 2 trục vít; bỏ nửa phía người vận hành (+Y)"
+   },
+   "SEC_X2450": {
+    "point": [
+     2.45,
+     0,
+     0
+    ],
+    "normal": [
+     1,
+     0,
+     0
+    ],
+    "desc": "mặt cắt ngang xi lanh B3; bỏ phía +X"
+   },
+   "SEC_X4120": {
+    "point": [
+     4.12,
+     0,
+     0
+    ],
+    "normal": [
+     1,
+     0,
+     0
+    ],
+    "desc": "mặt cắt ngang qua tâm vòm chân không 2 (B5); bỏ phía +X"
+   }
+  },
+  "camera_rule": "loc/target in metres; target via a Track-To empty anim_tgt_<camera>; lens in mm; sensor 36 mm; clip_start 0.02 m for close-ups. Cameras bound to timeline markers at their first frame (S03 has two cameras).",
+  "label_rule": "Labels are drawn in post (Pillow) from per-frame 2D anchors exported from Blender with world_to_camera_view. Font Arial. Each label stays ≥ max(3 s, 0.4 s per word) = max(75, 10·words) frames; at most 4 visible at once (S15: 2); labels that start late are moved earlier so they still get their minimum; 8-frame fades. '*' marks assumed values; every shot with a '*' shows the footer '* = giả định (không có nguồn công bố)'.",
+  "controller": {
+   "object": "anim_ctrl (empty)",
+   "custom_props": {
+    "screw_rpm_real": 300,
+    "drive_slow": 20,
+    "motor_rpm_real": 1119,
+    "pump_rpm_real": 69,
+    "pump_slow": 4,
+    "roll_rpm_real": 9.95,
+    "sheet_speed_mps": 0.417
+   }
+  },
+  "rotation_rules": {
+   "screws": "int_screw_axis_a and _b: rotation_euler[0] = -2*pi*(screw_rpm_real/drive_slow/60)*(frame/fps). Same sign on both shafts (co-rotating). RH flights must appear to travel +X.",
+   "gear_pump": "top gear rotation_euler[1] positive, bottom negative (tooth gaps carry melt over the top and under the bottom, −X → +X).",
+   "rolls": "anim_roll_axis_bottom +, _middle −, _top + about +Y.",
+   "screen_disc": "+30° steps about +X (from +Y toward +Z)."
+  },
+  "render_plan": {
+   "default_mcp": "Render through MCP in resumable chunks: one execute_blender_code call renders ≤ 40 frames (≈ 2 min) to anim/render/frames/####.png, skipping frames whose PNG already exists, then appends 'chunk a–b done, s/frame' to anim/log.md. ≈ 130 calls. The user's Blender is busy for ≈ 3–4.5 h.",
+   "if_Q7_approved": "blender -b out/ze155_anim.blend --python anim/render_frames.py -- <start> <end>: separate background process, same skip-existing rule, can run in 2–4 chunks; test 1 frame first (EEVEE in background on macOS).",
+   "estimate": "5275 frames × 2–3 s ≈ 2.9–4.4 h + overhead; preview 960×540 / 8 samples ≈ 0.4 s/frame ≈ 35 min."
+  }
+ },
+ "shots": [
+  {
+   "id": "S01",
+   "title_vi": "Toàn cảnh: trục quy trình từ hạt đến tấm",
+   "act": "I",
+   "purpose_vi": "Cho thấy cả dây chuyền và đường đi của vật liệu: hạt vào trên sàn cân → máy đùn → đường chảy → khuôn → cụm cán → tấm.",
+   "cameras": [
+    {
+     "name": "anim_cam_S01",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 1,
+       "loc": [
+        -9.0,
+        9.0,
+        6.5
+       ],
+       "target": [
+        -2.0,
+        0.0,
+        1.8
+       ],
+       "lens_mm": 28
+      },
+      {
+       "frame": 151,
+       "loc": [
+        2.5,
+        10.0,
+        5.0
+       ],
+       "target": [
+        3.0,
+        0.0,
+        1.4
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 300,
+       "loc": [
+        13.5,
+        7.5,
+        3.8
+       ],
+       "target": [
+        8.5,
+        0.0,
+        1.4
+       ],
+       "lens_mm": 32
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "FULL",
+   "animated": [
+    {
+     "object": "anim_fx_process_axis",
+     "property": "material 'progress' 0→1",
+     "rate": "frames +20…+260 linear; glow head travels loader → take-off"
+    },
+    {
+     "object": "anim_sheet",
+     "property": "UV scroll",
+     "rate": "0.417 m/s (25 m/min, real)"
+    },
+    {
+     "object": "anim_roll_axis_<bottom|middle|top>",
+     "property": "rotation_euler[1]",
+     "rate": "+/−/+ 1.04 rad/s (real)"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Cân & cấp liệu: hạt PET không sấy",
+     "anchor_m": [
+      -0.4,
+      0,
+      4.4
+     ],
+     "style": "callout",
+     "frame_in": 16,
+     "frame_out": 208,
+     "min_frames": 80
+    },
+    {
+     "text": "Động cơ 1 500 kW* → hộp số chia công suất",
+     "anchor_m": [
+      -3.0,
+      0,
+      2.7
+     ],
+     "style": "callout",
+     "frame_in": 31,
+     "frame_out": 300,
+     "min_frames": 110
+    },
+    {
+     "text": "Máy đùn ZE 155 A UT · 34D · 2 vùng chân không",
+     "anchor_m": [
+      2.9,
+      0,
+      2.3
+     ],
+     "style": "callout",
+     "frame_in": 101,
+     "frame_out": 300,
+     "min_frames": 130
+    },
+    {
+     "text": "Lọc lưới → bơm bánh răng → khuôn chữ T 2 400 mm",
+     "anchor_m": [
+      7.6,
+      0,
+      2.2
+     ],
+     "style": "callout",
+     "frame_in": 156,
+     "frame_out": 300,
+     "min_frames": 130
+    },
+    {
+     "text": "Cụm cán 3 trục Ø800 → tấm PET",
+     "anchor_m": [
+      10.0,
+      0,
+      3.1
+     ],
+     "style": "callout",
+     "frame_in": 201,
+     "frame_out": 300,
+     "min_frames": 80
+    }
+   ],
+   "hud": {
+    "title": "Từ hạt PET đến tấm – trục quy trình",
+    "values": [
+     "3 500 kg/h tổng* (gồm biên tấm + phụ gia)",
+     "Vít 300 v/ph* · ≈ 800 kW*",
+     "Tấm 2 100 × 0,8 mm* · ≈ 25 m/min"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Tốc độ thực",
+   "render": {
+    "samples": 32,
+    "raytracing": true,
+    "note": "chrome rolls / die need reflections"
+   },
+   "frames": [
+    1,
+    300
+   ],
+   "duration_s": 12.0
+  },
+  {
+   "id": "S02",
+   "title_vi": "Truyền động: một động cơ, hai trục vít",
+   "act": "II",
+   "purpose_vi": "Đường công suất: động cơ → khớp nối → hộp số chia mô-men → hai trục then hoa → hai vít quay cùng chiều.",
+   "cameras": [
+    {
+     "name": "anim_cam_S02",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 301,
+       "loc": [
+        -3.6,
+        4.2,
+        2.4
+       ],
+       "target": [
+        -2.6,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 550,
+       "loc": [
+        -0.4,
+        3.0,
+        1.9
+       ],
+       "target": [
+        -0.9,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 40
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "GHOST_DRIVE",
+   "animated": [
+    {
+     "object": "anim_rot_motor_shaft, anim_rot_flex_coupling, anim_rot_safety_coupling",
+     "property": "rotation_euler[0] about (Y 0, Z 1.2)",
+     "rate": "1 119 rpm / 20 = 56 rpm shown"
+    },
+    {
+     "object": "int_gbx_schematic gears",
+     "property": "rotation about own axes",
+     "rate": "from the gear ratios, mesh-consistent"
+    },
+    {
+     "object": "int_screw_axis_a, int_screw_axis_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown (300 / 20), same sign"
+    },
+    {
+     "object": "anim_fx_power",
+     "property": "dash scroll",
+     "rate": "0.5 m/s toward +X"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Động cơ 1 500 kW* · 1 119 v/ph khi vít 300 v/ph",
+     "anchor_m": [
+      -3.95,
+      0.6,
+      2.1
+     ],
+     "style": "callout",
+     "frame_in": 309,
+     "frame_out": 550,
+     "min_frames": 130
+    },
+    {
+     "text": "Khớp đàn hồi + khớp an toàn giới hạn mô-men",
+     "anchor_m": [
+      -2.6,
+      0.35,
+      1.6
+     ],
+     "style": "callout",
+     "frame_in": 339,
+     "frame_out": 550,
+     "min_frames": 100
+    },
+    {
+     "text": "Hộp số chia công suất i ≈ 3,73* (sơ đồ nguyên lý)",
+     "anchor_m": [
+      -1.5,
+      0.75,
+      1.75
+     ],
+     "style": "callout",
+     "frame_in": 376,
+     "frame_out": 550,
+     "min_frames": 120
+    },
+    {
+     "text": "2 trục ra then hoa – quay cùng chiều",
+     "anchor_m": [
+      -0.4,
+      0.2,
+      1.35
+     ],
+     "style": "callout",
+     "frame_in": 426,
+     "frame_out": 550,
+     "min_frames": 90
+    }
+   ],
+   "hud": {
+    "title": "Truyền động",
+    "values": [
+     "Mô-men ≈ 12,7 kNm* mỗi trục (36 % của 35 kNm)",
+     "Hộp số chịu tối đa 2 × 35 kNm, 400 v/ph"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20×",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    301,
+    550
+   ],
+   "duration_s": 10.0
+  },
+  {
+   "id": "S03",
+   "title_vi": "Cấp liệu: hạt PET vào họng nạp",
+   "act": "II",
+   "purpose_vi": "Cân hao hụt khối lượng đặt lưu lượng; hạt rơi qua ống vào họng nạp B1; vít chỉ đầy một phần (cấp đói).",
+   "cameras": [
+    {
+     "name": "anim_cam_S03a",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 551,
+       "loc": [
+        1.9,
+        4.6,
+        5.4
+       ],
+       "target": [
+        -0.45,
+        0.0,
+        4.1
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 725,
+       "loc": [
+        1.5,
+        3.4,
+        5.6
+       ],
+       "target": [
+        -0.5,
+        0.0,
+        3.5
+       ],
+       "lens_mm": 35
+      }
+     ],
+     "interpolation": "BEZIER ease in/out",
+     "frames": [
+      551,
+      725
+     ]
+    },
+    {
+     "name": "anim_cam_S03b",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 726,
+       "loc": [
+        2.2,
+        2.6,
+        2.3
+       ],
+       "target": [
+        0.1,
+        0.0,
+        2.1
+       ],
+       "lens_mm": 32
+      },
+      {
+       "frame": 900,
+       "loc": [
+        1.3,
+        2.0,
+        1.95
+       ],
+       "target": [
+        0.34,
+        0.0,
+        1.45
+       ],
+       "lens_mm": 40
+      }
+     ],
+     "interpolation": "BEZIER ease in/out",
+     "frames": [
+      726,
+      900
+     ]
+    }
+   ],
+   "state": "FULL→CUT_FEED at +175 (hard cut between the two cameras: above the deck, then below it)",
+   "animated": [
+    {
+     "object": "anim_pellets_downpipe / _hopper",
+     "property": "GN time offset (looped)",
+     "rate": "0.8 m/s along the path (schematic)"
+    },
+    {
+     "object": "anim_pellets_screws",
+     "property": "axial travel",
+     "rate": "pitch × shown rev/s: 1.5D → 63 mm/s (no pellet passes through a flight)"
+    },
+    {
+     "object": "int_screw_axis_a/_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown"
+    },
+    {
+     "object": "anim_cut_feed_*_rm",
+     "property": "peel",
+     "rate": "+180…+215: +Y 1.2 m, +Z 0.6 m, fade"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Máy hút liệu chân không",
+     "anchor_m": [
+      -0.45,
+      0.35,
+      5.5
+     ],
+     "style": "callout",
+     "frame_in": 559,
+     "frame_out": 773,
+     "min_frames": 75
+    },
+    {
+     "text": "Cân chính (LIW) ≈ 3 300 kg/h*",
+     "anchor_m": [
+      -0.45,
+      0.5,
+      3.4
+     ],
+     "style": "callout",
+     "frame_in": 581,
+     "frame_out": 798,
+     "min_frames": 75
+    },
+    {
+     "text": "Phụ gia ≈ 40 kg/h* → nhánh Y",
+     "anchor_m": [
+      -0.65,
+      0.85,
+      3.6
+     ],
+     "style": "callout",
+     "frame_in": 611,
+     "frame_out": 900,
+     "min_frames": 80
+    },
+    {
+     "text": "Ống rơi → phễu → họng nạp B1 (áo nước)",
+     "anchor_m": [
+      0.2,
+      0.15,
+      1.9
+     ],
+     "style": "callout",
+     "frame_in": 733,
+     "frame_out": 900,
+     "min_frames": 100
+    },
+    {
+     "text": "Cấp đói: vít chỉ đầy một phần",
+     "anchor_m": [
+      0.6,
+      0.1,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 766,
+     "frame_out": 900,
+     "min_frames": 75
+    },
+    {
+     "text": "Biên tấm nghiền ≈ 160 kg/h* → side feeder (B2, +Y)",
+     "anchor_m": [
+      1.35,
+      0.7,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 791,
+     "frame_out": 900,
+     "min_frames": 110
+    }
+   ],
+   "hud": {
+    "title": "Cấp liệu",
+    "values": [
+     "PET không sấy: ẩm 0,2–0,4 %* (2 000–4 000 ppm)",
+     "≈ 7–14 kg/h* nước đi vào máy cùng hạt",
+     "Tổng 3 500 kg/h = chính + biên tấm + phụ gia"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Dòng hạt: minh họa",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    551,
+    900
+   ],
+   "duration_s": 14.0
+  },
+  {
+   "id": "S04",
+   "title_vi": "Trong xi lanh B1–B3: vận chuyển → nóng chảy → nút nhựa → chân không 1",
+   "act": "II",
+   "purpose_vi": "Cắt bỏ nửa trên xi lanh. Thấy hai vít ăn khớp, hạt được vận chuyển, khối nhào làm chảy, nút nhựa kín trước lỗ chân không 1 (vòm vẽ mờ).",
+   "cameras": [
+    {
+     "name": "anim_cam_S04",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 901,
+       "loc": [
+        -0.35,
+        2.2,
+        2.9
+       ],
+       "target": [
+        0.5,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 1011,
+       "loc": [
+        0.9,
+        1.8,
+        2.45
+       ],
+       "target": [
+        1.2,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 1161,
+       "loc": [
+        1.75,
+        1.6,
+        2.3
+       ],
+       "target": [
+        1.85,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 40
+      },
+      {
+       "frame": 1350,
+       "loc": [
+        2.45,
+        1.7,
+        2.4
+       ],
+       "target": [
+        2.25,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_Z_BARREL",
+   "animated": [
+    {
+     "object": "anim_cut_zb_*_rm",
+     "property": "peel",
+     "rate": "+0…+40: +Z 2.2 m, fade"
+    },
+    {
+     "object": "int_screw_axis_a/_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown (300 / 20)"
+    },
+    {
+     "object": "int_fill_screw_*_lo material",
+     "property": "Mapping location X",
+     "rate": "pitch × shown rev/s per zone (1.5D 63 mm/s, 1D 42 mm/s)"
+    },
+    {
+     "object": "int_fill_screw_*_lo material",
+     "property": "solid→melt colour ramp on world X",
+     "rate": "static: pellets X < 1.52, transition 1.52–1.90, melt X > 1.90"
+    },
+    {
+     "object": "anim_bubbles_vent1",
+     "property": "GN rise",
+     "rate": "dense, 0.25 m/s (vent 1 removes most of the water)"
+    }
+   ],
+   "labels": [
+    {
+     "text": "B1 · cấp liệu · áo nước ≈ 50 °C*",
+     "anchor_m": [
+      0.34,
+      0.45,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 941,
+     "frame_out": 1158,
+     "min_frames": 100
+    },
+    {
+     "text": "Vít vận chuyển bước 1,5D: rãnh sâu nhận hạt",
+     "anchor_m": [
+      0.65,
+      0.15,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 956,
+     "frame_out": 1223,
+     "min_frames": 90
+    },
+    {
+     "text": "B2 · 260 °C* · cửa side feeder",
+     "anchor_m": [
+      1.2,
+      0.45,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 1021,
+     "frame_out": 1238,
+     "min_frames": 80
+    },
+    {
+     "text": "Khối nhào KB 45°/5: hạt → nhựa chảy",
+     "anchor_m": [
+      1.7,
+      0.12,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 1091,
+     "frame_out": 1350,
+     "min_frames": 80
+    },
+    {
+     "text": "KB 90° + ren trái: nút nhựa kín (đầy 100 %)",
+     "anchor_m": [
+      1.92,
+      0.12,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 1151,
+     "frame_out": 1350,
+     "min_frames": 110
+    },
+    {
+     "text": "Chân không 1 (B3) ≈ 50 mbar*: rút phần lớn hơi nước",
+     "anchor_m": [
+      2.15,
+      0.15,
+      1.5
+     ],
+     "style": "callout",
+     "frame_in": 1216,
+     "frame_out": 1350,
+     "min_frames": 120
+    },
+    {
+     "text": "B3 · 275 °C*",
+     "anchor_m": [
+      2.4,
+      0.45,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 1231,
+     "frame_out": 1350,
+     "min_frames": 75
+    }
+   ],
+   "hud": {
+    "title": "Vận chuyển → nóng chảy",
+    "strip": "screw configuration + fill + pressure, vent windows drawn next to the seals, marker at the camera target X",
+    "values": [
+     "Vít Ø167,5 (mô hình) · a = 142 · 2 đầu ren"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20× (thực 300 v/ph*)",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    901,
+    1350
+   ],
+   "duration_s": 18.0
+  },
+  {
+   "id": "S05",
+   "title_vi": "Mặt cắt ngang: lỗ hình số 8 và tự làm sạch",
+   "act": "II",
+   "purpose_vi": "Hai biên dạng 2 đầu ren quay cùng chiều, đỉnh ren của trục này vét sườn ren trục kia; lỗ số 8, lỗ nước, băng nhiệt, vỏ che.",
+   "cameras": [
+    {
+     "name": "anim_cam_S05",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 1351,
+       "loc": [
+        3.3,
+        0.75,
+        1.62
+       ],
+       "target": [
+        2.45,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 45
+      },
+      {
+       "frame": 1575,
+       "loc": [
+        3.05,
+        0.42,
+        1.45
+       ],
+       "target": [
+        2.45,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 60
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_X2450",
+   "animated": [
+    {
+     "object": "int_screw_axis_a/_b (+ int_xsec_*_2450 and the _x2450 cut elements parented)",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Lỗ hình số 8: 2 × Ø169, rộng 311 mm",
+     "anchor_m": [
+      2.45,
+      0.0,
+      1.42
+     ],
+     "style": "callout",
+     "frame_in": 1359,
+     "frame_out": 1575,
+     "min_frames": 100
+    },
+    {
+     "text": "Hai vít quay cùng chiều (đồng hướng)",
+     "anchor_m": [
+      2.45,
+      0.2,
+      1.05
+     ],
+     "style": "callout",
+     "frame_in": 1376,
+     "frame_out": 1575,
+     "min_frames": 75
+    },
+    {
+     "text": "Đỉnh ren vét sườn ren trục kia: tự làm sạch",
+     "anchor_m": [
+      2.45,
+      0.0,
+      1.29
+     ],
+     "style": "callout",
+     "frame_in": 1411,
+     "frame_out": 1575,
+     "min_frames": 100
+    },
+    {
+     "text": "Lỗ nước làm mát · băng nhiệt · vỏ che",
+     "anchor_m": [
+      2.45,
+      0.25,
+      1.42
+     ],
+     "style": "callout",
+     "frame_in": 1451,
+     "frame_out": 1575,
+     "min_frames": 100
+    }
+   ],
+   "hud": {
+    "title": "Biên dạng tự làm sạch",
+    "values": [
+     "Erdmenger 2 đầu ren · a = 142",
+     "Vít Ø167,5 / lõi 116,5 (mô hình) · khe đỉnh ≈ 0,7 mm*"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20×",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    1351,
+    1575
+   ],
+   "duration_s": 9.0
+  },
+  {
+   "id": "S06",
+   "title_vi": "B4: trộn và nút nhựa ren trái",
+   "act": "II",
+   "purpose_vi": "Khối nhào trộn đồng nhất nhựa; phần tử ren trái cuối B4 đẩy ngược, tạo nút nhựa đầy để vùng chân không sâu (vòm 2 vẽ mờ) kín khí.",
+   "cameras": [
+    {
+     "name": "anim_cam_S06",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 1576,
+       "loc": [
+        2.75,
+        1.75,
+        2.35
+       ],
+       "target": [
+        3.0,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 1850,
+       "loc": [
+        3.95,
+        1.6,
+        2.3
+       ],
+       "target": [
+        3.85,
+        0.0,
+        1.25
+       ],
+       "lens_mm": 38
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_Z_BARREL (already open, no peel)",
+   "animated": [
+    {
+     "object": "int_screw_axis_a/_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown"
+    },
+    {
+     "object": "int_fill_screw_*_lo material",
+     "property": "Mapping location X",
+     "rate": "+42 mm/s; reverse-arrow decal on the LH element"
+    }
+   ],
+   "labels": [
+    {
+     "text": "B4 · 270 °C* · khối nhào trộn KB 45° × 2 + KB 90°",
+     "anchor_m": [
+      3.0,
+      0.15,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 1588,
+     "frame_out": 1850,
+     "min_frames": 150
+    },
+    {
+     "text": "Đồng nhất nhiệt độ, trộn phân bố",
+     "anchor_m": [
+      3.17,
+      0.4,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 1626,
+     "frame_out": 1850,
+     "min_frames": 75
+    },
+    {
+     "text": "Ren trái cuối B4: đẩy ngược → nút nhựa 100 %",
+     "anchor_m": [
+      3.68,
+      0.12,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 1691,
+     "frame_out": 1850,
+     "min_frames": 110
+    },
+    {
+     "text": "Sau nút: điền thấp dưới lỗ chân không 2",
+     "anchor_m": [
+      3.95,
+      0.12,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 1746,
+     "frame_out": 1850,
+     "min_frames": 90
+    }
+   ],
+   "hud": {
+    "title": "Trộn và làm kín",
+    "strip": "same as S04",
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20×",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    1576,
+    1850
+   ],
+   "duration_s": 11.0
+  },
+  {
+   "id": "S07",
+   "title_vi": "Hút chân không sâu: vì sao PET không cần sấy",
+   "act": "II",
+   "purpose_vi": "Mặt cắt ngang qua vòm B5: nhựa điền thấp, hơi nước và acetaldehyde thoát lên vòm, sang bình tách ngưng và bơm.",
+   "cameras": [
+    {
+     "name": "anim_cam_S07",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 1851,
+       "loc": [
+        4.95,
+        1.2,
+        2.15
+       ],
+       "target": [
+        4.12,
+        0.0,
+        1.62
+       ],
+       "lens_mm": 32
+      },
+      {
+       "frame": 2125,
+       "loc": [
+        4.75,
+        0.85,
+        1.95
+       ],
+       "target": [
+        4.12,
+        0.0,
+        1.55
+       ],
+       "lens_mm": 38
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_X4120",
+   "animated": [
+    {
+     "object": "int_screw_axis_a/_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown"
+    },
+    {
+     "object": "anim_bubbles_vent2",
+     "property": "GN rise + pop at the melt surface",
+     "rate": "finer, sparser than vent 1, 0.15 m/s"
+    },
+    {
+     "object": "anim_fx_vapour",
+     "property": "dash scroll along DN150 nozzle → valve → pipe",
+     "rate": "0.6 m/s"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Chân không 2 (B5): 5–20 mbar*",
+     "anchor_m": [
+      4.12,
+      0.0,
+      2.0
+     ],
+     "style": "callout",
+     "frame_in": 1861,
+     "frame_out": 2125,
+     "min_frames": 75
+    },
+    {
+     "text": "Lỗ thoát khí dài 520 mm (≈ 3D)",
+     "anchor_m": [
+      4.12,
+      0.12,
+      1.47
+     ],
+     "style": "callout",
+     "frame_in": 1886,
+     "frame_out": 2125,
+     "min_frames": 80
+    },
+    {
+     "text": "Hơi nước + acetaldehyde → bình tách ngưng → Roots + bơm khô",
+     "anchor_m": [
+      4.12,
+      -0.1,
+      2.25
+     ],
+     "style": "callout",
+     "frame_in": 1926,
+     "frame_out": 2125,
+     "min_frames": 130
+    },
+    {
+     "text": "Điền thấp: mặt nhựa liên tục làm mới",
+     "anchor_m": [
+      4.12,
+      0.1,
+      1.15
+     ],
+     "style": "callout",
+     "frame_in": 1991,
+     "frame_out": 2125,
+     "min_frames": 80
+    }
+   ],
+   "hud": {
+    "title": "Khử ẩm bằng chân không",
+    "values": [
+     "Ẩm 2 000–4 000 ppm* → < 50 ppm*",
+     "IV 0,80 → ≥ 0,77 dl/g*",
+     "Không khử ẩm: thủy phân ở ≈ 280 °C, IV tụt mạnh"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20× · bọt: minh họa",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    1851,
+    2125
+   ],
+   "duration_s": 11.0
+  },
+  {
+   "id": "S08",
+   "title_vi": "B6 tăng áp, đầu xi lanh và van khởi động",
+   "act": "II",
+   "purpose_vi": "Bước ren giảm 1D → 0,75D, độ điền lên 100 % và áp tăng tới P1; van khởi động chuyển từ XẢ sang CHẠY.",
+   "cameras": [
+    {
+     "name": "anim_cam_S08",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 2126,
+       "loc": [
+        4.85,
+        1.75,
+        2.3
+       ],
+       "target": [
+        5.3,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 2276,
+       "loc": [
+        5.7,
+        1.5,
+        2.15
+       ],
+       "target": [
+        5.85,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 2400,
+       "loc": [
+        6.4,
+        1.6,
+        2.1
+       ],
+       "target": [
+        6.2,
+        0.0,
+        1.15
+       ],
+       "lens_mm": 35
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_Z_BARREL",
+   "animated": [
+    {
+     "object": "int_screw_axis_a/_b",
+     "property": "rotation_euler[0]",
+     "rate": "−15 rpm shown"
+    },
+    {
+     "object": "int_valve_bolt",
+     "property": "location[1]",
+     "rate": "+180…+210: −0.200 → 0.000 m (DRAIN → RUN), ease"
+    },
+    {
+     "object": "int_fill_valve_drain / int_fill_valve_run",
+     "property": "visibility / fill progress",
+     "rate": "drain stream +150…+195, run fill from +195"
+    }
+   ],
+   "labels": [
+    {
+     "text": "B6 · 265 °C* · bước 1D → 0,75D: tăng áp",
+     "anchor_m": [
+      5.2,
+      0.15,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 2138,
+     "frame_out": 2400,
+     "min_frames": 110
+    },
+    {
+     "text": "2–3D cuối đầy 100 % → P1 ≈ 100 bar*",
+     "anchor_m": [
+      5.55,
+      0.12,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 2181,
+     "frame_out": 2400,
+     "min_frames": 100
+    },
+    {
+     "text": "Đầu xi lanh: số 8 → tròn Ø120 · P1/T1 · đĩa nổ",
+     "anchor_m": [
+      5.87,
+      0.2,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 2241,
+     "frame_out": 2400,
+     "min_frames": 130
+    },
+    {
+     "text": "Van khởi động: XẢ (lúc khởi động) → CHẠY",
+     "anchor_m": [
+      6.22,
+      0.3,
+      1.25
+     ],
+     "style": "callout",
+     "frame_in": 2276,
+     "frame_out": 2400,
+     "min_frames": 90
+    }
+   ],
+   "hud": {
+    "title": "Tăng áp",
+    "values": [
+     "Nhựa ra ≈ 285 °C*",
+     "P1 ngắt cứng 350 bar · đĩa nổ 350 bar"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Chậm 20×",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    2126,
+    2400
+   ],
+   "duration_s": 11.0
+  },
+  {
+   "id": "S09",
+   "title_vi": "Bộ lọc lưới quay xả ngược",
+   "act": "III",
+   "purpose_vi": "Đĩa lưới quay từng bước nên dòng nhựa không dừng; lưới bẩn được xả ngược bằng nhựa sạch.",
+   "cameras": [
+    {
+     "name": "anim_cam_S09",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 2401,
+       "loc": [
+        6.05,
+        2.3,
+        1.95
+       ],
+       "target": [
+        6.95,
+        0.05,
+        1.45
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 2700,
+       "loc": [
+        6.4,
+        1.7,
+        1.75
+       ],
+       "target": [
+        6.95,
+        0.1,
+        1.45
+       ],
+       "lens_mm": 40
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "GHOST_SC",
+   "animated": [
+    {
+     "object": "int_sc_disc (+ screens)",
+     "property": "rotation_euler[0] about (Y 0, Z 1.545)",
+     "rate": "+30° step every 75 frames, 12-frame ease"
+    },
+    {
+     "object": "int_sc_screens",
+     "property": "dirt mask 0→1 while in the melt channel",
+     "rate": "per step"
+    },
+    {
+     "object": "int_sc_channels piston + anim_backflush_jet",
+     "property": "piston stroke, jet visibility",
+     "rate": "step +20 … +50"
+    },
+    {
+     "object": "int_fill_sc",
+     "property": "flow scroll",
+     "rate": "schematic"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Gneuss RSFgenius 200: đĩa lưới quay từng bước",
+     "anchor_m": [
+      6.95,
+      0.5,
+      2.0
+     ],
+     "style": "callout",
+     "frame_in": 2411,
+     "frame_out": 2700,
+     "min_frames": 80
+    },
+    {
+     "text": "Lưới 60 µm* · 970 cm² lọc",
+     "anchor_m": [
+      6.95,
+      0.2,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 2441,
+     "frame_out": 2700,
+     "min_frames": 75
+    },
+    {
+     "text": "Dòng nhựa không dừng khi đổi lưới",
+     "anchor_m": [
+      6.6,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 2491,
+     "frame_out": 2700,
+     "min_frames": 75
+    },
+    {
+     "text": "Xả ngược: piston đẩy nhựa sạch ngược qua lưới bẩn → vòi xả",
+     "anchor_m": [
+      6.95,
+      0.6,
+      1.55
+     ],
+     "style": "callout",
+     "frame_in": 2541,
+     "frame_out": 2700,
+     "min_frames": 130
+    }
+   ],
+   "hud": {
+    "title": "Lọc nhựa",
+    "values": [
+     "P2 ≈ 95 bar* → Δp ≈ 45 bar* → P3 = 50 bar*",
+     "Δp tăng → tăng nhịp quay đĩa (PDI P2/P3)"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Tua nhanh (time-lapse)",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    2401,
+    2700
+   ],
+   "duration_s": 12.0
+  },
+  {
+   "id": "S10",
+   "title_vi": "Bơm bánh răng: đặt lưu lượng ra khuôn",
+   "act": "III",
+   "purpose_vi": "Tốc độ bơm là giá trị đặt (chủ): mỗi vòng đẩy 764 cm³, nên lưu lượng ra khuôn cố định. Nhựa đi vòng ngoài trong rãnh răng; vùng ăn khớp làm kín; áp tăng 50 → ≈ 250 bar.",
+   "cameras": [
+    {
+     "name": "anim_cam_S10",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 2701,
+       "loc": [
+        7.7,
+        1.75,
+        1.5
+       ],
+       "target": [
+        7.7,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 45
+      },
+      {
+       "frame": 3000,
+       "loc": [
+        7.72,
+        1.1,
+        1.3
+       ],
+       "target": [
+        7.7,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 55
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_PUMP",
+   "animated": [
+    {
+     "object": "int_pump_gear_top",
+     "property": "rotation_euler[1]",
+     "rate": "+17 rpm shown (≈ 69 rpm real / 4)"
+    },
+    {
+     "object": "int_pump_gear_bottom",
+     "property": "rotation_euler[1]",
+     "rate": "−17 rpm shown"
+    },
+    {
+     "object": "int_fill_pump_pockets (parented to the gears)",
+     "property": "inherit",
+     "rate": "—"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Bơm Maag extrex6 GU 100/125: 764 cm³/vòng",
+     "anchor_m": [
+      7.7,
+      0.0,
+      1.5
+     ],
+     "style": "callout",
+     "frame_in": 2711,
+     "frame_out": 2868,
+     "min_frames": 75
+    },
+    {
+     "text": "Nhựa đi vòng ngoài trong rãnh răng",
+     "anchor_m": [
+      7.7,
+      0.0,
+      1.36
+     ],
+     "style": "callout",
+     "frame_in": 2746,
+     "frame_out": 3000,
+     "min_frames": 75
+    },
+    {
+     "text": "Vùng ăn khớp làm kín, không cho chảy ngược",
+     "anchor_m": [
+      7.7,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 2801,
+     "frame_out": 3000,
+     "min_frames": 90
+    },
+    {
+     "text": "P3 = 50 bar* (hút)",
+     "anchor_m": [
+      7.39,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 2851,
+     "frame_out": 3000,
+     "min_frames": 75
+    },
+    {
+     "text": "P4 ≈ 250 bar* (đẩy)",
+     "anchor_m": [
+      8.0,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 2861,
+     "frame_out": 3000,
+     "min_frames": 75
+    }
+   ],
+   "hud": {
+    "title": "Bơm định lượng",
+    "values": [
+     "Tốc độ bơm đặt (chủ) ≈ 69 v/ph* → lưu lượng ra khuôn cố định",
+     "P3 giữ 50 bar* bằng cách chỉnh cân + vít theo tỉ lệ",
+     "Không đập mạch"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)",
+    "alt_if_Q6b": [
+     "Tốc độ bơm theo P3 (design s_20) · cân đặt lưu lượng"
+    ]
+   },
+   "speed_badge_vi": "Chậm 4×",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    2701,
+    3000
+   ],
+   "duration_s": 12.0
+  },
+  {
+   "id": "S11",
+   "title_vi": "Khuôn chữ T: phân phối móc áo",
+   "act": "III",
+   "purpose_vi": "Nhấc nửa khuôn trên, thấy rãnh móc áo trên mặt phân khuôn: nhựa vào giữa, chạy ra hai đầu, qua tiền môi rồi ra môi đều trên 2,4 m.",
+   "cameras": [
+    {
+     "name": "anim_cam_S11",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 3001,
+       "loc": [
+        8.15,
+        0.0,
+        3.55
+       ],
+       "target": [
+        9.35,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 24
+      },
+      {
+       "frame": 3201,
+       "loc": [
+        8.35,
+        1.6,
+        3.3
+       ],
+       "target": [
+        9.35,
+        0.0,
+        1.2
+       ],
+       "lens_mm": 26
+      },
+      {
+       "frame": 3350,
+       "loc": [
+        8.7,
+        2.3,
+        2.6
+       ],
+       "target": [
+        9.4,
+        0.4,
+        1.2
+       ],
+       "lens_mm": 32
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_DIE_PLAN",
+   "animated": [
+    {
+     "object": "anim_cut_dp_*_rm + int_die_choker_bar",
+     "property": "peel",
+     "rate": "+0…+60: +Z 0.9 m, fade"
+    },
+    {
+     "object": "int_fill_die material",
+     "property": "'front' 0→1 (flow front inlet → manifold → preland)",
+     "rate": "+70…+180"
+    },
+    {
+     "object": "int_fill_die material",
+     "property": "streak scroll",
+     "rate": "after +180, schematic"
+    },
+    {
+     "object": "HUD inset",
+     "property": "2D coat-hanger, exaggerated, 'không theo tỉ lệ' (only if Q2 = inset)",
+     "rate": "+190…+349"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Cửa vào Ø100 ở giữa",
+     "anchor_m": [
+      9.14,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3076,
+     "frame_out": 3223,
+     "min_frames": 75
+    },
+    {
+     "text": "Ống phân phối móc áo Ø72 → Ø28",
+     "anchor_m": [
+      9.19,
+      0.7,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3106,
+     "frame_out": 3350,
+     "min_frames": 80
+    },
+    {
+     "text": "Tiền môi dài hơn ở giữa → cân bằng trở lực",
+     "anchor_m": [
+      9.22,
+      0.25,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3141,
+     "frame_out": 3350,
+     "min_frames": 110
+    },
+    {
+     "text": "Thanh chặn (choker): chỉnh thô",
+     "anchor_m": [
+      9.255,
+      -0.6,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3176,
+     "frame_out": 3350,
+     "min_frames": 75
+    },
+    {
+     "text": "Môi 2 400 mm: vận tốc ra đều · deckle chỉnh bề rộng",
+     "anchor_m": [
+      9.55,
+      0.9,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3216,
+     "frame_out": 3350,
+     "min_frames": 130
+    }
+   ],
+   "hud": {
+    "title": "Phân phối trong khuôn",
+    "values": [
+     "Khuôn 270–280 °C* (mép +10 °C*)",
+     "P5 ≈ 200 bar* ở cửa vào khuôn"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Dòng chảy: minh họa",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    3001,
+    3350
+   ],
+   "duration_s": 14.0
+  },
+  {
+   "id": "S12",
+   "title_vi": "Mặt cắt khuôn dọc dòng chảy: chỉnh thô và chỉnh tinh",
+   "act": "III",
+   "purpose_vi": "Mặt cắt A-A tại Y = 0: ống phân phối, tiền môi, thanh chặn, rãnh bản lề, môi mềm, bu-lông nhiệt, khe môi và khe gió tới cụm cán.",
+   "cameras": [
+    {
+     "name": "anim_cam_S12",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 3351,
+       "loc": [
+        9.4,
+        1.65,
+        1.5
+       ],
+       "target": [
+        9.42,
+        0.0,
+        1.25
+       ],
+       "lens_mm": 45
+      },
+      {
+       "frame": 3501,
+       "loc": [
+        9.48,
+        1.05,
+        1.38
+       ],
+       "target": [
+        9.5,
+        0.0,
+        1.24
+       ],
+       "lens_mm": 60
+      },
+      {
+       "frame": 3675,
+       "loc": [
+        9.6,
+        0.8,
+        1.33
+       ],
+       "target": [
+        9.6,
+        0.0,
+        1.22
+       ],
+       "lens_mm": 80
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "CUT_DIE_AA",
+   "animated": [
+    {
+     "object": "int_fill_die / anim_curtain_aa",
+     "property": "flow scroll",
+     "rate": "schematic in the die, 0.35 m/s for the curtain"
+    },
+    {
+     "object": "anim_roll_axis_*",
+     "property": "rotation_euler[1]",
+     "rate": "real speed"
+    },
+    {
+     "object": "int_die_section_upper",
+     "property": "shape key gap_x10 0→1",
+     "rate": "+140…+170 (land gap drawn 10 mm, badge on)"
+    },
+    {
+     "object": "die thermal bolt copy nearest Y 0 + int_die_section_upper",
+     "property": "heater emission 0→1→0; shape key lip_push 0→1→0 (−1.5 mm drawn = −0.15 mm real)",
+     "rate": "+180…+300"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Ống phân phối Ø72 → tiền môi",
+     "anchor_m": [
+      9.2,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3361,
+     "frame_out": 3548,
+     "min_frames": 75
+    },
+    {
+     "text": "Thanh chặn + bu-lông chỉnh: chỉnh thô",
+     "anchor_m": [
+      9.255,
+      0.0,
+      1.38
+     ],
+     "style": "callout",
+     "frame_in": 3391,
+     "frame_out": 3675,
+     "min_frames": 75
+    },
+    {
+     "text": "Rãnh bản lề, gân 12 mm",
+     "anchor_m": [
+      9.398,
+      0.0,
+      1.3
+     ],
+     "style": "callout",
+     "frame_in": 3451,
+     "frame_out": 3675,
+     "min_frames": 75
+    },
+    {
+     "text": "Bu-lông nhiệt: nóng → giãn → ép môi (±0,15 mm)",
+     "anchor_m": [
+      9.39,
+      0.0,
+      1.37
+     ],
+     "style": "callout",
+     "frame_in": 3516,
+     "frame_out": 3675,
+     "min_frames": 100
+    },
+    {
+     "text": "Khe môi 1,0 mm* · khe gió 200 mm → khe trục",
+     "anchor_m": [
+      9.6,
+      0.0,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3541,
+     "frame_out": 3675,
+     "min_frames": 120
+    }
+   ],
+   "hud": {
+    "title": "Chỉnh khe môi",
+    "values": [
+     "Thanh chặn: chỉnh thô · 33 bu-lông bước 75",
+     "Bu-lông nhiệt: chỉnh tinh · 94 điểm bước 25,4 mm · hành trình 0,3 mm"
+    ],
+    "gauge": "khe môi thật: 1,00 mm ↔ 0,85–1,15 mm (đồng hồ số góc dưới)",
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Khe môi và hành trình vẽ phóng đại ×10",
+   "render": {
+    "samples": 32,
+    "raytracing": true,
+    "note": "chrome rolls / die need reflections"
+   },
+   "frames": [
+    3351,
+    3675
+   ],
+   "duration_s": 13.0
+  },
+  {
+   "id": "S13",
+   "title_vi": "Màn nhựa → cụm cán → tấm → đo chiều dày",
+   "act": "III",
+   "purpose_vi": "Màn nhựa vào khe trục, nguội nhanh trên trục giữa thành tấm vô định hình; tấm qua trục trên tới băng tải và đầu đo chiều dày.",
+   "cameras": [
+    {
+     "name": "anim_cam_S13",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 3676,
+       "loc": [
+        9.05,
+        2.9,
+        1.55
+       ],
+       "target": [
+        9.7,
+        0.0,
+        1.35
+       ],
+       "lens_mm": 35
+      },
+      {
+       "frame": 3826,
+       "loc": [
+        10.2,
+        4.0,
+        2.6
+       ],
+       "target": [
+        10.2,
+        0.0,
+        1.9
+       ],
+       "lens_mm": 32
+      },
+      {
+       "frame": 3975,
+       "loc": [
+        13.4,
+        4.3,
+        3.1
+       ],
+       "target": [
+        11.4,
+        0.0,
+        1.6
+       ],
+       "lens_mm": 30
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "FULL",
+   "animated": [
+    {
+     "object": "anim_roll_axis_bottom / _middle / _top",
+     "property": "rotation_euler[1]",
+     "rate": "+1.04 / −1.04 / +1.04 rad/s (real)"
+    },
+    {
+     "object": "anim_sheet",
+     "property": "UV scroll + amber→clear ramp starting at the nip, over the first 90° of the middle-roll wrap",
+     "rate": "0.417 m/s (real)"
+    },
+    {
+     "object": "anim_curtain",
+     "property": "UV scroll, stays amber in the air gap",
+     "rate": "0.35 m/s"
+    },
+    {
+     "object": "anim_ctx_scanner head",
+     "property": "location[1]",
+     "rate": "−1.05 ↔ +1.05 m at 0.12 m/s"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Màn nhựa ≈ 275 °C* · 2 400 → ≈ 2 200 mm* (co hẹp)",
+     "anchor_m": [
+      9.68,
+      0.6,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3686,
+     "frame_out": 3868,
+     "min_frames": 150
+    },
+    {
+     "text": "Trục dưới ≈ 60 · giữa ≈ 55 · trên ≈ 45 °C*",
+     "anchor_m": [
+      9.78,
+      1.35,
+      1.6
+     ],
+     "style": "callout",
+     "frame_in": 3726,
+     "frame_out": 3975,
+     "min_frames": 130
+    },
+    {
+     "text": "Nguội nhanh dưới Tg ≈ 75 °C → PET vô định hình, trong",
+     "anchor_m": [
+      9.9,
+      0.7,
+      2.2
+     ],
+     "style": "callout",
+     "frame_in": 3776,
+     "frame_out": 3975,
+     "min_frames": 130
+    },
+    {
+     "text": "Tấm 0,8 × 2 100 mm* · ≈ 25 m/min · đầu đo quét ngang",
+     "anchor_m": [
+      11.6,
+      0.6,
+      2.3
+     ],
+     "style": "callout",
+     "frame_in": 3826,
+     "frame_out": 3975,
+     "min_frames": 150
+    },
+    {
+     "text": "Xén biên → nghiền → side feeder",
+     "anchor_m": [
+      11.9,
+      1.1,
+      1.2
+     ],
+     "style": "callout",
+     "frame_in": 3861,
+     "frame_out": 3975,
+     "min_frames": 75
+    }
+   ],
+   "hud": {
+    "title": "Tạo tấm",
+    "values": [
+     "Trục Ø800 ≈ 10 v/ph",
+     "Kéo giãn ≈ 1,2 (môi 20,8 → tấm 25 m/min)"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Tốc độ thực",
+   "render": {
+    "samples": 32,
+    "raytracing": true,
+    "note": "chrome rolls / die need reflections"
+   },
+   "frames": [
+    3676,
+    3975
+   ],
+   "duration_s": 12.0
+  },
+  {
+   "id": "S14",
+   "title_vi": "Cả hệ thống: năng lượng, nhiệt, vật liệu, chân không",
+   "act": "IV",
+   "purpose_vi": "Hiện lần lượt ba lớp sơ đồ trên mô hình: năng lượng; nhiệt và nước làm mát; vật liệu, nhựa chảy và chân không.",
+   "cameras": [
+    {
+     "name": "anim_cam_S14",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 3976,
+       "loc": [
+        -5.5,
+        13.5,
+        9.5
+       ],
+       "target": [
+        3.0,
+        -1.2,
+        1.4
+       ],
+       "lens_mm": 28
+      },
+      {
+       "frame": 4375,
+       "loc": [
+        8.0,
+        14.0,
+        9.5
+       ],
+       "target": [
+        3.5,
+        -1.5,
+        1.3
+       ],
+       "lens_mm": 28
+      }
+     ],
+     "interpolation": "LINEAR orbit"
+    }
+   ],
+   "state": "FLOWS",
+   "animated": [
+    {
+     "object": "anim_flow_power",
+     "property": "reveal 0→1 then dash scroll",
+     "rate": "+0…+130"
+    },
+    {
+     "object": "anim_heat_halo_* + anim_flow_water",
+     "property": "reveal",
+     "rate": "+133…+265"
+    },
+    {
+     "object": "anim_flow_material + anim_flow_melt + anim_flow_vacuum",
+     "property": "reveal",
+     "rate": "+266…+399; dash scroll 0.8 m/s"
+    },
+    {
+     "object": "anim_light_*",
+     "property": "energy × 0.45",
+     "rate": "fade +0…+30, kept low through S15"
+    }
+   ],
+   "labels": [
+    {
+     "text": "Trung thế → tủ biến tần → động cơ 1 500 kW*",
+     "anchor_m": [
+      -3.4,
+      -4.3,
+      2.6
+     ],
+     "style": "callout",
+     "frame_in": 3984,
+     "frame_out": 4263,
+     "min_frames": 120
+    },
+    {
+     "text": "Tủ điều khiển + nhiệt (PLC) · ≈ 260 kW* nhiệt",
+     "anchor_m": [
+      -0.4,
+      -4.0,
+      2.4
+     ],
+     "style": "callout",
+     "frame_in": 4016,
+     "frame_out": 4375,
+     "min_frames": 110
+    },
+    {
+     "text": "20 vùng nhiệt + nước làm mát (xi lanh, dầu, động cơ)",
+     "anchor_m": [
+      1.5,
+      0.9,
+      0.9
+     ],
+     "style": "callout",
+     "frame_in": 4111,
+     "frame_out": 4375,
+     "min_frames": 120
+    },
+    {
+     "text": "Hạt → máy đùn → nhựa chảy → khuôn → tấm",
+     "anchor_m": [
+      4.5,
+      0.0,
+      1.8
+     ],
+     "style": "callout",
+     "frame_in": 4244,
+     "frame_out": 4375,
+     "min_frames": 110
+    },
+    {
+     "text": "Chân không: 2 vòm → bình tách → Roots + bơm khô",
+     "anchor_m": [
+      4.1,
+      -2.7,
+      2.2
+     ],
+     "style": "callout",
+     "frame_in": 4256,
+     "frame_out": 4375,
+     "min_frames": 120
+    }
+   ],
+   "hud": {
+    "title": "Tương tác hệ thống (1/2)",
+    "legend": {
+     "melt": "#D0342C",
+     "material": "#8B5A2B",
+     "water supply / return": "#2F7FD8 solid / dashed",
+     "vacuum": "#7B4FC9",
+     "oil": "#E39A1C",
+     "hydraulic": "#2E9E4F dashed",
+     "air": "#18B6C9 dotted",
+     "power": "#E0402B dash-dot",
+     "signal": "#9AA0A6 dashed, pulses white"
+    },
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "Sơ đồ phủ trên mô hình",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    3976,
+    4375
+   ],
+   "duration_s": 16.0
+  },
+  {
+   "id": "S15",
+   "title_vi": "Cả hệ thống: các vòng điều khiển",
+   "act": "IV",
+   "purpose_vi": "Bảy vòng điều khiển, mỗi vòng ≈ 3 s: cung nét đứt trên mô hình + sơ đồ khối 2D bên phải tô sáng vòng đang nói. Bơm đặt lưu lượng; P3 chỉnh cân + vít; chiều dày do bơm + trục cán.",
+   "cameras": [
+    {
+     "name": "anim_cam_S15",
+     "type": "PERSP",
+     "keys": [
+      {
+       "frame": 4376,
+       "loc": [
+        4.0,
+        9.5,
+        5.5
+       ],
+       "target": [
+        3.5,
+        -0.5,
+        2.0
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 4576,
+       "loc": [
+        4.0,
+        9.5,
+        5.5
+       ],
+       "target": [
+        3.5,
+        -0.5,
+        2.0
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 4616,
+       "loc": [
+        13.0,
+        5.5,
+        3.6
+       ],
+       "target": [
+        10.8,
+        0.0,
+        1.6
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 4741,
+       "loc": [
+        13.0,
+        5.5,
+        3.6
+       ],
+       "target": [
+        10.8,
+        0.0,
+        1.6
+       ],
+       "lens_mm": 30
+      },
+      {
+       "frame": 4781,
+       "loc": [
+        4.5,
+        7.5,
+        3.8
+       ],
+       "target": [
+        4.5,
+        -1.0,
+        1.4
+       ],
+       "lens_mm": 28
+      },
+      {
+       "frame": 4950,
+       "loc": [
+        4.5,
+        7.5,
+        3.8
+       ],
+       "target": [
+        4.5,
+        -1.0,
+        1.4
+       ],
+       "lens_mm": 28
+      },
+      {
+       "frame": 5025,
+       "loc": [
+        3.0,
+        15.0,
+        10.0
+       ],
+       "target": [
+        3.5,
+        -1.5,
+        1.3
+       ],
+       "lens_mm": 28
+      }
+     ],
+     "interpolation": "BEZIER ease in/out"
+    }
+   ],
+   "state": "FLOWS (flows dimmed to 30 %, loops on top)",
+   "animated": [
+    {
+     "object": "anim_loop_arcs[1..7]",
+     "property": "pulse sensor → PLC → actuator, then stays dim",
+     "rate": "loop n active from its label frame_in for ≥ 3 s (see labels); camera zones: feeder+pump +0…+200, die/rolls/scanner +240…+365, melt line/barrel +405…+574, pull back to +649"
+    },
+    {
+     "object": "HUD block diagram",
+     "property": "highlight active loop",
+     "rate": "same as the arcs"
+    }
+   ],
+   "labels": [
+    {
+     "text": "(1) Bơm: tốc độ đặt (chủ) → lưu lượng ra khuôn cố định",
+     "anchor_m": [
+      7.7,
+      0.0,
+      1.6
+     ],
+     "style": "callout",
+     "frame_in": 4426,
+     "frame_out": 4583,
+     "min_frames": 130
+    },
+    {
+     "text": "(2) PIC-P3: áp hút 50 bar* → chỉnh cân LIW + tốc độ vít theo tỉ lệ",
+     "anchor_m": [
+      -0.45,
+      0.0,
+      3.8
+     ],
+     "style": "callout",
+     "frame_in": 4501,
+     "frame_out": 4678,
+     "min_frames": 170
+    },
+    {
+     "text": "(3) Chiều dày TB = lưu lượng bơm ÷ (ρ·rộng·tốc độ trục) → đầu đo chỉnh tốc độ trục",
+     "anchor_m": [
+      9.78,
+      -1.9,
+      2.6
+     ],
+     "style": "callout",
+     "frame_in": 4576,
+     "frame_out": 4773,
+     "min_frames": 190
+    },
+    {
+     "text": "(4) Profin ngang: đầu đo → 94 bu-lông nhiệt",
+     "anchor_m": [
+      12.2,
+      0.0,
+      1.6
+     ],
+     "style": "callout",
+     "frame_in": 4671,
+     "frame_out": 4808,
+     "min_frames": 90
+    },
+    {
+     "text": "(5) PDI P2/P3 → nhịp quay đĩa lọc, xả ngược",
+     "anchor_m": [
+      6.95,
+      0.0,
+      2.2
+     ],
+     "style": "callout",
+     "frame_in": 4766,
+     "frame_out": 4873,
+     "min_frames": 100
+    },
+    {
+     "text": "(6) TIC × 20 vùng → băng nhiệt / van nước",
+     "anchor_m": [
+      3.2,
+      0.0,
+      1.8
+     ],
+     "style": "callout",
+     "frame_in": 4801,
+     "frame_out": 5025,
+     "min_frames": 110
+    },
+    {
+     "text": "(7) Liên động: P1 350 / P4 330 bar, đĩa nổ → dừng truyền động (STO)",
+     "anchor_m": [
+      6.0,
+      0.0,
+      1.7
+     ],
+     "style": "callout",
+     "frame_in": 4866,
+     "frame_out": 5025,
+     "min_frames": 160
+    }
+   ],
+   "hud": {
+    "title": "Tương tác hệ thống (2/2): điều khiển",
+    "block_diagram": [
+     "Cân LIW",
+     "Động cơ vít",
+     "P3",
+     "PLC",
+     "Bơm (biến tần)",
+     "Trục cán",
+     "Đầu đo",
+     "Bu-lông nhiệt",
+     "Lọc (PDI)",
+     "Nhiệt (TIC)",
+     "STO"
+    ],
+    "footer": "* = giả định (không có nguồn công bố)",
+    "alt_if_Q6b": {
+     "(1)": "(1) Cân LIW: đặt lưu lượng 3 500 kg/h (design s_20)",
+     "(2)": "(2) PIC-P3: áp hút 50 bar* → tốc độ bơm bánh răng",
+     "(3)": "(3) Chiều dày TB → tốc độ trục cán"
+    }
+   },
+   "speed_badge_vi": "Sơ đồ phủ trên mô hình",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "label_rule_override": "one numbered loop label at a time (max 2 visible: the active loop + the fading previous one)",
+   "frames": [
+    4376,
+    5025
+   ],
+   "duration_s": 26.0
+  },
+  {
+   "id": "S16",
+   "title_vi": "Kết: ba điểm công nghệ lõi",
+   "act": "IV",
+   "purpose_vi": "Tóm tắt những gì người xem phải kiểm được.",
+   "cameras": [
+    {
+     "name": "anim_cam_S16",
+     "type": "ORTHO",
+     "keys": [
+      {
+       "frame": 5026,
+       "loc": [
+        3.4,
+        30.0,
+        2.4
+       ],
+       "target": [
+        3.4,
+        0.0,
+        2.4
+       ],
+       "lens_mm": 50
+      }
+     ],
+     "interpolation": "static",
+     "ortho_scale_m": 19.8
+    }
+   ],
+   "state": "FULL",
+   "animated": [
+    {
+     "object": "anim_sheet",
+     "property": "UV scroll",
+     "rate": "real"
+    }
+   ],
+   "labels": [],
+   "hud": {
+    "title": "PET không sấy → tấm vô định hình 0,8 mm* · 3,5 t/h*",
+    "values": [
+     "1. Khử ẩm bằng 2 vùng chân không sau các nút nhựa",
+     "2. Bơm bánh răng đặt lưu lượng ra khuôn; áp hút P3 chỉnh cân + vít",
+     "3. Khuôn móc áo + 94 bu-lông nhiệt giữ chiều dày đều trên 2,1 m"
+    ],
+    "alt_if_Q6b": {
+     "2": "2. Cân đặt lưu lượng; bơm bánh răng giữ áp hút P3 (lựa chọn của design)"
+    },
+    "footer": "* = giả định (không có nguồn công bố)"
+   },
+   "speed_badge_vi": "—",
+   "render": {
+    "samples": 32,
+    "raytracing": false
+   },
+   "frames": [
+    5026,
+    5275
+   ],
+   "duration_s": 10.0
+  }
+ ],
+ "stills": [
+  {
+   "id": "ST1",
+   "title_vi": "Toàn tuyến cắt nửa trên (Z = 1 200)",
+   "camera": {
+    "name": "anim_cam_ST1",
+    "type": "PERSP",
+    "loc": [
+     2.0,
+     11.5,
+     11.0
+    ],
+    "target": [
+     2.5,
+     0.0,
+     1.2
+    ],
+    "lens_mm": 35
+   },
+   "state": {
+    "hide_groups": [
+     "ax_feed_platform",
+     "ax_feed_column",
+     "ax_barrel_shell",
+     "ax_vents",
+     "ax_head_valve",
+     "ax_melt_cables",
+     "ax_sc",
+     "ax_pump",
+     "ax_pipe",
+     "ax_die_upper",
+     "ax_die_lower"
+    ],
+    "section": "SEC_Z1200",
+    "box_min": [
+     -0.05,
+     -1.4,
+     1.2
+    ],
+    "box_max": [
+     9.58,
+     1.4,
+     2.8
+    ],
+    "show": [
+     "anim_cut_st1_*_keep",
+     "int_barrel_hollow_*_lo",
+     "int_screw_*",
+     "int_fill_*_lo",
+     "int_head_hollow_lo",
+     "int_valve_body_lo",
+     "int_valve_bolt",
+     "anim_ghost_sc + int_sc_disc (whole, not cut)",
+     "int_pump_gear_* + int_pump_body (lo)",
+     "int_pipe_mixer_section (lo)",
+     "int_die_lower_face",
+     "anim_curtain",
+     "anim_sheet"
+    ]
+   },
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST2",
+   "title_vi": "Mặt cắt ngang xi lanh: lỗ số 8 và hai vít",
+   "camera": {
+    "name": "anim_cam_ST2",
+    "type": "PERSP",
+    "loc": [
+     3.05,
+     0.42,
+     1.45
+    ],
+    "target": [
+     2.45,
+     0.0,
+     1.2
+    ],
+    "lens_mm": 60
+   },
+   "state": "CUT_X2450",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST3",
+   "title_vi": "Mặt cắt ngang vùng chân không 2",
+   "camera": {
+    "name": "anim_cam_ST3",
+    "type": "PERSP",
+    "loc": [
+     4.75,
+     0.85,
+     1.95
+    ],
+    "target": [
+     4.12,
+     0.0,
+     1.55
+    ],
+    "lens_mm": 38
+   },
+   "state": "CUT_X4120",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST4",
+   "title_vi": "Mặt cắt khuôn A-A và khe trục",
+   "camera": {
+    "name": "anim_cam_ST4",
+    "type": "PERSP",
+    "loc": [
+     9.45,
+     1.4,
+     1.45
+    ],
+    "target": [
+     9.5,
+     0.0,
+     1.25
+    ],
+    "lens_mm": 50
+   },
+   "state": "CUT_DIE_AA (true 1.0 mm gap, no exaggeration)",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST5",
+   "title_vi": "Mặt phân khuôn: rãnh móc áo",
+   "camera": {
+    "name": "anim_cam_ST5",
+    "type": "ORTHO",
+    "loc": [
+     9.35,
+     0.0,
+     4.0
+    ],
+    "target": [
+     9.35,
+     0.0,
+     1.2
+    ],
+    "ortho_scale_m": 3.0
+   },
+   "state": "CUT_DIE_PLAN (upper half and choker bar hidden, not peeled)",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST6",
+   "title_vi": "Bộ lọc: đĩa lưới trong vỏ trong suốt",
+   "camera": {
+    "name": "anim_cam_ST6",
+    "type": "PERSP",
+    "loc": [
+     6.2,
+     1.9,
+     1.85
+    ],
+    "target": [
+     6.95,
+     0.05,
+     1.45
+    ],
+    "lens_mm": 38
+   },
+   "state": "GHOST_SC",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  },
+  {
+   "id": "ST7",
+   "title_vi": "Bơm bánh răng cắt dọc",
+   "camera": {
+    "name": "anim_cam_ST7",
+    "type": "PERSP",
+    "loc": [
+     7.7,
+     1.2,
+     1.32
+    ],
+    "target": [
+     7.7,
+     0.0,
+     1.2
+    ],
+    "lens_mm": 55
+   },
+   "state": "CUT_PUMP",
+   "resolution": [
+    2400,
+    1350
+   ],
+   "samples": 96
+  }
+ ]
+}

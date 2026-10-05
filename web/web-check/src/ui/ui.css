@@ -1,0 +1,217 @@
+/* Overlay UI of the ZE 155 viewer (toolbar, device tree, info panel). Scoped to .ze-* classes.
+   System fonts only (no external font, PLAN-DOT1 §4.2.10). The toolbar writes --ze-top on <html>. */
+
+.ze-panel {
+  --ze-bg: rgba(20, 24, 30, 0.88);
+  --ze-bg-2: rgba(255, 255, 255, 0.06);
+  --ze-bg-3: rgba(255, 255, 255, 0.12);
+  --ze-line: rgba(255, 255, 255, 0.12);
+  --ze-fg: #e9edf1;
+  --ze-fg-2: #a9b3bd;
+  --ze-sel: #ff8a1f;
+  --ze-hov: #9fd3ff;
+  --ze-gap: 8px;
+  position: fixed;
+  z-index: 10;
+  box-sizing: border-box;
+  color: var(--ze-fg);
+  background: var(--ze-bg);
+  border: 1px solid var(--ze-line);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  pointer-events: auto;
+}
+.ze-panel *,
+.ze-panel *::before,
+.ze-panel *::after { box-sizing: border-box; }
+.ze-panel p { margin: 0 0 6px; }
+.ze-panel button { font: inherit; color: inherit; }
+.ze-panel :focus-visible { outline: 2px solid var(--ze-hov); outline-offset: 1px; }
+
+.ze-muted { color: var(--ze-fg-2); }
+.ze-mono { font-variant-numeric: tabular-nums; }
+.ze-pad { padding: 8px 12px; }
+.ze-h { margin: 0; font-size: 14px; font-weight: 600; }
+.ze-h3 { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ze-fg-2); }
+.ze-id { margin-left: 6px; padding: 0 4px; border-radius: 3px; background: var(--ze-bg-2); font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ze-fg-2); }
+
+/* ---------- buttons */
+.ze-btn {
+  padding: 4px 9px;
+  border: 1px solid var(--ze-line);
+  border-radius: 5px;
+  background: var(--ze-bg-2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ze-btn:hover:not(:disabled) { background: var(--ze-bg-3); }
+.ze-btn[aria-pressed='true'] { border-color: var(--ze-sel); background: rgba(255, 138, 31, 0.22); }
+.ze-btn:disabled { opacity: 0.45; cursor: default; }
+.ze-btn[data-pending] { border-color: var(--ze-hov); border-style: dashed; }
+.ze-btn-sm { padding: 2px 7px; font-size: 12px; }
+.ze-link { padding: 0; border: 0; background: none; color: var(--ze-hov); text-align: left; text-decoration: none; cursor: pointer; }
+.ze-link:hover { text-decoration: underline; }
+
+/* ---------- toolbar */
+.ze-toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  border-width: 0 0 1px;
+  border-radius: 0;
+}
+.ze-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ze-gap); }
+.ze-group { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.ze-label { color: var(--ze-fg-2); margin-right: 2px; }
+.ze-sep { width: 1px; height: 20px; background: var(--ze-line); }
+.ze-badge { margin-left: 4px; padding: 1px 6px; border-radius: 10px; background: var(--ze-bg-2); color: var(--ze-fg-2); font-size: 12px; }
+.ze-slider input[type='range'] { width: 260px; accent-color: var(--ze-sel); }
+.ze-slider output { min-width: 110px; }
+.ze-check { cursor: pointer; }
+.ze-check input { accent-color: var(--ze-sel); }
+.ze-legend-item { display: inline-flex; align-items: center; gap: 4px; margin-right: 6px; }
+.ze-swatch { width: 14px; height: 14px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.5); }
+.ze-swatch-hatch {
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.45) 0 1.5px, transparent 1.5px 4px);
+}
+.ze-busy { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: var(--ze-hov); }
+.ze-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(159, 211, 255, 0.35);
+  border-top-color: var(--ze-hov);
+  border-radius: 50%;
+  animation: ze-spin 0.8s linear infinite;
+}
+@keyframes ze-spin { to { transform: rotate(360deg); } }
+
+/* ---------- side panels */
+.ze-tree,
+.ze-info {
+  top: calc(var(--ze-top, 52px) + 8px);
+  bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.ze-tree { left: 8px; width: 300px; }
+.ze-info {
+  right: 8px;
+  width: 340px;
+  bottom: auto;
+  max-height: calc(100vh - var(--ze-top, 52px) - 16px);
+  padding: 12px 14px;
+  overflow-y: auto;
+}
+
+/* ---------- device tree */
+.ze-tree-head { display: flex; align-items: baseline; gap: 8px; padding: 10px 12px 6px; }
+.ze-tree-head .ze-h { flex: 1; }
+.ze-fold { align-self: center; min-width: 26px; font-size: 9px !important; line-height: 1.6; color: var(--ze-fg-2); }
+.ze-tree[data-collapsed] { bottom: auto; }
+.ze-tree[data-collapsed] .ze-tree-head { padding-bottom: 10px; }
+.ze-search { position: relative; padding: 0 10px 8px; border-bottom: 1px solid var(--ze-line); }
+.ze-search input {
+  width: 100%;
+  padding: 6px 28px 6px 9px;
+  border: 1px solid var(--ze-line);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--ze-fg);
+  font: inherit;
+}
+.ze-search input::placeholder { color: var(--ze-fg-2); }
+.ze-search input::-webkit-search-cancel-button { display: none; }
+.ze-search-clear {
+  position: absolute;
+  top: 3px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--ze-fg-2);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.ze-search-clear:hover { color: var(--ze-fg); background: var(--ze-bg-2); }
+.ze-tree-list { flex: 1; min-height: 0; overflow-y: auto; padding: 4px 0 8px; }
+.ze-sec + .ze-sec { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.ze-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 12px;
+  border: 0;
+  background: none;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.ze-sec-head:hover:not(:disabled) { background: var(--ze-bg-2); }
+.ze-sec-head:disabled { cursor: default; }
+.ze-sec-name { flex: 1; }
+.ze-caret { width: 10px; color: var(--ze-fg-2); }
+.ze-sec-list { margin: 0; padding: 0 0 4px; list-style: none; }
+.ze-tree-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 4px 12px 4px 28px;
+  border: 0;
+  border-left: 3px solid transparent;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.ze-tree-item:hover,
+.ze-tree-item[data-hovered] { background: var(--ze-bg-2); border-left-color: var(--ze-hov); }
+.ze-tree-item[aria-current='true'] { background: rgba(255, 138, 31, 0.2); border-left-color: var(--ze-sel); }
+.ze-item-name { flex: 1; }
+.ze-badge-int { color: var(--ze-fg-2); font-size: 11px; }
+
+/* ---------- info panel */
+.ze-info-head { display: flex; align-items: flex-start; gap: 8px; }
+.ze-info-title { flex: 1; margin: 0 0 2px; font-size: 16px; font-weight: 700; line-height: 1.3; }
+.ze-info-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.ze-info-en { color: var(--ze-fg-2); font-style: italic; }
+.ze-info-meta { font-size: 12px; }
+.ze-info-part { padding: 4px 8px; border-left: 3px solid var(--ze-sel); background: rgba(255, 138, 31, 0.12); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.ze-info-inside { padding: 4px 8px; border-left: 3px solid var(--ze-hov); background: rgba(159, 211, 255, 0.1); }
+.ze-info-sec { margin-top: 10px; }
+.ze-list { margin: 0; padding-left: 18px; }
+.ze-list li { margin-bottom: 3px; }
+.ze-hint { margin: 12px 0 0 !important; padding-top: 8px; border-top: 1px solid var(--ze-line); color: var(--ze-fg-2); font-size: 12px; }
+
+/* review M5: below 1600 px the toolbar is denser and the side panels narrower (1366 x 768 keeps a canvas of
+   about 830 px between the panels; folding the tree gives about 1 060 px) */
+@media (max-width: 1600px) {
+  .ze-panel { font-size: 12px; }
+  .ze-toolbar { gap: 4px; padding: 5px 8px; }
+  .ze-row { gap: 6px; }
+  .ze-btn { padding: 3px 7px; }
+  .ze-btn-sm { padding: 2px 6px; font-size: 11px; }
+  .ze-badge { font-size: 11px; }
+  .ze-sep { height: 16px; }
+  .ze-slider input[type='range'] { width: 180px; }
+  .ze-slider output { min-width: 96px; }
+  .ze-tree { width: 236px; }
+  .ze-info { width: 272px; padding: 10px 12px; }
+  .ze-info-title { font-size: 15px; }
+  .ze-tree-item { padding-left: 22px; }
+}
+
+@media (max-width: 1100px) {
+  .ze-tree { width: 240px; }
+  .ze-info { width: 280px; }
+  .ze-slider input[type='range'] { width: 160px; }
+}

@@ -1,0 +1,22 @@
+# Vấn đề thiết kế phát hiện khi lập bản vẽ (design issues)
+
+Dữ liệu kiểm: `design/parts.json` hiện hành (187 chi tiết, 72 mối nối, sau review-01 bản vẽ và sau khi designer áp dụng các mục 1–3, 7, 8 dưới đây). Không sửa `parts.json`; bản vẽ thể hiện phương án hợp lý nhất và ghi rõ ở đây. Các vấn đề của bản 161 chi tiết đã được bản sau review sửa (cặp nhiệt B1 trong miệng nạp, tai cẩu khuôn, vị trí cảm biến, bulông nhiệt, ống mềm nước không có đường đi) nên không nhắc lại.
+
+| # | Chi tiết (id) | Vấn đề | Đề xuất sửa | Trạng thái |
+|---|---|---|---|---|
+| 1 | `die_choker_bolts`, `die_bolt_actuator_rail` | Hàng bulông thanh chắn ở X 9 185 nằm trên vùng manifold; thanh chắn phải ở sau manifold. | Dời bulông tới X ≈ 9 255, thu hẹp thanh cơ cấu. | **Đã sửa** trong parts.json (bulông đứng X 9 255, thanh X 9 285–9 345); bản vẽ đã cập nhật. |
+| 2 | `feed_platform_deck` | Dầm chính trên đường cột X −450 cắt lỗ ống rơi chính. | Chia dầm, thêm dầm viền quanh lỗ. | **Đã sửa**: trường mới `beams_mm` (dầm chính HEA180, dầm viền, dầm phụ IPE160); bản vẽ vẽ dầm từ dữ liệu. |
+| 3 | `ctx_roll_stand`, `die_deckles` | Khung bên cụm cán chỉ cách núm deckle 20 mm và đi ngang qua khe trục. | Mép trước khung lõm tới X 9 800 quanh khe trục. | **Đã sửa**: `outline_mm` của khung có lõm Z 1 060–1 340; bản vẽ dùng outline này. |
+| 4 | `die_body_upper`, `die_body_lower` | Kết cấu trong khuôn chưa có số liệu: tiết diện manifold, preland, thanh nhiệt cắm, môi dưới. | Bổ sung vào design.md §7 nếu builder cần dựng mặt cắt. | Còn mở. Tờ 05 vẽ manifold Ø72 → Ø28, preland khe 3–6, môi dài 156, thanh nhiệt Ø20 (G). |
+| 5 | `melt_*` (lòng chảy, mặt bích) | Thiếu đường kính lòng chảy, PCD và số bulông các bích đường chảy (ngoài thông tin trong `type` của mối nối). | Thêm bảng bích vào design.md §6. | Còn mở. Tờ 04 hình D dùng giá trị giả định (G). |
+| 6 | `screws`, `barrel_b1…b6` | Cấu hình phần tử trục vít và lỗ khoan nước chỉ có mô tả chữ. | Thêm bảng phần tử (X, loại, bước). | Còn mở. Tờ 02 vẽ cấu hình 14 đoạn (G), 8 lỗ khoan Ø18 trên Ø430 (G). |
+| 7 | `barrel_thermocouples` | Cặp nhiệt B1 nghiêng 40° nhưng không có trục phần tử. | Thêm `item_axes`. | **Đã sửa** (`item_axes`). Còn sót (kiểm lại với parts.json hiện hành): `bbox_mm` z0 = 1 321 vẫn theo vị trí cũ (338, −200, 1 366); theo vị trí mới đáy cặp nhiệt chỉ ở Z ≈ 1 361. Đề xuất tính lại bbox. |
+| 8 | `sidefeed_barrel` | Hình số 8 nhưng không có outline. | Thêm `outline_mm`. | **Đã sửa**; bản vẽ dùng outline. |
+| 9 | `die_body_bolts`, `die_body_upper`, `die_body_lower` | Các hàng vít thân cắt qua kênh chảy trên mặt phân khuôn Z 1 200. Hàng mặt đỉnh X 9 160 và 9 210 cùng hàng mặt đáy X 9 160 đi xuyên dải ống phân phối: ống phân phối Ø72 tâm X ≈ 9 200 ở Y = 0, tức X 9 164–9 236, và cong về phía môi tới X ≈ 9 350 ở hai đầu (G, xem #4). Hàng mặt đáy X 9 270 ren vào nửa trên nên cắt qua khe tiền môi (X 9 236–9 446). Phía sau ống phân phối chỉ còn 38 mm tới mặt sau X 9 126, không đủ chỗ cho lỗ Ø30, lỗ khoét Ø48 và thành. | Muốn sửa thì lùi mặt sau khuôn tới X ≈ 9 060, đặt hàng vít chính sau ống phân phối (X ≈ 9 095–9 110), các hàng còn lại đặt ngoài vùng kênh chảy. | **Đơn giản hoá đã biết (known simplification)**: thiết kế đã chốt, không sửa dữ liệu. Tờ 05 vẽ vít thân đúng theo parts.json, ghi "bố trí bu-lông thân khuôn đơn giản hóa (G)" dưới B–B; A–A vẽ vít bằng nét khuất. Nhìn từ ngoài không thấy khác biệt. |
+| 10 | `drive_motor` (`outline_mm`), `drive_flex_coupling` | Đầu trục động cơ trong outline chỉ dài 200 (X −3 150 … −2 950), dừng đúng ở mặt moay-ơ khớp đàn hồi (bbox khớp bắt đầu X −2 950). Như vậy trục không ăn vào moay-ơ nào. | Muốn sửa thì kéo đầu trục tới X −2 830 (dài 320, lắp 120 trong moay-ơ, có then). | **Đơn giản hoá đã biết**: thiết kế đã chốt. Tờ 03 chi tiết D vẽ trục 320 lắp 120 trong moay-ơ (G); hình chiếu tổng thể theo outline 200. Phần này nằm trong vỏ che khớp nối nên nhìn từ ngoài không thấy. |
+
+Quy ước mới đã áp dụng trong `design/draw/geom.py`: khi có `item_axis`/`item_axes`, `item_mm` = [Ø, Ø, chiều dài dọc trục phần tử] (bulông nhiệt [30, 30, 170], cặp nhiệt [30, 30, 90]). Ống có trục xiên được vẽ cả phần đĩa đầu nhìn xiên, nên biên hình chiếu khớp hộp bao.
+
+Ghi chú khác (không phải lỗi):
+- `ctx_floor` dùng `connections` w_08, w_09 như điểm cấp nước sàn; tờ 07 vẽ nó là khối "sàn nhà xưởng" nét phantom.
+- `melt_heater_bands`: bbox chung r 257 (lấy theo băng lớn nhất); bản vẽ dùng đường kính từng băng trong `details` (Ø514, 454, 380, 320, 260, 320).

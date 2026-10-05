@@ -1,0 +1,279 @@
+{
+ "version": 1,
+ "doc": "Runtime rotors. For each: create Object3D named pivot at pivot_m (three world, metres, identity rotation) inside dev_<device_id>, attach() the listed exported nodes (subtrees keep world pose), then useFrame: pivot.rotateOnAxis(axis, 2*PI*rpm/60/slow*dt). Never rotate an exported mesh node directly (quantize rewrites mesh-node TRS). Slice 2 entries are loaded but not driven in Đợt 1.",
+ "modes": {
+  "off": 0,
+  "slow": "rpm / display_slow",
+  "real": "rpm"
+ },
+ "default_mode": "slow",
+ "rotors": [
+  {
+   "id": "screw_a",
+   "pivot": "rot_screw_a",
+   "slice": 1,
+   "device_id": "screws",
+   "pivot_m": [
+    0,
+    1.2,
+    -0.071
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -300,
+   "display_slow": 20,
+   "attach": [
+    "int_screw_axis_a"
+   ],
+   "label_vi": "Trục vít A"
+  },
+  {
+   "id": "screw_b",
+   "pivot": "rot_screw_b",
+   "slice": 1,
+   "device_id": "screws",
+   "pivot_m": [
+    0,
+    1.2,
+    0.071
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -300,
+   "display_slow": 20,
+   "attach": [
+    "int_screw_axis_b"
+   ],
+   "label_vi": "Trục vít B"
+  },
+  {
+   "id": "motor_shaft",
+   "pivot": "rot_motor_shaft",
+   "slice": 1,
+   "device_id": "drive_motor",
+   "pivot_m": [
+    -3.025,
+    1.2,
+    0.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -1119,
+   "display_slow": 20,
+   "attach": [
+    "drive_motor_shaft"
+   ],
+   "label_vi": "Trục động cơ"
+  },
+  {
+   "id": "flex_coupling",
+   "pivot": "rot_flex_coupling",
+   "slice": 1,
+   "device_id": "drive_flex_coupling",
+   "pivot_m": [
+    -2.825,
+    1.2,
+    0.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -1119,
+   "display_slow": 20,
+   "attach": [
+    "drive_flex_coupling"
+   ],
+   "label_vi": "Khớp nối đàn hồi"
+  },
+  {
+   "id": "safety_coupling",
+   "pivot": "rot_safety_coupling",
+   "slice": 1,
+   "device_id": "drive_safety_coupling",
+   "pivot_m": [
+    -2.5085,
+    1.2,
+    0.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -1119,
+   "display_slow": 20,
+   "attach": [
+    "drive_safety_coupling"
+   ],
+   "label_vi": "Khớp an toàn"
+  },
+  {
+   "id": "roll_bottom",
+   "pivot": "rot_roll_bottom",
+   "slice": 1,
+   "device_id": "ctx_roll_bottom",
+   "pivot_m": [
+    9.776,
+    0.799,
+    0.0
+   ],
+   "axis": [
+    0,
+    0,
+    -1
+   ],
+   "rpm": 9.95,
+   "display_slow": 1,
+   "attach": [
+    "anim_roll_axis_bottom",
+    "ctx_roll_bottom"
+   ],
+   "label_vi": "Trục cán dưới"
+  },
+  {
+   "id": "roll_middle",
+   "pivot": "rot_roll_middle",
+   "slice": 1,
+   "device_id": "ctx_roll_middle",
+   "pivot_m": [
+    9.776,
+    1.601,
+    0.0
+   ],
+   "axis": [
+    0,
+    0,
+    -1
+   ],
+   "rpm": -9.95,
+   "display_slow": 1,
+   "attach": [
+    "anim_roll_axis_middle",
+    "ctx_roll_middle"
+   ],
+   "label_vi": "Trục cán giữa"
+  },
+  {
+   "id": "roll_top",
+   "pivot": "rot_roll_top",
+   "slice": 1,
+   "device_id": "ctx_roll_top",
+   "pivot_m": [
+    9.776,
+    2.403,
+    0.0
+   ],
+   "axis": [
+    0,
+    0,
+    -1
+   ],
+   "rpm": 9.95,
+   "display_slow": 1,
+   "attach": [
+    "anim_roll_axis_top",
+    "ctx_roll_top"
+   ],
+   "label_vi": "Trục cán trên"
+  },
+  {
+   "id": "pump_gear_top",
+   "pivot": "rot_pump_gear_top",
+   "slice": 2,
+   "device_id": "melt_gear_pump",
+   "pivot_m": [
+    7.701,
+    1.2625,
+    0.0
+   ],
+   "axis": [
+    0,
+    0,
+    -1
+   ],
+   "rpm": 69,
+   "display_slow": 4,
+   "attach": [
+    "int_pump_gear_top"
+   ],
+   "label_vi": "Bánh răng bơm trên"
+  },
+  {
+   "id": "pump_gear_bottom",
+   "pivot": "rot_pump_gear_bottom",
+   "slice": 2,
+   "device_id": "melt_gear_pump",
+   "pivot_m": [
+    7.701,
+    1.1375,
+    0.0
+   ],
+   "axis": [
+    0,
+    0,
+    -1
+   ],
+   "rpm": -69,
+   "display_slow": 4,
+   "attach": [
+    "int_pump_gear_bottom"
+   ],
+   "label_vi": "Bánh răng bơm dưới"
+  },
+  {
+   "id": "gbx_input",
+   "pivot": "rot_gbx_input",
+   "slice": 2,
+   "device_id": "gearbox",
+   "pivot_m": [
+    -2.3,
+    1.2,
+    0.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": -1118.0,
+   "display_slow": 20,
+   "attach": [
+    "int_gbx_schematic_input"
+   ],
+   "label_vi": "Bánh răng vào (sơ đồ)"
+  },
+  {
+   "id": "gbx_counter",
+   "pivot": "rot_gbx_counter",
+   "slice": 2,
+   "device_id": "gearbox",
+   "pivot_m": [
+    -2.24,
+    1.335,
+    0.0
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "rpm": 571.4,
+   "display_slow": 20,
+   "attach": [
+    "int_gbx_schematic_counter"
+   ],
+   "label_vi": "Bánh răng trung gian (sơ đồ)"
+  }
+ ]
+}

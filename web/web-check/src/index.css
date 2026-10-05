@@ -1,0 +1,57 @@
+/* base layout only; builder A's src/ui/ui.css styles the panels */
+:root {
+  font: 14px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #1d232a;
+  background: #e9ecef;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ze-app {
+  position: fixed;
+  inset: 0;
+}
+.ze-canvas {
+  position: absolute;
+  inset: 0;
+}
+/* review I4: the selfcheck output stays in the DOM (textContent and the accessibility tree, for the tests),
+   but is visually hidden; ?selfcheck=show brings the panel back */
+#selfcheck {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: pre;
+  border: 0;
+  pointer-events: none;
+}
+#selfcheck.ze-selfcheck-shown {
+  left: 8px;
+  top: auto;
+  bottom: 8px;
+  width: auto;
+  height: auto;
+  max-width: 40vw;
+  max-height: 30vh;
+  margin: 0;
+  overflow: auto;
+  clip-path: none;
+  padding: 6px 8px;
+  font: 11px/1.3 ui-monospace, Menlo, monospace;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #c9ced4;
+  border-radius: 4px;
+  z-index: 50;
+}

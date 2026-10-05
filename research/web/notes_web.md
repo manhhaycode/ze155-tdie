@@ -1,0 +1,11 @@
+# Web researcher notes (English, for agents) — running log
+- Key source found: yumpu "Anlagenkompetenz von KraussMaffei Berstorff" (DE brochure, 3. Auflage 09/10), tech table ZE UT/UTX, saved in research/web/src/yumpu_anlagenkompetenz_de_2010.txt
+  - ZE 155 A UTi: D 169, flight depth 27.2, 400 rpm, 2930 kW, 2x35000 Nm, axis height 1200, length 11700 (L/D 44), weight ~34000 kg
+  - ZE 155 R UTi: D 181, 38.9, 400, 2515 kW, 2x30000, 1200, 11700, 34000
+  - ZE 130 A: 140/22.6/600/2515/2x20000/1200/10400/28000 ; ZE 180 A: 194/31.2/300/3050/2x48500/1400/13400/45000
+- ZE180A x 28D-UT used (Perry, AIM): bore 194, OD 192.3, core 131.7, centre distance 163, 325 rpm, 2238 kW, 30 kW/barrel, 1750-7000 kg/h, Siemens 3000 HP, Berstorff gearbox
+- KM sheet brochure: direct PET sheet extrusion with ZE UT/UTXi/BluePower + PlanetCalender; twin-screw sheet systems 0.1-6 mm, 2-7.5 m wide, up to 6 t/h
+- Images saved web-01..20 (see images.md). Data sheets: Gneuss RSFgenius 2026, Maag extrex6 GU, ABB AMI catalogue, Busch MM1202, K-Tron BSP-150-S, SML roll stack.
+- Design decisions (estimates, in specs.md): PET direct sheet 3500 kg/h, net width 2000, die lip width 2300, RSFgenius 200, extrex6 GU 100/125, motor 2000 kW AMI 450 class, roll stack D800 x 2600.
+- Next: write claims.jsonl, images.md, specs.md
+- DONE: claims.jsonl (70 claims), web/images.md (20 images), specs.md (Vietnamese). Source text of KM DE table in web/src/.

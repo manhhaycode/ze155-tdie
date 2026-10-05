@@ -1,0 +1,789 @@
+{
+ "version": 1,
+ "slice": 1,
+ "generated_from": "model-contract.json cut_states + free_swap, names resolved against the exported GLBs (web/build/reports/glb_analysis.json, from tools/check_glb.mjs analyze); cameras from anim/shots.json converted to three (x, z, -y); web overrides from tools/make_data.py (CLIP_TO_HIDE, EXTRA_HIDE, FREE_EXTRA_HIDE, CAMERA_OVERRIDES)",
+ "name_rule": "contract p_<name> -> <name> (exported Blender object name); rot_screw_a|b -> int_screw_axis_a|b; NN..MM ranges expanded",
+ "plane_rule": "three.js keeps points with normal . p + constant >= 0",
+ "states": {
+  "FULL": {
+   "label_vi": "Toàn bộ (không cắt)",
+   "plane": null,
+   "needs_interior": false,
+   "hide": [],
+   "swap": {},
+   "clip": [],
+   "show_whole": [],
+   "show_clipped": [],
+   "ghost": [],
+   "peel": null,
+   "camera": {
+    "pos": [
+     19.2,
+     8.61,
+     -17.28
+    ],
+    "target": [
+     5.0,
+     2.0,
+     0.9
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "web override (review M1): hero-like view of the whole line from the die end, operator side, like out/renders/ze155-hero.png (35 mm, elevation 16 deg); the camera is on the +X side, so the FREE default cut X = 3 000 faces it (review M4)",
+    "replaces": "shots.json S01 key 2 (frame 151)"
+   },
+   "note": "load state: interior hidden; every recorded change undone (resetCuts)"
+  },
+  "CUT_FEED": {
+   "label_vi": "Cột cấp liệu cắt dọc (Y = 0)",
+   "plane": {
+    "normal": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "constant": 0.0
+   },
+   "needs_interior": true,
+   "hide": [],
+   "swap": {
+    "feed_throat": [
+     "int_feed_column_hollow"
+    ],
+    "feed_hopper": [],
+    "feed_flex_sleeve": [],
+    "feed_downpipe": []
+   },
+   "clip": [
+    "feed_downpipe_hw",
+    "feed_flex_sleeve_clamps"
+   ],
+   "show_whole": [],
+   "show_clipped": [
+    "int_feed_column_hollow"
+   ],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     0,
+     0.6,
+     -1.2
+    ],
+    "duration_s": 1.4
+   },
+   "camera": {
+    "pos": [
+     1.3,
+     1.95,
+     -2.0
+    ],
+    "target": [
+     0.34,
+     1.45,
+     0.0
+    ],
+    "lens_mm": 40,
+    "sensor_mm": 36,
+    "source": "shots.json S03b key 2 (frame 900)"
+   }
+  },
+  "CUT_Z_BARREL": {
+   "label_vi": "Xi lanh mở nửa trên (Z = 1 200)",
+   "plane": {
+    "normal": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "constant": 1.2
+   },
+   "needs_interior": true,
+   "hide": [
+    "ctrl_cable_feed",
+    "ctrl_cable_tray_feed",
+    "ctrl_estop_platform",
+    "feed_additive_feeder",
+    "feed_additive_tube",
+    "feed_control_cabinet",
+    "feed_conveying_hose",
+    "feed_conveying_hose_end",
+    "feed_conveying_line",
+    "feed_conveying_line_end",
+    "feed_feeder_sleeves",
+    "feed_feeder_sleeves_clamps",
+    "feed_main_feeder",
+    "feed_main_hopper",
+    "feed_platform_columns_front",
+    "feed_platform_columns_rear",
+    "feed_platform_deck",
+    "feed_platform_grating",
+    "feed_platform_grating_x",
+    "feed_platform_railing",
+    "feed_stair",
+    "feed_vacuum_loader",
+    "sidefeed_downpipe",
+    "sidefeed_downpipe_flex",
+    "sidefeed_downpipe_hw",
+    "sidefeed_feeder",
+    "sidefeed_feeder_hopper",
+    "util_air_drop_2",
+    "util_air_drop_2_clips",
+    "util_air_drop_2_fit",
+    "util_air_tube_loader",
+    "util_frl_2",
+    "feed_flex_sleeve",
+    "feed_flex_sleeve_clamps",
+    "feed_hopper",
+    "feed_throat",
+    "barrel_thermocouples",
+    "barrel_vent_dome",
+    "barrel_vent_dome_2",
+    "util_air_tube_vac",
+    "util_air_tube_vac_clips",
+    "vac_bellows",
+    "vac_bellows_2",
+    "vac_gauge_dome",
+    "vac_gauge_dome_2",
+    "vac_pipe",
+    "vac_pipe_3",
+    "vac_pipe_3_hw",
+    "vac_pipe_hw",
+    "vac_valve",
+    "vac_valve_2",
+    "melt_sensor_head",
+    "barrel_cover_c1",
+    "barrel_cover_c1_hw",
+    "barrel_cover_c2",
+    "barrel_cover_c2_hw",
+    "barrel_cover_c3",
+    "barrel_cover_c3_hw",
+    "barrel_cover_c4",
+    "barrel_cover_c4_hw",
+    "barrel_cover_c5",
+    "barrel_cover_c5_hw",
+    "barrel_cover_c6",
+    "barrel_cover_c6_hw"
+   ],
+   "swap": {
+    "barrel_b1": [
+     "int_barrel_hollow_b1"
+    ],
+    "barrel_b2": [
+     "int_barrel_hollow_b2"
+    ],
+    "barrel_b3": [
+     "int_barrel_hollow_b3"
+    ],
+    "barrel_b4": [
+     "int_barrel_hollow_b4"
+    ],
+    "barrel_b5": [
+     "int_barrel_hollow_b5"
+    ],
+    "barrel_b6": [
+     "int_barrel_hollow_b6"
+    ],
+    "melt_head_adapter": [
+     "int_head_hollow_lo",
+     "int_fill_head_lo"
+    ],
+    "melt_startup_valve": [
+     "int_valve_body_lo",
+     "int_valve_bolt_lo",
+     "int_fill_valve_in_lo",
+     "int_fill_valve_run_bolt_lo",
+     "int_fill_valve_run_out_lo"
+    ],
+    "melt_sc_adapter_in": [
+     "int_melt_adapters_hollow_sc_in_lo",
+     "int_fill_adapter_sc_in_lo"
+    ]
+   },
+   "clip": [
+    "barrel_cable_gland_boxes_op",
+    "barrel_heater_cables",
+    "barrel_heater_cables_op",
+    "barrel_heater_shells",
+    "barrel_joint_1",
+    "barrel_joint_2",
+    "barrel_joint_3",
+    "barrel_joint_4",
+    "barrel_joint_5",
+    "barrel_joint_head",
+    "barrel_joint_lantern",
+    "sidefeed_adapter",
+    "melt_rupture_disc",
+    "melt_sensor_cables"
+   ],
+   "show_whole": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_screw_elem_a_01",
+    "int_screw_elem_a_02",
+    "int_screw_elem_a_03",
+    "int_screw_elem_a_04",
+    "int_screw_elem_a_05",
+    "int_screw_elem_a_06",
+    "int_screw_elem_a_07",
+    "int_screw_elem_a_08",
+    "int_screw_elem_a_09",
+    "int_screw_elem_a_10",
+    "int_screw_elem_a_11",
+    "int_screw_elem_a_12",
+    "int_screw_elem_a_13",
+    "int_screw_elem_a_14",
+    "int_screw_elem_a_15",
+    "int_screw_elem_a_16",
+    "int_screw_elem_a_17",
+    "int_screw_elem_a_18",
+    "int_screw_elem_a_19",
+    "int_screw_elem_a_20",
+    "int_screw_elem_a_21",
+    "int_screw_elem_a_22",
+    "int_screw_elem_a_23",
+    "int_screw_elem_a_24",
+    "int_screw_elem_a_25",
+    "int_screw_elem_a_26",
+    "int_screw_elem_a_27",
+    "int_screw_elem_a_28",
+    "int_screw_elem_a_29",
+    "int_screw_elem_a_30",
+    "int_screw_elem_a_31",
+    "int_screw_elem_a_32",
+    "int_screw_elem_b_01",
+    "int_screw_elem_b_02",
+    "int_screw_elem_b_03",
+    "int_screw_elem_b_04",
+    "int_screw_elem_b_05",
+    "int_screw_elem_b_06",
+    "int_screw_elem_b_07",
+    "int_screw_elem_b_08",
+    "int_screw_elem_b_09",
+    "int_screw_elem_b_10",
+    "int_screw_elem_b_11",
+    "int_screw_elem_b_12",
+    "int_screw_elem_b_13",
+    "int_screw_elem_b_14",
+    "int_screw_elem_b_15",
+    "int_screw_elem_b_16",
+    "int_screw_elem_b_17",
+    "int_screw_elem_b_18",
+    "int_screw_elem_b_19",
+    "int_screw_elem_b_20",
+    "int_screw_elem_b_21",
+    "int_screw_elem_b_22",
+    "int_screw_elem_b_23",
+    "int_screw_elem_b_24",
+    "int_screw_elem_b_25",
+    "int_screw_elem_b_26",
+    "int_screw_elem_b_27",
+    "int_screw_elem_b_28",
+    "int_screw_elem_b_29",
+    "int_screw_elem_b_30",
+    "int_screw_elem_b_31",
+    "int_screw_elem_b_32",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b",
+    "int_fill_screw_z01_feed_lo",
+    "int_fill_screw_z02_melt_lo",
+    "int_fill_screw_z03_vent1_lo",
+    "int_fill_screw_z04_convey_lo",
+    "int_fill_screw_z05_mix_lo",
+    "int_fill_screw_z06_seal2_lo",
+    "int_fill_screw_z07_vent2_lo",
+    "int_fill_screw_z08_meter_lo",
+    "int_fill_screw_z09_pump_lo",
+    "int_head_hollow_lo",
+    "int_fill_head_lo",
+    "int_valve_body_lo",
+    "int_valve_bolt_lo",
+    "int_fill_valve_in_lo",
+    "int_fill_valve_run_bolt_lo",
+    "int_fill_valve_run_out_lo",
+    "int_melt_adapters_hollow_sc_in_lo",
+    "int_fill_adapter_sc_in_lo",
+    "anim_ghost_vent_1",
+    "anim_ghost_vent_2",
+    "anim_vent_window_1",
+    "anim_vent_window_2"
+   ],
+   "show_clipped": [
+    "int_barrel_hollow_b1",
+    "int_barrel_hollow_b2",
+    "int_barrel_hollow_b3",
+    "int_barrel_hollow_b4",
+    "int_barrel_hollow_b5",
+    "int_barrel_hollow_b6"
+   ],
+   "ghost": [
+    "anim_ghost_vent_1",
+    "anim_ghost_vent_2"
+   ],
+   "peel": {
+    "offset_m": [
+     0,
+     2.2,
+     0.0
+    ],
+    "duration_s": 1.6
+   },
+   "camera": {
+    "pos": [
+     1.75,
+     2.3,
+     -1.6
+    ],
+    "target": [
+     1.85,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 40,
+    "sensor_mm": 36,
+    "source": "shots.json S04 key 3 (frame 1161) = look A1a-S04-f1161"
+   }
+  },
+  "CUT_X2450": {
+   "label_vi": "Mặt cắt ngang B3 (X = 2 450)",
+   "plane": {
+    "normal": [
+     -1.0,
+     0.0,
+     0.0
+    ],
+    "constant": 2.45
+   },
+   "needs_interior": true,
+   "hide": [
+    "barrel_b4",
+    "barrel_cover_c4",
+    "barrel_cover_c4_hw",
+    "barrel_joint_3",
+    "barrel_joint_4",
+    "int_screw_elem_a_12",
+    "int_screw_elem_a_13",
+    "int_screw_elem_a_14",
+    "int_screw_elem_a_15",
+    "int_screw_elem_a_16",
+    "int_screw_elem_a_17",
+    "int_screw_elem_a_18",
+    "int_screw_elem_a_19",
+    "int_screw_elem_a_20",
+    "int_screw_elem_a_21",
+    "int_screw_elem_a_22",
+    "int_screw_elem_a_23",
+    "int_screw_elem_a_24",
+    "int_screw_elem_a_25",
+    "int_screw_elem_a_26",
+    "int_screw_elem_a_27",
+    "int_screw_elem_a_28",
+    "int_screw_elem_a_29",
+    "int_screw_elem_a_30",
+    "int_screw_elem_a_31",
+    "int_screw_elem_a_32",
+    "int_screw_elem_b_12",
+    "int_screw_elem_b_13",
+    "int_screw_elem_b_14",
+    "int_screw_elem_b_15",
+    "int_screw_elem_b_16",
+    "int_screw_elem_b_17",
+    "int_screw_elem_b_18",
+    "int_screw_elem_b_19",
+    "int_screw_elem_b_20",
+    "int_screw_elem_b_21",
+    "int_screw_elem_b_22",
+    "int_screw_elem_b_23",
+    "int_screw_elem_b_24",
+    "int_screw_elem_b_25",
+    "int_screw_elem_b_26",
+    "int_screw_elem_b_27",
+    "int_screw_elem_b_28",
+    "int_screw_elem_b_29",
+    "int_screw_elem_b_30",
+    "int_screw_elem_b_31",
+    "int_screw_elem_b_32",
+    "int_fill_screw_z01_feed",
+    "int_fill_screw_z02_melt",
+    "int_fill_screw_z03_vent1",
+    "int_fill_screw_z04_convey",
+    "int_fill_screw_z05_mix",
+    "int_fill_screw_z06_seal2",
+    "int_fill_screw_z07_vent2",
+    "int_fill_screw_z08_meter",
+    "int_fill_screw_z09_pump",
+    "barrel_cover_c5",
+    "barrel_cover_c5_hw",
+    "barrel_cover_c6",
+    "barrel_cover_c6_hw"
+   ],
+   "swap": {
+    "barrel_b3": [
+     "int_barrel_hollow_b3"
+    ]
+   },
+   "clip": [
+    "barrel_cable_gland_boxes_op",
+    "barrel_cw_hoses",
+    "barrel_heater_cables",
+    "barrel_heater_cables_op",
+    "barrel_heater_shells",
+    "barrel_tc_leads_op",
+    "barrel_thermocouples",
+    "util_air_tube_vac",
+    "util_air_tube_vac_clips",
+    "vac_pipe_3",
+    "vac_pipe_3_hw"
+   ],
+   "show_whole": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_screw_elem_a_01",
+    "int_screw_elem_a_02",
+    "int_screw_elem_a_03",
+    "int_screw_elem_a_04",
+    "int_screw_elem_a_05",
+    "int_screw_elem_a_06",
+    "int_screw_elem_a_07",
+    "int_screw_elem_a_08",
+    "int_screw_elem_a_09",
+    "int_screw_elem_a_10",
+    "int_screw_elem_a_11",
+    "int_screw_elem_b_01",
+    "int_screw_elem_b_02",
+    "int_screw_elem_b_03",
+    "int_screw_elem_b_04",
+    "int_screw_elem_b_05",
+    "int_screw_elem_b_06",
+    "int_screw_elem_b_07",
+    "int_screw_elem_b_08",
+    "int_screw_elem_b_09",
+    "int_screw_elem_b_10",
+    "int_screw_elem_b_11",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b",
+    "int_screw_elem_a_12_x2450",
+    "int_screw_elem_b_12_x2450",
+    "int_xsec_a_2450",
+    "int_xsec_b_2450",
+    "int_fill_screw_x2450"
+   ],
+   "show_clipped": [
+    "int_barrel_hollow_b3"
+   ],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     1.5,
+     0.4,
+     0.0
+    ],
+    "duration_s": 1.5
+   },
+   "camera": {
+    "pos": [
+     3.807,
+     1.765,
+     -0.95
+    ],
+    "target": [
+     2.45,
+     1.2,
+     0.0
+    ],
+    "lens_mm": 40,
+    "sensor_mm": 36,
+    "source": "web override (review I2): direction of shots.json still ST2, 1.75 m instead of 0.77 m and 40 mm instead of 60 mm, so the flange, the figure-8 bore and some barrel fit between the panels",
+    "replaces": "shots.json still ST2 (= S05 key 2)"
+   }
+  },
+  "CUT_X4120": {
+   "label_vi": "Mặt cắt ngang vùng chân không 2 (X = 4 120)",
+   "plane": {
+    "normal": [
+     -1.0,
+     0.0,
+     0.0
+    ],
+    "constant": 4.12
+   },
+   "needs_interior": true,
+   "hide": [
+    "barrel_cover_c2",
+    "barrel_cover_c2_hw",
+    "barrel_joint_5",
+    "vac_gauge_dome",
+    "int_screw_elem_a_22",
+    "int_screw_elem_a_23",
+    "int_screw_elem_a_24",
+    "int_screw_elem_a_25",
+    "int_screw_elem_a_26",
+    "int_screw_elem_a_27",
+    "int_screw_elem_a_28",
+    "int_screw_elem_a_29",
+    "int_screw_elem_a_30",
+    "int_screw_elem_a_31",
+    "int_screw_elem_a_32",
+    "int_screw_elem_b_22",
+    "int_screw_elem_b_23",
+    "int_screw_elem_b_24",
+    "int_screw_elem_b_25",
+    "int_screw_elem_b_26",
+    "int_screw_elem_b_27",
+    "int_screw_elem_b_28",
+    "int_screw_elem_b_29",
+    "int_screw_elem_b_30",
+    "int_screw_elem_b_31",
+    "int_screw_elem_b_32",
+    "int_fill_screw_z01_feed",
+    "int_fill_screw_z02_melt",
+    "int_fill_screw_z03_vent1",
+    "int_fill_screw_z04_convey",
+    "int_fill_screw_z05_mix",
+    "int_fill_screw_z06_seal2",
+    "int_fill_screw_z07_vent2",
+    "int_fill_screw_z08_meter",
+    "int_fill_screw_z09_pump",
+    "barrel_cover_c3",
+    "barrel_cover_c3_hw",
+    "barrel_b6"
+   ],
+   "swap": {
+    "barrel_b5": [
+     "int_barrel_hollow_b5"
+    ],
+    "barrel_vent_dome": [
+     "int_dome_hollow_2"
+    ]
+   },
+   "clip": [
+    "barrel_cable_gland_boxes_op",
+    "barrel_cw_hoses",
+    "barrel_heater_cables",
+    "barrel_heater_cables_op",
+    "barrel_heater_shells",
+    "barrel_tc_leads_op",
+    "barrel_thermocouples",
+    "vac_bellows",
+    "vac_pipe",
+    "vac_pipe_hw",
+    "vac_valve"
+   ],
+   "show_whole": [
+    "int_screw_axis_a",
+    "int_screw_axis_b",
+    "int_screw_elem_a_01",
+    "int_screw_elem_a_02",
+    "int_screw_elem_a_03",
+    "int_screw_elem_a_04",
+    "int_screw_elem_a_05",
+    "int_screw_elem_a_06",
+    "int_screw_elem_a_07",
+    "int_screw_elem_a_08",
+    "int_screw_elem_a_09",
+    "int_screw_elem_a_10",
+    "int_screw_elem_a_11",
+    "int_screw_elem_a_12",
+    "int_screw_elem_a_13",
+    "int_screw_elem_a_14",
+    "int_screw_elem_a_15",
+    "int_screw_elem_a_16",
+    "int_screw_elem_a_17",
+    "int_screw_elem_a_18",
+    "int_screw_elem_a_19",
+    "int_screw_elem_a_20",
+    "int_screw_elem_a_21",
+    "int_screw_elem_b_01",
+    "int_screw_elem_b_02",
+    "int_screw_elem_b_03",
+    "int_screw_elem_b_04",
+    "int_screw_elem_b_05",
+    "int_screw_elem_b_06",
+    "int_screw_elem_b_07",
+    "int_screw_elem_b_08",
+    "int_screw_elem_b_09",
+    "int_screw_elem_b_10",
+    "int_screw_elem_b_11",
+    "int_screw_elem_b_12",
+    "int_screw_elem_b_13",
+    "int_screw_elem_b_14",
+    "int_screw_elem_b_15",
+    "int_screw_elem_b_16",
+    "int_screw_elem_b_17",
+    "int_screw_elem_b_18",
+    "int_screw_elem_b_19",
+    "int_screw_elem_b_20",
+    "int_screw_elem_b_21",
+    "int_spline_shaft_a",
+    "int_spline_shaft_b",
+    "int_screw_elem_a_22_x4120",
+    "int_screw_elem_b_22_x4120",
+    "int_xsec_a_4120",
+    "int_xsec_b_4120",
+    "int_fill_screw_x4120"
+   ],
+   "show_clipped": [
+    "int_barrel_hollow_b5",
+    "int_dome_hollow_2"
+   ],
+   "ghost": [],
+   "peel": {
+    "offset_m": [
+     1.5,
+     0.4,
+     0.0
+    ],
+    "duration_s": 1.5
+   },
+   "camera": {
+    "pos": [
+     5.067,
+     2.021,
+     -1.278
+    ],
+    "target": [
+     4.12,
+     1.36,
+     0.0
+    ],
+    "lens_mm": 35,
+    "sensor_mm": 36,
+    "source": "web override (review I2 + M5/Codex review): direction of shots.json still ST3, 1.7 m instead of 1.13 m, 35 mm lens and target lowered to 1.36 m so both screw profiles, the whole barrel section and the bottom of the cut face fit at 1920 and 1366 px",
+    "replaces": "shots.json still ST3 (= S07 key 2)"
+   }
+  },
+  "FREE": {
+   "label_vi": "Mặt cắt tự do",
+   "plane": null,
+   "needs_interior": true,
+   "axis_default": "x",
+   "offset_default_m": {
+    "x": 3.0,
+    "y": 1.2,
+    "z": 0.0
+   },
+   "slider_range_m": {
+    "x": [
+     -5.72,
+     12.5
+    ],
+    "y": [
+     0.0,
+     6.3
+    ],
+    "z": [
+     -2.8,
+     4.9
+    ]
+   },
+   "slider_range_source": "model-contract coordinates.line_extent_m",
+   "hide": [
+    "int_fill_valve_drain_bolt",
+    "int_fill_valve_drain_port",
+    "int_sc_disc",
+    "int_sc_screens_01",
+    "int_sc_screens_02",
+    "int_sc_screens_03",
+    "int_sc_screens_04",
+    "int_sc_screens_05",
+    "int_sc_screens_06",
+    "int_sc_screens_07",
+    "int_sc_screens_08",
+    "int_sc_screens_09",
+    "int_sc_screens_10",
+    "int_sc_screens_11",
+    "int_sc_screens_12",
+    "int_fill_sc_cavities",
+    "barrel_cover_c1",
+    "barrel_cover_c1_hw",
+    "barrel_cover_c2",
+    "barrel_cover_c2_hw",
+    "barrel_cover_c3",
+    "barrel_cover_c3_hw",
+    "barrel_cover_c4",
+    "barrel_cover_c4_hw",
+    "barrel_cover_c5",
+    "barrel_cover_c5_hw",
+    "barrel_cover_c6",
+    "barrel_cover_c6_hw"
+   ],
+   "swap": {
+    "barrel_b1": [
+     "int_barrel_hollow_b1"
+    ],
+    "barrel_b2": [
+     "int_barrel_hollow_b2"
+    ],
+    "barrel_b3": [
+     "int_barrel_hollow_b3"
+    ],
+    "barrel_b4": [
+     "int_barrel_hollow_b4"
+    ],
+    "barrel_b5": [
+     "int_barrel_hollow_b5"
+    ],
+    "barrel_b6": [
+     "int_barrel_hollow_b6"
+    ],
+    "barrel_vent_dome_2": [
+     "int_dome_hollow_1"
+    ],
+    "barrel_vent_dome": [
+     "int_dome_hollow_2"
+    ],
+    "feed_throat": [
+     "int_feed_column_hollow"
+    ],
+    "feed_hopper": [],
+    "feed_flex_sleeve": [],
+    "feed_downpipe": [],
+    "melt_head_adapter": [
+     "int_head_hollow",
+     "int_fill_head"
+    ],
+    "melt_startup_valve": [
+     "int_valve_body",
+     "int_valve_bolt",
+     "int_fill_valve_in",
+     "int_fill_valve_run_bolt",
+     "int_fill_valve_run_out"
+    ],
+    "melt_sc_adapter_in": [
+     "int_melt_adapters_hollow_sc_in",
+     "int_fill_adapter_sc_in"
+    ],
+    "melt_pump_adapter_in": [
+     "int_melt_adapters_hollow_pump_in",
+     "int_fill_adapter_pump_in"
+    ],
+    "melt_pump_adapter_out": [
+     "int_melt_adapters_hollow_pump_out",
+     "int_fill_adapter_pump_out"
+    ],
+    "melt_die_adapter": [
+     "int_melt_adapters_hollow_die",
+     "int_fill_adapter_die"
+    ],
+    "melt_gear_pump": [
+     "int_pump_body_hollow",
+     "int_pump_gear_top_full",
+     "int_pump_gear_bottom_full",
+     "int_fill_pump_in",
+     "int_fill_pump_out"
+    ]
+   },
+   "show_roles": [
+    "full"
+   ],
+   "hide_roles": [
+    "cut_only",
+    "ghost",
+    "marker"
+   ],
+   "clip": "all visible parts: one shared local THREE.Plane (freePlane) set as material.clippingPlanes on the clipped variants of the visible parts; never renderer.clippingPlanes (that would also cut the ground, Box3Helper and outline hulls)",
+   "caps": "parts with closed=true or cap=force",
+   "camera": null,
+   "note": "Đợt 1 exports all interior items, so every FREE swap value resolves (no missing_target exception)."
+  }
+ }
+}

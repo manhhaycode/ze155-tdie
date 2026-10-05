@@ -1,0 +1,462 @@
+{
+"version": 1,
+"doc": "material name -> web handling. cap_color = runtime back-face cap colour (null = no runtime cap); pre-cut za_cap_* materials are drawn as exported. Đợt 1: za_fill_melt keeps the exported translucent amber (FillMaterial is Đợt 2) but gets DoubleSide; za_ghost_vent -> GhostMaterial; ze_sheet_pet / ze_melt_curtain / za_sc_* -> flat overrides (see PLAN-DOT1 §4).",
+"cap_colors": {
+"steel": "#B84533",
+"screw": "#99362A",
+"rubber": "#3A3A3A",
+"insulation": "#BFB89E",
+"melt": "#ED9E38",
+"none": null
+},
+"materials": {
+"za_bore_liner": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_cap_screw": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_cap_shaft": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_cap_steel": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_dome_inner": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_fill_melt": {
+"web": "override",
+"cap_class": "melt",
+"cap_color": "#ED9E38",
+"three_override": {
+"type": "FillMaterial (r3f-snippets §8)"
+}
+},
+"za_ghost_vent": {
+"web": "override",
+"cap_class": "none",
+"cap_color": null,
+"three_override": {
+"type": "GhostMaterial (fresnel shader, see r3f-snippets)",
+"color": "#B4D6F5",
+"alpha_face": 0.1,
+"alpha_edge": 0.75
+}
+},
+"za_screw_body": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_screw_land": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_spline_steel": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_valve_bolt": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_vent_window": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null,
+"three_override": {
+"depthWrite": false
+}
+},
+"ze_barrel_steel": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_black": {
+"web": "keep",
+"cap_class": "rubber",
+"cap_color": "#3A3A3A"
+},
+"ze_blue_cast": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_blue_drive": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_cabinet": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_cast": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_chequer": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_chrome": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_copper": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_cover": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_dark_steel": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_die_chrome": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_duct_slot": {
+"web": "keep",
+"cap_class": "rubber",
+"cap_color": "#3A3A3A"
+},
+"ze_frame": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_galv": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_gauge_face": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_glass": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null
+},
+"ze_glass_level": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null
+},
+"ze_grating": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_green": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_hose": {
+"web": "keep",
+"cap_class": "rubber",
+"cap_color": "#3A3A3A"
+},
+"ze_insul_pad": {
+"web": "keep",
+"cap_class": "insulation",
+"cap_color": "#BFB89E"
+},
+"ze_km_blue": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_lamp_green": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_lamp_white": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_melt_curtain": {
+"web": "override",
+"cap_class": "none",
+"cap_color": null,
+"three_override": {
+"type": "MeshStandardMaterial",
+"color": "#ED9E38",
+"emissive": "#7A2E00",
+"emissiveIntensity": 0.4,
+"transparent": true,
+"opacity": 0.8,
+"roughness": 0.05,
+"side": "DoubleSide"
+}
+},
+"ze_motor": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_oilmat": {
+"web": "keep",
+"cap_class": "insulation",
+"cap_color": "#BFB89E"
+},
+"ze_orange": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_pipe_blue": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_polished": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_ptfe": {
+"web": "keep",
+"cap_class": "insulation",
+"cap_color": "#BFB89E"
+},
+"ze_purge": {
+"web": "keep",
+"cap_class": "rubber",
+"cap_color": "#3A3A3A"
+},
+"ze_red": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_rubber": {
+"web": "keep",
+"cap_class": "rubber",
+"cap_color": "#3A3A3A"
+},
+"ze_screen": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null
+},
+"ze_sheet_pet": {
+"web": "override",
+"cap_class": "none",
+"cap_color": null,
+"three_override": {
+"type": "MeshPhysicalMaterial",
+"color": "#7FB7B0",
+"transparent": true,
+"opacity": 0.35,
+"roughness": 0.08,
+"metalness": 0,
+"depthWrite": false,
+"side": "DoubleSide",
+"optional_hq": {
+"transmission": 0.95,
+"thickness": 0.0008,
+"ior": 1.57
+}
+}
+},
+"ze_stainless": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_steel": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_steel_dark": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_terminal_grey": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_white": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"ze_yellow": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_cap_clad": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_cap_gear": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_cap_heater": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_cap_insul": {
+"web": "keep",
+"cap_class": "insulation",
+"cap_color": "#BFB89E"
+},
+"za_die_choker": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_die_land": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_die_manifold": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_die_preland": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_gbx_bearing": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_gbx_gear": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_gbx_gear_counter": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_gbx_gear_input": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_gear_shaft": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_gear_steel": {
+"web": "keep",
+"cap_class": "screw",
+"cap_color": "#99362A"
+},
+"za_mixer_blade": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_roll_marker": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null
+},
+"za_sc_breaker": {
+"web": "override",
+"cap_class": "steel",
+"cap_color": "#B84533",
+"three_override": {
+"type": "MeshStandardMaterial",
+"color": "#8A9099",
+"metalness": 1,
+"roughness": 0.35
+}
+},
+"za_sc_channel": {
+"web": "keep",
+"cap_class": "none",
+"cap_color": null,
+"three_override": {
+"depthWrite": false
+}
+},
+"za_sc_disc": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_sc_piston": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_sc_screenpack": {
+"web": "override",
+"cap_class": "steel",
+"cap_color": "#B84533",
+"three_override": {
+"type": "MeshStandardMaterial",
+"color": "#2A3038",
+"metalness": 0.6,
+"roughness": 0.5,
+"note": "optional dirt uniform per screen in Đợt 2"
+}
+},
+"za_scanner_accent": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_scanner_frame": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+},
+"za_scanner_head": {
+"web": "keep",
+"cap_class": "steel",
+"cap_color": "#B84533"
+}
+}
+}
