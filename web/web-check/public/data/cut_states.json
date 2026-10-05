@@ -1171,7 +1171,27 @@
     "anim_roll_markers_bottom_aa",
     "anim_roll_markers_middle_aa",
     "anim_roll_markers_top_aa",
-    "int_screw_axis_b",
+    "int_screw_axis_b"
+   ],
+   "show_clipped": [
+    "int_feed_column_hollow",
+    "int_barrel_hollow_b1",
+    "int_barrel_hollow_b2",
+    "int_barrel_hollow_b3",
+    "int_barrel_hollow_b4",
+    "int_barrel_hollow_b5",
+    "int_barrel_hollow_b6",
+    "int_dome_hollow_2",
+    "int_dome_hollow_1",
+    "int_head_hollow",
+    "int_fill_head",
+    "int_valve_body",
+    "int_valve_bolt",
+    "int_fill_valve_in",
+    "int_fill_valve_run_bolt",
+    "int_fill_valve_run_out",
+    "int_melt_adapters_hollow_sc_in",
+    "int_fill_adapter_sc_in",
     "int_screw_elem_b_01",
     "int_screw_elem_b_02",
     "int_screw_elem_b_03",
@@ -1203,27 +1223,7 @@
     "int_screw_elem_b_29",
     "int_screw_elem_b_30",
     "int_screw_elem_b_31",
-    "int_screw_elem_b_32"
-   ],
-   "show_clipped": [
-    "int_feed_column_hollow",
-    "int_barrel_hollow_b1",
-    "int_barrel_hollow_b2",
-    "int_barrel_hollow_b3",
-    "int_barrel_hollow_b4",
-    "int_barrel_hollow_b5",
-    "int_barrel_hollow_b6",
-    "int_dome_hollow_2",
-    "int_dome_hollow_1",
-    "int_head_hollow",
-    "int_fill_head",
-    "int_valve_body",
-    "int_valve_bolt",
-    "int_fill_valve_in",
-    "int_fill_valve_run_bolt",
-    "int_fill_valve_run_out",
-    "int_melt_adapters_hollow_sc_in",
-    "int_fill_adapter_sc_in",
+    "int_screw_elem_b_32",
     "int_fill_screw_z01_feed",
     "int_fill_screw_z02_melt",
     "int_fill_screw_z03_vent1",
@@ -1257,23 +1257,28 @@
    "peel": null,
    "camera": {
     "pos": [
-     6.0,
-     4.5,
-     -19.0
+     5.9,
+     6.55,
+     -25.0
     ],
     "target": [
-     6.0,
-     1.4,
+     5.9,
+     3.0,
      0.0
     ],
     "lens_mm": 35,
     "sensor_mm": 36,
-    "source": "PLAN-FLOW §2.1: side view from the operator side, slightly high, the whole material path x -0.6 ... 12.65 m between the side panels at 1920 x 1080"
+    "source": "PLAN-FLOW §2.1, tuned in the sandbox (start value pos [6.0, 4.5, -19.0], target [6.0, 1.4, 0.0] cut off the feed column and the drive): side view from the operator side, 8 deg high; the whole material path x -0.95 ... 12.65 m and the hopper top fit between the side panels and below the info panel at 1920 x 1080 and 1366 x 768"
    },
    "cut_only_from": [
     "CUT_PUMP",
     "CUT_DIE_AA"
    ],
+   "cap_colors": {
+    "steel": "#8E959C",
+    "screw": "#5C636B"
+   },
+   "cap_colors_source": "web choice (PLAN-FLOW review): neutral section colours in FLOW only, so the melt phase and heat colours read; the red steel / screw caps match the 270-300 °C end of the heat scale",
    "counts": {
     "bbox_hide": 81,
     "bbox_clip": 132,
@@ -1329,7 +1334,8 @@
       ],
       "pitch_m": 0.2535,
       "speed": "screw",
-      "phase": "pellet"
+      "phase": "pellet",
+      "fill_top_m": 1.1662
      },
      {
       "zone": "z02_melt",
@@ -1343,7 +1349,8 @@
       ],
       "pitch_m": 0.169,
       "speed": "screw",
-      "phase": "mixed"
+      "phase": "mixed",
+      "fill_top_m": 1.2839
      },
      {
       "zone": "z03_vent1",
@@ -1357,7 +1364,8 @@
       ],
       "pitch_m": 0.2535,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.1662
      },
      {
       "zone": "z04_convey",
@@ -1371,7 +1379,8 @@
       ],
       "pitch_m": 0.169,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.1915
      },
      {
       "zone": "z05_mix",
@@ -1385,7 +1394,8 @@
       ],
       "pitch_m": 0.169,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.2507
      },
      {
       "zone": "z06_seal2",
@@ -1399,7 +1409,8 @@
       ],
       "pitch_m": 0.169,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.2839
      },
      {
       "zone": "z07_vent2",
@@ -1413,7 +1424,8 @@
       ],
       "pitch_m": 0.2535,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.1578
      },
      {
       "zone": "z08_meter",
@@ -1427,7 +1439,8 @@
       ],
       "pitch_m": 0.15,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.2839
      },
      {
       "zone": "z09_pump",
@@ -1441,7 +1454,8 @@
       ],
       "pitch_m": 0.1268,
       "speed": "screw",
-      "phase": "melt"
+      "phase": "melt",
+      "fill_top_m": 1.2839
      },
      {
       "zone": "head",

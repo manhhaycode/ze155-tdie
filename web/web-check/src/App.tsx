@@ -9,6 +9,7 @@ import { InteriorLoader, LineModel } from './scene/Models'
 import { CameraRig } from './scene/CameraRig'
 import { Selection } from './scene/Selection'
 import { Rotors } from './scene/Rotors'
+import { Flow } from './scene/Flow'
 import { Ground } from './scene/Ground'
 import { r3f } from './scene/precompile'
 import { frameCounter, installHooks, ready, signalReady } from './test/hooks'
@@ -139,6 +140,7 @@ export default function App() {
         <Suspense fallback={null}>{interiorWanted && <InteriorLoader />}</Suspense>
         <Selection />
         <Rotors />
+        <Flow />
         <Bridge />
       </Canvas>
       <UiBoundary>

@@ -98,16 +98,24 @@ export function partVisible(p: Part): boolean {
   return !!p.payload && isShown(p.payload)
 }
 
-function setMaterial(mesh: THREE.Mesh, m: THREE.Material) {
+/** The only way cut code changes materials. Records the load-state material before the first change. */
+export function setMaterial(mesh: THREE.Mesh, m: THREE.Material) {
   if (!original.has(mesh)) original.set(mesh, mesh.material as THREE.Material)
   mesh.material = m
 }
 
-/** per-mesh clip variant; cap only on closed meshes with a cap colour */
-export function clipPart(p: Part, planes: THREE.Plane[], key: string) {
+/** layers on top of a state (the FLOW layer) undo their own extras here; runs at the start of every resetCuts */
+const resetHooks: (() => void)[] = []
+export function onResetCuts(fn: () => void) {
+  if (!resetHooks.includes(fn)) resetHooks.push(fn)
+}
+
+/** per-mesh clip variant; cap only on closed meshes with a cap colour (capColors: per-state colour by cap class) */
+export function clipPart(p: Part, planes: THREE.Plane[], key: string, capColors?: Record<string, string>) {
   for (const mesh of p.meshes) {
     const src = original.get(mesh) ?? (mesh.material as THREE.Material)
-    const cap = mesh.userData.zeClosed ? ((mesh.userData.zeCapColor as string | null) ?? null) : null
+    const own = (mesh.userData.zeCapColor as string | null) ?? null
+    const cap = mesh.userData.zeClosed && own ? (capColors?.[mesh.userData.zeCapClass as string] ?? own) : null
     setMaterial(mesh, cutVariant(src, planes, key, cap, !!mesh.userData.zeHatch && !!cap))
   }
 }
@@ -118,6 +126,7 @@ export function ghostPart(p: Part) {
 
 /** back to the load state: materials, visibility; no global planes */
 export function resetCuts(gl: THREE.WebGLRenderer) {
+  for (const fn of resetHooks) fn()
   for (const [mesh, m] of original) mesh.material = m
   original.clear()
   for (const [o, v] of changedVis) o.visible = v
@@ -142,6 +151,7 @@ export async function applyState(id: FixedStateId, o: ApplyOpts = {}): Promise<v
   resetCuts(reg.gl) // step 1
   const plane = statePlane(id)
   const planes = plane ? [plane] : []
+  const caps = s.cap_colors
   for (const n of s.hide) {
     const p = part(n)
     if (p) setPartVisible(p, false)
@@ -151,12 +161,12 @@ export async function applyState(id: FixedStateId, o: ApplyOpts = {}): Promise<v
     if (!e) continue
     const targets = ints.filter((i) => reg.parts.has(i))
     if (ints.length === 0 || targets.length > 0) setPartVisible(e, false)
-    else if (planes.length) clipPart(e, planes, id) // missing_target_rule (never happens in Đợt 1)
+    else if (planes.length) clipPart(e, planes, id, caps) // missing_target_rule (never happens in Đợt 1)
   }
   if (planes.length)
     for (const n of s.clip) {
       const p = part(n)
-      if (p) clipPart(p, planes, id)
+      if (p) clipPart(p, planes, id, caps)
     }
   for (const n of s.show_whole) {
     const p = part(n)
@@ -166,7 +176,7 @@ export async function applyState(id: FixedStateId, o: ApplyOpts = {}): Promise<v
     const p = part(n)
     if (!p) continue
     setPartVisible(p, true)
-    if (planes.length) clipPart(p, planes, id)
+    if (planes.length) clipPart(p, planes, id, caps)
   }
   for (const n of s.ghost) {
     const p = part(n)

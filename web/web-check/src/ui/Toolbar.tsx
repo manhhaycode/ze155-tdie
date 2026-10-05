@@ -4,6 +4,7 @@ import { use, useLayoutEffect, useRef } from 'react'
 import { dataPromise, STATE_IDS, type Axis } from '../data'
 import { useUi } from './bind'
 import { LANGS, useLang, useLoc } from './i18n'
+import { heatGradientCss } from '../scene/heat'
 import './ui.css'
 
 // FREE axes in Blender names, like the state buttons ("Y = 0" vertical along the line, "Z = 1 200" height).
@@ -30,6 +31,8 @@ export function Toolbar() {
   const setRotorMode = useUi((s) => s.setRotorMode)
   const resetView = useUi((s) => s.resetView)
   const pending = useUi((s) => s.pending)
+  const flowColor = useUi((s) => s.flowColor)
+  const setFlowColor = useUi((s) => s.setFlowColor)
   const loc = useLoc()
   const { T } = loc
   const setLang = useLang((s) => s.setLang)
@@ -55,6 +58,9 @@ export function Toolbar() {
   const [lo, hi] = ax.sign > 0 ? [lo3, hi3] : [-hi3, -lo3] // slider in the Blender coordinate
   const shown = ax.sign * free.offset + 0 // + 0: no "−0"
   const loading = interiorWanted && !interiorLoaded
+  const flow = data.states.FLOW.flow
+  // FLOW shows its own section colours (cut_states FLOW.cap_colors)
+  const capColors = state === 'FLOW' ? { ...data.materials.cap_colors, ...data.states.FLOW.cap_colors } : data.materials.cap_colors
 
   return (
     <header ref={ref} className="ze-panel ze-toolbar">
@@ -70,6 +76,7 @@ export function Toolbar() {
               data-state={id}
               aria-pressed={state === id}
               data-pending={pending === id || undefined}
+              title={loc.stateTip(id, data.states[id]) || undefined}
               onClick={() => void setStateId(id)}
             >
               {loc.state(id, data.states[id])}
@@ -133,7 +140,7 @@ export function Toolbar() {
                     title={T.toolbar.axisHint[a.ui]}
                     onClick={() => free.axis !== a.three && setFree({ axis: a.three, offset: F.offset_default_m[a.three] })}
                   >
-                    {a.ui}
+                    {T.toolbar.axisLabel[a.ui]}
                   </button>
                 ))}
               </div>
@@ -157,13 +164,63 @@ export function Toolbar() {
               <span className="ze-sep" />
             </>
           )}
+          {state === 'FLOW' && flow && (
+            <>
+              <div className="ze-group" role="group" aria-label={T.flow.colorLabel}>
+                <span className="ze-label">{T.flow.color}:</span>
+                {(['phase', 'heat'] as const).map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    className="ze-btn ze-btn-sm"
+                    data-flow-color={m}
+                    aria-pressed={flowColor === m}
+                    title={m === 'phase' ? T.flow.phaseHint : T.flow.heatHint}
+                    onClick={() => setFlowColor(m)}
+                  >
+                    {m === 'phase' ? T.flow.phase : T.flow.heat}
+                  </button>
+                ))}
+              </div>
+              <div className="ze-group ze-legend" data-flow-legend={flowColor}>
+                {flowColor === 'phase' ? (
+                  (
+                    [
+                      [flow.colors.pellet, T.flow.pellet],
+                      [flow.colors.melt, T.flow.melt],
+                      [flow.colors.sheet_clear, T.flow.sheet],
+                    ] as const
+                  ).map(([c, label]) => (
+                    <span key={label} className="ze-legend-item">
+                      <span className="ze-swatch" style={{ backgroundColor: c }} aria-hidden="true" />
+                      {label}
+                    </span>
+                  ))
+                ) : (
+                  <span className="ze-legend-item ze-mono">
+                    {flow.heat_range_c[0]} °C
+                    <span
+                      className="ze-heatbar"
+                      style={{ backgroundImage: heatGradientCss(flow.heat_stops, flow.heat_range_c[0], flow.heat_range_c[1]) }}
+                      aria-hidden="true"
+                    />
+                    {flow.heat_range_c[1]} °C
+                  </span>
+                )}
+                <span className="ze-muted ze-assumed" title={T.flow.assumedHint}>
+                  {T.flow.assumed}
+                </span>
+              </div>
+              <span className="ze-sep" />
+            </>
+          )}
           <div className="ze-group ze-legend" role="group" aria-label={T.toolbar.capLegend}>
             <span className="ze-label">{T.toolbar.capLegend}:</span>
-            {CAP_ORDER.filter((k) => data.materials.cap_colors[k]).map((k) => (
+            {CAP_ORDER.filter((k) => capColors[k]).map((k) => (
               <span key={k} className="ze-legend-item">
                 <span
                   className={`ze-swatch${k === 'steel' ? ' ze-swatch-hatch' : ''}`}
-                  style={{ backgroundColor: data.materials.cap_colors[k] ?? undefined }}
+                  style={{ backgroundColor: capColors[k] ?? undefined }}
                   aria-hidden="true"
                 />
                 {T.caps[k] ?? k}

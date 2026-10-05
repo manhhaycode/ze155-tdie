@@ -18,6 +18,8 @@ export const T = {
   /** overrides of devices.json section names / cut_states.json labels (empty: the data is Vietnamese) */
   sections: {} as Record<string, string>,
   states: {} as Record<string, string>,
+  /** state button tooltips (PLAN-FLOW §4.1); Vietnamese ones come from cut_states.json tooltip_vi */
+  stateTips: {} as Record<string, string>,
   tree: {
     title: 'Thiết bị',
     search: 'Tìm thiết bị (gõ không dấu cũng được)…',
@@ -48,12 +50,13 @@ export const T = {
   },
   toolbar: {
     states: 'Trạng thái',
-    freeAxis: 'Trục cắt',
-    // FREE axes use the Blender names of the state buttons ("Y = 0", "Z = 1 200"), review I3
+    freeAxis: 'Hướng cắt',
+    // PLAN-FLOW §4.1: the buttons say the cut direction; the Blender axis letter (review I3) stays in the tooltip
+    axisLabel: { X: 'Cắt ngang', Y: 'Bổ dọc', Z: 'Cắt nằm' } as Record<'X' | 'Y' | 'Z', string>,
     axisHint: {
-      X: 'X: dọc dòng chảy – mặt cắt ngang, như "X = 2 450"',
-      Y: 'Y: ngang máy – mặt cắt dọc đứng, như "Y = 0"',
-      Z: 'Z: chiều cao – mặt cắt nằm ngang, như "Z = 1 200"',
+      X: 'Trục X (dọc dòng chảy): cắt ngang máy, nhìn vào lát cắt ngang',
+      Y: 'Trục Y: bổ dọc máy, nhìn từ bên hông',
+      Z: 'Trục Z (chiều cao): cắt nằm ngang, nhìn từ trên xuống',
     } as Record<'X' | 'Y' | 'Z', string>,
     freeOffset: 'Vị trí',
     freeValue: (axis: string, mm: number) => `${axis} = ${fmtInt(mm)} mm`,
@@ -69,6 +72,20 @@ export const T = {
     resetView: 'Về góc nhìn của trạng thái',
     loadingInterior: 'Đang tải phần bên trong…',
     busy: 'Đang chuyển trạng thái…',
+  },
+  /** PLAN-FLOW §4.2: colour row of the FLOW state */
+  flow: {
+    color: 'Màu',
+    colorLabel: 'Tô màu dòng nhựa',
+    phase: 'Pha',
+    heat: 'Nhiệt độ',
+    phaseHint: 'Màu theo trạng thái vật liệu: hạt rắn, nhựa chảy, tấm PET',
+    heatHint: 'Màu theo nhiệt độ đặt của từng vùng (giả định)',
+    pellet: 'Hạt rắn',
+    melt: 'Nhựa chảy',
+    sheet: 'Tấm PET',
+    assumed: '* giả định',
+    assumedHint: 'Nhiệt độ là nhiệt độ đặt của vùng, lấy từ thiết kế mô phỏng; hình minh hoạ, không phải tính toán CFD',
   },
   caps: {
     steel: 'Thép (vân chéo)',
@@ -98,12 +115,22 @@ export const T_JA: Texts = {
     context: 'ロール・シート・計測（周辺設備）',
   },
   states: {
-    FULL: '全体（断面なし）',
-    CUT_FEED: '供給部 縦断面 (Y = 0)',
-    CUT_Z_BARREL: 'バレル上半分カット (Z = 1 200)',
-    CUT_X2450: 'B3 横断面 (X = 2 450)',
-    CUT_X4120: '真空ベント2 横断面 (X = 4 120)',
+    FULL: '全体',
+    CUT_FEED: '投入ホッパー',
+    CUT_Z_BARREL: 'バレル内部',
+    CUT_X2450: 'スクリュー断面',
+    CUT_X4120: '脱気部の断面',
+    FLOW: '工程：ペレット→フィルム',
     FREE: '自由断面',
+  },
+  stateTips: {
+    FULL: 'ライン全体（断面なし）',
+    CUT_FEED: 'ホッパーと投入口を縦に切断し、ペレットがバレルへ落ちる経路を表示（Y = 0）',
+    CUT_Z_BARREL: 'バレル上半分を外し、回転する2本のスクリューを表示（Z = 1 200）',
+    CUT_X2450: 'B3 バレルの横断面：8の字の穴と噛み合う2本のスクリュー（X = 2 450 mm）',
+    CUT_X4120: 'B5 の第2真空ベントの横断面：水分を吸い出す部分（X = 4 120 mm）',
+    FLOW: 'ライン全体を縦に切断し、ペレットが溶けてフィルムになるまでを表示（Y = 0）',
+    FREE: '切断方向と位置を自由に選択',
   },
   tree: {
     title: '機器',
@@ -134,11 +161,12 @@ export const T_JA: Texts = {
   },
   toolbar: {
     states: '表示状態',
-    freeAxis: '断面軸',
+    freeAxis: '切断方向',
+    axisLabel: { X: '横断', Y: '縦断', Z: '水平' },
     axisHint: {
-      X: 'X: 流れ方向 – 横断面（例 "X = 2 450"）',
-      Y: 'Y: 機械の幅方向 – 縦断面（例 "Y = 0"）',
-      Z: 'Z: 高さ方向 – 水平断面（例 "Z = 1 200"）',
+      X: 'X 軸（流れ方向）：機械を横に切断し、横断面を表示',
+      Y: 'Y 軸：機械を縦に切断し、側面から表示',
+      Z: 'Z 軸（高さ）：水平に切断し、上から表示',
     },
     freeOffset: '位置',
     freeValue: (axis: string, mm: number) => `${axis} = ${fmtInt(mm)} mm`,
@@ -154,6 +182,19 @@ export const T_JA: Texts = {
     resetView: 'この状態の視点に戻す',
     loadingInterior: '内部モデルを読み込み中…',
     busy: '状態を切り替え中…',
+  },
+  flow: {
+    color: '色',
+    colorLabel: '樹脂の色分け',
+    phase: '相',
+    heat: '温度',
+    phaseHint: '材料の状態で色分け：ペレット、溶融樹脂、PETシート',
+    heatHint: '各ゾーンの設定温度で色分け（仮定）',
+    pellet: 'ペレット',
+    melt: '溶融樹脂',
+    sheet: 'PETシート',
+    assumed: '* 仮定',
+    assumedHint: '温度は各ゾーンの設定温度（シミュレーション設計値）。説明用の図で、CFD 計算ではありません',
   },
   caps: {
     steel: '鋼（斜線）',

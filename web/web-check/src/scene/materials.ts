@@ -52,6 +52,7 @@ export function prepareMesh(mesh: THREE.Mesh, meta: NodeRec | null, data: Data) 
   if (!rec) unknownMaterials.add(name)
   const closed = effectiveClosed(meta)
   mesh.userData.zeCapColor = rec?.cap_color ?? null
+  mesh.userData.zeCapClass = rec?.cap_class ?? null
   mesh.userData.zeHatch = rec?.cap_class === 'steel'
   mesh.userData.zeClosed = closed
 

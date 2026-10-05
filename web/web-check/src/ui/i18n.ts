@@ -82,6 +82,8 @@ export interface Loc {
   iface(d: DeviceRec, i: number): string | undefined
   section(s: SectionRec): string
   state(id: string, s: CutState | FreeState): string
+  /** PLAN-FLOW §4.1 tooltip of a state button */
+  stateTip(id: string, s: CutState | FreeState): string
   compare(a: DeviceRec, b: DeviceRec): number
 }
 
@@ -94,6 +96,7 @@ const VI: Loc = {
   iface: (d, i) => d.connects_to?.[i]?.interface_vi,
   section: (s) => s.name_vi,
   state: (_id, s) => s.label_vi,
+  stateTip: (_id, s) => s.tooltip_vi ?? '',
   compare: byNameVi,
 }
 
@@ -115,6 +118,7 @@ function makeJa(ja: DevicesJa | null): Loc {
     iface: (d, i) => tr(d)?.connects?.[i] || d.connects_to?.[i]?.interface_vi,
     section: (s) => T_JA.sections[s.group] ?? s.name_vi,
     state: (id, s) => T_JA.states[id] ?? s.label_vi,
+    stateTip: (id, s) => T_JA.stateTips[id] ?? s.tooltip_vi ?? '',
     compare: (a, b) => collatorJa.compare(name(a), name(b)),
   }
 }

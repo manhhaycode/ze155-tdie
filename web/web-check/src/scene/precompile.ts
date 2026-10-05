@@ -3,6 +3,7 @@ import { FIXED_STATE_IDS } from '../data'
 import { reg } from './rig'
 import { applyState } from './Cuts'
 import { enterFree } from './FreeClip'
+import { enterFlowLayer } from './Flow'
 import { enqueue } from './stateQueue'
 import { useUi } from '../store'
 
@@ -26,6 +27,7 @@ export function enqueuePrecompile(): Promise<void> {
       for (const id of FIXED_STATE_IDS) {
         if (id === 'FULL') continue
         await applyState(id, { camera: false })
+        if (id === 'FLOW') enterFlowLayer() // fill, sheet and pellet programs (PLAN-FLOW §5)
         await gl.compileAsync(scene, camera)
       }
       const f = useUi.getState().free
@@ -35,7 +37,10 @@ export function enqueuePrecompile(): Promise<void> {
       // re-apply the state the user is in now (AMENDMENTS I2)
       const s = useUi.getState()
       if (s.state === 'FREE') await enterFree(s.free.axis, s.free.offset, s.free.flip)
-      else await applyState(s.state, { camera: false })
+      else {
+        await applyState(s.state, { camera: false })
+        if (s.state === 'FLOW') enterFlowLayer()
+      }
       setFrameloop(loop === 'never' ? 'always' : loop)
       precompileStats.ran = true
       precompileStats.ms = performance.now() - t0

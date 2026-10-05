@@ -97,9 +97,11 @@ LABEL_OVERRIDES = {
 FLOW_PLANE = {'normal': [0.0, 0.0, 1.0], 'constant': 0.0}
 FLOW_CUT_ONLY_FROM = ['CUT_PUMP', 'CUT_DIE_AA']  # their pre-cut cut_only nodes are shown in FLOW too
 FLOW_FREE_SWAPS = ['barrel_vent_dome', 'barrel_vent_dome_2', 'melt_head_adapter', 'melt_startup_valve', 'melt_sc_adapter_in']
-FLOW_CAMERA = {'pos': [6.0, 4.5, -19.0], 'target': [6.0, 1.4, 0.0], 'lens_mm': 35,
-               'source': 'PLAN-FLOW §2.1: side view from the operator side, slightly high, the whole material path '
-                         'x -0.6 ... 12.65 m between the side panels at 1920 x 1080'}
+FLOW_CAMERA = {'pos': [5.9, 6.55, -25.0], 'target': [5.9, 3.0, 0.0], 'lens_mm': 35,
+               'source': 'PLAN-FLOW §2.1, tuned in the sandbox (start value pos [6.0, 4.5, -19.0], target [6.0, 1.4, 0.0] '
+                         'cut off the feed column and the drive): side view from the operator side, 8 deg high; the whole '
+                         'material path x -0.95 ... 12.65 m and the hopper top fit between the side panels and below the '
+                         'info panel at 1920 x 1080 and 1366 x 768'}
 # §2.2 step 3: closed parts crossing the plane whose volume fills > 80 % of their bbox. Clipped, they become
 # large hatched slabs (lesson of review I1), so these are hidden; each entry says why.
 FLOW_SOLID_HIDE = {
@@ -107,8 +109,17 @@ FLOW_SOLID_HIDE = {
     'ctrl_machine_cabinet': 'solid cabinet box in front of the barrel; its cap would hide the line behind it',
     'melt_drain_chute': 'solid chute block under the start-up valve; its cap would hide the valve section',
 }
-# solids that stay clipped after the visual check of §7 step 2 (any other solid prints a warning)
-FLOW_SOLID_CLIP = {}
+# FLOW only: steel and screw sections in neutral greys (runtime caps by cap class, pre-cut za_cap_* materials)
+FLOW_CAP_COLORS = {'steel': '#8E959C', 'screw': '#5C636B'}
+# solids that stay clipped after the visual check of §7 step 2 (any other solid prints a warning). Checked in the
+# sandbox at the FLOW preset and close up (2026-10-06): none of them lies in front of the material path.
+_DRIVE = 'drive train upstream of the feed (x < 0): its section reads as the cut drive, no melt path behind it'
+FLOW_SOLID_CLIP = {
+    'drive_motor_body': _DRIVE, 'drive_motor_cooler': _DRIVE, 'drive_motor_fan_cover': _DRIVE,
+    'gbx_housing': _DRIVE, 'lantern_body': _DRIVE + ' (screw B spline shaft stays hidden inside it)',
+    'frame_drive_body': 'base frame below the drive; its section is under the line, never over the barrel',
+    'frame_process_body': 'base frame below the barrel; its section is under the barrel and the melt path',
+}
 # exterior parts hidden although the bbox rule keeps them (one line of reason each)
 FLOW_EXTRA_HIDE = {
     'melt_screen_changer_logo_in': 'logo plate of the screen changer body, which is a ghost in FLOW (as in GHOST_SC)',
@@ -449,13 +460,15 @@ def build_flow(states, files, con, names, key):
     show_whole = []
     for sid in FLOW_CUT_ONLY_FROM:
         show_whole += whole(D[sid]['show_whole'], f'{sid}.show_whole')
-    show_whole += names(['int_screw_axis_b'] + screw_b, 'FLOW.show_whole')
+    # screw B (axis 71 mm behind the plane, flight radius 83 mm) pokes 12 mm through the cut and would fill the
+    # whole bore opening in front of the melt section; clipped, it loses only its flight tips and keeps turning
+    show_whole += names(['int_screw_axis_b'], 'FLOW.show_whole')
     hollow = [v for k in ['feed_throat'] + [f'barrel_b{i}' for i in range(1, 7)] + FLOW_FREE_SWAPS for v in swap[k]]
     sc = ['int_sc_disc'] + [f'int_sc_screens_{i:02d}' for i in range(1, 13)] + \
          ['int_sc_channels', 'int_sc_backflush_piston', 'int_fill_sc', 'int_fill_sc_cavities']
     fills = [f'int_fill_screw_{z}' for z in ('z01_feed', 'z02_melt', 'z03_vent1', 'z04_convey', 'z05_mix', 'z06_seal2',
                                              'z07_vent2', 'z08_meter', 'z09_pump')]
-    show_clipped = names(hollow + fills + sc, 'FLOW.show_clipped')
+    show_clipped = names(hollow + screw_b + fills + sc, 'FLOW.show_clipped')
     ghost = names(D['GHOST_SC']['ghost'], 'GHOST_SC.ghost')
     hide += names(['int_screw_axis_a'] + screw_a + ['int_fill_valve_drain_bolt', 'int_fill_valve_drain_port'], 'FLOW.hide')
     hide += whole(D['CUT_DIE_AA']['hide'], 'CUT_DIE_AA.hide')
@@ -467,6 +480,13 @@ def build_flow(states, files, con, names, key):
 
     fl = dot2['fills']
     zones = [{k: z[k] for k in ('zone', 'x_m', 'temp_c', 'pitch_m', 'speed', 'phase') if k in z} for z in fl['zones']]
+    an_int = files['interior']['nodes']
+    for z in zones:  # melt level of the screw zones (the fills of the starve-fed zones are a bed, not the full bore)
+        n = f'int_fill_screw_{z["zone"]}'
+        if z['speed'] == 'screw':
+            if n not in an_int:
+                raise DataError(f'FLOW: screw zone {z["zone"]} has no fill node {n}')
+            z['fill_top_m'] = round(an_int[n]['bbox'][4], 4)
     rpm = abs(next(r for r in con['rotors'] if r['node'] == 'rot_screw_b')['rpm'])
     sh = fl['sheet']
     L1 = round(math.pi * 0.4005, 4)
@@ -523,6 +543,9 @@ def build_flow(states, files, con, names, key):
             'ghost': ghost, 'peel': None, 'camera': {**{k: FLOW_CAMERA[k] for k in ('pos', 'target', 'lens_mm')}, 'sensor_mm': 36,
                                                      'source': FLOW_CAMERA['source']},
             'cut_only_from': FLOW_CUT_ONLY_FROM,
+            'cap_colors': FLOW_CAP_COLORS,
+            'cap_colors_source': 'web choice (PLAN-FLOW review): neutral section colours in FLOW only, so the melt phase '
+                                 'and heat colours read; the red steel / screw caps match the 270-300 °C end of the heat scale',
             'counts': counts,
             'flow': flow}
 

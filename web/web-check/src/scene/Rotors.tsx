@@ -9,8 +9,8 @@ const TAU = Math.PI * 2
 
 export function Rotors() {
   useFrame((_, dt) => {
-    const mode = useUi.getState().rotorMode
-    if (mode === 'off') return
+    const { rotorMode: mode, frozen } = useUi.getState()
+    if (mode === 'off' || frozen) return
     const step = Math.min(dt, 0.1)
     for (const r of reg.rotors) {
       if (!r.ready) continue

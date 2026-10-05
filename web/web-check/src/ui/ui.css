@@ -77,6 +77,8 @@
 .ze-check input { accent-color: var(--ze-sel); }
 .ze-legend-item { display: inline-flex; align-items: center; gap: 4px; margin-right: 6px; }
 .ze-swatch { width: 14px; height: 14px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.5); }
+.ze-heatbar { display: inline-block; width: 120px; height: 10px; margin: 0 2px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.5); }
+.ze-assumed { font-size: 12px; cursor: help; }
 .ze-swatch-hatch {
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.45) 0 1.5px, transparent 1.5px 4px);
 }

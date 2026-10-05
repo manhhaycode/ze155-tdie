@@ -6,9 +6,12 @@ import { enqueue } from './scene/stateQueue'
 import { applyState } from './scene/Cuts'
 import { enterFree, setFreePlane } from './scene/FreeClip'
 import { applyPreset, zoomToBox } from './scene/CameraRig'
+import { enterFlowLayer } from './scene/Flow'
 
 // PLAN-DOT1 §4.2.9 (zustand 5). Builder A's UI codes against this interface; extras are marked "B extra".
 export type RotorMode = 'off' | 'slow' | 'real'
+/** PLAN-FLOW §4.2: colour of the melt in FLOW (material phase, or zone set-point temperature) */
+export type FlowColor = 'phase' | 'heat'
 export interface FreeParams { axis: Axis; offset: number; flip: boolean }
 
 export interface Ui {
@@ -28,6 +31,9 @@ export interface Ui {
   cutVersion: number
   /** B extra: true once line.glb is rigged and the first frame is drawn */
   ready: boolean
+  flowColor: FlowColor
+  /** rotors, pellets and FLOW stripes stand still (tests and screenshots: __ze.freeze) */
+  frozen: boolean
   hover(id: string | null): void
   select(id: string | null, part?: string | null): void
   clear(): void
@@ -35,6 +41,8 @@ export interface Ui {
   setStateId(id: StateId): Promise<void>
   setFree(p: Partial<FreeParams>): void
   setRotorMode(m: RotorMode): void
+  setFlowColor(m: FlowColor): void
+  setFrozen(v: boolean): void
   requestInterior(): void
   setInteriorLoaded(v: boolean): void
   /** B extra: "Về góc nhìn của trạng thái": camera preset of the current fixed state (FREE: of prevFixed) */
@@ -53,6 +61,7 @@ export function changeState(id: StateId, o: ChangeOpts = {}): Promise<void> {
         await enterFree(f.axis, f.offset, f.flip)
       } else {
         await applyState(id, { camera: o.camera, smooth: o.smooth })
+        if (id === 'FLOW') enterFlowLayer()
       }
       useUi.setState((s) => ({
         state: id,
@@ -79,6 +88,8 @@ export const useUi = create<Ui>()((set, get) => ({
   pending: null,
   cutVersion: 0,
   ready: false,
+  flowColor: 'phase',
+  frozen: false,
 
   hover: (id) => set({ hovered: id }),
   select: (id, part = null) => set({ selected: id, selectedPart: id ? (part ?? null) : null }),
@@ -104,6 +115,8 @@ export const useUi = create<Ui>()((set, get) => ({
     setFreePlane(f.axis, f.offset, f.flip)
   },
   setRotorMode: (m) => set({ rotorMode: m }),
+  setFlowColor: (m) => set({ flowColor: m }),
+  setFrozen: (v) => set({ frozen: v }),
   requestInterior: () => {
     if (get().interiorWanted) return
     reg.stats.interior_requested_at = performance.now()
