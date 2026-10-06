@@ -460,6 +460,254 @@ def seed(devices, lines_dir=LINES):
     return groups
 
 
+# ---------------------------------------------------------------- check (PLAN-PROV §2.4)
+LEVELS = ('assumption', 'derived', 'sourced')  # weakest first
+PUBLIC_EVIDENCE = ('claim', 'figure', 'photo')
+DENY_STRINGS = ('22_3_160', 'ideathon', '/Users/', '~/')
+DEVICE_MAX_BYTES = 64 * 1024
+NUMBER = re.compile(r'(?<![A-Za-z\d,.])\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d])|(?<![A-Za-z\d,.])\d+(?:,\d+)?')
+KANA_KANJI = re.compile(r'[぀-ヿ㐀-鿿]')
+VI_TONES = {'̀', '́', '̃', '̉', '̣'}
+
+
+def numbers_in(text):
+    """the stand-alone numbers of a line ('1 890' -> '1890'); a number right after a Latin letter is a name (B5, M24)"""
+    return {re.sub(r'[   ]', '', m) for m in NUMBER.findall(text)}
+
+
+def has_vietnamese(text):
+    import unicodedata
+    for ch in text:
+        if ch in 'ăâđêôơưĂÂĐÊÔƠƯ':
+            return True
+        if any(c in VI_TONES for c in unicodedata.normalize('NFD', ch)[1:]) and ch.isalpha() and ord(ch) < 0x2000:
+            return True
+    return False
+
+
+def weakest(facts):
+    return min((f['level'] for f in facts), key=LEVELS.index)
+
+
+def load_entries(lines_dir):
+    """{key: (group, entry)}, plus the duplicate keys"""
+    out, dup = {}, []
+    for f in sorted(os.listdir(lines_dir)):
+        if not f.endswith('.json'):
+            continue
+        doc = load_json(os.path.join(lines_dir, f))
+        for k, e in doc['lines'].items():
+            if k in out:
+                dup.append(k)
+            out[k] = (doc['group'], e)
+    return out, dup
+
+
+def check(devices, lines_dir, reg, i18n, strict):
+    fails, warns = [], []
+
+    def fail(code, key, detail, device=None):
+        fails.append({'code': code, 'key': key, 'device': device, 'detail': detail})
+
+    entries, dup = load_entries(lines_dir)
+    for k in dup:
+        fail('P01', k, 'key in two group files')
+    used = set()
+    for ln in device_lines(devices):
+        k = line_key(ln['vi'])
+        used.add(k)
+        if k not in entries:
+            fail('P01', k, f'no entry for {use_id(ln)}: {ln["vi"][:60]}', ln['device'])
+    for k, (g, e) in entries.items():
+        vi = e.get('vi', '')
+        if line_key(vi) != k:
+            fail('P02', k, f'text changed (key of the text is {line_key(vi)}): {vi[:60]}')
+        if strict and k not in used:
+            fail('P03', k, f'no device shows this line any more: {vi[:60]}')
+        status = e.get('status', 'draft')
+        if strict and status != 'verified':
+            fail('P04', k, f'status {status}')
+        if status == 'draft':
+            continue
+        facts = e.get('facts') or []
+        if not facts:
+            fail('P05', k, 'no facts')
+            continue
+        for i, f in enumerate(facts):
+            where = f'fact {i}'
+            if f.get('level') not in LEVELS:
+                fail('P05', k, f'{where}: level {f.get("level")!r}')
+                continue
+            if not f.get('text_vi'):
+                fail('P05', k, f'{where}: no text_vi')
+            kinds = []
+            for r in f.get('refs') or []:
+                rec = resolve(r, reg)
+                if rec is None:
+                    fail('P06', k, f'{where}: ref {r!r} does not resolve (unknown, denied or pin not unique)')
+                else:
+                    kinds.append(rec['kind'])
+                    if f['level'] == 'sourced' and rec['kind'] == 'claim' and isinstance(rec['value'], (int, float)):
+                        v = f'{rec["value"]:g}'.replace('.', ',')
+                        if v not in numbers_in(f['text_vi']) and len(v) > 1:
+                            warns.append({'code': 'W1', 'key': k, 'detail': f'{where}: {r} value {v} not in the fact text'})
+                    if f['level'] == 'sourced' and rec['kind'] == 'photo' and not rec['brand'].startswith(('ZE', 'KM')):
+                        warns.append({'code': 'W2', 'key': k, 'detail': f'{where}: {r} shows another brand ({rec["brand"][:40]})'})
+            if f['level'] == 'sourced' and not any(x in PUBLIC_EVIDENCE for x in kinds):
+                fail('P07', k, f'{where}: sourced needs a claim, catalogue figure or photo')
+            if f['level'] == 'derived' and not f.get('refs'):
+                fail('P08', k, f'{where}: derived needs a ref')
+            if f['level'] == 'assumption' and not (f.get('reason_vi') and f.get('reason_ja')):
+                fail('P09', k, f'{where}: assumption needs reason_vi and reason_ja')
+            for fld in ('text_ja', 'reason_ja'):
+                if fld == 'reason_ja' and not f.get('reason_vi'):
+                    continue
+                t, vi_t = f.get(fld) or '', f.get(fld.replace('_ja', '_vi')) or ''
+                # a language-neutral VI text (a formula) may stay as it is
+                neutral = t == vi_t and not has_vietnamese(vi_t)
+                if not t or has_vietnamese(t) or not (KANA_KANJI.search(t) or neutral):
+                    fail('P10', k, f'{where}: {fld} is missing or not Japanese: {t[:40]!r}')
+            blob = json.dumps(f, ensure_ascii=False)
+            for s in DENY_STRINGS:
+                if s in blob:
+                    fail('P13', k, f'{where}: contains {s!r}')
+        if strict:
+            covered = set(e.get('free_numbers') or [])
+            for f in facts:
+                covered |= numbers_in(f.get('text_vi', ''))
+            missing = sorted(numbers_in(vi) - covered)
+            if missing:
+                fail('P11', k, f'numbers without a fact: {", ".join(missing)}')
+            for f in facts:
+                for r in f.get('refs') or []:
+                    rec = resolve(r, reg)
+                    if rec and rec['kind'] != 'claim' and not i18n_for(r, rec, i18n).get('ja_ok'):
+                        fail('P14', k, f'{r}: no Japanese title/caption in web/prov/sources.i18n.json')
+    return {'ok': not fails, 'failures': fails, 'warnings': warns}
+
+
+def i18n_for(ref, rec, i18n):
+    """sources.i18n.json entries of a ref: the pinned ref first, then its base id"""
+    out = dict(i18n.get(ref.partition('|')[0], {}))
+    out.update(i18n.get(ref, {}))
+    need = {'doc': 'title_ja', 'figure': 'caption_ja', 'photo': 'shows_ja'}.get(rec['kind'])
+    out['ja_ok'] = bool(need is None or out.get(need))
+    return out
+
+
+# ---------------------------------------------------------------- build (PLAN-PROV §2.3)
+OUT = os.path.join(BUILD, 'prov', 'out')
+IMG_SIZES = {'t': (480, 78), 'l': (1280, 82)}
+
+
+def make_images(rec, img_dir):
+    """thumbnail and large JPEG of a figure/photo; rebuilt only when the source is newer"""
+    try:
+        from PIL import Image
+    except ImportError:
+        raise SystemExit('make_prov build needs Pillow (python3 -m pip install --user pillow), or use --no-images')
+    src = os.path.join(WS, rec['file'])
+    if not os.path.isfile(src):
+        raise SystemExit(f'P12: image missing: {rec["file"]}')
+    os.makedirs(img_dir, exist_ok=True)
+    dims = {}
+    for tag, (edge, q) in IMG_SIZES.items():
+        dst = os.path.join(img_dir, f'{rec["id"]}.{tag}.jpg')
+        if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+            with Image.open(src) as im:
+                im = im.convert('RGBA')
+                bg = Image.new('RGB', im.size, (255, 255, 255))
+                bg.paste(im, mask=im.split()[3])
+                bg.thumbnail((edge, edge), Image.LANCZOS)
+                bg.save(dst, 'JPEG', quality=q, optimize=True, progressive=True)
+        with Image.open(dst) as im:
+            dims[tag] = im.size
+    return dims
+
+
+def public_source(ref, reg, i18n, img_dir, images):
+    rec = resolve(ref, reg)
+    tr = i18n_for(ref, rec, i18n)
+    tr.pop('ja_ok')
+    out = {k: v for k, v in rec.items() if k not in ('file', 'topic', 'id', 'brand')}
+    out.update(tr)
+    if rec['kind'] in ('figure', 'photo'):
+        out['thumb'] = f'/data/prov/img/{rec["id"]}.t.jpg'
+        out['large'] = f'/data/prov/img/{rec["id"]}.l.jpg'
+        if images:
+            d = make_images(rec, img_dir)
+            out['tw'], out['th'] = d['t']
+            out['w'], out['h'] = d['l']
+    return out
+
+
+def build(devices, lines_dir, reg, i18n, strict, out_dir=OUT, images=True):
+    rep = check(devices, lines_dir, reg, i18n, strict)
+    if not rep['ok']:
+        return rep
+    entries, _ = load_entries(lines_dir)
+    if os.path.isdir(out_dir):
+        for f in os.listdir(out_dir):
+            if f.endswith('.json'):
+                os.remove(os.path.join(out_dir, f))
+    os.makedirs(out_dir, exist_ok=True)
+    img_dir = os.path.join(out_dir, 'img')
+    by_dev, cache = {}, {}
+    for ln in device_lines(devices):
+        by_dev.setdefault(ln['device'], []).append(ln)
+    for dev, lns in by_dev.items():
+        lines, refs = [], []
+        for ln in lns:
+            _g, e = entries[line_key(ln['vi'])]
+            on = e.get('status') in ('curated', 'verified') and e.get('facts')
+            facts = []
+            for f in (e['facts'] if on else []):
+                facts.append({k: f[k] for k in ('level', 'text_vi', 'text_ja', 'refs', 'reason_vi', 'reason_ja') if f.get(k)})
+                refs += [r for r in f.get('refs') or [] if r not in refs]
+            lines.append({'kind': ln['kind'], 'index': ln['index'], 'vi': ln['vi'],
+                          'level': weakest(e['facts']) if on else None, 'facts': facts})
+        sources = {}
+        for r in refs:
+            if r not in cache:
+                cache[r] = public_source(r, reg, i18n, img_dir, images)
+            sources[r] = cache[r]
+        doc = {'version': 1, 'device_id': dev, 'lines': lines, 'sources': sources}
+        blob = json.dumps(doc, ensure_ascii=False, sort_keys=True)
+        for s in DENY_STRINGS:
+            if s in blob:
+                rep['failures'].append({'code': 'P13', 'key': None, 'device': dev, 'detail': f'published data contains {s!r}'})
+        if len(blob.encode('utf-8')) > DEVICE_MAX_BYTES:
+            rep['failures'].append({'code': 'P15', 'key': None, 'device': dev, 'detail': f'{len(blob)} bytes'})
+        with open(os.path.join(out_dir, f'{dev}.json'), 'w', encoding='utf-8') as f:
+            f.write(blob)
+    if images and os.path.isdir(img_dir):
+        keep = {f'{s["thumb"].rsplit("/", 1)[1]}' for s in cache.values() if 'thumb' in s} | \
+               {f'{s["large"].rsplit("/", 1)[1]}' for s in cache.values() if 'large' in s}
+        for f in os.listdir(img_dir):
+            if f not in keep:
+                os.remove(os.path.join(img_dir, f))
+    rep['ok'] = not rep['failures']
+    rep['devices'] = len(by_dev)
+    return rep
+
+
+def coverage(devices, lines_dir):
+    entries, _ = load_entries(lines_dir)
+    cov = {}
+    for k, (g, e) in entries.items():
+        c = cov.setdefault(g, {'lines': 0, 'uses': 0, 'line_level': {}, 'facts': {}})
+        c['lines'] += 1
+        c['uses'] += len(e.get('used_by', []))
+        on = e.get('status') != 'draft' and e.get('facts')
+        lv = weakest(e['facts']) if on else 'unknown'
+        c['line_level'][lv] = c['line_level'].get(lv, 0) + 1
+        for f in (e['facts'] if on else []):
+            c['facts'][f['level']] = c['facts'].get(f['level'], 0) + 1
+        c.setdefault('status', {})
+        c['status'][e.get('status', 'draft')] = c['status'].get(e.get('status', 'draft'), 0) + 1
+    return cov
+
+
 # ---------------------------------------------------------------- CLI
 def write_json(path, obj, indent=None):
     path = os.path.abspath(path)
@@ -497,17 +745,60 @@ def cmd_seed(a):
     print(f'make_prov seed: {n} entries, {uses} uses, {len(groups)} group files -> {os.path.relpath(a.lines, WEB)}')
 
 
+def report(rep, a):
+    rep = dict(rep, strict=a.strict, lines=os.path.relpath(a.lines, WEB))
+    write_json(os.path.join(BUILD, 'reports', 'prov_check.json'), rep, indent=1)
+    cov = coverage(load_devices(a.devices), a.lines)
+    write_json(os.path.join(BUILD, 'reports', 'prov_coverage.json'), cov, indent=1)
+    codes = {}
+    for f in rep['failures']:
+        codes[f['code']] = codes.get(f['code'], 0) + 1
+    tot = {}
+    for c in cov.values():
+        for lv, n in c['line_level'].items():
+            tot[lv] = tot.get(lv, 0) + n
+    print(f'make_prov {a.cmd}{" --strict" if a.strict else ""}: lines {tot} | failures {codes or 0} | warnings {len(rep["warnings"])}')
+    for f in rep['failures'][:25]:
+        print(f'  {f["code"]} {f["key"]} {f.get("device") or ""} {f["detail"]}')
+    if len(rep['failures']) > 25:
+        print(f'  ... {len(rep["failures"]) - 25} more in build/reports/prov_check.json')
+    sys.exit(0 if rep['ok'] else 1)
+
+
+def load_i18n():
+    return load_json(os.path.join(WEB, 'prov', 'sources.i18n.json'))
+
+
+def cmd_check(a):
+    report(check(load_devices(a.devices), a.lines, build_registry(), load_i18n(), a.strict), a)
+
+
+def cmd_build(a):
+    reg = cmd_registry(a)
+    rep = build(load_devices(a.devices), a.lines, reg, load_i18n(), a.strict, OUT, images=not a.no_images)
+    if rep['ok']:
+        imgs = os.listdir(os.path.join(OUT, 'img')) if os.path.isdir(os.path.join(OUT, 'img')) else []
+        size = sum(os.path.getsize(os.path.join(OUT, 'img', f)) for f in imgs)
+        print(f'make_prov build: {rep["devices"]} device files, {len(imgs)} images ({size / 1e6:.1f} MB) -> {os.path.relpath(OUT, WEB)}')
+    report(rep, a)
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest='cmd', required=True)
     sub.add_parser('registry')
     sub.add_parser('selftest')
     s = sub.add_parser('seed')
-    for p in (s,):
+    c = sub.add_parser('check')
+    b = sub.add_parser('build')
+    for p in (s, c, b):
         p.add_argument('--devices', default=DEVICES)
         p.add_argument('--lines', default=LINES)
+    for p in (c, b):
+        p.add_argument('--strict', action='store_true', help='every line verified, every number covered, Japanese titles (P03, P04, P11, P14)')
+    b.add_argument('--no-images', action='store_true')
     a = ap.parse_args()
-    {'registry': cmd_registry, 'selftest': cmd_selftest, 'seed': cmd_seed}[a.cmd](a)
+    {'registry': cmd_registry, 'selftest': cmd_selftest, 'seed': cmd_seed, 'check': cmd_check, 'build': cmd_build}[a.cmd](a)
 
 
 if __name__ == '__main__':
