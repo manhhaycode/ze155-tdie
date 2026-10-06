@@ -724,7 +724,29 @@
 "device_id": "ctx_roll_bottom",
 "kind": "part",
 "closed": false,
-"cap": "force"
+"cap": "force",
+"section": {
+"shape": "revolve_z",
+"centre": [
+9.776,
+0.799,
+0.0
+],
+"profile": [
+[
+1.29,
+0.399
+],
+[
+1.309,
+0.189
+],
+[
+1.599,
+0.149
+]
+]
+}
 },
 "ctx_roll_cable_glands": {
 "file": "line",
@@ -767,7 +789,29 @@
 "device_id": "ctx_roll_middle",
 "kind": "part",
 "closed": false,
-"cap": "force"
+"cap": "force",
+"section": {
+"shape": "revolve_z",
+"centre": [
+9.776,
+1.601,
+0.0
+],
+"profile": [
+[
+1.29,
+0.399
+],
+[
+1.309,
+0.189
+],
+[
+1.599,
+0.149
+]
+]
+}
 },
 "ctx_roll_rails": {
 "file": "line",
@@ -798,7 +842,29 @@
 "device_id": "ctx_roll_top",
 "kind": "part",
 "closed": false,
-"cap": "force"
+"cap": "force",
+"section": {
+"shape": "revolve_z",
+"centre": [
+9.776,
+2.403,
+0.0
+],
+"profile": [
+[
+1.29,
+0.399
+],
+[
+1.309,
+0.189
+],
+[
+1.599,
+0.149
+]
+]
+}
 },
 "ctx_roll_unions": {
 "file": "line",

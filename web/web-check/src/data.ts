@@ -18,7 +18,12 @@ export interface NodeRec {
   states?: string[]
   slice?: 1 | 2
   moves_in_dot2?: string
+  /** review-flow-01 M3: the cap of this solid is drawn on the cut plane inside this profile (Cuts.ts, Picking.ts) */
+  section?: SolidSectionRec
 }
+
+/** solid of revolution about three z: exactly 3 [half length, radius] bands (m), 1 mm inside the surface */
+export interface SolidSectionRec { shape: 'revolve_z'; centre: V3; profile: [number, number][] }
 
 export interface CameraPreset { pos: V3; target: V3; lens_mm: number; sensor_mm: number; source?: string }
 

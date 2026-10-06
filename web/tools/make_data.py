@@ -289,6 +289,13 @@ def build(analysis):
         info[e].update(role='pivot', states=[])
     roll_dev = {'anim_roll_axis_bottom': 'ctx_roll_bottom', 'anim_roll_axis_middle': 'ctx_roll_middle', 'anim_roll_axis_top': 'ctx_roll_top'}
     force_cap = {'ctx_roll_bottom', 'ctx_roll_middle', 'ctx_roll_top'}
+    # review-flow-01 M3: the chill rolls are solids of revolution about three z. Their runtime cap is drawn ON the cut
+    # plane where the plane point is inside this profile (web Cuts.ts, Picking.ts), so the roll stand that overlaps
+    # the journal volume no longer shows through the section. [half length, radius] in m, 1 mm inside the surface;
+    # measured from build/models/line.glb ctx_roll_*_1: body r 0.400 to |z| 1.292 (0.392 at 1.300), shoulder r 0.190
+    # to 1.310, journal r 0.150 to 1.600. check_glb.mjs verify casts rays from the axis to check it stays inside the
+    # solid. The centres come from the same bboxes as FLOW flow.sheet.rolls_xy (keep the two in step).
+    roll_section_profile = [[1.29, 0.399], [1.309, 0.189], [1.599, 0.149]]
     an_line, an_int = files['line']['nodes'], files['interior']['nodes']
     nodes = {}
     for n in L:
@@ -304,6 +311,10 @@ def build(analysis):
         nodes[n] = {'file': 'line', 'device_id': o2d[n], 'kind': 'part', 'closed': an_line[n]['closed']}
         if n in force_cap:
             nodes[n]['cap'] = 'force'
+            b = an_line[n]['bbox']
+            nodes[n]['section'] = {'shape': 'revolve_z',
+                                   'centre': [round((b[0] + b[3]) / 2, 4), round((b[1] + b[4]) / 2, 4), round((b[2] + b[5]) / 2, 4)],
+                                   'profile': roll_section_profile}
     for n in I:
         if n not in info:
             raise DataError(f'interior node {n} has no interior_export item')
@@ -662,6 +673,8 @@ def intended_diff(k, p):
     why = INTENDED_DRAFT_DIFFS.get((k, p))
     if why:
         return why
+    if k == 'node_map' and re.match(r'^nodes\.ctx_roll_(bottom|middle|top)\.section$', p):
+        return 'review-flow-01 M3: roll section profile (runtime cap on the plane)'
     if k != 'cut_states':
         return None
     if p in ('states.FLOW', 'flow_version'):

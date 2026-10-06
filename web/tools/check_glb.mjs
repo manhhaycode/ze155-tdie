@@ -362,6 +362,38 @@ async function verify() {
   for (const r of Object.values(NM)) counts[r.file]++
   for (const f of FILES) if (D.node_map.counts[f] !== counts[f] || counts[f] !== glb[f].named.size) fail('NODE_COUNT', f, `counts ${D.node_map.counts[f]}, entries ${counts[f]}, GLB ${glb[f].named.size}`)
 
+  // 1b. review-flow-01 M3: a node `section` (solid of revolution about three z) must lie INSIDE the solid, or the
+  // web cap drawn on the plane inside it would float over empty space. Rays from the axis outward at 3 heights
+  // per band x 8 angles: the first surface hit is the solid's radius there. Inside: d >= r + 0.5 mm everywhere;
+  // tight: d <= r + 3 mm at the band's top. Bigger meshes in the node (the steel journal) are fine.
+  const sectionNodes = Object.entries(NM).filter(([, r]) => r.section)
+  if (sectionNodes.length < 3 || sectionNodes.some(([, r]) => r.section.profile?.length !== 3))
+    fail('SECTION_COUNT', 'node_map', `${sectionNodes.length} node(s) with a section (expected >= 3, each with 3 bands)`)
+  const rc = new THREE.Raycaster()
+  for (const [n, r] of sectionNodes) {
+    const o = glb[r.file]?.named.get(n)
+    if (!o) continue // NODE_MISSING above
+    const ms = []
+    o.traverse((x) => { if (x.isMesh) ms.push(x) })
+    const sides = ms.map((m) => [m, m.material.side])
+    for (const m of ms) m.material.side = THREE.DoubleSide
+    const [cx, cy, cz] = r.section.centre
+    let h0 = 0
+    r.section.profile.forEach(([hi, ri], band) => {
+      for (const [h, top] of [[h0 + 0.0005, false], [(h0 + hi) / 2, false], [hi, true]])
+        for (const s of [1, -1])
+          for (let k = 0; k < 8; k++) {
+            const a = (k / 8) * Math.PI * 2
+            rc.set(new THREE.Vector3(cx, cy, cz + s * h), new THREE.Vector3(Math.cos(a), Math.sin(a), 0))
+            const d = rc.intersectObjects(ms, false)[0]?.distance ?? Infinity
+            if (d < ri + 0.0005 || (top && d > ri + 0.003))
+              fail('SECTION_PROFILE', n, `band ${band} h ${(s * h).toFixed(4)} angle ${k * 45}: surface r ${d.toFixed(4)} vs profile ${ri}`)
+          }
+      h0 = hi
+    })
+    for (const [m, side] of sides) m.material.side = side
+  }
+
   // 2. every three Mesh maps to a device through its nearest named ancestor
   let meshes = 0, meshesMapped = 0
   for (const f of FILES) glb[f].scene.traverse((o) => {
