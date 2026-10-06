@@ -214,7 +214,7 @@
   justify-content: center;
   min-width: 18px;
   height: 18px;
-  margin-left: 1px;
+  margin-left: 5px;
   padding: 0 3px;
   border: 1px solid currentColor;
   border-radius: 4px;
@@ -232,6 +232,7 @@
 [data-level='derived'] { --lv: var(--ze-der); }
 [data-level='assumption'] { --lv: var(--ze-asm); }
 [data-level='unknown'] { --lv: var(--ze-unk); }
+.ze-nowrap { white-space: nowrap; }
 .ze-prov-sum { margin-top: 6px; }
 .ze-prov-counts { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 0 0 2px !important; font-size: 12px; }
 .ze-prov-count { display: inline-flex; align-items: baseline; gap: 3px; color: var(--ze-fg); cursor: help; }

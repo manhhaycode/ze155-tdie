@@ -15,6 +15,12 @@ function isHiddenInside(id: string): boolean {
   return reg.meshesOfDevice(id, true).length === 0
 }
 
+/** where the unbreakable tail of a line starts: its last word, or the last 2 characters of a Japanese line */
+function glueAt(text: string): number {
+  const sp = text.lastIndexOf(' ')
+  return sp >= 0 && text.length - sp <= 24 ? sp + 1 : Math.max(0, text.length - 2)
+}
+
 export function InfoPanel() {
   const data = use(dataPromise)
   const selected = useUi((s) => s.selected)
@@ -38,18 +44,24 @@ export function InfoPanel() {
   const shown = dev && !dev.synthetic ? panelLines(dev.function_vi, dev.details_vi) : []
   const prov = useProv(shown.length ? dev?.device_id : undefined)
   const [open, setOpen] = useState<(OpenLine & { device: string; opener: HTMLElement }) | null>(null)
-  // a no-break space keeps the mark on the line of the last word
-  const badge = (kind: LineKind, index: number, vi: string, text: string, label: string) =>
-    prov && dev ? (
+  // the line text with its mark; the last word and the mark never wrap apart
+  const withMark = (kind: LineKind, index: number, vi: string, text: string, label: string) => {
+    if (!prov || !dev) return text
+    const cut = glueAt(text)
+    return (
       <>
-        {'\u00a0'}
-        <ProvBadge
-          line={lineFor(prov, kind, index, vi)}
-          loc={loc}
-          onOpen={(line: ProvLine, opener) => setOpen({ line, text, label, device: dev.device_id, opener })}
-        />
+        {text.slice(0, cut)}
+        <span className="ze-nowrap">
+          {text.slice(cut)}
+          <ProvBadge
+            line={lineFor(prov, kind, index, vi)}
+            loc={loc}
+            onOpen={(line: ProvLine, opener) => setOpen({ line, text, label, device: dev.device_id, opener })}
+          />
+        </span>
       </>
-    ) : null
+    )
+  }
   const closeDialog = () => {
     const opener = open?.opener
     setOpen(null)
@@ -81,10 +93,7 @@ export function InfoPanel() {
           {dev.function_vi ? (
             <section className="ze-info-sec">
               <h3 className="ze-h3">{T.info.function}</h3>
-              <p>
-                {loc.func(dev)}
-                {badge('function', 0, dev.function_vi, loc.func(dev) ?? dev.function_vi, T.prov.lineFunction)}
-              </p>
+              <p>{withMark('function', 0, dev.function_vi, loc.func(dev) ?? dev.function_vi, T.prov.lineFunction)}</p>
             </section>
           ) : (
             dev.synthetic && <p className="ze-muted">{T.info.synthetic}</p>
@@ -95,10 +104,7 @@ export function InfoPanel() {
               <h3 className="ze-h3">{T.info.details}</h3>
               <ul className="ze-list">
                 {loc.details(dev)?.map((t, i, all) => (
-                  <li key={i}>
-                    {t}
-                    {badge('details', i, dev.details_vi?.[i] ?? '', t, T.prov.lineDetail(i + 1, all.length))}
-                  </li>
+                  <li key={i}>{withMark('details', i, dev.details_vi?.[i] ?? '', t, T.prov.lineDetail(i + 1, all.length))}</li>
                 ))}
               </ul>
             </section>
