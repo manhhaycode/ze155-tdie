@@ -9,7 +9,7 @@ import { applyPreset, controlsRef, zoomToBox } from '../scene/CameraRig'
 import { unknownMaterials } from '../scene/materials'
 import { precompileStats } from '../scene/precompile'
 import { queueDrained, queueIdle, queueRunning } from '../scene/stateQueue'
-import { changeState as changeStateRaw, useUi, type ChangeOpts } from '../store'
+import { changeState as changeStateRaw, freeCamDebug, useUi, type ChangeOpts } from '../store'
 import { HOVER_COLOR, SELECT_COLOR, selectionInfo } from '../scene/Selection'
 import { flowDebug, flowRates, K_ROLL, K_SCREW } from '../scene/Flow'
 import { fillColorAt as fillColor, flowUniforms, toHex } from '../scene/FillMaterial'
@@ -523,6 +523,10 @@ export function installHooks(get: () => RootState) {
     if (state === 'FREE') {
       useUi.getState().setFree({ axis: o.axis ?? 'x', offset: o.offset ?? 3, flip: !!o.flip })
       await changeState('FREE')
+      // setFree inside FREE may queue a camera job (review M1) and a preset may change the lens (CUT_Z_BARREL
+      // 40 mm): wait for it, then use one lens for every FREE sample
+      await queueDrained()
+      ;(controlsRef.current!.camera as THREE.PerspectiveCamera).setFocalLength(35)
       plane = freePlane
     } else {
       await changeState(state, { camera: true, smooth: false })
@@ -722,6 +726,57 @@ export function installHooks(get: () => RootState) {
     const t = new THREE.Vector3()
     controlsRef.current?.getTarget(t)
     return t
+  }
+
+  /** review-flow-01 recheck M1: after entering FREE, changing the axis or flipping, the camera's END pose faces the section */
+  const endPose = () => {
+    const c = controlsRef.current!
+    const pos = c.getPosition(new THREE.Vector3(), true)
+    const dir = c.getTarget(new THREE.Vector3(), true).sub(pos).normalize()
+    return { pos, side: round(freePlane.distanceToPoint(pos), 2), dot: round(dir.dot(freePlane.normal), 2) }
+  }
+  const freeCamTest = async () => {
+    const ui = useUi.getState
+    const off = reg.data.states.FREE.offset_default_m
+    const cases: Record<string, unknown>[] = []
+    const check = (name: string, o: { still?: THREE.Vector3 } = {}) => {
+      const e = endPose()
+      const moved = o.still ? round(o.still.distanceTo(e.pos), 4) : null
+      // gate on geometry only: cap-pixel counts depend on the framing (PLAN-FLOW-M1-M3 Task 1 step 3)
+      const ok = e.side < 0 && e.dot >= 0.3 && (moved === null || moved < 1e-3)
+      cases.push({ name, side: e.side, dot: e.dot, used: freeCamDebug.last, moved, ok })
+    }
+    for (const start of ['FLOW', 'FULL', 'CUT_X2450'] as FixedStateId[])
+      for (const axis of ['x', 'y', 'z'] as Axis[])
+        for (const flip of [false, true]) {
+          await changeState(start, { camera: true, smooth: false })
+          const before = endPose().pos
+          ui().setFree({ axis, offset: off[axis], flip }) // not in FREE: no camera job
+          await changeState('FREE')
+          // FULL and CUT_X2450 already face x = 3: the camera must not move (review recheck)
+          check(`${start}->FREE ${axis}${flip ? ' flip' : ''}`, !flip && axis === 'x' && start !== 'FLOW' ? { still: before } : {})
+        }
+    // inside FREE, from the FLOW camera (z cut): change axis and flip
+    await changeState('FLOW', { camera: true, smooth: false })
+    ui().setFree({ axis: 'z', offset: 0, flip: false })
+    await changeState('FREE')
+    const steps: [Axis, boolean][] = [['x', false], ['x', true], ['y', true], ['y', false], ['z', true], ['z', false]]
+    for (const [axis, flip] of steps) {
+      ui().setFree({ axis, offset: off[axis], flip })
+      await queueDrained()
+      check(`in FREE -> ${axis}${flip ? ' flip' : ''}`)
+    }
+    // fast clicks: y then x at once; the second job must see the first flight's END pose (review-plan I1)
+    ui().setFree({ axis: 'y', offset: off.y, flip: false })
+    ui().setFree({ axis: 'x', offset: off.x, flip: false })
+    await queueDrained()
+    check('fast y -> x')
+    // a low horizontal cut, flipped: mirror fallback near the floor (review-plan I2)
+    ui().setFree({ axis: 'y', offset: 0.3, flip: true })
+    await queueDrained()
+    check('y = 0.3 flip')
+    await changeState('FULL', { camera: true, smooth: false })
+    return { cases, ok: cases.every((c) => c.ok) }
   }
 
   const selftest = async () => {
@@ -950,6 +1005,7 @@ export function installHooks(get: () => RootState) {
       precompile_ms: round(precompileStats.ms),
       ok: sf.fps >= 45 && sf.calls <= 1000 && sf.triangles <= 1.7e6 && (sf.heap_mb ?? 0) <= 600,
     }
+    out.M1 = await freeCamTest()
     await changeState('FULL', { camera: true, smooth: false })
     out.finished = new Date().toISOString()
     return out
@@ -998,6 +1054,7 @@ export function installHooks(get: () => RootState) {
     sheetProbe,
     cutRoundTrip,
     capCheck,
+    freeCamTest,
     rotors,
     rotorTest,
     camera: async (id: FixedStateId) => {
