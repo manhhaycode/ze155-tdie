@@ -142,3 +142,94 @@ I1, I2, M2, M4 đã sửa. F7 nay đạt; vẫn còn M3 (lõi trục cán).
 - 62 request, tất cả tới `http://127.0.0.1:5178`.
 
 Tổng sau sửa: 0 C, 0 I, 3 M (M1 phần đổi hướng trong FREE, M3 Blender, N1).
+
+## Kiểm lại sau sửa (vòng 2)
+
+Reviewer độc lập, 2026-10-06, kiểm `da63004..4bb78a9` (`web/PLAN-FLOW-M1-M3.md` bản 2, PLAN-FLOW §10 mục 10). Không sửa code, dữ liệu hay plan.
+
+**Môi trường:**
+- Chrome 154 riêng, profile mới, cổng 9431, puppeteer. `http://127.0.0.1:5178/?selfcheck=1`, 1920 × 1080 và 1366 × 768, DPR 1.
+- Ảnh và pixel lấy sau `freeze(true)`, quay tắt. Click, nút hướng cắt và ô "Lật phía giữ" là input thật.
+- So "trước / sau" mà không đổi code: trong trang, tạm đặt uniform `uSecP` của 6 mesh trục cán thành rỗng (nắp quay về thành xa như trước khi sửa), rồi trả lại.
+
+**Dữ liệu:** `make -C web data verify` exit 0 (`ok: true`, `failures: []`, phép bắn tia profile đạt). `compare-drafts`: 0 khác biệt ngoài ý muốn, 3 khác biệt intended `nodes.ctx_roll_*.section`. 5 file `build/data` trùng byte với `public/data`. GLB 5 793 436 / 1 982 388 B.
+
+Ảnh ở `web/review/flow/reviewer/recheck-02/`.
+
+**Kết luận: Đạt.** M1, M3, N1 đã sửa; 6 điểm soi đều đạt. 0 C, 0 I, 4 M mới: 1 lỗi hiển thị nhỏ (N2), 3 về test và chú thích.
+
+### M1, M3, N1
+
+| Mục | Trạng thái | Bằng chứng |
+|---|---|---|
+| M1 camera khi đổi hướng / lật | **Đã sửa** | `freeCamTest()` 26/26, 0,7 s; cột `used` khớp bảng của plan, trừ `fast y -> x` ra `keep` (xem M-T2). Bấm thật trong FREE, bắt đầu từ góc FLOW: Cắt ngang → FULL; lật → ảnh gương của FULL (camera x −13,2); Cắt nằm → CUT_Z_BARREL; lật → gương CUT_Z_BARREL (camera y 0,1 nhìn lên); Bổ dọc → giữ camera; lật → gương FULL (z +17,28). Cả 6 ảnh đều thấy và đọc được mặt cắt. `p-m1-inFREE-*.png` |
+| M3 "đĩa xám" ở tâm trục | **Đã sửa** | `rollCoreProbe()` đạt 2/2 lần: FLOW nhìn dọc trục 0 pixel lạ / 372 631–374 748; FREE z = 0 lật 0; FREE x = 9,776: 40 / 1 455 913 (vạch đứt, xem điểm 2). Giả lập trước sửa: đĩa xám ở cả 3 trục, kèm vệt tấm: `m3-free-z0-after-vs-sectionoff.png` (trái: sau; phải: trước). Thêm FREE Cắt nằm y = 1,601 (qua trục giữa, probe không có): 14–28 / 438 266, cũng chỉ là vạch đứt cùng loại; trước sửa 82 206 |
+| N1 vạch màn nhựa | **Đã sửa** | FLOW xiên 0 / 305 369. Thêm 5 góc của reviewer (khe cán nhìn từ trên, từ dưới, phía tấm, xa, thấp bên trái) × pha / nhiệt ở 1920, cùng 2 góc ở 1366: 0 pixel lạ trên mặt cắt FLOW. `p4-FLOW-*.png` |
+
+### 6 điểm soi
+
+| # | Kết quả | Bằng chứng |
+|---|---|---|
+| 1 Vạch quay ở preset FLOW | **Đạt** | Probe: pixel tâm vạch giữa (7, 10, 12). Ảnh preset pha và nhiệt, phóng 3×: cả 3 vạch liền và tối. Ở FLOW vạch nằm phía camera, nắp nằm sau mặt phẳng, nên vạch luôn thắng ở mọi khoảng cách. `p1-FLOW-preset-*.png` |
+| 2 FREE x = 9,776 | **Đạt** | Thân, vai và cổ trục đều màu nắp; gối đỡ không lộ. Còn 40–41 pixel xám thành vạch đứt 1 px ở đầu cổ trục, tức dải 1 mm giữa profile 1,599 và đầu thật 1,600. Phải phóng 4× mới rõ, và vạch nằm giữa hai nắp cùng màu đỏ. **Không đáng sửa.** Nếu muốn xoá: đổi dải cuối thành 1,600. `m3-free-x9776-1920.png`, `m3-free-x9776-journal-end-dashes-zoom4x.png` |
+| 3 Camera phía giữ | **Đạt** | FREE z = 0 lật, camera z −3,2 (phía giữ): bật / tắt nhánh section trên cùng một khung → **0 pixel khác**. Đối chứng phía bỏ (camera z +3,2): 83 311 pixel khác. Theo code: nhánh GLSL chỉ chạy khi `w < 0` (mắt ở phía bỏ). Picking chỉ dời hit nằm xa hơn P; nhìn từ phía giữ thì các hit đó đều ở phía bỏ và đã bị lọc. `m3-free-z0-flip-keptside-1920.png` |
+| 4 Tấm và màn sát trục | **Đạt** | FLOW: như N1. FREE z = 0: 5 góc của reviewer 0–2 pixel lạ / 113 774–296 924; probe 1–14, số đổi giữa các lần chạy (pixel AA). `p4-FREE-*.png` |
+| 5 Bấm hướng liên tục | **Đạt** | Bấm thật, cách nhau 40–50 ms: Cắt ngang → Cắt nằm → Cắt ngang; Cắt ngang → Bổ dọc → Cắt ngang; Cắt nằm → Cắt ngang → Cắt nằm; lật 3 lần. Hàng đợi rỗng ≤ 4 ms sau lần bấm cuối, `busy` false. Sau 2,5 s camera đúng preset của lần bấm cuối: FULL 35 mm, CUT_Z_BARREL 40 mm, gương FULL khi lật. `p5-*.png` |
+| 6 Bấm vào tâm mặt cắt | **Đạt** | 30 click thật hợp lệ: FLOW nhìn dọc trục r 0 / 0,05 / 0,10 / 0,14 / 0,25 / 0,35 (2 hướng); preset FLOW r 0 / 0,10 / 0,25; FREE z = 0, cả lật lẫn không; FREE x = 9,776 trên cổ trục h ±1,45, −1,55, −1,595. Tất cả chọn `ctx_roll_middle`. Một điểm nữa rơi dưới panel trái, bỏ |
+
+### Lỗi mới
+
+| ID | Mức | Mô tả và bằng chứng | Cách sửa |
+|---|---|---|---|
+| N2 | M | **FREE Bổ dọc Y = 0, có lật, camera phía bỏ (+z) đến gần trục cán:** vạch quay `anim_roll_markers_*_aa` z-fight với nắp (lấm tấm) ở khoảng 3,2 m khi nhìn xiên; ở 2,4 m thì mất hẳn (theo công thức: dưới khoảng 2,9 m); từ 3,6 m trở ra thì liền. Trước sửa vạch liền ở mọi khoảng cách. **Lý do:** khi lật, vạch (z −0,7…−0,2 mm) nằm trong khối được giữ, sau mặt phẳng 0,2–0,7 mm. Nắp mới chỉ lùi 8 bước độ sâu, khoảng 2,4·10⁻⁵·d² (0,25 mm ở 3,2 m). Đây đúng là trường hợp ràng buộc README vừa ghi ("nothing else may lie inside such a profile closer to the plane than that"). Phải lật rồi zoom sát mới gặp, nên nhẹ. `N2-FREE-z0-flip-from-removed-side-after-vs-before.png`, `N2-marker-zfight-FREE-z0-flip-from-removed-side-after-vs-before-zoom.png`, `N2-marker-vs-distance-2.4-3.0-3.2-3.6-5m.png` | **Dữ liệu:** ẩn `anim_roll_markers_*_aa` ở FREE (`FREE_EXTRA_HIDE`, `make_data.py:60`). Ở FREE vạch hoặc bị cắt bỏ (không lật), hoặc nằm trong khối trục. **Hoặc web:** lùi nắp theo tia `max(8 bước, 1 mm)` (`Cuts.ts:113–121`) |
+| M-T1 | M | **`rollCoreProbe` bỏ qua quá rộng.** Pixel tối, vòng 2 px quanh chúng và pixel lai vạch / nắp bị bỏ qua trên toàn khung (`hooks.ts:822`, `872–875`). Vì vậy probe không thấy được mọi artefact tối. Ngay ở view "FREE z=0 flip, from +z" của probe, N2 làm 2 081 pixel không phải màu nắp rơi vào vòng 2 px (trước sửa: 741), nhưng probe vẫn báo 0 pixel lạ. Ngưỡng 0,05 % thì hợp lý | Chỉ áp các luật bỏ qua trong vùng chiếu của mesh vạch (+2 px), hoặc chỉ ở view mà vạch nằm trước mặt phẳng |
+| M-T2 | M | **Ca `fast y -> x` của `freeCamTest` (`hooks.ts:771–774`) đạt mà không thử gì.** Ca này bắt đầu từ camera FULL, vốn đã nhìn được mặt cắt x. Hai lần `setFree` chạy xong trước khi job đầu chạy, nên cả hai job đều thấy mặt phẳng x và ra `keep`. Đường "đọc điểm dừng khi camera đang bay" không được thử. Hành vi thật vẫn đúng (điểm 5). Mọi ca cũng chỉ chấm bằng chính vị từ `facing` của code | Bắt đầu từ camera FLOW (z): `setFree(y); await queueDrained(); setFree(x); await queueDrained()`, kỳ vọng FULL |
+| M-D1 | M | **Chú thích chưa sửa.** Chú thích của `capCheck` chưa sửa như plan Task 3 Bước 5: vẫn ghi nắp "lie on the far inner wall, not on the plane" (`hooks.ts:500–503`, `561–563`). README vẫn ghi `selftest()` "about 70 s", trong khi đo được 36,7 s (câu này có từ trước) | Thêm câu: mesh có `section` thì nắp nằm trên mặt phẳng. Sửa số giây |
+
+### Các `Ruling:` của executor
+
+| Ruling | Nhận xét |
+|---|---|
+| Task 1: `faceFreeCut` cũ đọc `camera.position` cũ ngay sau preset tức thời | Đúng. Đọc điểm dừng sửa luôn lỗi này |
+| Task 1: giữ góc `y = 0.3 flip` dù mặt cắt chiếm < 1/4 khung | Plan bảo dừng và báo; executor tự quyết. Kết quả chấp nhận được. Ở 0,3 m chỉ cắt thanh ray đế: ảnh là mặt dưới khay hứng màu xám, có một dải đỏ ở đáy (`p-m1-inFREE-ynam-0.3-flip-1920.png`). Không camera nào khác thấy được mặt cắt này. Ghi nhận là lệch quy trình, không tính lỗi |
+| Task 2: dùng biến cục bộ thay hằng module | Không ảnh hưởng |
+| Task 3: tạo `section.ts` trước bước RED | Hợp lý |
+| Task 3: ngưỡng 0,5 % → 0,05 % | Đúng, chặt hơn |
+| Task 3: điểm bấm r = 0,10 thay cho r = 0 | Hợp lý. Reviewer bấm thật cả ở r = 0: đều chọn trục |
+| Task 3: bỏ qua pixel lai vạch / nắp | Cần cho vạch ở xa, nhưng phạm vi quá rộng (M-T1) |
+| Task 3: để lại 41 pixel xám | Đồng ý (điểm 2) |
+
+### Đọc code
+- **Shader:**
+  - `-vViewPosition` là vị trí của mảnh trong hệ view. `clippingPlanes[0]` là mặt phẳng của vật liệu trong hệ view (three bỏ điểm có n·X + w < 0).
+  - `w < 0` nghĩa là mắt ở phía bỏ. Với mảnh phía giữ thì `den ≥ −w > 0`, nên P = Q·(−w/den) nằm giữa mắt và mảnh.
+  - Đổi về world bằng `(P − t)·mat3(V)` = Rᵀ(P − t): đúng.
+  - Depth buffer 24 bit, không dùng log / reversed depth, nên 4,8·10⁻⁷ ≈ 8 bước.
+  - Mọi lời gọi `clipPart` đều có `planes.length > 0`, nên luôn có `clippingPlanes[0]`.
+- **Program:** mỗi vật liệu có uniform riêng; khoá `ze-cap-sec` dùng chung cho cả 3 trục. Sau precompile có 32 program (cũ 31).
+- **Picking:** P lấy từ `intersectPlane` (null nếu nằm sau camera). Chỉ hit mặt sau nằm xa hơn P mới bị kéo về P, khớp với nhánh shader.
+- **`store.ts`:**
+  - `facing` có dấu.
+  - `mirrored` không phụ thuộc chiều pháp tuyến.
+  - Job kiểm lại `state === 'FREE'`.
+  - Thanh trượt không xếp job.
+- **Dữ liệu:**
+  - Tâm lấy từ bbox; profile đúng 3 dải.
+  - Phép bắn tia làm fail nếu có bất kỳ mặt nào nằm trong bán kính profile, ở 3 độ cao × 8 góc, kể cả khi trục bị khoét rỗng bên trong.
+
+### Hồi quy
+- **`selftest()`:** 36,7 s, chạy sau 2 lần tải lại. D1, D3–D9, D14, F2–F6, F8, M1, M3 đều true; D2 = 190.
+  - D4: CUT_FEED 10/10, Z_BARREL 40/40, X2450/b3 89/89, X4120 33/33, X2450/screws 30/30, FREE x 56/56. FREE y 58/58 và z 207/207, bằng mốc.
+  - F3 `ctx_roll_middle`: 122/122, 3 lần; click chọn đúng.
+  - F8: 120 fps, 743 call, 1 062 937 tam giác, heap 175 MB, precompile 117,9 ms (ấm).
+- **Precompile lạnh:** Chrome mới, profile mới, `--disable-gpu-shader-disk-cache`: 342 ms; tải lại 191 ms; 32 program.
+- **Console:** 0 lỗi; chỉ còn cảnh báo THREE.Clock đã biết.
+- **Request:** chỉ tới `http://127.0.0.1:5178`.
+- **Các trạng thái cắt cố định:** không cắt trục cán, nên nhánh mới không chạy ở đó. Logic M1 chỉ chạy trong FREE.
+
+*Ghi chú, có từ trước nên không tính:* ở FREE Y = 0 không lật, vạch `_aa` đã bị cắt bỏ nhưng vẫn để lại vài chấm đỏ sẫm rất mờ trên mặt cắt (khoảng 165 pixel ở 2,6 m). Giả lập trước sửa cũng có (khoảng 124 pixel).
+
+**Tổng sau vòng 2:** 0 C, 0 I.
+- Đã đóng: M1 (phần đổi hướng trong FREE), M3, N1.
+- Còn: 4 M mới (N2, M-T1, M-T2, M-D1).
+- Ngoài phạm vi, như plan đã ghi: gốc của M4 ở FREE Y = 0.

@@ -1286,7 +1286,25 @@
    "precompile_warm": "115-120 ms, 32 programs (before: 114 ms, 31 programs): one shared program ze-cap-sec",
    "data": "make -C web data verify: ok; compare-drafts: 3 intended node_map diffs, 0 unexpected; GLBs byte-identical",
    "console": "0 errors, 1 known library warning",
-   "network": "only 127.0.0.1:5178"
+   "network": "only 127.0.0.1:5178",
+   "final_review": {
+    "review": "web/review/flow/review-flow-01.md \"Kiểm lại sau sửa (vòng 2)\": 0 C, 0 I, 4 M; ready to merge with small follow-ups",
+    "fixed": {
+     "N2": "FREE Y=0 flipped, near: the roll markers (0.2-0.7 mm behind the plane) z-fought with / vanished under the on-plane cap; the cap and its picking hit now lie 1 mm into the kept side (+ 8 depth steps)",
+     "probe": "rollCoreProbe skips dark / ring / marker-mix pixels only inside the markers footprints + 2 px, and checks every _aa marker lying on the plane is dark in its core; new view FREE z=0 flip, near oblique (2.4 m); RED before the N2 fix (0/3232 and 0/4664 core pixels dark)",
+     "fast_click_case": "freeCamTest fast y -> x now runs the queue between the clicks; RED against a current-pose mutant (side +1.25, dot -0.05), GREEN with the end pose",
+     "comments": "capCheck comments describe the section caps"
+    },
+    "M3_views_after": {
+     "FLOW axis": "10 / 373988; markers 74/74, 2432/2432, 2561/2561",
+     "FLOW oblique (N1)": "29 / 306245; markers 486/486, 1772/1772, 2138/2138",
+     "FREE z=0 axis": "10 / 373998",
+     "FREE z=0 flip, from +z": "0 / 373133; markers 78/78, 2433/2433, 2557/2557",
+     "FREE z=0 flip, near oblique": "18 / 392270; markers 0/0, 3453/3453, 4309/4309",
+     "FREE x=9.776": "175 / 1451764"
+    },
+    "selftest_seconds": 37.7
+   }
   }
  }
 }

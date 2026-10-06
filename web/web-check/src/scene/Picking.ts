@@ -4,6 +4,7 @@ import { MeshBVH, CENTER, acceleratedRaycast } from 'three-mesh-bvh'
 import { reg } from './rig'
 import { useUi } from '../store'
 import { inSection } from './section'
+import { SECTION_DEPTH_M } from './Cuts'
 import type { SolidSectionRec } from '../data'
 
 // PLAN-DOT1 §4.2.5 = r3f-snippets §3 (C1/N1): the filter lives inside mesh.raycast, there is no drei <Bvh>,
@@ -46,7 +47,8 @@ export const filteredRaycast = function (this: THREE.Mesh, raycaster: THREE.Rayc
   const section = this.userData.zeSection as SolidSectionRec | null
   if (!section || !hasLocal || !m.userData.zeCap || hits.length === start) return
   const ray = raycaster.ray
-  const P = ray.intersectPlane(local![0], _secP)
+  _secPl.copy(local![0]).constant -= SECTION_DEPTH_M // the cap's depth: 1 mm into the kept side, as in the shader
+  const P = ray.intersectPlane(_secPl, _secP)
   if (!P || !inSection(P, section)) return
   const t = ray.origin.distanceTo(P)
   _secNm.getNormalMatrix(this.matrixWorld)
@@ -59,6 +61,7 @@ export const filteredRaycast = function (this: THREE.Mesh, raycaster: THREE.Rayc
   }
 } as unknown as THREE.Object3D['raycast']
 const _secP = new THREE.Vector3()
+const _secPl = new THREE.Plane()
 const _secN = new THREE.Vector3()
 const _secNm = new THREE.Matrix3()
 

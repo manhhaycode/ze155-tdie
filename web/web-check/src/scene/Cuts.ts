@@ -105,16 +105,19 @@ bool zeInSection(vec3 w) {
   return false;
 }`
 /**
- * review-flow-01 M3: inside the solid the section lies ON the plane. Draw the cap there, 8 depth steps behind the
- * plane (24-bit buffer) so the roll markers 0.7 mm in front still win, and anything inside the volume (roll stand,
- * journal) stays hidden. Only when the eye is on the removed side (w < 0) and the plane lies between eye and
- * fragment (den > 0). clippingPlanes[0] is this material's plane (view space): renderer.clippingPlanes stays empty.
+ * review-flow-01 M3: inside the solid the section lies ON the plane. Draw the cap there, so anything inside the
+ * volume (roll stand, journal) stays hidden: SECTION_DEPTH_M into the kept side (final review N2: flipped, the roll
+ * markers lie 0.2-0.7 mm behind the plane and must still win) plus 8 depth steps (24-bit buffer; the markers 0.7 mm
+ * in front of the plane win at 25 m). Only when the eye is on the removed side (w < 0) and the plane lies between
+ * eye and fragment (den > 0); never past the fragment itself. clippingPlanes[0] is this material's plane (view
+ * space, kept where n.X + w >= 0): renderer.clippingPlanes stays empty. Picking.ts uses the same depth.
  */
+export const SECTION_DEPTH_M = 0.001
 const SECTION_DEPTH_GLSL = `vec3 zeQ = -vViewPosition;
     vec4 zePl = clippingPlanes[0];
     float zeDen = dot(zePl.xyz, zeQ);
     if (zePl.w < 0.0 && zeDen > 1e-6) {
-      vec3 zeP = zeQ * (-zePl.w / zeDen);
+      vec3 zeP = zeQ * min((${SECTION_DEPTH_M} - zePl.w) / zeDen, 1.0);
       vec3 zeW = (zeP - viewMatrix[3].xyz) * mat3(viewMatrix);
       if (zeInSection(zeW)) {
         vec4 zeS = projectionMatrix * vec4(zeP, 1.0);

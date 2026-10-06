@@ -499,7 +499,8 @@ export function installHooks(get: () => RootState) {
    * screen box. A sample counts as a cap pixel of the device when the device's own nearest hit there is a
    * cap and the scene's first filtered hit (what a click selects) is that same surface (same distance within
    * 2 mm). Cap = a back face of a closed, capped mesh behind the plane crossing (runtime cap: the renderer
-   * paints exactly these back-face fragments; they lie on the far inner wall, not on the plane), or a
+   * paints exactly these back-face fragments; they lie on the far inner wall, not on the plane, except for meshes
+   * with a node_map section, the chill rolls, whose cap and picking hit lie 1 mm behind the plane), or a
    * cut_only part's face on the plane within 2 mm (pre-cut cap, e.g. int_xsec_*).
    * correct = those cap pixels whose first hit belongs to the device. ok = capPixels >= 5 && correct === capPixels.
    */
@@ -559,8 +560,9 @@ export function installHooks(get: () => RootState) {
     let sample: { x: number; y: number } | null = null
     const wrong: Record<string, number> = {}
     // runtime cap: what the renderer paints as cap is a back face of a closed, capped mesh seen through the
-    // cut (the ray crosses the plane, then hits the far inner wall); pre-cut cap: a cut_only part face lying
-    // on the plane (within 2 mm)
+    // cut (the ray crosses the plane, then hits the far inner wall; a section mesh's hit is moved to 1 mm behind
+    // the plane by the picking filter, still after the crossing); pre-cut cap: a cut_only part face lying on the
+    // plane (within 2 mm)
     const _p = new THREE.Vector3()
     const isCapHit = (h: Hit, obj: THREE.Object3D, ray: THREE.Ray) => {
       if (h.cutOnly) return Math.abs(plane!.distanceToPoint(_p.set(h.point[0], h.point[1], h.point[2]))) < 0.002
@@ -767,8 +769,12 @@ export function installHooks(get: () => RootState) {
       await queueDrained()
       check(`in FREE -> ${axis}${flip ? ' flip' : ''}`)
     }
-    // fast clicks: y then x at once; the second job must see the first flight's END pose (review-plan I1)
+    // fast clicks (review-plan I1): the camera is at FULL (faces x, not y). y starts a flight to CUT_Z_BARREL; x,
+    // clicked while that flight has only begun, must judge the flight's END pose (CUT_Z_BARREL, edge-on to x) and
+    // fly back to FULL. Judged on the current pose (still FULL, faces x) it would keep the flight going to
+    // CUT_Z_BARREL. The queue runs each job before the next click, as two real clicks 40 ms apart do.
     ui().setFree({ axis: 'y', offset: off.y, flip: false })
+    await queueDrained()
     ui().setFree({ axis: 'x', offset: off.x, flip: false })
     await queueDrained()
     check('fast y -> x')
@@ -799,8 +805,11 @@ export function installHooks(get: () => RootState) {
    * review-flow-01 M3 + N1: every pixel whose view ray meets the cut plane inside a roll's section (profile shrunk
    * by 10 mm, away from the edges) must show the state's steel cap colour, hatched (x 1 or x 0.72); at most 0.05 %
    * may differ (the 1 px N1 curtain line was 562 of 306 296 = 0.18 %). Dark marker pixels, a 2 px ring around
-   * them and marker / cap mixes (antialiased edges) are skipped. Plus: the marker stays dark at the FLOW
-   * preset, and a ray at the middle roll's centre picks the roll, not the stand behind it.
+   * them and marker / cap mixes (antialiased edges) are skipped, but only inside a roll marker's projected
+   * footprint + 2 px (final review: frame-wide skips hid N2). Every `_aa` marker that should be seen (shown, a
+   * thin plate within 1 mm of the plane, unclipped or on the kept side) must be dark in its footprint's core (>= 90 % of the pixels 2 px inside its
+   * edges). Plus: the marker stays dark at the FLOW preset, and a ray near the middle roll's axis picks the roll,
+   * not the stand behind it.
    */
   const rollCoreProbe = async () => {
     const ui = useUi.getState
@@ -828,6 +837,36 @@ export function installHooks(get: () => RootState) {
     const ray = new THREE.Raycaster()
     const ndc = new THREE.Vector2()
     const P = new THREE.Vector3()
+    type Pt = [number, number]
+    /** convex hull of 2D points (monotone chain) */
+    const hullOf = (pts: Pt[]): Pt[] => {
+      pts.sort((a, b) => a[0] - b[0] || a[1] - b[1])
+      const cr = (o: Pt, a: Pt, b: Pt) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+      const lo: Pt[] = []
+      const up: Pt[] = []
+      for (const p of pts) {
+        while (lo.length >= 2 && cr(lo[lo.length - 2], lo[lo.length - 1], p) <= 0) lo.pop()
+        lo.push(p)
+      }
+      for (let i = pts.length - 1; i >= 0; i--) {
+        while (up.length >= 2 && cr(up[up.length - 2], up[up.length - 1], pts[i]) <= 0) up.pop()
+        up.push(pts[i])
+      }
+      return lo.slice(0, -1).concat(up.slice(0, -1))
+    }
+    /** signed distance (px) to a convex hull's edge lines: > 0 inside */
+    const hullDist = (h: Pt[], x: number, y: number) => {
+      let d = Infinity
+      for (let i = 0; i < h.length; i++) {
+        const a = h[i]
+        const b = h[(i + 1) % h.length]
+        const ex = b[0] - a[0]
+        const ey = b[1] - a[1]
+        d = Math.min(d, (ex * (y - a[1]) - ey * (x - a[0])) / (Math.hypot(ex, ey) || 1))
+      }
+      return d
+    }
+    const markerParts = [...reg.parts.entries()].filter(([n, p]) => n.startsWith('anim_roll_markers_') && !!p.payload && isShown(p.payload))
     const scan = async (name: string, pos: V3, target: V3, plane: () => THREE.Plane, capHex: string) => {
       ;(controlsRef.current!.camera as THREE.PerspectiveCamera).setFocalLength(35)
       await controlsRef.current!.setLookAt(...pos, ...target, false)
@@ -860,6 +899,46 @@ export function installHooks(get: () => RootState) {
       y0 = Math.max(2, Math.floor(y0))
       x1 = Math.min(f.w - 3, Math.ceil(x1))
       y1 = Math.min(f.h - 3, Math.ceil(y1))
+      // the roll markers' screen footprints (convex hulls of their projected vertices, buffer px)
+      const v = new THREE.Vector3()
+      const fps = markerParts.map(([mn, p]) => {
+        const pts: Pt[] = []
+        for (const m of p.meshes) {
+          const pa = m.geometry.attributes.position
+          for (let i = 0; i < pa.count; i++) {
+            v.fromBufferAttribute(pa, i).applyMatrix4(m.matrixWorld).project(s.camera)
+            if (v.z > -1 && v.z < 1) pts.push([((v.x + 1) / 2) * f.w, ((1 - v.y) / 2) * f.h])
+          }
+        }
+        const h = pts.length >= 3 ? hullOf(pts) : []
+        const xs = h.map((q) => q[0])
+        const ys = h.map((q) => q[1])
+        const box = h.length ? [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] : [0, 0, -1, -1]
+        const clipped = p.meshes.some((m) => ((m.material as THREE.Material).clippingPlanes?.length ?? 0) > 0)
+        // seen on the section only when it is a thin plate lying within 1 mm of this plane (not cut across)
+        const b = reg.boxOfMeshes(p.meshes)
+        const c = b.getCenter(new THREE.Vector3())
+        const thick = Math.abs(b.getSize(new THREE.Vector3()).dot(pl.normal))
+        const d = pl.distanceToPoint(c)
+        const expected = mn.endsWith('_aa') && h.length >= 3 && thick <= 0.002 && Math.abs(d) <= 0.001 && (!clipped || d >= 0)
+        return { name: mn, h, box, expected }
+      })
+      const nearMarker = (x: number, y: number) =>
+        fps.some((m) => x >= m.box[0] - 3 && x <= m.box[2] + 3 && y >= m.box[1] - 3 && y <= m.box[3] + 3 && hullDist(m.h, x + 0.5, y + 0.5) >= -2)
+      // markers that should be seen are dark in their footprint's core
+      const markers = fps
+        .filter((m) => m.expected)
+        .map((m) => {
+          let core = 0
+          let darkPx = 0
+          for (let y = Math.max(0, Math.floor(m.box[1])); y <= Math.min(f.h - 1, Math.ceil(m.box[3])); y++)
+            for (let x = Math.max(0, Math.floor(m.box[0])); x <= Math.min(f.w - 1, Math.ceil(m.box[2])); x++)
+              if (hullDist(m.h, x + 0.5, y + 0.5) >= 2) {
+                core++
+                if (dark(x, y)) darkPx++
+              }
+          return { name: m.name, core, dark: darkPx, ok: core < 20 || darkPx / core >= 0.9 }
+        })
       let n = 0
       let bad = 0
       const badAt: unknown[] = []
@@ -868,18 +947,28 @@ export function installHooks(get: () => RootState) {
           ndc.set(((x + 0.5) / f.w) * 2 - 1, -((y + 0.5) / f.h) * 2 + 1)
           ray.setFromCamera(ndc, s.camera)
           if (!ray.ray.intersectPlane(pl, P) || !rolls.some((r) => inSection(P, r, 0.01))) continue
-          let nearDark = false
-          for (let dy = -2; dy <= 2 && !nearDark; dy++) for (let dx = -2; dx <= 2 && !nearDark; dx++) nearDark = dark(x + dx, y + dy)
-          if (nearDark) continue
           const c = f.at(x, y)
-          if (!tones.some((t) => Math.max(...t.map((q, j) => Math.abs(q - c[j]))) <= 8) && markerEdge(c, tones)) continue
+          if (nearMarker(x, y)) {
+            // a marker and its antialiased edge (incl. a far, thin marker's marker / cap mixes): judged above
+            let nearDark = false
+            for (let dy = -2; dy <= 2 && !nearDark; dy++) for (let dx = -2; dx <= 2 && !nearDark; dx++) nearDark = dark(x + dx, y + dy)
+            if (nearDark || markerEdge(c, tones)) continue
+          }
           n++
           if (!tones.some((t) => Math.max(...t.map((q, j) => Math.abs(q - c[j]))) <= 8)) {
             bad++
             if (badAt.length < 6) badAt.push({ x: Math.round(x / dpr), y: Math.round(y / dpr), rgb: c })
           }
         }
-      views.push({ name, pixels: n, bad, badAt, ms: Math.round(performance.now() - t0), ok: n >= 2000 && bad / n <= 0.0005 })
+      views.push({
+        name,
+        pixels: n,
+        bad,
+        badAt,
+        markers: markers.map((m) => `${m.name} ${m.dark}/${m.core}`),
+        ms: Math.round(performance.now() - t0),
+        ok: n >= 2000 && bad / n <= 0.0005 && markers.every((m) => m.ok),
+      })
     }
     await changeState('FLOW', { camera: true, smooth: false })
     const flowPlane = () => statePlane('FLOW')!
@@ -907,6 +996,8 @@ export function installHooks(get: () => RootState) {
     ui().setFree({ axis: 'z', offset: 0, flip: true })
     await queueDrained()
     await scan('FREE z=0 flip, from +z', [10.05, 1.85, 3.2], [9.776, 1.601, 0], () => freePlane, capSteel)
+    // final review N2: flipped, the markers lie 0.2-0.7 mm behind the plane; oblique and near (2.4 m) they vanished
+    await scan('FREE z=0 flip, near oblique', [11.0, 2.3, 2.0], [9.776, 1.601, 0], () => freePlane, capSteel)
     ui().setFree({ axis: 'x', offset: 9.776, flip: false })
     await queueDrained()
     // plane through the 3 axes: body and journal bands (the stand showed through the journal before the fix)

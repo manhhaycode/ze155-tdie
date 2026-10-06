@@ -379,4 +379,5 @@ Những điểm dưới đây khác với §2–§6. Reviewer chấm theo bản 
      - "Lõi rỗng" thật ra là gối đỡ `ctx_roll_stand_1` nằm trong thể tích cổ trục, lộ qua nắp vẽ ở thành xa.
      - `node_map` có thêm `section` (profile tròn xoay) cho 3 trục cán. Trong profile, nắp được vẽ trên mặt phẳng cắt, lùi 8 bước độ sâu. Nhờ vậy gối đỡ, vệt tấm film ở FREE và vạch màn nhựa (N1) không còn lộ ra.
      - Bấm vào mặt cắt thì chọn trục cán.
+     - Sau review cuối (N2): nắp và điểm chọn nằm sâu 1 mm vào phía giữ lại, để vạch đánh dấu (nằm sau mặt phẳng tới 0,7 mm khi FREE lật) vẫn hiện.
      - Kiểm bằng `__ze.rollCoreProbe()`.
