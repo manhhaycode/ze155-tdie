@@ -7,8 +7,27 @@
    "used_by": [
     "die_body_bolts:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Thân khuôn tấm gồm nhiều phần ghép với nhau (Reifenhäuser: thân 2–5 phần, môi mềm ở nửa trên)",
+     "text_ja": "シートダイのボディは複数の部分を組み合わせた構造(Reifenhäuser:2〜5分割、フレックスリップは上半体)",
+     "refs": [
+      "c056"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lực tách ≈ 7 MN ≈ 2,4 m × 0,3 m × 10 MPa (= 7,2 MN)",
+     "text_ja": "分離力 ≈ 7 MN ≈ 2,4 m × 0,3 m × 10 MPa(= 7,2 MN)",
+     "refs": [
+      "drev-I4"
+     ],
+     "reason_vi": "Không có tài liệu công khai về áp nhựa trong khuôn này; review bản vẽ chọn bề rộng 2,4 m (specs: ước lượng), chiều sâu vùng chịu áp 0,3 m và áp 10 MPa để ước lượng cỡ bulông.",
+     "reason_ja": "このダイ内の樹脂圧に関する公開資料はない。図面レビューは、ボルトのサイズを見積もるために幅 2,4 m(specs では推定値)、受圧部の奥行 0,3 m、圧力 10 MPa を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -17,15 +36,34 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"thân khuôn gồm nhiều phần\". Lực tách 7 MN dựa trên 3 con số do reviewer chọn (2,4 m; 0,3 m; 10 MPa), không có nguồn."
   },
   "4cbc4d4be0f5": {
    "vi": "94 vít lục giác chìm M30 cấp 10.9 dài 260, đầu Ø45 nằm chìm trong lỗ khoét bậc Ø48 × 32 (mặt khuôn phẳng); positions_mm là tâm đầu vít (đầu cao 30).",
    "used_by": [
     "die_body_bolts:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "94 vít lục giác chìm M30 cấp 10.9, dài 260",
+     "text_ja": "M30 強度区分 10.9、長さ 260 の六角穴付きボルト 94 本",
+     "refs": [
+      "drev-I4"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bulông thân khuôn của máy này; review bản vẽ I4 đề xuất ≈ 2 hàng M30 10.9 bước ≈ 100 mm để chịu lực tách ≈ 7 MN, số vít 94 và chiều dài 260 do designer chọn khi dựng.",
+     "reason_ja": "この機械のダイ本体ボルトに関する公開資料はない。図面レビュー I4 が分離力 ≈ 7 MN に耐える M30 10.9 の約 2 列(ピッチ ≈ 100 mm)を提案し、本数 94 と長さ 260 は設計者がモデル作成時に選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đầu Ø45 chìm trong lỗ khoét bậc Ø48 × 32 (mặt khuôn phẳng); đầu cao 30",
+     "text_ja": "頭部 Ø45 は Ø48 × 32 の段付き座ぐり穴に沈め(ダイ面は平坦)、頭部高さ 30",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về lỗ khoét; Ø45 × cao 30 là kích thước đầu vít lục giác chìm M30 theo tiêu chuẩn chung (ISO 4762; kiến thức chung, bộ nguồn không có tài liệu riêng), lỗ khoét Ø48 × 32 do designer chọn.",
+     "reason_ja": "座ぐり穴に関する公開資料はない。Ø45 × 高さ 30 は M30 六角穴付きボルトの一般規格寸法(ISO 4762。一般知識で、資料群に個別の文書はない)で、座ぐり穴 Ø48 × 32 は設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -34,15 +72,29 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "Số vít 94 trùng với số bulông nhiệt (94) nhưng hai con số có cơ sở khác nhau."
   },
   "7244bdbdb892": {
    "vi": "Mặt đỉnh nửa trên: hàng X 9 160 (24 vít, Y = −1 265 … +1 265 bước 110) và hàng X 9 210 (23 vít, Y = −1 210 … +1 210), cả hai nằm sau hàng bulông thanh chắn (X 9 240–9 270) và máng bulông nhiệt (X 9 285–9 345).",
    "used_by": [
     "die_body_bolts:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai hàng vít mặt đỉnh nửa trên: X 9 160 (24 vít, Y ±1 265, bước 110) và X 9 210 (23 vít, Y ±1 210), nằm sau hàng bulông thanh chắn và máng bulông nhiệt",
+     "text_ja": "上半ダイ上面の2列:X 9 160(24本、Y ±1 265、ピッチ 110)と X 9 210(23本、Y ±1 210)。チョーカーバーボルト列とサーマルボルトダクトの後方に位置する",
+     "refs": [
+      "drev-I4",
+      "issue-9",
+      "design-10.2|Mặt đỉnh: hàng X 9 160"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách bố trí vít thân khuôn; vị trí do designer đặt để tránh hàng bulông thanh chắn (X 9 240–9 270) và máng bulông nhiệt (X 9 285–9 345). Ghi chú drafter: các hàng này cắt qua dải ống phân phối, đã chốt như một đơn giản hoá đã biết (issue 9).",
+     "reason_ja": "ダイ本体ボルトの配置に関する公開資料はない。位置はチョーカーバーボルト列(X 9 240–9 270)とサーマルボルトダクト(X 9 285–9 345)を避けて設計者が決めた。製図担当のメモでは、これらの列がマニホールド帯を横切るが、既知の簡略化として確定された(issue 9)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -51,15 +103,28 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "Bố trí vít cắt qua dải ống phân phối (design_issues #9, DECISIONS 21): đơn giản hoá đã biết."
   },
   "96ef01f4c947": {
    "vi": "Mặt đáy nửa dưới: hàng X 9 160 (23 vít, Y = −1 210 …) và hàng X 9 270 (24 vít, Y = −1 265 …), tức cách mép trước mặt đáy (X 9 330) 170 và 60 mm.",
    "used_by": [
     "die_body_bolts:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai hàng vít mặt đáy nửa dưới: X 9 160 (23 vít, Y ±1 210) và X 9 270 (24 vít, Y ±1 265), cách mép trước mặt đáy (X 9 330) 170 và 60 mm",
+     "text_ja": "下半ダイ下面の2列:X 9 160(23本、Y ±1 210)と X 9 270(24本、Y ±1 265)。下面前縁(X 9 330)からそれぞれ 170 mm と 60 mm",
+     "refs": [
+      "drev-I4",
+      "issue-9"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách bố trí vít thân khuôn; vị trí do designer đặt (170 = 9 330 − 9 160, 60 = 9 330 − 9 270). Hàng X 9 160 cắt qua dải ống phân phối và hàng X 9 270 cắt qua khe tiền môi, đã chốt như một đơn giản hoá đã biết (issue 9).",
+     "reason_ja": "ダイ本体ボルトの配置に関する公開資料はない。位置は設計者が決めた(170 = 9 330 − 9 160、60 = 9 330 − 9 270)。X 9 160 の列はマニホールド帯を、X 9 270 の列はプレランド隙間を横切るが、既知の簡略化として確定された(issue 9)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -68,15 +133,26 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "Xem dòng trước: đơn giản hoá đã biết (issue 9)."
   },
   "03288894b5c7": {
    "vi": "Vít từ trên ren vào nửa dưới, vít từ dưới ren vào nửa trên; các hàng lệch nhau 55 mm theo Y nên thân vít đi song song không chạm nhau.",
    "used_by": [
     "die_body_bolts:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Các hàng lệch nhau 55 mm theo Y (= nửa bước 110) nên thân vít từ trên và từ dưới đi song song, không chạm nhau",
+     "text_ja": "各列は Y 方向に 55 mm(= ピッチ 110 の半分)ずれているため、上からと下からのボルト軸は平行に通り、互いに干渉しない",
+     "refs": [
+      "drev-I4"
+     ],
+     "reason_vi": "Không có tài liệu công khai; cách bố trí so le do designer chọn, 55 = 110/2 = 1 265 − 1 210; vít từ trên ren vào nửa dưới, vít từ dưới ren vào nửa trên.",
+     "reason_ja": "公開資料はない。千鳥配置は設計者が選んだ。55 = 110/2 = 1 265 − 1 210。上からのボルトは下半体に、下からのボルトは上半体にねじ込む。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -92,8 +168,33 @@
    "used_by": [
     "die_body_bolts:details[4]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Lực kẹp ≈ 94 × 330 kN ≈ 31 MN, gấp ≈ 4 lần lực tách (31 / 7,2 ≈ 4,3)",
+     "text_ja": "締付力 ≈ 94 × 330 kN ≈ 31 MN で、分離力の ≈ 4 倍(31 / 7,2 ≈ 4,3)",
+     "refs": [
+      "drev-I4"
+     ],
+     "reason_vi": "Không có tài liệu công khai; 330 kN mỗi vít M30 10.9 là lực xiết designer chọn (kiến thức chung về bulông, bộ nguồn không có tài liệu riêng). Phép tính khớp: 94 × 330 = 31 020 kN ≈ 31 MN và 31 / 7,2 ≈ 4,3.",
+     "reason_ja": "公開資料はない。M30 10.9 1本あたり 330 kN は設計者が選んだ締付力(ボルトに関する一般知識で、資料群に個別の文書はない)。計算は整合する:94 × 330 = 31 020 kN ≈ 31 MN、31 / 7,2 ≈ 4,3。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống phân phối (G) phải đi giữa và trước các hàng vít",
+     "text_ja": "マニホールド(G)はボルト列の間かつ手前を通す必要がある",
+     "refs": [
+      "design-9|Kết cấu trong khuôn",
+      "issue-9"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kết cấu trong khuôn; design §9 nhận thân khuôn sâu 450 quá chật nên hàng vít vẫn cắt qua dải ống phân phối (đơn giản hoá đã biết). Chữ G là dấu giả định của drafter.",
+     "reason_ja": "ダイ内部構造に関する公開資料はない。design §9 は、奥行 450 では狭すぎるためボルト列が結局マニホールド帯を横切ることを認めている(既知の簡略化)。G は製図担当の仮定マークである。"
+    }
+   ],
+   "free_numbers": [
+    "9"
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I4; cỡ và vị trí giả định (tính lực kẹp)"
@@ -102,15 +203,35 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "Dòng nói ống phân phối \"phải đi giữa và trước các hàng vít\", nhưng issue 9 và design §9 mục 6 thừa nhận các hàng vít thực tế cắt qua dải ống phân phối (đơn giản hoá đã biết, DECISIONS 21). Số 9 trong \"§9\" là tên mục."
   },
   "394abcf27fe3": {
    "vi": "Nửa dưới ống phân phối, môi dưới thay được.",
    "used_by": [
     "die_body_lower:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn tấm có ống phân phối móc áo (coat-hanger) và môi tháo thay được (Nordson EDI)",
+     "text_ja": "シートダイにはコートハンガー形マニホールドと交換可能なリップがある(Nordson EDI)",
+     "refs": [
+      "c057"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nửa dưới mang nửa dưới của ống phân phối; mặt phân khuôn nằm ngang tại Z 1 200",
+     "text_ja": "下半ダイはマニホールドの下半分を受け持つ。分割面は Z 1 200 の水平面",
+     "refs": [
+      "spec-5|Kiểu",
+      "web-20"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách chia hai nửa khuôn của máy này; chọn mặt chia ngang ở cao độ trục vít (Z 1 200) để lòng chảy và môi cùng độ cao trục vít, như đường chia hai nửa nhìn thấy trên ảnh khuôn hãng khác (web-20).",
+     "reason_ja": "この機械のダイの分割方法に関する公開資料はない。流路とリップをスクリュー軸の高さ(Z 1 200)に揃えるため水平な分割面を選んだ。他社ダイの写真(web-20)にも上下半体の分割線が見える。"
+    }
+   ],
    "seed": {
     "sources": [
      "như trên"
@@ -124,23 +245,74 @@
    "used_by": [
     "die_body_lower:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cao 250 (Z 950–1 200): mặt phân khuôn ở Z 1 200 = cao độ trục vít",
+     "text_ja": "高さ 250(Z 950–1 200):分割面はスクリュー軸の高さ Z 1 200",
+     "refs": [
+      "spec-5|Chiều cao thân",
+      "spec-4|Cao độ đường tâm nhựa",
+      "c006"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước khuôn; specs ước lượng thân ≈ 500 theo tỷ lệ ảnh web-19/20 (nửa trên 260, nửa dưới 240), designer chia lại 250/250; Z 1 200 lấy bằng cao độ trục vít (c006) cho đơn giản.",
+     "reason_ja": "ダイ寸法に関する公開資料はない。specs は写真 web-19/20 の比率からボディ高さを ≈ 500(上 260、下 240)と推定し、設計者が 250/250 に配分した。Z 1 200 は簡略化のためスクリュー軸の高さ(c006)に合わせた。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn khe KM được gia nhiệt bằng thanh nhiệt cắm (cartridge heaters)",
+     "text_ja": "KM のスロットダイはカートリッジヒーターで加熱される",
+     "refs": [
+      "c058"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "9 vùng thanh nhiệt mỗi nửa (bước ≈ 270, 2 400 / 270 ≈ 9)",
+     "text_ja": "ヒーターロッドは半体ごとに 9 ゾーン(ピッチ ≈ 270、2 400 / 270 ≈ 9)",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt của khuôn này; specs ước lượng vùng rộng ≈ 250–300 mm, designer chọn bước ≈ 270 nên có 9 vùng mỗi nửa.",
+     "reason_ja": "このダイの加熱ゾーン数に関する公開資料はない。specs はゾーン幅を ≈ 250–300 mm と推定し、設計者がピッチ ≈ 270 を選んだため半体ごとに 9 ゾーンとなる。"
+    }
+   ],
    "seed": {
     "sources": [
      "như trên"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "c058 là khuôn khe của dây chuyền xốp KM (độ tin cậy trung bình), chỉ dùng để nói khuôn khe có thanh nhiệt cắm."
   },
   "c7ec5e746502": {
    "vi": "Môi dưới (lower lip) là thanh chèn thay được dọc mũi, X 9 446–9 576 × cao 60, bắt 24 vít M12 lục giác chìm từ mặt vát dưới (bước 100).",
    "used_by": [
     "die_body_lower:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Môi khuôn tháo thay được (removable lips)",
+     "text_ja": "ダイのリップは取り外して交換できる(removable lips)",
+     "refs": [
+      "c057"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thanh môi dưới X 9 446–9 576 × cao 60, bắt 24 vít M12 lục giác chìm từ mặt vát dưới, bước 100 (24 × 100 = 2 400, bằng bề rộng môi)",
+     "text_ja": "下リップのインサートバーは X 9 446–9 576 × 高さ 60、下側の面取り面から M12 六角穴付きボルト 24 本でピッチ 100 に固定(24 × 100 = 2 400 = リップ幅)",
+     "refs": [
+      "spec-5|Kiểu"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ thanh môi dưới và vít bắt; kích thước do designer chọn, số vít = bề rộng môi 2 400 / bước 100.",
+     "reason_ja": "下リップの寸法と固定ボルトに関する公開資料はない。寸法は設計者が選び、本数はリップ幅 2 400 / ピッチ 100 から決めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "như trên"
@@ -154,8 +326,33 @@
    "used_by": [
     "die_body_upper:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn tấm có ống phân phối móc áo (coat-hanger manifold)",
+     "text_ja": "シートダイにはコートハンガー形マニホールドがある(Nordson EDI Multiflow)",
+     "refs": [
+      "c057"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Môi mềm nằm trong nửa trên thân khuôn (Reifenhäuser)",
+     "text_ja": "フレックスリップは上半ダイボディ内にある(Reifenhäuser)",
+     "refs": [
+      "c056"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Thanh chắn (choker bar) đặt trước môi mềm để chỉnh thô; bulông chỉnh môi cách nhau ≈ 25 mm",
+     "text_ja": "チョーカーバーはフレックスリップの上流にあり粗調整に使う。リップ調整ボルトのピッチは約 25 mm",
+     "refs": [
+      "c053"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c055/c056/c057 (khuôn móc áo, môi mềm, thanh chắn); DECISIONS 10 (môi rộng 2 400); chiều cao/chiều sâu giả định theo web-19/20"
@@ -170,15 +367,61 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"môi mềm nằm trong nửa trên\"."
   },
   "991bac395012": {
    "vi": "Rộng 2 600 (Y ±1 300), cao 250 (Z 1 200–1 450), sâu 450 (X 9 126–9 576), mũi vát 30° về phía khe trục.",
    "used_by": [
     "die_body_upper:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Rộng 2 600 (Y ±1 300) = môi 2 400 + 2 × 100",
+     "text_ja": "幅 2 600(Y ±1 300)= リップ 2 400 + 2 × 100",
+     "refs": [
+      "dec-10|môi khuôn rộng 2,4 m",
+      "spec-5|Chiều rộng khe môi",
+      "c056"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng thân khuôn của máy này; môi 2 400 là ước lượng trong specs (tấm 2 100 + ≈ 150 mỗi bên), designer chọn thân rộng hơn môi 100 mỗi bên. Reifenhäuser có khuôn rộng 75–3 500 mm (c056) nên cỡ này có thật.",
+     "reason_ja": "この機械のダイ幅に関する公開資料はない。リップ 2 400 は specs の推定値(シート 2 100 + 片側 ≈ 150)で、ボディはリップより片側 100 広く設計者が決めた。Reifenhäuser には幅 75–3 500 mm のダイがある(c056)ので、このサイズは現実にある。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cao 250 (Z 1 200–1 450), sâu 450 (X 9 126–9 576)",
+     "text_ja": "高さ 250(Z 1 200–1 450)、奥行 450(X 9 126–9 576)",
+     "refs": [
+      "spec-5|Chiều cao thân",
+      "spec-5|Chiều sâu theo chiều chảy",
+      "design-9|chiều cao và chiều sâu khuôn",
+      "dec-21|Quyết định 20 bị hủy"
+     ],
+     "reason_vi": "Không có tài liệu công khai; specs ước lượng cao ≈ 500 (hai nửa) theo tỷ lệ ảnh web-19/20 và sâu ≈ 450; thiết kế ghi đây là giả định và giữ sâu 450 dù hơi chật (DECISIONS 21).",
+     "reason_ja": "公開資料はない。specs は写真 web-19/20 の比率から高さ ≈ 500(上下合計)、奥行 ≈ 450 と推定した。設計もこれを仮定と明記し、やや狭いまま奥行 450 を維持した(DECISIONS 21)。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Thân khuôn thu nhọn dạng nêm về phía môi, mũi chĩa vào khe giữa các trục cán (sơ đồ catalogue trang 24–25)",
+     "text_ja": "ダイボディはリップに向かってくさび形に細くなり、先端がロール間隙を向く(カタログ 24–25 ページの構成図)",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c035"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mũi vát 30° về phía khe trục",
+     "text_ja": "先端はロール間隙側に 30° 面取り",
+     "refs": [
+      "spec-5|Chiều sâu theo chiều chảy",
+      "design-7|Với trục Ø800"
+     ],
+     "reason_vi": "Không có tài liệu công khai về góc mũi khuôn; sơ đồ catalogue chỉ cho thấy thân hình nêm, không có số đo góc; specs ước lượng 30–45°, designer chọn 30° để giữ khe gió ≈ 200 mm với trục Ø800.",
+     "reason_ja": "ダイ先端の角度に関する公開資料はない。カタログ図はくさび形を示すだけで角度はない。specs は 30–45° と推定し、設計者が Ø800 のロールに対しエアギャップ ≈ 200 mm を保つため 30° を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c055/c056/c057 (khuôn móc áo, môi mềm, thanh chắn); DECISIONS 10 (môi rộng 2 400); chiều cao/chiều sâu giả định theo web-19/20"
@@ -193,15 +436,47 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "Thân sâu 450 được thiết kế thừa nhận là quá chật (design §9 mục 6)."
   },
   "63454c318d31": {
    "vi": "Mạ crôm bóng; 9 vùng thanh nhiệt cắm từ mặt sau.",
    "used_by": [
     "die_body_upper:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Mạ crôm bóng",
+     "text_ja": "光沢クロムめっき",
+     "refs": [
+      "web-19",
+      "web-20",
+      "web-07"
+     ],
+     "reason_vi": "Không có tài liệu công khai về lớp phủ của khuôn này; chọn crôm bóng vì khuôn tấm hãng khác trong ảnh (web-19, web-20) có thân thép mạ crôm; ảnh KM (web-07) cũng cho thấy thân khuôn sáng màu thép.",
+     "reason_ja": "このダイの表面処理に関する公開資料はない。他社のシートダイの写真(web-19、web-20)が鋼製クロムめっき本体であり、KM の写真(web-07)でもダイ本体が明るい鋼色に見えるため、光沢クロムを選んだ。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn khe KM được gia nhiệt bằng thanh nhiệt cắm (cartridge heaters)",
+     "text_ja": "KM のスロットダイはカートリッジヒーターで加熱される",
+     "refs": [
+      "c058"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "9 vùng thanh nhiệt cắm từ mặt sau (bước ≈ 270)",
+     "text_ja": "ヒーターロッド 9 ゾーンを背面から挿入(ピッチ ≈ 270)",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt của khuôn này; specs ước lượng vùng rộng ≈ 250–300 mm nên 9 vùng mỗi nửa; cắm từ mặt sau vì hộp đầu nối nhiệt đặt ở mặt sau.",
+     "reason_ja": "このダイの加熱ゾーン数に関する公開資料はない。specs はゾーン幅を ≈ 250–300 mm と推定したため半体ごとに 9 ゾーン。ヒーターボックスが背面にあるため背面から挿入する。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c055/c056/c057 (khuôn móc áo, môi mềm, thanh chắn); DECISIONS 10 (môi rộng 2 400); chiều cao/chiều sâu giả định theo web-19/20"
@@ -216,15 +491,56 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "Lớp mạ crôm là lựa chọn của thiết kế (ảnh web-19/20 là hãng khác)."
   },
   "6937b6e03651": {
    "vi": "Rãnh bản lề môi mềm (flex-lip hinge slot) hở, chạy suốt bề rộng 2 400 tại X 9 392–9 404 (rộng 12), cắt từ mặt vát xuống tới Z 1 212, để lại gân bản lề dày 12 mm trên mặt chảy (Z 1 200); phần sau rãnh là môi mềm. Đầu bulông nhiệt tì lên môi tại X 9 440, cách gân 36 mm.",
    "used_by": [
     "die_body_upper:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hàng bulông chỉnh môi (cách nhau ≈ 25 mm) tác động lên môi mềm của khuôn tấm",
+     "text_ja": "リップ調整ボルト列(ピッチ約 25 mm)がシートダイのフレックスリップを調整する",
+     "refs": [
+      "c053"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Rãnh bản lề hở tại X 9 392–9 404 (rộng 12), cắt từ mặt vát xuống Z 1 212, chừa gân dày 12 mm = 1 212 − 1 200 trên mặt chảy",
+     "text_ja": "開放ヒンジスロットは X 9 392–9 404(幅 12)、面取り面から Z 1 212 まで切り込み、流路面に厚さ 12 mm = 1 212 − 1 200 のヒンジ肉を残す",
+     "refs": [
+      "drev-I5",
+      "design-10.2|I5: rãnh bản lề hở"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu tạo bản lề môi mềm của khuôn này; review bản vẽ I5 yêu cầu rãnh hở cắt từ mặt vát và chừa gân ≈ 8–12 mm trên mặt chảy; designer chọn rộng 12 và gân 12.",
+     "reason_ja": "このダイのフレックスリップのヒンジ構造に関する公開資料はない。図面レビュー I5 が面取り面から切り込む開放スロットと流路面上 ≈ 8–12 mm のウェブを求め、設計者が幅 12・肉厚 12 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Rãnh chạy suốt bề rộng môi 2 400",
+     "text_ja": "スロットはリップ幅 2 400 の全幅にわたる",
+     "refs": [
+      "dec-10|môi khuôn rộng 2,4 m",
+      "spec-0|Khổ tấm"
+     ],
+     "reason_vi": "Bề rộng môi 2 400 là ước lượng (tấm thành phẩm 2 100 + ≈ 150 mỗi bên cho co hẹp và xén biên); không có tài liệu công khai về khuôn này.",
+     "reason_ja": "リップ幅 2 400 は推定値(製品シート 2 100 + 片側 ≈ 150、ネックインとエッジトリム分)で、このダイに関する公開資料はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đầu bulông nhiệt tì lên môi tại X 9 440, cách gân 36 mm = 9 440 − 9 404",
+     "text_ja": "サーマルボルトの頭部は X 9 440 でリップに当たり、ヒンジ肉から 36 mm = 9 440 − 9 404",
+     "refs": [
+      "drev-I5"
+     ],
+     "reason_vi": "Không có tài liệu công khai; review bản vẽ I5 đề nghị điểm tì cách gân ≥ 30–40 mm để có cánh tay đòn; 36 do designer chọn.",
+     "reason_ja": "公開資料はない。図面レビュー I5 がてこの腕を確保するためウェブから 30–40 mm 以上離した当たり位置を提案し、36 は設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c055/c056/c057 (khuôn móc áo, môi mềm, thanh chắn); DECISIONS 10 (môi rộng 2 400); chiều cao/chiều sâu giả định theo web-19/20"
@@ -239,15 +555,39 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "Hình học bản lề là sửa chữa theo review bản vẽ I5, không có nguồn công khai."
   },
   "6d29e3fa00bd": {
    "vi": "Mặt đỉnh từ sau ra trước: hộp nhiệt mặt sau (X ≤ 9 126), tai cẩu ở tấm đầu, hàng bulông thanh chắn X 9 255 (thanh chắn trong thân X 9 240–9 270), máng bulông nhiệt X 9 285–9 345, rồi mặt vát mang 94 bulông nhiệt.",
    "used_by": [
     "die_body_upper:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Trên khuôn tấm hãng khác, hàng bulông thanh chắn nằm trên mặt đỉnh phía sau, hàng bulông chỉnh môi phía trước",
+     "text_ja": "他社のシートダイでは、チョーカーバーボルト列が上面の後方、リップ調整ボルト列が前方に並ぶ",
+     "refs": [
+      "web-19",
+      "web-20"
+     ],
+     "reason_vi": "Cách suy ra: so thứ tự các hàng bulông trên ảnh khuôn tấm Taizhou Jingyue (web-19, web-20); khác hãng với máy này nên chỉ lấy thứ tự, không lấy kích thước.",
+     "reason_ja": "導出方法:Taizhou Jingyue 製シートダイの写真(web-19、web-20)でボルト列の順序を比較した。この機械とはメーカーが異なるため、順序のみを採り、寸法は採らない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Từ sau ra trước: hộp nhiệt X ≤ 9 126, tai cẩu ở tấm đầu, bulông thanh chắn X 9 255 (thanh chắn X 9 240–9 270), máng bulông nhiệt X 9 285–9 345, mặt vát 94 bulông nhiệt",
+     "text_ja": "後方から前方へ:ヒーターボックス X ≤ 9 126、端板の吊り環、チョーカーバーボルト X 9 255(チョーカーバー X 9 240–9 270)、サーマルボルトダクト X 9 285–9 345、サーマルボルト 94 本の面取り面",
+     "refs": [
+      "issue-1",
+      "design-10.1|#1 bulông thanh chắn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí mặt đỉnh; các toạ độ X do designer đặt; hàng bulông thanh chắn dời từ X 9 185 sang 9 255 và máng thu hẹp theo ghi chú drafter (issue 1) vì thanh chắn phải ở sau ống phân phối.",
+     "reason_ja": "上面の配置に関する公開資料はない。X 座標は設計者が決めた。チョーカーバーボルト列は X 9 185 から 9 255 へ移され、ダクトも狭められた(製図担当のメモ issue 1)。チョーカーバーはマニホールドの後方でなければならないためである。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c055/c056/c057 (khuôn móc áo, môi mềm, thanh chắn); DECISIONS 10 (môi rộng 2 400); chiều cao/chiều sâu giả định theo web-19/20"
@@ -269,8 +609,31 @@
    "used_by": [
     "die_bolt_actuator_rail:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "94 thanh nhiệt = 94 bulông nhiệt (2 400 / 25,4 làm tròn xuống), mỗi bulông một thanh gia nhiệt 80 W",
+     "text_ja": "94 本のヒーターロッド = サーマルボルト 94 本(2 400 / 25,4 を切り捨て)。各ボルトに 80 W のヒーターロッドが 1 本",
+     "refs": [
+      "c054",
+      "spec-5|Bulông chỉnh môi"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng khuôn của máy này; số bulông tính từ bước 25,4 mm (c054) nhân bề rộng môi 2 400 mm (ước lượng trong specs); công suất 80 W mỗi thanh theo c054.",
+     "reason_ja": "この機械のダイ幅に関する公開資料はない。ボルト本数はピッチ 25,4 mm(c054)とリップ幅 2 400 mm(specs の推定値)から計算した。1 本あたり 80 W は c054 による。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Cáp của bulông nhiệt và ống gió làm mát chạy dọc hàng bulông nhiệt trên môi",
+     "text_ja": "サーマルボルトのケーブルと冷却エア配管は、リップ上のサーマルボルト列に沿って走る",
+     "refs": [
+      "web-17",
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: quan sát ảnh SBI Mechatronik (web-17: hàng cáp dọc môi; web-18: ống gió nối vào máng dọc hàng bulông); hãng khác, chỉ lấy cách bố trí.",
+     "reason_ja": "導出方法:SBI Mechatronik の写真を観察した(web-17:リップに沿うケーブル列、web-18:ボルト列沿いのダクトにつながるエアホース)。他社製のため、配置のみを採った。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17/18 (hàng dây và ống gió dọc môi); c054; thu hẹp theo ghi chú drafter (design_issues #1)"
@@ -289,8 +652,20 @@
    "used_by": [
     "die_bolt_actuator_rail:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Máng inox 60 × 90 dài 2 500 tại X 9 285–9 345, ngay sau đầu trên các bulông nhiệt; chứa cáp 94 thanh nhiệt (tầng trên) và ống gió làm mát (tầng dưới)",
+     "text_ja": "ステンレス製ダクト 60 × 90、長さ 2 500、X 9 285–9 345。サーマルボルト上端のすぐ後方で、内部にヒーターロッド 94 本のケーブル(上段)と冷却エアダクト(下段)を収める",
+     "refs": [
+      "issue-1",
+      "design-10.1|Máng bulông nhiệt thu hẹp còn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ máng; máng thu hẹp còn 60 × 90 tại X 9 285–9 345 theo ghi chú drafter (issue 1); dài 2 500 = 2 × 1 250 phủ hàng bulông nhiệt (Y ±1 197); hai tầng cáp/gió do designer chọn.",
+     "reason_ja": "ダクト寸法に関する公開資料はない。ダクトは製図担当のメモ(issue 1)により X 9 285–9 345 の 60 × 90 に狭められた。長さ 2 500 = 2 × 1 250 でサーマルボルト列(Y ±1 197)を覆う。ケーブルとエアの2段構成は設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17/18 (hàng dây và ống gió dọc môi); c054; thu hẹp theo ghi chú drafter (design_issues #1)"
@@ -309,8 +684,29 @@
    "used_by": [
     "die_bolt_actuator_rail:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "2 ổ cắm nhiều chân đánh số 1 và 2 ở đầu hàng cáp (đếm trên ảnh web-17)",
+     "text_ja": "多極コネクタ2個に番号 1 と 2 が付く(web-17 の写真で数えた)",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Cách suy ra: đếm hai phích nhiều chân gắn số 1 và 2 trên ảnh web-17 (SBI Mechatronik); hãng khác, chỉ lấy số lượng và kiểu.",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で、番号 1 と 2 の付いた多極コネクタ2個を数えた。他社製のため、数と形式のみを採った。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ổ cắm đặt ở đầu −Y; nắp máng tháo được để chừa lối vặn bulông thanh chắn ngay phía sau",
+     "text_ja": "コネクタは −Y 端に置く。ダクト蓋は取り外し可能で、直後のチョーカーバーボルトを回す作業スペースを確保する",
+     "refs": [
+      "issue-1"
+     ],
+     "reason_vi": "Không có tài liệu công khai; vị trí đầu −Y theo bố trí cáp phía −Y của thiết kế; nắp tháo được do designer thêm để chừa lối vặn bulông thanh chắn sau khi dời hàng bulông và thu hẹp máng (issue 1).",
+     "reason_ja": "公開資料はない。−Y 端はこの設計のケーブルが −Y 側に集まる配置による。取り外し可能な蓋は、ボルト列を移しダクトを狭めた後にチョーカーバーボルトの作業スペースを確保するため設計者が追加した(issue 1)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17/18 (hàng dây và ống gió dọc môi); c054; thu hẹp theo ghi chú drafter (design_issues #1)"
@@ -329,8 +725,30 @@
    "used_by": [
     "die_cable_harness:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Khuôn có bulông nhiệt tự động dùng cáp xám có phích nhiều chân đánh số, rút cắm được (ảnh web-17)",
+     "text_ja": "自動サーマルボルト付きダイでは、番号付き多極プラグのグレーのケーブルを使い、抜き差しできる(web-17 の写真)",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Cách suy ra: quan sát ảnh web-17 (SBI Mechatronik): cáp xám có đầu cắm nhiều chân đánh số; hãng khác nên chỉ lấy kiểu, không dùng làm bằng chứng cho máy này.",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で、番号付き多極プラグを持つグレーのケーブルを観察した。他社製のため形式のみを採り、この機械の根拠とはしない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bó cáp dẫn xuống hộp đấu dây khuôn; rút phích ra khi kéo khuôn đi",
+     "text_ja": "ケーブルハーネスはダイ接続箱へ下ろし、ダイを引き出すときはプラグを抜く",
+     "refs": [
+      "rev-I6",
+      "design-7|Xe khuôn. Khuôn nặng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đấu dây khuôn; review thiết kế I6 yêu cầu bó cáp cắm rút để xe khuôn rời đi, hộp đấu dây đứng riêng trên sàn.",
+     "reason_ja": "ダイの配線に関する公開資料はない。設計レビュー I6 が、ダイカートが離れられるよう抜き差し式ハーネスと、床置きの独立した接続箱を求めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17 (cáp xám có đầu cắm đánh số); review-01 I6"
@@ -347,8 +765,29 @@
    "used_by": [
     "die_cable_harness:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống luồn cáp mềm Ø60 đi xuống phía −Y rồi chéo về nóc hộp đấu dây khuôn",
+     "text_ja": "Ø60 のフレキシブル電線管を −Y 側に下ろし、斜めにダイ接続箱の天面へ導く",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường đi và cỡ ống luồn; Ø60 và lộ trình do designer chọn, kết thúc ở nóc hộp đấu dây theo review thiết kế I6.",
+     "reason_ja": "電線管の経路と寸法に関する公開資料はない。Ø60 と経路は設計者が選び、設計レビュー I6 に従って接続箱の天面で終わる。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "2 phích nhiều chân đánh số ở đầu hộp (đếm 2 phích số 1 và 2 trên ảnh web-17)",
+     "text_ja": "箱の端に番号付き多極プラグ2個(web-17 の写真で番号 1 と 2 の2個を数えた)",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Cách suy ra: đếm hai phích nhiều chân gắn số 1 và 2 trên ảnh web-17 (SBI Mechatronik); hãng khác, chỉ lấy số lượng và kiểu.",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で、番号 1 と 2 の付いた多極プラグ2個を数えた。他社製のため、数と形式のみを採った。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17 (cáp xám có đầu cắm đánh số); review-01 I6"
@@ -365,8 +804,60 @@
    "used_by": [
     "die_cart:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn tấm KM đặt trên xe khuôn (die cart) có bánh và cột chỉnh cao",
+     "text_ja": "KM のシートダイは車輪付きダイカート(die cart)に載り、高さ調整用の支柱を持つ",
+     "refs": [
+      "web-08",
+      "c057"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối lượng khuôn ≈ 3,4 t",
+     "text_ja": "ダイ質量 ≈ 3,4 t",
+     "refs": [
+      "rev-I3",
+      "spec-5|Khối lượng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khối lượng khuôn này; review thiết kế I3 tính từ thể tích mô hình (2 × 0,077 m² × 2 600 ≈ 3,1 t thép, cộng tấm đầu, môi, bulông ≈ 3,4 t); specs cũ ghi ≈ 2 t, khuôn Cloeren 62″ chỉ nặng ≈ 1 t (c055).",
+     "reason_ja": "このダイの質量に関する公開資料はない。設計レビュー I3 がモデルの体積から算出した(2 × 0,077 m² × 2 600 ≈ 3,1 t の鋼、エンドプレート・リップ・ボルトを加えて ≈ 3,4 t)。旧 specs は ≈ 2 t、Cloeren 62″ のダイは約 1 t にすぎない(c055)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chỉnh cao ±50 mm bằng kích vít",
+     "text_ja": "ねじジャッキで高さ ±50 mm 調整",
+     "refs": [
+      "web-08"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hành trình chỉnh cao; ảnh web-08 chỉ cho thấy cột có trục vít, ±50 mm do designer chọn.",
+     "reason_ja": "高さ調整のストロークに関する公開資料はない。web-08 の写真はねじ軸付きの支柱を示すだけで、±50 mm は設計者が選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tự do ±40 mm theo X (giãn nở): giãn tại khuôn ≈ 28 mm = 17 (xi lanh) + 10 (đường chảy)",
+     "text_ja": "X 方向(熱膨張)に ±40 mm 自由に動く:ダイでの膨張は ≈ 28 mm = 17(バレル)+ 10(溶融ライン)",
+     "refs": [
+      "rev-I8",
+      "design-7|Xi lanh cố định ở lantern"
+     ],
+     "reason_vi": "Không có tài liệu công khai; giãn nở tính từ thép α ≈ 12e-6 với ΔT ≈ 250 K (hệ số chung, nhiệt độ giả định); chọn ±40 mm có dư theo review thiết kế I8.",
+     "reason_ja": "公開資料はない。膨張量は鋼の α ≈ 12e-6、ΔT ≈ 250 K(一般的な係数と仮定温度)から計算した。設計レビュー I8 に従い余裕を持たせて ±40 mm とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kéo khuôn ra theo +Y trên ray",
+     "text_ja": "ダイをレール上で +Y 方向へ引き出す",
+     "refs": [
+      "rev-I3"
+     ],
+     "reason_vi": "Không có tài liệu công khai; chọn hướng +Y (phía người vận hành) và ray vì khuôn nặng ≈ 3,4 t; ảnh web-08 cho thấy xe khuôn có bánh nhưng không rõ hướng kéo.",
+     "reason_ja": "公開資料はない。ダイが約 3,4 t と重いため、+Y(オペレーター側)とレール走行を選んだ。web-08 の写真は車輪付きカートを示すが、引き出し方向は分からない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-08 (xe khuôn đế rộng có bánh và cột chỉnh), c057 (die carts); review-01 I3, I8"
@@ -377,15 +868,46 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "Khối lượng 3,4 t (review I3, tính từ thể tích mô hình) cao hơn nhiều so với ước lượng cũ của specs (≈ 2 t) và khuôn Cloeren 62″ (≈ 1 t, 1 575 mm); chênh lệch chưa được đối chiếu."
   },
   "1a5a00936cfb": {
    "vi": "Đế thép hộp rộng X 8 700–9 380, Z 60–300, luồn dưới bộ trộn và bích khuôn; 4 bánh: 2 bánh trụ trên ray phẳng X 8 760, 2 bánh rãnh V trên ray dẫn hướng X 9 320 (khổ 560).",
    "used_by": [
     "die_cart:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xe khuôn KM có đế khung rộng đặt trên bánh xe",
+     "text_ja": "KM のダイカートは幅広のフレームベースを車輪に載せる構造",
+     "refs": [
+      "web-08"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đế thép hộp rộng X 8 700–9 380, Z 60–300, luồn dưới bộ trộn và bích khuôn",
+     "text_ja": "角形鋼ベース(幅 X 8 700–9 380、Z 60–300)をミキサーとダイフランジの下に通す",
+     "refs": [
+      "rev-I3",
+      "design-10|I3 (xe khuôn)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước xe; review thiết kế I3 đề xuất đế rộng X 8 700–9 380 vì đế cũ (khổ 160 mm) sẽ lật dưới khuôn ≈ 3,4 t; ảnh web-08 chỉ cho dạng chung.",
+     "reason_ja": "カートの寸法に関する公開資料はない。設計レビュー I3 は、旧ベース(ゲージ 160 mm)では約 3,4 t のダイの下で転倒するため、X 8 700–9 380 の幅広ベースを提案した。web-08 の写真は一般的な形を示すだけである。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 bánh: 2 bánh trụ trên ray phẳng X 8 760, 2 bánh rãnh V trên ray dẫn hướng X 9 320 (khổ 560 = 9 320 − 8 760)",
+     "text_ja": "車輪4個:X 8 760 の平レール上に円筒車輪2個、X 9 320 のガイドレール上に V溝車輪2個(ゲージ 560 = 9 320 − 8 760)",
+     "refs": [
+      "rev-I3",
+      "rev-I8"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bánh và ray; ảnh web-08 cho thấy xe KM dùng bánh xe tự do (castor), không có ray; thiết kế chọn một ray phẳng và một ray dẫn hướng để xe tự do theo X (review thiết kế I3, I8).",
+     "reason_ja": "車輪とレールに関する公開資料はない。web-08 の写真では KM のカートはキャスターを使い、レールはない。この設計は、X 方向に自由に動けるよう平レール1本とガイドレール1本を選んだ(設計レビュー I3、I8)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-08 (xe khuôn đế rộng có bánh và cột chỉnh), c057 (die carts); review-01 I3, I8"
@@ -396,15 +918,35 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-08 (xe khuôn KM) dùng bánh xe tự do (castor) và không thấy ray; thiết kế dùng bánh trụ và bánh rãnh V trên ray."
   },
   "10c4750cce5b": {
    "vi": "Hai cột kích vít có tay quay ở X 9 150–9 350, xà đỡ trên có bàn trượt ±40 mm theo X và 2 đệm tại Y = ±700.",
    "used_by": [
     "die_cart:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xe khuôn KM nâng khuôn bằng cột có trục vít (kích vít)",
+     "text_ja": "KM のダイカートは、ねじ軸付きの支柱(ねじジャッキ)でダイを支える",
+     "refs": [
+      "web-08"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 cột kích vít có tay quay ở X 9 150–9 350; xà đỡ trên có bàn trượt ±40 mm theo X và 2 đệm tại Y = ±700",
+     "text_ja": "ハンドル付きねじジャッキ支柱2本(X 9 150–9 350)、上部サポートビームに X 方向 ±40 mm のスライドテーブルと Y = ±700 のパッド2個",
+     "refs": [
+      "rev-I3",
+      "rev-I8"
+     ],
+     "reason_vi": "Không có tài liệu công khai; vị trí cột và đệm theo review thiết kế I3 (đệm tại (9 240, ±700, 950)), bàn trượt ±40 mm theo review I8; số cột và tay quay do designer chọn.",
+     "reason_ja": "公開資料はない。支柱とパッドの位置は設計レビュー I3(パッド (9 240, ±700, 950))、スライドテーブル ±40 mm は同 I8 による。支柱の本数とハンドルは設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-08 (xe khuôn đế rộng có bánh và cột chỉnh), c057 (die carts); review-01 I3, I8"
@@ -422,8 +964,30 @@
    "used_by": [
     "die_cart:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Phía trước đế không vượt X 9 380 dưới Z 600, vì trục dưới ở X ≥ 9 429 tại Z 600 (khe 49 mm)",
+     "text_ja": "ベース前端は Z 600 以下で X 9 380 を超えない。Z 600 で下ロールは X ≥ 9 429 にあるため(隙間 49 mm)",
+     "refs": [
+      "rev-I3",
+      "spec-6|Vị trí so với khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí trục cán; vị trí trục dưới suy từ khung trục chọn trong specs (Ø800, khe trục ở Z ≈ 1 200); review thiết kế I3 chừa 49 mm = 9 429 − 9 380.",
+     "reason_ja": "ロール位置に関する公開資料はない。下ロールの位置は specs で選んだロールスタック(Ø800、ロール間隙 Z ≈ 1 200)から導かれ、設計レビュー I3 が 49 mm = 9 429 − 9 380 の隙間を残した。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khoá bánh khi chạy (khoá sàn ở vị trí làm việc)",
+     "text_ja": "運転時は車輪をロックする(作業位置で床ロック)",
+     "refs": [
+      "rev-I3"
+     ],
+     "reason_vi": "Không có tài liệu công khai; khoá xe ở vị trí làm việc là cách làm thông thường để xe không dịch khi đùn (kiến thức chung); khoá sàn theo review thiết kế I3.",
+     "reason_ja": "公開資料はない。運転中にカートが動かないよう作業位置でロックするのは一般的な方法(一般知識)で、床ロックは設計レビュー I3 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-08 (xe khuôn đế rộng có bánh và cột chỉnh), c057 (die carts); review-01 I3, I8"
@@ -441,8 +1005,21 @@
    "used_by": [
     "die_cart:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Phải lùi cụm trục cán trước khi kéo khuôn ra theo +Y",
+     "text_ja": "ダイを +Y 方向へ引き出す前にロールスタックを後退させる必要がある",
+     "refs": [
+      "rev-M6",
+      "design-7|Cụm trục chạy trên ray",
+      "spec-6|Lùi ra"
+     ],
+     "reason_vi": "Không có tài liệu công khai; catalogue cho thấy cụm cán là một cụm riêng đặt ngay sau khuôn; thiết kế cho cụm trục chạy trên ray lùi 1 000–1 500 mm (ước lượng trong specs) nên phải lùi trước khi kéo khuôn (review thiết kế M6).",
+     "reason_ja": "公開資料はない。カタログはロールユニットがダイの直後に置かれる独立ユニットであることを示す。設計はロールスタックをレール上で 1 000–1 500 mm 後退させる(specs の推定値)ため、ダイを引き出す前に後退が必要になる(設計レビュー M6)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-08 (xe khuôn đế rộng có bánh và cột chỉnh), c057 (die carts); review-01 I3, I8"
@@ -460,8 +1037,20 @@
    "used_by": [
     "die_cart_rails:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dẫn xe khuôn ra phía +Y khi bảo trì",
+     "text_ja": "メンテナンス時にダイカートを +Y 側へ誘導する",
+     "refs": [
+      "rev-I3",
+      "web-08"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ray xe khuôn (design ghi giả định); ảnh web-08 cho thấy xe khuôn KM có bánh xe tự do, không có ray; chọn ray dẫn hướng vì khuôn nặng ≈ 3,4 t chỉ kéo ra +Y khi bảo trì (review thiết kế I3).",
+     "reason_ja": "ダイカートのレールに関する公開資料はない(設計側の注記も仮定)。web-08 の写真では KM のダイカートは自由キャスターでレールはない。約 3,4 t のダイをメンテナンス時のみ +Y へ引き出すため、ガイドレールを選んだ(設計レビュー I3)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; khổ ray theo review-01 I3"
@@ -477,8 +1066,20 @@
    "used_by": [
     "die_cart_rails:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 ray dài 4 300 theo Y: ray phẳng X 8 760, ray dẫn hướng X 9 320 (khổ 560); khoá sàn ở vị trí làm việc",
+     "text_ja": "Y 方向長さ 4 300 のレール2本:X 8 760 に平レール、X 9 320 にガイドレール(ゲージ 560)、作業位置に床ロック",
+     "refs": [
+      "rev-I3",
+      "rev-I8"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ray; review thiết kế I3 đặt ray tại X 8 760 và 9 320 (khổ 560), Y −1 500…+2 800 (dài 4 300), có khoá sàn; một ray phẳng và một ray dẫn hướng để xe tự do theo X (review I8).",
+     "reason_ja": "レールに関する公開資料はない。設計レビュー I3 が X 8 760 と 9 320(ゲージ 560)、Y −1 500…+2 800(長さ 4 300)、床ロック付きで配置し、X 方向に自由に動けるよう平レールとガイドレールを1本ずつとした(レビュー I8)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; khổ ray theo review-01 I3"
@@ -494,8 +1095,29 @@
    "used_by": [
     "die_choker_bolts:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Thanh chắn (choker bar) nằm trước môi mềm, dùng chỉnh thô; bulông chỉnh môi cách nhau ≈ 25 mm; khuôn Nordson có thanh chắn (restrictor bar) tuỳ chọn",
+     "text_ja": "チョーカーバーはフレックスリップの上流にあり粗調整に使う。リップ調整ボルトのピッチは約 25 mm。Nordson のダイにはオプションでリストリクターバーがある",
+     "refs": [
+      "c053",
+      "c057"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thanh chắn nằm sau ống phân phối, trước vùng preland",
+     "text_ja": "チョーカーバーはマニホールドの後方、プレランド域の手前にある",
+     "refs": [
+      "issue-1",
+      "spec-5|Kiểu"
+     ],
+     "reason_vi": "Claim c053 chỉ nói thanh chắn nằm trước (upstream) môi mềm; vị trí cụ thể sau ống phân phối và trước preland là cách bố trí thường gặp của khuôn móc áo (kiến thức chung, bộ nguồn không có tài liệu riêng); drafter xác nhận thanh chắn phải ở sau ống phân phối (issue 1).",
+     "reason_ja": "c053 はチョーカーバーがフレックスリップの上流にあることしか述べていない。マニホールドの後方・プレランドの手前という具体位置はコートハンガーダイで一般的な配置(一般知識で、資料群に個別の文書はない)。製図担当はチョーカーバーがマニホールドの後方にあるべきと確認した(issue 1)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053 (thanh chắn chỉnh thô), web-19; vị trí theo ghi chú drafter (design_issues #1)"
@@ -513,8 +1135,41 @@
    "used_by": [
     "die_choker_bolts:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Hàng bulông đầu đen đặt đứng trên mặt đỉnh nửa trên, ngay trên thanh chắn (quan sát ảnh khuôn hãng khác)",
+     "text_ja": "他社ダイでは、黒頭のボルト列が上半ダイ上面に直立し、チョーカーバーを調整する(写真で観察)",
+     "refs": [
+      "web-19",
+      "web-20"
+     ],
+     "reason_vi": "Cách suy ra: quan sát ảnh khuôn Taizhou Jingyue (web-19, web-20): hàng bulông đầu đen trên mặt đỉnh; không lấy kích thước từ ảnh.",
+     "reason_ja": "導出方法:Taizhou Jingyue 製ダイの写真(web-19、web-20)で上面の黒頭ボルト列を観察した。寸法は写真から採っていない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "33 bulông Ø30 cao 80 tại X 9 255, trên thanh chắn X 9 240–9 270; Y = −1 200 + 75·k (k = 0…32), 32 × 75 = 2 400 = bề rộng môi",
+     "text_ja": "Ø30、高さ 80 のボルト 33 本を X 9 255、チョーカーバー X 9 240–9 270 の上に配置;Y = −1 200 + 75·k(k = 0…32)、32 × 75 = 2 400 = リップ幅",
+     "refs": [
+      "spec-5|Bulông chỉnh thanh chắn",
+      "issue-1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số và cỡ bulông thanh chắn; specs ước lượng bước ≈ 50–75 mm theo ảnh web-19, designer chọn 75 nên 33 bulông phủ 2 400; hàng dời từ X 9 185 sang 9 255 theo ghi chú drafter (issue 1).",
+     "reason_ja": "チョーカーバーボルトの本数と寸法に関する公開資料はない。specs が写真 web-19 からピッチ ≈ 50–75 mm と推定し、設計者が 75 を選んだため 33 本で 2 400 を覆う。列は製図担当のメモ(issue 1)により X 9 185 から 9 255 へ移された。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đai ốc khoá; bulông đẩy/kéo thẳng thanh chắn như khuôn môi mềm thông thường",
+     "text_ja": "ロックナット付き。一般的なフレックスリップダイと同様に、ボルトでチョーカーバーを直接押し引きする",
+     "refs": [
+      "c053"
+     ],
+     "reason_vi": "Tài liệu trong bộ nguồn chỉ nói thanh chắn dùng để chỉnh thô (c053); đai ốc khoá và cách đẩy/kéo trực tiếp là kiến thức chung về khuôn tấm, bộ nguồn không có tài liệu riêng.",
+     "reason_ja": "資料群はチョーカーバーが粗調整用であること(c053)しか述べていない。ロックナットと直接押し引きの構造はシートダイの一般知識で、個別の文書はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053 (thanh chắn chỉnh thô), web-19; vị trí theo ghi chú drafter (design_issues #1)"
@@ -525,15 +1180,27 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "Số 33 bulông (bước 75) là chọn của designer; specs ước lượng bước 50–75 mm."
   },
   "9234e1cd5dd9": {
    "vi": "Vặn bằng khẩu từ trên xuống; khe 15 mm tới máng bulông nhiệt phía trước (X 9 285).",
    "used_by": [
     "die_choker_bolts:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khe 15 mm = 9 285 − 9 270 tới máng bulông nhiệt phía trước (X 9 285); vặn bằng khẩu từ trên xuống",
+     "text_ja": "前方のサーマルボルトダクト(X 9 285)まで隙間 15 mm = 9 285 − 9 270;ソケットレンチで上から回す",
+     "refs": [
+      "issue-1",
+      "design-10.1|Máng bulông nhiệt thu hẹp còn"
+     ],
+     "reason_vi": "Không có tài liệu công khai; khe 15 mm là kết quả của việc dời hàng bulông tới X 9 255 và thu hẹp máng (issue 1); vặn từ trên xuống vì bulông đứng trên mặt đỉnh.",
+     "reason_ja": "公開資料はない。隙間 15 mm は、ボルト列を X 9 255 へ移しダクトを狭めた結果(issue 1)。ボルトが上面に直立しているため上から回す。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053 (thanh chắn chỉnh thô), web-19; vị trí theo ghi chú drafter (design_issues #1)"
@@ -551,8 +1218,28 @@
    "used_by": [
     "die_deckles:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn tấm có deckle trong và ngoài (internal/external deckles); ảnh KM có thanh deckle nhô ra ở hai đầu khuôn",
+     "text_ja": "シートダイには内側・外側のデッケル(internal/external deckles)がある。KM の写真ではダイの両端にデッケルロッドが突き出している",
+     "refs": [
+      "c057",
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Deckle thu hẹp bề rộng màn nhựa ở hai đầu khi đổi khổ tấm",
+     "text_ja": "デッケルはシート幅の変更時に両端で溶融カーテンの幅を狭める",
+     "refs": [
+      "c057"
+     ],
+     "reason_vi": "Không có tài liệu công khai mô tả chức năng deckle; claim c057 chỉ liệt kê deckle trong/ngoài; chức năng thu hẹp bề rộng là kiến thức chung về khuôn tấm, bộ nguồn không có tài liệu riêng.",
+     "reason_ja": "デッケルの機能を述べた公開資料はない。c057 は内側・外側デッケルを挙げるだけで、幅を狭める機能はシートダイの一般知識(資料群に個別の文書はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c057 (deckle trong/ngoài); rút ngắn theo review-01 M6"
@@ -569,8 +1256,38 @@
    "used_by": [
     "die_deckles:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Mỗi đầu khuôn có 1 thanh deckle nhô ra ngoài tấm đầu (ảnh KM)",
+     "text_ja": "ダイの各端に、端板の外側へ突き出すデッケルロッドが 1 本ある(KM の写真)",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thanh Ø30 nhô 150 ngoài tấm đầu (tới |Y| 1 525 = 1 375 + 150) tại X 9 480",
+     "text_ja": "Ø30 のロッドを X 9 480 で端板の外側へ 150 突出(|Y| 1 525 = 1 375 + 150 まで)",
+     "refs": [
+      "rev-C1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ thanh deckle; vị trí X 9 480 theo review thiết kế C1; Ø30 và đoạn nhô 150 do designer chọn.",
+     "reason_ja": "デッケルロッドの寸法に関する公開資料はない。X 9 480 は設計レビュー C1 による。Ø30 と突出量 150 は設計者が選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Có núm vặn + thước; lưỡi deckle trong nằm trong khuôn, không vượt X 9 520 (tránh khung cụm trục)",
+     "text_ja": "調整ノブとスケール付き。内側のデッケルブレードはダイ内にあり、X 9 520 を超えない(ロールスタックフレームとの干渉回避)",
+     "refs": [
+      "rev-M6",
+      "web-18"
+     ],
+     "reason_vi": "Không có tài liệu công khai; ảnh hãng khác (web-18) có núm vặn ở đầu deckle; giới hạn X 9 520 theo review thiết kế M6 để thanh không đâm vào khung bên cụm trục.",
+     "reason_ja": "公開資料はない。他社の写真(web-18)にデッケル端のノブが見える。X 9 520 の制限はロールスタックの側面フレームに当たらないようにするための設計レビュー M6 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "c057 (deckle trong/ngoài); rút ngắn theo review-01 M6"
@@ -580,15 +1297,24 @@
      "rev-M6"
     ]
    },
-   "notes": ""
+   "notes": "Dòng ghi Ø30, nhưng parts.json (die_deckles): item_mm [40, 150, 40] và bbox Z 1 180–1 220 (rộng 40), tức Ø40. Kiểm lại số nào đúng."
   },
   "112b8899e7cf": {
    "vi": "Hứng nhựa rơi khi khởi động màn nhựa.",
    "used_by": [
     "die_drip_pan:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khay đặt dưới môi để hứng nhựa rơi khi khởi động màn nhựa",
+     "text_ja": "リップの下に置くパンで、メルトカーテンの立上げ時に落ちる樹脂を受ける",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về khay hứng dưới môi khuôn (design ghi giả định); thêm khay vì khi khởi động nhựa chảy xuống trước khi màn nhựa vào khe trục (kiến thức chung về đùn tấm, bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "リップ下のドリップパンに関する公開資料はない(設計側の注記も仮定)。立上げ時にメルトカーテンがロール間隙に入る前に樹脂が垂れ落ちるため、パンを置いた(シート押出の一般知識で、資料群に個別の文書はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -602,8 +1328,17 @@
    "used_by": [
     "die_drip_pan:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khay inox 324 × 2 700 cao 80 (X 9 576–9 900, Y ±1 350)",
+     "text_ja": "ステンレス製パン 324 × 2 700、高さ 80(X 9 576–9 900、Y ±1 350)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai (design ghi giả định); kích thước do designer chọn: dài 324 = 9 900 − 9 576 từ môi ra phía trước, rộng 2 700 hơn môi 2 400 mỗi bên 150.",
+     "reason_ja": "公開資料はない(設計側の注記も仮定)。寸法は設計者が選んだ:長さ 324 = 9 900 − 9 576(リップから前方)、幅 2 700 はリップ 2 400 より片側 150 広い。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -618,8 +1353,37 @@
     "die_end_plate_op:function",
     "die_end_plate_rear:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hai đầu khuôn có tấm đầu (end plate) mang thanh deckle nhô ra (ảnh KM); Nordson có deckle trong/ngoài",
+     "text_ja": "ダイの両端に端板(end plate)があり、デッケルロッドが突き出す(KM の写真)。Nordson には内側・外側デッケルがある",
+     "refs": [
+      "web-07",
+      "c057"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Tấm đầu mang khối đầu nối nhiệt (terminal block) có nhiều lỗ (ảnh khuôn hãng khác)",
+     "text_ja": "端板にヒーター端子ブロック(terminal block)があり、多数の穴が並ぶ(他社ダイの写真)",
+     "refs": [
+      "web-19",
+      "web-20"
+     ],
+     "reason_vi": "Cách suy ra: quan sát khối đầu nối nhiệt ở mỗi tấm đầu trên ảnh Taizhou Jingyue (web-19, web-20); hãng khác nên chỉ lấy kiểu.",
+     "reason_ja": "導出方法:Taizhou Jingyue 製ダイの写真(web-19、web-20)で、各端板のヒーター端子ブロックを観察した。他社製のため形式のみを採った。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tấm đầu bịt hai đầu ống phân phối",
+     "text_ja": "端板がマニホールドの両端を塞ぐ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cấu tạo tấm đầu; chức năng bịt đầu ống phân phối là kiến thức chung về khuôn tấm, bộ nguồn không có tài liệu riêng.",
+     "reason_ja": "端板の構造に関する公開資料はない。マニホールド端を塞ぐ機能はシートダイの一般知識で、資料群に個別の文書はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-19/20 (tấm đầu có khối đầu nối nhiệt)"
@@ -637,8 +1401,41 @@
     "die_end_plate_op:details[0]",
     "die_end_plate_rear:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tấm thép dày 75 mm",
+     "text_ja": "厚さ 75 mm の鋼板",
+     "refs": [
+      "spec-5|Chiều rộng thân kể cả tấm đầu"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề dày tấm đầu; specs ước lượng bề rộng thân kể cả tấm đầu ≈ 2 750 = 2 600 + 2 × 75.",
+     "reason_ja": "端板の厚さに関する公開資料はない。specs はエンドプレートを含むボディ幅を ≈ 2 750 = 2 600 + 2 × 75 と推定した。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối đầu nối thanh nhiệt (terminal block) 6 lỗ",
+     "text_ja": "ヒーターバー接続用ターミナルブロック(terminal block)6 穴",
+     "refs": [
+      "web-19",
+      "web-20"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khối đầu nối của máy này; ảnh khuôn hãng khác (web-19, web-20) có khối đầu nối nhiệt ở mỗi tấm đầu nhưng đếm được 2 hàng × 5 = 10 lỗ; thiết kế đơn giản hoá còn 6 lỗ.",
+     "reason_ja": "この機械の端子ブロックに関する公開資料はない。他社ダイの写真(web-19、web-20)は各端板にヒーター端子ブロックを持つが、2 列 × 5 = 10 穴と数えられる。この設計は簡略化して 6 穴とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "1 vùng nhiệt trên mỗi tấm đầu (20 vùng = 9 + 9 + 2 tấm đầu)",
+     "text_ja": "エンドプレートごとに加熱ゾーン 1(20 ゾーン = 9 + 9 + エンドプレート 2)",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt; 9 vùng mỗi nửa cộng 1 vùng mỗi tấm đầu là ước lượng của specs và thiết kế.",
+     "reason_ja": "加熱ゾーン数に関する公開資料はない。半体ごとに 9 ゾーン + 端板ごとに 1 ゾーンは specs と設計の推定である。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-19/20 (tấm đầu có khối đầu nối nhiệt)"
@@ -648,15 +1445,37 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-19/20 cho khối đầu nối 2 hàng × 5 = 10 lỗ, thiết kế ghi 6 lỗ: coi là giản lược, kiểm lại."
   },
   "f1a4b4879ce6": {
    "vi": "Chỉnh khe môi cục bộ (hành trình ≈ 1–2,5 mm) để đều chiều dày tấm.",
    "used_by": [
     "die_flex_lip:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Chỉnh khe môi cục bộ bằng hàng bulông chỉnh môi (cách ≈ 25 mm); hệ chỉnh môi là điều khiển chiều dày (gauge control) của khuôn tấm",
+     "text_ja": "リップ間隙は局所的にリップ調整ボルト列(ピッチ約 25 mm)で調整する。リップ調整機構はシートダイの厚さ制御(gauge control)である",
+     "refs": [
+      "c053",
+      "c057"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Hành trình ≈ 1–2,5 mm: 0,040″ × 25,4 = 1,02 mm (Cloeren) đến 2,5 mm (Reifenhäuser)",
+     "text_ja": "ストローク ≈ 1–2,5 mm:0,040″ × 25,4 = 1,02 mm(Cloeren)から 2,5 mm(Reifenhäuser)",
+     "refs": [
+      "c055",
+      "c056",
+      "spec-5|Hành trình môi mềm"
+     ],
+     "reason_vi": "Cách suy ra: 0,040 inch × 25,4 mm/inch = 1,016 mm (c055: khuôn Cloeren 62″ có hành trình chỉnh 0,040″); 2,5 mm là dải chỉnh của môi mềm Reifenhäuser (c056). Hai khuôn khác máy này nên chỉ lấy cỡ.",
+     "reason_ja": "導出方法:0,040 インチ × 25,4 mm/インチ = 1,016 mm(c055:Cloeren 62″ のフレックス調整量 0,040″)。2,5 mm は Reifenhäuser のフレックスリップの調整範囲(c056)。どちらもこの機械とは別のダイなので、大きさの目安としてのみ採った。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053, c055 (0,040\"), c056 (2,5 mm); rãnh bản lề hở theo drawing review-01 I5"
@@ -668,15 +1487,60 @@
      "drev-I5"
     ]
    },
-   "notes": ""
+   "notes": "c055.value = 2275 (lb) là khối lượng khuôn Cloeren, không liên quan fact này; chỉ lấy 0,040″."
   },
   "741321a5a47c": {
    "vi": "Dải môi rộng 2 400, khe làm việc 0,5–2 mm tại Z = 1 200, X = 9 576; là phần mũi của nửa trên phía sau rãnh bản lề hở (X 9 392–9 404, suốt bề rộng, gân 12 mm).",
    "used_by": [
     "die_flex_lip:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Môi mềm nằm trong nửa trên thân khuôn, là phần mũi của nửa trên (Reifenhäuser)",
+     "text_ja": "フレックスリップは上半ダイボディ内にあり、上半体の先端部にあたる(Reifenhäuser)",
+     "refs": [
+      "c056"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dải môi rộng 2 400",
+     "text_ja": "リップ帯の幅 2 400",
+     "refs": [
+      "dec-10|môi khuôn rộng 2,4 m",
+      "spec-0|Khổ tấm",
+      "c056"
+     ],
+     "reason_vi": "Bề rộng môi 2 400 là ước lượng (tấm thành phẩm 2 100 + ≈ 150 mỗi bên cho co hẹp và xén biên); Reifenhäuser có khuôn rộng 75–3 500 mm (c056); không có tài liệu công khai về khuôn này.",
+     "reason_ja": "リップ幅 2 400 は推定値(製品シート 2 100 + 片側 ≈ 150、ネックインとエッジトリム分)。Reifenhäuser には幅 75–3 500 mm のダイがある(c056)が、このダイに関する公開資料はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khe làm việc 0,5–2 mm tại Z = 1 200, X = 9 576 (= 9 126 + 450)",
+     "text_ja": "作動間隙 0,5–2 mm(Z = 1 200、X = 9 576 = 9 126 + 450)",
+     "refs": [
+      "drev-I5",
+      "c056",
+      "spec-4|Cao độ đường tâm nhựa",
+      "spec-0|Khổ tấm"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khe môi của máy này; khe 0,5–2 mm (ký hiệu thêm theo review bản vẽ I5) nằm trong dải 0,15–6 mm của khuôn Reifenhäuser (c056) và trên chiều dày tấm 0,3–1,5 mm (specs); Z 1 200 là cao độ trục vít.",
+     "reason_ja": "この機械のリップ間隙に関する公開資料はない。0,5–2 mm(図面レビュー I5 で記号を追加)は Reifenhäuser のダイの 0,15–6 mm(c056)の範囲内で、シート厚 0,3–1,5 mm(specs)を上回る。Z 1 200 はスクリュー軸の高さ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Sau rãnh bản lề hở X 9 392–9 404, suốt bề rộng, gân 12 mm",
+     "text_ja": "開放ヒンジ溝(X 9 392–9 404、全幅、リブ 12 mm)の後方",
+     "refs": [
+      "drev-I5",
+      "design-10.2|I5: rãnh bản lề hở"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bản lề môi mềm; rãnh hở và gân 12 mm là sửa chữa theo review bản vẽ I5 (chừa gân ≈ 8–12 mm).",
+     "reason_ja": "フレックスリップのヒンジに関する公開資料はない。開放スロットと 12 mm のウェブは図面レビュー I5(≈ 8–12 mm のウェブを残す)による修正。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053, c055 (0,040\"), c056 (2,5 mm); rãnh bản lề hở theo drawing review-01 I5"
@@ -688,15 +1552,36 @@
      "drev-I5"
     ]
    },
-   "notes": ""
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn; trong fact đầu chỉ dùng ý \"môi mềm nằm trong nửa trên\"."
   },
   "c25ba16480ba": {
    "vi": "Bulông nhiệt bắc qua rãnh (ren trong thân phía trước rãnh), đầu bulông tì lên môi tại X 9 440 (cách gân 36 mm), nên môi uốn quanh gân.",
    "used_by": [
     "die_flex_lip:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hàng bulông chỉnh môi cách nhau ≈ 25 mm; bulông nhiệt tự động bước 25,4 mm, thanh gia nhiệt 80 W",
+     "text_ja": "リップ調整ボルト列のピッチは約 25 mm。自動サーマルボルトはピッチ 25,4 mm、ヒーターロッド 80 W",
+     "refs": [
+      "c053",
+      "c054"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bulông nhiệt bắc qua rãnh (ren trong thân phía trước rãnh), đầu tì lên môi tại X 9 440, cách gân 36 mm (= 9 440 − 9 404), nên môi uốn quanh gân",
+     "text_ja": "サーマルボルトはスロットを跨ぎ(スロット前方の本体にめねじ)、頭部が X 9 440(ヒンジ肉から 36 mm = 9 440 − 9 404)でリップに当たるため、リップはヒンジ肉を支点に曲がる",
+     "refs": [
+      "drev-I5",
+      "design-10.2|I5: rãnh bản lề hở"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu tạo bản lề và điểm tì; điểm tì cách gân ≥ 30–40 mm theo review bản vẽ I5; việc môi uốn quanh gân là kiến thức chung về môi mềm.",
+     "reason_ja": "ヒンジ構造と当たり位置に関する公開資料はない。当たり位置はウェブから 30–40 mm 以上離すという図面レビュー I5 による。リップがウェブを支点に曲がる点はフレックスリップの一般知識。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053, c055 (0,040\"), c056 (2,5 mm); rãnh bản lề hở theo drawing review-01 I5"
@@ -715,8 +1600,31 @@
    "used_by": [
     "die_heater_boxes:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "20 vùng nhiệt khuôn = 9 + 9 + 2 tấm đầu",
+     "text_ja": "ダイ加熱 20 ゾーン = 9 + 9 + エンドプレート 2",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt của khuôn này; specs ước lượng vùng rộng ≈ 250–300 mm → ≈ 9 vùng mỗi nửa cộng 2 tấm đầu, tổng ≈ 20 vùng.",
+     "reason_ja": "このダイの加熱ゾーン数に関する公開資料はない。specs はゾーン幅 ≈ 250–300 mm から半体ごとに ≈ 9 ゾーン、エンドプレート 2 を加えて合計 ≈ 20 ゾーンと推定した。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Công suất ≈ 50 kW: 32,8 kW / 1,575 m ≈ 21 kW/m, nhân bề rộng môi 2,4 m (21 × 2,4 ≈ 50)",
+     "text_ja": "電力 ≈ 50 kW:32,8 kW / 1,575 m ≈ 21 kW/m、リップ幅 2,4 m を掛ける(21 × 2,4 ≈ 50)",
+     "refs": [
+      "c055",
+      "spec-5|Gia nhiệt"
+     ],
+     "reason_vi": "Không có tài liệu công khai về công suất khuôn này; specs quy từ khuôn Cloeren 62″ (1 575 mm) dùng 32,8 kW (c055) nhân bề rộng môi 2,4 m, là bề rộng chọn nên kết quả vẫn là ước lượng.",
+     "reason_ja": "このダイの電力に関する公開資料はない。specs は Cloeren 62″(1 575 mm)の 32,8 kW(c055)をリップ幅 2,4 m に換算した。幅は選んだ値のため、結果は推定にとどまる。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17 (hộp nhiệt inox có tem vàng), c055 (≈ 21 kW/m)"
@@ -733,8 +1641,29 @@
    "used_by": [
     "die_heater_boxes:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "2 hộp nhiệt inox dài xếp trên và dưới, có tem cảnh báo vàng (đếm trên ảnh web-17)",
+     "text_ja": "ステンレス製ヒーターボックス2個が上下に並び、黄色の警告ラベルが付く(web-17 の写真で数えた)",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Cách suy ra: đếm hai hộp lưới inox xếp chồng có tem tam giác vàng ở phía cấp nhựa của khuôn trên ảnh web-17 (SBI Mechatronik); hãng khác, chỉ lấy số lượng và kiểu.",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で、ダイの樹脂供給側に上下に重なる黄色の三角ラベル付きステンレスメッシュボックス2個を数えた。他社製のため、数と形式のみを採った。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp trên Z 1 330–1 440, hộp dưới Z 960–1 070, chạy Y ±1 250, chừa giữa ±260 cho bích vào",
+     "text_ja": "上段 Z 1 330–1 440、下段 Z 960–1 070、Y ±1 250 にわたって配置し、中央 ±260 は入口フランジ用に空ける",
+     "refs": [
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước hộp; toạ độ do designer chọn, chừa giữa ±260 cho bích cửa vào của khuôn (design §7).",
+     "reason_ja": "ボックス寸法に関する公開資料はない。座標は設計者が選び、中央 ±260 はダイの入口フランジ用に空けた(design §7)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-17 (hộp nhiệt inox có tem vàng), c055 (≈ 21 kW/m)"
@@ -751,8 +1680,31 @@
    "used_by": [
     "die_heater_conduit:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "20 vùng nhiệt khuôn = 9 + 9 + 2 tấm đầu",
+     "text_ja": "ダイ加熱 20 ゾーン = 9 + 9 + エンドプレート 2",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt của khuôn này; specs ước lượng vùng rộng ≈ 250–300 mm → ≈ 9 vùng mỗi nửa cộng 2 tấm đầu, tổng ≈ 20 vùng.",
+     "reason_ja": "このダイの加熱ゾーン数に関する公開資料はない。specs はゾーン幅 ≈ 250–300 mm から半体ごとに ≈ 9 ゾーン、エンドプレート 2 を加えて合計 ≈ 20 ゾーンと推定した。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống luồn dẫn cáp từ hộp đầu nối tới hộp đấu dây khuôn, có phích cắm để tách khuôn",
+     "text_ja": "電線管がヒーターボックスからダイ接続箱へケーブルを導き、ダイ取外し用のプラグが付く",
+     "refs": [
+      "rev-I6",
+      "design-7|Xe khuôn. Khuôn nặng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ống luồn cáp của khuôn này (design ghi giả định); review thiết kế I6 yêu cầu cáp khuôn cắm rút để xe khuôn rời đi.",
+     "reason_ja": "このダイの電線管に関する公開資料はない(設計側の注記も仮定)。設計レビュー I6 が、ダイカートが離れられるようダイのケーブルを抜き差し式にすることを求めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -766,8 +1718,19 @@
    "used_by": [
     "die_heater_conduit:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống mềm kim loại Ø40",
+     "text_ja": "金属製フレキシブルチューブ Ø40",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống luồn (design ghi giả định); chọn ống mềm kim loại vì ảnh web-17 (hãng khác) cho thấy cáp nhiệt bọc ống bện kim loại; Ø40 do designer chọn.",
+     "reason_ja": "電線管のサイズに関する公開資料はない(設計側の注記も仮定)。web-17(他社)の写真でヒーターケーブルが金属編組チューブに入っているため金属フレキシブル管を選び、Ø40 は設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -781,8 +1744,51 @@
    "used_by": [
     "die_junction_box:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "20 vùng nhiệt khuôn = 9 + 9 + 2 tấm đầu",
+     "text_ja": "ダイ加熱 20 ゾーン = 9 + 9 + エンドプレート 2",
+     "refs": [
+      "spec-5|Gia nhiệt",
+      "design-7|Gia nhiệt khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số vùng nhiệt của khuôn này; specs ước lượng vùng rộng ≈ 250–300 mm → ≈ 9 vùng mỗi nửa cộng 2 tấm đầu, tổng ≈ 20 vùng.",
+     "reason_ja": "このダイの加熱ゾーン数に関する公開資料はない。specs はゾーン幅 ≈ 250–300 mm から半体ごとに ≈ 9 ゾーン、エンドプレート 2 を加えて合計 ≈ 20 ゾーンと推定した。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "94 mạch bulông nhiệt = 94 bulông (2 400 / 25,4 làm tròn xuống), mỗi bulông có thanh 80 W riêng",
+     "text_ja": "サーマルボルト 94 回路 = ボルト 94 本(2 400 / 25,4 を切り捨て)、各ボルトに 80 W のヒーターロッド",
+     "refs": [
+      "c054",
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng khuôn; số bulông tính từ bước 25,4 mm (c054) nhân bề rộng môi 2 400 mm (ước lượng trong specs); mỗi bulông một thanh 80 W theo c054; review I6 nêu hộp phải chứa 94 mạch.",
+     "reason_ja": "ダイ幅に関する公開資料はない。ボルト本数はピッチ 25,4 mm(c054)とリップ幅 2 400 mm(specs の推定値)から計算した。1 ボルトに 80 W のロッド 1 本は c054 による。レビュー I6 は箱に 94 回路を収める必要があると指摘した。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Phích nhiều chân đánh số để tách khuôn (ảnh web-17)",
+     "text_ja": "ダイ分離用の番号付き多極プラグ(web-17 の写真)",
+     "refs": [
+      "web-17"
+     ],
+     "reason_vi": "Cách suy ra: quan sát ảnh web-17 (SBI Mechatronik): cáp bulông nhiệt kết thúc bằng phích nhiều chân đánh số, rút cắm được; hãng khác nên chỉ lấy kiểu.",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で、サーマルボルトのケーブルが番号付き多極プラグで終わり、抜き差しできるのを観察した。他社製のため形式のみを採った。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tập trung cả cáp cảm biến khuôn; có nút dừng khẩn",
+     "text_ja": "ダイのセンサーケーブルも集約し、非常停止ボタンを備える",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu công khai; cảm biến khuôn do designer đưa vào hộp này, nút dừng khẩn theo review thiết kế I6 (hộp phải chứa cả E-stop).",
+     "reason_ja": "公開資料はない。ダイのセンサーは設計者がこの箱に集約した。非常停止ボタンは設計レビュー I6(箱に E-stop も収める)による。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -798,8 +1804,20 @@
    "used_by": [
     "die_junction_box:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tủ đứng RAL 7035 600 × 300 × 1 000 trên sàn, cửa hướng +Y, đặt ngoài ray xe khuôn để không đi theo xe",
+     "text_ja": "RAL 7035 の自立盤 600 × 300 × 1 000、床置き、扉は +Y 向き。ダイカートのレール外側に設置し、カートと一緒に移動しない",
+     "refs": [
+      "rev-I6",
+      "rev-I3"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tủ đấu dây khuôn; review thiết kế I6 đề xuất tủ đứng sàn 600 × 300 × 1 000, RAL 7035 vì hộp cũ không chứa nổi 20 + 94 mạch; review I3 yêu cầu đặt ngoài xe khuôn; cửa hướng +Y do designer chọn.",
+     "reason_ja": "ダイ接続箱に関する公開資料はない。設計レビュー I6 は、旧ボックスでは 20 + 94 回路を収められないため RAL 7035 の床置き盤 600 × 300 × 1 000 を提案し、レビュー I3 はダイカートの外に置くことを求めた。扉の向き +Y は設計者が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -815,8 +1833,30 @@
    "used_by": [
     "die_junction_box:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "2 ổ cắm nhiều chân cho bó cáp bulông nhiệt (đếm 2 phích trên ảnh web-17; review I6 dùng cùng số này)",
+     "text_ja": "サーマルボルトのケーブル束用の多極コネクタ2個(web-17 の写真でプラグ2個を数えた。レビュー I6 も同じ数を用いる)",
+     "refs": [
+      "web-17",
+      "rev-I6"
+     ],
+     "reason_vi": "Cách suy ra: đếm hai phích nhiều chân đánh số 1 và 2 trên ảnh web-17 (SBI Mechatronik); review thiết kế I6 nêu \"2 multi-pin harness sockets (web-17)\".",
+     "reason_ja": "導出方法:web-17(SBI Mechatronik)の写真で番号 1 と 2 の多極プラグ2個を数えた。設計レビュー I6 も「2 multi-pin harness sockets(web-17)」と記している。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "1 ổ cho cáp nhiệt khuôn; nút dừng khẩn đỏ trên cửa",
+     "text_ja": "ダイヒーターケーブル用に 1 個。扉に赤い非常停止ボタン",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu công khai; một ổ chung cho cáp 20 vùng nhiệt và nút dừng khẩn đỏ do designer đưa vào theo review thiết kế I6.",
+     "reason_ja": "公開資料はない。20 ゾーンのヒーターケーブルを 1 個にまとめるコネクタと赤い非常停止ボタンは、設計レビュー I6 に基づき設計者が加えた。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -832,8 +1872,17 @@
    "used_by": [
     "die_lifting_lugs:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn khe KM có tai cẩu dạng vòng trên mặt đỉnh để nâng khuôn",
+     "text_ja": "KM のスロットダイには、ダイを吊り上げるための環状の吊り環が上面にある",
+     "refs": [
+      "web-07"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (2 tai cẩu trên khuôn); vị trí theo review-01 C1"
@@ -850,8 +1899,38 @@
    "used_by": [
     "die_lifting_lugs:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Ảnh KM thấy 2 tai cẩu dạng vòng trên khuôn khe",
+     "text_ja": "KM の写真ではスロットダイ上面に環状の吊り環が2個見える",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 tai cẩu M36 cao 130, 2 trên mỗi tấm đầu tại X 9 190 và 9 470",
+     "text_ja": "M36 吊り環4個、高さ 130、各エンドプレートに2個、X 9 190 と 9 470",
+     "refs": [
+      "rev-C1",
+      "design-10|Mọi mục có count > 1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số và cỡ tai cẩu; ảnh web-07 chỉ có 2 tai, thiết kế chọn 4 (2 mỗi tấm đầu) và toạ độ X theo review thiết kế C1; M36 cao 130 do designer chọn.",
+     "reason_ja": "吊り環の数と寸法に関する公開資料はない。web-07 の写真は 2 個だけだが、設計は 4 個(エンドプレートごとに 2 個)を選び、X 座標は設計レビュー C1 による。M36・高さ 130 は設計者が選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "|Y| = 1 337 = (1 300 + 1 375)/2, ngoài mặt trục ±1 300 và trước cổ trục X ≥ 9 626",
+     "text_ja": "|Y| = 1 337 = (1 300 + 1 375)/2。ロール端面 ±1 300 の外側、ロールネック X ≥ 9 626 の手前",
+     "refs": [
+      "rev-C1"
+     ],
+     "reason_vi": "Không có tài liệu công khai; review thiết kế C1 đặt |Y| 1 337 (giữa tấm đầu 1 300–1 375, làm tròn xuống) ngoài mặt trục và trước cổ trục; kích thước trục cán trong specs chỉ là ước lượng.",
+     "reason_ja": "公開資料はない。設計レビュー C1 は |Y| 1 337(エンドプレート 1 300–1 375 の中央、切り捨て)をロール面の外側かつネックの手前に置いた。specs のロール寸法は推定値にすぎない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (2 tai cẩu trên khuôn); vị trí theo review-01 C1"
@@ -861,15 +1940,42 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-07 (KM) có 2 tai cẩu ở giữa mặt đỉnh; thiết kế đặt 4 tai ở hai tấm đầu theo review C1."
   },
   "e83fcd682043": {
    "vi": "Đẩy môi mềm theo điều khiển tự động (giãn nở nhiệt), chỉnh profin chiều dày ngang tấm.",
    "used_by": [
     "die_thermal_bolts:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bulông nhiệt (thermal bolt) là bulông chỉnh môi tự động: bước 25,4 mm, thanh gia nhiệt 80 W, hành trình tổng 300 µm",
+     "text_ja": "サーマルボルトは自動リップ調整ボルトで、ピッチ 25,4 mm、ヒーターロッド 80 W、総調整量 300 µm",
+     "refs": [
+      "c054"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Chỉnh môi tự động là hệ điều khiển chiều dày (gauge control) của khuôn tấm",
+     "text_ja": "自動リップ調整はシートダイの厚さ制御(gauge control)システムである",
+     "refs": [
+      "c057"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bulông giãn nở khi nóng và đẩy môi mềm",
+     "text_ja": "ボルトは加熱されると膨張してフレックスリップを押す",
+     "refs": [
+      "c054"
+     ],
+     "reason_vi": "Không có tài liệu công khai trong bộ nguồn về nguyên lý bulông nhiệt; claim c054 chỉ ghi bước, công suất 80 W và hành trình; nguyên lý giãn nở nhiệt là kiến thức chung.",
+     "reason_ja": "資料群にサーマルボルトの原理を述べた公開資料はない。c054 はピッチ、80 W、調整量を記すだけで、熱膨張の原理は一般知識。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c054 (bước 25,4 mm, 80 W, hành trình 300 µm); web-17/18; trục bulông theo review-01 C1"
@@ -889,8 +1995,60 @@
    "used_by": [
     "die_thermal_bolts:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bước 25,4 mm (1″), mỗi bulông có thanh gia nhiệt 80 W",
+     "text_ja": "ピッチ 25,4 mm(1″)、各ボルトに 80 W のヒーターロッド",
+     "refs": [
+      "c054"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "94 bulông = 2 400 / 25,4 làm tròn xuống; y = −1 181 + 25,4·k (k = 0…93), phủ y từ −1 181 đến +1 181",
+     "text_ja": "ボルト 94 本 = 2 400 / 25,4 を切り捨て;y = −1 181 + 25,4·k(k = 0…93)、y は −1 181 から +1 181 まで",
+     "refs": [
+      "spec-5|Bulông chỉnh môi",
+      "rev-C1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng khuôn này; số bulông tính từ bước 25,4 mm (c054) nhân bề rộng môi 2 400 mm (ước lượng trong specs); công thức vị trí y theo review thiết kế C1.",
+     "reason_ja": "このダイの幅に関する公開資料はない。ボルト本数はピッチ 25,4 mm(c054)とリップ幅 2 400 mm(specs の推定値)から計算した。y の式は設計レビュー C1 による。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mỗi bulông Ø30 (thân Ø16 trong ống gia nhiệt 80 W), dài 170",
+     "text_ja": "各ボルトは Ø30(軸部 Ø16 を 80 W ヒーターチューブ内に収容)、長さ 170",
+     "refs": [
+      "c054"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước bulông; c054 chỉ cho công suất 80 W; Ø30, thân Ø16 và dài 170 do designer chọn (lưu ý Ø30 lớn hơn bước 25,4).",
+     "reason_ja": "ボルト寸法に関する公開資料はない。c054 は 80 W しか示さない。Ø30、軸部 Ø16、長さ 170 は設計者が選んだ(Ø30 はピッチ 25,4 より大きい点に注意)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Trục từ (9 440, y, 1 295) tới (9 342, y, 1 434): dài √(98² + 139²) ≈ 170, nghiêng arctan(98/139) ≈ 35° so với phương đứng",
+     "text_ja": "軸線は (9 440, y, 1 295) から (9 342, y, 1 434) へ:長さ √(98² + 139²) ≈ 170、鉛直に対し arctan(98/139) ≈ 35°",
+     "refs": [
+      "rev-C1",
+      "drev-I5"
+     ],
+     "reason_vi": "Không có tài liệu công khai; trục bulông theo review thiết kế C1 (đầu tì (9 440, y, 1 295) đã dời xa gân theo review bản vẽ I5); phép tính khớp: √(98² + 139²) = 170,1 và arctan(98/139) = 35,2°.",
+     "reason_ja": "公開資料はない。ボルト軸は設計レビュー C1 による(当たり点 (9 440, y, 1 295) は図面レビュー I5 でウェブから離された)。計算は整合する:√(98² + 139²) = 170,1、arctan(98/139) = 35,2°。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Bulông nằm dọc mặt vát của nửa trên, thành một hàng suốt bề rộng (quan sát ảnh SBI)",
+     "text_ja": "ボルトは上半体の面取り面に沿って全幅に一列に並ぶ(SBI の写真で観察)",
+     "refs": [
+      "web-17",
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: quan sát ảnh web-17, web-18 (SBI Mechatronik): hàng bulông nhiệt nghiêng dọc mặt vát phía môi; hãng khác, chỉ lấy cách bố trí.",
+     "reason_ja": "導出方法:web-17、web-18(SBI Mechatronik)の写真で、リップ側の傾斜面に沿って並ぶサーマルボルト列を観察した。他社製のため配置のみを採った。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c054 (bước 25,4 mm, 80 W, hành trình 300 µm); web-17/18; trục bulông theo review-01 C1"
@@ -903,15 +2061,27 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "Ø30 lớn hơn bước 25,4: nếu Ø30 là đường kính ngoài thì hai bulông kề nhau chồng nhau 4,6 mm; thân Ø16 trong ống gia nhiệt thì hợp lý. Kiểm lại số Ø30 (parts.json item_mm [30, 30, 170])."
   },
   "b312e5fce503": {
    "vi": "Đầu bulông nằm trong rãnh phay, nhô tối đa 30 mm khỏi mặt vát, còn ≈ 20 mm khe hở tới trục giữa (đã kiểm tra bằng hình học).",
    "used_by": [
     "die_thermal_bolts:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đầu bulông nằm trong rãnh phay, nhô tối đa 30 mm khỏi mặt vát, còn ≈ 20 mm khe hở tới trục giữa (designer đã kiểm tra bằng hình học)",
+     "text_ja": "ボルト頭部はフライス加工した溝内にあり、傾斜面から最大 30 mm 突出し、中心軸まで ≈ 20 mm の隙間が残る(設計者が幾何学的に確認)",
+     "refs": [
+      "design-7|Với trục Ø800",
+      "c046"
+     ],
+     "reason_vi": "Không có tài liệu công khai; kết quả kiểm tra hình học trên mô hình của designer, với trục Ø800 (chọn ở đầu trên dải 400–800 mm của c046) và khe gió 200 mm (giả định).",
+     "reason_ja": "公開資料はない。設計者がモデル上で幾何学的に確認した結果で、Ø800 のロール(c046 の 400–800 mm の上限側を選択)とエアギャップ 200 mm(仮定)を前提とする。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c054 (bước 25,4 mm, 80 W, hành trình 300 µm); web-17/18; trục bulông theo review-01 C1"
@@ -931,8 +2101,20 @@
    "used_by": [
     "die_thermal_bolts:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "positions_mm là tâm bulông; item_mm = [Ø, Ø, dài] theo hệ trục riêng của bulông, trục dài là item_axis",
+     "text_ja": "positions_mm はボルト中心。item_mm = [Ø, Ø, 長さ] はボルト固有の座標系で、長手軸が item_axis",
+     "refs": [
+      "rev-C1",
+      "design-10.1|item_mm của chi tiết có trục"
+     ],
+     "reason_vi": "Không có tài liệu công khai; đây là quy ước dữ liệu của mô hình (parts.json), không phải đặc điểm của máy thật.",
+     "reason_ja": "公開資料はない。これはモデルのデータ規約(parts.json)であり、実機の特徴ではない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c053/c054 (bước 25,4 mm, 80 W, hành trình 300 µm); web-17/18; trục bulông theo review-01 C1"
@@ -945,7 +2127,7 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "Dòng quy ước dữ liệu của mô hình, không phải thông tin về máy thật; cân nhắc có nên hiện trong panel."
   }
  }
 }
