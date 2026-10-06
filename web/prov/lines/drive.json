@@ -7,8 +7,30 @@
    "used_by": [
     "drive_coupling_guard:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Vỏ che khớp nối là khối giữa hộp số và motor trên hình bóng ZE 155 UT (trang 9), có móc cẩu trên nóc",
+     "text_ja": "ZE 155 UT のシルエット図(9 ページ)で、カップリングガードはギアボックスとモーターの間のブロックで、天板に吊りフックがある",
+     "refs": [
+      "meas-2.2|Vỏ khớp nối (móc cẩu trên nóc)",
+      "cat-p09"
+     ],
+     "reason_vi": "Cách suy ra: đọc khối 12,84 × 19,16 pt nằm giữa hộp số và motor trên hình vector trang 9 (pdf_measures §2.2). Gọi khối đó là vỏ khớp nối là cách hiểu của người phân tích, dựa trên mẫu ZE 130 và ảnh cắt lớp trang 6 (pdf_measures §6).",
+     "reason_ja": "導出方法:9 ページのベクター図でギアボックスとモーターの間にある 12,84 × 19,16 pt のブロックを読み取った(pdf_measures §2.2)。このブロックをカップリングガードとみなすのは分析担当者の解釈で、ZE 130 の図と 6 ページの断面図に基づく(pdf_measures §6)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vỏ che có khoá liên động (interlock)",
+     "text_ja": "ガードにインターロックを設ける",
+     "refs": [
+      "drev-I2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khoá liên động của vỏ che khớp nối ZE; chọn có khoá liên động vì phần quay lộ giữa motor và hộp số cần bảo vệ người vận hành. Review bản vẽ I2 ghi công tắc này chưa có đường tín hiệu nào.",
+     "reason_ja": "ZE のカップリングガードのインターロックに関する公開資料はない。モーターとギアボックスの間の露出した回転部から作業者を守るため、インターロック付きとした。図面レビュー I2 でも、このスイッチに信号線がないと指摘されている。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
@@ -25,8 +47,31 @@
    "used_by": [
     "drive_coupling_guard:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Móc cẩu trên nóc vỏ che khớp nối, đọc trên hình bóng ZE 155 UT (trang 9)",
+     "text_ja": "カップリングガード天板の吊りフック(9 ページの ZE 155 UT シルエット図から読み取り)",
+     "refs": [
+      "meas-2.2|Vỏ khớp nối (móc cẩu trên nóc)",
+      "cat-p09"
+     ],
+     "reason_vi": "Cách suy ra: pdf_measures §2.2 ghi vỏ khớp nối có móc cẩu trên nóc, đọc trên hình vector trang 9. Đây là hình mẫu chung của các cỡ UT lớn nên chỉ xếp mức suy ra.",
+     "reason_ja": "導出方法:pdf_measures §2.2 は、カップリングガード天板の吊りフックを 9 ページのベクター図から読み取っている。大型 UT 共通のテンプレート図なので「導出」とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tôn 3 mm; tấm hông +Y tháo được có ô lưới quan sát",
+     "text_ja": "鋼板 3 mm、取外し可能な +Y 側パネルに点検用メッシュ窓",
+     "refs": [
+      "spec-1.1|Khớp nối + vỏ che (coupling guard)",
+      "web-12"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu tạo vỏ che khớp nối của ZE 155; chọn tôn 3 mm và tấm hông tháo được có ô lưới vì đó là cách làm chung của vỏ che khớp nối (nhìn được khớp mà không mở vỏ). specs chỉ ghi chiều dài ≈ 600–700 mm (ước lượng) theo ảnh web-12.",
+     "reason_ja": "ZE 155 のカップリングガードの構造に関する公開資料はない。鋼板 3 mm と、取外し可能で点検用メッシュ窓付きの側面パネルは、カバーを開けずに継手を見られるようにするための一般的な作りとして選んだ。specs には長さ ≈ 600–700 mm(推定)としか書かれておらず、web-12 の写真に拠っている。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
@@ -43,8 +88,20 @@
    "used_by": [
     "drive_coupling_guard:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Công tắc liên động (interlock) cấm chạy khi mở nắp",
+     "text_ja": "カバーが開いている間は運転できないインターロックスイッチ",
+     "refs": [
+      "drev-I2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về liên động của vỏ che khớp nối ZE; chọn công tắc cấm chạy khi mở nắp vì đó là cách bảo vệ thông thường với phần quay. Review bản vẽ I2 ghi công tắc liên động này chưa có đường tín hiệu.",
+     "reason_ja": "ZE のカップリングガードのインターロックに関する公開資料はない。カバーを開けたら運転できないスイッチは回転部の一般的な保護方法として選んだ。図面レビュー I2 では、このスイッチに信号線がないと指摘されている。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
@@ -61,8 +118,20 @@
    "used_by": [
     "drive_encoder:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Encoder đo tốc độ / vị trí trục motor cho biến tần điều khiển vector (vòng kín)",
+     "text_ja": "モーター軸の速度・位置を測り、ベクトル制御インバーターに送るエンコーダー(閉ループ)",
+     "refs": [
+      "design-3"
+     ],
+     "reason_vi": "Không có tài liệu công khai về encoder hay biến tần của máy này; chọn encoder ở đầu trục NDE vì biến tần trung thế điều khiển vòng kín cần tín hiệu tốc độ phản hồi (giả định của thiết kế).",
+     "reason_ja": "この機械のエンコーダーやインバーターに関する公開資料はない。中電圧インバーターの閉ループ制御には速度フィードバックが要るため、NDE 側軸端にエンコーダーを置いた(設計上の仮定)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (biến tần trung thế điều khiển vòng kín)"
@@ -76,8 +145,18 @@
    "used_by": [
     "drive_encoder:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Vỏ Ø160 × 100 có đầu cáp tín hiệu",
+     "text_ja": "ハウジング Ø160 × 100、信号ケーブル出口付き",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về encoder của máy này; Ø160 × 100 và đầu cáp tín hiệu do thiết kế chọn cho encoder gắn bích + khớp nối nhỏ ở đầu trục NDE (giả định của thiết kế).",
+     "reason_ja": "この機械のエンコーダーに関する公開資料はない。Ø160 × 100 と信号ケーブル出口は、NDE 側軸端にフランジと小型カップリングで取り付けるエンコーダーとして設計側が選んだ(設計上の仮定)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (biến tần trung thế điều khiển vòng kín)"
@@ -91,8 +170,21 @@
    "used_by": [
     "drive_flex_coupling:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khớp đàn hồi bù lệch tâm và giảm va đập giữa trục motor và trục vào hộp số",
+     "text_ja": "モーター軸とギアボックス入力軸の芯ずれを吸収し、衝撃を和らげるフレキシブルカップリング",
+     "refs": [
+      "rev-M2",
+      "dec-13"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khớp nối đàn hồi của ZE 155 (catalogue chỉ cho thấy khớp an toàn giữa motor và hộp số); chọn thêm một khớp đàn hồi riêng vì bù lệch tâm và giảm va đập là công dụng chung của khớp đĩa/đàn hồi. Review thiết kế M2 ghi khớp 250 mm này làm cụm truyền động dài hơn bảng KM khoảng 7 %; DECISIONS 13 hoãn sửa.",
+     "reason_ja": "ZE 155 のフレキシブルカップリングに関する公開資料はない(カタログに写っているのはモーターとギアボックスの間の安全カップリング)。芯ずれ吸収と衝撃低減はディスク式・弾性カップリングの一般的な役割なので、独立した弾性カップリングを置いた。設計レビュー M2 は、この 250 mm のカップリングが駆動系を KM の表より約 7 % 長くしていると指摘し、DECISIONS 13 で修正を見送った。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (khớp đĩa/đàn hồi tiêu chuẩn cỡ 10 kNm)"
@@ -106,8 +198,20 @@
    "used_by": [
     "drive_flex_coupling:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai moay-ơ thép + bộ đĩa lò xo, Ø560: khớp đĩa/đàn hồi tiêu chuẩn cỡ ≈ 10 kNm",
+     "text_ja": "鋼製ハブ 2 個 + ディスクスプリングパック、Ø560:≈ 10 kNm クラスの標準ディスク式・弾性カップリング",
+     "refs": [
+      "design-3.1|mômen định mức ≈ 9,6 kNm"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khớp nối của ZE 155; chọn khớp đĩa/đàn hồi tiêu chuẩn cỡ 10 kNm vì motor cho ≈ 9,6 kNm (design §3.1). Ø560 và cấu tạo hai moay-ơ + bộ đĩa lò xo do thiết kế chọn.",
+     "reason_ja": "ZE 155 のカップリングに関する公開資料はない。モーターが ≈ 9,6 kNm を出す(design §3.1)ため、10 kNm クラスの標準ディスク式・弾性カップリングを選んだ。Ø560 とハブ 2 個 + ディスクスプリングパックの構成は設計側の選択。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (khớp đĩa/đàn hồi tiêu chuẩn cỡ 10 kNm)"
@@ -121,8 +225,52 @@
    "used_by": [
     "drive_motor:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Động cơ cảm ứng 4 cực trung thế (3 kV), họ ABB AMI, khung 450L4A",
+     "text_ja": "ABB AMI シリーズの 4 極中電圧(3 kV)誘導モーター、フレーム 450L4A",
+     "refs": [
+      "c065",
+      "c064"
+     ],
+     "reason_vi": "Cách suy ra: mã L4 là 4 cực. c064 ghi AMI 500L4A \"4-pole, 3 kV, 50 Hz\"; c065 ghi khung 450L4A nhưng không ghi điện áp, nên 3 kV cho khung 450 là suy từ cùng họ AMI. Công suất 1 500 kW là giả định của thiết kế (design §3).",
+     "reason_ja": "導出方法:型式の L4 は 4 極を表す。c064 は AMI 500L4A を「4-pole, 3 kV, 50 Hz」と記し、c065 は 450L4A を載せているが電圧は書かれていない。450 枠の 3 kV は同じ AMI シリーズからの推定。出力 1 500 kW は設計上の仮定(design §3)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chạy biến tần (điều khiển tốc độ vít tới 400 v/ph)",
+     "text_ja": "インバーター駆動(スクリュー速度を最大 400 rpm まで制御)",
+     "refs": [
+      "design-3.1",
+      "c003"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bộ truyền động điện của máy này; chọn chạy biến tần vì tốc độ vít chỉnh được (tối đa 400 v/ph, c003) và motor 4 cực chạy một tốc độ định mức. Ở 300 v/ph biến tần giữ mômen không đổi (design §3.1).",
+     "reason_ja": "この機械の電気駆動に関する公開資料はない。スクリュー速度を可変(最大 400 rpm、c003)にする一方、4 極モーターは定格回転数が一つなので、インバーター駆動とした。300 rpm ではインバーターが一定トルクを保つ(design §3.1)。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Motor quay trục vít qua khớp nối an toàn rồi hộp số",
+     "text_ja": "モーターは安全カップリングとギアボックスを介してスクリューを回す",
+     "refs": [
+      "crop-p05_drive_train_safety_coupling_x3",
+      "c033"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ làm mát gió–nước trên nóc (IC81W) thải nhiệt vào nước, không thổi gió nóng vào xưởng",
+     "text_ja": "上部の空水冷却器(IC81W)が熱を水に逃がし、熱風を工場内に出さない",
+     "refs": [
+      "rev-M9",
+      "dec-11|Giữ động cơ 1 500 kW",
+      "web-12"
+     ],
+     "reason_vi": "Không có tài liệu công khai về làm mát IC81W của khung AMI 450L (c066 chỉ ghi kiểu IC01/IP24W); chọn IC81W vì xưởng đùn cần tránh thổi gió nóng, theo review thiết kế M9. DECISIONS 11.3 ghi có bộ làm mát trên nóc. web-12 chỉ cho thấy motor lớn của một dây chuyền KM có bộ làm mát trên nóc, không nói kiểu gió–nước.",
+     "reason_ja": "AMI 450L 枠の IC81W 冷却に関する公開資料はない(c066 は IC01/IP24W としか書かれていない)。押出工場に熱風を出さないよう、設計レビュー M9 に従って IC81W を選んだ。DECISIONS 11.3 には上部冷却器ありと書かれている。web-12 は KM ラインの大型モーターの上部冷却器を示すだけで、空水式かどうかは分からない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
@@ -135,15 +283,40 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "Công suất 1 500 kW và điện áp 3 kV của khung 450 là suy từ họ AMI, không có hàng riêng trong c064/c065."
   },
   "8b1527f516b8": {
    "vi": "Thân hộp có gân Z 750–1 680; trên nóc là hộp bộ làm mát gió–nước (IC81W top air-to-water cooler) Z 1 680–2 610, X −4 800 … −3 300: vỏ hộp kín, 2 nắp thăm ống trao đổi nhiệt ở đầu −X, không có cửa gió hở.",
    "used_by": [
     "drive_motor:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Thân Z 750–1 680; hộp làm mát Z 1 680–2 610 (đỉnh = 750 + HC 1 860), X −4 800 … −3 300",
+     "text_ja": "本体 Z 750–1 680、冷却器ボックス Z 1 680–2 610(上端 = 750 + HC 1 860)、X −4 800 … −3 300",
+     "refs": [
+      "c066",
+      "rev-M9",
+      "design-3.1|giả định giữ hình bao như bản IC01"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hình bao AMI 450L bản IC81W; HC 1 860 (c066) là của bản IC01, thiết kế giả định giữ nguyên hình bao đó nên đỉnh Z 2 610 = 750 (mặt đế) + 1 860. Mốc Z 1 680 và đoạn X −4 800 … −3 300 do thiết kế chọn.",
+     "reason_ja": "AMI 450L の IC81W 仕様の外形に関する公開資料はない。HC 1 860(c066)は IC01 仕様の値で、設計はその外形を保つと仮定したため、上端 Z 2 610 = 750(ベース面)+ 1 860 となる。Z 1 680 の境界と X −4 800 … −3 300 の範囲は設計側の選択。",
+     "whole_line": true
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp làm mát kín, 2 nắp thăm ống trao đổi nhiệt ở đầu −X, không cửa gió hở; thân hộp có gân",
+     "text_ja": "冷却器ボックスは密閉型で、−X 端に熱交換器点検カバー 2 個、開放通風口なし。本体ケースにリブ",
+     "refs": [
+      "rev-M9"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu tạo bộ làm mát; chọn vỏ kín, 2 nắp thăm và gân vì đó là cấu tạo thường gặp của bộ làm mát gió–nước IC81W (không có cửa gió hở nên không thổi gió nóng ra xưởng, review thiết kế M9).",
+     "reason_ja": "冷却器の構造に関する公開資料はない。密閉ケース、点検カバー 2 個、リブは空水冷却器 IC81W によくある構成として選んだ(開放通風口がないので熱風を工場に出さない、設計レビュー M9)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
@@ -163,8 +336,21 @@
    "used_by": [
     "drive_motor:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai bích nước DN40 trên mặt +Y: vào X −3 500, Z 2 300; ra X −3 700, Z 2 400; cảm biến rò nước ở đáy hộp",
+     "text_ja": "+Y 面に DN40 水フランジ 2 個:入口 X −3 500、Z 2 300、出口 X −3 700、Z 2 400。ボックス底部に漏水センサー",
+     "refs": [
+      "rev-M9",
+      "design-3.1|Nhiệt thải ≈ 45 kW"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cổng nước bộ làm mát này; chọn 2 bích DN40 theo review thiết kế M9 (2 ống DN40 từ ống nhà máy dọc mép +Y khung), nhiệt thải ≈ 45 kW (design §3.1). Vị trí vào/ra và cảm biến rò do thiết kế chọn.",
+     "reason_ja": "この冷却器の水ポートに関する公開資料はない。設計レビュー M9 に従い DN40 のフランジ 2 個とした(工場配管からフレームの +Y 縁に沿う DN40 配管 2 本)。排熱は ≈ 45 kW(design §3.1)。入口・出口の位置と漏水センサーは設計側の選択。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
@@ -184,8 +370,21 @@
    "used_by": [
     "drive_motor:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đầu trục Ø140 dài 200 ở phía hộp số; nắp ổ NDE nhô 75 mm mang encoder",
+     "text_ja": "ギアボックス側の軸端 Ø140、長さ 200。NDE ベアリングカバーが 75 mm 突出してエンコーダーを載せる",
+     "refs": [
+      "c066",
+      "design-3.1|mômen định mức ≈ 9,6 kNm"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đầu trục của motor này (claim c066 chỉ ghi H, L, A, B, AB, AE, HC). Chọn Ø140 × 200 vì phải truyền ≈ 9,6 kNm (design §3.1); nắp NDE 75 mm chọn sao cho 75 + 1 750 + 200 = 2 025 = L của AMI 450L (c066).",
+     "reason_ja": "このモーターの軸端に関する公開資料はない(c066 は H、L、A、B、AB、AE、HC しか載せていない)。≈ 9,6 kNm を伝える必要があるので Ø140 × 200 とした(design §3.1)。NDE カバーの 75 mm は、75 + 1 750 + 200 = 2 025 = AMI 450L の L(c066)になるよう選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
@@ -198,15 +397,51 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "Quote c066 còn một dãy số khác (… 200 125 210 32 114 …) có thể là kích thước đầu trục/then của ABB, không khớp Ø140 × 200 của thiết kế; claim không nêu cột nên không dùng. Nên đối chiếu bảng ABB gốc."
   },
   "13c980231bbc": {
    "vi": "4 tai cẩu, biển tên, cọc tiếp địa; tâm trục Z = 1 200 (H 450 trên mặt đế Z 750).",
    "used_by": [
     "drive_motor:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "H = 450 mm (cùng hàng L = 2 025 mm): chiều cao tâm trục của ABB AMI 450L",
+     "text_ja": "H = 450 mm(同じ行の L = 2 025 mm):ABB AMI 450L の軸心高さ",
+     "refs": [
+      "c066"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Tâm trục Z = 1 200: chiều cao tâm trục ZE 155 A UTi theo bảng KM (A = 1 200)",
+     "text_ja": "軸心 Z = 1 200:KM の表にある ZE 155 A UTi の軸心高さ(A = 1 200)",
+     "refs": [
+      "c006"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Mặt đế Z 750 = 1 200 − 450",
+     "text_ja": "ベース面 Z 750 = 1 200 − 450",
+     "refs": [
+      "c006",
+      "c066"
+     ],
+     "reason_vi": "Cách suy ra: tâm trục 1 200 (c006) trừ chiều cao tâm trục H 450 (c066); tâm trục motor phải trùng trục vít nên chân motor đặt ở Z 750.",
+     "reason_ja": "導出方法:軸心 1 200(c006)から軸心高さ H 450(c066)を引く。モーター軸心はスクリュー軸に一致させる必要があるため、脚の位置は Z 750 になる。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 tai cẩu, biển tên, cọc tiếp địa",
+     "text_ja": "吊り環 4 個、銘板、接地端子",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về phụ kiện của AMI 450L; chọn tai cẩu, biển tên và cọc tiếp địa vì đó là trang bị thông thường của motor lớn; số 4 tai cẩu do thiết kế chọn.",
+     "reason_ja": "AMI 450L の付属品に関する公開資料はない。吊り環、銘板、接地端子は大型モーターの一般的な装備として選び、吊り環 4 個という数は設計側の選択。"
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
@@ -226,8 +461,30 @@
    "used_by": [
     "drive_motor_base:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tâm trục khớp Z = 1 200 theo chiều cao tâm trục ZE 155 A UTi trong bảng KM",
+     "text_ja": "カップリングの軸心 Z = 1 200:KM の表にある ZE 155 A UTi の軸心高さ",
+     "refs": [
+      "c006"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đế nâng motor 100 mm lên mặt Z 750 trên đỉnh khung 650, cho phép căn chỉnh đồng tâm",
+     "text_ja": "ベースがモーターを 100 mm 持ち上げて Z 750 の面とし(フレーム上端 650 の上)、芯出し調整を可能にする",
+     "refs": [
+      "c006",
+      "c066",
+      "meas-4|Khung đế dài × cao"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đế motor của ZE 155; chọn đế nâng 100 mm = 1 200 − H 450 − đỉnh khung 650 (ghi \"giả định\" trong thiết kế). Đỉnh khung 650 làm tròn từ 660 đo trên hình trang 9; căn chỉnh đồng tâm là thực hành chung khi ghép motor với hộp số.",
+     "reason_ja": "ZE 155 のモーターベースに関する公開資料はない。ベースの持ち上げ量 100 mm = 1 200 − H 450 − フレーム上端 650 は設計上の仮定(設計書に「仮定」と明記)。フレーム上端 650 は 9 ページの図で測った 660 を丸めた値。芯出し調整はモーターとギアボックスを結ぶ際の一般的な方法。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định: 1 200 − H 450 − đỉnh khung 650 = 100 mm"
@@ -241,8 +498,28 @@
    "used_by": [
     "drive_motor_base:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai ray thép dày 100 = 1 200 − 450 − 650",
+     "text_ja": "厚さ 100 の鋼製レール 2 本 = 1 200 − 450 − 650",
+     "refs": [
+      "c006",
+      "c066"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ray đế motor; chọn dày 100 để tâm trục lên Z 1 200 (1 200 từ c006, H 450 từ c066, đỉnh khung 650 do thiết kế; ghi \"giả định\" trong thiết kế).",
+     "reason_ja": "モーターベースのレールに関する公開資料はない。軸心を Z 1 200 にするため厚さ 100 とした(1 200 は c006、H 450 は c066、フレーム上端 650 は設計値。設計書に「仮定」と明記)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vít đẩy (jack screws) căn chỉnh ngang",
+     "text_ja": "横方向調整用ジャッキスクリュー(jack screws)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cơ cấu căn chỉnh motor; chọn vít đẩy vì đó là cách thường dùng để căn ngang motor lớn trên ray (kiến thức chung).",
+     "reason_ja": "モーターの調整機構に関する公開資料はない。ジャッキスクリューは大型モーターをレール上で横調整する一般的な方法なので選んだ(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định: 1 200 − H 450 − đỉnh khung 650 = 100 mm"
@@ -256,8 +533,20 @@
    "used_by": [
     "drive_motor_terminal_box:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp đấu dây riêng ở mặt −Y nhận cáp trung thế từ biến tần",
+     "text_ja": "−Y 側の専用端子箱がインバーターからの中電圧ケーブルを受ける",
+     "refs": [
+      "c066"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hộp đấu dây của AMI 450L: claim c066 chỉ có kích thước chính (thiết kế hiểu AE 1 500 là gồm hộp đấu dây, claim không nêu). Chọn đặt ở mặt −Y để tránh lối thao tác phía +Y (ghi chú của thiết kế); cáp trung thế vào hộp là cách đấu thông thường.",
+     "reason_ja": "AMI 450L の端子箱に関する公開資料はない(c066 は主要寸法のみで、設計は AE 1 500 に端子箱が含まれると解釈したが、claim には書かれていない)。+Y 側の作業通路を避けるため −Y 側に置いた(設計側のメモ)。中電圧ケーブルを端子箱に引き込むのは通常の結線方法。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AE 1 500 gồm hộp đấu dây); phía −Y giả định để tránh lối thao tác"
@@ -273,8 +562,18 @@
    "used_by": [
     "drive_motor_terminal_box:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp thép 600 × 350 × 500, nắp 12 vít, ốc siết cáp ở đáy",
+     "text_ja": "鋼製ボックス 600 × 350 × 500、カバーはビス 12 本、底部にケーブルグランド",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ hộp đấu dây; kích thước 600 × 350 × 500, 12 vít và ốc siết cáp ở đáy do thiết kế chọn, cho cáp trung thế đi vào từ đáy hộp.",
+     "reason_ja": "端子箱の寸法に関する公開資料はない。600 × 350 × 500、ビス 12 本、底部のケーブルグランドは、中電圧ケーブルを底面から引き込む前提で設計側が選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c066 (AE 1 500 gồm hộp đấu dây); phía −Y giả định để tránh lối thao tác"
@@ -290,8 +589,29 @@
    "used_by": [
     "drive_safety_coupling:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khớp an toàn nằm giữa motor và hộp số, tách ngay truyền động khỏi máy đùn khi quá tải",
+     "text_ja": "安全カップリングはモーターとギアボックスの間にあり、過負荷時に駆動を押出機から即座に切り離す",
+     "refs": [
+      "c033",
+      "crop-p05_drive_train_safety_coupling_x3",
+      "crop-p19_gearbox_coupling_oilpump_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nguyên nhân quá tải là vít kẹt hoặc vật lạ; khớp bảo vệ trục vít và hộp số",
+     "text_ja": "過負荷の原因はスクリュー固着や異物混入で、カップリングがスクリューとギアボックスを守る",
+     "refs": [
+      "c033"
+     ],
+     "reason_vi": "Không có tài liệu công khai về nguyên nhân quá tải cụ thể; catalogue chỉ nói \"overload\" (c033). Ví dụ vít kẹt, vật lạ và phạm vi bảo vệ trục vít, hộp số là diễn giải của thiết kế theo hiểu biết chung về đùn.",
+     "reason_ja": "具体的な過負荷の原因に関する公開資料はなく、カタログは「overload」としか書いていない(c033)。スクリュー固着・異物混入の例と、スクリューとギアボックスを保護するという範囲は、押出に関する一般知識に基づく設計側の解釈。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (safety coupling); p05/p19 (đĩa ly hợp bạc giữa động cơ và hộp số); cỡ giả định"
@@ -309,8 +629,38 @@
    "used_by": [
     "drive_safety_coupling:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khớp an toàn là đĩa bạc có rãnh vòng và vòng bulông (ảnh catalogue trang 5 và 19)",
+     "text_ja": "安全カップリングは環状溝とボルトサークルを持つ銀色のディスク(カタログ 5・19 ページの写真)",
+     "refs": [
+      "crop-p19_gearbox_coupling_oilpump_x3",
+      "crop-p05_drive_train_safety_coupling_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø640; vòng bulông 12 lỗ",
+     "text_ja": "Ø640、ボルトサークルは 12 穴",
+     "refs": [
+      "c005"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ khớp an toàn của ZE 155; ảnh catalogue là máy nhỏ (UTX/Basic) nên không dùng để suy cỡ hay đếm bulông. Ø640 và 12 lỗ do thiết kế chọn theo cỡ mômen 2 × 35 kNm (\"cỡ giả định\" trong thiết kế).",
+     "reason_ja": "ZE 155 の安全カップリングのサイズに関する公開資料はない。カタログの写真は小型機(UTX/Basic)なので、寸法の推定やボルト数の計数には使えない。Ø640 と 12 穴は、トルク 2 × 35 kNm に合わせて設計側が選んだ(設計書では「サイズは仮定」)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Công tắc giám sát nhả khớp",
+     "text_ja": "解放監視スイッチ",
+     "refs": [
+      "drev-I2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về công tắc giám sát của khớp an toàn ZE; chọn có công tắc vì khi khớp nhả cần báo cho tủ điều khiển. Review bản vẽ I2 ghi công tắc giám sát này chưa có đường tín hiệu.",
+     "reason_ja": "ZE の安全カップリングの監視スイッチに関する公開資料はない。カップリングが外れたら制御盤に知らせる必要があるためスイッチを付けた。図面レビュー I2 では、この監視スイッチに信号線がないと指摘されている。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (safety coupling); p05/p19 (đĩa ly hợp bạc giữa động cơ và hộp số); cỡ giả định"
@@ -328,8 +678,45 @@
    "used_by": [
     "gearbox:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp số chia công suất (power branching) chia mômen ra hai trục vít đồng hướng",
+     "text_ja": "パワースプリット式(power branching)のギアボックスが、トルクを同方向回転の 2 本のスクリューに分配する",
+     "refs": [
+      "c033",
+      "cat-p11"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "2 × 35 kNm (= 2 × 35 000 Nm): mômen mỗi trục vít ZE 155 A UTi theo bảng KM",
+     "text_ja": "2 × 35 kNm(= 2 × 35 000 Nm):KM の表にある ZE 155 A UTi のスクリュー 1 本あたりのトルク",
+     "refs": [
+      "c005"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "400 v/ph: tốc độ vít tối đa ZE 155 A UTi theo bảng KM",
+     "text_ja": "400 rpm:KM の表にある ZE 155 A UTi の最大スクリュー速度",
+     "refs": [
+      "c003"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "≈ 1 490 v/ph: tốc độ định mức motor 4 cực họ AMI (1 489 ở 450L4A, 1 490 ở 500L4A)",
+     "text_ja": "≈ 1 490 rpm:AMI シリーズ 4 極モーターの定格回転数(450L4A で 1 489、500L4A で 1 490)",
+     "refs": [
+      "c065",
+      "c064"
+     ],
+     "reason_vi": "Cách suy ra: đọc cột tốc độ (v/ph) trong bảng ABB ở hàng AMI 450L4A (c065) và AMI 500L4A (c064). Motor 1 500 kW của thiết kế không có hàng riêng nên lấy giá trị gần nhất.",
+     "reason_ja": "導出方法:ABB の表の回転数(rpm)の列から、AMI 450L4A(c065)と AMI 500L4A(c064)の行を読み取った。設計の 1 500 kW モーターには専用の行がないので、近い値を採用した。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -350,8 +737,29 @@
    "used_by": [
     "gearbox:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "2 trục ra: máy trục vít đôi, mômen ghi 2 × 35 000 Nm (mỗi trục vít một trục)",
+     "text_ja": "出力軸 2 本:二軸押出機で、トルクは 2 × 35 000 Nm(スクリュー 1 本につき軸 1 本)",
+     "refs": [
+      "c005"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vỏ gang hộp có gân; phần bướu cao Z 1 720 bao 2 trục ra ở đầu X −1 250 … −750",
+     "text_ja": "リブ付き鋳鉄ケース。上部の張り出し部(高さ Z 1 720)が X −1 250 … −750 端の出力軸 2 本を囲む",
+     "refs": [
+      "web-11",
+      "cat-p09"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vỏ hộp số ZE 155; hình bóng trang 9 chỉ cho khối chữ nhật trơn. Hình có bướu là ý của thiết kế; web-11 (hộp số Eisenbeiss, hãng khác) cũng có phần nhô cao nhưng ở đầu vào chứ không phải đầu ra. Gân, vị trí và cao độ do thiết kế chọn.",
+     "reason_ja": "ZE 155 のギアボックスケースに関する公開資料はない。9 ページのシルエット図は飾りのない直方体にすぎない。張り出し部のある形は設計側の考えで、web-11(他社 Eisenbeiss 製)にも高い部分があるが、出力側ではなく入力側にある。リブ、位置、高さは設計側の選択。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -365,15 +773,32 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "web-11 có phần nhô cao ở đầu vào (xa hai trục ra), thiết kế đặt bướu ở đầu ra X −1 250 … −750; hình bóng trang 9 là khối trơn. Nên xem lại."
   },
   "61e322d81d0f": {
    "vi": "Nắp ổ trục vào tròn Ø500 nhô 50 mm ở đầu X = −2 300 quanh Z = 1 200.",
    "used_by": [
     "gearbox:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Z = 1 200: chiều cao tâm trục ZE 155 A UTi theo bảng KM",
+     "text_ja": "Z = 1 200:KM の表にある ZE 155 A UTi の軸心高さ",
+     "refs": [
+      "c006"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nắp ổ trục vào tròn Ø500 nhô 50 mm ở đầu X = −2 300",
+     "text_ja": "入力側の円形ベアリングカバー Ø500、50 mm 突出、X = −2 300 端",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về nắp ổ trục vào của ZE 155; Ø500 × 50 do thiết kế chọn. X = −2 300 là đầu hộp số phía motor trong bố trí của thiết kế.",
+     "reason_ja": "ZE 155 の入力側ベアリングカバーに関する公開資料はない。Ø500 × 50 は設計側の選択。X = −2 300 は設計の配置でのモーター側のギアボックス端。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -394,8 +819,38 @@
    "used_by": [
     "gearbox:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp số ZE có tai cẩu trên nóc (ảnh catalogue trang 19, ZE Basic)",
+     "text_ja": "ZE のギアボックスは天板に吊り環を持つ(カタログ 19 ページ、ZE Basic の写真)",
+     "refs": [
+      "crop-p19_gearbox_coupling_oilpump_x3",
+      "img-p19_3"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Nắp thăm chữ nhật bắt vít trên nóc hộp số",
+     "text_ja": "ギアボックス天板のビス止め矩形点検カバー",
+     "refs": [
+      "web-11"
+     ],
+     "reason_vi": "Cách suy ra: web-11 (hộp số Eisenbeiss dùng cho ZE, hãng khác) cho thấy nắp thăm chữ nhật bắt vít trên nóc; chưa có ảnh nóc hộp số ZE nên chỉ xếp mức suy ra.",
+     "reason_ja": "導出方法:web-11(ZE に使われる他社 Eisenbeiss 製ギアボックス)の写真で、天板にビス止めの矩形点検カバーが見える。ZE のギアボックス天板の写真はないので「導出」とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 tai cẩu; ống thở (breather), kính thăm mức dầu phía +Y, nút xả dầu ở đáy",
+     "text_ja": "吊り環 4 個、ブリーザー(breather)、+Y 側の油面サイトグラス、底部のオイルドレンプラグ",
+     "refs": [
+      "c033"
+     ],
+     "reason_vi": "Không có tài liệu công khai về phụ kiện hộp số ZE 155; số 4 tai cẩu, ống thở, kính thăm dầu và nút xả là trang bị thông thường của hộp số bôi trơn ngâm dầu (c033 chỉ nói bôi trơn ngâm + áp lực). web-11 có một chi tiết dạng kính thăm nhưng không đủ rõ để xác nhận.",
+     "reason_ja": "ZE 155 のギアボックスの付属品に関する公開資料はない。吊り環 4 個、ブリーザー、油面サイトグラス、ドレンプラグは油浴潤滑ギアボックスの一般的な装備(c033 は油浴+圧力潤滑としか書いていない)。web-11 にサイトグラスらしい部品はあるが、確認できるほど鮮明ではない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -416,8 +871,28 @@
    "used_by": [
     "gearbox:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tem cảnh báo vàng hình tam giác trên vỏ hộp số",
+     "text_ja": "ギアボックスケースの黄色い三角形の警告ラベル",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Biển tên; cảm biến nhiệt dầu PT100 cạnh cổng dầu",
+     "text_ja": "銘板、油ポート付近の PT100 油温センサー",
+     "refs": [
+      "drev-I2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về biển tên và cảm biến nhiệt của hộp số ZE 155; chọn PT100 đo nhiệt dầu cạnh cổng dầu để theo dõi nhiệt bôi trơn. Review bản vẽ I2 ghi PT100 của cụm dầu chưa có đường tín hiệu.",
+     "reason_ja": "ZE 155 のギアボックスの銘板や温度センサーに関する公開資料はない。潤滑油温の監視のため、油ポート付近に PT100 を置いた。図面レビュー I2 では、潤滑ユニットの PT100 に信号線がないと指摘されている。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -438,8 +913,32 @@
    "used_by": [
     "gearbox:details[4]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Tỷ số ≈ 3,73 = 1 490 / 400 = 3,725",
+     "text_ja": "減速比 ≈ 3,73 = 1 490 / 400 = 3,725",
+     "refs": [
+      "c065",
+      "c064",
+      "c003"
+     ],
+     "reason_vi": "Cách suy ra: tốc độ vào ≈ 1 490 v/ph (đọc ở bảng ABB, c065/c064) chia tốc độ vít tối đa 400 v/ph (c003).",
+     "reason_ja": "導出方法:入力回転数 ≈ 1 490 rpm(ABB の表より、c065/c064)を最大スクリュー速度 400 rpm(c003)で割る。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chọn tỷ số để tốc độ định mức motor ứng với tốc độ vít tối đa",
+     "text_ja": "モーターの定格回転数が最大スクリュー速度に対応するよう減速比を選ぶ",
+     "refs": [
+      "design-3|Tỷ số truyền hộp số",
+      "spec-1.1|Tỷ số truyền"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tỷ số truyền của hộp số ZE 155; design §3 và specs ghi \"giả định\"/\"ước lượng\". Chọn tỷ số này vì thiết kế cho motor 4 cực chạy ≈ 1 490 v/ph ứng với vít 400 v/ph.",
+     "reason_ja": "ZE 155 のギアボックスの減速比に関する公開資料はない。design §3 と specs には「仮定」「推定」と書かれている。4 極モーター ≈ 1 490 rpm がスクリュー 400 rpm に対応するよう設計したため、この減速比を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
@@ -453,15 +952,46 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "design §3 ghi tỷ số này là \"giả định\": phép chia 1 490 / 400 là số học từ hai số có nguồn, còn việc chọn tỷ số theo cách đó là giả định (tách thành hai fact)."
   },
   "268f691e497c": {
    "vi": "Nối mặt bích ra hộp số với xi lanh B1; chứa khớp then hoa nối trục ra hộp số với trục vít; có cửa thăm.",
    "used_by": [
     "lantern:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Lantern là khoang nối giữa hộp số và xi lanh, có cửa thăm chữ nhật bo góc, trên hình bóng ZE 155 UT (trang 9)",
+     "text_ja": "ZE 155 UT のシルエット図(9 ページ)で、ランタンはギアボックスとバレルの間の接続ハウジングで、角R付きの矩形点検窓がある",
+     "refs": [
+      "meas-2.2|Lantern (cửa thăm",
+      "cat-p09"
+     ],
+     "reason_vi": "Cách suy ra: đọc khối 15,26 × 19,68 pt có cửa thăm bo góc giữa hộp số và barrel trên hình vector trang 9 (pdf_measures §2.2). Gọi khối đó là lantern là cách hiểu của người phân tích (pdf_measures §6).",
+     "reason_ja": "導出方法:9 ページのベクター図でギアボックスとバレルの間にある、角R付き点検窓を持つ 15,26 × 19,68 pt のブロックを読み取った(pdf_measures §2.2)。このブロックをランタンとみなすのは分析担当者の解釈(pdf_measures §6)。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Mômen tới trục vít qua trục then hoa (ZE Basic: \"multi-spline shafts\"; ZE 180 A UT, a = 163 mm: trục then hoa 24 răng)",
+     "text_ja": "トルクはスプライン軸でスクリューに伝わる(ZE Basic:「multi-spline shafts」、ZE 180 A UT、a = 163 mm:24 歯スプライン軸)",
+     "refs": [
+      "cat-p18",
+      "c017"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khớp then hoa đặt trong lantern, nối trục ra hộp số với trục vít",
+     "text_ja": "スプラインカップリングはランタン内にあり、ギアボックス出力軸とスクリューを結ぶ",
+     "refs": [
+      "drev-I7"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí khớp then hoa của ZE 155; thiết kế đặt khớp trong lantern vì đó là chỗ trục ra hộp số gặp trục vít. Review bản vẽ I7 ghi phần nối này chưa được vẽ chi tiết.",
+     "reason_ja": "ZE 155 のスプラインカップリングの位置に関する公開資料はない。ギアボックス出力軸がスクリューと出会う位置なので、ランタン内に置いた。図面レビュー I7 では、この接続部がまだ詳細に描かれていないと指摘されている。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
@@ -478,8 +1008,41 @@
    "used_by": [
     "lantern:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Cửa thăm 380 × 250 = 0,51 × 0,25 cỡ lantern (750 × 1 010); hình bóng cho 7,62/15,26 = 0,50 và 4,95/19,68 = 0,25",
+     "text_ja": "点検窓 380 × 250 = ランタン(750 × 1 010)の 0,51 × 0,25。シルエット図では 7,62/15,26 = 0,50、4,95/19,68 = 0,25",
+     "refs": [
+      "meas-2.2|Lantern (cửa thăm",
+      "cat-p09",
+      "dec-9|không lấy tỷ lệ tuyệt đối"
+     ],
+     "reason_vi": "Cách suy ra: chỉ dùng tỉ lệ tương đối (DECISIONS 9 không lấy thang tuyệt đối từ hình bóng): cửa 7,62 × 4,95 pt trên lantern 15,26 × 19,68 pt (pdf_measures §2.2). Tỉ lệ này khớp 380/750 và 250/1 010 của thiết kế.",
+     "reason_ja": "導出方法:相対比のみを使う(DECISIONS 9 はシルエット図の絶対スケールを使わない)。ランタン 15,26 × 19,68 pt に対し窓は 7,62 × 4,95 pt(pdf_measures §2.2)。この比は設計の 380/750 と 250/1 010 に一致する。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Tâm cửa X = −375 (giữa lantern −750 … 0) và Z = 1 200 (ngang tâm trục vít)",
+     "text_ja": "窓の中心は X = −375(ランタン −750 … 0 の中央)、Z = 1 200(スクリュー軸の高さ)",
+     "refs": [
+      "meas-2.2|Lantern (cửa thăm",
+      "cat-p09",
+      "c006"
+     ],
+     "reason_vi": "Cách suy ra: trên hình bóng, tâm cửa (x = 457,55 pt, y = 478,73 pt) trùng tâm lantern (x = 457,56 pt) và tâm trục vít (y = 478,79 pt). Z = 1 200 là chiều cao tâm trục theo bảng KM (c006).",
+     "reason_ja": "導出方法:シルエット図では、窓の中心(x = 457,55 pt、y = 478,73 pt)がランタンの中心(x = 457,56 pt)とスクリュー軸(y = 478,79 pt)に一致する。Z = 1 200 は KM の表の軸心高さ(c006)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "8 vít + tay nắm",
+     "text_ja": "ビス 8 本 + ハンドル",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về nắp cửa thăm lantern của ZE; 8 vít và tay nắm là chi tiết thông thường của nắp thăm, do thiết kế chọn.",
+     "reason_ja": "ZE のランタン点検窓のカバーに関する公開資料はない。ビス 8 本とハンドルは点検カバーの一般的な構成で、設計側が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
@@ -489,15 +1052,35 @@
      "web-01"
     ]
    },
-   "notes": ""
+   "notes": "Chỉ dùng tỉ lệ tương đối trên hình bóng (DECISIONS 9); kích thước tuyệt đối 380 × 250 vẫn do thiết kế chọn, pdf_measures §4 từng ghi cửa 345 × 225 ở thang 45,2 mm/pt."
   },
   "3dd99305cfdb": {
    "vi": "Vành mặt bích Ø700 dày 60 ở đầu X = 0: 20 lỗ ren M24 trên PCD 560 nhận bulông cấy từ bích B1 (đai ốc 12 cạnh nằm phía B1).",
    "used_by": [
     "lantern:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "20 lỗ ren M24 trên PCD 560 nhận 20 bulông cấy từ B1; đai ốc 12 cạnh nằm phía B1",
+     "text_ja": "PCD 560 上の M24 めねじ穴 20 個が B1 からのスタッドボルト 20 本を受ける。12 角ナットは B1 側",
+     "refs": [
+      "rev-M1",
+      "drev-I6"
+     ],
+     "reason_vi": "Không có tài liệu công khai về mối bích lantern–xi lanh của ZE 155; mẫu 20 bulông cấy M24 trên PCD 560 là lựa chọn của thiết kế cho mọi mối nối xi lanh (review thiết kế M1); đai ốc 12 cạnh thành mỏng theo review bản vẽ I6.",
+     "reason_ja": "ZE 155 のランタン–バレル間フランジ継手に関する公開資料はない。PCD 560 上の M24 スタッドボルト 20 本は設計側が全バレル継手で採用したパターン(設計レビュー M1)。薄肉 12 角ナットは図面レビュー I6 による。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vành bích Ø700 dày 60 ở đầu X = 0 (mối nối barrel/lantern, gốc toạ độ của thiết kế)",
+     "text_ja": "X = 0 端(バレル/ランタン継手、設計座標の原点)のフランジ縁 Ø700、厚さ 60",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về bích lantern; Ø700 × 60 do thiết kế chọn (lớn hơn bích xi lanh Ø640), không có lý do ghi riêng. X = 0 là mốc đặt tại mối nối.",
+     "reason_ja": "ランタンフランジに関する公開資料はない。Ø700 × 60 は設計側の選択(バレルフランジ Ø640 より大きい)で、個別の理由は記されていない。X = 0 は継手位置に置いた基準点。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
@@ -514,8 +1097,18 @@
    "used_by": [
     "lantern:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống xả dầu rò rỉ ở đáy, tai cẩu trên nóc",
+     "text_ja": "底部の漏れ油ドレン管、天板の吊り環",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về chi tiết phụ của lantern; chọn ống xả dầu rò ở đáy và tai cẩu trên nóc theo thực hành chung của khoang nối; hình bóng trang 9 không thấy hai chi tiết này.",
+     "reason_ja": "ランタンの付属部品に関する公開資料はない。底部の漏れ油ドレンと天板の吊り環は接続ハウジングの一般的な装備として選んだ。9 ページのシルエット図にはこの 2 点は見えない。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
@@ -532,8 +1125,40 @@
    "used_by": [
     "lantern:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "2 khớp tại Y = ±71: mỗi trục vít một khớp; a ≈ 142 = (D + d)/2 = (169 + 114,6)/2, Y = a/2",
+     "text_ja": "Y = ±71 に 2 個:スクリュー 1 本につき 1 個。a ≈ 142 = (D + d)/2 = (169 + 114,6)/2、Y = a/2",
+     "refs": [
+      "spec-1|Khoảng cách tâm hai trục vít",
+      "c001",
+      "c002"
+     ],
+     "reason_vi": "D = 169 (c001), d = 114,6 = 169 − 2 × 27,2 (c002); xem dòng lõi vít của xi lanh.",
+     "reason_ja": "D = 169(c001)、d = 114,6 = 169 − 2 × 27,2(c002)。バレル側のスクリュー芯径の行を参照。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Trục ra hộp số nối với trục vít bằng then hoa (ZE 180 A UT, a = 163 mm: trục then hoa 24 răng)",
+     "text_ja": "ギアボックス出力軸とスクリューはスプラインで結ばれる(ZE 180 A UT、a = 163 mm:24 歯スプライン軸)",
+     "refs": [
+      "c017",
+      "cat-p18"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hai khớp then hoa nằm bên trong lantern",
+     "text_ja": "スプラインカップリング 2 個はランタン内部にある",
+     "refs": [
+      "drev-I7"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí khớp then hoa của ZE 155; thiết kế đặt trong lantern vì đó là chỗ trục ra hộp số gặp trục vít. Review bản vẽ I7 ghi phần nối này chưa được vẽ chi tiết.",
+     "reason_ja": "ZE 155 のスプラインカップリングの位置に関する公開資料はない。ギアボックス出力軸がスクリューと出会う位置なので、ランタン内に置いた。図面レビュー I7 では、この接続部がまだ詳細に描かれていないと指摘されている。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
@@ -550,8 +1175,27 @@
    "used_by": [
     "lube_filter_duplex:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm dầu của máy ZE có lọc dầu hai bầu kèm tay gạt chuyển đổi",
+     "text_ja": "ZE の潤滑ユニットには、切替レバー付きの 2 筒式オイルフィルターがある",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đổi bầu lọc khi máy chạy",
+     "text_ja": "運転中にフィルターエレメントを交換できる",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách vận hành lọc của ZE; lọc kép có tay gạt chuyển đổi cho phép đổi bầu khi chạy là kiến thức chung về lọc dầu, ảnh web-03 chỉ cho thấy hai bầu và tay gạt.",
+     "reason_ja": "ZE のフィルター運用に関する公開資料はない。切替レバー付きのデュプレックスフィルターで運転中に交換できるのは油圧機器の一般知識で、web-03 の写真には 2 筒とレバーが写っているだけ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (2 bầu lọc + tay gạt chuyển đổi); pdf_measures §2.2 (lọc kép trước động cơ)"
@@ -568,8 +1212,35 @@
    "used_by": [
     "lube_filter_duplex:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Lọc có tay gạt chuyển đổi và đồng hồ áp ở đầu lọc (ảnh máy ZE 110 R)",
+     "text_ja": "フィルターヘッドに切替レバーと圧力計がある(ZE 110 R の写真)",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "2 bầu lọc đứng; chỉ báo tròn có đầu nối điện trên đầu lọc, đọc là chỉ báo chênh áp",
+     "text_ja": "縦型フィルター筒 2 個。ヘッド上の電気コネクタ付き丸型インジケーターは差圧インジケーターと読める",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Cách suy ra: đếm 2 bầu lọc đứng dưới đầu lọc trên web-03; chỉ báo tròn nhỏ có cáp điện ở đỉnh đầu lọc có dạng chỉ báo chênh áp, ảnh không ghi nhãn nên chỉ là cách đọc.",
+     "reason_ja": "導出方法:web-03 でフィルターヘッドの下に縦型の筒が 2 個あることを数えた。ヘッド上部の電気ケーブル付き小型丸型インジケーターは差圧インジケーターの形をしているが、写真にラベルはなく、あくまで読み取り。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bầu lọc cỡ Ø110",
+     "text_ja": "フィルター筒のサイズ Ø110",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ bầu lọc; Ø110 do thiết kế chọn, ảnh web-03 không có thước đo.",
+     "reason_ja": "フィルター筒のサイズに関する公開資料はない。Ø110 は設計側の選択で、web-03 の写真にはスケールがない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (2 bầu lọc + tay gạt chuyển đổi); pdf_measures §2.2 (lọc kép trước động cơ)"
@@ -586,8 +1257,27 @@
    "used_by": [
     "lube_oil_cooler:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm dầu của máy ZE có bộ trao đổi nhiệt dạng tấm inox, các cổng F2–F4 nối ống thép và ống mềm",
+     "text_ja": "ZE の潤滑ユニットにはステンレスのプレート式熱交換器があり、F2–F4 ポートに鋼管とホースが接続されている",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Môi chất làm mát là nước",
+     "text_ja": "冷却媒体は水",
+     "refs": [
+      "rev-I7"
+     ],
+     "reason_vi": "Ảnh web-03 không ghi môi chất; chọn nước vì thiết kế nối bộ làm mát dầu vào mạng nước làm mát nhà máy (review thiết kế I7 liệt kê bộ làm mát dầu cùng xi lanh là nơi dùng nước).",
+     "reason_ja": "web-03 の写真に冷却媒体の表示はない。設計は油冷却器を工場の冷却水ネットワークにつないだため水とした(設計レビュー I7 は、バレルと並んで油冷却器を冷却水の供給先として挙げている)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (bộ trao đổi nhiệt tấm inox có cổng F1–F4)"
@@ -603,8 +1293,35 @@
    "used_by": [
     "lube_oil_cooler:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ trao đổi nhiệt dạng khối tấm inox (plate heat exchanger) có cổng ghi nhãn F2, F3, F4",
+     "text_ja": "ステンレスのプレート式熱交換器ブロックに F2、F3、F4 のラベル付きポートがある",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "4 cổng F1–F4: thấy F2, F3, F4 trên ảnh; F1 ở mặt khuất",
+     "text_ja": "ポート 4 個 F1–F4:写真で F2、F3、F4 が見え、F1 は見えない面にある",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Cách suy ra: đếm các nhãn F2, F3, F4 trên web-03; F1 là cổng còn lại theo dãy F1–F4 thường dùng cho bộ trao đổi nhiệt tấm, không thấy trên ảnh.",
+     "reason_ja": "導出方法:web-03 で F2、F3、F4 のラベルを数えた。F1 はプレート式熱交換器で一般的な F1–F4 の並びの残りのポートで、写真には写っていない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cỡ 350 × 250 × 350; 4 cổng ren trên mặt +Y",
+     "text_ja": "サイズ 350 × 250 × 350、+Y 面にねじ込みポート 4 個",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ bộ làm mát của ZE 155; kích thước 350 × 250 × 350 và vị trí cổng ở mặt +Y do thiết kế chọn, ảnh web-03 không có thước đo.",
+     "reason_ja": "ZE 155 の油冷却器のサイズに関する公開資料はない。350 × 250 × 350 と +Y 面のポート位置は設計側の選択で、web-03 の写真にはスケールがない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (bộ trao đổi nhiệt tấm inox có cổng F1–F4)"
@@ -620,8 +1337,28 @@
    "used_by": [
     "lube_pipe_pressure:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp số ZE được bôi trơn kết hợp ngâm dầu và dầu áp lực",
+     "text_ja": "ZE のギアボックスは油浴潤滑と圧力潤滑を併用する",
+     "refs": [
+      "c033"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dầu đã lọc, làm mát đi tới hệ phun trong hộp số theo tuyến ống do thiết kế vẽ",
+     "text_ja": "ろ過・冷却済みの油が、設計が描いた配管経路でギアボックス内の噴射系統へ向かう",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tuyến ống dầu của ZE 155 (tuyến ống giả định trong thiết kế); ảnh web-03 cho thấy ống dầu thép sơn xanh nối cụm dầu với hộp số nhưng không đủ để suy thứ tự và vòi phun. Chọn thứ tự bơm → lọc → làm mát → hộp số theo sơ đồ bôi trơn áp lực thông thường.",
+     "reason_ja": "ZE 155 の油配管経路に関する公開資料はない(設計上の仮定の経路)。web-03 には潤滑ユニットとギアボックスをつなぐ青色塗装の鋼管が写っているが、順序や噴射ノズルまでは読み取れない。ポンプ → フィルター → 冷却器 → ギアボックスの順は、一般的な圧力潤滑回路に従って選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (ống dầu sơn xanh); tuyến ống giả định"
@@ -637,8 +1374,35 @@
    "used_by": [
     "lube_pipe_pressure:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Ống dầu thép sơn xanh cùng màu hộp số",
+     "text_ja": "ギアボックスと同じ青色塗装の油用鋼管",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống DN32 (OD 42)",
+     "text_ja": "DN32 鋼管(OD 42)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống dầu của ZE; DN32 (OD 42) do thiết kế chọn, ảnh web-03 không có thước đo.",
+     "reason_ja": "ZE の油配管のサイズに関する公開資料はない。DN32(OD 42)は設計側の選択で、web-03 の写真にはスケールがない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Công tắc áp suất (PS) gần cổng vào hộp số khoá khởi động truyền động; tín hiệu về tủ đầu máy (s_14)",
+     "text_ja": "ギアボックス入口ポート付近の圧力スイッチ(PS)が駆動の起動をインターロックし、信号はヘッドエンド盤(s_14)へ送られる",
+     "refs": [
+      "drev-I2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về công tắc áp suất dầu của ZE; chọn khoá khởi động theo áp suất dầu vì không được chạy khi chưa có dầu bôi trơn (thực hành chung). Review bản vẽ I2 ghi công tắc này chưa có đường tín hiệu; s_14 là tên tín hiệu trong thiết kế.",
+     "reason_ja": "ZE の油圧スイッチに関する公開資料はない。潤滑油が回っていない状態で運転してはならないため、油圧で起動をインターロックした(一般的な運用)。図面レビュー I2 では、このスイッチに信号線がないと指摘されている。s_14 は設計上の信号名。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (ống dầu sơn xanh); tuyến ống giả định"
@@ -654,8 +1418,20 @@
    "used_by": [
     "lube_pipe_return:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống hút dầu từ đáy carter hộp số về bơm",
+     "text_ja": "ギアボックスのオイルパン底部からポンプへ油を導く吸込配管",
+     "refs": [
+      "c033"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường hút của cụm dầu ZE (thiết kế ghi \"giả định\"); chọn hút từ đáy carter vì hộp số bôi trơn ngâm dầu có dầu tụ ở carter (c033).",
+     "reason_ja": "ZE の潤滑ユニットの吸込配管に関する公開資料はない(設計書に「仮定」と明記)。油浴潤滑のギアボックスでは油がオイルパンに溜まるため(c033)、オイルパン底部から吸い込む構成にした。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -669,8 +1445,18 @@
    "used_by": [
     "lube_pipe_return:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống thép DN40 (OD 50) chạy dọc mép +Y của khung, Z = 760",
+     "text_ja": "DN40 鋼管(OD 50)、フレームの +Y 縁に沿って敷設、Z = 760",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về ống hút dầu của ZE 155; cỡ, tuyến và cao độ do thiết kế chọn (thiết kế ghi \"giả định\").",
+     "reason_ja": "ZE 155 の油吸込配管に関する公開資料はない。サイズ、経路、高さは設計側の選択(設計書に「仮定」と明記)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -684,8 +1470,29 @@
    "used_by": [
     "lube_pump_motor:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp số ZE bôi trơn bằng dầu áp lực để bảo vệ ổ trục và bánh răng; cụm dầu có bơm, lọc và bộ làm mát",
+     "text_ja": "ZE のギアボックスは圧力潤滑で軸受と歯車を守る。潤滑ユニットにはポンプ、フィルター、冷却器がある",
+     "refs": [
+      "c033",
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thứ tự hút carter → bơm → lọc → làm mát → vòi phun bánh răng/ổ trục",
+     "text_ja": "オイルパン吸込 → ポンプ → フィルター → 冷却器 → 歯車・軸受ノズルの順",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về sơ đồ dầu của ZE 155; ảnh web-03 không cho thấy thứ tự nối ống. Chọn thứ tự này vì là sơ đồ bôi trơn áp lực thông thường.",
+     "reason_ja": "ZE 155 の油回路図に関する公開資料はない。web-03 には配管の接続順は写っていない。一般的な圧力潤滑回路なので、この順序を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
@@ -702,8 +1509,36 @@
    "used_by": [
     "lube_pump_motor:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Motor đặt đứng có nắp quạt, chuông nối xuống bơm ở đáy, kèm đồng hồ áp, trong cụm dầu của ZE",
+     "text_ja": "ZE の潤滑ユニットに、ファンカバーと接続ベルハウジング付きの立形モーターがあり、底部にポンプ、圧力計が付く",
+     "refs": [
+      "web-03",
+      "img-p19_3"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "2 đồng hồ áp, đếm trên web-03",
+     "text_ja": "圧力計 2 個(web-03 で計数)",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Cách suy ra: đếm các đồng hồ áp tròn trên web-03 (một ở đỉnh đầu lọc, một cạnh motor bơm); ảnh chỉ chụp một phía cụm dầu.",
+     "reason_ja": "導出方法:web-03 で丸型圧力計を数えた(フィルターヘッド上部に 1 個、ポンプモーター脇に 1 個)。写真は潤滑ユニットの片側しか写していない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Motor 4 kW Ø260; bơm kiểu bánh răng",
+     "text_ja": "モーター 4 kW、Ø260、ギアポンプ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về công suất và cỡ motor bơm dầu; chọn 4 kW Ø260 do thiết kế. Ảnh web-03 cho thấy bơm ở đáy nhưng không nói kiểu bơm; bơm bánh răng là kiểu thường dùng cho dầu bôi trơn.",
+     "reason_ja": "油ポンプモーターの出力とサイズに関する公開資料はない。4 kW、Ø260 は設計側の選択。web-03 には底部のポンプが写っているがポンプの形式は分からない。潤滑油にはギアポンプが一般的。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
@@ -720,8 +1555,18 @@
    "used_by": [
     "lube_pump_motor:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van an toàn tích hợp trên thân bơm xả về carter; lọc hút trên ống hút ngay trước bơm",
+     "text_ja": "安全弁(relief valve)はポンプ本体に内蔵されてオイルパンへ戻し、吸込ストレーナー(suction strainer)はポンプ直前の吸込配管上にある",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về van an toàn và lọc hút của cụm dầu ZE; ảnh web-03 không thấy hai chi tiết này. Chọn van an toàn tích hợp và lọc hút vì đó là trang bị thông thường để bảo vệ bơm bánh răng.",
+     "reason_ja": "ZE の潤滑ユニットの安全弁と吸込ストレーナーに関する公開資料はない。web-03 の写真にもこの 2 点は見えない。ギアポンプを守る一般的な装備として、内蔵安全弁と吸込ストレーナーを選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
@@ -738,8 +1583,25 @@
    "used_by": [
     "lube_unit_frame:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ dầu bôi trơn nằm trong khung đế của máy ZE (nêu riêng cho ZE UTX)",
+     "text_ja": "ZE では潤滑システムがベースフレームに組み込まれている(カタログは ZE UTX について記述)",
+     "refs": [
+      "c034"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Cụm bơm, lọc, làm mát dầu đặt trên khay sơn xanh có mép gập ở khung đế",
+     "text_ja": "ポンプ、フィルター、油冷却器は、ベースフレーム上の折り曲げ縁付き青色トレイに載る",
+     "refs": [
+      "web-03"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (cụm dầu phía trước động cơ trên hình bóng); web-03; c034"
@@ -757,8 +1619,17 @@
    "used_by": [
     "lube_unit_frame:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khay sơn xanh có mép gập, trong khay đặt vật thấm dầu màu vàng",
+     "text_ja": "折り曲げ縁付きの青色トレイの中に黄色い吸油材が置かれている",
+     "refs": [
+      "web-03"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (cụm dầu phía trước động cơ trên hình bóng); web-03; c034"
@@ -769,7 +1640,7 @@
      "c034"
     ]
    },
-   "notes": ""
+   "notes": "Trên web-03 vật thấm dầu màu vàng có dạng ống/xúc xích, không phải tấm phẳng như dòng mô tả; chỉ màu và việc đặt trong khay là có nguồn."
   }
  }
 }
