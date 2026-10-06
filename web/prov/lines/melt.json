@@ -67,8 +67,36 @@
    "used_by": [
     "melt_gear_pump:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm KM có bơm nhựa để cấp nhựa đều, không dao động",
+     "text_ja": "KM のシートラインには、樹脂を一定かつ脈動なく送るメルトポンプがある",
+     "refs": [
+      "c043"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Bơm Maag extrex6 GU: chênh áp tối đa 250 bar, áp ra tối đa 370 bar",
+     "text_ja": "Maag extrex6 GU:最大差圧 250 bar、最大吐出圧 370 bar",
+     "refs": [
+      "c049"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Áp ra khuôn ≈ 250 bar khi chạy",
+     "text_ja": "運転時のダイへの吐出圧 ≈ 250 bar",
+     "refs": [
+      "anim-2|Maag GU 100/125",
+      "c049"
+     ],
+     "reason_vi": "Giá trị vận hành do thiết kế chọn (đánh dấu * trong thiết kế animation); nằm trong giới hạn của bơm (c049).",
+     "reason_ja": "設計で選んだ運転値(アニメーション設計で * 付き)。ポンプの限界内(c049)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
@@ -79,15 +107,45 @@
      "web-14"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "861675c637c6": {
    "vi": "Khối thép 420 × 460 × 460, mặt bên vòng 12 bulông lục giác chìm, đĩa bích tròn lớn Ø360 trên mặt vào/ra (như web-14).",
    "used_by": [
     "melt_gear_pump:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Thân bơm dạng khối, mặt bên có vòng bulông lục giác chìm, đĩa bích tròn lớn trên mặt vào/ra (bơm Maag extrex6)",
+     "text_ja": "ポンプ本体はブロック形で、側面に六角穴付きボルトの輪、吸入・吐出面に大きな円形フランジ(Maag extrex6)",
+     "refs": [
+      "web-14"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "12 bulông trên vòng mặt bên",
+     "text_ja": "側面のボルト 12 本",
+     "refs": [
+      "web-14"
+     ],
+     "reason_vi": "Đếm trên ảnh web-14.",
+     "reason_ja": "写真 web-14 で数えた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối 420 × 460 × 460, bích Ø360",
+     "text_ja": "ブロック 420 × 460 × 460、フランジ Ø360",
+     "refs": [
+      "spec-4|Bơm bánh răng nhựa nóng",
+      "web-14"
+     ],
+     "reason_vi": "Bộ nguồn không có bản vẽ kích thước bơm GU 100/125; specs ước lượng thân ≈ 500 × 450 × 450, mô hình dùng 420 × 460 × 460 theo tỷ lệ ảnh web-14.",
+     "reason_ja": "GU 100/125 の寸法図は資料にない。仕様では本体 ≈ 500 × 450 × 450 と推定、モデルは写真 web-14 の比率から 420 × 460 × 460 とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
@@ -98,15 +156,32 @@
      "web-14"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "382b739bffea": {
    "vi": "Đầu trục dẫn động nhô ra phía −Y tại Z = 1 250; lỗ thanh nhiệt cắm.",
    "used_by": [
     "melt_gear_pump:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu trục dẫn động nhô ra ở mặt bên thân bơm",
+     "text_ja": "ポンプ本体の側面から駆動軸の端が突き出る",
+     "refs": [
+      "web-14"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Phía −Y, Z = 1 250; có lỗ thanh nhiệt cắm",
+     "text_ja": "−Y 側、Z = 1 250。カートリッジヒーター用の穴あり",
+     "refs": [],
+     "reason_vi": "Hướng và cao độ theo bố trí dây chuyền (động cơ bơm đặt phía −Y); thanh nhiệt cắm là cách gia nhiệt thường gặp của bơm nhựa, ảnh không cho thấy.",
+     "reason_ja": "向きと高さはライン配置による(ポンプモーターは −Y 側)。カートリッジヒーターは樹脂ポンプでよく使う加熱方式で、写真には写っていない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
@@ -117,7 +192,7 @@
      "web-14"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "da6bc9b5bbcd": {
    "vi": "Chuyển dòng từ lỗ số 8 sang lỗ tròn Ø120, nối van khởi động.",

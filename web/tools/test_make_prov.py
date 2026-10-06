@@ -241,9 +241,17 @@ class Check(unittest.TestCase):
         self.assertIn('P11', self.codes(strict=True))
         self.edit(lambda e: e.update(free_numbers=['71']))
         self.assertNotIn('P11', self.codes(strict=True))
+        self.edit(lambda e: e.update(free_numbers=[]))
+        self.facts[1]['whole_line'] = True
+        self.edit(lambda e: e.update(facts=self.facts))
+        self.assertNotIn('P11', self.codes(strict=True))
 
     def test_numbers_ignore_names(self):
         self.assertEqual(M.numbers_in('Xi lanh B5, bulông M24, PT100, X = 1 890, Ø520 × 2,5'), {'1890', '520', '2,5'})
+        self.assertEqual(M.numbers_in('đĩa bích (như web-14), 2-flight'), {'2'})
+
+    def test_markdown_escapes(self):
+        self.assertEqual(M.clean_md('| 9 Bơm | ≈ 69 v/ph\\* |'), '9 Bơm · ≈ 69 v/ph*')
 
     def test_build_output(self):
         out = os.path.join(self.tmp, 'out')

@@ -253,8 +253,28 @@
    "used_by": [
     "feed_hopper:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Phễu trên miệng nạp có cổng nghiêng 45° hướng về phía dẫn động (đo trên hình bóng trang 9 catalogue)",
+     "text_ja": "投入口の上のホッパーに、駆動側へ 45° 傾いた投入口(カタログ 9 ページのシルエットで計測)",
+     "refs": [
+      "meas-2.2|Phễu + ống nạp nghiêng 45°",
+      "cat-p09"
+     ],
+     "reason_vi": "Hình bóng dòng ZE UT ở trang 9 cho thấy phễu nhỏ có ống nạp nghiêng về phía motor.",
+     "reason_ja": "カタログ 9 ページの ZE UT シルエットに、モーター側へ傾いた投入管付きの小さなホッパーが描かれている。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hạt đến phễu qua ống rơi từ cân cấp liệu",
+     "text_ja": "ペレットはフィーダーから落下管を通ってホッパーへ",
+     "refs": [],
+     "reason_vi": "Cách cấp liệu (cân, ống rơi) do thiết kế chọn; catalogue chỉ cho thấy phễu trên miệng nạp.",
+     "reason_ja": "供給方式(フィーダー、落下管)は設計で選んだ。カタログには投入口上のホッパーのみ。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
@@ -264,15 +284,35 @@
      "cat-p06"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "890357ef2c59": {
    "vi": "Phễu hình chóp ngược inox: đỉnh 500 × 500, đáy 360 × 300 (côn cả theo Y).",
    "used_by": [
     "feed_hopper:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Phễu hình chóp ngược trên miệng nạp",
+     "text_ja": "投入口の上の逆角錐形ホッパー",
+     "refs": [
+      "meas-2.2|Phễu + ống nạp nghiêng 45°",
+      "cat-p09"
+     ],
+     "reason_vi": "Đo trên hình bóng trang 9 catalogue.",
+     "reason_ja": "カタログ 9 ページのシルエットで計測。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Inox; đỉnh 500 × 500, đáy 360 × 300",
+     "text_ja": "ステンレス、上面 500 × 500、底面 360 × 300",
+     "refs": [],
+     "reason_vi": "Không có tài liệu kích thước phễu; đáy lấy bằng lỗ nạp 360 × 300 trên B1, đỉnh 500 × 500 do thiết kế chọn.",
+     "reason_ja": "ホッパー寸法の資料はない。底面は B1 の投入口 360 × 300 に合わせ、上面 500 × 500 は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
@@ -282,15 +322,35 @@
      "cat-p06"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "ff8b413a3c00": {
    "vi": "Nắp đỉnh có cổ nghiêng 45° Ø250 hướng −X, cổng khí N₂ (inert) nhỏ, kính thăm và cảm biến mức.",
    "used_by": [
     "feed_hopper:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Cổ nạp nghiêng 45° hướng −X (về phía dẫn động)",
+     "text_ja": "駆動側(−X)へ 45° 傾いた投入口",
+     "refs": [
+      "meas-2.2|Phễu + ống nạp nghiêng 45°",
+      "cat-p09"
+     ],
+     "reason_vi": "Đo trên hình bóng trang 9 catalogue.",
+     "reason_ja": "カタログ 9 ページのシルエットで計測。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cổ Ø250, cổng khí N₂, kính thăm, cảm biến mức",
+     "text_ja": "口径 Ø250、N₂ ガス口、のぞき窓、レベルセンサー",
+     "refs": [],
+     "reason_vi": "Chi tiết phụ thường có trên phễu nạp; không có tài liệu cho máy này.",
+     "reason_ja": "投入ホッパーによくある付属品。この機械の資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
@@ -300,7 +360,7 @@
      "cat-p06"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "85c7f154c257": {
    "vi": "Định lượng 3 500 kg/h hạt PET theo khối lượng hao hụt.",

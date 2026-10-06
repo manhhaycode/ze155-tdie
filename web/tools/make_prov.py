@@ -37,7 +37,7 @@ def clean_md(s):
     if s.startswith('|') and s.endswith('|'):
         s = ' · '.join(c.strip() for c in s.strip('|').split('|') if c.strip())
     s = re.sub(r'^(?:[-*]|\d+\.)\s+', '', s)
-    s = s.replace('**', '').replace('`', '').replace('<br>', ' ')
+    s = s.replace('**', '').replace('`', '').replace('<br>', ' ').replace('\\*', '*')
     s = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', s)
     return re.sub(r'\s+', ' ', s).strip()
 
@@ -465,7 +465,9 @@ LEVELS = ('assumption', 'derived', 'sourced')  # weakest first
 PUBLIC_EVIDENCE = ('claim', 'figure', 'photo')
 DENY_STRINGS = ('22_3_160', 'ideathon', '/Users/', '~/')
 DEVICE_MAX_BYTES = 64 * 1024
-NUMBER = re.compile(r'(?<![A-Za-z\d,.])\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d])|(?<![A-Za-z\d,.])\d+(?:,\d+)?')
+# not after a letter (B5, M24) or a letter and a hyphen (web-14); groups of 3 digits joined by spaces are one number
+NUMBER = re.compile(r'(?<![A-Za-z\d,.])(?<![A-Za-z]-)\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:,\d+)?(?!\d)'
+                    r'|(?<![A-Za-z\d,.])(?<![A-Za-z]-)\d+(?:,\d+)?')
 KANA_KANJI = re.compile(r'[぀-ヿ㐀-鿿]')
 VI_TONES = {'̀', '́', '̃', '̉', '̣'}
 
@@ -574,7 +576,8 @@ def check(devices, lines_dir, reg, i18n, strict):
         if strict:
             covered = set(e.get('free_numbers') or [])
             for f in facts:
-                covered |= numbers_in(f.get('text_vi', ''))
+                # a fact about the whole line (e.g. an assumed element sequence) covers all its numbers
+                covered |= numbers_in(vi if f.get('whole_line') else f.get('text_vi', ''))
             missing = sorted(numbers_in(vi) - covered)
             if missing:
                 fail('P11', k, f'numbers without a fact: {", ".join(missing)}')
@@ -662,7 +665,7 @@ def build(devices, lines_dir, reg, i18n, strict, out_dir=OUT, images=True):
             on = e.get('status') in ('curated', 'verified') and e.get('facts')
             facts = []
             for f in (e['facts'] if on else []):
-                facts.append({k: f[k] for k in ('level', 'text_vi', 'text_ja', 'refs', 'reason_vi', 'reason_ja') if f.get(k)})
+                facts.append({k: f[k] for k in ('level', 'text_vi', 'text_ja', 'refs', 'reason_vi', 'reason_ja', 'whole_line') if f.get(k)})
                 refs += [r for r in f.get('refs') or [] if r not in refs]
             lines.append({'kind': ln['kind'], 'index': ln['index'], 'vi': ln['vi'],
                           'level': weakest(e['facts']) if on else None, 'facts': facts})

@@ -35,8 +35,46 @@
     "barrel_b5:details[0]",
     "barrel_b6:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh ZE-UT là thân trụ có mặt bích hai đầu; các đoạn nối với nhau bằng bích bắt bulông",
+     "text_ja": "ZE-UT のバレルは両端にフランジを持つ円筒で、各セクションはボルト締めフランジで接続",
+     "refs": [
+      "crop-p12_barrel_types_utx_vs_ut_250dpi",
+      "web-01"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thân trụ Ø520",
+     "text_ja": "胴径 Ø520",
+     "refs": [],
+     "reason_vi": "Không có bản vẽ xi lanh ZE 155; thiết kế lấy lỗ số 8 rộng 311 cộng thành dày ≈ 105 mỗi bên.",
+     "reason_ja": "ZE 155 のバレル図面はない。設計では8の字穴の幅 311 に両側の肉厚 ≈ 105 を加えた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt bích Ø640 × 50; 20 lỗ Ø26 trên PCD 560; mép lỗ cách mép bích 27 mm = (640 − 560)/2 − 26/2",
+     "text_ja": "フランジ Ø640 × 50、PCD 560 上に Ø26 の穴 20 個、穴縁からフランジ外周まで 27 mm = (640 − 560)/2 − 26/2",
+     "refs": [
+      "rev-M1",
+      "drev-I6",
+      "dec-17|mặt bích xi lanh tăng từ Ø600 lên Ø640"
+     ],
+     "reason_vi": "Chọn khi thiết kế: 20 bulông cấy M24 trên PCD 560 như ở các mối nối (review thiết kế M1); bích tăng từ Ø600 lên Ø640 để đủ thịt quanh lỗ và chỗ đặt khẩu (review bản vẽ I6). Không có tài liệu của hãng.",
+     "reason_ja": "設計時の選択:継手部と同じく PCD 560 上に M24 スタッドボルト 20 本(設計レビュー M1)。穴まわりの肉厚と工具の余裕のためフランジを Ø600 から Ø640 に拡大(図面レビュー I6)。メーカー資料はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Một bích có gờ định tâm, bích kia có rãnh",
+     "text_ja": "一方のフランジに位置決め用の凸部、他方に凹溝",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về mối ghép bích của ZE 155; gờ và rãnh định tâm là cách thường dùng để các đoạn xi lanh thẳng tâm.",
+     "reason_ja": "ZE 155 のフランジ接合の資料はない。凸部と凹溝による芯出しは、バレル各セクションを同軸にそろえる一般的な方法。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -51,7 +89,7 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "4fccbfffa464": {
    "vi": "Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
@@ -63,8 +101,27 @@
     "barrel_b5:details[1]",
     "barrel_b6:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Sau mỗi bích thân tiện thắt Ø500 dài 40 mm, chừa khe 12 mm cho khẩu 12 cạnh thành mỏng",
+     "text_ja": "各フランジの後ろで胴を Ø500・長さ 40 mm に細くし、薄肉の12角ソケット用に 12 mm のすき間を確保",
+     "refs": [
+      "drev-I6"
+     ],
+     "reason_vi": "Chọn khi sửa bản vẽ: review bản vẽ I6 chỉ ra không có chỗ cho cờ lê quanh đai ốc và đề xuất tiện thắt thân gần bích.",
+     "reason_ja": "図面修正時の選択:図面レビュー I6 でナットまわりに工具が入らないと指摘され、フランジ近くで胴を細くする案が示された。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vỏ nhiệt bắt đầu ngay sau đoạn thắt",
+     "text_ja": "ヒーターカバーは細くした部分のすぐ後ろから始まる",
+     "refs": [],
+     "reason_vi": "Hệ quả của đoạn thắt ở trên; không có tài liệu về vỏ nhiệt của ZE 155.",
+     "reason_ja": "上の細径部に合わせた配置。ZE 155 のヒーターカバーの資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -79,7 +136,7 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "6bfa5899dc76": {
    "vi": "Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
@@ -91,8 +148,49 @@
     "barrel_b5:details[2]",
     "barrel_b6:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Lỗ xi lanh hình số 8 (2 lỗ tròn giao nhau) chứa 2 trục vít",
+     "text_ja": "2本のスクリューを収める8の字形のバレル穴(2つの円が重なる)",
+     "refs": [
+      "crop-p05_8shaped_bore_barrel_section_x3",
+      "cat-p11"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Ø169 = đường kính vít ZE 155 A UTi (bảng KM)",
+     "text_ja": "Ø169 = ZE 155 A UTi のスクリュー径(KM 技術データ表)",
+     "refs": [
+      "c001"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Tâm hai lỗ Y = ±71: khoảng cách tâm a ≈ 142 = (D + d)/2 = (169 + 114,6)/2",
+     "text_ja": "2つの穴の中心 Y = ±71:軸間距離 a ≈ 142 = (D + d)/2 = (169 + 114,6)/2",
+     "refs": [
+      "spec-1|Khoảng cách tâm hai trục vít",
+      "c002",
+      "c017"
+     ],
+     "reason_vi": "d = 169 − 2 × 27,2 = 114,6 (c002); cách tính này khớp số đo thật của ZE 180 (c017).",
+     "reason_ja": "d = 169 − 2 × 27,2 = 114,6(c002)。同じ計算は ZE 180 の実測値と一致する(c017)。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Rộng 311 = a 142 + D 169",
+     "text_ja": "幅 311 = a 142 + D 169",
+     "refs": [
+      "spec-1|Khoảng cách tâm hai trục vít",
+      "c001"
+     ],
+     "reason_vi": "Bề rộng lỗ số 8 = khoảng cách tâm + đường kính lỗ.",
+     "reason_ja": "8の字穴の幅 = 軸間距離 + 穴径。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -107,7 +205,7 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "2c1c055c5181": {
    "vi": "Lỗ nạp trên đỉnh 360 × 300 tại X 160–520, mặt gia công phẳng cho hộp miệng nạp.",
@@ -298,8 +396,58 @@
    "used_by": [
     "barrel_b3:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh ZE UT có loại mở trên đỉnh, gắn tấm lót để thoát khí",
+     "text_ja": "ZE UT には上面が開いたバレルがあり、インサートを付けて脱気に使う",
+     "refs": [
+      "c031",
+      "crop-p12_barrel_types_utx_vs_ut_250dpi"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "PET không cần kết tinh hay sấy trước khi vào máy trục vít đôi ZE UT (KM đùn tấm PET trực tiếp)",
+     "text_ja": "ZE UT 二軸押出機では PET を事前に結晶化・乾燥する必要がない(KM の PET シート直接押出)",
+     "refs": [
+      "c040"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối nhào (kneading block) làm chảy nhựa ở cuối B2 – đầu B3",
+     "text_ja": "B2 終端〜B3 始端のニーディングブロックで樹脂を溶かす",
+     "refs": [
+      "design-1|Cuối B2 và đầu B3 có khối nhào"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu hình trục vít của máy này; đặt khối nhào ngay trước vùng thoát khí 1 là cách bố trí thường gặp trên máy trục vít đôi.",
+     "reason_ja": "この機械のスクリュー構成に関する公開資料はない。脱気ゾーン1の直前にニーディングブロックを置くのは二軸押出機でよくある配置。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chân không vùng 1 ≈ 50 mbar",
+     "text_ja": "ゾーン1の真空度 ≈ 50 mbar",
+     "refs": [
+      "design-9|Hai vùng chân không",
+      "c061",
+      "c062"
+     ],
+     "reason_vi": "Bộ nguồn không có mức chân không cho ZE 155 chạy PET không sấy; thiết kế chọn ≈ 50 mbar cho vùng 1 và 5–20 mbar cho vùng 2. Tham khảo: compounding thường 100–300 mbar (c061); dây chuyền PET không sấy hút tới ≈ 10 Pa (c062, độ tin cậy thấp).",
+     "reason_ja": "ZE 155 で未乾燥 PET を加工するときの真空度は資料にない。設計ではゾーン1を ≈ 50 mbar、ゾーン2を 5–20 mbar とした。参考:一般的なコンパウンドは 100–300 mbar(c061)、未乾燥 PET ラインでは ≈ 10 Pa まで(c062、信頼度低)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hút ẩm ngay khi nhựa vừa chảy để PET không bị thuỷ phân (cắt mạch, tụt độ nhớt IV); vòm kín không cho không khí lọt vào nhựa nóng",
+     "text_ja": "溶融直後に水分を吸引し、PET の加水分解(分子鎖切断・IV 低下)を防ぐ。密閉ドームで高温の樹脂に空気を入れない",
+     "refs": [
+      "rev-I4"
+     ],
+     "reason_vi": "Kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng. Dùng vòm chân không kín thay cửa thoát khí hở là theo review thiết kế I4.",
+     "reason_ja": "PET 押出の一般知識で、資料セットに専用の資料はない。開放ベントの代わりに密閉真空ドームとしたのは設計レビュー I4 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -314,15 +462,47 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "1ce0adb46e32": {
    "vi": "Lỗ trên đỉnh 320 × 280 tại X 1 990–2 310 với tấm lót (vent insert); vòm chân không 2 lắp trên.",
    "used_by": [
     "barrel_b3:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh ZE UT có loại mở trên đỉnh, gắn tấm lót (insert) để thoát khí",
+     "text_ja": "ZE UT には上面開口のバレルがあり、脱気用インサートを取り付ける",
+     "refs": [
+      "c031",
+      "crop-p12_barrel_types_utx_vs_ut_250dpi"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ 320 × 280 tại X 1 990–2 310",
+     "text_ja": "開口 320 × 280、位置 X 1 990–2 310",
+     "refs": [
+      "c036",
+      "rev-I4",
+      "design-10|lỗ B3 nới thành 320 × 280"
+     ],
+     "reason_vi": "Không có tài liệu cho kích thước này. Catalogue cho lỗ thoát khí dài 6D (c036); thiết kế chọn lỗ ngắn hơn cho vùng 1 và nới thành 320 × 280 khi đổi sang vòm chân không (review thiết kế I4).",
+     "reason_ja": "この寸法の資料はない。カタログの脱気口は 6D 長(c036)。設計ではゾーン1を短い開口とし、真空ドームへの変更時に 320 × 280 に拡大(設計レビュー I4)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vòm chân không 2 (vùng 1) lắp trên lỗ",
+     "text_ja": "真空ドーム2(ゾーン1)を開口の上に取り付け",
+     "refs": [
+      "rev-I4"
+     ],
+     "reason_vi": "Theo review thiết kế I4: thay ống thoát khí hở trên B3 bằng vòm chân không kín.",
+     "reason_ja": "設計レビュー I4 により、B3 の開放ベントを密閉真空ドームに変更。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -337,7 +517,7 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "a4e1eeeeeec3": {
    "vi": "2 băng nhiệt có khe tại lỗ.",
@@ -345,8 +525,19 @@
     "barrel_b3:details[4]",
     "barrel_b5:details[4]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 băng nhiệt trên đoạn 6D, có khe tại lỗ thoát khí",
+     "text_ja": "6D セクションに帯状ヒーター 2 本、脱気口の位置に切り欠き",
+     "refs": [
+      "crop-p05_barrel_heating_cartridges_cooling_bores_x3"
+     ],
+     "reason_vi": "Không có tài liệu về cách gia nhiệt xi lanh ZE 155. Catalogue chỉ cho thấy thanh nhiệt cắm trong thân xi lanh (trang 5); thiết kế dùng băng nhiệt và chừa khe tại lỗ.",
+     "reason_ja": "ZE 155 のバレル加熱方式の資料はない。カタログ(5 ページ)にはバレル内に差し込むカートリッジヒーターのみ。設計では帯状ヒーターとし、開口部に切り欠きを設けた。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -361,15 +552,35 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "b9621c0bbd36": {
    "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 1890 (vào) và 2504 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
    "used_by": [
     "barrel_b3:details[5]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh có kênh nước làm mát nối ống mềm",
+     "text_ja": "バレルには冷却水の流路があり、ホースで接続",
+     "refs": [
+      "crop-p05_barrel_heating_cartridges_cooling_bores_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 đầu nối ở góc dưới +Y (45°, Y 184, Z 1 016), X = 1890 vào và 2504 ra, qua rãnh 50 mm của băng nhiệt",
+     "text_ja": "継手 2 個:+Y 側下部(45°、Y 184、Z 1 016)、X = 1890 入口・2504 出口、帯状ヒーターの 50 mm 切り欠きを通す",
+     "refs": [
+      "rev-I1",
+      "web-02"
+     ],
+     "reason_vi": "Vị trí do thiết kế chọn. Review thiết kế I1 chỉ ra đầu nối trùng gối đỡ xi lanh và đề xuất đặt ở góc dưới phía +Y, gần hai đầu đoạn, như ảnh máy ZE 110 R (web-02).",
+     "reason_ja": "位置は設計で選んだ。設計レビュー I1 で継手がバレル支持台と重なると指摘され、ZE 110 R の写真(web-02)のようにセクション両端近くの +Y 側下部に配置する案が示された。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
@@ -384,7 +595,7 @@
      "crop-p12_barrel_types_utx_vs_ut_250dpi"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "a52af91ac997": {
    "vi": "Trộn, đồng nhất nhựa nóng chảy; trước B5 có phần tử nghịch tạo nút nhựa kín chân không.",
@@ -1560,8 +1771,34 @@
    "used_by": [
     "screws:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hai trục vít đồng hướng ăn khớp sát nhau dọc cả máy, tự làm sạch lẫn nhau",
+     "text_ja": "同方向回転で全長にわたり密にかみ合う2本のスクリューは、互いにセルフワイピングする",
+     "refs": [
+      "cat-p11"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Các loại phần tử trục vít: vận chuyển, nhào, trộn, chặn và đẩy ngược; xi lanh có đoạn mở để nạp liệu và thoát khí",
+     "text_ja": "スクリューエレメント:搬送、ニーディング、ミキシング、せき止め・逆送り。バレルには供給用・脱気用の開口セクションがある",
+     "refs": [
+      "cat-p13",
+      "c031"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tăng áp ở cuối để đẩy nhựa qua lọc, bơm và khuôn",
+     "text_ja": "終端で昇圧し、樹脂をフィルター・ポンプ・ダイへ送る",
+     "refs": [],
+     "reason_vi": "Kiến thức chung về máy đùn; catalogue không nói riêng về đoạn tăng áp.",
+     "reason_ja": "押出機の一般知識。カタログには昇圧部についての記述はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
@@ -1573,15 +1810,70 @@
      "c017"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "41a9b8b42ae5": {
    "vi": "2 trục tại Y = ±71, Z = 1 200, Ø ngoài 167,5, lõi 114,6, 2 đầu ren (2-flight).",
    "used_by": [
     "screws:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "2 trục tại Y = ±71 = a/2, a ≈ 142 = (D + d)/2",
+     "text_ja": "2本の軸の位置 Y = ±71 = a/2、a ≈ 142 = (D + d)/2",
+     "refs": [
+      "spec-1|Khoảng cách tâm hai trục vít",
+      "c001",
+      "c002"
+     ],
+     "reason_vi": "D = 169 (c001), d = 114,6; xem dòng lõi vít.",
+     "reason_ja": "D = 169(c001)、d = 114,6。スクリュー谷径の項を参照。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Z = 1 200: chiều cao tâm trục ZE 155 theo bảng KM",
+     "text_ja": "Z = 1 200:KM 技術データ表による ZE 155 の軸高さ",
+     "refs": [
+      "c006"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Lõi 114,6 = D − 2h = 169 − 2 × 27,2",
+     "text_ja": "谷径 114,6 = D − 2h = 169 − 2 × 27,2",
+     "refs": [
+      "c001",
+      "c002",
+      "spec-1|Đường kính lõi vít"
+     ],
+     "reason_vi": "h = 27,2 mm là chiều sâu rãnh vít trong bảng KM (c002).",
+     "reason_ja": "h = 27,2 mm は KM 技術データ表のねじ溝深さ(c002)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø ngoài 167,5",
+     "text_ja": "外径 167,5",
+     "refs": [
+      "spec-1|Đường kính ngoài thực của vít",
+      "c017"
+     ],
+     "reason_vi": "Bảng KM chỉ cho đường kính lỗ 169; lấy theo tỷ lệ vít/lỗ của ZE 180 (192,3/194 ≈ 0,991, c017). specs ghi là ước lượng.",
+     "reason_ja": "KM の表はバレル穴径 169 のみ。ZE 180 のスクリュー径/穴径の比(192,3/194 ≈ 0,991、c017)を使った推定値。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ren 2 đầu (2-flight)",
+     "text_ja": "2条ねじ(2-flight)",
+     "refs": [
+      "cat-p13",
+      "cat-p11"
+     ],
+     "reason_vi": "Catalogue chỉ ghi có phần tử nhiều đầu ren (trang 13); với tỷ số D/d = 1,46 của bản A, thiết kế chọn trục vít 2 đầu ren.",
+     "reason_ja": "カタログには多条エレメントがあるとだけ記載(13 ページ)。A 型の D/d = 1,46 に合わせ、設計で2条ねじを選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
@@ -1593,15 +1885,35 @@
      "c017"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "f92ac5ad51ff": {
    "vi": "Trình tự phần tử (X từ–tới): −400–0 trục then hoa trong lantern; 0–1 100 vận chuyển bước 1,5D (miệng nạp 160–520); 1 100–1 560 vận chuyển bước 1,5D dưới cửa side feeder (1 180–1 520); 1 560–1 880 khối nhào KB 45°/5 (nóng chảy); 1 880–1 950 KB 90° (nút nhựa, kết thúc trước lỗ vùng 1 ở 1 990); 1 950–2 420 vận chuyển bước rộng 1,5D dưới lỗ vùng 1 (1 990–2 310); 2 420–2 900 vận chuyển 1D; 2 900–3 380 khối nhào KB 45°/5 + KB 90° (trộn); 3 380–3 620 vận chuyển 1D; 3 620–3 720 phần tử nghịch LH (nút nhựa trước vùng 2); 3 720–4 450 vận chuyển bước rộng 1,5D dưới lỗ vùng 2 (3 860–4 380); 4 450–5 746 vận chuyển 1D → 0,75D (tăng áp).",
    "used_by": [
     "screws:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Các loại phần tử trong trình tự (vận chuyển nhiều bước ren, khối nhào lệch góc, phần tử nghịch) có trong dải phần tử của KM",
+     "text_ja": "この配列のエレメント(ピッチ違いの搬送、角度違いのニーディング、逆送り)は KM のエレメント群にある",
+     "refs": [
+      "cat-p13"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Toàn bộ trình tự và vị trí các phần tử trong dòng này",
+     "text_ja": "この行のエレメント配列と位置はすべて",
+     "refs": [
+      "cat-p13"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu hình trục vít cho PET tấm trên ZE 155. Trình tự theo cách bố trí thường gặp: vận chuyển dưới miệng nạp, khối nhào để chảy, nút nhựa trước mỗi vùng chân không, bước rộng dưới lỗ thoát khí, bước ngắn dần ở cuối để tăng áp.",
+     "reason_ja": "ZE 155 で PET シートを加工するときのスクリュー構成は公開資料にない。一般的な配置にならった:投入口の下は搬送、溶融にニーディング、各真空ゾーンの前に樹脂シール、脱気口の下は広いピッチ、終端はピッチを詰めて昇圧。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
@@ -1613,15 +1925,26 @@
      "c017"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   },
   "70fabc921767": {
    "vi": "Thấy được qua miệng nạp B1, cửa B3 và vòm B5; cho bản vẽ cắt riêng (cut-away).",
    "used_by": [
     "screws:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Trục vít thấy được qua các lỗ mở của mô hình: miệng nạp B1, lỗ thoát khí B3, vòm B5",
+     "text_ja": "モデルの開口部(B1 投入口、B3 脱気口、B5 ドーム)からスクリューが見える",
+     "refs": [
+      "c031"
+     ],
+     "reason_vi": "Hệ quả của các đoạn xi lanh mở trong thiết kế này; xi lanh mở để nạp liệu và thoát khí có trong catalogue (c031).",
+     "reason_ja": "この設計の開口バレルによるもの。供給用・脱気用の開口バレルはカタログにある(c031)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
@@ -1633,7 +1956,7 @@
      "c017"
     ]
    },
-   "notes": ""
+   "notes": "pilot (PLAN-PROV Task 6)"
   }
  }
 }

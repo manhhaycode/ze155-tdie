@@ -1,0 +1,1 @@
+{"device_id": "melt_sensor_p3", "lines": [{"facts": [], "index": 0, "kind": "function", "level": null, "vi": "Giữ áp hút bơm ổn định (≈ 50 bar) bằng cách chỉnh tốc độ bơm bánh răng; lưu lượng do các cân loss-in-weight quyết định."}, {"facts": [], "index": 0, "kind": "details", "level": null, "vi": "Thân Ø25, đầu Ø40."}], "sources": {}, "version": 1}

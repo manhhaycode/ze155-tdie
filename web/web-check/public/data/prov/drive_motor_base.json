@@ -1,0 +1,1 @@
+{"device_id": "drive_motor_base", "lines": [{"facts": [], "index": 0, "kind": "function", "level": null, "vi": "Nâng động cơ để tâm trục khớp Z = 1 200, cho phép căn chỉnh đồng tâm."}, {"facts": [], "index": 0, "kind": "details", "level": null, "vi": "Hai ray thép dày 100 có vít đẩy (jack screws) căn chỉnh ngang."}], "sources": {}, "version": 1}

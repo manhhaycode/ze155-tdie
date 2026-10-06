@@ -1,0 +1,1 @@
+{"device_id": "lube_filter_duplex", "lines": [{"facts": [], "index": 0, "kind": "function", "level": null, "vi": "Lọc dầu, đổi bầu lọc khi máy chạy."}, {"facts": [], "index": 0, "kind": "details", "level": null, "vi": "2 bầu lọc đứng Ø110, tay gạt chuyển đổi, chỉ báo chênh áp, đồng hồ áp."}], "sources": {}, "version": 1}

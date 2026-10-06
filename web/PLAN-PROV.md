@@ -43,11 +43,27 @@
 
 - **Mức của một dòng là mức yếu nhất** trong các fact của dòng (giả định < suy ra < có nguồn).
 - **Một fact cho mỗi giá trị hoặc mỗi cơ sở độc lập.** "Thân trụ Ø520, mặt bích Ø640 × 50" có hai fact nếu Ø520 và Ø640 có cơ sở khác nhau. Các số cùng một cơ sở thì gộp vào một fact.
-- **Mọi con số đứng riêng trong dòng phải xuất hiện trong `text_vi` của một fact** (kiểm P11). Số đi liền sau chữ cái Latin (B5, M24, PT100) là tên gọi nên không tính.
+- **Mọi con số đứng riêng trong dòng phải xuất hiện trong `text_vi` của một fact** (kiểm P11). Fact nói về cả dòng (ví dụ cả trình tự phần tử trục vít là giả định) đặt `"whole_line": true`; số là tên gọi (vòm 2) thì đưa vào `free_numbers`. Số đi liền sau chữ cái Latin (B5, M24, PT100) là tên gọi nên không tính.
 - `text_vi` dài tối đa khoảng 160 ký tự. Bắt đầu bằng giá trị hoặc đặc điểm, sau đó tới cơ sở, ví dụ: "D = 169 mm: đường kính vít ZE 155 A UTi theo bảng KM".
 - `reason_vi` của một giả định viết theo mẫu: "Không có tài liệu công khai về …; chọn … vì …". Với fact suy ra, `reason_vi` là "Cách suy ra": công thức hoặc phép đo.
 - Trước khi trích một ref phải mở ra đọc. Nếu ref là claim, giá trị hoặc đặc điểm phải nằm trong `quote` hoặc `claim`. Nếu ref là ảnh, đặc điểm phải nhìn thấy trên ảnh.
 - Kiến thức chung về máy đùn (ví dụ "PET bị thuỷ phân nếu còn ẩm") mà không có tài liệu trong bộ nguồn thì xếp `assumption`, lý do "kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng".
+
+### 1.1 Mẫu từ pilot (17 dòng của `barrel_b3`, `screws`, `melt_gear_pump`, `feed_hopper`)
+
+- **Cách tách hay gặp:**
+  - một fact ✓ cho *loại* chi tiết (catalogue hoặc ảnh cho thấy nó có), ví dụ "Xi lanh ZE-UT là thân trụ có mặt bích hai đầu" kèm `crop-p12_…` và `web-01`;
+  - một hoặc nhiều fact ⚠ cho *kích thước và vị trí cụ thể* do thiết kế chọn.
+  - Vì vậy phần lớn dòng có mức ⚠. Đó là kết quả đúng.
+- **Phép tính** từ số có nguồn là ≈. Ghi công thức vào `text_vi`, ghi nguồn của từng số vào `reason_vi`. Ví dụ: "Tâm hai lỗ Y = ±71: a ≈ 142 = (D + d)/2".
+- **Đếm hoặc đo trên ảnh** là ≈, với ref là ảnh đó. Ví dụ: "12 bulông trên vòng mặt bên", đếm trên web-14. Đếm xong phải xem lại ảnh lớn.
+- **Quyết định của thiết kế hoặc review** (`rev-*`, `drev-*`, `dec-*`, `design-*`) dùng để truy ra *vì sao* chọn giá trị đó. Bản thân giá trị vẫn là ⚠, trừ khi review dựa trên một nguồn công khai.
+- **Ảnh hãng khác** (cảnh báo W2) chỉ dùng cho ✓ khi chính sản phẩm đó là lựa chọn của thiết kế. Ví dụ: ảnh bơm Maag cho `melt_gear_pump`. Trường hợp khác thì hạ xuống ≈ hoặc ⚠.
+- **Catalogue chỉ có chữ** (ví dụ "figure 8 shaped barrel bore", trang 11) thì trích bằng ref trang `cat-pNN`. Người xem mở PDF tới đúng trang đó.
+- **Mỗi ref mới** cần thêm một mục trong `web/prov/sources.i18n.json`:
+  - tài liệu: `title_ja`; với tài liệu tiếng Anh thêm cả `title_vi`;
+  - hình catalogue: `caption_ja`, và nên có thêm `caption_vi` riêng cho crop;
+  - ảnh: `shows_vi` và `shows_ja`.
 
 ## 2. Dữ liệu
 
