@@ -815,5 +815,400 @@
   },
   "layout_1366x768": "toolbar 87 px (was 106), tree 236 px + info 272 px, canvas between the panels 842 px (was 726); the tree folds to its header (button next to the count)",
   "selfcheck_panel": "<pre id=\"selfcheck\"> visually hidden (still in the DOM and the accessibility tree, SELFCHECK DONE); ?selfcheck=show shows it; the normal URL has no white element over the canvas"
+ },
+ "flow": {
+  "generated": "2026-10-06T00:05:54.978Z",
+  "by": "FLOW builder self-test (PLAN-FLOW §7 step 5; not a certification, the independent reviewer re-checks)",
+  "env": "private Chrome 154 driven over CDP (the chrome-devtools MCP profile was held by another session), viewport 1920x1080 DPR 1, display 120 Hz, npm run dev, Apple M3 Pro",
+  "data": "`make -C web data verify publish` exit 0, check.json failures [], GLBs unchanged (5 793 436 / 1 982 388 B)",
+  "summary": {
+   "F1": true,
+   "F2": true,
+   "F3": true,
+   "F4": true,
+   "F5": true,
+   "F6": true,
+   "F7": "builder screenshots, see web/review/flow/builder/ (reviewer judges)",
+   "F8": true,
+   "F9": true,
+   "F10": true
+  },
+  "F2": {
+   "time": {
+    "id": "FLOW",
+    "ms": 17.5,
+    "first_ms": 16.9,
+    "ok": true
+   },
+   "rayUnfiltered": 0,
+   "roundTrip": {
+    "ok": true,
+    "states": [
+     "FULL",
+     "CUT_FEED",
+     "CUT_Z_BARREL",
+     "CUT_X2450",
+     "CUT_X4120",
+     "FLOW"
+    ],
+    "flowLeft": true
+   },
+   "ok": true
+  },
+  "F3": {
+   "cases": [
+    {
+     "device": "feed_throat",
+     "runs": [
+      {
+       "ok": true,
+       "capPixels": 9,
+       "correct": 9,
+       "clickSelected": "feed_throat"
+      },
+      {
+       "ok": true,
+       "capPixels": 9,
+       "correct": 9
+      },
+      {
+       "ok": true,
+       "capPixels": 9,
+       "correct": 9
+      }
+     ],
+     "ok": true
+    },
+    {
+     "device": "barrel_b3",
+     "runs": [
+      {
+       "ok": true,
+       "capPixels": 254,
+       "correct": 254,
+       "clickSelected": "barrel_b3"
+      },
+      {
+       "ok": true,
+       "capPixels": 254,
+       "correct": 254
+      },
+      {
+       "ok": true,
+       "capPixels": 254,
+       "correct": 254
+      }
+     ],
+     "ok": true
+    },
+    {
+     "device": "melt_gear_pump",
+     "runs": [
+      {
+       "ok": true,
+       "capPixels": 438,
+       "correct": 438,
+       "clickSelected": "melt_gear_pump"
+      },
+      {
+       "ok": true,
+       "capPixels": 438,
+       "correct": 438
+      },
+      {
+       "ok": true,
+       "capPixels": 438,
+       "correct": 438
+      }
+     ],
+     "ok": true
+    },
+    {
+     "device": "die_body_lower",
+     "runs": [
+      {
+       "ok": true,
+       "capPixels": 129,
+       "correct": 129,
+       "clickSelected": "die_body_lower"
+      },
+      {
+       "ok": true,
+       "capPixels": 129,
+       "correct": 129
+      },
+      {
+       "ok": true,
+       "capPixels": 129,
+       "correct": 129
+      }
+     ],
+     "ok": true
+    },
+    {
+     "device": "ctx_roll_middle",
+     "runs": [
+      {
+       "ok": true,
+       "capPixels": 71,
+       "correct": 71,
+       "clickSelected": "ctx_roll_middle"
+      },
+      {
+       "ok": true,
+       "capPixels": 71,
+       "correct": 71
+      },
+      {
+       "ok": true,
+       "capPixels": 71,
+       "correct": 71
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "ok": true
+  },
+  "F4": {
+   "slow": {
+    "mode": "slow",
+    "hz": 120.3,
+    "z01": {
+     "range": [
+      0.55,
+      1.45
+     ],
+     "n": 820,
+     "v": 0.06338,
+     "expected": 0.06338,
+     "err": 0.0001
+    },
+    "z02": {
+     "range": [
+      1.55,
+      1.85
+     ],
+     "n": 328,
+     "v": 0.04225,
+     "expected": 0.04225,
+     "err": 0
+    }
+   },
+   "real": {
+    "mode": "real",
+    "hz": 119.9,
+    "z01": {
+     "range": [
+      0.55,
+      1.45
+     ],
+     "n": 627,
+     "v": 1.26801,
+     "expected": 1.2675,
+     "err": 0.0004
+    },
+    "z02": {
+     "range": [
+      1.55,
+      1.85
+     ],
+     "n": 112,
+     "v": 0.84534,
+     "expected": 0.845,
+     "err": 0.0004
+    }
+   },
+   "off": {
+    "movedCoordinates": 0,
+    "ok": true
+   },
+   "bounds": {
+    "pellets": 2000,
+    "N": 2000,
+    "maxPelletX": 1.8929,
+    "minPelletZ": 0.0039
+   },
+   "ok": true
+  },
+  "F5": {
+   "fillMeshes": 27,
+   "fillPrograms": [
+    "ze-fill-curtain",
+    "ze-fill-die",
+    "ze-fill-line",
+    "ze-fill-line-cap",
+    "ze-sheet"
+   ],
+   "leftovers": 0,
+   "at1_0_phase": {
+    "x": 1,
+    "mode": "phase",
+    "hex": "#DBD6C2",
+    "T": 188.1,
+    "phase": 0,
+    "alpha": 0.08,
+    "zone": "z01_feed"
+   },
+   "at2_5_phase": {
+    "x": 2.5,
+    "mode": "phase",
+    "hex": "#D95709",
+    "T": 274.9,
+    "phase": 1,
+    "alpha": 0.6,
+    "zone": "z04_convey"
+   },
+   "at5_9_heat": {
+    "x": 5.9,
+    "mode": "heat",
+    "hex": "#DC4D27",
+    "T": 285,
+    "phase": 1,
+    "alpha": 0.6,
+    "zone": "head",
+    "expected": "#DC4D27"
+   },
+   "ok": true
+  },
+  "F6": {
+   "materials": [
+    "ze-sheet"
+   ],
+   "speed": {
+    "v": 0.41559,
+    "expected": 0.4168,
+    "err": 0.0029
+   },
+   "speedOff": 0,
+   "phase0": {
+    "s": 0,
+    "mode": "phase",
+    "hex": "#D95709",
+    "T": 250
+   },
+   "heat0": {
+    "s": 0,
+    "mode": "heat",
+    "hex": "#E8903B",
+    "T": 250,
+    "expected": "#E8903B"
+   },
+   "ok": true
+  },
+  "F8": {
+   "fps": 120.2,
+   "calls": 743,
+   "triangles": 1062937,
+   "heap_mb": 153,
+   "precompile_ms": 135.6,
+   "ok": true
+  },
+  "F9": {
+   "D4": true,
+   "D6": true,
+   "D7": [
+    [
+     "FULL",
+     16.8
+    ],
+    [
+     "CUT_FEED",
+     16.3
+    ],
+    [
+     "CUT_Z_BARREL",
+     15.2
+    ],
+    [
+     "CUT_X2450",
+     16.3
+    ],
+    [
+     "CUT_X4120",
+     16.9
+    ],
+    [
+     "FLOW",
+     19.4
+    ],
+    [
+     "FREE",
+     16.9
+    ]
+   ],
+   "console": "0 errors; 1 library warning (THREE.Clock deprecated, known)",
+   "network": "only 127.0.0.1:5178 (62 requests, all states + language switch)"
+  },
+  "F10": {
+   "labels": {
+    "vi": [
+     [
+      "FULL",
+      "Toàn bộ máy"
+     ],
+     [
+      "CUT_FEED",
+      "Phễu nạp hạt"
+     ],
+     [
+      "CUT_Z_BARREL",
+      "Bên trong xi lanh"
+     ],
+     [
+      "CUT_X2450",
+      "Lát cắt hai trục vít"
+     ],
+     [
+      "CUT_X4120",
+      "Lát cắt chỗ hút ẩm"
+     ],
+     [
+      "FLOW",
+      "Quy trình: hạt → film"
+     ],
+     [
+      "FREE",
+      "Tự cắt"
+     ]
+    ],
+    "ja": [
+     [
+      "FULL",
+      "全体"
+     ],
+     [
+      "CUT_FEED",
+      "投入ホッパー"
+     ],
+     [
+      "CUT_Z_BARREL",
+      "バレル内部"
+     ],
+     [
+      "CUT_X2450",
+      "スクリュー断面"
+     ],
+     [
+      "CUT_X4120",
+      "脱気部の断面"
+     ],
+     [
+      "FLOW",
+      "工程：ペレット→フィルム"
+     ],
+     [
+      "FREE",
+      "自由断面"
+     ]
+    ]
+   },
+   "coordinates_on_buttons": [],
+   "toolbar_rows": {
+    "1920": "FULL 1, cut states / FLOW / FREE 2 (vi and ja)",
+    "1366": "FULL 2, cut states / FLOW / FREE 3 (vi and ja)"
+   },
+   "colour_mode_kept_on_language_switch": true
+  }
  }
 }

@@ -340,3 +340,24 @@ Mọi số đều ghi `source`.
 - Nhiệt độ, độ điền và tốc độ rơi có dấu \* là giả định (`anim/design-anim.md` §2); đây là nhiệt độ đặt của vùng.
 - Hình minh hoạ có số liệu, không phải mô phỏng CFD.
 - Flow này là yêu cầu trực tiếp của người dùng, nên làm trước quyết định 32. Quyết định 32 vẫn giữ cho tour, nhãn, HUD.
+
+---
+
+## 10. Thay đổi khi dựng (2026-10-06, builder)
+Những điểm dưới đây khác với §2–§6. Reviewer chấm theo bản này.
+
+1. **Trục vít B bị cắt ở Y = 0** (`show_clipped`, không còn `show_whole`). Trục vít B có trục cách mặt cắt 71 mm, bán kính cánh 83 mm, nên nó nhô qua mặt cắt 12 mm. Để nguyên khối thì nó che kín khe nhìn vào lỗ, không thấy nhựa. Cắt rồi thì chỉ mất đỉnh cánh, vít vẫn quay.
+2. **Mặt cắt nhựa vẽ tại mặt phẳng cắt.** Các khối nhựa vùng vít (`show_clipped`) dùng biến thể `ze-fill-line-cap`. Mặt sau của khối nhựa được đặt độ sâu bằng điểm trên mặt phẳng cắt cùng tia nhìn, nếu điểm đó nằm trong eo lỗ (|y − 1,2| ≤ 44,9 mm) và dưới mặt nhựa của vùng. Dữ liệu thêm `zones[].fill_top_m` lấy từ bbox `int_fill_screw_*`. Ở các vùng cấp đói (z01, z03, z04, z07) nhựa chỉ là lớp dưới đáy, đúng như mô hình. Vật liệu khối nhựa vẽ một lượt (`forceSinglePass`).
+3. **Mặt cắt màu xám trong FLOW.** `FLOW.cap_colors`: thép `#8E959C` (vẫn vân chéo), trục vít `#5C636B`. Áp cho nắp lúc chạy (theo `cap_class`) và cho vật liệu cắt sẵn `za_cap_*`. Chú thích "Màu nắp cắt" hiện màu này ở FLOW. Lý do: đỏ thép `#B84533` trùng đầu nóng 270–300 °C của thang nhiệt.
+4. **Đường đi của tấm** có thêm `sheet.takeoff_xy`, lấy từ đỉnh lưới `ctx_sheet`: đi ngang tới con lăn dẫn (x ≈ 11,40), xuống dốc, rồi theo băng tải ở y 1,15 tới x 12,5. Chiều dài 4,02 m; mốc 35 °C nằm ở s = 6,54 m. Bản nháp Đợt 2 chỉ có một đoạn thẳng, nên đoạn dốc và đoạn băng tải bị tính sai màu.
+5. **Camera FLOW:** pos `[5.9, 6.55, −25.0]`, target `[5.9, 3.0, 0.0]`, 35 mm. Giá trị khởi điểm cắt mất cột cấp liệu và phần truyền động.
+6. **Đồng hồ shader** là quãng đã đi `uScrewT = ∫ kScrew dt` và `uRollT = ∫ kRoll dt`, thay cho `uTime · v`. Nhờ vậy đổi chậm ↔ thực thì sọc không nhảy.
+7. **Bảng phần đặc:**
+   - `FLOW_SOLID_HIDE` giữ như §2.2;
+   - `FLOW_SOLID_CLIP` cho 7 phần còn lại (truyền động và khung đế), lý do ghi trong code;
+   - `FLOW_EXTRA_HIDE` ẩn 2 tấm logo của bộ lọc (bộ lọc là ghost, như GHOST_SC).
+8. **Nhỏ:**
+   - file hạt là `Pellets.ts` (không có JSX);
+   - `pickAt` không tự đóng băng vì là phép bắn tia tức thời; `capCheck` có tự đóng băng;
+   - nhãn nhóm FREE đổi thành "Hướng cắt" / 「切断方向」;
+   - vùng rải hạt có biên an toàn để cả hạt lẫn độ lắc nằm trong lỗ.

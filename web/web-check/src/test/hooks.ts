@@ -11,6 +11,10 @@ import { precompileStats } from '../scene/precompile'
 import { queueDrained, queueIdle, queueRunning } from '../scene/stateQueue'
 import { changeState as changeStateRaw, useUi, type ChangeOpts } from '../store'
 import { HOVER_COLOR, SELECT_COLOR, selectionInfo } from '../scene/Selection'
+import { flowDebug, flowRates, K_ROLL, K_SCREW } from '../scene/Flow'
+import { fillColorAt as fillColor, flowUniforms, toHex } from '../scene/FillMaterial'
+import { sheetColorAt } from '../scene/SheetMaterial'
+import { heatRgb } from '../scene/heat'
 
 // PLAN-DOT1 §4.2.11 (window.__ze), minus the Đợt 1b items (AMENDMENTS): pickSweep and the perf trace.
 
@@ -192,6 +196,202 @@ export function installHooks(get: () => RootState) {
       devicesWithoutLineMeshes: [...reg.devices.values()].filter((d) => !d.parts.some((p) => p.meta.file === 'line' && p.meshes.length)).map((d) => d.id),
       bvh_ms: round(reg.stats.bvh_ms),
       state: useUi.getState().state,
+      // FLOW (PLAN-FLOW §6): the pellets are a helper outside the line tree, so they never count above
+      flowActive: flowDebug.active(),
+      pellets: flowDebug.pellets()?.N ?? 0,
+    }
+  }
+
+  // ---- FLOW (PLAN-FLOW §6) ----
+  const flow = () => reg.data.states.FLOW.flow!
+  const FLOW_MATERIAL = /^ze-(fill|sheet)/
+  /** stops rotors, pellets and the FLOW clocks (screenshots, pixel samples) */
+  const freeze = async (on = true) => {
+    useUi.getState().setFrozen(on)
+    await raf2()
+    return useUi.getState().frozen
+  }
+  const flowProbe = () => {
+    const p = flowDebug.pellets()
+    const pr = p?.probe()
+    const programs = new Set<string>()
+    let fillMeshes = 0
+    let leftovers = 0
+    const leftoverNames: string[] = []
+    for (const part of reg.parts.values())
+      for (const mesh of part.meshes) {
+        if (!isShown(mesh)) continue
+        const m = mesh.material as THREE.Material
+        if (FLOW_MATERIAL.test(m.name)) {
+          fillMeshes++
+          programs.add(m.name)
+        } else if (flowDebug.active() && (m.name === 'za_fill_melt' || m.name === 'ze_melt_curtain' || m.name === 'ze_sheet_pet')) {
+          leftovers++
+          if (leftoverNames.length < 10) leftoverNames.push(part.name)
+        }
+      }
+    const { kScrew, kRoll } = flowRates()
+    return {
+      active: flowDebug.active(),
+      pellets: pr?.pellets ?? 0,
+      pelletsShown: !!p?.mesh.visible && isShown(p.mesh),
+      visiblePellets: pr?.visiblePellets ?? 0,
+      falling: pr?.falling ?? 0,
+      maxPelletX: pr ? round(pr.maxPelletX, 4) : null,
+      minPelletZ: pr ? round(pr.minPelletZ, 4) : null,
+      fillMeshes,
+      fillPrograms: [...programs].sort(),
+      leftovers,
+      leftoverNames,
+      renderOrders: flowDebug.renderOrders(),
+      mode: useUi.getState().flowColor,
+      kScrew,
+      kRoll,
+      frozen: useUi.getState().frozen,
+    }
+  }
+  const median = (a: number[]) => {
+    if (!a.length) return NaN
+    const s = [...a].sort((x, y) => x - y)
+    return s[Math.floor(s.length / 2)]
+  }
+  /** axial pellet speed in [x0, x1] (both samples inside), over `seconds`, at the current rotor mode */
+  const pelletSpeed = async (seconds: number, ranges: [number, number][]) => {
+    const p = flowDebug.pellets()!
+    const f0 = frameCounter.n
+    const a = p.barrelX()
+    const t0 = performance.now()
+    await sleep(seconds * 1000)
+    const b = p.barrelX()
+    const t = (performance.now() - t0) / 1000
+    const hz = (frameCounter.n - f0) / t
+    return {
+      hz: round(hz),
+      speeds: ranges.map(([x0, x1]) => {
+        const v: number[] = []
+        for (let i = 0; i < a.length; i++) if (a[i] >= x0 && a[i] <= x1 && b[i] >= x0 && b[i] <= x1 && b[i] > a[i]) v.push((b[i] - a[i]) / t)
+        return { range: [x0, x1], n: v.length, v: round(median(v), 5) }
+      }),
+    }
+  }
+  /** F4: pellet speeds (slow, real), standstill (off), pellet bounds */
+  const pelletTest = async (seconds = 2) => {
+    const ui = useUi.getState()
+    const modeBefore = ui.rotorMode
+    const frozenBefore = ui.frozen
+    if (ui.state !== 'FLOW') await changeState('FLOW', { camera: false })
+    ui.setFrozen(false)
+    const F = flow()
+    const pitch = (zone: string) => F.zones.find((z) => z.zone === zone)!.pitch_m
+    const exp = (zone: string, k: number) => ((pitch(zone) * F.screw_rpm) / 60) * k
+    const Z1: [number, number] = [0.55, 1.45]
+    const Z2: [number, number] = [1.55, 1.85]
+    const run = async (mode: 'slow' | 'real', s: number) => {
+      useUi.getState().setRotorMode(mode)
+      await raf2()
+      let r = await pelletSpeed(s, [Z1, Z2])
+      if (r.hz < 50) r = await pelletSpeed(s, [Z1, Z2]) // a slow rAF window (other tabs, GC): measure again
+      const k = K_SCREW[mode]
+      const e1 = exp('z01_feed', k)
+      const e2 = exp('z02_melt', k)
+      return {
+        mode,
+        hz: r.hz,
+        z01: { ...r.speeds[0], expected: round(e1, 5), err: round(Math.abs(r.speeds[0].v - e1) / e1, 4) },
+        z02: { ...r.speeds[1], expected: round(e2, 5), err: round(Math.abs(r.speeds[1].v - e2) / e2, 4) },
+      }
+    }
+    const slow = await run('slow', seconds)
+    const real = await run('real', 0.25)
+    useUi.getState().setRotorMode('off')
+    await raf2()
+    const p = flowDebug.pellets()!
+    const before = Float32Array.from(p.pos)
+    await sleep(1000)
+    let moved = 0
+    for (let i = 0; i < before.length; i++) if (Math.abs(before[i] - p.pos[i]) > 1e-7) moved++
+    useUi.getState().setRotorMode(modeBefore)
+    useUi.getState().setFrozen(frozenBefore)
+    const pr = flowProbe()
+    const speedOk = (r: typeof slow) => r.z01.n >= 5 && r.z02.n >= 5 && r.z01.err <= 0.05 && r.z02.err <= 0.05
+    return {
+      slow,
+      real,
+      off: { movedCoordinates: moved, ok: moved === 0 },
+      bounds: { pellets: pr.pellets, N: F.pellets.N, maxPelletX: pr.maxPelletX, minPelletZ: pr.minPelletZ },
+      ok:
+        speedOk(slow) &&
+        speedOk(real) &&
+        moved === 0 &&
+        pr.pellets === F.pellets.N &&
+        (pr.maxPelletX ?? 0) <= 1.905 &&
+        (pr.minPelletZ ?? -1) >= 0,
+    }
+  }
+  const fillColorAt = (x: number, mode: 'phase' | 'heat') => fillColor(x, mode, flow())
+  /** F5: every visible fill / curtain / sheet mesh runs a FLOW program; the colour rule at three points */
+  const fillProbe = () => {
+    const F = flow()
+    const pr = flowProbe()
+    const c1 = fillColorAt(1.0, 'phase')
+    const c2 = fillColorAt(2.5, 'phase')
+    const c3 = fillColorAt(5.9, 'heat')
+    const heat285 = toHex(heatRgb(285, F.heat_stops))
+    return {
+      fillMeshes: pr.fillMeshes,
+      fillPrograms: pr.fillPrograms,
+      leftovers: pr.leftovers,
+      leftoverNames: pr.leftoverNames,
+      at1_0_phase: c1,
+      at2_5_phase: c2,
+      at5_9_heat: { ...c3, expected: heat285 },
+      ok:
+        pr.active &&
+        pr.leftovers === 0 &&
+        pr.fillMeshes > 0 &&
+        c1.hex === F.colors.pellet.toUpperCase() &&
+        c2.hex === F.colors.melt.toUpperCase() &&
+        c3.hex === heat285,
+    }
+  }
+  /** F6: sheet material, stripe speed (slow: kRoll 1), standstill when off, colours at s = 0 */
+  const sheetProbe = async (seconds = 1) => {
+    const F = flow()
+    const ui = useUi.getState()
+    const modeBefore = ui.rotorMode
+    const frozenBefore = ui.frozen
+    ui.setFrozen(false)
+    const mats = reg.meshesOfPart('ctx_sheet').map((m) => (m.material as THREE.Material).name)
+    const measure = async (mode: 'slow' | 'off', s: number) => {
+      useUi.getState().setRotorMode(mode)
+      await raf2()
+      const u0 = flowUniforms.uRollT.value
+      const t0 = performance.now()
+      await sleep(s * 1000)
+      const t = (performance.now() - t0) / 1000
+      return (F.sheet.speed_m_s_real * (flowUniforms.uRollT.value - u0)) / t
+    }
+    const vSlow = await measure('slow', seconds)
+    const vOff = await measure('off', 0.5)
+    useUi.getState().setRotorMode(modeBefore)
+    useUi.getState().setFrozen(frozenBefore)
+    const expected = F.sheet.speed_m_s_real * K_ROLL.slow
+    const phase0 = sheetColorAt(0, 'phase', F)
+    const heat0 = sheetColorAt(0, 'heat', F)
+    const heat250 = toHex(heatRgb(250, F.heat_stops))
+    return {
+      materials: mats,
+      speed: { v: round(vSlow, 5), expected, err: round(Math.abs(vSlow - expected) / expected, 4) },
+      speedOff: round(vOff, 6),
+      phase0,
+      heat0: { ...heat0, expected: heat250 },
+      ok:
+        mats.length > 0 &&
+        mats.every((n) => n === 'ze-sheet') &&
+        Math.abs(vSlow - expected) / expected <= 0.01 &&
+        vOff === 0 &&
+        phase0.hex === F.colors.melt.toUpperCase() &&
+        heat0.hex === heat250,
     }
   }
 
@@ -274,12 +474,17 @@ export function installHooks(get: () => RootState) {
     if (!fullAgain) bad.push({ state: 'FULL(end)', visibleOnlyBefore: [], visibleOnlyAfter: [], materialDiffs: -1 })
     const glPlanes = get().gl.clippingPlanes.length
     const freeRefs = freePlaneRefs()
+    // PLAN-FLOW F2: leaving FLOW hides the pellets and gives the fills their Đợt 1 materials back
+    const fp = flowProbe()
+    const flowLeft = !fp.active && !fp.pelletsShown && fp.fillMeshes === 0 && fp.renderOrders === 0
     const changedMaterials = cutDebug.changedMaterials()
     const changedVisibility = cutDebug.changedVisibility()
     useUi.getState().setFree(freeBefore)
     return {
-      ok: bad.length === 0 && glPlanes === 0 && freeRefs === 0 && changedMaterials === 0 && changedVisibility === 0,
+      ok: bad.length === 0 && glPlanes === 0 && freeRefs === 0 && changedMaterials === 0 && changedVisibility === 0 && flowLeft,
       bad,
+      states: [...FIXED_STATE_IDS],
+      flowLeft,
       glClippingPlanes: glPlanes,
       freePlaneRefs: freeRefs,
       changedMaterialsAtEnd: changedMaterials,
@@ -302,12 +507,15 @@ export function installHooks(get: () => RootState) {
   const capCheck = async (state: StateId, device: string, o: CapOpts = {}) => {
     const ui = useUi.getState()
     const modeBefore = ui.rotorMode
+    const frozenBefore = ui.frozen
     ui.setRotorMode('off')
+    ui.setFrozen(true) // PLAN-FLOW §3.1: pellets and FLOW stripes stand still too
     try {
       await raf()
       return await capCheckFrozen(state, device, o)
     } finally {
       useUi.getState().setRotorMode(modeBefore)
+      useUi.getState().setFrozen(frozenBefore)
     }
   }
   const capCheckFrozen = async (state: StateId, device: string, o: CapOpts) => {
@@ -662,7 +870,7 @@ export function installHooks(get: () => RootState) {
 
     // D7
     const times = []
-    for (const id of ['FULL', 'CUT_FEED', 'CUT_Z_BARREL', 'CUT_X2450', 'CUT_X4120', 'FREE'] as StateId[])
+    for (const id of ['FULL', 'CUT_FEED', 'CUT_Z_BARREL', 'CUT_X2450', 'CUT_X4120', 'FLOW', 'FREE'] as StateId[])
       times.push(await timeState(id))
     await changeState('FREE')
     let sliderMax = 0
@@ -707,6 +915,42 @@ export function installHooks(get: () => RootState) {
       ok: sc.devices === 190 && !sc.unknownNodes && !sc.missingNodes && !sc.orphans,
     }
     ui().clear()
+
+    // PLAN-FLOW F2–F6, F8 (runtime part)
+    await changeState('FLOW', { camera: true, smooth: false })
+    await raf2()
+    const fs = selfcheck()
+    out.F2 = {
+      time: await timeState('FLOW'),
+      rayUnfiltered: fs.rayUnfiltered,
+      roundTrip: { ok: (out.D6 as { ok: boolean }).ok, states: (out.D6 as { states: string[] }).states, flowLeft: (out.D6 as { flowLeft: boolean }).flowLeft },
+    }
+    ;(out.F2 as { ok?: boolean }).ok =
+      (out.F2 as { time: { ok: boolean } }).time.ok && fs.rayUnfiltered === 0 && (out.D6 as { ok: boolean }).ok
+    const f3: unknown[] = []
+    for (const d of ['feed_throat', 'barrel_b3', 'melt_gear_pump', 'die_body_lower', 'ctx_roll_middle']) {
+      const runs = []
+      for (let k = 0; k < 3; k++) runs.push(await capCheck('FLOW', d, { click: k === 0 }))
+      ui().clear()
+      f3.push({ device: d, runs: runs.map((r) => ({ ok: r.ok, capPixels: r.capPixels, correct: r.correct, clickSelected: r.clickSelected })), ok: runs.every((r) => r.ok) })
+    }
+    out.F3 = { cases: f3, ok: f3.every((c) => (c as { ok: boolean }).ok) }
+    await changeState('FLOW', { camera: true, smooth: false })
+    out.F4 = await pelletTest(2)
+    out.F5 = fillProbe()
+    out.F6 = await sheetProbe(1)
+    await applyPreset(reg.data.states.FLOW.camera!, false)
+    await raf2()
+    const sf = await stats()
+    out.F8 = {
+      fps: sf.fps,
+      calls: sf.calls,
+      triangles: sf.triangles,
+      heap_mb: sf.heap_mb,
+      precompile_ms: round(precompileStats.ms),
+      ok: sf.fps >= 45 && sf.calls <= 1000 && sf.triangles <= 1.7e6 && (sf.heap_mb ?? 0) <= 600,
+    }
+    await changeState('FULL', { camera: true, smooth: false })
     out.finished = new Date().toISOString()
     return out
   }
@@ -746,6 +990,12 @@ export function installHooks(get: () => RootState) {
     },
     setFreeClip,
     timeState,
+    freeze,
+    flowProbe,
+    pelletTest,
+    fillColorAt,
+    fillProbe,
+    sheetProbe,
     cutRoundTrip,
     capCheck,
     rotors,

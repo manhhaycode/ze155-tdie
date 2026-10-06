@@ -490,6 +490,11 @@ def build_flow(states, files, con, names, key):
     rpm = abs(next(r for r in con['rotors'] if r['node'] == 'rot_screw_b')['rpm'])
     sh = fl['sheet']
     L1 = round(math.pi * 0.4005, 4)
+    # take-off run after the top roll, from the ctx_sheet vertices (build/models line.glb, |z| < 1.2 m): straight at
+    # y 2.805 to the idler near x 11.40, down the incline to the conveyor at y 1.15, then flat to x 12.5. The dot2
+    # draft had one straight segment to x 12.5, which gave the incline and the conveyor part the wrong path length.
+    takeoff = [[9.776, 2.805], [11.40, 2.805], [11.46, 2.74], [11.70, 1.31], [11.88, 1.15], [12.5, 1.15]]
+    L3 = round(sum(math.dist(takeoff[i], takeoff[i + 1]) for i in range(len(takeoff) - 1)), 4)
     flow = {
         'doc': 'PLAN-FLOW §3: illustration with numbers, not CFD. Temperatures are the zone set points (assumed, '
                'design-anim §2), not the pellet core temperature. Speeds: screw zones pitch * rpm / 60 * kScrew '
@@ -505,10 +510,13 @@ def build_flow(states, files, con, names, key):
         'die': {'origin_m': fl['die']['origin_m'], 'radius_m': fl['die']['radius_m'], 'temp_c': fl['die']['temp_c']},
         'curtain': {'x_m': [9.576, 9.776], 'temp_c': [270, 250], 'speed_m_s_real': 0.347, 'stripe_m': 0.05,
                     'source': fl['speeds']['roll_lip'] + '; temperatures assumed'},
-        'sheet': {'path_three_xy': sh['path_three_xy'], 'select_rule': sh['select_rule'], 'stripe_m': sh['stripe_m'],
-                  'stripe_width': sh['stripe_width'], 'speed_m_s_real': sh['speed_m_s_real'], 'clear_at_m': 0.3,
-                  'lengths_m': [L1, L1, round(12.5 - 9.776, 4)],
-                  'temp_profile': [[0, 250], [L1, 70], [2 * L1, 50], [round(2 * L1 + 12.5 - 9.776, 4), 35]],
+        'sheet': {'path_three_xy': sh['path_three_xy'][:2], 'takeoff_xy': takeoff, 'roll_x_max_m': 10.18,
+                  'select_rule': 'x > roll_x_max_m, or y > 2.79 and x > 9.776 -> take-off polyline; else y < 2.002 -> '
+                                 'middle wrap; else top wrap',
+                  'stripe_m': sh['stripe_m'], 'stripe_width': sh['stripe_width'],
+                  'speed_m_s_real': sh['speed_m_s_real'], 'clear_at_m': 0.3,
+                  'lengths_m': [L1, L1, L3],
+                  'temp_profile': [[0, 250], [L1, 70], [round(2 * L1, 4), 50], [round(2 * L1 + L3, 4), 35]],
                   'source': sh['source'] + '; temperatures 250 -> 70 -> 50 -> 35 °C assumed'},
         'pellets': {
             'N': 2000, 'size_m': 0.009, 'scale_note': 'PET pellet about 3 mm, drawn x3',

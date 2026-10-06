@@ -1765,21 +1765,36 @@
        "to_deg": 90,
        "sense": "cw_via_180",
        "note": "top roll, sheet over the -X side (bbox min x 9.37)"
-      },
-      {
-       "seg": "line",
-       "from": [
-        9.776,
-        2.805
-       ],
-       "to": [
-        12.5,
-        2.805
-       ],
-       "note": "take-off run"
       }
      ],
-     "select_rule": "y > 2.79 and x > 9.776 -> line; else y < 2.002 -> middle wrap; else top wrap",
+     "takeoff_xy": [
+      [
+       9.776,
+       2.805
+      ],
+      [
+       11.4,
+       2.805
+      ],
+      [
+       11.46,
+       2.74
+      ],
+      [
+       11.7,
+       1.31
+      ],
+      [
+       11.88,
+       1.15
+      ],
+      [
+       12.5,
+       1.15
+      ]
+     ],
+     "roll_x_max_m": 10.18,
+     "select_rule": "x > roll_x_max_m, or y > 2.79 and x > 9.776 -> take-off polyline; else y < 2.002 -> middle wrap; else top wrap",
      "stripe_m": 0.3,
      "stripe_width": 0.12,
      "speed_m_s_real": 0.4168,
@@ -1787,7 +1802,7 @@
      "lengths_m": [
       1.2582,
       1.2582,
-      2.724
+      4.0233
      ],
      "temp_profile": [
       [
@@ -1803,7 +1818,7 @@
        50
       ],
       [
-       5.2404,
+       6.5397,
        35
       ]
      ],

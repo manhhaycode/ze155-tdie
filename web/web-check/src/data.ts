@@ -69,7 +69,12 @@ export interface FlowParams {
   die: { origin_m: V3; radius_m: number; temp_c: [number, number] }
   curtain: { x_m: [number, number]; temp_c: [number, number]; speed_m_s_real: number; stripe_m: number }
   sheet: {
+    /** the two roll wraps (middle, top) */
     path_three_xy: SheetSeg[]
+    /** after the top roll: polyline over the idler, down the incline, along the conveyor */
+    takeoff_xy: [number, number][]
+    /** points beyond the rolls (x > this) always lie on the take-off run */
+    roll_x_max_m: number
     stripe_m: number
     stripe_width: number
     speed_m_s_real: number

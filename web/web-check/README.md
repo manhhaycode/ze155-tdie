@@ -27,8 +27,9 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | Alt + click | Selects one part of the device |
 | Double click or F | Zooms to the selection and keeps the view direction, like Blender's View Selected |
 | Esc, or click on empty space | Clears the selection |
-| Toolbar | The 6 states, FREE axis / position / flip, rotor speed (off / 20× slower / real), and "Về góc nhìn của trạng thái" |
-| FREE axes | Blender names, like the state buttons: X along the flow, Y across the line ("Y = 0" = the feed-column plane), Z height ("Z = 1 200" = the barrel axis plane). Unflipped, the part with the Blender coordinate ≤ the value is kept; the flip tooltip says which side. Internally the store and the hooks keep three axes: Blender X = three `x`, Blender Y = three `−z` (`data-axis="z"`), Blender Z = three `y` |
+| Toolbar | The 7 states, FREE direction / position / flip, rotor speed (off / 20× slower / real), and "Về góc nhìn của trạng thái". Each state button says what you will see ("Phễu nạp hạt", "Bên trong xi lanh" …); its tooltip adds the cut plane and zone codes (PLAN-FLOW §4.1) |
+| FREE directions | "Cắt ngang" / "Bổ dọc" / "Cắt nằm" (横断 / 縦断 / 水平). The tooltip names the Blender axis: X along the flow, Y across the line ("Y = 0" = the feed-column plane), Z height ("Z = 1 200" = the barrel axis plane); the slider readout keeps "X = 3 000 mm". Unflipped, the part with the Blender coordinate ≤ the value is kept; the flip tooltip says which side. Internally the store and the hooks keep three axes: Blender X = three `x`, Blender Y = three `−z` (`data-axis="z"`), Blender Z = three `y` |
+| Quy trình: hạt → film (FLOW) | The whole line cut at Y = 0, seen from the operator side: pellets fall through the feed column into the bore of screw B, melt over X 1.52–1.90 m, the melt runs through valve, screen changer, pump, pipe and T-die, then the sheet wraps the rolls and runs onto the conveyor. Free view: orbit and zoom in to see the pellets. "Màu:" switches between **Pha** (pellet / melt / PET sheet) and **Nhiệt độ** (zone set points on a 20–300 °C scale, assumed). Stripes drift at the conveying speed; rotor "Tắt" stops everything. Steel and screw sections are grey in this state so the melt colours read |
 | VI / 日本語 (toolbar, right) | Switches the overlay language (Vietnamese / Japanese). Remembered in `localStorage` (`ze-lang`); `?lang=vi` or `?lang=ja` in the URL wins. Japanese device texts come from `public/i18n/devices.ja.json`, any missing field falls back to Vietnamese. In Japanese the device search also matches the Japanese names |
 | ▲ next to the device count | Folds the device tree to its header (useful below 1600 px, where the panels are also narrower) |
 
@@ -47,7 +48,10 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | `scene/precompile.ts` | One precompile pass after the interior loads, inside the queue, with frames paused; then it re-applies the current state |
 | `scene/Selection.tsx` | drei Outlines (`screenspace={false}`, so thickness is in pixels) with hulls marked as helpers, plus `Box3Helper`, or a dashed box when nothing is visible |
 | `scene/CameraRig.tsx` | CameraControls (zoom tuning in `CONTROL_TUNING`), the wheel listener (auto depth, pinch to dolly), `applyPreset` and `zoomToBox` |
-| `scene/Rotors.tsx` | 8 slice-1 rotors on runtime pivots |
+| `scene/Rotors.tsx` | 8 slice-1 rotors on runtime pivots; they stand still while `frozen` |
+| `scene/Flow.tsx` | FLOW layer (PLAN-FLOW): `enterFlowLayer()` after `applyState('FLOW')` swaps fill / curtain / sheet / pre-cut section materials through the recorded `setMaterial`; `leaveFlowLayer()` runs from `resetCuts`. `<Flow/>` drives the shader clocks and the pellets |
+| `scene/FillMaterial.ts`, `scene/SheetMaterial.ts`, `scene/heat.ts` | Melt fill and sheet materials (clipping plane built in, never through `cutVariant`), the 20–300 °C scale and the zone temperature profile |
+| `scene/Pellets.ts` | 2 000 pellets in one `InstancedMesh` (helper: no raycast), outside the line tree |
 | `scene/Models.tsx` | `LineModel` and `InteriorLoader` (mounted only after the first state that needs the interior) |
 | `test/hooks.ts` | `window.__ze`, see below |
 | `ui/*` | Builder A's Toolbar, DeviceTree and InfoPanel |
@@ -69,10 +73,12 @@ Always start with `await __ze.ready`.
 | `pickAt(x, y)` | Same filters as the clicks |
 | `project(id)` | Screen position of a device |
 | `setState(id, {camera, smooth})`, `setFreeClip(axis, offset, flip)`, `timeState(id)`, `cutRoundTrip()` | Cut states |
-| `capCheck(state, device, {axis, offset})` | D4 cap check |
+| `capCheck(state, device, {axis, offset})` | D4 cap check (rotors off and frozen while it samples) |
+| `freeze(on)` | Stops rotors, pellets and FLOW stripes (screenshots, pixel samples) |
+| `flowProbe()`, `pelletTest(s)`, `fillColorAt(x, mode)`, `fillProbe()`, `sheetProbe(s)` | FLOW checks F4–F6 (PLAN-FLOW §6) |
 | `rotors()`, `rotorTest(s)` | Rotors |
 | `camera(id)`, `cam()`, `orbitTest()` | Camera |
-| `selftest()` | Runs the in-page part of D1–D9 and D14. Takes about 30 s |
+| `selftest()` | Runs the in-page part of D1–D9, D14 and FLOW F2–F6, F8. Takes about 70 s |
 
 The latest self-test results are in `SELFTEST.json`. Screenshots: `selftest/` (builder B, before the review fixes) and `../review/dot1/fix-01/` (after fixer round 1).
 
@@ -83,3 +89,4 @@ The latest self-test results are in `SELFTEST.json`. Screenshots: `selftest/` (b
 - **The peel animation is deferred** to Đợt 1b. So are `pickSweep` and the performance trace (AMENDMENTS).
 - **Cap depth bias.** Cap fragments write a depth 0.6 mm towards the camera. This stops them z-fighting with abutting solids, such as stacked screw elements or barrel flanges cut by FREE. A cap is drawn by the back faces of the far inner wall, so an uncut solid inside a cut part's volume hides the cap (the reason cover C6 is hidden in CUT_X2450).
 - **Console.** R3F 9.8.1 on three r186 logs one library warning: "THREE.Clock … deprecated".
+- **FLOW.** Screw B (axis 71 mm behind the cut, flight radius 83 mm) is clipped in FLOW: whole, it poked 12 mm through the plane and filled the bore opening in front of the melt. The melt section of the screw zones is drawn at the cut plane (fill back faces get the plane's depth inside the bore waist, below the zone's melt level), so the screw shows through the translucent melt; the conveying and vent zones are a bed at the bottom of the bore, as modelled. The fill materials render in one pass (`forceSinglePass`), otherwise three's back pass flips `gl_FrontFacing`. Temperatures are zone set points (assumed), the pellets are drawn ×3.

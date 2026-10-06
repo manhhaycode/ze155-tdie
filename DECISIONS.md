@@ -143,3 +143,8 @@ Theo yêu cầu: tự làm, tự review, không hỏi lại. Mọi quyết đị
 32. **Tạm dừng Đợt 3 (2026-10-05):**
     - Người dùng: "Khoan làm đợt 3". Tour, nhãn, HUD, sơ đồ khối chưa làm cho tới khi người dùng cho phép.
     - Đợt 1 vẫn soát và sửa như kế hoạch. Đợt 2 làm theo quy trình gọn: brief ngắn → soát nhanh → dựng → soát trên Chrome → sửa.
+33. **Flow "Quy trình: hạt → film" (2026-10-06):**
+    - Người dùng yêu cầu thêm một flow từ hạt nhựa tới tấm film, xem được nhiệt độ và biến đổi của hạt qua mặt cắt. Làm trước quyết định 32 vì là yêu cầu trực tiếp; tour, nhãn, HUD vẫn tạm dừng.
+    - Lựa chọn của người dùng: xem tự do; hạt 3D thật cộng khối nhựa; mặt cắt Y = 0; chỉ màu; bản đủ cộng reviewer độc lập. Đổi nhãn mọi nút trạng thái sang kiểu "thấy gì", toạ độ chuyển vào tooltip.
+    - Kế hoạch: `web/PLAN-FLOW.md` (spec) và `web/PLAN-FLOW-TASKS.md`. Không sửa Blender, không xuất lại GLB; chỉ `make_data.py` và code web.
+    - Quyết định khi dựng: cắt luôn trục vít B ở Y = 0 (nguyên khối thì nó che kín khe nhìn vào nhựa); vẽ mặt cắt nhựa tại mặt phẳng cắt; mặt cắt thép và trục vít màu xám trong FLOW để màu nhiệt đọc được; tấm film tính chiều dài đường đi theo hình học thật của đoạn ra băng tải.
