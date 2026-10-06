@@ -1,0 +1,678 @@
+{
+ "version": 1,
+ "group": "vacuum",
+ "lines": {
+  "199cdce439e7": {
+   "vi": "Đổi hướng từ đứng sang ngang và hấp thụ giãn nở nhiệt, rung giữa vòm và ống.",
+   "used_by": [
+    "vac_bellows:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (ống mềm inox gợn sóng)"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "1646edcb8130": {
+   "vi": "Cút 90° DN150 từ đỉnh van (Z 2 260) lên tâm Z 2 300 rồi quay về −Y; ống xếp inox DN150 dài 200 (Y −120 … −320), 2 bích.",
+   "used_by": [
+    "vac_bellows:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (ống mềm inox gợn sóng)"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "d586c87e4ec0": {
+   "vi": "Hấp thụ giãn nở nhiệt giữa vòm B3 và ống.",
+   "used_by": [
+    "vac_bellows_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "7be59abbfb78": {
+   "vi": "Ống xếp inox DN100 dài 160.",
+   "used_by": [
+    "vac_bellows_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "e0808603f109": {
+   "vi": "Chỉnh mức chân không chung và phá chân không trước khi mở vòm.",
+   "used_by": [
+    "vac_bleed_valve:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "c2c6f611d3ae": {
+   "vi": "Van kim + van bi nhỏ tay đỏ trên đỉnh ống ra, cao ≈ 1,7 m để thao tác từ sàn.",
+   "used_by": [
+    "vac_bleed_valve:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "092b97df51d4": {
+   "vi": "Khởi động bơm, đo áp, khoá liên động.",
+   "used_by": [
+    "vac_control_box:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-15 (hộp điều khiển xám có công tắc chính đỏ-vàng)"
+    ],
+    "refs": [
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "eb7794a1e051": {
+   "vi": "Hộp 400 × 200 × 800, công tắc chính đỏ-vàng, đèn báo; mặt hướng +Y ra lối đi.",
+   "used_by": [
+    "vac_control_box:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-15 (hộp điều khiển xám có công tắc chính đỏ-vàng)"
+    ],
+    "refs": [
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "94f471c4cbb3": {
+   "vi": "Xả nước ngưng khi máy đang chạy mà không phá chân không.",
+   "used_by": [
+    "vac_drain:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M5; web-15 (van xả đáy tay đỏ)"
+    ],
+    "refs": [
+     "rev-M5",
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "236ddc5b5332": {
+   "vi": "Nồi Ø300 cao 350 (Z 50–400) trên 3 chân ngắn, nằm giữa 3 chân bình tách.",
+   "used_by": [
+    "vac_drain:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M5; web-15 (van xả đáy tay đỏ)"
+    ],
+    "refs": [
+     "rev-M5",
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "65789067ec27": {
+   "vi": "Van trên (thường mở) ở Z 400–450, van thông hơi trên nắp nồi, van xả đáy; 3 tay van màu đỏ.",
+   "used_by": [
+    "vac_drain:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M5; web-15 (van xả đáy tay đỏ)"
+    ],
+    "refs": [
+     "rev-M5",
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "a2f4f986f6c0": {
+   "vi": "Xả: đóng van trên, mở thông hơi, mở van xả; xong đóng lại rồi mở van trên.",
+   "used_by": [
+    "vac_drain:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M5; web-15 (van xả đáy tay đỏ)"
+    ],
+    "refs": [
+     "rev-M5",
+     "web-15"
+    ]
+   },
+   "notes": ""
+  },
+  "0216f8032398": {
+   "vi": "Xả khí sau bơm ra ngoài nhà xưởng.",
+   "used_by": [
+    "vac_exhaust:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "e5055c305835": {
+   "vi": "Ống DN100 đứng có bình giảm thanh, đầu trên để hở 'ra ngoài'.",
+   "used_by": [
+    "vac_exhaust:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "1998be9374d6": {
+   "vi": "Hiển thị mức chân không tại vòm cho người vận hành.",
+   "used_by": [
+    "vac_gauge_dome:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (đồng hồ trên đường chân không); giả định"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "9667f5bc1022": {
+   "vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất tuyệt đối (truyền tín hiệu).",
+   "used_by": [
+    "vac_gauge_dome:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (đồng hồ trên đường chân không); giả định"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "f25c32a32955": {
+   "vi": "Hiển thị mức chân không vùng 1.",
+   "used_by": [
+    "vac_gauge_dome_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "f009434beb8e": {
+   "vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất.",
+   "used_by": [
+    "vac_gauge_dome_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "dca1b510efe4": {
+   "vi": "Dẫn hơi và khí từ vòm B5 tới bình tách ngưng.",
+   "used_by": [
+    "vac_pipe:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (DN150 theo specs §3); cao độ theo review-01 M4"
+    ],
+    "refs": [
+     "spec-3",
+     "rev-M4"
+    ]
+   },
+   "notes": ""
+  },
+  "9c13f0630912": {
+   "vi": "Ống inox DN150 (OD 168) đi ngang theo −Y ở tâm Z 2 300 (đáy ống Z 2 216, trên lối đi 2 100), xuống bình tách tại Y −2 700.",
+   "used_by": [
+    "vac_pipe:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (DN150 theo specs §3); cao độ theo review-01 M4"
+    ],
+    "refs": [
+     "spec-3",
+     "rev-M4"
+    ]
+   },
+   "notes": ""
+  },
+  "aee366ff2e86": {
+   "vi": "Dẫn khí sau tách ngưng tới bơm Roots.",
+   "used_by": [
+    "vac_pipe_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; nâng lên DN150 theo drawing review-01 M1"
+    ],
+    "refs": [
+     "drev-M1"
+    ]
+   },
+   "notes": ""
+  },
+  "bc1ae05e11e8": {
+   "vi": "Ống inox DN150 (OD 168), bằng cỡ bích hút của bơm Roots; vận tốc ≈ 30 m/s ở 2 000 m³/h.",
+   "used_by": [
+    "vac_pipe_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; nâng lên DN150 theo drawing review-01 M1"
+    ],
+    "refs": [
+     "drev-M1"
+    ]
+   },
+   "notes": ""
+  },
+  "0dc6cc3c1f2f": {
+   "vi": "Dẫn hơi nước từ vòm B3 tới cổng bên của bình tách ngưng.",
+   "used_by": [
+    "vac_pipe_3:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "f2d070074b9e": {
+   "vi": "Ống inox DN100 (OD 114): lên đứng ngoài vỏ che tại Y −560 tới Z 2 250, đi ngang về −Y tới Y −2 700, theo +X tới X 3 700, xuống tới Z 1 400 rồi vào bình tách.",
+   "used_by": [
+    "vac_pipe_3:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "fbe265ecb6e0": {
+   "vi": "Đỡ đoạn ống ngang DN150.",
+   "used_by": [
+    "vac_pipe_support:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "d6614929f365": {
+   "vi": "Ống thép Ø100 có tấm đế và đai ôm trên đỉnh, tại Y −1 900 (ngoài lối đi dọc khung).",
+   "used_by": [
+    "vac_pipe_support:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "2d8d6e2b1f51": {
+   "vi": "Tạo chân không 5–20 mbar cho vòm B5 và ≈ 50 mbar (qua van tiết lưu) cho vòm B3.",
+   "used_by": [
+    "vac_pump_unit:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
+    ],
+    "refs": [
+     "c059",
+     "c060",
+     "c062",
+     "design-7"
+    ]
+   },
+   "notes": ""
+  },
+  "64bdd57eaf2d": {
+   "vi": "Khung skid thép đen 1 800 × 1 100: bơm Roots ≈ 2 000 m³/h trên bơm trục vít khô ≈ 400 m³/h làm mát bằng nước, động cơ, giảm thanh.",
+   "used_by": [
+    "vac_pump_unit:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
+    ],
+    "refs": [
+     "c059",
+     "c060",
+     "c062",
+     "design-7"
+    ]
+   },
+   "notes": ""
+  },
+  "607049eac9ba": {
+   "vi": "Vỏ bơm đen/cam như web-15; ống góp nước vào/ra ở mặt −X, Z 400.",
+   "used_by": [
+    "vac_pump_unit:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
+    ],
+    "refs": [
+     "c059",
+     "c060",
+     "c062",
+     "design-7"
+    ]
+   },
+   "notes": ""
+  },
+  "886ac2d691b1": {
+   "vi": "Tiết lưu để vùng 1 giữ ≈ 50 mbar trong khi vùng 2 vẫn đạt 5–20 mbar trên cùng cụm bơm.",
+   "used_by": [
+    "vac_reg_valve_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "841436373582": {
+   "vi": "Van tiết lưu tay quay DN100 trên đoạn ống đứng, tay quay hướng +Y ở cao 1,65 m; đồng hồ chân không nhỏ bên cạnh.",
+   "used_by": [
+    "vac_reg_valve_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "6627e3a84e16": {
+   "vi": "Ngưng và gom hơi nước, oligome, bụi của cả hai vùng chân không trước bơm.",
+   "used_by": [
+    "vac_separator:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
+    ],
+    "refs": [
+     "c060",
+     "web-15",
+     "c063"
+    ]
+   },
+   "notes": ""
+  },
+  "5e594d3f311a": {
+   "vi": "Bình đứng Ø600 cao 1 450 (Z 450–1 900) trên 3 chân cao 450 (nâng 150 để đặt nồi xả), nắp bích bắt bulông, ống xoắn làm mát bên trong (nước 10–15 °C), kính thăm mức, đồng hồ chân không.",
+   "used_by": [
+    "vac_separator:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
+    ],
+    "refs": [
+     "c060",
+     "web-15",
+     "c063"
+    ]
+   },
+   "notes": ""
+  },
+  "a5dbc0cad4e6": {
+   "vi": "Cổng: nắp (vùng 2, DN150), bên −X ở Z 1 400 (vùng 1, DN100), ra bên +X ở Z 1 600 (DN150), 2 cổng nước bên +X ở Z 1 000 và 1 100.",
+   "used_by": [
+    "vac_separator:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
+    ],
+    "refs": [
+     "c060",
+     "web-15",
+     "c063"
+    ]
+   },
+   "notes": ""
+  },
+  "f3b8d288264e": {
+   "vi": "Cách ly vòm B5 với đường hút khi mở vòm hoặc khởi động.",
+   "used_by": [
+    "vac_valve:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
+    ],
+    "refs": [
+     "rev-M4"
+    ]
+   },
+   "notes": ""
+  },
+  "2920662277c6": {
+   "vi": "Van bướm DN150 đặt đứng trên nắp vòm (Z 2 150–2 260), bộ tác động khí nén vuông nằm ngang phía −Y (Y −300 … −110).",
+   "used_by": [
+    "vac_valve:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
+    ],
+    "refs": [
+     "rev-M4"
+    ]
+   },
+   "notes": ""
+  },
+  "a74b371a86ff": {
+   "vi": "Ống khí Ø12 tới bộ tác động (util_air_tube_vac).",
+   "used_by": [
+    "vac_valve:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
+    ],
+    "refs": [
+     "rev-M4"
+    ]
+   },
+   "notes": ""
+  },
+  "86d6972b8463": {
+   "vi": "Cách ly vòm B3 với đường hút.",
+   "used_by": [
+    "vac_valve_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  },
+  "58d0c5ccc3bb": {
+   "vi": "Van bi DN100 tay gạt đỏ.",
+   "used_by": [
+    "vac_valve_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4; giả định"
+    ],
+    "refs": [
+     "rev-I4"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

@@ -1,0 +1,1108 @@
+{
+ "version": 1,
+ "group": "melt",
+ "lines": {
+  "2d48a34d307b": {
+   "vi": "Chuyển lỗ tròn Ø100 sang cửa vào khuôn ở giữa mặt sau khuôn.",
+   "used_by": [
+    "melt_die_adapter:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "776d2ad60a58": {
+   "vi": "Cổ tròn Ø300 nở thành bích chữ nhật 500 × 360 ở mặt khuôn, 1 băng nhiệt.",
+   "used_by": [
+    "melt_die_adapter:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "64ed11b762d0": {
+   "vi": "Dẫn nhựa xả khi khởi động xuống xe hứng.",
+   "used_by": [
+    "melt_drain_chute:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "46a30db46ad2": {
+   "vi": "Máng inox 250 × 250, có tấm chắn bắn.",
+   "used_by": [
+    "melt_drain_chute:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "e4e8bbc9ce84": {
+   "vi": "Tạo áp ổn định không dao động (≈ 250 bar) cho khuôn, tách áp trục vít khỏi khuôn.",
+   "used_by": [
+    "melt_gear_pump:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
+    ],
+    "refs": [
+     "c047",
+     "c049",
+     "web-14"
+    ]
+   },
+   "notes": ""
+  },
+  "861675c637c6": {
+   "vi": "Khối thép 420 × 460 × 460, mặt bên vòng 12 bulông lục giác chìm, đĩa bích tròn lớn Ø360 trên mặt vào/ra (như web-14).",
+   "used_by": [
+    "melt_gear_pump:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
+    ],
+    "refs": [
+     "c047",
+     "c049",
+     "web-14"
+    ]
+   },
+   "notes": ""
+  },
+  "382b739bffea": {
+   "vi": "Đầu trục dẫn động nhô ra phía −Y tại Z = 1 250; lỗ thanh nhiệt cắm.",
+   "used_by": [
+    "melt_gear_pump:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c047 (764 cm³/v, 4 474 kg/h ở 134 v/ph → ≈ 105 v/ph ở 3 500 kg/h), c049 (370 bar), web-14; kích thước thân giả định"
+    ],
+    "refs": [
+     "c047",
+     "c049",
+     "web-14"
+    ]
+   },
+   "notes": ""
+  },
+  "da6bc9b5bbcd": {
+   "vi": "Chuyển dòng từ lỗ số 8 sang lỗ tròn Ø120, nối van khởi động.",
+   "used_by": [
+    "melt_head_adapter:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §4 ghi chú 4 (mặt bích tròn bắt bulông ở đầu ra, dựng adapter đồng trục); specs §4 (≈ 250 mm); bulông theo review-01 M1"
+    ],
+    "refs": [
+     "meas-4",
+     "spec-4",
+     "rev-M1"
+    ]
+   },
+   "notes": ""
+  },
+  "5071b66a0cd8": {
+   "vi": "Bích Ø640 × 60 nhận 20 bulông cấy M24 trên PCD 560 từ B6 (đai ốc phía B6), thân côn Ø520 → Ø400, bích ra Ø420 × 50 có 12 lỗ ren M24 (vít bắt từ phía van, không có đai ốc sau bích nên không chạm thân côn); 2 băng nhiệt.",
+   "used_by": [
+    "melt_head_adapter:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §4 ghi chú 4 (mặt bích tròn bắt bulông ở đầu ra, dựng adapter đồng trục); specs §4 (≈ 250 mm); bulông theo review-01 M1"
+    ],
+    "refs": [
+     "meas-4",
+     "spec-4",
+     "rev-M1"
+    ]
+   },
+   "notes": ""
+  },
+  "a351a574f2c2": {
+   "vi": "Giữ nhiệt các bích chuyển và đầu xi lanh.",
+   "used_by": [
+    "melt_heater_bands:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "409dfe01694c": {
+   "vi": "6 băng mica/gốm rộng 70 có hộp đấu nhỏ và cáp bọc lưới: đầu xi lanh X 5 836 (Ø514) và 5 906 (Ø454, khe dưới 2 cảm biến), bích vào lọc X 6 521 (Ø380, khe dưới P2), bích vào bơm X 7 388 (Ø320, khe dưới P3), bích ra bơm X 8 001 (Ø260, khe dưới P4), cổ bích khuôn X 9 000 (Ø320).",
+   "used_by": [
+    "melt_heater_bands:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "0f61d2c4a18f": {
+   "vi": "7 băng trên ống và bộ trộn nằm dưới vỏ inox Ø300, không dựng thành vòng (xem melt_pipe, melt_static_mixer).",
+   "used_by": [
+    "melt_heater_bands:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "648ba9a7568c": {
+   "vi": "Dẫn cáp nhiệt từ hộp đấu tới từng vùng nhiệt của đường chảy.",
+   "used_by": [
+    "melt_heater_conduits:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; giả định"
+    ],
+    "refs": [
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "cd467a09e5d3": {
+   "vi": "7 ống luồn kim loại mềm Ø30 (đường đi trong paths_mm): bộ lọc, van khởi động, đầu xi lanh, bích vào bơm, bích ra bơm (kèm thanh nhiệt thân bơm), ống nhựa, bộ trộn; đi thấp ở Z 750–900 phía −Y rồi lên hộp đấu từng vùng.",
+   "used_by": [
+    "melt_heater_conduits:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; giả định"
+    ],
+    "refs": [
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "a4bf61c3eff0": {
+   "vi": "Đấu nguồn nhiệt và cặp nhiệt cho bộ lọc (6 vùng, 39 kW), van khởi động, bơm, các bích và ống (≈ 75 kW tổng).",
+   "used_by": [
+    "melt_heater_jbox:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; giả định"
+    ],
+    "refs": [
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "3bf99a139f31": {
+   "vi": "Hộp RAL 7035 600 × 250 × 800 dưới tay quay bộ lọc; cửa bản lề, ổ cắm công nghiệp nhiều chân, tem cảnh báo điện; cáp nguồn vào từ hào cáp qua đáy.",
+   "used_by": [
+    "melt_heater_jbox:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; giả định"
+    ],
+    "refs": [
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "52d2048059bc": {
+   "vi": "Cấp dầu thuỷ lực cho xi lanh bộ lọc và van khởi động.",
+   "used_by": [
+    "melt_hpu:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
+    ],
+    "refs": [
+     "c043",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "89c1c3e4da08": {
+   "vi": "Thùng dầu 250 L, động cơ-bơm 7,5 kW đứng, khối van, bình tích áp, lọc, đồng hồ áp, nhiệt-mức kế.",
+   "used_by": [
+    "melt_hpu:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
+    ],
+    "refs": [
+     "c043",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "1528621519db": {
+   "vi": "Làm mát dầu bằng quạt gió–dầu gắn trên nắp (không cần nước); mặt khối van hướng +Y ra lối đi.",
+   "used_by": [
+    "melt_hpu:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
+    ],
+    "refs": [
+     "c043",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "31925a0c9807": {
+   "vi": "Dẫn dầu áp lực/hồi tới xi lanh bộ lọc.",
+   "used_by": [
+    "melt_hyd_hoses_sc:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "8ae7902934ca": {
+   "vi": "2 ống mềm thuỷ lực DN12 (P, T), cách nhau 80 mm, treo trên giá ở Z 1 150 qua lối đi.",
+   "used_by": [
+    "melt_hyd_hoses_sc:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "ed53b0eaa2cf": {
+   "vi": "Dẫn dầu tới xi lanh van khởi động.",
+   "used_by": [
+    "melt_hyd_hoses_suv:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "10018a576576": {
+   "vi": "2 ống mềm DN10.",
+   "used_by": [
+    "melt_hyd_hoses_suv:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "13e98789fbef": {
+   "vi": "Dẫn nhựa từ bơm tới bộ trộn tĩnh, giữ nhiệt ≈ 280 °C.",
+   "used_by": [
+    "melt_pipe:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (ống gia nhiệt, cách nhiệt, vỏ inox); giả định"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "4d51d994f29a": {
+   "vi": "Ống DN100 (lỗ Ø100); 3 băng nhiệt nằm dưới lớp cách nhiệt và vỏ inox Ø300 (không thấy từ ngoài); 1 hộp đấu nhỏ 120 × 80 trên vỏ bọc phía −Y tại X 8 250.",
+   "used_by": [
+    "melt_pipe:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (ống gia nhiệt, cách nhiệt, vỏ inox); giả định"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "77b0cae41822": {
+   "vi": "Nối bộ lọc với bơm; mang cảm biến P3 (áp hút bơm, điều khiển tốc độ bơm bánh răng).",
+   "used_by": [
+    "melt_pump_adapter_in:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "a02563e9f959": {
+   "vi": "Ống bích Ø360 dài 175, 1 băng nhiệt.",
+   "used_by": [
+    "melt_pump_adapter_in:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "c28a89641e9f": {
+   "vi": "Nối bơm với ống nhựa; mang cảm biến P4 (áp ra bơm).",
+   "used_by": [
+    "melt_pump_adapter_out:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "c687c8861197": {
+   "vi": "Ống bích Ø300 dài 150, 1 băng nhiệt; lỗ cảm biến P4 trên đỉnh và lỗ đĩa nổ 2 bên −Y.",
+   "used_by": [
+    "melt_pump_adapter_out:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "61dc9fb9b2ed": {
+   "vi": "Truyền mômen từ hộp giảm tốc tới trục bơm, bù lệch.",
+   "used_by": [
+    "melt_pump_cardan:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (hộp che dài có lưới thông gió giữa bơm và hộp số)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "918cde680173": {
+   "vi": "Vỏ che tôn 300 × 300 có ô lưới, trục các-đăng bên trong.",
+   "used_by": [
+    "melt_pump_cardan:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (hộp che dài có lưới thông gió giữa bơm và hộp số)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "5b7aa32306a6": {
+   "vi": "Giảm tốc động cơ 1 480 → ≈ 105 v/ph.",
+   "used_by": [
+    "melt_pump_gearbox:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (hộp giảm tốc góc + động cơ đứng)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "4240fe3e9aab": {
+   "vi": "Hộp góc côn-trụ 500 × 450 × 500, i ≈ 14.",
+   "used_by": [
+    "melt_pump_gearbox:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (hộp giảm tốc góc + động cơ đứng)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "d22e6813bbe2": {
+   "vi": "Quay bơm bánh răng qua hộp giảm tốc.",
+   "used_by": [
+    "melt_pump_motor:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (động cơ đứng trên hộp số); công suất giả định (thuỷ lực ≈ 16 kW, hiệu suất + dự phòng)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "df15a5be4402": {
+   "vi": "Động cơ đứng Ø440 cao 850, nắp quạt trên đỉnh, hộp đấu dây bên.",
+   "used_by": [
+    "melt_pump_motor:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-07 (động cơ đứng trên hộp số); công suất giả định (thuỷ lực ≈ 16 kW, hiệu suất + dự phòng)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "0525e71fe4d7": {
+   "vi": "Hứng cục nhựa xả khi khởi động/đổi màu.",
+   "used_by": [
+    "melt_purge_cart:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "59d5d0a8405d": {
+   "vi": "Thùng thép 520 × 800 × 450 trên 4 bánh xe, tay kéo phía −Y.",
+   "used_by": [
+    "melt_purge_cart:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "4065b462230c": {
+   "vi": "Xả áp khi áp suất đầu xi lanh vượt giới hạn (bảo vệ quá áp).",
+   "used_by": [
+    "melt_rupture_disc:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (thiết bị an toàn tiêu chuẩn của máy đùn)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "1aa5c1508209": {
+   "vi": "Đầu đĩa nổ Ø40 có nắp chụp hướng xuống, đặt phía −Y.",
+   "used_by": [
+    "melt_rupture_disc:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (thiết bị an toàn tiêu chuẩn của máy đùn)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "d56d349824b8": {
+   "vi": "Bảo vệ cơ khí ống, bộ trộn và khuôn khi khuôn bị nghẹt (bơm tạo được tới 370 bar).",
+   "used_by": [
+    "melt_rupture_disc_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I5; c049 (370 bar)"
+    ],
+    "refs": [
+     "rev-I5",
+     "c049"
+    ]
+   },
+   "notes": ""
+  },
+  "8393cee233f8": {
+   "vi": "Đầu đĩa nổ Ø40 dài 120 theo −Y, áp nổ 350 bar, nắp chụp hướng xuống; tín hiệu đứt đĩa về tủ điều khiển.",
+   "used_by": [
+    "melt_rupture_disc_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I5; c049 (370 bar)"
+    ],
+    "refs": [
+     "rev-I5",
+     "c049"
+    ]
+   },
+   "notes": ""
+  },
+  "16b4fa50528b": {
+   "vi": "Nối van khởi động với bộ lọc; mang cảm biến áp P2 trước lưới.",
+   "used_by": [
+    "melt_sc_adapter_in:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "cda0fbe2ef55": {
+   "vi": "Ống bích Ø420 dài 150, 1 băng nhiệt.",
+   "used_by": [
+    "melt_sc_adapter_in:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "9ef625b4f47c": {
+   "vi": "Đẩy nhựa sạch ngược qua lưới để làm sạch, xả ra máng; cửa thay lưới.",
+   "used_by": [
+    "melt_sc_backflush:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-13 (khối nhọn + cửa thăm lưới bên trái)"
+    ],
+    "refs": [
+     "web-13"
+    ]
+   },
+   "notes": ""
+  },
+  "bd9d4b2b4ff2": {
+   "vi": "Khối mũi nhọn 500 × 350 có piston xả ngược, cửa bản lề thay lưới, máng xả nhỏ hướng xuống.",
+   "used_by": [
+    "melt_sc_backflush:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-13 (khối nhọn + cửa thăm lưới bên trái)"
+    ],
+    "refs": [
+     "web-13"
+    ]
+   },
+   "notes": ""
+  },
+  "dcf5bc880c0e": {
+   "vi": "Xoay đĩa lưới từng bước bằng xi lanh thuỷ lực.",
+   "used_by": [
+    "melt_sc_drive:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-13 (tay quay + xi lanh nhô một bên); A − E = 1 955 − 1 040 chia hai bên (giả định)"
+    ],
+    "refs": [
+     "web-13"
+    ]
+   },
+   "notes": ""
+  },
+  "052449e38854": {
+   "vi": "Tay đòn + xi lanh Ø100 nằm theo Y, nhô 565 mm phía −Y.",
+   "used_by": [
+    "melt_sc_drive:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-13 (tay quay + xi lanh nhô một bên); A − E = 1 955 − 1 040 chia hai bên (giả định)"
+    ],
+    "refs": [
+     "web-13"
+    ]
+   },
+   "notes": ""
+  },
+  "c5bb9d35166c": {
+   "vi": "Lọc tạp chất khỏi nhựa (lưới 60 µm, 970 cm²) liên tục, tự làm sạch bằng xả ngược.",
+   "used_by": [
+    "melt_screen_changer:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
+    ],
+    "refs": [
+     "c050",
+     "web-13",
+     "c043"
+    ]
+   },
+   "notes": ""
+  },
+  "8ef9fdbe21fc": {
+   "vi": "Thân hộp inox rộng 1 040 (Y), dày 705 (X), mũ nghiêng có khe thông gió lên tới Z 2 079, logo đỏ Gneuss trên mũ.",
+   "used_by": [
+    "melt_screen_changer:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
+    ],
+    "refs": [
+     "c050",
+     "web-13",
+     "c043"
+    ]
+   },
+   "notes": ""
+  },
+  "13dad05ec393": {
+   "vi": "Bích vào/ra tròn 8 bulông ở giữa mặt trước/sau, tại Z = 1 200.",
+   "used_by": [
+    "melt_screen_changer:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
+    ],
+    "refs": [
+     "c050",
+     "web-13",
+     "c043"
+    ]
+   },
+   "notes": ""
+  },
+  "5344c4e4126c": {
+   "vi": "Tấm hông phẳng phải, hộp đầu nối nhiệt 6 vùng.",
+   "used_by": [
+    "melt_screen_changer:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
+    ],
+    "refs": [
+     "c050",
+     "web-13",
+     "c043"
+    ]
+   },
+   "notes": ""
+  },
+  "9f8681cf1b11": {
+   "vi": "Đo áp và nhiệt nhựa vào khuôn.",
+   "used_by": [
+    "melt_sensor_die:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "753f532885f3": {
+   "vi": "2 cảm biến tại X = 9 006 và 9 046.",
+   "used_by": [
+    "melt_sensor_die:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "2549337726b7": {
+   "vi": "Đo áp và nhiệt nhựa ra khỏi trục vít; P1 dùng cho khoá quá áp.",
+   "used_by": [
+    "melt_sensor_head:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (cảm biến áp suất có cáp trên đầu ra); giả định"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "0347b4f89cbf": {
+   "vi": "2 thân cảm biến Ø25 có cổ mềm, đầu điện tử Ø40 cao tới Z 1 700, X = 5 876 và 5 916 (băng nhiệt X 5 906 có khe tại hai lỗ).",
+   "used_by": [
+    "melt_sensor_head:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p01 (cảm biến áp suất có cáp trên đầu ra); giả định"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "64e99cbe0850": {
+   "vi": "Đo áp trước lưới để điều khiển xả ngược / đổi lưới.",
+   "used_by": [
+    "melt_sensor_p2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "47a6931ab120": {
+   "vi": "Thân Ø25, đầu Ø40.",
+   "used_by": [
+    "melt_sensor_p2:details[0]",
+    "melt_sensor_p3:details[0]",
+    "melt_sensor_p4:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "3db7bd223203": {
+   "vi": "Giữ áp hút bơm ổn định (≈ 50 bar) bằng cách chỉnh tốc độ bơm bánh răng; lưu lượng do các cân loss-in-weight quyết định.",
+   "used_by": [
+    "melt_sensor_p3:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "986f7cca9584": {
+   "vi": "Giám sát áp ra bơm, ngắt bơm và trục vít khi vượt 330 bar.",
+   "used_by": [
+    "melt_sensor_p4:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "b2973f68a8c2": {
+   "vi": "Xoay chốt van giữa vị trí xả và vị trí chạy.",
+   "used_by": [
+    "melt_startup_cyl:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (xi lanh thuỷ lực nằm ngang); giả định phía −Y"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "84c0eaf15c36": {
+   "vi": "Xi lanh Ø160 dài 600 nằm theo Y, 2 công tắc hành trình.",
+   "used_by": [
+    "melt_startup_cyl:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (xi lanh thuỷ lực nằm ngang); giả định phía −Y"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "d10446a5d777": {
+   "vi": "Khi khởi động xả nhựa xuống máng; khi chạy cho nhựa đi tiếp vào bộ lọc.",
+   "used_by": [
+    "melt_startup_valve:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
+    ],
+    "refs": [
+     "c035",
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "1bdf0358d16f": {
+   "vi": "Khối thép 450 × 520 × 520 có thanh nhiệt cắm, tấm cách nhiệt, cổng xả đáy, chốt xoay (rotary bolt) theo Y.",
+   "used_by": [
+    "melt_startup_valve:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
+    ],
+    "refs": [
+     "c035",
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "2e2decc31c53": {
+   "vi": "Hai mặt bích là mặt phẳng của khối van có 12 lỗ khoét bậc (counterbore) cho vít M24 bắt vào bích kề; đáy tì lên giá đỡ PTFE.",
+   "used_by": [
+    "melt_startup_valve:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
+    ],
+    "refs": [
+     "c035",
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "707268489051": {
+   "vi": "Đồng nhất nhiệt độ nhựa trước khuôn.",
+   "used_by": [
+    "melt_static_mixer:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (tuỳ chọn DN ≈ 120, dài ≈ 600); giả định"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  },
+  "5216141332a5": {
+   "vi": "Vỏ DN100 với 6 phần tử trộn; 4 băng nhiệt dưới vỏ inox Ø300 (không thấy từ ngoài), 1 hộp đấu trên vỏ bọc phía −Y tại X 8 676; bích hai đầu.",
+   "used_by": [
+    "melt_static_mixer:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §4 (tuỳ chọn DN ≈ 120, dài ≈ 600); giả định"
+    ],
+    "refs": [
+     "spec-4"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

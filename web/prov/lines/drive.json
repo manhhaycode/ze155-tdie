@@ -1,0 +1,775 @@
+{
+ "version": 1,
+ "group": "drive",
+ "lines": {
+  "4e7ee2eff0d2": {
+   "vi": "Che phần quay giữa động cơ và hộp số, có khoá liên động.",
+   "used_by": [
+    "drive_coupling_guard:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-12"
+    ]
+   },
+   "notes": ""
+  },
+  "d18eb2ae3e54": {
+   "vi": "Tôn 3 mm, tấm hông +Y tháo được có ô lưới quan sát, móc cẩu trên nóc.",
+   "used_by": [
+    "drive_coupling_guard:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-12"
+    ]
+   },
+   "notes": ""
+  },
+  "99b9767401df": {
+   "vi": "Công tắc liên động (interlock) cấm chạy khi mở nắp.",
+   "used_by": [
+    "drive_coupling_guard:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vỏ khớp nối có móc cẩu trên nóc); màu cam theo web-12"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-12"
+    ]
+   },
+   "notes": ""
+  },
+  "342c454985d7": {
+   "vi": "Đo tốc độ / vị trí trục động cơ cho biến tần điều khiển vector.",
+   "used_by": [
+    "drive_encoder:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (biến tần trung thế điều khiển vòng kín)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "bffa8b5c224c": {
+   "vi": "Vỏ Ø160 × 100, đầu cáp tín hiệu.",
+   "used_by": [
+    "drive_encoder:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (biến tần trung thế điều khiển vòng kín)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "b017d60be888": {
+   "vi": "Bù lệch tâm giữa trục động cơ và trục vào hộp số, giảm va đập.",
+   "used_by": [
+    "drive_flex_coupling:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (khớp đĩa/đàn hồi tiêu chuẩn cỡ 10 kNm)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "791448ce5e9d": {
+   "vi": "Hai moay-ơ thép + bộ đĩa lò xo, Ø560.",
+   "used_by": [
+    "drive_flex_coupling:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (khớp đĩa/đàn hồi tiêu chuẩn cỡ 10 kNm)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "a2ab8e1d15a3": {
+   "vi": "Động cơ cảm ứng trung thế 4 cực, chạy biến tần, quay trục vít qua khớp nối và hộp số; bộ làm mát gió–nước trên nóc thải nhiệt vào nước, không thổi gió nóng vào xưởng.",
+   "used_by": [
+    "drive_motor:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
+    ],
+    "refs": [
+     "c066",
+     "c065",
+     "design-3",
+     "dec-11",
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "8b1527f516b8": {
+   "vi": "Thân hộp có gân Z 750–1 680; trên nóc là hộp bộ làm mát gió–nước (IC81W top air-to-water cooler) Z 1 680–2 610, X −4 800 … −3 300: vỏ hộp kín, 2 nắp thăm ống trao đổi nhiệt ở đầu −X, không có cửa gió hở.",
+   "used_by": [
+    "drive_motor:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
+    ],
+    "refs": [
+     "c066",
+     "c065",
+     "design-3",
+     "dec-11",
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "e3a8ec1d4957": {
+   "vi": "Hai bích nước DN40 trên mặt +Y của hộp làm mát: vào tại X −3 500, Z 2 300; ra tại X −3 700, Z 2 400; cảm biến rò nước ở đáy hộp.",
+   "used_by": [
+    "drive_motor:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
+    ],
+    "refs": [
+     "c066",
+     "c065",
+     "design-3",
+     "dec-11",
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "40a9bab71fd4": {
+   "vi": "Đầu trục Ø140 dài 200 ở phía hộp số; nắp ổ NDE nhô 75 mm mang encoder.",
+   "used_by": [
+    "drive_motor:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
+    ],
+    "refs": [
+     "c066",
+     "c065",
+     "design-3",
+     "dec-11",
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "13c980231bbc": {
+   "vi": "4 tai cẩu, biển tên, cọc tiếp địa; tâm trục Z = 1 200 (H 450 trên mặt đế Z 750).",
+   "used_by": [
+    "drive_motor:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AMI 450L: L 2 025, H 450, HC 1 860, A 850, B 1 400, AB 980, AE 1 500); c065 khối lượng ≈ 4,7 t; công suất 1 500 kW giả định (xem design.md §3); DECISIONS 11.3 + review-01 M9: kiểu làm mát IC81W (bộ làm mát gió–nước trên nóc), giả định giữ nguyên hình bao HC 1 860 như bản IC01"
+    ],
+    "refs": [
+     "c066",
+     "c065",
+     "design-3",
+     "dec-11",
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "7ded4e4e6484": {
+   "vi": "Nâng động cơ để tâm trục khớp Z = 1 200, cho phép căn chỉnh đồng tâm.",
+   "used_by": [
+    "drive_motor_base:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định: 1 200 − H 450 − đỉnh khung 650 = 100 mm"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "8e112926859e": {
+   "vi": "Hai ray thép dày 100 có vít đẩy (jack screws) căn chỉnh ngang.",
+   "used_by": [
+    "drive_motor_base:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định: 1 200 − H 450 − đỉnh khung 650 = 100 mm"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "e3c524effa27": {
+   "vi": "Đấu cáp trung thế từ biến tần vào động cơ.",
+   "used_by": [
+    "drive_motor_terminal_box:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AE 1 500 gồm hộp đấu dây); phía −Y giả định để tránh lối thao tác"
+    ],
+    "refs": [
+     "c066"
+    ]
+   },
+   "notes": ""
+  },
+  "1ef6608ddd0c": {
+   "vi": "Hộp thép 600 × 350 × 500, nắp 12 vít, ốc siết cáp ở đáy.",
+   "used_by": [
+    "drive_motor_terminal_box:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c066 (AE 1 500 gồm hộp đấu dây); phía −Y giả định để tránh lối thao tác"
+    ],
+    "refs": [
+     "c066"
+    ]
+   },
+   "notes": ""
+  },
+  "96c8c6cc3498": {
+   "vi": "Tách động cơ khỏi hộp số khi quá tải (vít kẹt, vật lạ) để bảo vệ trục vít và hộp số.",
+   "used_by": [
+    "drive_safety_coupling:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (safety coupling); p05/p19 (đĩa ly hợp bạc giữa động cơ và hộp số); cỡ giả định"
+    ],
+    "refs": [
+     "c033",
+     "cat-p05",
+     "cat-p19"
+    ]
+   },
+   "notes": ""
+  },
+  "050d1d30b14e": {
+   "vi": "Đĩa thép bạc Ø640 có rãnh vòng (như ảnh p19), vòng bulông 12 lỗ, công tắc giám sát nhả khớp.",
+   "used_by": [
+    "drive_safety_coupling:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (safety coupling); p05/p19 (đĩa ly hợp bạc giữa động cơ và hộp số); cỡ giả định"
+    ],
+    "refs": [
+     "c033",
+     "cat-p05",
+     "cat-p19"
+    ]
+   },
+   "notes": ""
+  },
+  "657dbc19a725": {
+   "vi": "Giảm tốc từ động cơ (≈ 1 490 v/ph) xuống tối đa 400 v/ph và chia mômen 2 × 35 kNm ra hai trục vít đồng hướng.",
+   "used_by": [
+    "gearbox:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "589a08335ace": {
+   "vi": "Vỏ gang hộp có gân, phần bướu trên cao Z 1 720 bao 2 trục ra ở đầu X −1 250 … −750.",
+   "used_by": [
+    "gearbox:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "61e322d81d0f": {
+   "vi": "Nắp ổ trục vào tròn Ø500 nhô 50 mm ở đầu X = −2 300 quanh Z = 1 200.",
+   "used_by": [
+    "gearbox:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "90e917b97eeb": {
+   "vi": "4 tai cẩu (lifting eyes) trên nóc, nắp thăm chữ nhật trên nóc, ống thở (breather), kính thăm mức dầu phía +Y, nút xả dầu ở đáy.",
+   "used_by": [
+    "gearbox:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "444bc64ef099": {
+   "vi": "Biển tên, tem cảnh báo vàng; cảm biến nhiệt dầu PT100 cạnh cổng dầu.",
+   "used_by": [
+    "gearbox:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "b8b69657e571": {
+   "vi": "Tỷ số truyền ≈ 3,73 (1 490/400).",
+   "used_by": [
+    "gearbox:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c033 (chia công suất, bôi trơn ngâm + áp lực, khớp an toàn); c005 mômen; tỷ lệ dài/cao theo pdf_measures §2.3; màu xanh theo web-01/web-03, c023"
+    ],
+    "refs": [
+     "c033",
+     "c005",
+     "meas-2.3",
+     "web-01",
+     "web-03",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "268f691e497c": {
+   "vi": "Nối mặt bích ra hộp số với xi lanh B1; chứa khớp then hoa nối trục ra hộp số với trục vít; có cửa thăm.",
+   "used_by": [
+    "lantern:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "b479684fb571": {
+   "vi": "Cửa thăm chữ nhật bo góc 380 × 250 trên mặt +Y, tâm X = −375, Z = 1 200, 8 vít + tay nắm.",
+   "used_by": [
+    "lantern:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "3dd99305cfdb": {
+   "vi": "Vành mặt bích Ø700 dày 60 ở đầu X = 0: 20 lỗ ren M24 trên PCD 560 nhận bulông cấy từ bích B1 (đai ốc 12 cạnh nằm phía B1).",
+   "used_by": [
+    "lantern:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "7f1755080ec3": {
+   "vi": "Ống xả dầu rò rỉ ở đáy, tai cẩu trên nóc.",
+   "used_by": [
+    "lantern:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "c09ecacae4f9": {
+   "vi": "Trong: 2 khớp then hoa (spline coupling) tại Y = ±71.",
+   "used_by": [
+    "lantern:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (lantern 15,26 × 19,68 pt có cửa thăm bo góc); màu theo web-01 (khối nối xanh như hộp số)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "e43931fbad30": {
+   "vi": "Lọc dầu, đổi bầu lọc khi máy chạy.",
+   "used_by": [
+    "lube_filter_duplex:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (2 bầu lọc + tay gạt chuyển đổi); pdf_measures §2.2 (lọc kép trước động cơ)"
+    ],
+    "refs": [
+     "web-03",
+     "meas-2.2"
+    ]
+   },
+   "notes": ""
+  },
+  "e1289ac2a4b6": {
+   "vi": "2 bầu lọc đứng Ø110, tay gạt chuyển đổi, chỉ báo chênh áp, đồng hồ áp.",
+   "used_by": [
+    "lube_filter_duplex:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (2 bầu lọc + tay gạt chuyển đổi); pdf_measures §2.2 (lọc kép trước động cơ)"
+    ],
+    "refs": [
+     "web-03",
+     "meas-2.2"
+    ]
+   },
+   "notes": ""
+  },
+  "6c6409c43802": {
+   "vi": "Giải nhiệt dầu hộp số bằng nước làm mát.",
+   "used_by": [
+    "lube_oil_cooler:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (bộ trao đổi nhiệt tấm inox có cổng F1–F4)"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "f18ab3460bf9": {
+   "vi": "Khối tấm hàn inox 350 × 250 × 350, 4 cổng ren F1–F4 trên mặt +Y.",
+   "used_by": [
+    "lube_oil_cooler:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (bộ trao đổi nhiệt tấm inox có cổng F1–F4)"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "0fd30a110e25": {
+   "vi": "Dẫn dầu đã lọc, làm mát tới hệ phun trong hộp số.",
+   "used_by": [
+    "lube_pipe_pressure:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (ống dầu sơn xanh); tuyến ống giả định"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "251c33292e66": {
+   "vi": "Ống thép DN32 (OD 42) sơn xanh; công tắc áp suất (PS, khoá khởi động truyền động) gần cổng vào hộp số, tín hiệu về tủ đầu máy (s_14).",
+   "used_by": [
+    "lube_pipe_pressure:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (ống dầu sơn xanh); tuyến ống giả định"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "bf5b703ad445": {
+   "vi": "Dẫn dầu từ carter hộp số về bơm.",
+   "used_by": [
+    "lube_pipe_return:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "36796d9dbd33": {
+   "vi": "Ống thép DN40 (OD 50) chạy dọc mép +Y của khung, Z = 760.",
+   "used_by": [
+    "lube_pipe_return:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "5a105513f9aa": {
+   "vi": "Hút dầu từ carter hộp số và đẩy qua lọc, bộ làm mát tới vòi phun bánh răng/ổ trục.",
+   "used_by": [
+    "lube_pump_motor:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
+    ],
+    "refs": [
+     "web-03",
+     "img-p19_3"
+    ]
+   },
+   "notes": ""
+  },
+  "84595cfc133a": {
+   "vi": "Động cơ 4 kW đặt đứng Ø260 có nắp quạt, chuông nối, bơm bánh răng ở đáy; 2 đồng hồ áp.",
+   "used_by": [
+    "lube_pump_motor:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
+    ],
+    "refs": [
+     "web-03",
+     "img-p19_3"
+    ]
+   },
+   "notes": ""
+  },
+  "dec23ec96c6b": {
+   "vi": "Van an toàn (relief valve) tích hợp trên thân bơm xả về carter; lọc hút (suction strainer) trên ống hút ngay trước bơm.",
+   "used_by": [
+    "lube_pump_motor:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (bơm có động cơ mặt bích đứng, sơn xanh); p19_3"
+    ],
+    "refs": [
+     "web-03",
+     "img-p19_3"
+    ]
+   },
+   "notes": ""
+  },
+  "9e07d51e4055": {
+   "vi": "Đế và khay hứng dầu cho cụm bơm, lọc, làm mát dầu hộp số.",
+   "used_by": [
+    "lube_unit_frame:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (cụm dầu phía trước động cơ trên hình bóng); web-03; c034"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-03",
+     "c034"
+    ]
+   },
+   "notes": ""
+  },
+  "ed33b46fb0ab": {
+   "vi": "Khay có mép gập, tấm thấm dầu vàng như web-03.",
+   "used_by": [
+    "lube_unit_frame:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (cụm dầu phía trước động cơ trên hình bóng); web-03; c034"
+    ],
+    "refs": [
+     "meas-2.2",
+     "web-03",
+     "c034"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

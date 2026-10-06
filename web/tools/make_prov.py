@@ -378,6 +378,88 @@ def unresolved_tokens(reg):
     return bad
 
 
+# ---------------------------------------------------------------- lines of the info panel and the curated files
+LINES = os.path.join(WEB, 'prov', 'lines')
+DEVICES = os.path.join(BUILD, 'data', 'devices.json')
+ENTRY_ORDER = ['vi', 'used_by', 'status', 'facts', 'free_numbers', 'seed', 'notes', 'verified']
+
+
+def load_json(path):
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
+
+
+def load_devices(path=DEVICES):
+    return load_json(path)['devices']
+
+
+def line_key(vi):
+    import hashlib
+    return hashlib.sha1(vi.encode('utf-8')).hexdigest()[:12]
+
+
+def device_lines(devices):
+    """every line the info panel shows: the function (index 0) and the details of each non-synthetic device"""
+    out = []
+    for d in devices:
+        if d.get('synthetic'):
+            continue
+        if d.get('function_vi'):
+            out.append({'device': d['device_id'], 'group': d['group'], 'kind': 'function', 'index': 0, 'vi': d['function_vi']})
+        for i, t in enumerate(d.get('details_vi') or []):
+            out.append({'device': d['device_id'], 'group': d['group'], 'kind': 'details', 'index': i, 'vi': t})
+    return out
+
+
+def use_id(ln):
+    return f'{ln["device"]}:function' if ln['kind'] == 'function' else f'{ln["device"]}:details[{ln["index"]}]'
+
+
+def save_lines(path, doc):
+    doc['lines'] = {k: {f: e[f] for f in ENTRY_ORDER if f in e} for k, e in doc['lines'].items()}
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(doc, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+
+
+def seed(devices, lines_dir=LINES):
+    """create or refresh web/prov/lines/<group>.json: one entry per unique line, keyed by line_key(vi).
+    Refreshes `vi`, `used_by` and `seed` (hints: the parts.json source strings and their ref ids); never
+    touches `status`, `facts`, `free_numbers`, `notes`, `verified`. Entries no device uses any more stay
+    (check reports them, P03)."""
+    reg = build_registry()
+    src = {p['id']: p.get('source', '') for p in parts()}
+    groups = {}
+    for ln in device_lines(devices):
+        k = line_key(ln['vi'])
+        for g, es in groups.items():
+            if g != ln['group'] and k in es:
+                raise SystemExit(f'line {k} is used by two groups ({g}, {ln["group"]}): {ln["vi"][:60]}')
+        e = groups.setdefault(ln['group'], {}).setdefault(k, {'vi': ln['vi'], 'used_by': [], 'sources': []})
+        e['used_by'].append(use_id(ln))
+        s = src.get(ln['device'], '')
+        if s and s not in e['sources']:
+            e['sources'].append(s)
+    os.makedirs(lines_dir, exist_ok=True)
+    for g, es in groups.items():
+        path = os.path.join(lines_dir, f'{g}.json')
+        doc = load_json(path) if os.path.exists(path) else {'version': 1, 'group': g, 'lines': {}}
+        old = doc['lines']
+        new = {}
+        for k, e in es.items():
+            refs = []
+            for s in e['sources']:
+                refs += [t for t in tokens_of(s) if t not in refs and resolve(t, reg)]
+            cur = old.get(k, {'status': 'draft', 'facts': [], 'notes': ''})
+            cur.update(vi=e['vi'], used_by=e['used_by'], seed={'sources': e['sources'], 'refs': refs})
+            new[k] = cur
+        for k, e in old.items():
+            new.setdefault(k, e)
+        doc['lines'] = new
+        save_lines(path, doc)
+    return groups
+
+
 # ---------------------------------------------------------------- CLI
 def write_json(path, obj, indent=None):
     path = os.path.abspath(path)
@@ -408,13 +490,24 @@ def cmd_selftest(a):
     sys.exit(1 if bad else 0)
 
 
+def cmd_seed(a):
+    groups = seed(load_devices(a.devices), a.lines)
+    n = sum(len(es) for es in groups.values())
+    uses = sum(len(e['used_by']) for es in groups.values() for e in es.values())
+    print(f'make_prov seed: {n} entries, {uses} uses, {len(groups)} group files -> {os.path.relpath(a.lines, WEB)}')
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest='cmd', required=True)
     sub.add_parser('registry')
     sub.add_parser('selftest')
+    s = sub.add_parser('seed')
+    for p in (s,):
+        p.add_argument('--devices', default=DEVICES)
+        p.add_argument('--lines', default=LINES)
     a = ap.parse_args()
-    {'registry': cmd_registry, 'selftest': cmd_selftest}[a.cmd](a)
+    {'registry': cmd_registry, 'selftest': cmd_selftest, 'seed': cmd_seed}[a.cmd](a)
 
 
 if __name__ == '__main__':

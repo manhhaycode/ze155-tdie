@@ -1,0 +1,487 @@
+{
+ "version": 1,
+ "group": "util",
+ "lines": {
+  "ec92c400c238": {
+   "vi": "Cấp khí nén 6 bar từ đường trên cao cho làm mát bulông nhiệt.",
+   "used_by": [
+    "util_air_drop:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c054 (bulông nhiệt có làm mát gió); giả định"
+    ],
+    "refs": [
+     "c054"
+    ]
+   },
+   "notes": ""
+  },
+  "64aab58b966c": {
+   "vi": "Ống thép mạ Ø30, đầu trên để hở 'từ đường khí nhà máy'.",
+   "used_by": [
+    "util_air_drop:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c054 (bulông nhiệt có làm mát gió); giả định"
+    ],
+    "refs": [
+     "c054"
+    ]
+   },
+   "notes": ""
+  },
+  "7fc44db13aa4": {
+   "vi": "Cấp khí nén cho van chân không và thiết bị cấp liệu.",
+   "used_by": [
+    "util_air_drop_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "5dfb9c26828c": {
+   "vi": "Ống thép mạ Ø30 dọc cột sàn X −450, Y −2 600, xuyên sàn; đầu trên để hở 'từ đường khí nhà máy'.",
+   "used_by": [
+    "util_air_drop_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "3ebaf8f7f465": {
+   "vi": "Dẫn khí làm mát tới ống gió của thanh bulông nhiệt.",
+   "used_by": [
+    "util_air_hose_die:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-18 (ống gió làm mát đen tại môi khuôn)"
+    ],
+    "refs": [
+     "web-18"
+    ]
+   },
+   "notes": ""
+  },
+  "f3d6fd6efdfe": {
+   "vi": "Ống mềm PU Ø24, khớp nối nhanh ở đầu thanh để tách khuôn.",
+   "used_by": [
+    "util_air_hose_die:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-18 (ống gió làm mát đen tại môi khuôn)"
+    ],
+    "refs": [
+     "web-18"
+    ]
+   },
+   "notes": ""
+  },
+  "8f7c0fefff38": {
+   "vi": "Cấp khí cho van lật xả của máy hút liệu và van nạp của cân.",
+   "used_by": [
+    "util_air_tube_loader:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "e46e6a3b4bf9": {
+   "vi": "Ống PU Ø12 lên dọc cột, đi trên mặt sàn, rồi dọc phễu cân lên van máy hút liệu.",
+   "used_by": [
+    "util_air_tube_loader:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "7392919161f0": {
+   "vi": "Cấp khí cho bộ tác động van bướm chân không vùng 2.",
+   "used_by": [
+    "util_air_tube_vac:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "510111e136f1": {
+   "vi": "Ống PU Ø12 đi trên máng nhỏ dưới sàn thao tác ở Z 2 450 rồi tới bộ tác động van.",
+   "used_by": [
+    "util_air_tube_vac:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "8e7e20b6f6e6": {
+   "vi": "Cấp/hồi nước cho bộ làm mát dầu hộp số.",
+   "used_by": [
+    "util_cw_lube_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (ống mềm đen vào bộ làm mát)"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "352ae4132fbf": {
+   "vi": "2 ống mềm DN25 chạy ngoài mép +Y của khung: cấp ở Y 1 060, Z 380; hồi ở Y 1 130, Z 440; lên và vào cổng F2/F4 của bộ làm mát.",
+   "used_by": [
+    "util_cw_lube_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (ống mềm đen vào bộ làm mát)"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "2a0b258c0b80": {
+   "vi": "Van bi tay đỏ trên mỗi ống ngay trước bộ làm mát; van điều nhiệt nước trên ống hồi.",
+   "used_by": [
+    "util_cw_lube_hoses:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-03 (ống mềm đen vào bộ làm mát)"
+    ],
+    "refs": [
+     "web-03"
+    ]
+   },
+   "notes": ""
+  },
+  "318e096fcd33": {
+   "vi": "Cấp/hồi nước cho bộ làm mát gió–nước trên nóc động cơ chính (IC81W).",
+   "used_by": [
+    "util_cw_motor_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M9; giả định (≈ 45 kW nhiệt, 2 × DN40)"
+    ],
+    "refs": [
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "3b874ab4e2e5": {
+   "vi": "2 ống inox DN40 (OD 48) chạy thấp ngoài mép +Y khung (cấp Y 1 060 Z 250, hồi Y 1 130 Z 150), dựng lên tại X −3 500 / −3 700 cạnh cụm dầu, rồi vào bích trên mặt +Y bộ làm mát động cơ ở Z 2 300 / 2 400; van bi tay đỏ ở mỗi ống.",
+   "used_by": [
+    "util_cw_motor_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M9; giả định (≈ 45 kW nhiệt, 2 × DN40)"
+    ],
+    "refs": [
+     "rev-M9"
+    ]
+   },
+   "notes": ""
+  },
+  "657f4696647c": {
+   "vi": "Trả nước hồi về đường ống nhà máy.",
+   "used_by": [
+    "util_cw_return_riser:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "2fca6309b1a7": {
+   "vi": "DN50 có van bi tay đỏ và nhiệt kế.",
+   "used_by": [
+    "util_cw_return_riser:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "431a865448fb": {
+   "vi": "Làm mát thân side feeder.",
+   "used_by": [
+    "util_cw_sidefeed_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "cf5cba094b06": {
+   "vi": "2 ống mềm inox DN15 từ đỉnh cụm van 2 vào mặt dưới thân side feeder.",
+   "used_by": [
+    "util_cw_sidefeed_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "a5cf643a1f98": {
+   "vi": "Đưa nước làm mát (≈ 15 °C, 4 bar) từ đường ống nhà máy lên ống góp.",
+   "used_by": [
+    "util_cw_supply_riser:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "07689f91cda1": {
+   "vi": "DN50 có van bi tay đỏ, lọc Y và đồng hồ áp ở đoạn đứng.",
+   "used_by": [
+    "util_cw_supply_riser:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "1186e94fe70c": {
+   "vi": "Làm mát hộp miệng nạp để hạt không dính chảy ở miệng.",
+   "used_by": [
+    "util_cw_throat_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "0ba4d8f63f35": {
+   "vi": "2 ống mềm inox DN20 từ đỉnh cụm van 1 lên Z 1 550/1 600 rồi vào mặt +Y hộp miệng nạp.",
+   "used_by": [
+    "util_cw_throat_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "7782e23ae1dd": {
+   "vi": "Cấp/hồi nước cho ống xoắn ngưng của bình tách và cho bơm Roots/bơm khô làm mát nước.",
+   "used_by": [
+    "util_cw_vac_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định (lấy nước nhà máy tại chỗ qua hai đầu nối sàn, không băng qua máy)"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "c2612a13336b": {
+   "vi": "4 ống inox DN25 (OD 32) đứng lên từ hai cặp đầu nối sàn giữa bình tách và skid: cặp cho bình tách vào Z 1 000 / ra Z 1 100, cặp cho skid vào/ra ở Z 400; van bi tay đỏ ở chân mỗi ống.",
+   "used_by": [
+    "util_cw_vac_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I7; giả định (lấy nước nhà máy tại chỗ qua hai đầu nối sàn, không băng qua máy)"
+    ],
+    "refs": [
+     "rev-I7"
+    ]
+   },
+   "notes": ""
+  },
+  "265d0ee335b8": {
+   "vi": "Lọc, điều áp khí làm mát bulông nhiệt.",
+   "used_by": [
+    "util_frl:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "ab6e01afa56b": {
+   "vi": "Bộ lọc + van điều áp + đồng hồ, van khoá tay.",
+   "used_by": [
+    "util_frl:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "f09951259964": {
+   "vi": "Lọc, điều áp khí cho van bướm chân không, van nạp máy hút liệu, van cân.",
+   "used_by": [
+    "util_frl_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  },
+  "4c7c42150b50": {
+   "vi": "Bộ lọc + van điều áp + đồng hồ, van khoá tay, cao 1,35–1,6 m.",
+   "used_by": [
+    "util_frl_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M10; giả định"
+    ],
+    "refs": [
+     "rev-M10"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

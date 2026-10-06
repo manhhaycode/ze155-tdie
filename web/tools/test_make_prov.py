@@ -10,6 +10,11 @@ import make_prov as M  # noqa: E402
 REG = M.build_registry()
 
 
+def read_bytes(path):
+    with open(path, 'rb') as f:
+        return f.read()
+
+
 class Tokens(unittest.TestCase):
     def t(self, s):
         return M.tokens_of(s)
@@ -97,6 +102,50 @@ class Registry(unittest.TestCase):
         self.assertIsNone(M.resolve('dec-2', REG))
         self.assertIsNone(M.resolve('c999', REG))
         self.assertIsNotNone(M.resolve('dec-9', REG))
+
+
+class Seed(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        import shutil
+        self.tmp = tempfile.mkdtemp(prefix='prov-seed-')
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.devices = M.load_devices()
+
+    def test_device_lines(self):
+        lines = M.device_lines(self.devices)
+        self.assertEqual(len(lines), 534)
+        self.assertEqual(len({M.line_key(x['vi']) for x in lines}), 454)
+        self.assertEqual(lines[0]['kind'], 'function')
+        self.assertFalse(any(x['device'].startswith('x_') for x in lines))
+
+    def test_seed_writes_groups_and_is_idempotent(self):
+        M.seed(self.devices, self.tmp)
+        files = sorted(os.listdir(self.tmp))
+        self.assertEqual(len(files), 10)
+        entries = {}
+        for f in files:
+            entries.update(M.load_json(os.path.join(self.tmp, f))['lines'])
+        self.assertEqual(len(entries), 454)
+        self.assertEqual(sum(len(e['used_by']) for e in entries.values()), 534)
+        b3 = entries[M.line_key(next(d for d in self.devices if d['device_id'] == 'barrel_b3')['function_vi'])]
+        self.assertEqual(b3['status'], 'draft')
+        self.assertIn('barrel_b3:function', b3['used_by'])
+        self.assertIn('c001', b3['seed']['refs'])
+        before = {f: read_bytes(os.path.join(self.tmp, f)) for f in files}
+        M.seed(self.devices, self.tmp)
+        self.assertEqual(before, {f: read_bytes(os.path.join(self.tmp, f)) for f in files})
+
+    def test_seed_keeps_curated_facts(self):
+        M.seed(self.devices, self.tmp)
+        path = os.path.join(self.tmp, 'barrel.json')
+        doc = M.load_json(path)
+        key = next(iter(doc['lines']))
+        doc['lines'][key].update(status='curated', facts=[{'level': 'assumption', 'text_vi': 'x'}], notes='n')
+        M.save_lines(path, doc)
+        M.seed(self.devices, self.tmp)
+        e = M.load_json(path)['lines'][key]
+        self.assertEqual((e['status'], e['facts'][0]['text_vi'], e['notes']), ('curated', 'x', 'n'))
 
 
 if __name__ == '__main__':

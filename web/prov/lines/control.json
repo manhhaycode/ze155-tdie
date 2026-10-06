@@ -1,0 +1,691 @@
+{
+ "version": 1,
+ "group": "control",
+ "lines": {
+  "b14cffc40bfc": {
+   "vi": "Đưa cáp từ máng trên khung xuống sàn.",
+   "used_by": [
+    "ctrl_cable_drop:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "477a4c72c90c": {
+   "vi": "Máng đứng 300 × 100 áp mặt bên khung.",
+   "used_by": [
+    "ctrl_cable_drop:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "50306e1d6479": {
+   "vi": "Đưa cáp trung thế từ hào lên hộp đấu dây động cơ.",
+   "used_by": [
+    "ctrl_cable_mv:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "53f60c8344c5": {
+   "vi": "3 cáp trung thế trong ống bảo vệ Ø80 dựng lên sát mặt bên khung (Y −1 100) rồi vào đáy hộp đấu dây.",
+   "used_by": [
+    "ctrl_cable_mv:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "7fddb076a16c": {
+   "vi": "Điều khiển 94 thanh nhiệt bulông theo profin chiều dày (bộ điều khiển riêng của hệ bulông nhiệt).",
+   "used_by": [
+    "ctrl_die_bolt_cabinet:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; c054 (bulông nhiệt 80 W)"
+    ],
+    "refs": [
+     "rev-I6",
+     "c054"
+    ]
+   },
+   "notes": ""
+  },
+  "21f184e2f48c": {
+   "vi": "Tủ 800 × 600 × 2 000 RAL 7035, màn hình profin trên cửa.",
+   "used_by": [
+    "ctrl_die_bolt_cabinet:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I6; c054 (bulông nhiệt 80 W)"
+    ],
+    "refs": [
+     "rev-I6",
+     "c054"
+    ]
+   },
+   "notes": ""
+  },
+  "1acbb1ec452a": {
+   "vi": "Biến tần điều khiển tốc độ động cơ chính 1 500 kW.",
+   "used_by": [
+    "ctrl_drive_cabinet:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (biến tần trung thế 3 kV ≈ 3,6 m; thường đặt phòng điện, ở đây đặt sau máy để thể hiện); mặt cửa ở Y −3 700 theo review-01 I2"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "07fc6a5412e8": {
+   "vi": "6 khoang RAL 7035 rộng 600, sâu 1 200, cao 2 400 kể cả đế, cửa mở về +Y có lưới thông gió, đèn báo; trước cửa chừa ≥ 1 000 mm.",
+   "used_by": [
+    "ctrl_drive_cabinet:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (biến tần trung thế 3 kV ≈ 3,6 m; thường đặt phòng điện, ở đây đặt sau máy để thể hiện); mặt cửa ở Y −3 700 theo review-01 I2"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "5f3b9ce96d89": {
+   "vi": "Dừng khẩn khi chỉnh môi, deckle, xử lý màn nhựa ở phía vận hành.",
+   "used_by": [
+    "ctrl_estop_die:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "dcd3e013add6": {
+   "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (9 250, 1 450, 1 100), trên cột ống Ø50 dựng từ tay đòn thấp (Z 300–400) gá vào đầu +Y của xe khuôn; nằm ngoài tấm đầu khuôn (|Y| > 1 375) và trước khung cụm trục.",
+   "used_by": [
+    "ctrl_estop_die:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "2805359b44ae": {
+   "vi": "Cáp nối bằng phích cắm qua hộp đấu dây khuôn để xe khuôn kéo đi được.",
+   "used_by": [
+    "ctrl_estop_die:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "86732894e81d": {
+   "vi": "outline_mm (mặt YZ) là hình chữ L: tay đòn thấp Y 1 200–1 475, Z 300–400; cột Y 1 425–1 475 lên Z 1 030; hộp Y 1 410–1 490, Z 1 030–1 170.",
+   "used_by": [
+    "ctrl_estop_die:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "92ca1beb2358": {
+   "vi": "Dừng khẩn khi thay lưới / xử lý ở bộ lọc phía vận hành.",
+   "used_by": [
+    "ctrl_estop_melt:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "f09590d0f5b7": {
+   "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (7 320, 650, 1 100), trên cột 60 × 60 gá vào mặt +Y của giá bộ lọc, ngay sau cụm xả ngược (X ≤ 7 200).",
+   "used_by": [
+    "ctrl_estop_melt:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "fb6cd1f4096e": {
+   "vi": "Dừng khẩn từ sàn cân cấp liệu.",
+   "used_by": [
+    "ctrl_estop_platform:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M3"
+    ],
+    "refs": [
+     "rev-M3"
+    ]
+   },
+   "notes": ""
+  },
+  "795e6e0e151a": {
+   "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ trên cột lan can mép +Y.",
+   "used_by": [
+    "ctrl_estop_platform:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M3"
+    ],
+    "refs": [
+     "rev-M3"
+    ]
+   },
+   "notes": ""
+  },
+  "a6caf0d1ccf6": {
+   "vi": "Dừng khẩn toàn dây chuyền từ dọc máy phía vận hành, ở tầm tay.",
+   "used_by": [
+    "ctrl_estops:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; cao độ theo review-01 M3"
+    ],
+    "refs": [
+     "rev-M3"
+    ]
+   },
+   "notes": ""
+  },
+  "b90f07574975": {
+   "vi": "3 hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm Z 1 120 (tầm 1,05–1,19 m): X 600 trên cột gá 60 × 60 từ mặt khung (vùng nạp để lộ), X 3 700 trên tấm dưới vỏ C4, X 5 700 trên tấm dưới vỏ C1.",
+   "used_by": [
+    "ctrl_estops:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; cao độ theo review-01 M3"
+    ],
+    "refs": [
+     "rev-M3"
+    ]
+   },
+   "notes": ""
+  },
+  "1d0ab82874bd": {
+   "vi": "Thêm nút trên HMI, tủ đầu máy, hộp đấu dây khuôn (−Y), lan can sàn thao tác (ctrl_estop_platform), khuôn phía +Y (ctrl_estop_die) và bộ lọc phía +Y (ctrl_estop_melt).",
+   "used_by": [
+    "ctrl_estops:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; cao độ theo review-01 M3"
+    ],
+    "refs": [
+     "rev-M3"
+    ]
+   },
+   "notes": ""
+  },
+  "82b65411ce37": {
+   "vi": "Dẫn cáp từ máy về tủ điều khiển, nắp phẳng sàn.",
+   "used_by": [
+    "ctrl_floor_duct:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; hào phẳng sàn theo review-01 I2"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "8db78070bb94": {
+   "vi": "Hào cáp có nắp tôn mạ kẽm chống trượt rộng 400, phẳng sàn (nắp dày 10).",
+   "used_by": [
+    "ctrl_floor_duct:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định; hào phẳng sàn theo review-01 I2"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "13efd7c95507": {
+   "vi": "Dẫn cáp động lực/tín hiệu tới bơm nhựa, hộp nhiệt đường chảy, HPU, cụm chân không, khuôn.",
+   "used_by": [
+    "ctrl_floor_trench:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "ce2e3f40c7ee": {
+   "vi": "Nắp tôn chống trượt rộng 200 phẳng sàn; kết thúc ở X 8 700, trước ray xe khuôn.",
+   "used_by": [
+    "ctrl_floor_trench:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "4643483c62a5": {
+   "vi": "PLC, rơ-le bán dẫn cho vùng nhiệt xi lanh/đường chảy/khuôn, khởi động động cơ phụ.",
+   "used_by": [
+    "ctrl_heater_cabinet:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c034 (tủ điện), giả định; mặt cửa ở Y −3 700 theo review-01 I2"
+    ],
+    "refs": [
+     "c034",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "f531f8b31062": {
+   "vi": "4 khoang 600 × 600 × 2 200 RAL 7035, khoang đầu có dải xanh KM và logo; cửa mở về +Y.",
+   "used_by": [
+    "ctrl_heater_cabinet:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c034 (tủ điện), giả định; mặt cửa ở Y −3 700 theo review-01 I2"
+    ],
+    "refs": [
+     "c034",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "1a6876758a14": {
+   "vi": "Màn hình cảm ứng + bàn phím màng điều khiển toàn dây chuyền; nút dừng khẩn.",
+   "used_by": [
+    "ctrl_hmi:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
+    ],
+    "refs": [
+     "img-p22_5",
+     "img-p23_4",
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "64e42041d94b": {
+   "vi": "Chân đế ống Ø120 cao 1 300 có khớp xoay đen, tay xoay ngắn; tấm HMI 800 × 510 × 120 nghiêng 15°, mặt hướng +Y.",
+   "used_by": [
+    "ctrl_hmi:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
+    ],
+    "refs": [
+     "img-p22_5",
+     "img-p23_4",
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "9d0f3fb36e32": {
+   "vi": "Nút dừng khẩn đỏ trên vỏ HMI.",
+   "used_by": [
+    "ctrl_hmi:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
+    ],
+    "refs": [
+     "img-p22_5",
+     "img-p23_4",
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "f70178806fb4": {
+   "vi": "Đưa cáp hạ thế 400 V từ tủ phân phối nhà máy vào tủ điều khiển + nhiệt.",
+   "used_by": [
+    "ctrl_infeed_lv:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định (≈ 500 kVA: nhiệt ≈ 260 kW + động cơ phụ)"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "69defc93ff7c": {
+   "vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ tủ phân phối' (tuyến tiếp theo thuộc nhà xưởng).",
+   "used_by": [
+    "ctrl_infeed_lv:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định (≈ 500 kVA: nhiệt ≈ 260 kW + động cơ phụ)"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "d7b88b67b401": {
+   "vi": "Đưa cáp trung thế 3 kV từ trạm biến áp nhà máy vào tủ biến tần.",
+   "used_by": [
+    "ctrl_infeed_mv:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định (≈ 1,8 MVA)"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "23236ec228af": {
+   "vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ trạm biến áp' (tuyến tiếp theo thuộc nhà xưởng).",
+   "used_by": [
+    "ctrl_infeed_mv:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "drawing review-01 I2; giả định (≈ 1,8 MVA)"
+    ],
+    "refs": [
+     "drev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "a3306d7aa3d7": {
+   "vi": "Tủ đấu dây tại chỗ cho truyền động: cấp nguồn cụm dầu, encoder, cảm biến hộp số, an toàn.",
+   "used_by": [
+    "ctrl_machine_cabinet:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 ghi chú 3 (khối cao trơn sau động cơ); web-06/07 (tủ trắng có dải xanh KM ở đầu dẫn động)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "web-06",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "2efd9e47befa": {
+   "vi": "Tủ 500 × 1 000 × 2 000, mặt +Y và −X sơn xanh KM có chữ KraussMaffei trắng chạy dọc, còn lại trắng; nút dừng khẩn trên mặt +Y.",
+   "used_by": [
+    "ctrl_machine_cabinet:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 ghi chú 3 (khối cao trơn sau động cơ); web-06/07 (tủ trắng có dải xanh KM ở đầu dẫn động)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "web-06",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "909a8d19c6c2": {
+   "vi": "Báo trạng thái máy (đỏ/vàng/xanh/còi).",
+   "used_by": [
+    "ctrl_signal_tower:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "fb3424fb62ef": {
+   "vi": "4 tầng đèn Ø70 + còi, cột Ø40.",
+   "used_by": [
+    "ctrl_signal_tower:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "9e427c01f29c": {
+   "vi": "Đưa cáp từ hào chính tới hộp đấu dây khuôn đặt trên sàn.",
+   "used_by": [
+    "ctrl_trench_die_branch:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I3/I6; giả định"
+    ],
+    "refs": [
+     "rev-I3",
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "a501e92a4395": {
+   "vi": "Nắp tôn rộng 200 phẳng sàn.",
+   "used_by": [
+    "ctrl_trench_die_branch:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I3/I6; giả định"
+    ],
+    "refs": [
+     "rev-I3",
+     "rev-I6"
+    ]
+   },
+   "notes": ""
+  },
+  "b0f1b79a34c6": {
+   "vi": "Dẫn cáp trung thế từ tủ biến tần tới động cơ dưới sàn, không vắt qua lối đi.",
+   "used_by": [
+    "ctrl_trench_mv:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I2; giả định"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "e20c720f441a": {
+   "vi": "Hào có nắp tôn mạ kẽm rộng 400 phẳng sàn.",
+   "used_by": [
+    "ctrl_trench_mv:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I2; giả định"
+    ],
+    "refs": [
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

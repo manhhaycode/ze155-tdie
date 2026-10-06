@@ -1,0 +1,1639 @@
+{
+ "version": 1,
+ "group": "barrel",
+ "lines": {
+  "0ca7fa864a43": {
+   "vi": "Nhận hạt PET từ miệng cấp liệu; làm mát bằng nước để hạt không chảy sớm.",
+   "used_by": [
+    "barrel_b1:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "344cb5315968": {
+   "vi": "Thân trụ Ø520, mặt bích Ø640 × 50 hai đầu; mỗi bích 20 lỗ Ø26 trên PCD 560 (mép lỗ cách mép bích 27 mm), một bích có gờ định tâm, bích kia có rãnh.",
+   "used_by": [
+    "barrel_b1:details[0]",
+    "barrel_b2:details[0]",
+    "barrel_b3:details[0]",
+    "barrel_b4:details[0]",
+    "barrel_b5:details[0]",
+    "barrel_b6:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "4fccbfffa464": {
+   "vi": "Sau mỗi bích thân tiện thắt Ø500 dài 40 mm (vùng đặt đai ốc), để có khe 12 mm cho khẩu 12 cạnh thành mỏng khi tháo vỏ nhiệt; vỏ nhiệt bắt đầu ngay sau đoạn thắt.",
+   "used_by": [
+    "barrel_b1:details[1]",
+    "barrel_b2:details[1]",
+    "barrel_b3:details[1]",
+    "barrel_b4:details[1]",
+    "barrel_b5:details[1]",
+    "barrel_b6:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "6bfa5899dc76": {
+   "vi": "Bên trong: lỗ hình số 8 rộng 311 × cao 169 (2 lỗ Ø169 tâm Y = ±71).",
+   "used_by": [
+    "barrel_b1:details[2]",
+    "barrel_b2:details[2]",
+    "barrel_b3:details[2]",
+    "barrel_b4:details[2]",
+    "barrel_b5:details[2]",
+    "barrel_b6:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "2c1c055c5181": {
+   "vi": "Lỗ nạp trên đỉnh 360 × 300 tại X 160–520, mặt gia công phẳng cho hộp miệng nạp.",
+   "used_by": [
+    "barrel_b1:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "f88d49a269bb": {
+   "vi": "Không có băng nhiệt; áo nước làm mát, 2 đầu nối nước ở đáy tại X = 200 (vào) và 476 (ra).",
+   "used_by": [
+    "barrel_b1:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "57340273293a": {
+   "vi": "Đầu X = 0: bích Ø640 bắt 20 bulông cấy M24 trên PCD 560 vào lantern, đai ốc 12 cạnh phía B1.",
+   "used_by": [
+    "barrel_b1:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "f2501f1f27fd": {
+   "vi": "Cặp nhiệt B1 cắm nghiêng 40° ở góc trên phía −Y, chân tại (X 338, Y -167, Z 1399), để tránh hộp miệng nạp.",
+   "used_by": [
+    "barrel_b1:details[6]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "e0a9aa21352b": {
+   "vi": "Vận chuyển hạt, nhận liệu phụ từ side feeder qua cửa bên +Y, bắt đầu nóng chảy ở cuối đoạn.",
+   "used_by": [
+    "barrel_b2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "a5e4c9715e0a": {
+   "vi": "Cửa bên +Y 340 × 260 tại X 1 180–1 520 (hình số 8 nhìn ngang) có mặt bích cho side feeder.",
+   "used_by": [
+    "barrel_b2:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "332ddbd6d835": {
+   "vi": "2 băng nhiệt có cửa sổ tránh cửa bên; lỗ khoan nước làm mát dọc thân.",
+   "used_by": [
+    "barrel_b2:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "724f9ad4b461": {
+   "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 876 (vào) và 1490 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
+   "used_by": [
+    "barrel_b2:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "9f53a694bc38": {
+   "vi": "Nóng chảy (khối nhào) rồi hút chân không nhẹ (≈ 50 mbar) ngay khi nhựa vừa chảy, rút phần lớn hơi nước trước khi PET bị thuỷ phân và không cho không khí lọt vào.",
+   "used_by": [
+    "barrel_b3:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "1ce0adb46e32": {
+   "vi": "Lỗ trên đỉnh 320 × 280 tại X 1 990–2 310 với tấm lót (vent insert); vòm chân không 2 lắp trên.",
+   "used_by": [
+    "barrel_b3:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "a4e1eeeeeec3": {
+   "vi": "2 băng nhiệt có khe tại lỗ.",
+   "used_by": [
+    "barrel_b3:details[4]",
+    "barrel_b5:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "b9621c0bbd36": {
+   "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 1890 (vào) và 2504 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
+   "used_by": [
+    "barrel_b3:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "a52af91ac997": {
+   "vi": "Trộn, đồng nhất nhựa nóng chảy; trước B5 có phần tử nghịch tạo nút nhựa kín chân không.",
+   "used_by": [
+    "barrel_b4:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "4422fb1d6171": {
+   "vi": "2 băng nhiệt, lỗ khoan nước làm mát, 1 cặp nhiệt.",
+   "used_by": [
+    "barrel_b4:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "4fe1f5b80c29": {
+   "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 2904 (vào) và 3518 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
+   "used_by": [
+    "barrel_b4:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "a7079581872d": {
+   "vi": "Hút chân không sâu (5–20 mbar) để khử nốt ẩm, acetaldehyde và oligome của PET không sấy.",
+   "used_by": [
+    "barrel_b5:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "3e809ad8284e": {
+   "vi": "Lỗ trên đỉnh 520 × 280 tại X 3 860–4 380 (≈ 3D) với tấm lót (vent insert); vòm chân không lắp trên.",
+   "used_by": [
+    "barrel_b5:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "f6e57d75bdf2": {
+   "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 3918 (vào) và 4532 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
+   "used_by": [
+    "barrel_b5:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "bdde748629bd": {
+   "vi": "Tăng áp đẩy nhựa vào đầu xi lanh.",
+   "used_by": [
+    "barrel_b6:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "a3fe3c0faefb": {
+   "vi": "Cổng bên +Y bịt mặt bích tròn (cổng phun lỏng dự phòng) tại X ≈ 5 400, Z = 1 200 – thấy qua tấm tròn 10 bulông của vỏ che C1 (trang 9).",
+   "used_by": [
+    "barrel_b6:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "11d9665c78fd": {
+   "vi": "Mặt bích ra X = 5 746: 20 bulông cấy M24 trên PCD 560 vào bích đầu xi lanh.",
+   "used_by": [
+    "barrel_b6:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "d45ca25c0615": {
+   "vi": "2 đầu nối nước làm mát ở góc dưới +Y (45°, Y 184, Z 1 016) tại X = 4932 (vào) và 5546 (ra), qua rãnh 50 mm của băng nhiệt; không đặt dưới gối đỡ.",
+   "used_by": [
+    "barrel_b6:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001 D = 169, c031 đoạn 4D/6D, c032 thép thấm nitơ; DECISIONS 9 (1×4D + 5×6D), DECISIONS 11 (nối bích bắt bulông); hình trụ có bích theo trang 12 (p12_barrel_types_utx_vs_ut); Ø thân 520 / bích 600 giả định (lỗ số 8 rộng 311 + thành ≈ 105)"
+    ],
+    "refs": [
+     "c001",
+     "c031",
+     "c032",
+     "dec-9",
+     "dec-11",
+     "cat-p12",
+     "crop-p12_barrel_types_utx_vs_ut_250dpi"
+    ]
+   },
+   "notes": ""
+  },
+  "fe9a07239066": {
+   "vi": "Dẫn cáp nhiệt, cặp nhiệt, cảm biến dọc máy về tủ điện.",
+   "used_by": [
+    "barrel_cable_tray:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01 (máng thép mạ kẽm đục lỗ dọc dưới xi lanh); phía −Y giả định"
+    ],
+    "refs": [
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "d22e59abf9f8": {
+   "vi": "Máng đục lỗ mạ kẽm 300 × 100 có nắp, chạy X −1 000 … 5 800 trên mép −Y của khung.",
+   "used_by": [
+    "barrel_cable_tray:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01 (máng thép mạ kẽm đục lỗ dọc dưới xi lanh); phía −Y giả định"
+    ],
+    "refs": [
+     "web-01"
+    ]
+   },
+   "notes": ""
+  },
+  "db671e2be5b9": {
+   "vi": "Cách nhiệt và che bề mặt nóng của xi lanh, giữ nhiệt ổn định, bảo vệ người vận hành.",
+   "used_by": [
+    "barrel_cover_c1:function",
+    "barrel_cover_c2:function",
+    "barrel_cover_c3:function",
+    "barrel_cover_c4:function",
+    "barrel_cover_c5:function",
+    "barrel_cover_c6:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "3aea5bcc88cb": {
+   "vi": "Hộp inox xước 1,5 mm có cách nhiệt bông khoáng bên trong, vát 45° hai mép trên (xem outline).",
+   "used_by": [
+    "barrel_cover_c1:details[0]",
+    "barrel_cover_c2:details[0]",
+    "barrel_cover_c3:details[0]",
+    "barrel_cover_c4:details[0]",
+    "barrel_cover_c5:details[0]",
+    "barrel_cover_c6:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "68aa1ff3b4a0": {
+   "vi": "Tấm dưới Z 650–1 150 tháo được; nắp trên Z 1 150–1 650 bản lề phía −Y, mở lên.",
+   "used_by": [
+    "barrel_cover_c1:details[1]",
+    "barrel_cover_c2:details[1]",
+    "barrel_cover_c3:details[1]",
+    "barrel_cover_c4:details[1]",
+    "barrel_cover_c5:details[1]",
+    "barrel_cover_c6:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "ccd0383d6841": {
+   "vi": "Mặt +Y: tay nắm đen trên nắp và trên tấm dưới, tam giác vàng 'bề mặt nóng' ở giữa (như trang 9); 1 tay nắm trên đỉnh.",
+   "used_by": [
+    "barrel_cover_c1:details[2]",
+    "barrel_cover_c2:details[2]",
+    "barrel_cover_c3:details[2]",
+    "barrel_cover_c4:details[2]",
+    "barrel_cover_c5:details[2]",
+    "barrel_cover_c6:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "6f98e8629a11": {
+   "vi": "Khe dưới hai bên cho ống nước và cáp nhiệt đi vào.",
+   "used_by": [
+    "barrel_cover_c1:details[3]",
+    "barrel_cover_c2:details[3]",
+    "barrel_cover_c3:details[3]",
+    "barrel_cover_c4:details[3]",
+    "barrel_cover_c5:details[3]",
+    "barrel_cover_c6:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "3114e969ceae": {
+   "vi": "Tấm đầu X = 5 746–5 760 có lỗ tròn Ø660 (bích Ø640); mặt +Y có tấm tròn Ø420 bắt 10 bulông tại X ≈ 5 400, Z = 1 200 (trang 9) che cổng bên B6, cùng một hộp đấu dây nhỏ phía dưới.",
+   "used_by": [
+    "barrel_cover_c1:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "e5a3d9afc242": {
+   "vi": "Lỗ khoét 620 × 420 cho vòm chân không.",
+   "used_by": [
+    "barrel_cover_c3:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "55591a3774ef": {
+   "vi": "Lỗ khoét 420 × 380 (X 1 940–2 360) cho vòm chân không vùng 1.",
+   "used_by": [
+    "barrel_cover_c6:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "4f00ec2344a6": {
+   "vi": "Tấm đầu phía X = 1 690 có lỗ Ø660 ôm vành bích Ø640 và đai ốc của mối nối 2 (nửa mối nối nằm ngoài vỏ, phía vùng nạp để lộ).",
+   "used_by": [
+    "barrel_cover_c6:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (6 vỏ hộp có tay nắm + tam giác cảnh báo, cao ≈ 0,98 × khoảng tâm, phủ ≈ 71 % chiều dài xi lanh); p16_1/p16_2; web-07"
+    ],
+    "refs": [
+     "meas-2.2",
+     "img-p16_1",
+     "img-p16_2",
+     "web-07"
+    ]
+   },
+   "notes": ""
+  },
+  "5575e4d138f7": {
+   "vi": "Dẫn nước từ cụm van lên lỗ khoan làm mát xi lanh và về.",
+   "used_by": [
+    "barrel_cw_hoses:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (ống mềm inox bọc lưới, đầu nối ở mặt bên dưới gần đầu đoạn); p05; vị trí theo review-01 I1"
+    ],
+    "refs": [
+     "web-02",
+     "cat-p05",
+     "rev-I1"
+    ]
+   },
+   "notes": ""
+  },
+  "acb2d99f20e9": {
+   "vi": "12 ống mềm inox bọc lưới DN15 (OD 24), mỗi đoạn 1 ống vào + 1 ống ra (đường đi trong paths_mm).",
+   "used_by": [
+    "barrel_cw_hoses:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (ống mềm inox bọc lưới, đầu nối ở mặt bên dưới gần đầu đoạn); p05; vị trí theo review-01 I1"
+    ],
+    "refs": [
+     "web-02",
+     "cat-p05",
+     "rev-I1"
+    ]
+   },
+   "notes": ""
+  },
+  "8fa6cac73fc8": {
+   "vi": "Ống vào: từ đỉnh cụm van (X tâm − 40) chéo tới X = đầu đoạn + 200, xuyên tấm dưới của vỏ che ở Y 480, Z ≈ 990, rồi vào đầu nối 45° dưới +Y; ống ra đối xứng ở X = cuối đoạn − 200.",
+   "used_by": [
+    "barrel_cw_hoses:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (ống mềm inox bọc lưới, đầu nối ở mặt bên dưới gần đầu đoạn); p05; vị trí theo review-01 I1"
+    ],
+    "refs": [
+     "web-02",
+     "cat-p05",
+     "rev-I1"
+    ]
+   },
+   "notes": ""
+  },
+  "d6fb9167c2e9": {
+   "vi": "B1: hai đầu nối ở đáy tại X 200 và 476; không ống nào đi dưới gối đỡ.",
+   "used_by": [
+    "barrel_cw_hoses:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (ống mềm inox bọc lưới, đầu nối ở mặt bên dưới gần đầu đoạn); p05; vị trí theo review-01 I1"
+    ],
+    "refs": [
+     "web-02",
+     "cat-p05",
+     "rev-I1"
+    ]
+   },
+   "notes": ""
+  },
+  "13ab3a64c204": {
+   "vi": "Gom nước hồi từ các vùng xi lanh.",
+   "used_by": [
+    "barrel_cw_return:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": ""
+  },
+  "880453a21999": {
+   "vi": "Ống inox DN50 (OD 60) song song phía ngoài ống cấp, Z = 800.",
+   "used_by": [
+    "barrel_cw_return:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": ""
+  },
+  "c64329da3cc4": {
+   "vi": "Phân phối nước làm mát tới các vùng xi lanh.",
+   "used_by": [
+    "barrel_cw_supply:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02, web-06 (ống góp inox dọc khung, 1 cụm van mỗi vùng); phía +Y theo web-06"
+    ],
+    "refs": [
+     "web-02",
+     "web-06"
+    ]
+   },
+   "notes": ""
+  },
+  "ad241248a38c": {
+   "vi": "Ống inox DN50 (OD 60), mũi tên chiều dòng, gá trên bát đỡ cách mặt khung 30 mm.",
+   "used_by": [
+    "barrel_cw_supply:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02, web-06 (ống góp inox dọc khung, 1 cụm van mỗi vùng); phía +Y theo web-06"
+    ],
+    "refs": [
+     "web-02",
+     "web-06"
+    ]
+   },
+   "notes": ""
+  },
+  "b19964c06101": {
+   "vi": "Đóng/mở nước làm mát từng vùng theo lệnh bộ điều nhiệt.",
+   "used_by": [
+    "barrel_cw_valves:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (mỗi vùng 1 van điện từ + van bi tay đỏ, đồng hồ áp); c023"
+    ],
+    "refs": [
+     "web-02",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "304d819d533b": {
+   "vi": "6 cụm tại X = 338, 1 183, 2 197, 3 211, 4 225, 5 239; mỗi cụm: van bi tay đỏ, lọc Y, van điện từ (cuộn đen), van tiết lưu, chỉ báo dòng chảy.",
+   "used_by": [
+    "barrel_cw_valves:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (mỗi vùng 1 van điện từ + van bi tay đỏ, đồng hồ áp); c023"
+    ],
+    "refs": [
+     "web-02",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "a6c7e88af200": {
+   "vi": "1 đồng hồ áp trên ống cấp, 1 trên ống hồi.",
+   "used_by": [
+    "barrel_cw_valves:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-02 (mỗi vùng 1 van điện từ + van bi tay đỏ, đồng hồ áp); c023"
+    ],
+    "refs": [
+     "web-02",
+     "c023"
+    ]
+   },
+   "notes": ""
+  },
+  "1a84a1d99672": {
+   "vi": "Đấu cáp băng nhiệt và cặp nhiệt của từng vùng vào cáp chính.",
+   "used_by": [
+    "barrel_heater_jboxes:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (hộp đấu vuông dưới mỗi đoạn xi lanh)"
+    ],
+    "refs": [
+     "web-01",
+     "web-02"
+    ]
+   },
+   "notes": ""
+  },
+  "d81cc18551d2": {
+   "vi": "7 hộp inox 180 × 120 × 200 có nắp kính nhỏ / ổ cắm công nghiệp, tại X = 338, 1 183, 2 197, 3 211, 4 225, 5 239, 5 700 (đầu xi lanh).",
+   "used_by": [
+    "barrel_heater_jboxes:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (hộp đấu vuông dưới mỗi đoạn xi lanh)"
+    ],
+    "refs": [
+     "web-01",
+     "web-02"
+    ]
+   },
+   "notes": ""
+  },
+  "9cad6bb4acb0": {
+   "vi": "Gia nhiệt xi lanh B2–B6, mỗi đoạn 6D một vùng nhiệt ≈ 25 kW.",
+   "used_by": [
+    "barrel_heater_shells:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (vỏ nhiệt inox bóng, mép có gân); c018 (30 kW/đoạn trên ZE 180) → 25 kW giả định"
+    ],
+    "refs": [
+     "web-01",
+     "web-02",
+     "c018"
+    ]
+   },
+   "notes": ""
+  },
+  "a7000c2ddd98": {
+   "vi": "10 vỏ (2 mỗi đoạn 6D), mỗi vỏ Ø580 dài 380, gồm 2 nửa bản lề, kẹp bằng 2 bulông, mép có vòng gân đục lỗ.",
+   "used_by": [
+    "barrel_heater_shells:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (vỏ nhiệt inox bóng, mép có gân); c018 (30 kW/đoạn trên ZE 180) → 25 kW giả định"
+    ],
+    "refs": [
+     "web-01",
+     "web-02",
+     "c018"
+    ]
+   },
+   "notes": ""
+  },
+  "e239bc80876e": {
+   "vi": "Mỗi vỏ bắt đầu cách mặt đầu đoạn 90 mm (chừa chỗ đai ốc của mối nối bích); giữa hai vỏ của một đoạn có băng thân trần 74 mm cho gối đỡ.",
+   "used_by": [
+    "barrel_heater_shells:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (vỏ nhiệt inox bóng, mép có gân); c018 (30 kW/đoạn trên ZE 180) → 25 kW giả định"
+    ],
+    "refs": [
+     "web-01",
+     "web-02",
+     "c018"
+    ]
+   },
+   "notes": ""
+  },
+  "5c30d7141f9b": {
+   "vi": "Vỏ có cửa sổ tại cửa bên B2 và lỗ đỉnh B3/B5; rãnh 50 mm ở góc dưới +Y tại X = đầu đoạn + 200 và cuối đoạn − 200 cho đầu nối nước.",
+   "used_by": [
+    "barrel_heater_shells:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (vỏ nhiệt inox bóng, mép có gân); c018 (30 kW/đoạn trên ZE 180) → 25 kW giả định"
+    ],
+    "refs": [
+     "web-01",
+     "web-02",
+     "c018"
+    ]
+   },
+   "notes": ""
+  },
+  "fe13b01590ce": {
+   "vi": "Hộp đấu nhỏ trên mỗi vỏ, cáp bọc lưới inox đi xuống hộp đấu dây phía −Y.",
+   "used_by": [
+    "barrel_heater_shells:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-01/02 (vỏ nhiệt inox bóng, mép có gân); c018 (30 kW/đoạn trên ZE 180) → 25 kW giả định"
+    ],
+    "refs": [
+     "web-01",
+     "web-02",
+     "c018"
+    ]
+   },
+   "notes": ""
+  },
+  "84fcb8bd4839": {
+   "vi": "Ép hai mặt bích Ø640 của hai đoạn xi lanh vào nhau cho kín áp nhựa, định tâm hai lỗ số 8; tháo được khi đổi cấu hình xi lanh.",
+   "used_by": [
+    "barrel_joint_1:function",
+    "barrel_joint_2:function",
+    "barrel_joint_3:function",
+    "barrel_joint_4:function",
+    "barrel_joint_5:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "1a2ef460e906": {
+   "vi": "20 bulông cấy M24 cấp 10.9 chịu nhiệt, mỗi bulông 2 đai ốc 12 cạnh (Ø36 qua đỉnh) có vòng đệm, trên PCD 560, chia đều 18°, lệch 9° để không có bulông đúng đỉnh/đáy.",
+   "used_by": [
+    "barrel_joint_1:details[0]",
+    "barrel_joint_2:details[0]",
+    "barrel_joint_3:details[0]",
+    "barrel_joint_4:details[0]",
+    "barrel_joint_5:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "ce76804cecf5": {
+   "vi": "Bulông dài 164: xuyên 2 bích × 50 mm, mỗi đầu đai ốc cao 24 + 8 mm ren thừa; đai ốc nằm trong vành r 262–298, trên đoạn thân thắt Ø500 (khe 12 mm), mép lỗ cách mép bích Ø640 27 mm.",
+   "used_by": [
+    "barrel_joint_1:details[1]",
+    "barrel_joint_2:details[1]",
+    "barrel_joint_3:details[1]",
+    "barrel_joint_4:details[1]",
+    "barrel_joint_5:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "8c0048dd3d1e": {
+   "vi": "Giữa hai bích: gờ định tâm (centring spigot) Ø400 và mặt kín kim loại; mặt ngoài vành bích tiện bóng, đai ốc thép đen.",
+   "used_by": [
+    "barrel_joint_1:details[2]",
+    "barrel_joint_2:details[2]",
+    "barrel_joint_3:details[2]",
+    "barrel_joint_4:details[2]",
+    "barrel_joint_5:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "55bf9ca9efe1": {
+   "vi": "Lực siết ≈ 20 × 200 kN = 4 MN, gấp ≈ 3 lần lực đẩy của nhựa 300 bar trên lỗ số 8 (≈ 1,2 MN).",
+   "used_by": [
+    "barrel_joint_1:details[3]",
+    "barrel_joint_2:details[3]",
+    "barrel_joint_3:details[3]",
+    "barrel_joint_4:details[3]",
+    "barrel_joint_5:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "2bd06d09fbf2": {
+   "vi": "Không dùng M30 trên PCD 545: đai ốc M30 (đối đỉnh 53 mm) sẽ chạm thân xi lanh Ø520.",
+   "used_by": [
+    "barrel_joint_1:details[4]",
+    "barrel_joint_2:details[4]",
+    "barrel_joint_3:details[4]",
+    "barrel_joint_4:details[4]",
+    "barrel_joint_5:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c037 (ZE cỡ lớn nối các đoạn bằng bulông thay kẹp), web-01/02 (vành bích bắt bulông trên ZE 110 R UT thật); DECISIONS 11; cỡ bulông giả định (tính lực siết, kiểm tra chỗ đặt đai ốc)"
+    ],
+    "refs": [
+     "c037",
+     "web-01",
+     "web-02",
+     "dec-11"
+    ]
+   },
+   "notes": ""
+  },
+  "c35b925c84a3": {
+   "vi": "Đo nhiệt độ từng vùng xi lanh cho bộ điều nhiệt.",
+   "used_by": [
+    "barrel_thermocouples:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (mỗi vùng 1 cặp nhiệt, như cáp nhiệt thấy ở web-01); vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "web-01",
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "bbbcaefa7132": {
+   "vi": "6 cặp nhiệt loại J Ø30 dài 90 (35 mm nằm trong thành xi lanh, 55 mm lộ ra): B1 cắm nghiêng 40° so với phương đứng về phía −Y, chân tại (338, -167, 1399) trên mặt thân, đầu dưới đáy hộp miệng nạp; còn lại cắm đứng trên đỉnh thân tại X = 1 450, 2 450, 3 211, 4 600, 5 239 (xuyên lỗ trên vỏ nhiệt), nắp lưỡi lê, cáp bọc lưới inox.",
+   "used_by": [
+    "barrel_thermocouples:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (mỗi vùng 1 cặp nhiệt, như cáp nhiệt thấy ở web-01); vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "web-01",
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "e24c633d029f": {
+   "vi": "item_mm = [Ø, Ø, dài] theo hệ trục riêng; trục từng cái trong item_axes.",
+   "used_by": [
+    "barrel_thermocouples:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (mỗi vùng 1 cặp nhiệt, như cáp nhiệt thấy ở web-01); vị trí theo review-01 C1"
+    ],
+    "refs": [
+     "web-01",
+     "rev-C1"
+    ]
+   },
+   "notes": ""
+  },
+  "8f0de34875f5": {
+   "vi": "Tạo buồng kín trên lỗ thoát khí B5 để hút chân không; kính quan sát cho thấy nhựa không trào lên.",
+   "used_by": [
+    "barrel_vent_dome:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vòm dạng hộp cao, 2 kính quan sát, tai trên đỉnh); p01 (kính tròn có tay kẹp); c036 lỗ dài"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p01",
+     "c036"
+    ]
+   },
+   "notes": ""
+  },
+  "0f74ad55a699": {
+   "vi": "Thân hộp inox 600 × 400, bo góc R40, từ Z 1 460 lên 2 100; nắp 640 × 450 dày 50 kẹp bằng 4 bulông bướm, 2 tai (lugs) trên nắp.",
+   "used_by": [
+    "barrel_vent_dome:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vòm dạng hộp cao, 2 kính quan sát, tai trên đỉnh); p01 (kính tròn có tay kẹp); c036 lỗ dài"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p01",
+     "c036"
+    ]
+   },
+   "notes": ""
+  },
+  "b217f1fdea3f": {
+   "vi": "2 kính quan sát Ø160 có vành kẹp trên mặt +Y tại X = 3 970 và 4 270, Z = 1 880.",
+   "used_by": [
+    "barrel_vent_dome:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vòm dạng hộp cao, 2 kính quan sát, tai trên đỉnh); p01 (kính tròn có tay kẹp); c036 lỗ dài"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p01",
+     "c036"
+    ]
+   },
+   "notes": ""
+  },
+  "d4288427bcd1": {
+   "vi": "Đầu ra chân không DN150 ở giữa nắp (X 4 120, Y 0, Z 2 150), đi thẳng lên van chặn; mặt −Y của vòm phẳng, không có cổng.",
+   "used_by": [
+    "barrel_vent_dome:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vòm dạng hộp cao, 2 kính quan sát, tai trên đỉnh); p01 (kính tròn có tay kẹp); c036 lỗ dài"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p01",
+     "c036"
+    ]
+   },
+   "notes": ""
+  },
+  "81b9f26d103c": {
+   "vi": "Tay nắm nâng nắp, đèn soi kính (tuỳ chọn).",
+   "used_by": [
+    "barrel_vent_dome:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (vòm dạng hộp cao, 2 kính quan sát, tai trên đỉnh); p01 (kính tròn có tay kẹp); c036 lỗ dài"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p01",
+     "c036"
+    ]
+   },
+   "notes": ""
+  },
+  "34c76b914d74": {
+   "vi": "Buồng kín trên lỗ B3, hút chân không nhẹ (≈ 50 mbar) để rút hơi nước ngay sau vùng chảy.",
+   "used_by": [
+    "barrel_vent_dome_2:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4 (PET không sấy: hút chân không ngay sau vùng chảy, c040, c062); cỡ giả định"
+    ],
+    "refs": [
+     "rev-I4",
+     "c040",
+     "c062"
+    ]
+   },
+   "notes": ""
+  },
+  "bd274c66402a": {
+   "vi": "Thân hộp inox 400 × 360 bo góc R30 từ Z 1 460 lên 1 920; nắp dày 40 (Z 1 920–1 960) kẹp 4 bulông bướm, 2 tai.",
+   "used_by": [
+    "barrel_vent_dome_2:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4 (PET không sấy: hút chân không ngay sau vùng chảy, c040, c062); cỡ giả định"
+    ],
+    "refs": [
+     "rev-I4",
+     "c040",
+     "c062"
+    ]
+   },
+   "notes": ""
+  },
+  "9648b2bdc7c4": {
+   "vi": "1 kính quan sát Ø120 có vành kẹp trên mặt +Y tại X 2 150, Z 1 750.",
+   "used_by": [
+    "barrel_vent_dome_2:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4 (PET không sấy: hút chân không ngay sau vùng chảy, c040, c062); cỡ giả định"
+    ],
+    "refs": [
+     "rev-I4",
+     "c040",
+     "c062"
+    ]
+   },
+   "notes": ""
+  },
+  "6edefc6b38fd": {
+   "vi": "Đầu ra DN100 có bích Ø220 trên mặt −Y tại X 2 150, Z 1 800.",
+   "used_by": [
+    "barrel_vent_dome_2:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 I4 (PET không sấy: hút chân không ngay sau vùng chảy, c040, c062); cỡ giả định"
+    ],
+    "refs": [
+     "rev-I4",
+     "c040",
+     "c062"
+    ]
+   },
+   "notes": ""
+  },
+  "bd7b5cdda32a": {
+   "vi": "Vận chuyển, nóng chảy, trộn, khử khí và tăng áp nhựa; tự làm sạch lẫn nhau.",
+   "used_by": [
+    "screws:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
+    ],
+    "refs": [
+     "c001",
+     "c002",
+     "spec-1",
+     "c017"
+    ]
+   },
+   "notes": ""
+  },
+  "41a9b8b42ae5": {
+   "vi": "2 trục tại Y = ±71, Z = 1 200, Ø ngoài 167,5, lõi 114,6, 2 đầu ren (2-flight).",
+   "used_by": [
+    "screws:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
+    ],
+    "refs": [
+     "c001",
+     "c002",
+     "spec-1",
+     "c017"
+    ]
+   },
+   "notes": ""
+  },
+  "f92ac5ad51ff": {
+   "vi": "Trình tự phần tử (X từ–tới): −400–0 trục then hoa trong lantern; 0–1 100 vận chuyển bước 1,5D (miệng nạp 160–520); 1 100–1 560 vận chuyển bước 1,5D dưới cửa side feeder (1 180–1 520); 1 560–1 880 khối nhào KB 45°/5 (nóng chảy); 1 880–1 950 KB 90° (nút nhựa, kết thúc trước lỗ vùng 1 ở 1 990); 1 950–2 420 vận chuyển bước rộng 1,5D dưới lỗ vùng 1 (1 990–2 310); 2 420–2 900 vận chuyển 1D; 2 900–3 380 khối nhào KB 45°/5 + KB 90° (trộn); 3 380–3 620 vận chuyển 1D; 3 620–3 720 phần tử nghịch LH (nút nhựa trước vùng 2); 3 720–4 450 vận chuyển bước rộng 1,5D dưới lỗ vùng 2 (3 860–4 380); 4 450–5 746 vận chuyển 1D → 0,75D (tăng áp).",
+   "used_by": [
+    "screws:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
+    ],
+    "refs": [
+     "c001",
+     "c002",
+     "spec-1",
+     "c017"
+    ]
+   },
+   "notes": ""
+  },
+  "70fabc921767": {
+   "vi": "Thấy được qua miệng nạp B1, cửa B3 và vòm B5; cho bản vẽ cắt riêng (cut-away).",
+   "used_by": [
+    "screws:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c001/c002 (D 169, rãnh 27,2 → lõi 114,6), centre distance 142 (specs §1); c017 (then hoa 24 răng trên ZE 180); trình tự phần tử giả định"
+    ],
+    "refs": [
+     "c001",
+     "c002",
+     "spec-1",
+     "c017"
+    ]
+   },
+   "notes": ""
+  }
+ }
+}

@@ -1,0 +1,1059 @@
+{
+ "version": 1,
+ "group": "feed",
+ "lines": {
+  "c24996ed5b56": {
+   "vi": "Định lượng phụ gia (masterbatch, chất chống dính) vào ống rơi chính.",
+   "used_by": [
+    "feed_additive_feeder:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §2 (cân trục vít đôi nhỏ K-ML-D5-T35); giả định"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "f49b454c9ee3": {
+   "vi": "Cân trục vít đôi 700 × 500 × 600 + phễu Ø500 cao 600 trên đỉnh.",
+   "used_by": [
+    "feed_additive_feeder:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §2 (cân trục vít đôi nhỏ K-ML-D5-T35); giả định"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "a72321c85aa9": {
+   "vi": "Dẫn phụ gia vào nhánh Y của ống rơi chính.",
+   "used_by": [
+    "feed_additive_tube:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "706300394433": {
+   "vi": "Ống inox Ø80 bắt đầu dưới ống mềm cách cân (Z 2 850).",
+   "used_by": [
+    "feed_additive_tube:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "0e7e1213b355": {
+   "vi": "Bộ điều khiển các cân (KCM), cấp nguồn máy hút liệu.",
+   "used_by": [
+    "feed_control_cabinet:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "6fe478b351af": {
+   "vi": "Tủ 600 × 300 × 1 400 RAL 7035 có màn hình nhỏ ở cửa.",
+   "used_by": [
+    "feed_control_cabinet:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "ef15dfa0bcfa": {
+   "vi": "Ống vận chuyển hạt từ silo tới máy hút liệu (vẽ tới mép trên khung nhìn).",
+   "used_by": [
+    "feed_conveying_line:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "5367092983e1": {
+   "vi": "Ống inox DN80 (OD 80), đầu trên để hở ký hiệu 'tới silo'.",
+   "used_by": [
+    "feed_conveying_line:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "41c076e02ac5": {
+   "vi": "Dẫn hạt từ cân cấp liệu trên sàn thao tác xuống phễu.",
+   "used_by": [
+    "feed_downpipe:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
+    ],
+    "refs": [
+     "web-04",
+     "rev-M8"
+    ]
+   },
+   "notes": ""
+  },
+  "53bd607709ff": {
+   "vi": "Ống inox Ø250: đoạn đứng từ Z 2 850 (dưới ống mềm cách cân) xuống Z 2 550, rồi nghiêng 45° xuống tới phễu; treo bằng giá dưới dầm sàn, vành chắn ở lỗ sàn không chạm ống.",
+   "used_by": [
+    "feed_downpipe:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
+    ],
+    "refs": [
+     "web-04",
+     "rev-M8"
+    ]
+   },
+   "notes": ""
+  },
+  "f897e781d09a": {
+   "vi": "Nhánh Y cho ống phụ gia tại Z = 2 700, cửa thăm có nắp.",
+   "used_by": [
+    "feed_downpipe:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
+    ],
+    "refs": [
+     "web-04",
+     "rev-M8"
+    ]
+   },
+   "notes": ""
+  },
+  "dabfd04d9385": {
+   "vi": "Tách cửa xả của các cân loss-in-weight khỏi ống cứng để ống không tì lên cân, giữ độ chính xác định lượng.",
+   "used_by": [
+    "feed_feeder_sleeves:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M8; giả định (thực hành chuẩn cho cân loss-in-weight)"
+    ],
+    "refs": [
+     "rev-M8"
+    ]
+   },
+   "notes": ""
+  },
+  "14019b568b5b": {
+   "vi": "3 ống bạt trắng dài 150 (Z 2 850–3 000) nằm trong lỗ sàn: Ø270 tại (−450, 0), Ø100 tại (−650, 850), Ø170 tại (1 350, 950); mỗi ống 2 đai kẹp inox.",
+   "used_by": [
+    "feed_feeder_sleeves:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "review-01 M8; giả định (thực hành chuẩn cho cân loss-in-weight)"
+    ],
+    "refs": [
+     "rev-M8"
+    ]
+   },
+   "notes": ""
+  },
+  "0f502b9d5e15": {
+   "vi": "Nối mềm ống rơi với phễu, cách rung và cho phép tháo nhanh.",
+   "used_by": [
+    "feed_flex_sleeve:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (ống mềm nối phổ biến dưới cân cấp liệu, thấy ở p01)"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "995da586f670": {
+   "vi": "Ống bạt trắng Ø260 dài 155 với 2 đai kẹp inox.",
+   "used_by": [
+    "feed_flex_sleeve:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (ống mềm nối phổ biến dưới cân cấp liệu, thấy ở p01)"
+    ],
+    "refs": [
+     "cat-p01"
+    ]
+   },
+   "notes": ""
+  },
+  "35c53cb1359f": {
+   "vi": "Gom hạt từ ống rơi xuống miệng nạp; cổng nghiêng 45° về phía hộp số.",
+   "used_by": [
+    "feed_hopper:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p06"
+    ]
+   },
+   "notes": ""
+  },
+  "890357ef2c59": {
+   "vi": "Phễu hình chóp ngược inox: đỉnh 500 × 500, đáy 360 × 300 (côn cả theo Y).",
+   "used_by": [
+    "feed_hopper:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p06"
+    ]
+   },
+   "notes": ""
+  },
+  "ff8b413a3c00": {
+   "vi": "Nắp đỉnh có cổ nghiêng 45° Ø250 hướng −X, cổng khí N₂ (inert) nhỏ, kính thăm và cảm biến mức.",
+   "used_by": [
+    "feed_hopper:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (phễu nhỏ có ống nạp nghiêng 45° về phía dẫn động); p06"
+    ],
+    "refs": [
+     "meas-2.2",
+     "cat-p06"
+    ]
+   },
+   "notes": ""
+  },
+  "85c7f154c257": {
+   "vi": "Định lượng 3 500 kg/h hạt PET theo khối lượng hao hụt.",
+   "used_by": [
+    "feed_main_feeder:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
+    ],
+    "refs": [
+     "c069"
+    ]
+   },
+   "notes": ""
+  },
+  "7896f0a651fe": {
+   "vi": "Thân bơm rắn BSP trên khung 3 cảm biến cân (load cells), động cơ hộp số phía −Y, hộp điều khiển KCM nhỏ phía +Y.",
+   "used_by": [
+    "feed_main_feeder:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
+    ],
+    "refs": [
+     "c069"
+    ]
+   },
+   "notes": ""
+  },
+  "4d9e19fc4b1e": {
+   "vi": "Cửa xả đáy tại X = −450, Y = 0.",
+   "used_by": [
+    "feed_main_feeder:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
+    ],
+    "refs": [
+     "c069"
+    ]
+   },
+   "notes": ""
+  },
+  "9af8e858ddde": {
+   "vi": "Chứa hạt cho cân, ≈ 450 L (≈ 6 phút ở 3,5 t/h).",
+   "used_by": [
+    "feed_main_hopper:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c069 (phễu nối thêm); dung tích giả định lớn hơn 320 dm³ để thời gian nạp lại hợp lý"
+    ],
+    "refs": [
+     "c069"
+    ]
+   },
+   "notes": ""
+  },
+  "2b154d20dc55": {
+   "vi": "Côn 400 + trụ Ø900 cao 800, kính thăm mức, cảm biến mức cao/thấp.",
+   "used_by": [
+    "feed_main_hopper:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "c069 (phễu nối thêm); dung tích giả định lớn hơn 320 dm³ để thời gian nạp lại hợp lý"
+    ],
+    "refs": [
+     "c069"
+    ]
+   },
+   "notes": ""
+  },
+  "cf44aae6163e": {
+   "vi": "Đỡ sàn thao tác xuống nền.",
+   "used_by": [
+    "feed_platform_columns_front:function",
+    "feed_platform_columns_rear:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "f1055aaff2f9": {
+   "vi": "3 cột HEB200 tại X = −2 600, −450, 1 750; Y = 1300; tấm đế 400 × 400, giằng góc dưới dầm.",
+   "used_by": [
+    "feed_platform_columns_front:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "7160017bf0cf": {
+   "vi": "3 cột HEB200 tại X = −2 600, −450, 1 750; Y = -2600; tấm đế 400 × 400, giằng góc dưới dầm.",
+   "used_by": [
+    "feed_platform_columns_rear:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "9351dea40fb5": {
+   "vi": "Mặt bằng đặt các cân cấp liệu, lối đi bảo trì trên cao.",
+   "used_by": [
+    "feed_platform_deck:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "6a2b57ff4b5d": {
+   "vi": "Dầm chính HEA180 (Z 2 780–2 960) + sàn lưới mạ kẽm 40 mm (Z 2 960–3 000).",
+   "used_by": [
+    "feed_platform_deck:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "d441779b90ed": {
+   "vi": "Lỗ sàn có vành chắn cho ống mềm cách cân của ống rơi chính (X −450, Y 0), ống phụ gia (X −650, Y 850), ống side feeder (X 1 350, Y 950); vành không chạm ống.",
+   "used_by": [
+    "feed_platform_deck:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "35e4c51e0a8f": {
+   "vi": "Diện tích 4 550 × 4 100 (Y −2 700 … 1 400), phủ trên lantern, hộp số, B1, B2; mép sau lùi ra để lối đi phía −Y rộng ≥ 950.",
+   "used_by": [
+    "feed_platform_deck:details[2]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "2f7f933d96dd": {
+   "vi": "Bố trí dầm (beams_mm, tâm dầm Z 2 870): dầm biên HEA180 theo X trên hai hàng cột (Y −2 600 và 1 300); dầm chính HEA180 theo Y trên các đường cột X −2 600, −450, 1 750.",
+   "used_by": [
+    "feed_platform_deck:details[3]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "9b1adea9a7ed": {
+   "vi": "Dầm chính X −450 bị ngắt tại Y ±260 quanh lỗ ống rơi chính (Ø270 + vành chắn); hai dầm viền (trimmer) HEA180 theo X ở Y ±260 từ X −760 tới −140 đỡ hai đầu dầm ngắt; đầu dầm viền tựa lên hai dầm phụ IPE160 theo Y tại X −760 và −140.",
+   "used_by": [
+    "feed_platform_deck:details[4]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "4bba4fc6a13d": {
+   "vi": "Dầm phụ IPE160 theo Y tại X −1 900, −1 200, 300, 1 000 đỡ tấm lưới (khoảng ≤ 750); lỗ ống phụ gia (−650, 850) và ống side feeder (1 350, 950) nằm giữa các dầm phụ.",
+   "used_by": [
+    "feed_platform_deck:details[5]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
+    ],
+    "refs": [
+     "web-04",
+     "web-05",
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "705609a75530": {
+   "vi": "Chống ngã từ sàn cao 3 m.",
+   "used_by": [
+    "feed_platform_railing:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (lan can và tấm chắn chân màu vàng)"
+    ],
+    "refs": [
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "e7b360999160": {
+   "vi": "Tay vịn ống Ø42 cao 1 100, thanh giữa 550, tấm chắn chân 150, cột bước ≤ 1 500, màu vàng an toàn.",
+   "used_by": [
+    "feed_platform_railing:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (lan can và tấm chắn chân màu vàng)"
+    ],
+    "refs": [
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "0b9157920c1b": {
+   "vi": "Chừa lối lên cầu thang ở mép −X đoạn Y −2 650 … −1 950.",
+   "used_by": [
+    "feed_platform_railing:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04/05 (lan can và tấm chắn chân màu vàng)"
+    ],
+    "refs": [
+     "web-04",
+     "web-05"
+    ]
+   },
+   "notes": ""
+  },
+  "d65fde4d7fe8": {
+   "vi": "Lối lên sàn cân cấp liệu (45°).",
+   "used_by": [
+    "feed_stair:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
+    ],
+    "refs": [
+     "web-04",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "69dad68b87a3": {
+   "vi": "Rộng 700, 45°, 15 bậc lưới cao 200, hai dầm thang (stringers) thép mạ kẽm, tay vịn vàng hai bên cao 1 000.",
+   "used_by": [
+    "feed_stair:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
+    ],
+    "refs": [
+     "web-04",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "f5dd49ee7d28": {
+   "vi": "Outline XZ là hình bao bên: mép dưới dầm thang từ (−5 400, 0) tới (−2 700, 2 700), tay vịn từ (−5 700, 1 000) tới (−2 700, 4 000).",
+   "used_by": [
+    "feed_stair:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
+    ],
+    "refs": [
+     "web-04",
+     "rev-I2"
+    ]
+   },
+   "notes": ""
+  },
+  "0933003fa30f": {
+   "vi": "Nối phễu với lỗ nạp B1, có áo nước làm mát chống dính hạt.",
+   "used_by": [
+    "feed_throat:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (miệng nạp 300 × 250 theo specs §2, nới thành 360 × 300 cho D 169)"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "5534ccf4618b": {
+   "vi": "Khối inox 500 × 420 × 185, lỗ trong 360 × 300, 2 đầu nối nước làm mát.",
+   "used_by": [
+    "feed_throat:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (miệng nạp 300 × 250 theo specs §2, nới thành 360 × 300 cho D 169)"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "324092530379": {
+   "vi": "Hút hạt từ silo và nạp lại phễu cân.",
+   "used_by": [
+    "feed_vacuum_loader:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §2 (máy hút liệu trên phễu); cỡ giả định"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "4ec95a187471": {
+   "vi": "Bình Ø640 cao 900 với nắp lọc, van lật đáy, cổng liệu vào bên +Y, cổng hút khí trên nắp.",
+   "used_by": [
+    "feed_vacuum_loader:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "specs §2 (máy hút liệu trên phễu); cỡ giả định"
+    ],
+    "refs": [
+     "spec-2"
+    ]
+   },
+   "notes": ""
+  },
+  "069a4145b522": {
+   "vi": "Nối thân side feeder vào cửa bên +Y của B2.",
+   "used_by": [
+    "sidefeed_adapter:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder (mặt bích bắt bulông vào hông xi lanh)"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3"
+    ]
+   },
+   "notes": ""
+  },
+  "4e9be21199af": {
+   "vi": "Tấm thép 370 × 80 × 320 lỗ hình số 8.",
+   "used_by": [
+    "sidefeed_adapter:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder (mặt bích bắt bulông vào hông xi lanh)"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3"
+    ]
+   },
+   "notes": ""
+  },
+  "09520cdf289c": {
+   "vi": "Ép liệu phụ (mảnh vụn biên tấm, phụ gia bột) vào cửa bên B2.",
+   "used_by": [
+    "sidefeed_barrel:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3",
+     "cat-p06",
+     "c024"
+    ]
+   },
+   "notes": ""
+  },
+  "045b7c70b8a5": {
+   "vi": "Thân hình số 8 ngang 330 × 260 dài 770 theo Y: hai cung tròn R130 tâm X 1 315 và 1 385 (outline_mm), eo nhỏ trên và dưới tại X 1 350; 2 lỗ trục vít Ø112 tâm X 1 305 và 1 395, trục theo Y tại Z = 1 200.",
+   "used_by": [
+    "sidefeed_barrel:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3",
+     "cat-p06",
+     "c024"
+    ]
+   },
+   "notes": ""
+  },
+  "9a4c9f1048b2": {
+   "vi": "Lỗ nạp đỉnh gần đầu ngoài, áo nước làm mát, bích hai đầu.",
+   "used_by": [
+    "sidefeed_barrel:details[1]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3",
+     "cat-p06",
+     "c024"
+    ]
+   },
+   "notes": ""
+  },
+  "9d3deef9557e": {
+   "vi": "Đỡ hộp số + động cơ, cho phép kéo side feeder ra theo +Y khi bảo trì.",
+   "used_by": [
+    "sidefeed_cart:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p06_cutaway_side_feeder_cart (xe thép trắng có bánh xe)"
+    ],
+    "refs": [
+     "crop-p06_cutaway_side_feeder_cart"
+    ]
+   },
+   "notes": ""
+  },
+  "51b117206543": {
+   "vi": "Khung thép trắng 500 × 1 090 cao 1 000, 4 bánh xe có khoá, tem cảnh báo điện.",
+   "used_by": [
+    "sidefeed_cart:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p06_cutaway_side_feeder_cart (xe thép trắng có bánh xe)"
+    ],
+    "refs": [
+     "crop-p06_cutaway_side_feeder_cart"
+    ]
+   },
+   "notes": ""
+  },
+  "92b172a92262": {
+   "vi": "Dẫn liệu phụ từ cân trên sàn xuống phễu side feeder.",
+   "used_by": [
+    "sidefeed_downpipe:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "f97e3d9320cd": {
+   "vi": "Ống inox Ø150 có đoạn ống mềm ở đáy.",
+   "used_by": [
+    "sidefeed_downpipe:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "c9144ccbd8c1": {
+   "vi": "Định lượng liệu phụ cho side feeder.",
+   "used_by": [
+    "sidefeed_feeder:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (cân trục vít đôi cỡ K-ML-D5-T35)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "58b6c7f9ab95": {
+   "vi": "Cân trục vít đôi trên 3 cảm biến cân, động cơ phía −X.",
+   "used_by": [
+    "sidefeed_feeder:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (cân trục vít đôi cỡ K-ML-D5-T35)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "525c3a37b9bb": {
+   "vi": "Chứa liệu phụ.",
+   "used_by": [
+    "sidefeed_feeder_hopper:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "b5d6a0c8a690": {
+   "vi": "Phễu Ø600 cao 700 có nắp.",
+   "used_by": [
+    "sidefeed_feeder_hopper:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "f1744da4e89e": {
+   "vi": "Giảm tốc và chia mômen ra 2 trục vít side feeder.",
+   "used_by": [
+    "sidefeed_gearbox:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p06 cutaway (hộp số + động cơ xám nhỏ trên xe đẩy); màu giả định"
+    ],
+    "refs": [
+     "cat-p06"
+    ]
+   },
+   "notes": ""
+  },
+  "5b379d5d17f1": {
+   "vi": "Hộp 350 × 350 × 400, nút thăm dầu.",
+   "used_by": [
+    "sidefeed_gearbox:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p06 cutaway (hộp số + động cơ xám nhỏ trên xe đẩy); màu giả định"
+    ],
+    "refs": [
+     "cat-p06"
+    ]
+   },
+   "notes": ""
+  },
+  "49b0d416e315": {
+   "vi": "Nhận liệu từ cân phụ.",
+   "used_by": [
+    "sidefeed_hopper:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3"
+    ]
+   },
+   "notes": ""
+  },
+  "06be4cccc1ed": {
+   "vi": "Phễu inox 300 × 260 cao 270, kính thăm.",
+   "used_by": [
+    "sidefeed_hopper:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "p08_side_feeder"
+    ],
+    "refs": [
+     "crop-p08_side_feeder_x3"
+    ]
+   },
+   "notes": ""
+  },
+  "6e218df47241": {
+   "vi": "Quay trục vít side feeder.",
+   "used_by": [
+    "sidefeed_motor:function"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (động cơ AC 22 kW biến tần)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  },
+  "a92787778a59": {
+   "vi": "Động cơ nằm Ø360 dài 600, nắp quạt, hộp đấu dây trên nóc.",
+   "used_by": [
+    "sidefeed_motor:details[0]"
+   ],
+   "status": "draft",
+   "facts": [],
+   "seed": {
+    "sources": [
+     "giả định (động cơ AC 22 kW biến tần)"
+    ],
+    "refs": []
+   },
+   "notes": ""
+  }
+ }
+}
