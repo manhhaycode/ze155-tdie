@@ -7,8 +7,37 @@
    "used_by": [
     "vac_bellows:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Vòm chân không của máy ZE nối với ống bằng ống mềm inox gợn sóng, mối nối bích kẹp",
+     "text_ja": "ZE 押出機の真空ドームは、クランプフランジ接続のステンレス波形フレキシブルホースで配管につながる",
+     "refs": [
+      "cat-p01",
+      "crop-p01_cover_vent_domes_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đổi hướng từ đứng sang ngang ngay trên vòm",
+     "text_ja": "ドーム直上で流れを縦方向から横方向へ変える",
+     "refs": [
+      "rev-M4|Take the outlet from the dome lid",
+      "design-10|M4 (độ cao ống chân không)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí đường chân không này; chọn lấy cửa ra từ nắp vòm, đi đứng rồi quay ngang, vì ống ngang thấp sẽ chạm đầu người trên lối đi (review thiết kế M4).",
+     "reason_ja": "この真空配管の配置に関する公開資料はない。設計では出口をドーム蓋から取り、縦に立ち上げてから横へ曲げた。横引きが低いと通路で頭がぶつかるため(設計レビュー M4)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hấp thụ giãn nở nhiệt và rung giữa vòm và ống",
+     "text_ja": "ドームと配管の間の熱膨張と振動を吸収する",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về công dụng của khớp này; chọn theo kiến thức chung về đường chân không (khớp mềm giữa xi lanh nóng và ống cố định). Catalogue chỉ cho thấy ống mềm nối vòm, không nói để làm gì.",
+     "reason_ja": "この継手の役割に関する公開資料はない。真空配管の一般知識として、高温バレルと固定配管の間に柔軟継手を入れる。カタログにはドームにつながるフレキシブルホースが写っているだけで、目的の記載はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (ống mềm inox gợn sóng)"
@@ -24,8 +53,39 @@
    "used_by": [
     "vac_bellows:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Vòm chân không của máy ZE nối với ống bằng ống mềm inox gợn sóng, mối nối bích kẹp",
+     "text_ja": "ZE 押出機の真空ドームは、クランプフランジ接続のステンレス波形フレキシブルホースで配管につながる",
+     "refs": [
+      "cat-p01",
+      "crop-p01_cover_vent_domes_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cút 90° DN150 từ đỉnh van (Z 2 260) lên tâm Z 2 300 rồi quay về −Y",
+     "text_ja": "DN150 の 90° エルボがバルブ上端(Z 2 260)から中心 Z 2 300 まで立ち上がり、−Y 方向へ向く",
+     "refs": [
+      "rev-M4|Run the horizontal at Z 2300",
+      "design-10|M4 (độ cao ống chân không)"
+     ],
+     "reason_vi": "Không có tài liệu về hình học này; tâm Z 2 300 chọn để đáy ống DN150 ở Z 2 216, trên chiều cao thông lối đi 2 100 (review thiết kế M4). Z 2 260 là đỉnh van chặn do thiết kế đặt.",
+     "reason_ja": "この形状の資料はない。DN150 管の管底が Z 2 216 となり、通路の有効高さ 2 100 を確保できるよう中心を Z 2 300 とした(設計レビュー M4)。Z 2 260 は設計で置いた遮断バルブの上端。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống xếp inox DN150 dài 200 (Y −120 … −320), 2 bích",
+     "text_ja": "DN150 ステンレスベローズ、長さ 200(Y −120 … −320)、フランジ 2 個",
+     "refs": [
+      "cat-p01"
+     ],
+     "reason_vi": "Không có tài liệu về kích thước ống xếp; chiều dài 200 và hai bích (mỗi đầu một bích) do thiết kế chọn. Ống mềm thật ở trang 1 catalogue dài và uốn cong, mô hình rút gọn thành đoạn ngắn thẳng.",
+     "reason_ja": "ベローズの寸法に関する資料はない。長さ 200 とフランジ 2 個(両端に 1 個ずつ)は設計で選んだ。カタログ 1 ページの実物ホースは長く曲がっているが、モデルでは短い直管に簡略化した。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (ống mềm inox gợn sóng)"
@@ -34,15 +94,35 @@
      "cat-p01"
     ]
    },
-   "notes": ""
+   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, nhưng mô hình đặt ống xếp nằm ngang sau cút (Y −120 … −320). Ống mềm thật trên trang 1 dài và cong, mô hình dùng đoạn ngắn thẳng."
   },
   "d586c87e4ec0": {
    "vi": "Hấp thụ giãn nở nhiệt giữa vòm B3 và ống.",
    "used_by": [
     "vac_bellows_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Vòm chân không của máy ZE nối với ống bằng ống mềm inox gợn sóng, mối nối bích kẹp",
+     "text_ja": "ZE 押出機の真空ドームは、クランプフランジ接続のステンレス波形フレキシブルホースで配管につながる",
+     "refs": [
+      "cat-p01",
+      "crop-p01_cover_vent_domes_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hấp thụ giãn nở nhiệt giữa vòm B3 và ống",
+     "text_ja": "ドーム B3 と配管の間の熱膨張を吸収する",
+     "refs": [
+      "rev-I4|Vent hardware"
+     ],
+     "reason_vi": "Không có tài liệu về khớp giãn nở ở vòm B3; review thiết kế I4 thêm ống xếp trên đường DN100 của vòm B3. Vòm gắn trên xi lanh nóng giãn nở khác với ống nên cần khớp mềm (kiến thức chung).",
+     "reason_ja": "ドーム B3 の伸縮継手に関する資料はない。設計レビュー I4 でドーム B3 の DN100 ラインにベローズが追加された。ドームは高温バレルに載って膨張量が配管と異なるため、柔軟継手が必要(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -58,8 +138,28 @@
    "used_by": [
     "vac_bellows_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Vòm chân không của máy ZE nối với ống bằng ống mềm inox gợn sóng, mối nối bích kẹp",
+     "text_ja": "ZE 押出機の真空ドームは、クランプフランジ接続のステンレス波形フレキシブルホースで配管につながる",
+     "refs": [
+      "cat-p01",
+      "crop-p01_cover_vent_domes_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống xếp inox DN100 dài 160",
+     "text_ja": "DN100 ステンレスベローズ、長さ 160",
+     "refs": [
+      "rev-I4|Vent hardware"
+     ],
+     "reason_vi": "Không có tài liệu về cỡ này; review thiết kế I4 chỉ ghi có ống xếp trên đường DN100. Chiều dài 160 do thiết kế chọn.",
+     "reason_ja": "このサイズの資料はない。設計レビュー I4 は DN100 ラインにベローズがあるとだけ記している。長さ 160 は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -75,8 +175,19 @@
    "used_by": [
     "vac_bleed_valve:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Chỉnh mức chân không chung bằng van kim, phá chân không bằng van bi trước khi mở vòm",
+     "text_ja": "全体の真空度をニードルバルブで調整し、ドームを開く前にボールバルブで真空を破壊する",
+     "refs": [
+      "design-10|M4 (độ cao ống chân không)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về van điều chỉnh/xả của cụm chân không này; chọn đặt trên ống ra của bình tách vì phải đưa đường hút về áp khí quyển trước khi mở nắp vòm và cần chỉnh mức hút chung của hai vùng (thực hành chung).",
+     "reason_ja": "この真空ユニットの調整/ブリードバルブに関する公開資料はない。ドーム蓋を開く前に吸引ラインを大気圧に戻す必要があり、両ゾーン共通の真空度も調整するため、セパレーター出口配管に置いた(一般的な方法)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -90,8 +201,30 @@
    "used_by": [
     "vac_bleed_valve:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van kim + van bi nhỏ tay đỏ trên đỉnh ống ra",
+     "text_ja": "出口配管の上部にニードルバルブ + 赤ハンドルの小型ボールバルブ",
+     "refs": [
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu về loại van hay màu tay van; chọn van kim để chỉnh mịn và van bi để mở nhanh khi phá chân không (thực hành chung). Tay đỏ theo màu tay van trên ống góp nước của ZE 110 R (web-02), không phải van chân không.",
+     "reason_ja": "バルブの種類やハンドル色の資料はない。微調整にニードルバルブ、真空破壊時の急開にボールバルブを選んだ(一般的な方法)。赤ハンドルは ZE 110 R の水マニホールドのバルブ色(web-02)にならったもので、真空バルブではない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cao ≈ 1,7 m để thao tác từ sàn",
+     "text_ja": "床から操作できるよう高さ ≈ 1,7 m",
+     "refs": [
+      "rev-M4|Raise the support post",
+      "design-10|M4 (độ cao ống chân không)"
+     ],
+     "reason_vi": "Không có tài liệu về độ cao thao tác; review thiết kế M4 chỉ yêu cầu dời van điều chỉnh/xả theo cao độ ống mới. 1,7 m là tầm với từ sàn do thiết kế chọn.",
+     "reason_ja": "操作高さの資料はない。設計レビュー M4 は新しい配管高さに合わせてバルブを移すことだけを求めた。1,7 m は床から手が届く高さとして設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -105,8 +238,27 @@
    "used_by": [
     "vac_control_box:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Cụm hút chân không có hộp điều khiển tại chỗ gắn trên khung, có công tắc chính, nút bấm và đèn báo",
+     "text_ja": "真空ユニットには、フレームに取り付けた現場制御ボックスがあり、メインスイッチ、押しボタン、表示灯が付く",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: cụm Busch PLASTEX (hãng khác, dùng bơm claw MINK chứ không phải Roots) có hộp điều khiển với công tắc chính, nút bấm và đèn báo. Chỉ dùng làm mẫu.",
+     "reason_ja": "写真 web-15 で確認:Busch PLASTEX ユニット(他社製、ルーツではなく MINK クローポンプ)の制御ボックスにメインスイッチ、押しボタン、表示灯がある。見本としてのみ使用。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chức năng khởi động bơm, đo áp suất và khoá liên động",
+     "text_ja": "ポンプの起動、圧力計測、インターロック",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về mạch điều khiển của cụm này; chọn chức năng theo thực hành chung cho cụm hút chân không của máy đùn (bật/tắt bơm, đọc áp suất từ cảm biến vòm, khoá liên động).",
+     "reason_ja": "このユニットの制御回路に関する公開資料はない。押出機の真空ユニットで一般的な機能(ポンプの起動停止、ドームのセンサーからの圧力読取り、インターロック)とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-15 (hộp điều khiển xám có công tắc chính đỏ-vàng)"
@@ -115,15 +267,44 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "web-15 là cụm Busch (hãng khác, W2) nên chỉ xếp ≈, không ✓. Bộ nguồn không có tài liệu về khoá liên động của cụm chân không."
   },
   "eb7794a1e051": {
    "vi": "Hộp 400 × 200 × 800, công tắc chính đỏ-vàng, đèn báo; mặt hướng +Y ra lối đi.",
    "used_by": [
     "vac_control_box:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Công tắc chính đỏ-vàng và đèn báo trên mặt hộp",
+     "text_ja": "制御ボックス前面に赤黄のメインスイッチと表示灯",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: công tắc xoay tay đỏ trên nền vàng, đèn báo và nút bấm trên cửa hộp điều khiển Busch (hãng khác).",
+     "reason_ja": "写真 web-15 で確認:Busch 制御ボックスの扉に、黄色地に赤ハンドルのロータリースイッチ、表示灯、押しボタンがある(他社製)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp 400 × 200 × 800",
+     "text_ja": "ボックス 400 × 200 × 800",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về cỡ tủ; ảnh web-15 cho thấy hộp cùng loại nhưng không có số đo. Cỡ do thiết kế chọn.",
+     "reason_ja": "盤のサイズに関する資料はない。web-15 には同種のボックスが写るが寸法はない。サイズは設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt hướng +Y ra lối đi",
+     "text_ja": "前面は通路側の +Y 向き",
+     "refs": [
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu về hướng đặt; bố trí phụ trợ do người thiết kế chọn: hộp bắt lên skid, mặt cửa quay ra lối đi phía −Y để thao tác.",
+     "reason_ja": "向きの資料はない。補助機器の配置は設計者が選んだ。ボックスはスキッドに取り付け、扉を −Y 側の通路へ向けて操作できるようにした。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-15 (hộp điều khiển xám có công tắc chính đỏ-vàng)"
@@ -139,8 +320,30 @@
    "used_by": [
     "vac_drain:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Bình tách của cụm hút chân không có van xả đáy tay đỏ để tháo nước ngưng",
+     "text_ja": "真空ユニットのセパレーター容器には、凝縮水を抜く赤ハンドルの底部ドレンバルブがある",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: bình lọc Busch có van xả đáy tay đỏ ở đáy (hãng khác).",
+     "reason_ja": "写真 web-15 で確認:Busch のフィルター容器の底に赤ハンドルのドレンバルブがある(他社製)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xả được khi máy đang chạy mà không phá chân không (nồi xả kiểu khoá)",
+     "text_ja": "運転中でも真空を破らずに排出できる(ロックポット方式)",
+     "refs": [
+      "rev-M5|Build a lock pot",
+      "design-10|M5 (xả ngưng)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về nồi xả kiểu khoá; ảnh web-15 chỉ có một van xả đáy, phải đóng khi đang hút. Thiết kế chọn nồi khoá theo review M5 vì một van bi đơn sẽ để bình tách đầy nước trong khi chạy.",
+     "reason_ja": "ロックポットに関する公開資料はない。web-15 にはドレンバルブが 1 つあるだけで、吸引中は閉じておく必要がある。設計ではレビュー M5 に従いロックポットを選んだ。ボールバルブ 1 個では運転中にセパレーターが水で満たされるため。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M5; web-15 (van xả đáy tay đỏ)"
@@ -150,15 +353,36 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "web-15 là hãng khác (Busch), nên phần van xả đáy chỉ là ≈."
   },
   "236ddc5b5332": {
    "vi": "Nồi Ø300 cao 350 (Z 50–400) trên 3 chân ngắn, nằm giữa 3 chân bình tách.",
    "used_by": [
     "vac_drain:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nồi Ø300 cao 350 (Z 50–400)",
+     "text_ja": "ポット Ø300、高さ 350(Z 50–400)",
+     "refs": [
+      "rev-M5|Build a lock pot"
+     ],
+     "reason_vi": "Không có tài liệu về kích thước nồi xả; review thiết kế M5 đề xuất nồi Ø300 × 400. Thiết kế dựng thân nồi cao 350 (Z 50–400), van trên ở Z 400–450.",
+     "reason_ja": "ロックポットの寸法に関する資料はない。設計レビュー M5 は Ø300 × 400 のポットを提案した。設計では高さ 350(Z 50–400)の胴とし、上部バルブを Z 400–450 に置いた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 chân ngắn, nằm giữa 3 chân bình tách",
+     "text_ja": "短脚 3 本、セパレーターの 3 本脚の間に配置",
+     "refs": [
+      "rev-M5|Raise the separator legs"
+     ],
+     "reason_vi": "Không có tài liệu về chân đỡ; review M5 nâng chân bình tách thêm 150 mm để nồi xả đặt vừa. Nồi đặt giữa ba chân bình tách, thẳng dưới cổng xả, do thiết kế chọn.",
+     "reason_ja": "脚に関する資料はない。レビュー M5 でロックポットが入るようセパレーター脚が 150 mm かさ上げされた。ポットは排出口の真下となるよう、セパレーターの 3 本脚の間に置いた(設計で選択)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M5; web-15 (van xả đáy tay đỏ)"
@@ -175,8 +399,30 @@
    "used_by": [
     "vac_drain:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van trên (thường mở) ở Z 400–450, van thông hơi trên nắp nồi, van xả đáy",
+     "text_ja": "上部バルブ(常時開)は Z 400–450、ポット蓋にベントバルブ、底部にドレンバルブ",
+     "refs": [
+      "rev-M5|Build a lock pot"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cấu hình van của nồi khoá; ba van (van trên thường mở, van thông hơi, van xả đáy) theo review thiết kế M5. Cao độ Z do thiết kế đặt.",
+     "reason_ja": "ロックポットのバルブ構成に関する公開資料はない。3 つのバルブ(常時開の上部、ベント、ドレン)は設計レビュー M5 による。Z の高さは設計で置いた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 tay van màu đỏ",
+     "text_ja": "バルブハンドル 3 個は赤色",
+     "refs": [
+      "rev-M5|Build a lock pot",
+      "web-15"
+     ],
+     "reason_vi": "Review thiết kế M5 quy định ba van đều tay đỏ; ảnh web-15 chỉ cho thấy một van xả đáy tay đỏ trên bình Busch (hãng khác), nên chỉ minh hoạ màu. Không có tài liệu về màu tay van của nồi khoá thật.",
+     "reason_ja": "設計レビュー M5 は 3 つのバルブすべてを赤ハンドルと定めた。web-15 には Busch 容器の赤ハンドルのドレンバルブが 1 つ写るだけで、色の例示にとどまる(他社製)。実機のロックポットのハンドル色の資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M5; web-15 (van xả đáy tay đỏ)"
@@ -193,8 +439,19 @@
    "used_by": [
     "vac_drain:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Xả: đóng van trên, mở thông hơi, mở van xả; xong đóng lại rồi mở van trên",
+     "text_ja": "排出手順:上部バルブを閉じ、ベントを開き、ドレンバルブを開く。完了後はすべて閉じ、上部バルブを開く",
+     "refs": [
+      "rev-M5|Build a lock pot"
+     ],
+     "reason_vi": "Không có tài liệu về quy trình xả; trình tự theo nguyên lý nồi khoá (cách ly nồi khỏi bình, thông hơi, xả, đóng lại, nối lại) và ba van trong review thiết kế M5.",
+     "reason_ja": "排出手順の資料はない。手順はロックポットの原理(ポットをタンクから切り離し、ベントし、排出し、閉じ、再接続する)と、設計レビュー M5 の 3 つのバルブによる。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M5; web-15 (van xả đáy tay đỏ)"
@@ -204,15 +461,26 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "Trình tự không có bước hút lại nồi trước khi mở van trên; bộ nguồn không có tài liệu để đối chiếu."
   },
   "0216f8032398": {
    "vi": "Xả khí sau bơm ra ngoài nhà xưởng.",
    "used_by": [
     "vac_exhaust:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khí sau bơm được xả ra ngoài nhà xưởng",
+     "text_ja": "ポンプ後段の排気を工場外へ排出する",
+     "refs": [
+      "design-7|Vùng 1 trên B3"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường xả của cụm này; chọn dẫn khí xả ra ngoài nhà vì khí hút có acetaldehyde và hơi hữu cơ từ nhựa (design §7), không thải vào xưởng.",
+     "reason_ja": "このユニットの排気ラインに関する公開資料はない。吸引ガスには樹脂由来のアセトアルデヒドや有機蒸気が含まれる(設計書 §7)ため、工場内へ放出せず屋外へ導くことにした。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -226,8 +494,17 @@
    "used_by": [
     "vac_exhaust:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống DN100 đứng có bình giảm thanh, đầu trên để hở 'ra ngoài'",
+     "text_ja": "DN100 の立て管、消音器付き、上端は開放(「屋外へ」)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về ống xả; cỡ DN100, bình giảm thanh và đầu hở do thiết kế chọn (ống xả bơm chân không thường có giảm thanh vì bơm ồn).",
+     "reason_ja": "排気管の資料はない。DN100、消音器、開放端は設計で選んだ(真空ポンプは騒音が大きく、排気管に消音器を付けるのが一般的)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -241,8 +518,19 @@
    "used_by": [
     "vac_gauge_dome:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đồng hồ chân không trên nắp vòm B5 để người vận hành đọc mức chân không tại chỗ",
+     "text_ja": "ドーム B5 の蓋に真空計を付け、オペレーターが現場で真空度を読む",
+     "refs": [
+      "cat-p01"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đồng hồ chân không trên vòm B5. Trang 1 catalogue chỉ cho thấy vòm có kính quan sát và ống mềm, không thấy đồng hồ; chọn đặt đồng hồ trên nắp để đọc áp suất tại vòm (thực hành chung).",
+     "reason_ja": "ドーム B5 の真空計に関する公開資料はない。カタログ 1 ページにはのぞき窓付きドームとフレキシブルホースが写るだけで、真空計は見えない。蓋に取り付けてドームの圧力を現場で読めるようにした(一般的な方法)。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (đồng hồ trên đường chân không); giả định"
@@ -251,15 +539,32 @@
      "cat-p01"
     ]
    },
-   "notes": ""
+   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định."
   },
   "9667f5bc1022": {
    "vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất tuyệt đối (truyền tín hiệu).",
    "used_by": [
     "vac_gauge_dome:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đồng hồ Ø100 mặt hướng +Y",
+     "text_ja": "Ø100 ゲージ(+Y 向き)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về đồng hồ; Ø100 là cỡ mặt đồng hồ công nghiệp thông dụng, mặt hướng +Y để người vận hành đứng phía +Y đọc được (thiết kế chọn).",
+     "reason_ja": "真空計に関する資料はない。Ø100 は一般的な工業用ゲージの文字盤サイズ。+Y 側に立つオペレーターが読めるよう、文字盤を +Y に向けた(設計で選択)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cảm biến áp suất tuyệt đối truyền tín hiệu",
+     "text_ja": "絶対圧センサー(信号伝送用)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cảm biến; chọn cảm biến áp suất tuyệt đối vì mức chân không tính theo áp tuyệt đối (mbar) và cần tín hiệu về hệ điều khiển (thực hành chung).",
+     "reason_ja": "センサーに関する公開資料はない。真空度は絶対圧(mbar)で扱い、制御系へ信号を送る必要があるため、絶対圧センサーを選んだ(一般的な方法)。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (đồng hồ trên đường chân không); giả định"
@@ -268,15 +573,26 @@
      "cat-p01"
     ]
    },
-   "notes": ""
+   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định."
   },
   "f25c32a32955": {
    "vi": "Hiển thị mức chân không vùng 1.",
    "used_by": [
     "vac_gauge_dome_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hiển thị mức chân không vùng 1 trên đồng hồ ở vòm B3",
+     "text_ja": "ドーム B3 の真空計でゾーン 1 の真空度を表示する",
+     "refs": [
+      "rev-I4|Wiring"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đồng hồ vùng 1; review thiết kế I4 yêu cầu thêm đồng hồ chân không thứ hai cho vòm B3.",
+     "reason_ja": "ゾーン 1 の真空計に関する公開資料はない。設計レビュー I4 でドーム B3 に 2 個目の真空計を追加するよう求められた。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -292,8 +608,19 @@
    "used_by": [
     "vac_gauge_dome_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất",
+     "text_ja": "Ø100 ゲージ(+Y 向き)+ 圧力センサー",
+     "refs": [
+      "rev-I4|Wiring"
+     ],
+     "reason_vi": "Không có tài liệu về cỡ đồng hồ; review I4 chỉ yêu cầu có đồng hồ thứ hai. Ø100, mặt hướng +Y và cảm biến lấy giống đồng hồ trên vòm B5 (thiết kế chọn).",
+     "reason_ja": "ゲージサイズの資料はない。レビュー I4 は 2 個目の真空計を求めただけ。Ø100、+Y 向き、センサーはドーム B5 の真空計と同じにした(設計で選択)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -309,8 +636,28 @@
    "used_by": [
     "vac_pipe:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
+     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đường vùng 2 đi từ vòm B5 vào nắp bình tách dùng chung",
+     "text_ja": "ゾーン 2 のラインは、ドーム B5 から共通セパレーターの蓋へ入る",
+     "refs": [
+      "design-7|Hai vùng dùng chung một bình tách",
+      "rev-I4|Line:"
+     ],
+     "reason_vi": "Không có tài liệu về bố trí đường hút của máy này; thiết kế cho hai vùng dùng chung một bình tách: vùng 2 vào nắp bình, vùng 1 vào cổng bên.",
+     "reason_ja": "この機械の吸引ライン配置に関する資料はない。設計では 2 つのゾーンが 1 つのセパレーターを共用し、ゾーン 2 は容器の蓋、ゾーン 1 は側面ポートに入る。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (DN150 theo specs §3); cao độ theo review-01 M4"
@@ -327,8 +674,40 @@
    "used_by": [
     "vac_pipe:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox DN150 (OD 168)",
+     "text_ja": "DN150 ステンレス管(外径 168)",
+     "refs": [
+      "spec-3|Cửa thoát khí chân không trên B5"
+     ],
+     "reason_vi": "Không có tài liệu về cỡ ống; specs ghi ống DN 150 cho vòm B5 nhưng cột nguồn chỉ dẫn miệng 6D và ước lượng nắp, không nêu nguồn cho cỡ ống. OD 168 là đường kính ngoài tiêu chuẩn của ống DN150 (kiến thức chung, bộ nguồn không có).",
+     "reason_ja": "配管サイズの資料はない。仕様書はドーム B5 に DN 150 の管と記すが、出典欄は 6D 開口と蓋の推定のみで、管サイズの出典はない。外径 168 は DN150 管の標準外径(一般知識で、資料セットにはない)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đi ngang theo −Y ở tâm Z 2 300; đáy ống Z 2 216 = 2 300 − 168/2, trên lối đi cao 2 100",
+     "text_ja": "−Y 方向に水平配管、中心 Z 2 300、管底 Z 2 216 = 2 300 − 168/2、通路の有効高さ 2 100 の上",
+     "refs": [
+      "rev-M4|Walkway headroom",
+      "rev-M4|Run the horizontal at Z 2300"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cao độ; review thiết kế M4 đòi chiều cao thông lối đi 2 100 nên nâng ống ngang lên tâm Z 2 300 (đáy Z 2 216).",
+     "reason_ja": "高さに関する公開資料はない。設計レビュー M4 が通路の有効高さ 2 100 を求めたため、水平管を中心 Z 2 300(管底 Z 2 216)へ上げた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xuống bình tách tại Y −2 700",
+     "text_ja": "Y −2 700 でセパレーターへ下降",
+     "refs": [
+      "design-10|bình tách ở Y −2 700"
+     ],
+     "reason_vi": "Vị trí bình tách do người thiết kế chọn: cụm chân không lùi ra phía −Y để chừa lối đi, bình tách ở Y −2 700 (review thiết kế I2); không có tài liệu công khai.",
+     "reason_ja": "セパレーターの位置は設計者が選んだ。通路を確保するため真空ユニットを −Y 側へ下げ、セパレーターを Y −2 700 とした(設計レビュー I2)。公開資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (DN150 theo specs §3); cao độ theo review-01 M4"
@@ -345,8 +724,25 @@
    "used_by": [
     "vac_pipe_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
+     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm PET không sấy dùng bơm Roots hai cấp (chân không tới hạn ≈ 10 Pa, nguồn nhà sản xuất TQ)",
+     "text_ja": "未乾燥 PET シートラインは二段ルーツ真空ポンプを使う(到達真空 ≈ 10 Pa、中国メーカー資料)",
+     "refs": [
+      "c062"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; nâng lên DN150 theo drawing review-01 M1"
@@ -355,15 +751,36 @@
      "drev-M1"
     ]
    },
-   "notes": ""
+   "notes": "c062 có độ tin cậy thấp (trang web nhà sản xuất Trung Quốc); chỉ dùng để nói loại bơm Roots hai cấp, không dùng cho cỡ bơm."
   },
   "bc1ae05e11e8": {
    "vi": "Ống inox DN150 (OD 168), bằng cỡ bích hút của bơm Roots; vận tốc ≈ 30 m/s ở 2 000 m³/h.",
    "used_by": [
     "vac_pipe_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox DN150 (OD 168), bằng cỡ bích hút của bơm Roots",
+     "text_ja": "DN150(外径 168)ステンレス管、ルーツポンプの吸込みフランジと同径",
+     "refs": [
+      "drev-M1|Fix:"
+     ],
+     "reason_vi": "Không có tài liệu về bích hút của bơm Roots (cỡ bơm là giả định); review bản vẽ M1 nâng ống từ DN100 (OD 120) lên DN150–200 cho khớp bích hút. OD 168 là đường kính ngoài tiêu chuẩn của ống DN150.",
+     "reason_ja": "ルーツポンプの吸込みフランジの資料はない(ポンプ容量は仮定)。図面レビュー M1 は吸込みフランジに合わせ、配管を DN100(外径 120)から DN150–200 へ拡大するよう求めた。外径 168 は DN150 管の標準外径。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vận tốc ≈ 30 m/s ở 2 000 m³/h: v = Q/A = (2 000/3 600)/(π/4 × 0,15²) ≈ 31 m/s",
+     "text_ja": "流速 ≈ 30 m/s(2 000 m³/h 時):v = Q/A = (2 000/3 600)/(π/4 × 0,15²) ≈ 31 m/s",
+     "refs": [
+      "drev-M1|What is wrong"
+     ],
+     "reason_vi": "Phép tính từ hai giá trị do thiết kế chọn (lưu lượng bơm 2 000 m³/h, đường kính trong danh nghĩa 150 mm), không phải số liệu của hãng nên xếp giả định. Cùng cách tính cho DN100 trong review bản vẽ M1 cho ≈ 70 m/s.",
+     "reason_ja": "設計で選んだ 2 つの値(ポンプ容量 2 000 m³/h、公称内径 150 mm)からの計算で、メーカー値ではないため仮定とした。図面レビュー M1 の DN100 も同じ計算で ≈ 70 m/s になる。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; nâng lên DN150 theo drawing review-01 M1"
@@ -372,15 +789,35 @@
      "drev-M1"
     ]
    },
-   "notes": ""
+   "notes": "v tính với đường kính trong danh nghĩa 150 mm (≈ 31 m/s). Nếu dùng OD 168 trừ thành ≈ 3 mm thì ≈ 27 m/s; số ≈ 30 vẫn đúng bậc."
   },
   "0dc6cc3c1f2f": {
    "vi": "Dẫn hơi nước từ vòm B3 tới cổng bên của bình tách ngưng.",
    "used_by": [
     "vac_pipe_3:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
+     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đường vùng 1 đi từ vòm B3 vào cổng bên của bình tách dùng chung",
+     "text_ja": "ゾーン 1 のラインは、ドーム B3 から共通セパレーターの側面ポートへ入る",
+     "refs": [
+      "rev-I4|Line:",
+      "design-7|Hai vùng dùng chung một bình tách"
+     ],
+     "reason_vi": "Không có tài liệu về bố trí đường hút của máy này; review thiết kế I4 đề xuất đưa đường vùng 1 vào cổng thứ hai của bình tách, dùng chung bình với vùng 2.",
+     "reason_ja": "この機械の吸引ライン配置に関する資料はない。設計レビュー I4 は、ゾーン 1 のラインをセパレーターの 2 つ目のポートへ入れ、ゾーン 2 と容器を共用するよう提案した。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -396,8 +833,29 @@
    "used_by": [
     "vac_pipe_3:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox DN100 (OD 114)",
+     "text_ja": "DN100 ステンレス管(外径 114)",
+     "refs": [
+      "rev-I4|Vent hardware"
+     ],
+     "reason_vi": "Không có tài liệu về cỡ ống; DN100 theo review thiết kế I4. OD 114 là đường kính ngoài tiêu chuẩn của ống DN100 (kiến thức chung, bộ nguồn không có).",
+     "reason_ja": "配管サイズの資料はない。DN100 は設計レビュー I4 による。外径 114 は DN100 管の標準外径(一般知識で、資料セットにはない)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lên đứng ngoài vỏ che tại Y −560 tới Z 2 250, đi ngang về −Y tới Y −2 700, theo +X tới X 3 700, xuống tới Z 1 400 rồi vào bình tách",
+     "text_ja": "Y −560 でカバーの外側を立ち上げて Z 2 250 に達し、−Y 方向へ Y −2 700 まで水平に配管、+X 方向へ X 3 700 まで進み、Z 1 400 まで下降してセパレーターに入る",
+     "refs": [
+      "rev-I4|Line:"
+     ],
+     "reason_vi": "Không có tài liệu về tuyến ống; review thiết kế I4 đề xuất đi tới Y −2 700 rồi theo X ở Z 2 250 vào cổng thứ hai của bình tách. Các toạ độ còn lại (Y −560, X 3 700, Z 1 400) do thiết kế chọn.",
+     "reason_ja": "配管ルートの資料はない。設計レビュー I4 は Y −2 700 まで進み、Z 2 250 で X 方向へ走らせ、セパレーターの 2 つ目のポートに入れるよう提案した。残りの座標(Y −560、X 3 700、Z 1 400)は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -413,8 +871,19 @@
    "used_by": [
     "vac_pipe_support:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cột đỡ đoạn ống ngang DN150",
+     "text_ja": "DN150 の水平配管部を支える柱",
+     "refs": [
+      "rev-M4|Raise the support post"
+     ],
+     "reason_vi": "Không có tài liệu về cột đỡ; đoạn ống DN150 nằm ngang dài ≈ 2,4 m (Y −340 … −2 700) trên cao nên cần một điểm đỡ giữa (thực hành chung); review thiết kế M4 chỉ yêu cầu nâng cột theo cao độ ống.",
+     "reason_ja": "支持柱の資料はない。DN150 の水平部は長さ ≈ 2,4 m(Y −340 … −2 700)で高所にあるため、中間支持が要る(一般的な方法)。設計レビュー M4 は配管高さに合わせて柱を上げることだけを求めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -428,8 +897,27 @@
    "used_by": [
     "vac_pipe_support:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống thép Ø100 có tấm đế và đai ôm trên đỉnh",
+     "text_ja": "ベースプレートと上端のパイプクランプ付き Ø100 鋼管",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về kết cấu cột; cột ống có tấm đế và đai ôm là cách đỡ ống thường dùng, Ø100 do thiết kế chọn.",
+     "reason_ja": "柱の構造の資料はない。ベースプレートとパイプクランプ付きの管柱は配管支持でよく使う方法で、Ø100 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tại Y −1 900 (ngoài lối đi dọc khung)",
+     "text_ja": "Y −1 900 に設置(フレーム沿い通路の外側)",
+     "refs": [
+      "design-10|bình tách ở Y −2 700"
+     ],
+     "reason_vi": "Không có tài liệu công khai; vị trí do người thiết kế chọn: cụm chân không lùi ra phía −Y để chừa lối đi, cột đỡ ống ở Y −1 900 (review thiết kế I2).",
+     "reason_ja": "公開資料はない。位置は設計者が選んだ。通路を確保するため真空ユニットを −Y 側へ下げ、配管支持柱を Y −1 900 に置いた(設計レビュー I2)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -443,8 +931,30 @@
    "used_by": [
     "vac_pump_unit:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
+     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chân không vùng 2 (vòm B5) 5–20 mbar, vùng 1 (vòm B3) ≈ 50 mbar qua van tiết lưu",
+     "text_ja": "ゾーン 2(ドーム B5)は 5–20 mbar、ゾーン 1(ドーム B3)は絞りバルブ経由で ≈ 50 mbar",
+     "refs": [
+      "design-9|Hai vùng chân không",
+      "spec-3|Mức chân không cho PET không sấy",
+      "c061",
+      "c062"
+     ],
+     "reason_vi": "Bộ nguồn không có mức chân không cho ZE 155 chạy PET không sấy; thiết kế chọn ≈ 50 mbar cho vùng 1 và 5–20 mbar cho vùng 2. Tham khảo: compounding thường 100–300 mbar (c061); dây chuyền PET không sấy hút tới ≈ 10 Pa (c062, độ tin cậy thấp).",
+     "reason_ja": "ZE 155 で未乾燥 PET を加工するときの真空度は資料にない。設計ではゾーン 1 を ≈ 50 mbar、ゾーン 2 を 5–20 mbar とした。参考:一般的なコンパウンドは 100–300 mbar(c061)、未乾燥 PET ラインでは ≈ 10 Pa まで(c062、信頼度低)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
@@ -456,15 +966,58 @@
      "design-7"
     ]
    },
-   "notes": ""
+   "notes": "spec-3 ghi \"1–10 mbar\" dẫn c062, nhưng c062 nêu 10 Pa (≈ 0,1 mbar, mức tới hạn): lệch bậc so với specs. Thiết kế dùng 5–20 mbar, không khớp cả hai số."
   },
   "64bdd57eaf2d": {
    "vi": "Khung skid thép đen 1 800 × 1 100: bơm Roots ≈ 2 000 m³/h trên bơm trục vít khô ≈ 400 m³/h làm mát bằng nước, động cơ, giảm thanh.",
    "used_by": [
     "vac_pump_unit:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm PET không sấy dùng bơm Roots hai cấp (chân không tới hạn ≈ 10 Pa, nguồn nhà sản xuất TQ)",
+     "text_ja": "未乾燥 PET シートラインは二段ルーツ真空ポンプを使う(到達真空 ≈ 10 Pa、中国メーカー資料)",
+     "refs": [
+      "c062"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khung thép đen, bơm đặt trên khung thép đen như cụm Busch trong ảnh",
+     "text_ja": "黒い鋼製フレームの上にポンプを載せる(写真の Busch ユニットと同様)",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: bơm Busch MINK đặt trên khung thép đen có bánh xe. Ảnh là cụm hãng khác với bơm claw, chỉ dùng cho màu và kiểu khung, không cho kích thước.",
+     "reason_ja": "写真 web-15 で確認:Busch MINK ポンプはキャスター付きの黒い鋼製フレーム上にある。他社製のクローポンプのユニットで、色とフレーム形式の参考にのみ使い、寸法には使わない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bơm Roots ≈ 2 000 m³/h trên bơm trục vít khô ≈ 400 m³/h làm mát bằng nước",
+     "text_ja": "水冷ドライスクリューポンプ ≈ 400 m³/h の上にルーツポンプ ≈ 2 000 m³/h",
+     "refs": [
+      "design-7|Hai vùng dùng chung một bình tách",
+      "design-9|Cỡ cụm chân không",
+      "c059",
+      "c063"
+     ],
+     "reason_vi": "Bộ nguồn không có cỡ cụm chân không cho PET không sấy 3,5 t/h (design §9 mục 4: chưa có nguồn đáng tin); cỡ do thiết kế chọn theo tải ẩm ≈ 7–14 kg/h. Tham khảo: bơm Busch MINK 200 m³/h (c059), TK-V 160 m³/h (c063), nhỏ hơn nhiều.",
+     "reason_ja": "未乾燥 PET 3,5 t/h 向け真空ユニットの容量は資料にない(設計書 §9 項目 4:信頼できる出典なし)。容量は水分負荷 ≈ 7–14 kg/h から設計で選んだ。参考:Busch MINK は 200 m³/h(c059)、TK-V は 160 m³/h(c063)で、はるかに小さい。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khung skid 1 800 × 1 100, động cơ, giảm thanh",
+     "text_ja": "スキッドフレーム 1 800 × 1 100、モーター、消音器",
+     "refs": [
+      "spec-3|Cụm chân không",
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu về khung skid; specs ước skid ≈ 2 000 × 1 200 (cao 1 800), thiết kế thu thành 1 800 × 1 100 và đặt phía −Y. Động cơ và bộ giảm thanh là bộ phận thường có của cụm bơm.",
+     "reason_ja": "スキッドフレームの資料はない。仕様書はスキッドを ≈ 2 000 × 1 200(高さ 1 800)と推定し、設計では 1 800 × 1 100 に縮めて −Y 側に置いた。モーターと消音器はポンプユニットに通常付く部品。"
+    }
+   ],
    "seed": {
     "sources": [
      "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
@@ -476,15 +1029,36 @@
      "design-7"
     ]
    },
-   "notes": ""
+   "notes": "Cỡ 2 000 và 400 m³/h lớn gấp ≈ 10 lần bơm tham khảo (c059, c063); design §9 mục 4 nói chưa có nguồn đáng tin. c062 độ tin cậy thấp, chỉ dùng cho loại bơm Roots hai cấp."
   },
   "607049eac9ba": {
    "vi": "Vỏ bơm đen/cam như web-15; ống góp nước vào/ra ở mặt −X, Z 400.",
    "used_by": [
     "vac_pump_unit:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Vỏ bơm màu đen có nhãn và lưới cam",
+     "text_ja": "ポンプケーシングは黒でオレンジのラベルとグリル",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Màu quan sát trên ảnh web-15 (bơm Busch MINK: thân đen, nhãn và lưới cam). Bơm của thiết kế là Roots + trục vít khô nên chỉ lấy màu.",
+     "reason_ja": "色は写真 web-15 で確認(Busch MINK ポンプ:黒い本体にオレンジのラベルとグリル)。設計のポンプはルーツ + ドライスクリューなので、色だけを借りた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống góp nước vào/ra ở mặt −X, Z 400",
+     "text_ja": "水マニホールドの入口/出口は −X 面、Z 400",
+     "refs": [
+      "design-10|I7 (nước cho phụ trợ)"
+     ],
+     "reason_vi": "Không có tài liệu về cổng nước của cụm bơm; review thiết kế I7 thêm ống nước cho skid chân không. Vị trí mặt −X, Z 400 do thiết kế chọn để nối với đầu nối nước ở sàn.",
+     "reason_ja": "ポンプユニットの水ポートの資料はない。設計レビュー I7 で真空スキッドへの水配管が追加された。−X 面、Z 400 の位置は床の水接続口につなぐよう設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c059/c060 (Busch MINK, PLASTEX), c062 (PET không sấy dùng Roots hai cấp); cỡ giả định (design.md §7)"
@@ -503,8 +1077,21 @@
    "used_by": [
     "vac_reg_valve_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tiết lưu để vùng 1 giữ ≈ 50 mbar khi vùng 2 vẫn đạt 5–20 mbar trên cùng cụm bơm",
+     "text_ja": "同じポンプユニットでゾーン 2 が 5–20 mbar を保ったまま、ゾーン 1 を ≈ 50 mbar に保つよう絞る",
+     "refs": [
+      "rev-I4|Line:",
+      "rev-I4|Vent hardware",
+      "design-9|Hai vùng chân không"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách giữ hai mức chân không trên một cụm bơm; review thiết kế I4 đề xuất van tiết lưu trên đường vùng 1 để vùng 2 giữ 5–20 mbar. Hai mức 50 và 5–20 mbar do thiết kế chọn.",
+     "reason_ja": "1 台のポンプユニットで 2 つの真空度を保つ方法に関する公開資料はない。設計レビュー I4 は、ゾーン 2 が 5–20 mbar を保てるようゾーン 1 のラインに絞りバルブを置くよう提案した。50 mbar と 5–20 mbar の 2 水準は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -520,8 +1107,27 @@
    "used_by": [
     "vac_reg_valve_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van tiết lưu tay quay DN100 trên đoạn ống đứng",
+     "text_ja": "DN100 手動ハンドル式絞りバルブを立て管部に設置",
+     "refs": [
+      "rev-I4|Vent hardware"
+     ],
+     "reason_vi": "Không có tài liệu về kiểu van; review thiết kế I4 chỉ ghi van tiết lưu chỉnh tay (manual regulating valve). Tay quay và vị trí trên đoạn ống đứng do thiết kế chọn.",
+     "reason_ja": "バルブ形式の資料はない。設計レビュー I4 は手動の絞りバルブ(manual regulating valve)とだけ記している。ハンドルと立て管部への設置は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tay quay hướng +Y ở cao 1,65 m; đồng hồ chân không nhỏ bên cạnh",
+     "text_ja": "ハンドルは +Y 向きで高さ 1,65 m、隣に小型真空計",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai; cao độ 1,65 m (tầm tay từ sàn) và đồng hồ nhỏ cạnh van để chỉnh theo số đọc tại chỗ do thiết kế chọn.",
+     "reason_ja": "公開資料はない。高さ 1,65 m(床から手が届く位置)と、現場の指示値を見て調整できるバルブ隣の小型真空計は、設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -537,8 +1143,36 @@
    "used_by": [
     "vac_separator:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
+     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Bộ hút chân không đùn Trendelkamp TK-V (TK-V 160 = 160 m³/h) gồm buồng ngưng điều nhiệt và bơm vòng nước",
+     "text_ja": "Trendelkamp の押出機用真空ユニット TK-V(TK-V 160 = 160 m³/h)は、温調式の凝縮チャンバーと液封ポンプから成る",
+     "refs": [
+      "c063"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Gom hơi nước, oligome và bụi của cả hai vùng vào một bình",
+     "text_ja": "両ゾーンの水蒸気、オリゴマー、粉塵を 1 つの容器に集める",
+     "refs": [
+      "design-7|Hai vùng dùng chung một bình tách",
+      "rev-I4|Line:"
+     ],
+     "reason_vi": "Không có tài liệu về thành phần ngưng của PET ở máy này (oligome là kiến thức chung về đùn PET); hai vùng dùng chung một bình tách là chọn của thiết kế (review I4, design §7).",
+     "reason_ja": "この機械の PET 凝縮物の組成に関する資料はない(オリゴマーは PET 押出の一般知識)。2 つのゾーンで 1 つのセパレーターを共用するのは設計の選択(レビュー I4、設計書 §7)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
@@ -549,15 +1183,73 @@
      "c063"
     ]
    },
-   "notes": ""
+   "notes": "Câu \"buồng ngưng điều nhiệt + bơm vòng nước\" nằm ở phần claim của c063, không nằm trong dòng quote (chỉ có hàng bảng TK-V 160); kiểm lại trên tài liệu gốc. Oligome là kiến thức chung nên xếp giả định."
   },
   "5e594d3f311a": {
    "vi": "Bình đứng Ø600 cao 1 450 (Z 450–1 900) trên 3 chân cao 450 (nâng 150 để đặt nồi xả), nắp bích bắt bulông, ống xoắn làm mát bên trong (nước 10–15 °C), kính thăm mức, đồng hồ chân không.",
    "used_by": [
     "vac_separator:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bình tách/lọc đứng đặt trước bơm chân không",
+     "text_ja": "ポンプの手前に置く縦型のセパレーター/フィルター容器",
+     "refs": [
+      "c060"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Thân inox đứng, nắp bích bắt bulông cánh",
+     "text_ja": "ステンレスの縦型胴で、ボルト締めフランジ蓋",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: bình lọc Busch inox đứng, nắp bích bắt bulông cánh. Hãng khác, chỉ dùng cho kiểu dáng, không cho kích thước.",
+     "reason_ja": "写真 web-15 で確認:Busch のステンレス縦型フィルター容器で、フランジ蓋を蝶ボルトで締めている。他社製で、形式の参考にのみ使い、寸法には使わない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bình đứng Ø600 cao 1 450 (Z 450–1 900)",
+     "text_ja": "縦型容器 Ø600、高さ 1 450(Z 450–1 900)",
+     "refs": [
+      "spec-3|Cụm chân không"
+     ],
+     "reason_vi": "Không có tài liệu về kích thước bình; specs chỉ ước cả skid chân không ≈ 2 000 × 1 200 × 1 800 và nêu bình tách đứng bằng inox. Ø600 × 1 450 do thiết kế chọn.",
+     "reason_ja": "容器寸法の資料はない。仕様書は真空スキッド全体を ≈ 2 000 × 1 200 × 1 800 と推定し、ステンレス縦型セパレーターとだけ記す。Ø600 × 1 450 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 chân cao 450, nâng 150 để đặt nồi xả",
+     "text_ja": "高さ 450 の脚 3 本(ロックポット設置のため 150 かさ上げ)",
+     "refs": [
+      "rev-M5|Raise the separator legs"
+     ],
+     "reason_vi": "Không có tài liệu về chân bình; review thiết kế M5 nâng chân bình tách thêm 150 mm (còn 450) để đặt vừa nồi xả.",
+     "reason_ja": "容器脚の資料はない。設計レビュー M5 はロックポットを置くため、セパレーター脚を 150 mm かさ上げ(450 に)するよう求めた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống xoắn làm mát bên trong (nước 10–15 °C)",
+     "text_ja": "内部冷却コイル(水 10–15 °C)",
+     "refs": [
+      "c063",
+      "design-7|Hai vùng dùng chung một bình tách"
+     ],
+     "reason_vi": "Không có tài liệu về ống xoắn hay nhiệt độ nước của bình này; bộ TK-V có buồng ngưng điều nhiệt (c063) nên thiết kế chọn ống xoắn làm lạnh, nước 10–15 °C do thiết kế chọn (design §7).",
+     "reason_ja": "この容器の冷却コイルや水温に関する資料はない。TK-V には温調式凝縮チャンバーがある(c063)ため冷却コイルを選び、水温 10–15 °C は設計で選んだ(設計書 §7)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kính thăm mức và đồng hồ chân không",
+     "text_ja": "液面サイトグラスと真空計",
+     "refs": [],
+     "reason_vi": "Chi tiết phụ thường có trên bình tách; không có tài liệu cho máy này.",
+     "reason_ja": "分離容器によくある付属品で、この機械の資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
@@ -568,15 +1260,48 @@
      "c063"
     ]
    },
-   "notes": ""
+   "notes": "web-15 là hãng Busch (W2) nên chỉ xếp ≈; ✓ chỉ dựa vào c060 (bình lọc đứng đặt trước bơm)."
   },
   "a5dbc0cad4e6": {
    "vi": "Cổng: nắp (vùng 2, DN150), bên −X ở Z 1 400 (vùng 1, DN100), ra bên +X ở Z 1 600 (DN150), 2 cổng nước bên +X ở Z 1 000 và 1 100.",
    "used_by": [
     "vac_separator:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Bình có cổng bích bên hông để vào và cổng ra bên hông phía dưới",
+     "text_ja": "容器には側面のフランジポート(入口)と下側の側面出口がある",
+     "refs": [
+      "web-15"
+     ],
+     "reason_vi": "Quan sát trên ảnh web-15: bình Busch có cổng bích bên hông phía trên nối ống mềm và cổng ra bên hông phía dưới nối sang bơm (hãng khác, chỉ minh hoạ kiểu cổng).",
+     "reason_ja": "写真 web-15 で確認:Busch 容器の上側の側面にホース接続のフランジポート、下側の側面にポンプへ向かう出口がある(他社製、ポート形式の例示のみ)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cổng vào nắp (vùng 2, DN150), bên −X ở Z 1 400 (vùng 1, DN100); cổng ra bên +X ở Z 1 600 (DN150)",
+     "text_ja": "蓋の入口(ゾーン 2、DN150)、−X 側 Z 1 400(ゾーン 1、DN100)、+X 側出口 Z 1 600(DN150)",
+     "refs": [
+      "rev-I4|Line:",
+      "drev-M1|Fix:",
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu về cổng; vùng 1 vào cổng bên là đề xuất của review thiết kế I4 (cổng vào thứ hai), cổng ra DN150 theo review bản vẽ M1. Cao độ Z do thiết kế chọn.",
+     "reason_ja": "ポートの資料はない。ゾーン 1 を側面ポートへ入れるのは設計レビュー I4(2 つ目の入口)の提案、DN150 の出口は図面レビュー M1 による。Z の高さは設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 cổng nước bên +X ở Z 1 000 và 1 100",
+     "text_ja": "+X 側の水ポート 2 か所(Z 1 000 と Z 1 100)",
+     "refs": [
+      "design-10|I7 (nước cho phụ trợ)"
+     ],
+     "reason_vi": "Không có tài liệu về cổng nước; review thiết kế I7 thêm nước cho ống xoắn của bình tách. Vị trí do thiết kế chọn.",
+     "reason_ja": "水ポートの資料はない。設計レビュー I7 でセパレーターのコイルへの水配管が追加された。位置は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c060 (Busch PLASTEX: bình lọc đứng trước bơm), web-15; c063 (buồng ngưng có làm mát)"
@@ -594,8 +1319,19 @@
    "used_by": [
     "vac_valve:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van chặn cách ly vòm B5 khỏi đường hút khi mở vòm hoặc khởi động",
+     "text_ja": "ドームを開くときや起動時に、ドーム B5 を吸引ラインから隔離する遮断バルブ",
+     "refs": [
+      "rev-M4|Take the outlet from the dome lid"
+     ],
+     "reason_vi": "Không có tài liệu công khai về van chặn trên đường hút của vòm; chọn đặt van chặn để cách ly vòm khi mở nắp và khi khởi động bơm (thực hành chung). Vị trí đứng trên nắp vòm theo review thiết kế M4.",
+     "reason_ja": "ドームの吸引ラインの遮断バルブに関する公開資料はない。蓋を開くときやポンプ起動時にドームを隔離するため遮断バルブを置いた(一般的な方法)。ドーム蓋上の縦置きは設計レビュー M4 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
@@ -611,8 +1347,36 @@
    "used_by": [
     "vac_valve:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van bướm DN150 có bộ tác động khí nén vuông",
+     "text_ja": "DN150 バタフライバルブ + 角形空圧アクチュエータ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về van; van bướm bộ tác động khí nén là loại thường dùng để đóng/mở từ xa van chặn cỡ DN150 (thực hành chung); ghi chú nguồn của thiết kế cũng ghi giả định.",
+     "reason_ja": "バルブに関する資料はない。空圧アクチュエータ付きバタフライバルブは DN150 の遮断バルブを遠隔で開閉する際によく使う(一般的な方法)。設計の出典欄にも仮定と記されている。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đặt đứng trên nắp vòm (Z 2 150–2 260)",
+     "text_ja": "ドーム蓋上に縦置き(Z 2 150–2 260)",
+     "refs": [
+      "rev-M4|Take the outlet from the dome lid",
+      "design-10|M4 (độ cao ống chân không)"
+     ],
+     "reason_vi": "Review thiết kế M4 chuyển cửa ra lên nắp vòm, van và ống xếp đứng trên Z 2 150–2 400 để ống ngang nâng cao hơn lối đi. Chiều cao van 110 do thiết kế chọn.",
+     "reason_ja": "設計レビュー M4 は出口をドーム蓋へ移し、バルブとベローズを Z 2 150–2 400 に縦置きして水平管を通路より高くするよう求めた。バルブ高さ 110 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ tác động nằm ngang phía −Y (Y −300 … −110)",
+     "text_ja": "アクチュエータは −Y 側に水平配置(Y −300 … −110)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về vị trí bộ tác động; hướng −Y và khoảng Y −300 … −110 do thiết kế chọn.",
+     "reason_ja": "アクチュエータの位置の資料はない。−Y 向きと Y −300 … −110 の範囲は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
@@ -621,15 +1385,27 @@
      "rev-M4"
     ]
    },
-   "notes": ""
+   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, mô hình đặt van Z 2 150–2 260 rồi cút (xem dòng của vac_bellows)."
   },
   "a74b371a86ff": {
    "vi": "Ống khí Ø12 tới bộ tác động (util_air_tube_vac).",
    "used_by": [
     "vac_valve:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống khí Ø12 tới bộ tác động",
+     "text_ja": "Ø12 のエアチューブをアクチュエータへ接続",
+     "refs": [
+      "design-10|M10 (khí nén)",
+      "design-7|Khí nén"
+     ],
+     "reason_vi": "Không có tài liệu về ống khí; review thiết kế M10 thêm ống khí Ø12 từ cột sàn tới van chân không (a_02); Ø12 là cỡ ống khí nén thông dụng.",
+     "reason_ja": "エアチューブの資料はない。設計レビュー M10 で、床柱から真空バルブへ Ø12 のエアチューブ(a_02)が追加された。Ø12 は一般的な空圧チューブのサイズ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (van bướm có bộ tác động khí nén); đặt đứng trên nắp vòm theo review-01 M4"
@@ -645,8 +1421,19 @@
    "used_by": [
     "vac_valve_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van chặn cách ly vòm B3 khỏi đường hút",
+     "text_ja": "ドーム B3 を吸引ラインから隔離する遮断バルブ",
+     "refs": [
+      "rev-I4|Vent hardware"
+     ],
+     "reason_vi": "Không có tài liệu công khai về van chặn của vòm B3; review thiết kế I4 thêm van chặn DN100 trên đường vòm B3, chọn để cách ly vòm khi mở nắp (thực hành chung).",
+     "reason_ja": "ドーム B3 の遮断バルブに関する公開資料はない。設計レビュー I4 でドーム B3 のラインに DN100 の遮断バルブが追加された。蓋を開くときにドームを隔離するため(一般的な方法)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
@@ -662,8 +1449,20 @@
    "used_by": [
     "vac_valve_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van bi DN100 tay gạt đỏ",
+     "text_ja": "DN100 ボールバルブ、赤レバーハンドル",
+     "refs": [
+      "rev-I4|Vent hardware",
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu về kiểu van; review thiết kế I4 chỉ ghi van chặn DN100. Chọn van bi tay gạt vì đóng/mở nhanh; tay đỏ theo tay van đỏ trên ống góp nước của ZE 110 R (web-02), không phải van chân không.",
+     "reason_ja": "バルブ形式の資料はない。設計レビュー I4 は DN100 の遮断バルブとだけ記している。開閉が速いレバー式ボールバルブを選んだ。赤ハンドルは ZE 110 R の水マニホールドの赤いバルブハンドル(web-02)にならったもので、真空バルブではない。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I4; giả định"
