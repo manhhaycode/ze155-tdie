@@ -7,8 +7,29 @@
    "used_by": [
     "util_air_drop:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khí nén 6 bar lấy từ đường khí nhà máy trên cao",
+     "text_ja": "6 bar の圧縮空気を天井の工場エア配管から取る",
+     "refs": [
+      "design-7|Khí nén"
+     ],
+     "reason_vi": "Không có tài liệu công khai về áp suất khí nén hay đường khí của xưởng; chọn 6 bar vì là áp suất mạng khí nén công nghiệp thông dụng, lấy từ đường khí nhà máy trên cao (design §7 mục 13).",
+     "reason_ja": "工場の圧縮空気の圧力や配管に関する公開資料はない。6 bar は工業用エアネットワークで一般的な圧力として選び、天井の工場エア配管から取る(design §7 項目 13)。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khí làm mát bulông nhiệt: ống mềm đen dẫn khí tới ống gió dọc hàng bulông nhiệt ở môi khuôn (ảnh SBI)",
+     "text_ja": "サーマルボルトの冷却エア:黒いホースがダイリップのサーマルボルト列沿いのエアダクトへ空気を導く(SBI の写真)",
+     "refs": [
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-18 là khuôn phẳng của hãng SBI, không phải máy ZE, thấy ống mềm đen vào ống gió dọc hàng bulông nhiệt; dùng làm mẫu cho khuôn này. c054 của cùng hãng chỉ nêu bước bulông và công suất 80 W, không nói về làm mát gió.",
+     "reason_ja": "導出方法:写真 web-18 は SBI 社のフラットダイで ZE の機械ではないが、サーマルボルト列沿いのエアダクトへ黒いホースが入っているのが見える。このダイの手本として使った。同社の c054 にはボルトピッチと 80 W の出力しかなく、空気冷却の記述はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c054 (bulông nhiệt có làm mát gió); giả định"
@@ -17,15 +38,26 @@
      "c054"
     ]
    },
-   "notes": ""
+   "notes": "Seed ghi 'c054 (bulông nhiệt có làm mát gió)' nhưng c054 chỉ có bước bulông và 80 W, không nói làm mát gió, nên không dùng c054 cho ý này. Làm mát gió chỉ thấy ở ảnh web-18 (hãng SBI, khuôn khác): xếp ≈, không xếp ✓ vì khác hãng (W2)."
   },
   "64aab58b966c": {
    "vi": "Ống thép mạ Ø30, đầu trên để hở 'từ đường khí nhà máy'.",
    "used_by": [
     "util_air_drop:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống thép mạ Ø30, đầu trên để hở làm điểm nối với đường khí nhà máy",
+     "text_ja": "亜鉛めっき鋼管 Ø30、上端は開放し、工場エア配管との接続点とする",
+     "refs": [
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ống cấp khí nén của máy; chọn ống thép mạ Ø30 vì là ống dẫn khí thông dụng; đầu trên để hở vì đường khí nhà máy nằm ngoài phạm vi mô hình (khí nén do người thiết kế bố trí, design §9).",
+     "reason_ja": "この機械の圧縮空気配管に関する公開資料はない。亜鉛めっき鋼管 Ø30 は一般的なエア配管として選んだ。上端を開放したのは、工場エア配管がモデルの範囲外のため(圧縮空気は設計者が配置、design §9)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c054 (bulông nhiệt có làm mát gió); giả định"
@@ -41,8 +73,20 @@
    "used_by": [
     "util_air_drop_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khí nén cấp cho van bướm chân không (bộ tác động khí nén), van lật xả máy hút liệu và van nạp của cân",
+     "text_ja": "圧縮空気を真空バタフライバルブ(空圧アクチュエータ)、真空ローダーの排出フラップバルブ、計量機の供給バルブへ送る",
+     "refs": [
+      "rev-M10|The pneumatic butterfly valve",
+      "design-7|Khí nén"
+     ],
+     "reason_vi": "Không có tài liệu công khai về thiết bị khí nén của dây chuyền này; thiết kế giả định các van chạy bằng khí nén vì review thiết kế M10 chỉ ra chúng cần khí mà chưa có đường nào.",
+     "reason_ja": "このラインの空圧機器に関する公開資料はない。設計では各バルブを空圧作動と仮定した。設計レビュー M10 が、空気が必要なのに配管がないと指摘したため。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -58,8 +102,29 @@
    "used_by": [
     "util_air_drop_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống thép mạ Ø30 xuyên sàn, đầu trên để hở",
+     "text_ja": "亜鉛めっき鋼管 Ø30、床を貫通し、上端は開放",
+     "refs": [
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ống cấp khí nén; chọn ống thép mạ Ø30 như ở khuôn; đầu trên để hở vì đường khí nhà máy nằm ngoài phạm vi mô hình.",
+     "reason_ja": "圧縮空気配管に関する公開資料はない。ダイ部と同じ亜鉛めっき鋼管 Ø30 を選んだ。上端を開放したのは、工場エア配管がモデルの範囲外のため。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đi dọc cột sàn tại X −450, Y −2 600",
+     "text_ja": "中2階柱に沿って X −450、Y −2 600 に配管",
+     "refs": [
+      "rev-M10|Add one drop with an FRL"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí khí nén; vị trí cột sàn (−450, −2 600) lấy từ review thiết kế M10 (một ống xuống kèm bộ lọc–điều áp ở cột sàn).",
+     "reason_ja": "圧縮空気の配置に関する公開資料はない。中2階柱の位置(−450, −2 600)は設計レビュー M10(柱にフィルターレギュレーター付きの立下げ配管 1 本)による。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -68,15 +133,26 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "parts.json: tâm ống ở X −300 (sát mặt +X của cột; FRL gá mặt +X cột tại X −350). 'X −450' trong dòng là toạ độ cột theo rev-M10, không phải tâm ống."
   },
   "3ebaf8f7f465": {
    "vi": "Dẫn khí làm mát tới ống gió của thanh bulông nhiệt.",
    "used_by": [
     "util_air_hose_die:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Ống mềm đen dẫn khí làm mát tới ống gió dọc hàng bulông nhiệt (ảnh SBI)",
+     "text_ja": "黒いホースが冷却エアをサーマルボルト列沿いのエアダクトへ導く(SBI の写真)",
+     "refs": [
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-18 là khuôn phẳng của hãng SBI, không phải máy ZE, thấy ống mềm đen vào ống gió dọc hàng bulông nhiệt; dùng làm mẫu cho khuôn này.",
+     "reason_ja": "導出方法:写真 web-18 は SBI 社のフラットダイで ZE の機械ではないが、サーマルボルト列沿いのエアダクトへ黒いホースが入っているのが見える。このダイの手本として使った。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-18 (ống gió làm mát đen tại môi khuôn)"
@@ -85,15 +161,44 @@
      "web-18"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-18 khác hãng (SBI) nên xếp ≈, không xếp ✓ (W2)."
   },
   "f3d6fd6efdfe": {
    "vi": "Ống mềm PU Ø24, khớp nối nhanh ở đầu thanh để tách khuôn.",
    "used_by": [
     "util_air_hose_die:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Ống mềm đen nối vào ống gió của thanh bulông nhiệt (ảnh SBI)",
+     "text_ja": "黒いホースがサーマルボルトロッドのエアダクトに接続(SBI の写真)",
+     "refs": [
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-18 là khuôn phẳng của hãng SBI, không phải máy ZE, thấy ống mềm đen vào ống gió dọc hàng bulông nhiệt; dùng làm mẫu cho khuôn này.",
+     "reason_ja": "導出方法:写真 web-18 は SBI 社のフラットダイで ZE の機械ではないが、サーマルボルト列沿いのエアダクトへ黒いホースが入っているのが見える。このダイの手本として使った。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống mềm PU Ø24",
+     "text_ja": "PU ホース Ø24",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về chất liệu và cỡ ống gió của bulông nhiệt; ảnh web-18 chỉ cho thấy ống mềm đen gợn sóng, không đo được đường kính; thiết kế chọn PU Ø24.",
+     "reason_ja": "サーマルボルトのエアホースの材質と径に関する公開資料はない。写真 web-18 には黒い蛇腹ホースが写っているだけで、径は測れない。設計では PU Ø24 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khớp nối nhanh ở đầu thanh để tách khuôn",
+     "text_ja": "ダイ取外し用にロッド端部へクイックカップリング",
+     "refs": [
+      "design-7|khớp nhanh để tách khi kéo khuôn đi"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đầu nối ống gió; chọn khớp nối nhanh vì khuôn nằm trên xe khuôn và được kéo ra khi bảo trì nên ống khí phải tách nhanh (design §7 mục 8).",
+     "reason_ja": "エアホース継手に関する公開資料はない。ダイは台車に載せて引き出して保守するため、エアホースを素早く外せるようクイックカップリングを選んだ(design §7 項目 8)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-18 (ống gió làm mát đen tại môi khuôn)"
@@ -102,15 +207,26 @@
      "web-18"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-18 thấy ống mềm đen gợn sóng, chưa chắc là PU; 'PU Ø24' để ⚠."
   },
   "8f7c0fefff38": {
    "vi": "Cấp khí cho van lật xả của máy hút liệu và van nạp của cân.",
    "used_by": [
     "util_air_tube_loader:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cấp khí cho van lật xả của máy hút liệu và van nạp của cân",
+     "text_ja": "真空ローダーの排出フラップバルブと計量機の供給バルブへ空気を供給",
+     "refs": [
+      "rev-M10|The pneumatic butterfly valve"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bộ tác động khí nén của máy hút liệu và cân cấp liệu; thiết kế cho van lật xả và van nạp chạy bằng khí nén vì review thiết kế M10 nêu chúng cần khí.",
+     "reason_ja": "真空ローダーと重量フィーダーの空圧アクチュエータに関する公開資料はない。設計では排出フラップバルブと供給バルブを空圧作動とした。設計レビュー M10 が、これらに空気が必要だと指摘したため。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -126,8 +242,29 @@
    "used_by": [
     "util_air_tube_loader:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống PU Ø12",
+     "text_ja": "PU チューブ Ø12",
+     "refs": [
+      "rev-M10|Add one drop with an FRL"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống khí; chọn ống PU Ø12 theo review thiết kế M10 (ống Ø12 tới van chân không và máy hút liệu).",
+     "reason_ja": "エアチューブの径に関する公開資料はない。設計レビュー M10(真空バルブと真空ローダーへ Ø12 チューブ)に従い PU Ø12 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tuyến ống: lên dọc cột, đi trên mặt sàn, rồi dọc phễu cân lên van máy hút liệu",
+     "text_ja": "経路:柱に沿って立ち上げ、床面を這わせ、計量ホッパーに沿って真空ローダーのバルブへ",
+     "refs": [
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tuyến ống; do người thiết kế bố trí theo cột sàn, sàn thao tác và phễu cân (design §9).",
+     "reason_ja": "配管経路に関する公開資料はない。中2階柱、作業床、計量ホッパーに合わせて設計者が配置した(design §9)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -143,8 +280,22 @@
    "used_by": [
     "util_air_tube_vac:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khí cấp cho bộ tác động khí nén của van bướm chân không vùng 2",
+     "text_ja": "ゾーン2の真空バタフライバルブの空圧アクチュエータへ空気を供給",
+     "refs": [
+      "rev-M10|The pneumatic butterfly valve"
+     ],
+     "reason_vi": "Không có tài liệu công khai nói van chân không của máy này dùng bộ tác động khí nén; thiết kế giả định van bướm DN150 chạy bằng khí nén, review thiết kế M10 bổ sung đường khí.",
+     "reason_ja": "このラインの真空バルブが空圧アクチュエータを使うという公開資料はない。設計では DN150 バタフライバルブを空圧作動と仮定し、設計レビュー M10 で空気配管を追加した。"
+    }
+   ],
+   "free_numbers": [
+    "2"
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -160,8 +311,29 @@
    "used_by": [
     "util_air_tube_vac:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống PU Ø12",
+     "text_ja": "PU チューブ Ø12",
+     "refs": [
+      "rev-M10|Add one drop with an FRL"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống khí; chọn ống PU Ø12 theo review thiết kế M10 (ống Ø12 tới van chân không và máy hút liệu).",
+     "reason_ja": "エアチューブの径に関する公開資料はない。設計レビュー M10(真空バルブと真空ローダーへ Ø12 チューブ)に従い PU Ø12 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đi trên máng nhỏ dưới sàn thao tác ở Z 2 450 rồi tới bộ tác động van",
+     "text_ja": "操作床下の小型トレイ上を Z 2 450 に沿って配管し、バルブのアクチュエータへ",
+     "refs": [
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tuyến ống; cao độ Z 2 450 do người thiết kế chọn: cao hơn khoảng thông lối đi (2 100) và thấp hơn dầm sàn thao tác (đáy 2 780).",
+     "reason_ja": "配管経路に関する公開資料はない。Z 2 450 は設計者の選択で、通路の有効高さ(2 100)より高く、作業床の梁(下端 2 780)より低い。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -177,8 +349,27 @@
    "used_by": [
     "util_cw_lube_hoses:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm dầu hộp số của máy ZE có bộ làm mát dạng tấm inox, ống mềm đen nối vào các cổng",
+     "text_ja": "ZE のギアボックス潤滑油ユニットにはステンレスのプレート式クーラーがあり、黒いフレキシブルホースがポートに接続されている",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Môi chất làm mát là nước cấp/hồi từ ống nhà máy",
+     "text_ja": "冷却媒体は工場配管の冷却水(供給・戻り)",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai nêu môi chất làm mát của cụm dầu; chọn nước nhà máy vì bộ làm mát tấm dầu/nước thường dùng nước, và ảnh web-03 cho thấy ống mềm đen nối vào cổng.",
+     "reason_ja": "油ユニットの冷却媒体に関する公開資料はない。油/水式プレートクーラーは通常水を使うため工場の冷却水を選んだ。写真 web-03 でもポートに黒いホースが接続されている。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (ống mềm đen vào bộ làm mát)"
@@ -194,8 +385,35 @@
    "used_by": [
     "util_cw_lube_hoses:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Ống mềm đen nối vào các cổng của bộ làm mát dầu tấm (ảnh thấy nhãn cổng F2, F3, F4)",
+     "text_ja": "黒いフレキシブルホースがプレート式油クーラーのポートに接続(写真にポート表示 F2、F3、F4)",
+     "refs": [
+      "web-03"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 ống mềm DN25: một cấp, một hồi",
+     "text_ja": "DN25 ホース 2 本:供給 1 本と戻り 1 本",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về số ống và cỡ ống nước của bộ làm mát dầu; chọn một ống cấp, một ống hồi, cỡ DN25 vì bộ làm mát tấm chỉ cỡ 350 × 250 × 350 và rẽ nhánh từ ống nhà máy DN50.",
+     "reason_ja": "油クーラーの冷却水ホースの本数と径に関する公開資料はない。供給 1 本、戻り 1 本、DN25 を選んだ。プレートクーラーが 350 × 250 × 350 と小型で、DN50 の工場配管から分岐するため。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tuyến ngoài mép +Y khung: cấp Y 1 060 Z 380, hồi Y 1 130 Z 440; lên và vào cổng F2/F4",
+     "text_ja": "フレーム+Y側外縁に沿って配管:供給 Y 1 060 Z 380、戻り Y 1 130 Z 440。立ち上げてポート F2/F4 へ",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường nước của cụm dầu; tuyến do thiết kế chọn, nhánh T từ hai ống nhà máy dọc mép +Y khung. Việc nước vào cổng F2/F4 là theo thiết kế; trong ảnh web-03 ống dầu sơn xanh có vẻ nằm ở F2/F4 còn ống mềm đen ở F3, nên cách phân cổng cần kiểm lại.",
+     "reason_ja": "油ユニットの冷却水配管に関する公開資料はない。経路は設計で選び、フレーム+Y側外縁に沿って 2 本の工場配管から T 分岐する。水をポート F2/F4 に入れるのは設計上の割り当てで、写真 web-03 では青塗装の油配管が F2/F4 に、黒いホースが F3 に付いているように見えるため、ポートの割り当ては要確認。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (ống mềm đen vào bộ làm mát)"
@@ -204,15 +422,44 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "Cần kiểm: ảnh web-03 cho thấy ống dầu sơn xanh nối ở F2 và F4, ống mềm đen (nước?) ở F3; thiết kế đặt nước ở F2/F4 và dầu ra ở F3 (lube_oil_cooler). Không chắc nên không sửa, chỉ ghi."
   },
   "2a0b258c0b80": {
    "vi": "Van bi tay đỏ trên mỗi ống ngay trước bộ làm mát; van điều nhiệt nước trên ống hồi.",
    "used_by": [
     "util_cw_lube_hoses:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Van bi có tay gạt đỏ trên mạch nước làm mát của máy ZE",
+     "text_ja": "ZE の冷却水回路には赤レバーのボールバルブがある",
+     "refs": [
+      "c023",
+      "web-02",
+      "crop-p19_temperature_control_unit_in_base_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mỗi ống một van bi, đặt ngay trước bộ làm mát",
+     "text_ja": "各ホースのクーラー直前にボールバルブ 1 個",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về vị trí van của bộ làm mát dầu; thiết kế đặt một van bi trên mỗi ống ngay trước bộ làm mát để cách ly khi bảo trì.",
+     "reason_ja": "油クーラーのバルブ位置に関する公開資料はない。設計では、保守時に隔離できるよう各ホースのクーラー直前にボールバルブを 1 個置いた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Van điều nhiệt nước trên ống hồi",
+     "text_ja": "戻り側ホースに水温調節弁",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách điều khiển nước của bộ làm mát dầu; ảnh web-03 chỉ có một van nhỏ có cuộn (kiểu van điện từ) trên ống nước gần bộ làm mát, không phải van điều nhiệt; thiết kế chọn van điều nhiệt trên ống hồi để giữ nhiệt độ dầu.",
+     "reason_ja": "油クーラーの水量制御に関する公開資料はない。写真 web-03 には冷却器近くの水配管にコイル付きの小型バルブ(電磁弁タイプ)があるだけで、温度調節弁ではない。設計では油温を保つため戻り管に温度調節弁を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-03 (ống mềm đen vào bộ làm mát)"
@@ -221,15 +468,46 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "Van bi tay đỏ: ✓ cho loại van trên mạch nước máy ZE; vị trí 'ngay trước bộ làm mát' là ⚠. Trên ảnh web-03 van nước thấy được là van nhỏ có cuộn, không có tay gạt đỏ."
   },
   "318e096fcd33": {
    "vi": "Cấp/hồi nước cho bộ làm mát gió–nước trên nóc động cơ chính (IC81W).",
    "used_by": [
     "util_cw_motor_hoses:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE 110 R × 28D UTmi có động cơ AC làm mát bằng nước (bản rao 250 kW)",
+     "text_ja": "ZE 110 R × 28D UTmi の AC モーターは水冷式(中古機の掲載情報で 250 kW)",
+     "refs": [
+      "c024"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Động cơ lớn của máy KM có hộp làm mát đặt trên nóc (ảnh KE 400, không phải ZE)",
+     "text_ja": "KM の大型モーターは上部に冷却器ボックスを載せている(KE 400 の写真、ZE ではない)",
+     "refs": [
+      "web-12"
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-12 là dây chuyền trục vít đơn KE 400 của KM, không phải ZE; chỉ dùng để thấy kiểu hộp làm mát trên nóc động cơ lớn, không biết đó có phải bộ làm mát gió–nước hay không.",
+     "reason_ja": "導出方法:写真 web-12 は KM の単軸 KE 400 ラインで ZE ではない。大型モーター上部の冷却器ボックスの形を見るためだけに使い、空気-水冷却器かどうかは分からない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ làm mát gió–nước IC81W trên nóc động cơ 1 500 kW, nhiệt thải đi vào nước",
+     "text_ja": "1 500 kW モーターの上部に空水冷却器 IC81W、排熱は水へ",
+     "refs": [
+      "design-3.1|IC81W",
+      "rev-M9",
+      "dec-11|có bộ làm mát trên nóc"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách làm mát động cơ 1 500 kW của máy này (c066 chỉ nêu IC01/IP24W, gió hở); chọn IC81W theo review thiết kế M9 và DECISIONS 11 vì xưởng đùn không nên thổi gió nóng vào nhà.",
+     "reason_ja": "この機械の 1 500 kW モーターの冷却方式に関する公開資料はない(c066 は IC01/IP24W、開放通風のみ)。設計レビュー M9 と DECISIONS 11 に従い IC81W を選んだ。押出工場に熱風を吹き出さないほうがよいため。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M9; giả định (≈ 45 kW nhiệt, 2 × DN40)"
@@ -238,15 +516,46 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "c024 là bản rao máy ZE 110 R (động cơ 250 kW), chỉ nói 'water-cooled'; cảnh báo W1 (value 127 là đường kính vít, không liên quan fact này) là chủ ý. Kiểu IC81W cho 1 500 kW là giả định của thiết kế."
   },
   "3b874ab4e2e5": {
    "vi": "2 ống inox DN40 (OD 48) chạy thấp ngoài mép +Y khung (cấp Y 1 060 Z 250, hồi Y 1 130 Z 150), dựng lên tại X −3 500 / −3 700 cạnh cụm dầu, rồi vào bích trên mặt +Y bộ làm mát động cơ ở Z 2 300 / 2 400; van bi tay đỏ ở mỗi ống.",
    "used_by": [
     "util_cw_motor_hoses:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 ống inox DN40 (OD 48): một cấp, một hồi",
+     "text_ja": "ステンレス管 DN40(OD 48)2 本:供給 1 本と戻り 1 本",
+     "refs": [
+      "rev-M9|It needs 2",
+      "design-3.1|IC81W"
+     ],
+     "reason_vi": "Không có tài liệu công khai về lưu lượng nước của bộ làm mát động cơ; thiết kế ước nhiệt thải ≈ 45 kW (≈ 3 % công suất) và chọn 2 ống DN40 theo review thiết kế M9.",
+     "reason_ja": "モータークーラーの冷却水量に関する公開資料はない。設計では排熱を ≈ 45 kW(出力の ≈ 3 %)と見積もり、設計レビュー M9 に従って DN40 を 2 本選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tuyến: cấp Y 1 060 Z 250, hồi Y 1 130 Z 150 chạy thấp ngoài mép +Y khung; dựng lên tại X −3 500 / −3 700; vào bích Z 2 300 / 2 400; mỗi ống 1 van bi",
+     "text_ja": "経路:フレーム+Y側外縁の低い位置に供給 Y 1 060 Z 250、戻り Y 1 130 Z 150。X −3 500 / −3 700 で立ち上げ、Z 2 300 / 2 400 のフランジへ。各管にボールバルブ 1 個",
+     "refs": [
+      "design-4.2|ống nước bộ làm mát động cơ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường ống; tuyến do thiết kế chọn dọc mép +Y khung theo review thiết kế M9, hai bích theo bộ làm mát trên drive_motor (vào X −3 500 Z 2 300, ra X −3 700 Z 2 400).",
+     "reason_ja": "配管経路に関する公開資料はない。経路は設計レビュー M9 に従いフレーム+Y側外縁に沿って設計者が選んだ。2 つのフランジは drive_motor 上のクーラーに合わせた(入口 X −3 500 Z 2 300、出口 X −3 700 Z 2 400)。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Van bi có tay gạt đỏ trên mạch nước làm mát của máy ZE",
+     "text_ja": "ZE の冷却水回路には赤レバーのボールバルブがある",
+     "refs": [
+      "c023",
+      "web-02"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M9; giả định (≈ 45 kW nhiệt, 2 × DN40)"
@@ -255,45 +564,101 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "Van bi tay đỏ: ✓ cho loại van; vị trí 'ở mỗi ống' nằm trong fact tuyến (⚠). DN40 có OD chuẩn 48,3 là kiến thức chung, không có tài liệu trong bộ nguồn."
   },
   "657f4696647c": {
    "vi": "Trả nước hồi về đường ống nhà máy.",
    "used_by": [
     "util_cw_return_riser:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE có ống góp hồi nước riêng cạnh ống cấp, nối xuống sàn bằng ống đứng có bích",
+     "text_ja": "ZE には供給管と並ぶ専用の戻りヘッダーがあり、フランジ付きの立ち管で床へ接続されている",
+     "refs": [
+      "web-02"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nước hồi trả về đường ống nước nhà máy",
+     "text_ja": "戻り水は工場の水配管へ返す",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cách nhà máy nhận nước hồi; thiết kế cho ống đứng hồi nối bích sàn vào đường ống nhà máy (nằm ngoài mô hình).",
+     "reason_ja": "工場側の戻り水の受け方に関する公開資料はない。設計では戻りの立ち管を床フランジで工場配管に接続する(配管はモデルの範囲外)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Ảnh web-02: hai ống góp bọc cách nhiệt có mũi tên chiều dòng, nối xuống sàn bằng hai ống đứng có bích; không phân biệt được chắc ống nào là cấp, ống nào là hồi."
   },
   "2fca6309b1a7": {
    "vi": "DN50 có van bi tay đỏ và nhiệt kế.",
    "used_by": [
     "util_cw_return_riser:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Van bi có tay gạt đỏ trên mạch nước làm mát của máy ZE",
+     "text_ja": "ZE の冷却水回路には赤レバーのボールバルブがある",
+     "refs": [
+      "c023",
+      "web-02"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống DN50",
+     "text_ja": "配管 DN50",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống nước của máy; chọn DN50 (OD 60) bằng ống góp hồi của xi lanh (DN50).",
+     "reason_ja": "この機械の冷却水配管径に関する公開資料はない。バレルの戻りヘッダー(DN50)に合わせて DN50(OD 60)を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nhiệt kế trên ống hồi",
+     "text_ja": "戻り管に温度計",
+     "refs": [
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu công khai; ảnh web-02 chỉ thấy đồng hồ áp, chưa nhận ra nhiệt kế; thiết kế chọn nhiệt kế để theo dõi nhiệt độ nước hồi.",
+     "reason_ja": "公開資料はない。写真 web-02 に見えるのは圧力計で、温度計は確認できない。戻り水温を監視するため設計で温度計を置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Ảnh web-02: van bi ở ống đứng có tay gạt xanh, các van từng vùng có tay đỏ; ✓ chỉ cho loại van tay đỏ trên mạch nước máy ZE (c023)."
   },
   "431a865448fb": {
    "vi": "Làm mát thân side feeder.",
    "used_by": [
     "util_cw_sidefeed_hoses:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Thân side feeder có áo nước làm mát",
+     "text_ja": "サイドフィーダー本体に冷却水ジャケット",
+     "refs": [
+      "rev-I7|side-feeder barrel jacket"
+     ],
+     "reason_vi": "Không có tài liệu công khai về làm mát thân side feeder; kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng. design.md yêu cầu áo nước, review thiết kế I7 bổ sung ống cấp.",
+     "reason_ja": "サイドフィーダー本体の冷却に関する公開資料はない。PET 押出の一般知識で、資料セットに専用の資料はない。design.md が水ジャケットを求め、設計レビュー I7 で配管を追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định"
@@ -309,8 +674,31 @@
    "used_by": [
     "util_cw_sidefeed_hoses:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Ống mềm inox bọc lưới dẫn nước từ cụm van tới xi lanh (máy ZE)",
+     "text_ja": "ZE ではバルブユニットからバレルへステンレス編組フレキシブルホースで水を送る",
+     "refs": [
+      "web-02",
+      "crop-p05_barrel_heating_cartridges_cooling_bores_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 ống DN15 từ đỉnh cụm van 2 vào mặt dưới thân side feeder",
+     "text_ja": "DN15 ホース 2 本をバルブ群 2 の上部からサイドフィーダー本体の下面へ",
+     "refs": [
+      "rev-I7|side feeder: 2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường nước của side feeder; số ống và cỡ (2 × DN15, từ trạm van 2) theo review thiết kế I7, điểm vào mặt dưới thân do thiết kế chọn.",
+     "reason_ja": "サイドフィーダーの冷却水配管に関する公開資料はない。本数と径(バルブ群 2 から DN15 × 2)は設計レビュー I7 による。本体下面への接続位置は設計で選んだ。"
+    }
+   ],
+   "free_numbers": [
+    "2"
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định"
@@ -319,45 +707,103 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới nối cụm van với xi lanh (web-02, trang 5); cỡ, số lượng, điểm nối vào side feeder là ⚠. Review I7 đề xuất đích (1 350, 1 000, 1 150); thiết kế vào mặt dưới (1 300, 900, 1 070)."
   },
   "a5cf643a1f98": {
    "vi": "Đưa nước làm mát (≈ 15 °C, 4 bar) từ đường ống nhà máy lên ống góp.",
    "used_by": [
     "util_cw_supply_riser:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE dùng nước lạnh (nhãn ống 'Chilled W…'), cấp qua ống góp dọc khung đế, nối xuống sàn bằng ống đứng có bích",
+     "text_ja": "ZE は冷水(配管ラベル 'Chilled W…')をベースフレーム沿いのヘッダーで供給し、フランジ付きの立ち管で床へ接続している",
+     "refs": [
+      "web-02"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nước ≈ 15 °C, 4 bar từ đường ống nhà máy",
+     "text_ja": "工場配管から ≈ 15 °C、4 bar の水",
+     "refs": [
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu công khai về nhiệt độ và áp suất nước làm mát; ảnh web-02 chỉ ghi 'Chilled Water', không có số; chọn ≈ 15 °C và 4 bar theo thực hành nước lạnh của xưởng.",
+     "reason_ja": "冷却水の温度と圧力に関する公開資料はない。写真 web-02 には 'Chilled Water' とあるだけで数値はない。工場の冷水の慣行として ≈ 15 °C、4 bar を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Nhãn trên ống ở web-02 đọc được một phần ('hilled W…'), tôi hiểu là 'Chilled Water'."
   },
   "07689f91cda1": {
    "vi": "DN50 có van bi tay đỏ, lọc Y và đồng hồ áp ở đoạn đứng.",
    "used_by": [
     "util_cw_supply_riser:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Van bi tay gạt đỏ và đồng hồ áp trên ống góp nước làm mát của máy ZE",
+     "text_ja": "ZE の冷却水ヘッダーには赤レバーのボールバルブと圧力計が付いている",
+     "refs": [
+      "web-02",
+      "c023"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống DN50",
+     "text_ja": "配管 DN50",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống nước của máy; chọn DN50 (OD 60) bằng ống góp cấp của xi lanh (DN50).",
+     "reason_ja": "この機械の冷却水配管径に関する公開資料はない。バレルの供給ヘッダー(DN50)に合わせて DN50(OD 60)を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lọc Y, van bi và đồng hồ áp đặt ở đoạn đứng",
+     "text_ja": "Y ストレーナー、ボールバルブ、圧力計を立上り部に設置",
+     "refs": [
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cụm phụ kiện của ống cấp; chọn đặt ở đoạn đứng để thao tác từ sàn và để lọc Y chặn cặn trước các van điện từ; ảnh web-02 không thấy rõ lọc Y.",
+     "reason_ja": "供給管の付属品構成に関する公開資料はない。床から操作でき、Y ストレーナーで電磁弁の手前でゴミを止められるよう立上り部に置く設計とした。写真 web-02 では Y ストレーナーははっきり見えない。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "✓ chỉ cho loại van tay đỏ và đồng hồ áp trên ống góp nước máy ZE; việc đặt chúng ở đoạn đứng của ống cấp và lọc Y là ⚠."
   },
   "1186e94fe70c": {
    "vi": "Làm mát hộp miệng nạp để hạt không dính chảy ở miệng.",
    "used_by": [
     "util_cw_throat_hoses:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp miệng nạp có áo nước làm mát để hạt không dính chảy ở miệng",
+     "text_ja": "フィードスロートに冷却水ジャケットを設け、ペレットが喉部で融着しないようにする",
+     "refs": [
+      "rev-I7|feed-throat jacket"
+     ],
+     "reason_vi": "Không có tài liệu công khai về áo nước hộp miệng nạp; kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng. design.md yêu cầu áo nước, review thiết kế I7 bổ sung ống cấp.",
+     "reason_ja": "フィードスロートの水ジャケットに関する公開資料はない。PET 押出の一般知識で、資料セットに専用の資料はない。design.md が水ジャケットを求め、設計レビュー I7 で配管を追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định"
@@ -373,8 +819,31 @@
    "used_by": [
     "util_cw_throat_hoses:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Ống mềm inox bọc lưới dẫn nước từ cụm van tới xi lanh (máy ZE)",
+     "text_ja": "ZE ではバルブユニットからバレルへステンレス編組フレキシブルホースで水を送る",
+     "refs": [
+      "web-02",
+      "crop-p05_barrel_heating_cartridges_cooling_bores_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 ống DN20 từ đỉnh cụm van 1 lên Z 1 550 / 1 600 rồi vào mặt +Y hộp miệng nạp",
+     "text_ja": "DN20 ホース 2 本をバルブ群 1 の上部から Z 1 550 / 1 600 まで立ち上げ、フィードスロートの +Y 面へ",
+     "refs": [
+      "rev-I7|feed throat: 2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường nước của hộp miệng nạp; số ống và cỡ (2 × DN20 từ trạm van 1) và cổng ở Z 1 550 theo review thiết kế I7; ống thứ hai ở Z 1 600 do thiết kế chọn.",
+     "reason_ja": "フィードスロートの冷却水配管に関する公開資料はない。本数と径(バルブ群 1 から DN20 × 2)と Z 1 550 の接続口は設計レビュー I7 による。2 本目の Z 1 600 は設計で選んだ。"
+    }
+   ],
+   "free_numbers": [
+    "1"
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định"
@@ -383,15 +852,37 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới (web-02, trang 5); cỡ, số lượng và cao độ là ⚠."
   },
   "7782e23ae1dd": {
    "vi": "Cấp/hồi nước cho ống xoắn ngưng của bình tách và cho bơm Roots/bơm khô làm mát nước.",
    "used_by": [
     "util_cw_vac_hoses:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nước cấp/hồi cho ống xoắn ngưng trong bình tách",
+     "text_ja": "セパレーター内の凝縮コイルへ冷却水を供給・返送",
+     "refs": [
+      "c063",
+      "design-7|ống xoắn làm lạnh"
+     ],
+     "reason_vi": "Không có tài liệu công khai nêu ống xoắn nước trong bình tách; c063 (Trendelkamp) chỉ nêu buồng ngưng có điều nhiệt; thiết kế chọn ống xoắn nước vì không có nước thì bình ngưng không chạy (review thiết kế I7).",
+     "reason_ja": "セパレーター内の水コイルに関する公開資料はない。c063(Trendelkamp)は温調式の凝縮室のみ記載。設計では水コイルを選んだ。水がないと凝縮器が機能しないため(設計レビュー I7)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bơm Roots và bơm trục vít khô làm mát bằng nước",
+     "text_ja": "ルーツポンプとドライスクリューポンプは水冷",
+     "refs": [
+      "design-7|ống xoắn làm lạnh"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cụm bơm chân không của máy này; chọn làm mát nước vì bơm Roots và bơm trục vít khô cỡ này thường làm mát bằng nước (kiến thức chung về bơm chân không); design §7 ghi như vậy.",
+     "reason_ja": "この機械の真空ポンプユニットに関する公開資料はない。この規模のルーツポンプとドライスクリューポンプは通常水冷のため水冷を選んだ(真空ポンプの一般知識)。design §7 もそう記載している。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định (lấy nước nhà máy tại chỗ qua hai đầu nối sàn, không băng qua máy)"
@@ -400,15 +891,46 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "c063 chỉ nói 'temperature-controlled condensate chamber', không nói ống xoắn nước: không xếp ✓. Seed không có c063; thêm làm ngữ cảnh."
   },
   "c2612a13336b": {
    "vi": "4 ống inox DN25 (OD 32) đứng lên từ hai cặp đầu nối sàn giữa bình tách và skid: cặp cho bình tách vào Z 1 000 / ra Z 1 100, cặp cho skid vào/ra ở Z 400; van bi tay đỏ ở chân mỗi ống.",
    "used_by": [
     "util_cw_vac_hoses:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "4 ống inox DN25 (OD 32): hai cặp vào/ra, mỗi thiết bị một cặp",
+     "text_ja": "ステンレス管 DN25(OD 32)4 本:機器ごとに入口/出口の 1 組、計 2 組",
+     "refs": [
+      "rev-I7|vacuum: 2",
+      "design-9|Bố trí phụ trợ"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống nước của cụm chân không; review thiết kế I7 đề xuất 2 × DN25; thiết kế đổi thành 4 ống, mỗi thiết bị một cặp vào/ra, lấy nước nhà máy tại chỗ qua hai đầu nối sàn, không băng qua máy.",
+     "reason_ja": "真空ユニットの冷却水配管径に関する公開資料はない。設計レビュー I7 は DN25 × 2 本を提案。設計では機器ごとに入口/出口 1 組の計 4 本とし、機械をまたがず床の接続口 2 か所から現地で工場水を取る。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đứng lên từ hai cặp đầu nối sàn: bình tách vào Z 1 000 / ra Z 1 100, skid vào/ra Z 400; van bi ở chân mỗi ống",
+     "text_ja": "床接続口 2 組から立ち上げ:セパレーターは入口 Z 1 000 / 出口 Z 1 100、スキッドは入口/出口とも Z 400。各管の根元にボールバルブ",
+     "refs": [
+      "rev-I7|vacuum: 2"
+     ],
+     "reason_vi": "Không có tài liệu công khai; cao độ theo cổng ống xoắn của bình tách (Z 1 000 / 1 100) và ống góp nước của skid (Z 400) mà thiết kế đã đặt, review thiết kế I7 nêu Z 1 000 và Z 400; vị trí van do thiết kế chọn.",
+     "reason_ja": "公開資料はない。高さは設計で置いたセパレーターのコイルポート(Z 1 000 / 1 100)とスキッドの水マニホールド(Z 400)に合わせた。設計レビュー I7 は Z 1 000 と Z 400 を挙げている。バルブ位置は設計で選んだ。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Van bi có tay gạt đỏ trên mạch nước làm mát của máy ZE",
+     "text_ja": "ZE の冷却水回路には赤レバーのボールバルブがある",
+     "refs": [
+      "c023",
+      "web-02"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I7; giả định (lấy nước nhà máy tại chỗ qua hai đầu nối sàn, không băng qua máy)"
@@ -417,45 +939,92 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "Thiết kế khác review I7: I7 đề xuất 2 × DN25 đi từ đầu ống góp xuống hào sàn; parts.json dùng 4 ống lấy nước tại chỗ qua đầu nối sàn (ghi trong nguồn của device). 'DN25 (OD 32)': OD chuẩn của DN25 inox là 33,7 (kiến thức chung); mô hình dùng 32."
   },
   "265d0ee335b8": {
    "vi": "Lọc, điều áp khí làm mát bulông nhiệt.",
    "used_by": [
     "util_frl:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE 110 UT trong ảnh dùng bộ lọc–điều áp khí có đồng hồ áp để lọc và điều áp khí cấp cho thiết bị",
+     "text_ja": "ZE 110 UT ラインの写真では、圧力計付きのエアフィルターレギュレーターで供給空気をろ過・調圧している",
+     "refs": [
+      "web-05"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khí này dùng làm mát bulông nhiệt (ảnh SBI)",
+     "text_ja": "この空気はサーマルボルトの冷却に使う(SBI の写真)",
+     "refs": [
+      "web-18"
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-18 là khuôn phẳng của hãng SBI, không phải máy ZE, thấy ống mềm đen vào ống gió dọc hàng bulông nhiệt; dùng làm mẫu cho khuôn này.",
+     "reason_ja": "導出方法:写真 web-18 は SBI 社のフラットダイで ZE の機械ではないが、サーマルボルト列沿いのエアダクトへ黒いホースが入っているのが見える。このダイの手本として使った。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Bộ lọc–điều áp ở web-05 gắn ở phía trước dây chuyền ZE 110 UT, không phải ở khuôn: ✓ chỉ cho loại thiết bị, không cho vị trí. Làm mát bulông nhiệt bằng gió chỉ thấy ở web-18 (khác hãng): ≈."
   },
   "ab6e01afa56b": {
    "vi": "Bộ lọc + van điều áp + đồng hồ, van khoá tay.",
    "used_by": [
     "util_frl:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ lọc–điều áp khí có đồng hồ áp và van bi tay gạt ở phía trước (ảnh máy ZE 110 UT)",
+     "text_ja": "圧力計付きのエアフィルターレギュレーターと手前の手動ボールバルブ(ZE 110 UT の写真)",
+     "refs": [
+      "web-05"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Ảnh web-05 (góc dưới trái): bầu lọc, núm điều áp, đồng hồ áp và một van bi tay gạt đỏ phía trước."
   },
   "f09951259964": {
    "vi": "Lọc, điều áp khí cho van bướm chân không, van nạp máy hút liệu, van cân.",
    "used_by": [
     "util_frl_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE 110 UT trong ảnh dùng bộ lọc–điều áp khí có đồng hồ áp để lọc và điều áp khí cấp cho thiết bị",
+     "text_ja": "ZE 110 UT ラインの写真では、圧力計付きのエアフィルターレギュレーターで供給空気をろ過・調圧している",
+     "refs": [
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cấp khí cho van bướm chân không, van nạp máy hút liệu và van cân",
+     "text_ja": "真空バタフライバルブ、真空ローダーの供給バルブ、計量機のバルブへ空気を供給",
+     "refs": [
+      "rev-M10|The pneumatic butterfly valve"
+     ],
+     "reason_vi": "Không có tài liệu công khai về các van khí nén của dây chuyền này; thiết kế cho bộ lọc–điều áp này cấp khí cho các van đó theo review thiết kế M10.",
+     "reason_ja": "このラインの空圧バルブに関する公開資料はない。設計レビュー M10 に従い、このフィルターレギュレーターから各バルブへ空気を供給する設計とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
@@ -471,8 +1040,27 @@
    "used_by": [
     "util_frl_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ lọc–điều áp khí có đồng hồ áp và van bi tay gạt ở phía trước (ảnh máy ZE 110 UT)",
+     "text_ja": "圧力計付きのエアフィルターレギュレーターと手前の手動ボールバルブ(ZE 110 UT の写真)",
+     "refs": [
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lắp cao 1,35–1,6 m trên cột sàn",
+     "text_ja": "高さ 1,35–1,6 m で中2階柱に取り付け",
+     "refs": [
+      "rev-M10|Add one drop with an FRL"
+     ],
+     "reason_vi": "Không có tài liệu công khai về độ cao lắp; chọn 1,35–1,6 m (tầm tay người đứng trên sàn) để đọc đồng hồ và vận hành van khoá; cột sàn theo review thiết kế M10.",
+     "reason_ja": "取付高さに関する公開資料はない。床に立った人の手の届く 1,35–1,6 m を選び、圧力計の確認と遮断弁の操作をしやすくした。中2階柱は設計レビュー M10 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M10; giả định"
