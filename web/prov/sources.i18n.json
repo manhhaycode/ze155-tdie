@@ -36,6 +36,7 @@
  "dec-9": {"title_ja": "標準仕様は KM の表にある ZE 155 A UT"},
  "design-1": {"title_ja": "機械と工程"},
  "design-10": {"title_ja": "review-01 後の変更"},
+ "design-10.1": {"title_ja": "製図担当のメモ(drawings/design_issues.md)を受けた変更"},
  "design-3": {"title_ja": "主要仕様"},
  "design-3.1": {"title_ja": "主モーターを 1 500 kW とした理由"},
  "design-4.1": {"title_ja": "X 軸に沿ったステーション(流れ中心 Y = 0、Z = 1 200)"},
