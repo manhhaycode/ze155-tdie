@@ -7,8 +7,27 @@
    "used_by": [
     "melt_die_adapter:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khuôn tấm nhận nhựa qua adapter tròn ở giữa mặt sau khuôn (dây chuyền ZE + khuôn khe của KM)",
+     "text_ja": "シートダイは、ダイ背面中央の円形アダプターから樹脂を受け取る(KM の ZE + スロットダイライン)",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lòng chảy Ø100 chuyển sang cửa vào ống phân phối của khuôn",
+     "text_ja": "Ø100 の流路を、ダイのマニホールド入口へ変換する",
+     "refs": [
+      "design-6.3|Bích khuôn → khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cửa vào khuôn của dây chuyền này; chọn lòng chảy Ø100 từ sau bơm tới khuôn theo bảng bích của thiết kế, vì khuôn móc áo cấp liệu chính giữa mặt sau.",
+     "reason_ja": "このラインのダイ入口に関する公開資料はない。コートハンガーダイは背面中央から供給するため、ポンプ後段からダイまでの流路を設計のフランジ表どおり Ø100 とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -22,8 +41,29 @@
    "used_by": [
     "melt_die_adapter:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cổ tròn Ø300 nở thành bích chữ nhật 500 × 360 ở mặt khuôn",
+     "text_ja": "Ø300 の円形ネックが、ダイ面で 500 × 360 の矩形フランジへ拡がる",
+     "refs": [
+      "design-6.3|Bích khuôn → khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bích vào khuôn T rộng 2 400; kích thước do thiết kế chọn để nối cổ tròn với cửa vào khuôn, bích chữ nhật 8 bulông M30 theo bảng bích.",
+     "reason_ja": "幅 2 400 の T ダイの入口フランジに関する公開資料はない。円形ネックとダイ入口をつなぐため設計で寸法を選び、フランジ表どおり M30 ボルト 8 本の矩形フランジとした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "1 băng nhiệt ở cổ bích khuôn (X 9 000)",
+     "text_ja": "ダイフランジのネック(X 9 000)にバンドヒーター 1 本",
+     "refs": [
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu công khai về băng nhiệt đường chảy; vị trí X 9 000 theo review thiết kế C1.",
+     "reason_ja": "溶融ラインのバンドヒーターに関する公開資料はない。位置 X 9 000 は設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -37,23 +77,51 @@
    "used_by": [
     "melt_drain_chute:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Có một khay/máng nhỏ nằm dưới vùng đầu ra xi lanh, cạnh thân bơm (ảnh render của KM, không ghi công dụng)",
+     "text_ja": "バレル出口の下、ポンプ本体の横に小さなトレイ/シュートがある(KM のレンダリング、用途の記載なし)",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Máng dẫn nhựa xả khi khởi động từ van khởi động xuống xe hứng",
+     "text_ja": "起動時のパージ樹脂を、スタートアップバルブから受け台車へ導く",
+     "refs": [
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu công khai về máng xả của dây chuyền này; chọn máng dưới van khởi động vì nhựa chưa đều lúc khởi động phải xả ra ngoài (kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "このラインの排出シュートに関する公開資料はない。起動時の不安定な樹脂は外へ排出する必要があるため、スタートアップバルブの下に設けた(PET 押出の一般知識。資料セットに個別の資料はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Chỉ mô tả cái nhìn thấy trong web-07 (khay dưới đầu ra xi lanh); khay đó có thể là khay hứng nhỏ giọt chứ chưa chắc là máng xả khởi động."
   },
   "46a30db46ad2": {
    "vi": "Máng inox 250 × 250, có tấm chắn bắn.",
    "used_by": [
     "melt_drain_chute:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Máng inox 250 × 250, có tấm chắn bắn",
+     "text_ja": "ステンレス製シュート 250 × 250、飛散防止板付き",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về máng xả; kích thước, vật liệu inox và tấm chắn bắn (che nhựa nóng bắn ra ngoài) do thiết kế chọn.",
+     "reason_ja": "排出シュートに関する公開資料はない。寸法、ステンレス材、飛散防止板(高温樹脂の飛び散りを防ぐ)は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -199,8 +267,44 @@
    "used_by": [
     "melt_head_adapter:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh ZE có lỗ hình số 8 (2 lỗ tròn giao nhau) chứa 2 trục vít",
+     "text_ja": "ZE のバレルは、2本のスクリューが入る8の字形の孔(2つの円孔が交差)をもつ",
+     "refs": [
+      "crop-p05_8shaped_bore_barrel_section_x3",
+      "cat-p11"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Đầu ra xi lanh có mặt bích tròn bắt bulông, tâm ở cao độ trục vít (hình bóng trang 9 vẽ 10 bulông)",
+     "text_ja": "バレル出口に、スクリュー軸高さを中心とするボルト締めの円形フランジがある(9 ページのシルエットは 10 本のボルト)",
+     "refs": [
+      "meas-4|Vỏ che C1 (đầu ra) có tấm vòm",
+      "cat-p09"
+     ],
+     "reason_vi": "Đọc trên hình bóng dòng UT ở trang 9 (pdf_measures §4, lưu ý 4). Catalogue không nói rõ đó là adapter, bích đầu xi lanh, cổng xả hay cảm biến.",
+     "reason_ja": "9 ページの UT シリーズのシルエットから読み取った(pdf_measures §4、注意 4)。アダプター、バレルヘッドフランジ、排出口、センサーのいずれかはカタログに明記がない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chuyển sang lòng tròn Ø120 rồi nối van khởi động",
+     "text_ja": "円形の Ø120 の流路へ変換し、スタートアップバルブへ接続する",
+     "refs": [
+      "design-6.3|B6 → đầu xi lanh",
+      "spec-4|Tấm đầu xi lanh",
+      "design-1|B6 tăng áp, đẩy nhựa"
+     ],
+     "reason_vi": "Không có tài liệu công khai về adapter đầu xi lanh ZE 155; specs chỉ ước lượng dài ≈ 250, Ø ngoài ≈ 450. Chọn lòng Ø120 theo bảng bích của thiết kế và nối van khởi động vì nhựa đi qua van này khi khởi động.",
+     "reason_ja": "ZE 155 のバレルヘッドアダプターに関する公開資料はない。仕様は長さ ≈ 250、外径 ≈ 450 と推定しただけである。流路 Ø120 は設計のフランジ表に従い、起動時に樹脂がこのバルブを通るためスタートアップバルブに接続した。"
+    }
+   ],
+   "free_numbers": [
+    "8"
+   ],
    "seed": {
     "sources": [
      "pdf_measures §4 ghi chú 4 (mặt bích tròn bắt bulông ở đầu ra, dựng adapter đồng trục); specs §4 (≈ 250 mm); bulông theo review-01 M1"
@@ -211,15 +315,71 @@
      "rev-M1"
     ]
    },
-   "notes": ""
+   "notes": "Hai dòng của thiết kế chưa thống nhất: Ø120 ở đầu xi lanh, DN100 (Ø100) từ sau bơm; bảng bích §6.3 cho lòng thu nhỏ dần 120 → 110 → 100."
   },
   "5071b66a0cd8": {
    "vi": "Bích Ø640 × 60 nhận 20 bulông cấy M24 trên PCD 560 từ B6 (đai ốc phía B6), thân côn Ø520 → Ø400, bích ra Ø420 × 50 có 12 lỗ ren M24 (vít bắt từ phía van, không có đai ốc sau bích nên không chạm thân côn); 2 băng nhiệt.",
    "used_by": [
     "melt_head_adapter:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Mặt bích tròn bắt bulông ở đầu ra xi lanh (hình bóng trang 9 vẽ 10 bulông)",
+     "text_ja": "バレル出口にボルト締めの円形フランジがある(9 ページのシルエットは 10 本のボルト)",
+     "refs": [
+      "meas-4|Vỏ che C1 (đầu ra) có tấm vòm",
+      "cat-p09"
+     ],
+     "reason_vi": "Đọc trên hình bóng trang 9 (pdf_measures §4, lưu ý 4); thiết kế dùng 20 bulông chứ không phải 10.",
+     "reason_ja": "9 ページのシルエットから読み取った(pdf_measures §4、注意 4)。設計では 10 本ではなく 20 本のボルトを使う。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bích Ø640 × 60 nhận 20 bulông cấy M24 trên PCD 560 từ B6, đai ốc phía B6",
+     "text_ja": "Ø640 × 60 のフランジが、B6 から PCD 560 上の M24 スタッドボルト 20 本を受ける(ナットは B6 側)",
+     "refs": [
+      "rev-M1",
+      "drev-I6",
+      "dec-17|mặt bích xi lanh tăng từ Ø600 lên Ø640"
+     ],
+     "reason_vi": "Không có tài liệu của hãng. Chọn theo bích xi lanh: 20 bulông cấy M24 trên PCD 560 (review thiết kế M1), bích Ø640 sau khi review bản vẽ I6 yêu cầu tăng từ Ø600; độ dày 60 do thiết kế chọn.",
+     "reason_ja": "メーカー資料はない。バレルフランジに合わせ、PCD 560 上の M24 スタッドボルト 20 本(設計レビュー M1)、フランジは図面レビュー I6 の指摘で Ø600 から Ø640 に拡大した。厚さ 60 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thân côn Ø520 → Ø400",
+     "text_ja": "テーパー胴 Ø520 → Ø400",
+     "refs": [
+      "spec-4|Tấm đầu xi lanh"
+     ],
+     "reason_vi": "Không có tài liệu về hình dạng adapter; specs ước lượng Ø ngoài ≈ 450 (khác thân côn Ø520 của thiết kế). Thiết kế chọn côn thu từ Ø520 (bằng thân xi lanh) xuống Ø400.",
+     "reason_ja": "アダプターの形状に関する資料はない。仕様は外径 ≈ 450 と推定しており、設計のテーパー胴 Ø520 とは異なる。設計ではバレル胴と同じ Ø520 から Ø400 へ絞る形にした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bích ra Ø420 × 50 có 12 lỗ ren M24; vít bắt từ phía van, không có đai ốc sau bích",
+     "text_ja": "出口フランジ Ø420 × 50 に M24 ネジ孔 12 か所。ボルトはバルブ側から締め、フランジ裏にナットはない",
+     "refs": [
+      "rev-M1",
+      "design-6.3|Đầu xi lanh → van khởi động",
+      "design-10|M1 (bulông đầu xi lanh)"
+     ],
+     "reason_vi": "Không có tài liệu của hãng. Review thiết kế M1 chỉ ra 12 bulông M30 trên bích Ø420 va vào thân côn; thiết kế đổi sang vít M24 lục giác chìm bắt từ phía van vào lỗ ren, không còn đai ốc sau bích.",
+     "reason_ja": "メーカー資料はない。設計レビュー M1 は、Ø420 フランジの M30 ボルト 12 本がテーパー胴に干渉すると指摘した。設計では、バルブ側から M24 六角穴付きボルトでネジ孔に締める方式に変え、フランジ裏のナットをなくした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 băng nhiệt",
+     "text_ja": "バンドヒーター 2 本",
+     "refs": [
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu về băng nhiệt đường chảy; vị trí X 5 836 và 5 906 theo review thiết kế C1.",
+     "reason_ja": "溶融ラインのバンドヒーターに関する資料はない。位置 X 5 836 と 5 906 は設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §4 ghi chú 4 (mặt bích tròn bắt bulông ở đầu ra, dựng adapter đồng trục); specs §4 (≈ 250 mm); bulông theo review-01 M1"
@@ -230,15 +390,27 @@
      "rev-M1"
     ]
    },
-   "notes": ""
+   "notes": "Bích Ø640 × 60 dày hơn bích xi lanh (Ø640 × 50) mà không có lý do ghi lại. specs §4 ước lượng adapter Ø ngoài ≈ 450, thiết kế dùng Ø640 / Ø520."
   },
   "a351a574f2c2": {
    "vi": "Giữ nhiệt các bích chuyển và đầu xi lanh.",
    "used_by": [
     "melt_heater_bands:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Băng nhiệt giữ nhiệt cho các bích chuyển và đầu xi lanh",
+     "text_ja": "バンドヒーターが、転換フランジとバレルヘッドを保温する",
+     "refs": [
+      "rev-C1",
+      "c037"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách gia nhiệt đường chảy của dây chuyền này; chọn băng nhiệt quanh bích vì đó là cách giữ nhiệt thông dụng cho bích đường chảy (kiến thức chung về đùn PET; bộ nguồn không có tài liệu riêng). KM chỉ ghi máy ZE BluePower cỡ lớn dùng ceramic heater ở xi lanh (c037).",
+     "reason_ja": "このラインの溶融ライン加熱に関する公開資料はない。フランジ周りのバンドヒーターは溶融ラインの一般的な保温方法のため採用した(PET 押出の一般知識。資料セットに個別の資料はない)。KM が記載しているのは、大型 ZE BluePower のバレルにセラミックヒーターを使うことだけである(c037)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; vị trí theo review-01 C1"
@@ -254,8 +426,38 @@
    "used_by": [
     "melt_heater_bands:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp đấu nhỏ và cáp bọc lưới thép đi tới đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、小型端子箱とメッシュ被覆ケーブルが付いている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "6 băng mica/gốm rộng 70 tại X 5 836, 5 906, 6 521, 7 388, 8 001 và 9 000",
+     "text_ja": "幅 70 のマイカ/セラミックバンド 6 本を X 5 836、5 906、6 521、7 388、8 001、9 000 に配置",
+     "refs": [
+      "rev-C1|melt_heater_bands: positions_mm",
+      "c037"
+     ],
+     "reason_vi": "Không có tài liệu về băng nhiệt đường chảy; vị trí theo review thiết kế C1, bề rộng 70 nằm trong khoảng 60–90 mà review đề xuất.",
+     "reason_ja": "溶融ラインのバンドヒーターに関する資料はない。位置は設計レビュー C1 による。幅 70 はレビューが示した 60–90 の範囲内である。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đường kính băng Ø514 và Ø454 (đầu xi lanh, khe dưới 2 cảm biến), Ø380 (khe dưới P2), Ø320 (khe dưới P3), Ø260 (khe dưới P4), Ø320 (cổ bích khuôn)",
+     "text_ja": "バンド径 Ø514 と Ø454(バレルヘッド、センサー 2 個の下に切欠き)、Ø380(P2 の下に切欠き)、Ø320(P3 の下に切欠き)、Ø260(P4 の下に切欠き)、Ø320(ダイフランジのネック)",
+     "refs": [
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu; đường kính do thiết kế chọn theo từng adapter (cổ adapter cộng ≈ 20 mm), khe chừa dưới cổng cảm biến theo review thiết kế C1.",
+     "reason_ja": "資料はない。直径は各アダプターに合わせて設計で選んだ(アダプターのネック径 + 約 20 mm)。センサーポートの下に切欠きを設けることは設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; vị trí theo review-01 C1"
@@ -271,8 +473,19 @@
    "used_by": [
     "melt_heater_bands:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "7 băng trên ống (3) và bộ trộn (4) nằm dưới vỏ inox Ø300, không dựng thành vòng",
+     "text_ja": "配管(3 本)とミキサー(4 本)の 7 本のバンドは Ø300 ステンレスカバーの下にあり、リング状には作図しない",
+     "refs": [
+      "rev-C1|The 7 bands on the pipe and mixer sit under the Ø300 cladding"
+     ],
+     "reason_vi": "Không có tài liệu về băng nhiệt đường chảy; review thiết kế C1 đề nghị dựng vỏ bọc kèm một hộp đấu thay vì các vòng lộ ra.",
+     "reason_ja": "溶融ラインのバンドヒーターに関する資料はない。設計レビュー C1 は、露出したリングの代わりに、カバーと端子箱 1 個で表現することを提案した。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; vị trí theo review-01 C1"
@@ -288,8 +501,27 @@
    "used_by": [
     "melt_heater_conduits:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cáp bọc lưới thép đi tới hộp đấu dây ở đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "メッシュ被覆ケーブルが ZE の吐出端の端子箱へ配線されている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ống luồn dẫn cáp từ một hộp đấu chung tới từng vùng nhiệt của đường chảy",
+     "text_ja": "1 つの共通端子箱から溶融ラインの各加熱ゾーンへ、導管でケーブルを導く",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu về cách đi cáp nhiệt đường chảy; review thiết kế I6 chỉ ra đường chảy chưa được cấp điện và đề nghị hộp đấu chung kèm ống luồn mềm tới từng vùng.",
+     "reason_ja": "溶融ラインのヒーターケーブルの配線に関する資料はない。設計レビュー I6 は、溶融ラインに給電がないことを指摘し、共通端子箱と各ゾーンへのフレキシブル導管を提案した。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -305,8 +537,19 @@
    "used_by": [
     "melt_heater_conduits:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "7 ống luồn kim loại mềm Ø30 tới bộ lọc, van, đầu xi lanh, bích vào/ra bơm (kèm thanh nhiệt bơm), ống, bộ trộn; đi thấp Z 750–900 phía −Y",
+     "text_ja": "Ø30 フレキシブル金属導管 7 本が、フィルター、バルブ、バレルヘッド、ポンプ入口/出口フランジ(ポンプのヒーターロッド含む)、配管、ミキサーへ。−Y 側の低位置 Z 750–900 を通る",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu; review thiết kế I6 đề nghị ống luồn mềm tới các điểm này. Số ống (7), đường kính Ø30 và độ cao đi thấp Z 750–900 do thiết kế chọn.",
+     "reason_ja": "資料はない。設計レビュー I6 は、これらの箇所へのフレキシブル導管を提案した。本数(7)、径 Ø30、低位置 Z 750–900 の経路は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -322,8 +565,28 @@
    "used_by": [
     "melt_heater_jbox:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ lọc Gneuss RSFgenius 200 (3 800 kg): gia nhiệt điện 6 vùng, 39 kW",
+     "text_ja": "Gneuss RSFgenius 200(3 800 kg):電気加熱 6 ゾーン、39 kW",
+     "refs": [
+      "c050"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp đấu chung cho bộ lọc, van khởi động, bơm, các bích và ống; tổng ≈ 75 kW = 39 (bộ lọc) + ≈ 35 (bích, ống, thanh nhiệt)",
+     "text_ja": "スクリーンチェンジャー、スタートアップバルブ、ポンプ、フランジ、配管の共通端子箱。合計 ≈ 75 kW = 39(フィルター)+ ≈ 35(フランジ、配管、ヒーターロッド)",
+     "refs": [
+      "rev-I6",
+      "design-3|xi lanh 5 × 25 kW"
+     ],
+     "reason_vi": "Không có tài liệu về công suất nhiệt của đường chảy ngoài bộ lọc (c050); ≈ 35 kW cho băng, thanh nhiệt van và bơm là ước lượng của thiết kế, hộp đấu chung do review thiết kế I6 đề nghị.",
+     "reason_ja": "フィルター以外の溶融ラインの加熱容量に関する資料はない(c050 はフィルターのみ)。バンド、バルブとポンプのヒーターロッド分 ≈ 35 kW は設計の推定で、共通端子箱は設計レビュー I6 の提案による。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -339,8 +602,19 @@
    "used_by": [
     "melt_heater_jbox:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp RAL 7035 600 × 250 × 800 dưới tay quay bộ lọc; cửa bản lề, ổ cắm nhiều chân, tem cảnh báo điện; cáp nguồn vào từ hào cáp qua đáy",
+     "text_ja": "RAL 7035 の箱 600 × 250 × 800、スクリーンチェンジャー駆動アームの下。ヒンジ扉、多極コネクター、電気警告ラベル付き。電源ケーブルはケーブルトレンチから底面を通して引き込む",
+     "refs": [
+      "rev-I6"
+     ],
+     "reason_vi": "Không có tài liệu về hộp đấu nhiệt đường chảy; kích thước 600 × 250 × 800, màu RAL 7035 và vị trí dưới tay quay bộ lọc theo review thiết kế I6, phần còn lại do thiết kế chọn.",
+     "reason_ja": "溶融ライン用端子箱に関する資料はない。寸法 600 × 250 × 800、色 RAL 7035、スクリーンチェンジャー駆動アーム下の位置は設計レビュー I6 による。そのほかは設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; giả định"
@@ -356,8 +630,25 @@
    "used_by": [
     "melt_hpu:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm trong suốt của KM có bộ lọc nhựa nóng tác động thuỷ lực",
+     "text_ja": "KM のクリアシートラインには、油圧作動のメルトフィルターがある",
+     "refs": [
+      "c043"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Một bộ nguồn thuỷ lực chung cấp dầu cho xi lanh bộ lọc và xi lanh van khởi động",
+     "text_ja": "1 台の共通油圧ユニットが、スクリーンチェンジャーのシリンダーとスタートアップバルブのシリンダーへ作動油を供給する",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về bộ nguồn thuỷ lực của dây chuyền này; thiết kế dùng một HPU cho cả hai xi lanh (parts.json ghi \"cỡ giả định\").",
+     "reason_ja": "このラインの油圧ユニットに関する公開資料はない。設計では 2 つのシリンダーに 1 台の HPU を使う(parts.json に「サイズは仮定」と記載)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
@@ -374,8 +665,17 @@
    "used_by": [
     "melt_hpu:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Thùng dầu 250 L, động cơ-bơm đứng 7,5 kW; khối van, bình tích áp, lọc, đồng hồ áp, nhiệt-mức kế",
+     "text_ja": "油タンク 250 L、縦型 7,5 kW モーター・ポンプ。バルブブロック、アキュムレーター、フィルター、圧力計、温度・油面計",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về bộ nguồn thuỷ lực của bộ lọc và van khởi động; cỡ thùng 250 L và động cơ 7,5 kW do thiết kế chọn (parts.json ghi \"cỡ giả định\"), các phụ kiện là thành phần thường có của một HPU.",
+     "reason_ja": "スクリーンチェンジャーとスタートアップバルブ用の油圧ユニットに関する公開資料はない。タンク 250 L とモーター 7,5 kW は設計で選んだ(parts.json に「サイズは仮定」と記載)。付属機器は HPU に通常含まれる構成である。"
+    }
+   ],
    "seed": {
     "sources": [
      "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
@@ -392,8 +692,20 @@
    "used_by": [
     "melt_hpu:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Làm mát dầu bằng quạt gió–dầu gắn trên nắp, không dùng nước; mặt khối van hướng +Y ra lối đi",
+     "text_ja": "油冷は蓋に取り付けた空冷式(エア/オイル)クーラーによる(水不要)。バルブブロック面は +Y 側の通路方向を向く",
+     "refs": [
+      "rev-I7|HPU, if its cooler is water-cooled",
+      "design-10|I7 (nước cho phụ trợ)"
+     ],
+     "reason_vi": "Không có tài liệu về cách làm mát HPU; review thiết kế I7 nêu HPU cần 2 ống nước nếu làm mát bằng nước, thiết kế chọn làm mát bằng gió, không dùng nước (design §10, I7). Hướng mặt khối van ra lối đi +Y là bố trí của thiết kế.",
+     "reason_ja": "HPU の冷却方式に関する資料はない。設計レビュー I7 は、水冷なら HPU に水配管 2 本が必要と指摘し、設計では水を使わない空冷を選んだ(design §10、I7)。バルブブロック面を +Y 側の通路へ向けるのは設計の配置である。"
+    }
+   ],
    "seed": {
     "sources": [
      "c043 (bộ lọc dẫn động thuỷ lực); cỡ giả định; lùi về Y −2 700 … −2 000 theo review-01 I2"
@@ -410,8 +722,25 @@
    "used_by": [
     "melt_hyd_hoses_sc:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ lọc nhựa nóng trong dây chuyền tấm trong suốt của KM được dẫn động thuỷ lực",
+     "text_ja": "KM のクリアシートラインのメルトフィルターは油圧で作動する",
+     "refs": [
+      "c043"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dẫn dầu áp lực và dầu hồi tới xi lanh bộ lọc bằng ống mềm",
+     "text_ja": "圧油と戻り油を、フレキシブルホースでスクリーンチェンジャーのシリンダーへ導く",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về đường ống thuỷ lực của bộ lọc; ống mềm áp lực và hồi là cách nối thông dụng cho xi lanh thuỷ lực (kiến thức chung).",
+     "reason_ja": "スクリーンチェンジャーの油圧配管に関する資料はない。圧力側と戻り側のフレキシブルホースは、油圧シリンダーの一般的な接続方法である(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -425,8 +754,17 @@
    "used_by": [
     "melt_hyd_hoses_sc:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 ống mềm thuỷ lực DN12 (P, T), cách nhau 80 mm, treo trên giá ở Z 1 150 qua lối đi",
+     "text_ja": "DN12 油圧フレキシブルホース 2 本(P、T)、間隔 80 mm、通路を横切る Z 1 150 のラックに吊り下げ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về ống thuỷ lực của bộ lọc; cỡ DN12, khoảng cách 80 mm và giá treo ở Z 1 150 do thiết kế chọn (parts.json ghi \"giả định\").",
+     "reason_ja": "スクリーンチェンジャーの油圧ホースに関する資料はない。DN12、間隔 80 mm、Z 1 150 の吊りラックは設計で選んだ(parts.json に「仮定」と記載)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -440,8 +778,19 @@
    "used_by": [
     "melt_hyd_hoses_suv:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dẫn dầu từ HPU tới xi lanh thuỷ lực của van khởi động",
+     "text_ja": "HPU からスタートアップバルブの油圧シリンダーへ作動油を導く",
+     "refs": [
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu công khai về van khởi động và xi lanh của nó; đường dầu là hệ quả của việc thiết kế chọn xi lanh thuỷ lực để chuyển van.",
+     "reason_ja": "スタートアップバルブとそのシリンダーに関する公開資料はない。バルブの切替えに油圧シリンダーを選んだ設計上の結果として、油配管が必要になる。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -455,8 +804,17 @@
    "used_by": [
     "melt_hyd_hoses_suv:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 ống mềm DN10",
+     "text_ja": "DN10 フレキシブルホース 2 本",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về ống thuỷ lực của van khởi động; số ống và cỡ DN10 do thiết kế chọn (parts.json ghi \"giả định\").",
+     "reason_ja": "スタートアップバルブの油圧ホースに関する資料はない。本数と DN10 は設計で選んだ(parts.json に「仮定」と記載)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -470,8 +828,37 @@
    "used_by": [
     "melt_pipe:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sơ đồ dây chuyền KM vẽ một đường nhựa nóng nằm ngang nối máy đùn với khuôn khe",
+     "text_ja": "KM のライン図には、押出機とスロットダイを結ぶ水平の溶融樹脂ラインが描かれている",
+     "refs": [
+      "crop-p24-25_line_layout_spread"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Giữ nhiệt ≈ 280 °C trong khoảng nhiệt độ đặt chung 270–290 °C",
+     "text_ja": "保温温度 ≈ 280 °C(全体の設定温度 270–290 °C の範囲内)",
+     "refs": [
+      "design-1|Gia nhiệt toàn bộ xi lanh, đường chảy và khuôn"
+     ],
+     "reason_vi": "Không có tài liệu về nhiệt độ đùn của dây chuyền này; thiết kế đặt 270–290 °C theo kiến thức chung về đùn PET (bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "このラインの押出温度に関する資料はない。設計では PET 押出の一般知識に基づき 270–290 °C に設定した(資料セットに個別の資料はない)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đường chảy đi từ bơm qua ống gia nhiệt tới bộ trộn tĩnh (tuỳ chọn) rồi vào khuôn",
+     "text_ja": "流れはポンプから加熱パイプを通り、スタティックミキサー(オプション)を経てダイへ入る",
+     "refs": [
+      "spec-4|Bộ trộn tĩnh"
+     ],
+     "reason_vi": "Không có tài liệu về bộ trộn tĩnh trong dây chuyền này; specs ghi \"tuỳ chọn\", thiết kế chọn đặt bộ trộn sau ống để đồng nhất nhiệt trước khuôn.",
+     "reason_ja": "このラインのスタティックミキサーに関する資料はない。仕様では「オプション」とされ、設計ではダイ手前で温度を均一化するため、配管の後に置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (ống gia nhiệt, cách nhiệt, vỏ inox); giả định"
@@ -487,8 +874,31 @@
    "used_by": [
     "melt_pipe:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống DN100, lòng Ø100",
+     "text_ja": "DN100 配管、内径 Ø100",
+     "refs": [
+      "design-6.3|Bích ra → ống",
+      "spec-4|Ống/adapter dẫn vào khuôn"
+     ],
+     "reason_vi": "Không có bản vẽ ống dẫn của dây chuyền này; Ø100 theo bảng bích của thiết kế (lòng Ø100 từ sau bơm tới khuôn). Specs chỉ ghi ống có gia nhiệt, cách nhiệt và vỏ inox (ước lượng).",
+     "reason_ja": "このラインの配管図面はない。Ø100 は設計のフランジ表(ポンプ後段からダイまで流路 Ø100)による。仕様は、加熱、断熱、ステンレスカバー付きの配管と推定しただけである。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 băng nhiệt dưới lớp cách nhiệt và vỏ inox Ø300; 1 hộp đấu nhỏ 120 × 80 trên vỏ bọc phía −Y tại X 8 250",
+     "text_ja": "バンドヒーター 3 本は断熱材と Ø300 ステンレスカバーの下(外から見えない)。−Y 側カバー上の X 8 250 に小型端子箱 120 × 80 を 1 個",
+     "refs": [
+      "rev-C1|melt_pipe X 8160",
+      "spec-4|Ống/adapter dẫn vào khuôn"
+     ],
+     "reason_vi": "Không có tài liệu; số băng và vị trí theo review thiết kế C1 (X 8 160, 8 250, 8 340, dưới vỏ bọc kèm một hộp đấu); kích thước hộp 120 × 80 và vỏ Ø300 do thiết kế chọn.",
+     "reason_ja": "資料はない。バンドの本数と位置は設計レビュー C1 による(X 8 160、8 250、8 340、カバー下に端子箱 1 個)。端子箱 120 × 80 とカバー Ø300 は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (ống gia nhiệt, cách nhiệt, vỏ inox); giả định"
@@ -504,8 +914,27 @@
    "used_by": [
     "melt_pump_adapter_in:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm trong suốt của KM có bộ lọc nhựa nóng thuỷ lực và bơm nhựa",
+     "text_ja": "KM のクリアシートラインには、油圧作動のメルトフィルターとメルトポンプがある",
+     "refs": [
+      "c043"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ lọc đặt trước bơm, nối bằng bích chuyển mang cảm biến P3 (áp hút bơm)",
+     "text_ja": "フィルターをポンプの前に置き、P3 センサー(ポンプ吸込圧)を搭載する転換フランジで接続する",
+     "refs": [
+      "design-6.3|Bộ lọc → bích vào bơm"
+     ],
+     "reason_vi": "Không có tài liệu về thứ tự bộ lọc – bơm hay cách nối trong dây chuyền này; thiết kế đặt bộ lọc trước bơm để bơm chỉ nhận nhựa đã lọc và đặt cảm biến P3 ngay trước bơm để đo áp hút.",
+     "reason_ja": "このラインのフィルターとポンプの順序や接続方法に関する資料はない。設計ではポンプが濾過済みの樹脂だけを受けるようフィルターを前に置き、吸込圧を測るため P3 センサーをポンプ直前に置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -519,8 +948,20 @@
    "used_by": [
     "melt_pump_adapter_in:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống bích Ø360 dài 175, 1 băng nhiệt",
+     "text_ja": "フランジ付き管 Ø360、長さ 175、バンドヒーター 1 本",
+     "refs": [
+      "design-6.3|Bộ lọc → bích vào bơm",
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu; Ø360 theo bảng bích của thiết kế, chiều dài 175 do thiết kế chọn; vị trí băng nhiệt X 7 388 theo review thiết kế C1.",
+     "reason_ja": "資料はない。Ø360 は設計のフランジ表による。長さ 175 は設計で選んだ。バンドヒーター位置 X 7 388 は設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -534,8 +975,19 @@
    "used_by": [
     "melt_pump_adapter_out:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bích chuyển sau bơm nối bơm với ống nhựa và mang cảm biến P4 (áp ra bơm)",
+     "text_ja": "ポンプ後段の転換フランジが、ポンプとメルトパイプを接続し、P4 センサー(ポンプ吐出圧)を搭載する",
+     "refs": [
+      "design-6.3|Bơm → bích ra"
+     ],
+     "reason_vi": "Không có tài liệu về bố trí sau bơm của dây chuyền này; thiết kế đặt cảm biến P4 ngay sau bơm để giám sát áp ra.",
+     "reason_ja": "このラインのポンプ後段の配置に関する資料はない。設計では吐出圧を監視するため、P4 センサーをポンプ直後に置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -549,8 +1001,33 @@
    "used_by": [
     "melt_pump_adapter_out:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống bích Ø300 dài 150, 1 băng nhiệt",
+     "text_ja": "フランジ付き管 Ø300、長さ 150、バンドヒーター 1 本",
+     "refs": [
+      "design-6.3|Bơm → bích ra",
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu; Ø300 theo bảng bích của thiết kế, chiều dài 150 do thiết kế chọn; vị trí băng nhiệt X 8 001 theo review thiết kế C1.",
+     "reason_ja": "資料はない。Ø300 は設計のフランジ表による。長さ 150 は設計で選んだ。バンドヒーター位置 X 8 001 は設計レビュー C1 による。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ cảm biến P4 trên đỉnh và lỗ đĩa nổ 2 bên −Y",
+     "text_ja": "P4 センサー孔は上面、ラプチャーディスク 2 の取付孔は −Y 側",
+     "refs": [
+      "rev-I5|Add melt_rupture_disc_2"
+     ],
+     "reason_vi": "Không có tài liệu; vị trí do thiết kế chọn, đĩa nổ phía −Y theo review thiết kế I5.",
+     "reason_ja": "資料はない。位置は設計で選んだ。ラプチャーディスクを −Y 側に置くことは設計レビュー I5 による。"
+    }
+   ],
+   "free_numbers": [
+    "2"
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -564,8 +1041,27 @@
    "used_by": [
     "melt_pump_cardan:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Giữa hộp giảm tốc góc và thân bơm có hộp che dài dạng hộp, có ô lưới thông gió (ảnh render của KM)",
+     "text_ja": "直交軸減速機とポンプ本体の間に、通気メッシュ窓付きの細長い箱形ガードがある(KM のレンダリング)",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Trục các-đăng trong hộp che truyền mômen từ hộp giảm tốc tới trục bơm và bù lệch trục",
+     "text_ja": "ガード内のカルダンシャフトが、減速機からポンプ軸へトルクを伝え、軸心のずれを吸収する",
+     "refs": [
+      "spec-4|Động cơ bơm"
+     ],
+     "reason_vi": "Không có tài liệu về khớp nối trục bơm; ảnh web-07 không cho thấy bên trong hộp che. Chọn trục các-đăng vì nó truyền mômen và bù lệch trục (kiến thức chung); specs cũng ghi nối bằng các-đăng (ước lượng).",
+     "reason_ja": "ポンプ軸の連結に関する資料はない。写真 web-07 ではガードの内部は見えない。カルダンシャフトはトルクを伝え軸心のずれを吸収するため採用した(一般知識)。仕様も、カルダン連結と推定している。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (hộp che dài có lưới thông gió giữa bơm và hộp số)"
@@ -581,8 +1077,25 @@
    "used_by": [
     "melt_pump_cardan:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Vỏ che dạng hộp có ô lưới thông gió",
+     "text_ja": "通気メッシュ窓付きの箱形ガード",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tiết diện 300 × 300; trục các-đăng nằm bên trong",
+     "text_ja": "断面 300 × 300、内部にカルダンシャフト",
+     "refs": [],
+     "reason_vi": "Ảnh render web-07 không có thang đo nên không đo được tiết diện; 300 × 300 do thiết kế chọn, còn trục các-đăng bên trong là suy đoán vì bị che.",
+     "reason_ja": "レンダリング web-07 には寸法の目安がなく、断面は測れない。300 × 300 は設計で選んだ。内部のカルダンシャフトは隠れているため推定である。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (hộp che dài có lưới thông gió giữa bơm và hộp số)"
@@ -598,8 +1111,37 @@
    "used_by": [
     "melt_pump_gearbox:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bơm nhựa trong dây chuyền KM được dẫn động qua hộp giảm tốc góc, động cơ đứng đặt trên hộp (ảnh render)",
+     "text_ja": "KM のラインのメルトポンプは直交軸減速機を介して駆動され、縦型モーターが減速機の上に載る(レンダリング)",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Động cơ quay 1 480 v/ph",
+     "text_ja": "モーター回転数 1 480 rpm",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về động cơ bơm; 1 480 v/ph là tốc độ thường gặp của động cơ 4 cực 50 Hz (kiến thức chung), không phải số lấy từ catalogue động cơ.",
+     "reason_ja": "ポンプモーターに関する資料はない。1 480 rpm は 4 極 50 Hz モーターで一般的な回転数である(一般知識)。モーターのカタログ値ではない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bơm quay ≈ 105 v/ph ở 3 500 kg/h = 134 × 3 500 / 4 474",
+     "text_ja": "3 500 kg/h でのポンプ回転数 ≈ 105 rpm = 134 × 3 500 / 4 474",
+     "refs": [
+      "c047",
+      "spec-4|Bơm bánh răng nhựa nóng",
+      "anim-10|design ghi ≈ 105 v/ph"
+     ],
+     "reason_vi": "Nội suy tuyến tính theo bảng Maag (134 v/ph ở 4 474 kg/h, c047) tới năng suất 3 500 kg/h do thiết kế ước lượng (specs §0). Bảng Maag ứng với ≈ 0,73 kg/L; với PET nóng chảy ≈ 1,17 kg/L và hiệu suất 0,95 thì chỉ ≈ 69 v/ph (thiết kế animation), nên 105 v/ph chưa chắc đúng.",
+     "reason_ja": "Maag の表(4 474 kg/h で 134 rpm、c047)を、設計が推定した 3 500 kg/h まで比例換算した(仕様 §0)。Maag の表は ≈ 0,73 kg/L に対応し、PET 溶融樹脂 ≈ 1,17 kg/L・効率 0,95 では ≈ 69 rpm にしかならない(アニメーション設計)ため、105 rpm が正しいとは限らない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (hộp giảm tốc góc + động cơ đứng)"
@@ -608,15 +1150,44 @@
      "web-07"
     ]
    },
-   "notes": ""
+   "notes": "105 v/ph mâu thuẫn với phép tính công suất của chính thiết kế (≈ 0,81 L/s ⇒ ≈ 69 v/ph): 764 cm3 × 105 v/ph = 1,34 L/s; anim-10 đã nêu 69 v/ph. Tên thiết bị ghi motor 45 kW là giả định (thuỷ lực ≈ 16 kW), dòng này không nêu."
   },
   "4240fe3e9aab": {
    "vi": "Hộp góc côn-trụ 500 × 450 × 500, i ≈ 14.",
    "used_by": [
     "melt_pump_gearbox:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp giảm tốc góc: trục vào đứng (động cơ đặt trên), trục ra nằm ngang tới hộp che trục các-đăng",
+     "text_ja": "直交軸減速機:入力軸は縦(モーターが上に載る)、出力軸は横向きでカルダンシャフトのガードへ",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kiểu côn-trụ (bevel-helical) 500 × 450 × 500",
+     "text_ja": "ベベルヘリカル式 500 × 450 × 500",
+     "refs": [
+      "spec-4|Động cơ bơm"
+     ],
+     "reason_vi": "Không có tài liệu về hộp giảm tốc bơm; ảnh web-07 chỉ cho thấy hình dáng góc, không có thang đo. Kiểu côn-trụ và kích thước 500 × 450 × 500 do thiết kế chọn.",
+     "reason_ja": "ポンプ減速機に関する資料はない。写真 web-07 は直交軸の外形を示すだけで、寸法の目安はない。ベベルヘリカル式と 500 × 450 × 500 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tỷ số truyền i ≈ 14 = 1 480 / 105",
+     "text_ja": "減速比 i ≈ 14 = 1 480 / 105",
+     "refs": [
+      "spec-4|Động cơ bơm"
+     ],
+     "reason_vi": "Tính từ tốc độ động cơ 1 480 v/ph và tốc độ bơm ≈ 105 v/ph ở dòng chức năng; kế thừa mức giả định của hai số đó.",
+     "reason_ja": "モーター回転数 1 480 rpm とポンプ回転数 ≈ 105 rpm(機能欄)から計算した。この 2 つの数値の仮定レベルを引き継ぐ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (hộp giảm tốc góc + động cơ đứng)"
@@ -632,8 +1203,17 @@
    "used_by": [
     "melt_pump_motor:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Động cơ đứng đặt trên hộp giảm tốc góc, quay bơm bánh răng qua hộp che trục (ảnh render của KM)",
+     "text_ja": "縦型モーターが直交軸減速機の上に載り、ガード付きシャフトを介してギアポンプを回す(KM のレンダリング)",
+     "refs": [
+      "web-07"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (động cơ đứng trên hộp số); công suất giả định (thuỷ lực ≈ 16 kW, hiệu suất + dự phòng)"
@@ -642,15 +1222,32 @@
      "web-07"
     ]
    },
-   "notes": ""
+   "notes": "Tên thiết bị ghi \"45 kW\": công suất giả định (thuỷ lực Q·Δp ≈ 15–16 kW nhân hệ số dự phòng, specs §4 / design §3); dòng chức năng không nêu số này nên không đưa vào fact."
   },
   "df15a5be4402": {
    "vi": "Động cơ đứng Ø440 cao 850, nắp quạt trên đỉnh, hộp đấu dây bên.",
    "used_by": [
     "melt_pump_motor:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Động cơ đứng, trên đỉnh có nắp tròn (nắp quạt), bên hông có hộp đấu dây",
+     "text_ja": "縦型モーター。上部に丸いカバー(ファンカバー)、側面に端子箱がある",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø440, cao 850",
+     "text_ja": "Ø440、高さ 850",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về động cơ bơm; kích thước do thiết kế chọn, ảnh web-07 không có thang đo.",
+     "reason_ja": "ポンプモーターに関する資料はない。寸法は設計で選んだ。写真 web-07 には寸法の目安がない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-07 (động cơ đứng trên hộp số); công suất giả định (thuỷ lực ≈ 16 kW, hiệu suất + dự phòng)"
@@ -666,8 +1263,17 @@
    "used_by": [
     "melt_purge_cart:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Xe có bánh hứng cục nhựa xả khi khởi động hoặc đổi màu",
+     "text_ja": "起動時や色替え時に排出されたパージ樹脂塊を、台車で受ける",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về xe hứng nhựa xả; chọn xe có bánh dưới máng xả vì nhựa xả khi khởi động hoặc đổi màu cần được hứng và đẩy đi (kiến thức chung về đùn; bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "パージ受け台車に関する公開資料はない。起動時や色替え時の排出樹脂は受けて運び出す必要があるため、排出シュートの下に車輪付き台車を置いた(押出の一般知識。資料セットに個別の資料はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -681,8 +1287,17 @@
    "used_by": [
     "melt_purge_cart:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Thùng thép 520 × 800 × 450 trên 4 bánh xe, tay kéo phía −Y",
+     "text_ja": "鋼製タンク 520 × 800 × 450、キャスター 4 個、−Y 側に引き手",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về xe hứng nhựa xả; kích thước, số bánh và tay kéo do thiết kế chọn (parts.json ghi \"giả định\").",
+     "reason_ja": "パージ受け台車に関する公開資料はない。寸法、車輪数、引き手は設計で選んだ(parts.json に「仮定」と記載)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -696,8 +1311,19 @@
    "used_by": [
     "melt_rupture_disc:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đĩa nổ ở đầu xi lanh xả áp khi áp suất vượt giới hạn (bảo vệ quá áp)",
+     "text_ja": "バレルヘッドのラプチャーディスクが、圧力が限界を超えると圧を逃がす(過圧保護)",
+     "refs": [
+      "rev-I5|The only rupture disc is on the head adapter"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đĩa nổ của dây chuyền này; chọn lắp đĩa nổ ở đầu xi lanh vì là thiết bị an toàn tiêu chuẩn của máy đùn (kiến thức chung). Review thiết kế I5 xác nhận đĩa này nằm ở đầu xi lanh, trước van khởi động.",
+     "reason_ja": "このラインのラプチャーディスクに関する公開資料はない。押出機の標準的な安全装置のため、バレルヘッドに取り付けた(一般知識)。設計レビュー I5 は、このディスクがバレルヘッドのスタートアップバルブ手前にあることを確認している。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (thiết bị an toàn tiêu chuẩn của máy đùn)"
@@ -711,8 +1337,19 @@
    "used_by": [
     "melt_rupture_disc:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đầu đĩa nổ Ø40 có nắp chụp hướng xuống, đặt phía −Y",
+     "text_ja": "Ø40 のラプチャーディスクヘッド、下向きの保護キャップ付き、−Y 側に配置",
+     "refs": [
+      "rev-I5|Add melt_rupture_disc_2"
+     ],
+     "reason_vi": "Không có tài liệu công khai; Ø40 và nắp chụp hướng xuống lấy theo đĩa nổ thứ hai mà review thiết kế I5 mô tả (thiết kế không ghi kích thước riêng cho đĩa này); phía −Y là phía không có người vận hành (+Y).",
+     "reason_ja": "公開資料はない。Ø40 と下向きの保護キャップは、設計レビュー I5 が示す 2 つ目のラプチャーディスクに合わせた(このディスク単独の寸法記載はない)。−Y 側は運転者側(+Y)の反対側である。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (thiết bị an toàn tiêu chuẩn của máy đùn)"
@@ -726,8 +1363,27 @@
    "used_by": [
     "melt_rupture_disc_2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bơm Maag extrex6 GU: áp ra tối đa 370 bar (chênh áp tối đa 250 bar)",
+     "text_ja": "Maag extrex6 GU:最大吐出圧 370 bar(最大差圧 250 bar)",
+     "refs": [
+      "c049"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đĩa nổ thứ hai sau bơm bảo vệ cơ khí ống, bộ trộn và khuôn khi khuôn bị nghẹt",
+     "text_ja": "ポンプ後段の 2 つ目のラプチャーディスクが、ダイが詰まったときに配管、ミキサー、ダイを機械的に保護する",
+     "refs": [
+      "rev-I5"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đĩa nổ của dây chuyền này; review thiết kế I5 nêu thực hành chung là có thiết bị nổ cơ khí cả sau bơm, vì khuôn nghẹt chỉ được bảo vệ bằng ngắt phần mềm P4.",
+     "reason_ja": "このラインのラプチャーディスクに関する公開資料はない。設計レビュー I5 は、ダイ詰まりが P4 のソフト遮断でしか守られないため、ポンプ後段にも機械式の破裂装置を置くのが一般的だと述べている。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I5; c049 (370 bar)"
@@ -744,8 +1400,41 @@
    "used_by": [
     "melt_rupture_disc_2:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đầu đĩa nổ Ø40 dài 120 theo −Y, nắp chụp hướng xuống",
+     "text_ja": "Ø40 のラプチャーディスクヘッド、−Y 方向に長さ 120、下向きの保護キャップ付き",
+     "refs": [
+      "rev-I5|Add melt_rupture_disc_2"
+     ],
+     "reason_vi": "Không có tài liệu; kích thước và hướng do review thiết kế I5 đề xuất.",
+     "reason_ja": "資料はない。寸法と向きは設計レビュー I5 の提案による。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Áp nổ 350 bar: nằm giữa ngưỡng ngắt P4 330 bar và giới hạn 370 bar của bơm",
+     "text_ja": "破裂圧 350 bar:P4 の遮断しきい値 330 bar とポンプの限界 370 bar の間",
+     "refs": [
+      "rev-I5",
+      "c049",
+      "design-7|P4 HH 330 bar"
+     ],
+     "reason_vi": "Không có tài liệu về áp nổ của đĩa; 350 bar do thiết kế chọn, nằm trên ngưỡng ngắt P4 330 bar và dưới giới hạn 370 bar của bơm (c049).",
+     "reason_ja": "ディスクの破裂圧に関する資料はない。350 bar は設計で選んだ値で、P4 の遮断しきい値 330 bar より上、ポンプの限界 370 bar(c049)より下にある。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tín hiệu đứt đĩa về tủ điều khiển",
+     "text_ja": "ディスク破断信号は制御盤へ送られる",
+     "refs": [
+      "design-7|P4 HH 330 bar"
+     ],
+     "reason_vi": "Không có tài liệu; thiết kế nối tín hiệu đứt đĩa nổ 2 về tủ điều khiển để dừng bơm nhựa và truyền động chính (design §7, bảng nguyên nhân → tác động).",
+     "reason_ja": "資料はない。設計では、ラプチャーディスク 2 の破断信号を制御盤へ送り、メルトポンプと主駆動を停止する(design §7、原因 → 動作の表)。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I5; c049 (370 bar)"
@@ -762,8 +1451,19 @@
    "used_by": [
     "melt_sc_adapter_in:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bích chuyển nối van khởi động với bộ lọc, mang cảm biến áp P2 trước lưới",
+     "text_ja": "転換フランジがスタートアップバルブとスクリーンチェンジャーを接続し、スクリーン前の P2 圧力センサーを搭載する",
+     "refs": [
+      "design-6.3|Van khởi động → bích vào bộ lọc"
+     ],
+     "reason_vi": "Không có tài liệu về bố trí này; thiết kế đặt cảm biến P2 ngay trước bộ lọc để đo áp trước lưới.",
+     "reason_ja": "この配置に関する資料はない。設計ではスクリーン前の圧力を測るため、P2 センサーをフィルター直前に置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -777,8 +1477,20 @@
    "used_by": [
     "melt_sc_adapter_in:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống bích Ø420 dài 150, 1 băng nhiệt",
+     "text_ja": "フランジ付き管 Ø420、長さ 150、バンドヒーター 1 本",
+     "refs": [
+      "design-6.3|Van khởi động → bích vào bộ lọc",
+      "rev-C1|melt_heater_bands: positions_mm"
+     ],
+     "reason_vi": "Không có tài liệu; Ø420 theo bảng bích của thiết kế, chiều dài 150 do thiết kế chọn; vị trí băng nhiệt X 6 521 theo review thiết kế C1.",
+     "reason_ja": "資料はない。Ø420 は設計のフランジ表による。長さ 150 は設計で選んだ。バンドヒーター位置 X 6 521 は設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -792,8 +1504,25 @@
    "used_by": [
     "melt_sc_backflush:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Gneuss RSFgenius có khối mũi nhọn bên thân bộ lọc với cửa thăm lưới có bản lề; trang sản phẩm gọi nó là bộ lọc lưới xả ngược (backflush)",
+     "text_ja": "Gneuss RSFgenius は、本体横に先端の尖ったブロックとヒンジ付きのスクリーン点検口をもつ。製品ページではバックフラッシュ式スクリーンチェンジャーと呼ばれる",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đẩy nhựa sạch ngược qua lưới để làm sạch rồi xả ra máng nhỏ",
+     "text_ja": "清浄な樹脂をスクリーンへ逆流させて清掃し、小型シュートへ排出する",
+     "refs": [],
+     "reason_vi": "Bộ nguồn không có mô tả cơ chế xả ngược của RSFgenius (chỉ có chữ \"backflush\" trên trang Gneuss); cách mô tả là kiến thức chung về lọc nhựa nóng xả ngược; máng xả nhỏ do thiết kế chọn.",
+     "reason_ja": "RSFgenius のバックフラッシュ機構を説明した資料はない(Gneuss のページに「backflush」とあるだけ)。ここでの説明はバックフラッシュ式メルトフィルターの一般知識である。小型の排出シュートは設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-13 (khối nhọn + cửa thăm lưới bên trái)"
@@ -802,15 +1531,34 @@
      "web-13"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "bd9d4b2b4ff2": {
    "vi": "Khối mũi nhọn 500 × 350 có piston xả ngược, cửa bản lề thay lưới, máng xả nhỏ hướng xuống.",
    "used_by": [
     "melt_sc_backflush:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khối mũi nhọn có cửa bản lề thay lưới nằm ở bên cạnh thân bộ lọc",
+     "text_ja": "本体横に、先端の尖ったブロックとヒンジ付きのスクリーン交換ハッチがある",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối 500 × 350; piston xả ngược bên trong; máng xả nhỏ hướng xuống",
+     "text_ja": "ブロック 500 × 350、内部にバックフラッシュピストン、下向きの小型排出シュート",
+     "refs": [
+      "c050"
+     ],
+     "reason_vi": "Không có tài liệu về kích thước khối; 350 mm là phần còn lại của (A − E) = 1 955 − 1 040 = 915 sau khi trừ phần tay quay 565 mm, 500 mm theo X do thiết kế chọn; piston và máng không thấy trong ảnh.",
+     "reason_ja": "ブロックの寸法に関する資料はない。350 mm は (A − E) = 1 955 − 1 040 = 915 からレバーアーム側の 565 mm を引いた残りで、X 方向の 500 mm は設計で選んだ。ピストンとシュートは写真では見えない。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-13 (khối nhọn + cửa thăm lưới bên trái)"
@@ -819,15 +1567,35 @@
      "web-13"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "dcf5bc880c0e": {
    "vi": "Xoay đĩa lưới từng bước bằng xi lanh thuỷ lực.",
    "used_by": [
     "melt_sc_drive:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tay đòn với xi lanh thuỷ lực nhô ra bên hông thân bộ lọc RSFgenius; bộ lọc trong dây chuyền tấm KM được dẫn động thuỷ lực",
+     "text_ja": "RSFgenius の本体側面にレバーアームと油圧シリンダーが突き出ている。KM のシートラインのフィルターは油圧で作動する",
+     "refs": [
+      "web-13",
+      "c043"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh xoay đĩa lưới từng bước (qua cóc)",
+     "text_ja": "シリンダーがスクリーンディスクを段階的に回転させる(ラチェット経由)",
+     "refs": [
+      "anim-10|Đĩa lọc: trục đĩa"
+     ],
+     "reason_vi": "Không có tài liệu về cơ cấu quay đĩa của RSFgenius; ảnh chỉ cho thấy tay đòn và xi lanh. Cách quay từng bước qua cóc là giả định (thiết kế animation: tay quay phía −Y tác động lên vành đĩa qua cóc).",
+     "reason_ja": "RSFgenius のディスク回転機構に関する資料はない。写真に見えるのはレバーアームとシリンダーだけである。ラチェットによる段階回転は仮定(アニメーション設計:−Y 側のレバーがラチェットを介してディスク外周に作用)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-13 (tay quay + xi lanh nhô một bên); A − E = 1 955 − 1 040 chia hai bên (giả định)"
@@ -836,15 +1604,34 @@
      "web-13"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "052449e38854": {
    "vi": "Tay đòn + xi lanh Ø100 nằm theo Y, nhô 565 mm phía −Y.",
    "used_by": [
     "melt_sc_drive:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tay đòn và xi lanh nhô ra một bên thân bộ lọc",
+     "text_ja": "レバーアームとシリンダーが、本体の片側に突き出ている",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh Ø100 nằm theo Y, nhô 565 mm phía −Y: 565 = (A − E) − 350 = (1 955 − 1 040) − 350",
+     "text_ja": "Ø100 のシリンダーを Y 方向に配置、−Y 側に 565 mm 突出:565 = (A − E) − 350 = (1 955 − 1 040) − 350",
+     "refs": [
+      "c050"
+     ],
+     "reason_vi": "Không có tài liệu; Ø100 do thiết kế chọn. Tổng phần nhô hai bên A − E = 915 mm lấy từ bảng Gneuss (c050), thiết kế chia 565 cho tay quay (−Y) và 350 cho khối xả ngược (+Y); cách hiểu A và E là giả định.",
+     "reason_ja": "資料はない。Ø100 は設計で選んだ。両側の突出量の合計 A − E = 915 mm は Gneuss の表(c050)による。設計では、レバーアーム側(−Y)に 565、バックフラッシュブロック側(+Y)に 350 と振り分けた。A と E の解釈は仮定である。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-13 (tay quay + xi lanh nhô một bên); A − E = 1 955 − 1 040 chia hai bên (giả định)"
@@ -853,15 +1640,56 @@
      "web-13"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "c5bb9d35166c": {
    "vi": "Lọc tạp chất khỏi nhựa (lưới 60 µm, 970 cm²) liên tục, tự làm sạch bằng xả ngược.",
    "used_by": [
     "melt_screen_changer:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền tấm trong suốt của KM có bộ lọc nhựa nóng tác động thuỷ lực; Gneuss RSFgenius là bộ lọc lưới quay xả ngược (theo tên trang sản phẩm)",
+     "text_ja": "KM のクリアシートラインには油圧作動のメルトフィルターがある。Gneuss RSFgenius はバックフラッシュ式ロータリースクリーンチェンジャー(製品ページの名称)",
+     "refs": [
+      "c043",
+      "web-13"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "970 cm²: diện tích lưới hoạt động của RSFgenius 200 (cùng bảng: 3 800 kg, 39 kW, 6 vùng, 200 bar)",
+     "text_ja": "970 cm²:RSFgenius 200 の有効スクリーン面積(同じ表:3 800 kg、39 kW、6 ゾーン、200 bar)",
+     "refs": [
+      "c050"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lưới 60 µm",
+     "text_ja": "スクリーン 60 µm",
+     "refs": [
+      "c052",
+      "design-1|Bộ lọc lưới quay xả ngược",
+      "anim-2|lưới 60 µm"
+     ],
+     "reason_vi": "Gneuss tính công suất ở lưới 60 µm (c052) nhưng không nói đó là cỡ lưới của dây chuyền này; thiết kế chọn 60 µm (thiết kế animation đánh dấu * = giả định).",
+     "reason_ja": "Gneuss は処理能力を 60 µm のスクリーンで算出している(c052)が、それがこのラインのスクリーン仕様だとは述べていない。60 µm は設計で選んだ(アニメーション設計で * = 仮定と表示)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đổi lưới liên tục, không dừng dây chuyền, và tự làm sạch bằng xả ngược",
+     "text_ja": "ラインを止めずにスクリーンを連続的に交換でき、バックフラッシュで自己洗浄する",
+     "refs": [
+      "cat-p27",
+      "design-1|Bộ lọc lưới quay xả ngược"
+     ],
+     "reason_vi": "Bộ nguồn không có tài liệu nói RSFgenius đổi lưới liên tục; catalogue KM chỉ ghi có hệ thống lọc nhựa nóng liên tục và gián đoạn (trang 27). Thiết kế chọn kiểu quay xả ngược để đổi lưới liên tục.",
+     "reason_ja": "RSFgenius が連続スクリーン交換をできると述べた資料はない。KM カタログは連続式と不連続式のメルトフィルターがあると書くだけである(27 ページ)。設計では、連続交換のためにロータリー式バックフラッシュ型を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
@@ -872,15 +1700,35 @@
      "c043"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn. Mức \"lưới 60 µm\" chỉ là cơ sở tính công suất của Gneuss (c052), không phải cấu hình của máy."
   },
   "8ef9fdbe21fc": {
    "vi": "Thân hộp inox rộng 1 040 (Y), dày 705 (X), mũ nghiêng có khe thông gió lên tới Z 2 079, logo đỏ Gneuss trên mũ.",
    "used_by": [
     "melt_screen_changer:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Thân hộp kim loại, mũ nghiêng có khe thông gió, logo đỏ Gneuss trên mũ",
+     "text_ja": "金属製ボックス本体、通気スリット付きの傾斜キャップ、キャップ上に赤い Gneuss ロゴ",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Rộng 1 040 (Y), dày 705 (X), mũ lên tới Z 2 079 = 650 + C 1 429",
+     "text_ja": "幅 1 040(Y)、厚さ 705(X)、キャップは Z 2 079 まで = 650 + C 1 429",
+     "refs": [
+      "c050",
+      "design-9|Cách hiểu kích thước bộ lọc Gneuss"
+     ],
+     "reason_vi": "Bảng Gneuss (c050) cho A 1 955, B 705, C 1 429, D 550, E 1 040 nhưng không nói chiều nào; thiết kế hiểu E = rộng thân (Y), B = dày theo dòng chảy (X), C = cao tổng, D = cao tâm nhựa trên đáy nên đáy ở Z 650 và đỉnh ở Z 2 079.",
+     "reason_ja": "Gneuss の表(c050)は A 1 955、B 705、C 1 429、D 550、E 1 040 を示すが、どの方向かは述べていない。設計では E = 本体幅(Y)、B = 流れ方向の厚さ(X)、C = 全高、D = 底面から樹脂中心までの高さと解釈し、底面を Z 650、上端を Z 2 079 とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
@@ -891,15 +1739,46 @@
      "c043"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "13dad05ec393": {
    "vi": "Bích vào/ra tròn 8 bulông ở giữa mặt trước/sau, tại Z = 1 200.",
    "used_by": [
     "melt_screen_changer:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Mặt vào có bích tròn ở giữa, bắt bulông (ảnh sản phẩm Gneuss)",
+     "text_ja": "入口面の中央にボルト締めの円形フランジがある(Gneuss 製品写真)",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "8 vị trí bulông trên bích (6 lỗ nhỏ + 2 bulông), đếm trên ảnh",
+     "text_ja": "フランジ上のボルト位置 8 か所(小孔 6 + ボルト 2)を写真で数えた",
+     "refs": [
+      "web-13",
+      "design-6.3|Bích vào → bộ lọc"
+     ],
+     "reason_vi": "Đếm trên ảnh web-13: 6 lỗ nhỏ và 2 đầu bulông lớn trên mặt bích; khớp với 8 bulông trong bảng bích của thiết kế.",
+     "reason_ja": "写真 web-13 のフランジ面で、小孔 6 個と大きなボルト頭 2 個を数えた。設計のフランジ表のボルト 8 本と一致する。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bích vào/ra ở giữa mặt trước/sau tại Z = 1 200; bích ra ở mặt sau không thấy trong ảnh",
+     "text_ja": "入口/出口フランジは前面/背面の中央、Z = 1 200。背面の出口フランジは写真では見えない",
+     "refs": [
+      "c006",
+      "spec-4|Cao độ đường tâm nhựa"
+     ],
+     "reason_vi": "Không có tài liệu; thiết kế giữ tâm đường chảy ở cao độ trục vít 1 200 mm (c006) suốt đường chảy cho đơn giản (specs §4, ước lượng); ảnh chỉ cho thấy mặt vào.",
+     "reason_ja": "資料はない。設計では簡略化のため、溶融ライン全体の中心をスクリュー軸高さ 1 200 mm(c006)に保った(仕様 §4、推定)。写真には入口面しか写っていない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
@@ -910,15 +1789,43 @@
      "c043"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "5344c4e4126c": {
    "vi": "Tấm hông phẳng phải, hộp đầu nối nhiệt 6 vùng.",
    "used_by": [
     "melt_screen_changer:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tấm hông phẳng bên cạnh thân có hộp đầu nối cáp",
+     "text_ja": "本体の横に平らなサイドパネルとケーブルコネクター用ボックスがある",
+     "refs": [
+      "web-13"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "RSFgenius 200 (3 800 kg): gia nhiệt điện 6 vùng, 39 kW",
+     "text_ja": "RSFgenius 200(3 800 kg):電気加熱 6 ゾーン、39 kW",
+     "refs": [
+      "c050"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "6 đầu nối cáp xếp dọc mép hộp (đếm trên ảnh), khớp với 6 vùng gia nhiệt",
+     "text_ja": "ボックス縁にケーブルコネクターが 6 個並ぶ(写真で数えた)。6 加熱ゾーンと一致する",
+     "refs": [
+      "web-13",
+      "c050"
+     ],
+     "reason_vi": "Đếm trên ảnh web-13: 6 đầu nối dọc mép hộp bên phải; khớp 6 vùng gia nhiệt trong bảng Gneuss (c050).",
+     "reason_ja": "写真 web-13 の右側ボックスの縁にコネクターが 6 個ある。Gneuss の表(c050)の加熱 6 ゾーンと一致する。"
+    }
+   ],
    "seed": {
     "sources": [
      "c050 (RSFgenius 200: A 1 955 / B 705 / C 1 429 / D 550 / E 1 040, 3 800 kg, 39 kW 6 vùng, 200 bar); web-13; c043; cách hiểu B = dày theo dòng chảy, D = cao tâm nhựa trên đáy, E = rộng thân là giả định"
@@ -929,15 +1836,32 @@
      "c043"
     ]
    },
-   "notes": ""
+   "notes": "W2 web-13 (Gneuss): RSFgenius 200 là lựa chọn của chính thiết kế (specs §4) nên ảnh này dùng được cho mức có nguồn."
   },
   "9f8681cf1b11": {
    "vi": "Đo áp và nhiệt nhựa vào khuôn.",
    "used_by": [
     "melt_sensor_die:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đo thêm nhiệt độ nhựa vào khuôn tại cùng điểm (T5)",
+     "text_ja": "同じ位置でダイ入口の樹脂温度(T5)も測定する",
+     "refs": [],
+     "reason_vi": "Catalogue chỉ cho thấy cảm biến áp suất; việc gộp đo nhiệt độ tại điểm vào khuôn (tên P5, T5) là lựa chọn của thiết kế, không có tài liệu công khai.",
+     "reason_ja": "カタログに写っているのは圧力センサーだけである。ダイ入口で温度も測る(名称 P5、T5)のは設計の選択で、公開資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -951,8 +1875,19 @@
    "used_by": [
     "melt_sensor_die:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 cảm biến tại X = 9 006 và 9 046",
+     "text_ja": "X = 9 006 と 9 046 にセンサー 2 個",
+     "refs": [
+      "rev-C1|Sensors: melt_sensor_head"
+     ],
+     "reason_vi": "Không có tài liệu về vị trí cảm biến; số lượng và vị trí theo review thiết kế C1 (melt_sensor_die).",
+     "reason_ja": "センサー位置に関する資料はない。個数と位置は設計レビュー C1(melt_sensor_die)による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -966,8 +1901,27 @@
    "used_by": [
     "melt_sensor_head:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đo thêm nhiệt độ nhựa (T1) tại cùng điểm; P1 dùng cho khoá quá áp đầu xi lanh",
+     "text_ja": "同じ位置で樹脂温度(T1)も測定する。P1 はバレルヘッドの過圧インターロックに使う",
+     "refs": [
+      "design-7|P1 ngắt quá áp đầu xi lanh"
+     ],
+     "reason_vi": "Catalogue chỉ cho thấy cảm biến áp suất; việc gộp đo nhiệt độ và dùng P1 làm khoá quá áp là lựa chọn của thiết kế, không có tài liệu công khai.",
+     "reason_ja": "カタログに写っているのは圧力センサーだけである。温度測定の併設と P1 の過圧インターロック利用は設計の選択で、公開資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (cảm biến áp suất có cáp trên đầu ra); giả định"
@@ -983,8 +1937,35 @@
    "used_by": [
     "melt_sensor_head:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 cảm biến Ø25 có cổ mềm, đầu điện tử Ø40 cao tới Z 1 700",
+     "text_ja": "Ø25 のセンサー本体 2 本(フレキシブルネック付き)、Ø40 の電子ヘッドは Z 1 700 まで",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về kích thước cảm biến; Ø25, Ø40, cổ mềm và cao độ Z 1 700 do thiết kế chọn (parts.json ghi \"giả định\").",
+     "reason_ja": "センサーの寸法に関する資料はない。Ø25、Ø40、フレキシブルネック、高さ Z 1 700 は設計で選んだ(parts.json に「仮定」と記載)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đặt tại X = 5 876 và 5 916; băng nhiệt X 5 906 có khe tại hai lỗ",
+     "text_ja": "位置は X = 5 876 と 5 916。X 5 906 のバンドヒーターは両孔の位置に切欠きがある",
+     "refs": [
+      "rev-C1|Sensors: melt_sensor_head"
+     ],
+     "reason_vi": "Không có tài liệu về vị trí; vị trí cảm biến và khe băng nhiệt theo review thiết kế C1.",
+     "reason_ja": "位置に関する資料はない。センサー位置とバンドヒーターの切欠きは設計レビュー C1 による。"
+    }
+   ],
    "seed": {
     "sources": [
      "p01 (cảm biến áp suất có cáp trên đầu ra); giả định"
@@ -1000,8 +1981,25 @@
    "used_by": [
     "melt_sensor_p2:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dùng áp trước lưới P2 để điều khiển xả ngược / đổi lưới",
+     "text_ja": "スクリーン前の圧力 P2 でバックフラッシュ/スクリーン交換を制御する",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về cách điều khiển xả ngược hay đổi lưới của RSFgenius; điều khiển theo áp trước lưới là thực hành chung của bộ lọc nhựa nóng (kiến thức chung về lọc nhựa nóng).",
+     "reason_ja": "RSFgenius のバックフラッシュやスクリーン交換の制御方法に関する資料はない。スクリーン前圧力で制御するのはメルトフィルターの一般的な方法である(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -1017,8 +2015,25 @@
     "melt_sensor_p3:details[0]",
     "melt_sensor_p4:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thân Ø25, đầu Ø40",
+     "text_ja": "本体 Ø25、ヘッド Ø40",
+     "refs": [],
+     "reason_vi": "Không có tài liệu về kích thước cảm biến; Ø25 và Ø40 do thiết kế chọn (parts.json ghi \"giả định\").",
+     "reason_ja": "センサーの寸法に関する資料はない。Ø25 と Ø40 は設計で選んだ(parts.json に「仮定」と記載)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -1032,23 +2047,67 @@
    "used_by": [
     "melt_sensor_p3:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "P3 chỉnh tốc độ bơm bánh răng để giữ áp hút ổn định; lưu lượng do các cân loss-in-weight quyết định",
+     "text_ja": "P3 がギアポンプの回転数を調整して吸込圧を安定させる。流量はロスインウェイトフィーダーで決まる",
+     "refs": [
+      "design-1|Cảm biến áp hút P3",
+      "drev-I3",
+      "anim-10|Dây chuyền tấm thường làm ngược lại"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vòng điều khiển này. Thiết kế chọn P3 chỉnh tốc độ bơm, cân quyết định lưu lượng (tín hiệu s_20, sau review bản vẽ I3); thiết kế animation lại cho rằng dây chuyền tấm thường làm ngược lại (bơm đặt lưu lượng, P3 chỉnh cân và vít). Hai tài liệu nội bộ chưa thống nhất.",
+     "reason_ja": "この制御ループに関する公開資料はない。設計では P3 がポンプ回転数を調整し、フィーダーが流量を決める(信号 s_20、図面レビュー I3 の後)。一方アニメーション設計は、シートラインでは逆(ポンプが流量を設定し、P3 がフィーダーとスクリューを調整)が普通と述べており、内部資料同士で一致していない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Áp hút bơm ≈ 50 bar",
+     "text_ja": "ポンプ吸込圧 ≈ 50 bar",
+     "refs": [
+      "anim-2|Maag GU 100/125"
+     ],
+     "reason_vi": "Không có tài liệu về áp hút bơm cho dây chuyền này; 50 bar do thiết kế chọn (thiết kế animation đánh dấu * = giả định).",
+     "reason_ja": "このラインのポンプ吸込圧に関する資料はない。50 bar は設計で選んだ(アニメーション設計で * = 仮定と表示)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Vòng P3 → tốc độ bơm (design s_20) mâu thuẫn với anim-10/Q6a (P3 chỉnh cân + vít, bơm đặt lưu lượng); drev-I3 chỉ yêu cầu chọn một trong hai. Chưa có tài liệu công khai nào quyết định."
   },
   "986f7cca9584": {
    "vi": "Giám sát áp ra bơm, ngắt bơm và trục vít khi vượt 330 bar.",
    "used_by": [
     "melt_sensor_p4:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Đầu đo áp suất nhựa nóng thân trụ có đầu nối cáp, vặn vào đầu ra của máy ZE (ảnh catalogue trang 1)",
+     "text_ja": "ZE の吐出端に、ケーブルコネクター付きの円筒形メルト圧力センサーがねじ込まれている(カタログ 1 ページの写真)",
+     "refs": [
+      "crop-p01_cover_die_end_strand_die_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ngắt bơm và trục vít khi P4 vượt 330 bar",
+     "text_ja": "P4 が 330 bar を超えるとポンプとスクリューを停止する",
+     "refs": [
+      "rev-I5",
+      "c049",
+      "design-7|P4 HH 330 bar"
+     ],
+     "reason_vi": "Không có tài liệu về ngưỡng ngắt; thiết kế chọn 330 bar, dưới áp nổ 350 bar của đĩa nổ sau bơm và giới hạn 370 bar của bơm (c049), theo review thiết kế I5.",
+     "reason_ja": "遮断しきい値に関する資料はない。設計では、ポンプ後段ラプチャーディスクの破裂圧 350 bar とポンプの限界 370 bar(c049)より低い 330 bar を、設計レビュー I5 に従って選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -1062,8 +2121,21 @@
    "used_by": [
     "melt_startup_cyl:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh thuỷ lực chuyển van khởi động giữa vị trí xả và vị trí chạy",
+     "text_ja": "油圧シリンダーがスタートアップバルブをパージ位置と運転位置の間で切り替える",
+     "refs": [
+      "spec-4|Van khởi động / van chuyển hướng",
+      "design-7|Van khởi động kiểu chốt xoay",
+      "anim-10|Van khởi động: design ghi"
+     ],
+     "reason_vi": "Không có tài liệu về cơ cấu chuyển của van khởi động; thiết kế chọn xi lanh thuỷ lực nằm ngang. Thiết kế animation chỉ ra xi lanh nằm theo Y đẩy thẳng đầu chốt chứ không xoay, nên chữ \"xoay\" trong dòng này chưa chặt chẽ.",
+     "reason_ja": "スタートアップバルブの切替機構に関する資料はない。設計では水平の油圧シリンダーを選んだ。アニメーション設計は、Y 方向のシリンダーはピンを回すのではなく直進させると指摘しており、この行の「回転」という語は厳密ではない。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (xi lanh thuỷ lực nằm ngang); giả định phía −Y"
@@ -1072,15 +2144,26 @@
      "spec-4"
     ]
    },
-   "notes": ""
+   "notes": "Dòng ghi \"Xoay chốt van\" nhưng xi lanh nằm theo Y đẩy thẳng đầu chốt (anim-10 mục 4); văn bản dòng này giữ nguyên theo parts.json."
   },
   "84c0eaf15c36": {
    "vi": "Xi lanh Ø160 dài 600 nằm theo Y, 2 công tắc hành trình.",
    "used_by": [
     "melt_startup_cyl:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh Ø160 dài 600 nằm theo Y, 2 công tắc hành trình",
+     "text_ja": "Ø160、長さ 600 のシリンダーを Y 方向に配置、リミットスイッチ 2 個",
+     "refs": [
+      "spec-4|Van khởi động / van chuyển hướng"
+     ],
+     "reason_vi": "Không có tài liệu; specs chỉ ghi xi lanh thuỷ lực đặt ngang (ước lượng); kích thước Ø160 × 600, phía −Y và 2 công tắc hành trình do thiết kế chọn.",
+     "reason_ja": "資料はない。仕様は水平配置の油圧シリンダーと推定しただけである。Ø160 × 600、−Y 側配置、リミットスイッチ 2 個は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (xi lanh thuỷ lực nằm ngang); giả định phía −Y"
@@ -1096,8 +2179,21 @@
    "used_by": [
     "melt_startup_valve:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Van hai vị trí: khi khởi động xả nhựa xuống máng, khi chạy cho nhựa đi tiếp vào bộ lọc",
+     "text_ja": "2 位置バルブ:起動時は溶融樹脂をシュートへ排出し、運転時は樹脂をそのままフィルターへ送る",
+     "refs": [
+      "design-7|Van khởi động kiểu chốt xoay",
+      "design-1|Chạy trục vít chậm với van khởi động",
+      "cat-p27"
+     ],
+     "reason_vi": "Không có tài liệu công khai về van khởi động của dây chuyền này; chữ \"diverter valve\" trong catalogue KM chỉ nằm ở chú thích sơ đồ tạo hạt (trang 27), không mô tả van trên đường nhựa chảy. Thiết kế chọn van hai vị trí: xả nhựa chưa đều xuống máng lúc khởi động, chuyển sang chạy khi nhựa ra đều.",
+     "reason_ja": "このラインのスタートアップバルブに関する公開資料はない。KM カタログの「diverter valve」はペレット化ラインの図の凡例(27 ページ)にあるだけで、溶融樹脂ライン上のバルブの説明ではない。設計では 2 位置バルブを選び、起動時は不安定な樹脂を排出し、樹脂が安定したら運転位置へ切り替える。"
+    }
+   ],
    "seed": {
     "sources": [
      "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
@@ -1107,15 +2203,27 @@
      "spec-4"
     ]
    },
-   "notes": ""
+   "notes": "c035 (nguồn của parts.json) KHÔNG dùng làm bằng chứng: mục \"21 Diverter valve\" nằm trên sơ đồ tạo hạt trang 27, có vẻ là van chuyển hướng hạt, không phải van khởi động đường nhựa chảy."
   },
   "1bdf0358d16f": {
    "vi": "Khối thép 450 × 520 × 520 có thanh nhiệt cắm, tấm cách nhiệt, cổng xả đáy, chốt xoay (rotary bolt) theo Y.",
    "used_by": [
     "melt_startup_valve:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khối thép 450 × 520 × 520 có thanh nhiệt cắm, tấm cách nhiệt, cổng xả đáy, chốt xoay (rotary bolt) theo Y",
+     "text_ja": "450 × 520 × 520 の鋼製ブロック。挿入式ヒーターロッド、断熱板、底面排出ポート、Y 方向のロータリーボルト(回転ピン)を備える",
+     "refs": [
+      "spec-4|Van khởi động / van chuyển hướng",
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu; specs ước lượng khối ≈ 400 × 500 × 500, thiết kế dùng 450 × 520 × 520 (không ghi lý do chỉnh). Thanh nhiệt cắm, tấm cách nhiệt, cổng xả đáy và chốt xoay theo Y do thiết kế chọn.",
+     "reason_ja": "資料はない。仕様はブロックを ≈ 400 × 500 × 500 と推定したが、設計は 450 × 520 × 520 を使う(変更理由の記載なし)。ヒーターロッド、断熱板、底面排出ポート、Y 方向のロータリーピンは設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
@@ -1132,8 +2240,21 @@
    "used_by": [
     "melt_startup_valve:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai mặt bích phẳng của khối van có 12 lỗ khoét bậc cho vít M24 bắt vào bích kề; đáy tì lên giá đỡ PTFE",
+     "text_ja": "バルブブロック両側のフランジ面は平面で、隣接フランジに締結する M24 ボルト用の座ぐり穴が各 12 個ある。底面は PTFE サポートに載る",
+     "refs": [
+      "rev-M1",
+      "rev-I8",
+      "design-6.3|Đầu xi lanh → van khởi động"
+     ],
+     "reason_vi": "Không có tài liệu; 12 lỗ khoét bậc cho vít M24 từ phía van theo cách sửa sau review thiết kế M1; đáy tì lên giá đỡ PTFE theo review thiết kế I8 (để đường chảy giãn nở theo X).",
+     "reason_ja": "資料はない。バルブ側から締める M24 ボルト用の座ぐり穴 12 個は、設計レビュー M1 後の修正による。底面の PTFE サポートは、溶融ラインが X 方向に膨張できるよう設計レビュー I8 に従って設けた。"
+    }
+   ],
    "seed": {
     "sources": [
      "c035 (diverter valve trong sơ đồ catalogue); kích thước theo specs §4 (giả định)"
@@ -1150,8 +2271,19 @@
    "used_by": [
     "melt_static_mixer:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bộ trộn tĩnh đồng nhất nhiệt độ nhựa trước khuôn",
+     "text_ja": "スタティックミキサーが、ダイ手前で溶融樹脂の温度を均一化する",
+     "refs": [
+      "spec-4|Bộ trộn tĩnh"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bộ trộn tĩnh trong dây chuyền này; specs ghi \"tuỳ chọn\". Chọn đặt trước khuôn vì bộ trộn tĩnh dùng để đồng nhất nhiệt độ nhựa chảy (kiến thức chung về đùn).",
+     "reason_ja": "このラインのスタティックミキサーに関する公開資料はない。仕様は「オプション」としている。スタティックミキサーは溶融樹脂の温度を均一にするためのものなので、ダイ手前に置いた(押出の一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (tuỳ chọn DN ≈ 120, dài ≈ 600); giả định"
@@ -1167,8 +2299,30 @@
    "used_by": [
     "melt_static_mixer:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Vỏ DN100 với 6 phần tử trộn",
+     "text_ja": "DN100 のケーシングに混合エレメント 6 個",
+     "refs": [
+      "spec-4|Bộ trộn tĩnh"
+     ],
+     "reason_vi": "Không có tài liệu; specs ước lượng DN ≈ 120, dài ≈ 600 mm, thiết kế dùng DN100, dài 500 và 6 phần tử (không ghi lý do chỉnh).",
+     "reason_ja": "資料はない。仕様は DN ≈ 120、長さ ≈ 600 mm と推定したが、設計は DN100、長さ 500、エレメント 6 個とした(変更理由の記載なし)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 băng nhiệt dưới vỏ inox Ø300, 1 hộp đấu trên vỏ bọc phía −Y tại X 8 676; bích hai đầu",
+     "text_ja": "4 本のバンドヒーターは Ø300 ステンレスカバーの下(外から見えない)。−Y 側カバー上の X 8 676 に端子箱 1 個、両端フランジ",
+     "refs": [
+      "rev-C1|melt_static_mixer X 8500",
+      "design-6.3|Bích ra → ống"
+     ],
+     "reason_vi": "Không có tài liệu; số băng và vị trí theo review thiết kế C1 (X 8 500, 8 620, 8 740, 8 860, một hộp đấu); bích hai đầu theo bảng bích của thiết kế.",
+     "reason_ja": "資料はない。バンドの本数と位置は設計レビュー C1 による(X 8 500、8 620、8 740、8 860、端子箱 1 個)。両端フランジは設計のフランジ表による。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §4 (tuỳ chọn DN ≈ 120, dài ≈ 600); giả định"
@@ -1177,7 +2331,7 @@
      "spec-4"
     ]
    },
-   "notes": ""
+   "notes": "specs §4 ghi bộ trộn DN ≈ 120, dài ≈ 600 (ước lượng); parts.json dùng DN100, dài 500 mà source vẫn dẫn specs §4."
   }
  }
 }
