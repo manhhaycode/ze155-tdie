@@ -7,7 +7,7 @@
    "used_by": [
     "ctrl_cable_drop:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -35,14 +35,19 @@
     ],
     "refs": []
    },
-   "notes": "Phần ✓ chỉ nói máy ZE thật có máng cáp mạ kẽm trên khung (web-01/02); máng đứng và đường xuống hào là thiết kế."
+   "notes": "Phần ✓ chỉ nói máy ZE thật có máng cáp mạ kẽm trên khung (web-01/02); máng đứng và đường xuống hào là thiết kế.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "477a4c72c90c": {
    "vi": "Máng đứng 300 × 100 áp mặt bên khung.",
    "used_by": [
     "ctrl_cable_drop:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -60,14 +65,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "50306e1d6479": {
    "vi": "Đưa cáp trung thế từ hào lên hộp đấu dây động cơ.",
    "used_by": [
     "ctrl_cable_mv:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -86,14 +96,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "53f60c8344c5": {
    "vi": "3 cáp trung thế trong ống bảo vệ Ø80 dựng lên sát mặt bên khung (Y −1 100) rồi vào đáy hộp đấu dây.",
    "used_by": [
     "ctrl_cable_mv:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -120,14 +135,19 @@
     ],
     "refs": []
    },
-   "notes": "Số 3 là 3 pha (thông lệ), không đếm trên ảnh."
+   "notes": "Số 3 là 3 pha (thông lệ), không đếm trên ảnh.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "7fddb076a16c": {
    "vi": "Điều khiển 94 thanh nhiệt bulông theo profin chiều dày (bộ điều khiển riêng của hệ bulông nhiệt).",
    "used_by": [
     "ctrl_die_bolt_cabinet:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -182,14 +202,19 @@
      "c054"
     ]
    },
-   "notes": "Đã xử lý W2 khi kiểm: design.md không nêu tên SBI làm sản phẩm đã chọn (bơm thì ghi rõ Maag), nên web-17 không dùng cho ✓. ✓ còn lại chỉ dựa c054 (bước 25,4 mm); phần màn hình chiều dày hạ xuống ≈. Số 94 phụ thuộc bề rộng môi 2 400 do thiết kế ước nên ⚠."
+   "notes": "Đã xử lý W2 khi kiểm: design.md không nêu tên SBI làm sản phẩm đã chọn (bơm thì ghi rõ Maag), nên web-17 không dùng cho ✓. ✓ còn lại chỉ dựa c054 (bước 25,4 mm); phần màn hình chiều dày hạ xuống ≈. Số 94 phụ thuộc bề rộng môi 2 400 do thiết kế ước nên ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "21f184e2f48c": {
    "vi": "Tủ 800 × 600 × 2 000 RAL 7035, màn hình profin trên cửa.",
    "used_by": [
     "ctrl_die_bolt_cabinet:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -240,14 +265,19 @@
      "c054"
     ]
    },
-   "notes": "Đã xử lý W2 khi kiểm: web-17 là ảnh SBI (hãng khác), thiết kế không chọn đích danh SBI, nên fact màn hình hạ ≈. Ảnh chỉ cho thấy màn hình, không cho thấy nó nằm trên cửa tủ (F3 vẫn ⚠)."
+   "notes": "Đã xử lý W2 khi kiểm: web-17 là ảnh SBI (hãng khác), thiết kế không chọn đích danh SBI, nên fact màn hình hạ ≈. Ảnh chỉ cho thấy màn hình, không cho thấy nó nằm trên cửa tủ (F3 vẫn ⚠).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "1acbb1ec452a": {
    "vi": "Biến tần điều khiển tốc độ động cơ chính 1 500 kW.",
    "used_by": [
     "ctrl_drive_cabinet:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -281,14 +311,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "07fc6a5412e8": {
    "vi": "6 khoang RAL 7035 rộng 600, sâu 1 200, cao 2 400 kể cả đế, cửa mở về +Y có lưới thông gió, đèn báo; trước cửa chừa ≥ 1 000 mm.",
    "used_by": [
     "ctrl_drive_cabinet:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -327,14 +362,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "5f3b9ce96d89": {
    "vi": "Dừng khẩn khi chỉnh môi, deckle, xử lý màn nhựa ở phía vận hành.",
    "used_by": [
     "ctrl_estop_die:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -355,14 +395,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "dcd3e013add6": {
    "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (9 250, 1 450, 1 100), trên cột ống Ø50 dựng từ tay đòn thấp (Z 300–400) gá vào đầu +Y của xe khuôn; nằm ngoài tấm đầu khuôn (|Y| > 1 375) và trước khung cụm trục.",
    "used_by": [
     "ctrl_estop_die:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -417,14 +462,19 @@
      "drev-I2"
     ]
    },
-   "notes": "Hộp dừng khẩn gá trên xe khuôn, trong khi review thiết kế I3 yêu cầu không để thiết bị điện đi theo xe (die_junction_box đã dời xuống sàn); thiết kế xử lý bằng phích cắm (dòng details[1]) nên không mâu thuẫn hẳn."
+   "notes": "Hộp dừng khẩn gá trên xe khuôn, trong khi review thiết kế I3 yêu cầu không để thiết bị điện đi theo xe (die_junction_box đã dời xuống sàn); thiết kế xử lý bằng phích cắm (dòng details[1]) nên không mâu thuẫn hẳn.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "2805359b44ae": {
    "vi": "Cáp nối bằng phích cắm qua hộp đấu dây khuôn để xe khuôn kéo đi được.",
    "used_by": [
     "ctrl_estop_die:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -447,14 +497,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "86732894e81d": {
    "vi": "outline_mm (mặt YZ) là hình chữ L: tay đòn thấp Y 1 200–1 475, Z 300–400; cột Y 1 425–1 475 lên Z 1 030; hộp Y 1 410–1 490, Z 1 030–1 170.",
    "used_by": [
     "ctrl_estop_die:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -474,14 +529,19 @@
      "drev-I2"
     ]
    },
-   "notes": "Dòng này là ghi chú dữ liệu mô hình (có tên trường outline_mm), không phải thông tin thiết bị thật; chỉ nên coi là giả định hình học."
+   "notes": "Dòng này là ghi chú dữ liệu mô hình (có tên trường outline_mm), không phải thông tin thiết bị thật; chỉ nên coi là giả định hình học.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "92ca1beb2358": {
    "vi": "Dừng khẩn khi thay lưới / xử lý ở bộ lọc phía vận hành.",
    "used_by": [
     "ctrl_estop_melt:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -502,14 +562,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "f09590d0f5b7": {
    "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm (7 320, 650, 1 100), trên cột 60 × 60 gá vào mặt +Y của giá bộ lọc, ngay sau cụm xả ngược (X ≤ 7 200).",
    "used_by": [
     "ctrl_estop_melt:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -554,14 +619,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "fb6cd1f4096e": {
    "vi": "Dừng khẩn từ sàn cân cấp liệu.",
    "used_by": [
     "ctrl_estop_platform:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -582,14 +652,19 @@
      "rev-M3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "795e6e0e151a": {
    "vi": "Hộp vàng 100 × 80 × 140 có nút nấm đỏ trên cột lan can mép +Y.",
    "used_by": [
     "ctrl_estop_platform:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -626,14 +701,19 @@
      "rev-M3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "a6caf0d1ccf6": {
    "vi": "Dừng khẩn toàn dây chuyền từ dọc máy phía vận hành, ở tầm tay.",
    "used_by": [
     "ctrl_estops:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -654,14 +734,19 @@
      "rev-M3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "b90f07574975": {
    "vi": "3 hộp vàng 100 × 80 × 140 có nút nấm đỏ, tâm Z 1 120 (tầm 1,05–1,19 m): X 600 trên cột gá 60 × 60 từ mặt khung (vùng nạp để lộ), X 3 700 trên tấm dưới vỏ C4, X 5 700 trên tấm dưới vỏ C1.",
    "used_by": [
     "ctrl_estops:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -708,14 +793,19 @@
      "rev-M3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "1d0ab82874bd": {
    "vi": "Thêm nút trên HMI, tủ đầu máy, hộp đấu dây khuôn (−Y), lan can sàn thao tác (ctrl_estop_platform), khuôn phía +Y (ctrl_estop_die) và bộ lọc phía +Y (ctrl_estop_melt).",
    "used_by": [
     "ctrl_estops:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -746,14 +836,19 @@
      "rev-M3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "82b65411ce37": {
    "vi": "Dẫn cáp từ máy về tủ điều khiển, nắp phẳng sàn.",
    "used_by": [
     "ctrl_floor_duct:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -774,14 +869,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "8db78070bb94": {
    "vi": "Hào cáp có nắp tôn mạ kẽm chống trượt rộng 400, phẳng sàn (nắp dày 10).",
    "used_by": [
     "ctrl_floor_duct:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -802,14 +902,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "13efd7c95507": {
    "vi": "Dẫn cáp động lực/tín hiệu tới bơm nhựa, hộp nhiệt đường chảy, HPU, cụm chân không, khuôn.",
    "used_by": [
     "ctrl_floor_trench:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -828,14 +933,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "ce2e3f40c7ee": {
    "vi": "Nắp tôn chống trượt rộng 200 phẳng sàn; kết thúc ở X 8 700, trước ray xe khuôn.",
    "used_by": [
     "ctrl_floor_trench:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -862,14 +972,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "4643483c62a5": {
    "vi": "PLC, rơ-le bán dẫn cho vùng nhiệt xi lanh/đường chảy/khuôn, khởi động động cơ phụ.",
    "used_by": [
     "ctrl_heater_cabinet:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -913,14 +1028,19 @@
      "rev-I2"
     ]
    },
-   "notes": "c034 nói thiết bị điện nằm trong khung đế (cho ZE UTX); thiết kế đặt thành dãy tủ rời sau máy (specs §7 ghi \"trong khung đế hoặc đặt sát máy\"). cat-p22 là trang chữ của catalogue (Simatic S7)."
+   "notes": "c034 nói thiết bị điện nằm trong khung đế (cho ZE UTX); thiết kế đặt thành dãy tủ rời sau máy (specs §7 ghi \"trong khung đế hoặc đặt sát máy\"). cat-p22 là trang chữ của catalogue (Simatic S7).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "f531f8b31062": {
    "vi": "4 khoang 600 × 600 × 2 200 RAL 7035, khoang đầu có dải xanh KM và logo; cửa mở về +Y.",
    "used_by": [
     "ctrl_heater_cabinet:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -962,14 +1082,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "1a6876758a14": {
    "vi": "Màn hình cảm ứng + bàn phím màng điều khiển toàn dây chuyền; nút dừng khẩn.",
    "used_by": [
     "ctrl_hmi:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1008,14 +1133,19 @@
      "web-05"
     ]
    },
-   "notes": "Tấm HMI trong catalogue (trang 22–23) có 2 nút tròn (đen \"0\", xanh lá \"I\") và 2 nút xanh dương, không có nút dừng khẩn đỏ; nút đỏ thấy ở ảnh web-04 (HMI dây chuyền Lanxess ZE 110 UT)."
+   "notes": "Tấm HMI trong catalogue (trang 22–23) có 2 nút tròn (đen \"0\", xanh lá \"I\") và 2 nút xanh dương, không có nút dừng khẩn đỏ; nút đỏ thấy ở ảnh web-04 (HMI dây chuyền Lanxess ZE 110 UT).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "64e42041d94b": {
    "vi": "Chân đế ống Ø120 cao 1 300 có khớp xoay đen, tay xoay ngắn; tấm HMI 800 × 510 × 120 nghiêng 15°, mặt hướng +Y.",
    "used_by": [
     "ctrl_hmi:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1029,8 +1159,8 @@
     },
     {
      "level": "sourced",
-     "text_vi": "HMI đặt cạnh máy trên chân đế ở phía vận hành, mặt quay ra chỗ người vận hành đứng (phía vận hành là +Y theo quy ước thiết kế)",
-     "text_ja": "HMI は機械脇のペデスタル上、オペレーター側に置かれ、画面はオペレーターの立つ側を向く(オペレーター側は設計上の座標で +Y)",
+     "text_vi": "HMI đặt cạnh máy trên chân đế ở phía vận hành, mặt quay ra chỗ người vận hành đứng",
+     "text_ja": "HMI は機械の横、オペレーター側の架台上に置かれ、画面はオペレーターの立つ側を向く",
      "refs": [
       "web-04",
       "web-05"
@@ -1048,8 +1178,8 @@
     },
     {
      "level": "assumption",
-     "text_vi": "Kích thước tuyệt đối 800 × 510 × 120, nghiêng 15°",
-     "text_ja": "実寸 800 × 510 × 120、15° 傾斜",
+     "text_vi": "Kích thước tuyệt đối 800 × 510 × 120, nghiêng 15°, mặt hướng +Y (phía vận hành theo quy ước của thiết kế)",
+     "text_ja": "絶対寸法 800 × 510 × 120、傾斜 15°、画面は +Y 向き(設計の規約でオペレーター側)",
      "refs": [],
      "reason_vi": "Catalogue không ghi kích thước thật của tấm HMI; chọn rộng 800 rồi nhân tỷ lệ đo được (510 = 800 / 1,57); độ dày 120 và góc nghiêng 15° do thiết kế chọn.",
      "reason_ja": "カタログには HMI パネルの実寸がない。幅 800 を選び、計測した比で高さを決めた(510 = 800 / 1,57)。厚さ 120 と傾斜 15° は設計で選んだ。"
@@ -1076,14 +1206,19 @@
      "web-05"
     ]
    },
-   "notes": "Ảnh web-04/05 là HMI dạng hộp trên bệ cạnh cầu thang (ZE 110 UT), không phải tay xoay như catalogue; dùng chỉ để chứng minh HMI nằm phía vận hành cạnh máy."
+   "notes": "Ảnh web-04/05 là HMI dạng hộp trên bệ cạnh cầu thang (ZE 110 UT), không phải tay xoay như catalogue; dùng chỉ để chứng minh HMI nằm phía vận hành cạnh máy.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "9d0f3fb36e32": {
    "vi": "Nút dừng khẩn đỏ trên vỏ HMI.",
    "used_by": [
     "ctrl_hmi:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1105,14 +1240,19 @@
      "web-05"
     ]
    },
-   "notes": "Tấm HMI catalogue trang 22–23 không có nút dừng khẩn đỏ; ✓ dựa trên ảnh web-04 (nút nấm đỏ, đế vàng, góc dưới trái của vỏ HMI)."
+   "notes": "Tấm HMI catalogue trang 22–23 không có nút dừng khẩn đỏ; ✓ dựa trên ảnh web-04 (nút nấm đỏ, đế vàng, góc dưới trái của vỏ HMI).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "f70178806fb4": {
    "vi": "Đưa cáp hạ thế 400 V từ tủ phân phối nhà máy vào tủ điều khiển + nhiệt.",
    "used_by": [
     "ctrl_infeed_lv:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1133,14 +1273,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "69defc93ff7c": {
    "vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ tủ phân phối' (tuyến tiếp theo thuộc nhà xưởng).",
    "used_by": [
     "ctrl_infeed_lv:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1162,14 +1307,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "d7b88b67b401": {
    "vi": "Đưa cáp trung thế 3 kV từ trạm biến áp nhà máy vào tủ biến tần.",
    "used_by": [
     "ctrl_infeed_mv:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1191,14 +1341,19 @@
      "drev-I2"
     ]
    },
-   "notes": "c064 chỉ cho biết họ động cơ AMI có bản 3 kV (AMI 500L4A); không nói điện áp lưới của nhà máy nên giữ ⚠."
+   "notes": "c064 chỉ cho biết họ động cơ AMI có bản 3 kV (AMI 500L4A); không nói điện áp lưới của nhà máy nên giữ ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "23236ec228af": {
    "vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ trạm biến áp' (tuyến tiếp theo thuộc nhà xưởng).",
    "used_by": [
     "ctrl_infeed_mv:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1220,14 +1375,19 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "a3306d7aa3d7": {
    "vi": "Tủ đấu dây tại chỗ cho truyền động: cấp nguồn cụm dầu, encoder, cảm biến hộp số, an toàn.",
    "used_by": [
     "ctrl_machine_cabinet:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1260,14 +1420,19 @@
      "web-07"
     ]
    },
-   "notes": "Chức năng của tủ đầu máy là suy diễn của thiết kế; ✓ ở trên chỉ nói thiết bị điện của ZE nằm trên máy (c034), không chứng minh vị trí/chức năng của tủ này."
+   "notes": "Chức năng của tủ đầu máy là suy diễn của thiết kế; ✓ ở trên chỉ nói thiết bị điện của ZE nằm trên máy (c034), không chứng minh vị trí/chức năng của tủ này.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "2efd9e47befa": {
    "vi": "Tủ 500 × 1 000 × 2 000, mặt +Y và −X sơn xanh KM có chữ KraussMaffei trắng chạy dọc, còn lại trắng; nút dừng khẩn trên mặt +Y.",
    "used_by": [
     "ctrl_machine_cabinet:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1323,14 +1488,19 @@
      "web-07"
     ]
    },
-   "notes": "Lệch giữa thiết kế (500 × 1 000 × 2 000, đặt sàn) và số đo hình trang 9 (430 × 1 380, treo cách sàn 316): review M11 chỉ ra, DECISIONS #13 hoãn; vì vậy kích thước để ⚠, không để ≈."
+   "notes": "Lệch giữa thiết kế (500 × 1 000 × 2 000, đặt sàn) và số đo hình trang 9 (430 × 1 380, treo cách sàn 316): review M11 chỉ ra, DECISIONS #13 hoãn; vì vậy kích thước để ⚠, không để ≈.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "909a8d19c6c2": {
    "vi": "Báo trạng thái máy (đỏ/vàng/xanh/còi).",
    "used_by": [
     "ctrl_signal_tower:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1356,14 +1526,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "fb3424fb62ef": {
    "vi": "4 tầng đèn Ø70 + còi, cột Ø40.",
    "used_by": [
     "ctrl_signal_tower:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1383,14 +1558,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "9e427c01f29c": {
    "vi": "Đưa cáp từ hào chính tới hộp đấu dây khuôn đặt trên sàn.",
    "used_by": [
     "ctrl_trench_die_branch:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1413,14 +1593,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "a501e92a4395": {
    "vi": "Nắp tôn rộng 200 phẳng sàn.",
    "used_by": [
     "ctrl_trench_die_branch:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1443,14 +1628,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "b0f1b79a34c6": {
    "vi": "Dẫn cáp trung thế từ tủ biến tần tới động cơ dưới sàn, không vắt qua lối đi.",
    "used_by": [
     "ctrl_trench_mv:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1471,14 +1661,19 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   },
   "e20c720f441a": {
    "vi": "Hào có nắp tôn mạ kẽm rộng 400 phẳng sàn.",
    "used_by": [
     "ctrl_trench_mv:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1499,7 +1694,12 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-control.md"
+   }
   }
  }
 }
