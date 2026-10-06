@@ -3,6 +3,8 @@
 
     python3 tools/make_prov.py registry      -> build/prov/registry.json (ref ids of PLAN-PROV §2.1)
     python3 tools/make_prov.py selftest      every reference token in design/parts.json `source` resolves
+    python3 tools/make_prov.py check --group barrel   one curator's file (fact rules of --strict, no reports written)
+    python3 tools/make_prov.py show c001 web-14 "spec-1|Khoảng cách"   refs as a curator reads them
 
 Inputs: research/claims.jsonl, research/web/images.md (+ img/), research/pages, research/pdf_crops,
 research/pdf_images, research/pdf_catalog.md, research/specs.md, research/pdf_measures.md, design/design.md,
@@ -521,72 +523,92 @@ def check(devices, lines_dir, reg, i18n, strict):
         if k not in entries:
             fail('P01', k, f'no entry for {use_id(ln)}: {ln["vi"][:60]}', ln['device'])
     for k, (g, e) in entries.items():
-        vi = e.get('vi', '')
-        if line_key(vi) != k:
-            fail('P02', k, f'text changed (key of the text is {line_key(vi)}): {vi[:60]}')
         if strict and k not in used:
-            fail('P03', k, f'no device shows this line any more: {vi[:60]}')
-        status = e.get('status', 'draft')
-        if strict and status != 'verified':
-            fail('P04', k, f'status {status}')
-        if status == 'draft':
+            fail('P03', k, f'no device shows this line any more: {e.get("vi", "")[:60]}')
+        if strict and e.get('status', 'draft') != 'verified':
+            fail('P04', k, f'status {e.get("status", "draft")}')
+        check_entry(k, e, reg, i18n, strict, fail, warns)
+    return {'ok': not fails, 'failures': fails, 'warnings': warns}
+
+
+def check_group(lines_dir, group, reg, i18n):
+    """one curator's file only (PLAN-PROV Task 7-8): the fact rules of strict mode (P11, P14), not the status;
+    ok when no line is left as a draft"""
+    fails, warns = [], []
+
+    def fail(code, key, detail, device=None):
+        fails.append({'code': code, 'key': key, 'device': device, 'detail': detail})
+
+    doc = load_json(os.path.join(lines_dir, f'{group}.json'))
+    drafts, curated = [], []
+    for k, e in doc['lines'].items():
+        (drafts if e.get('status', 'draft') == 'draft' else curated).append(k)
+        check_entry(k, e, reg, i18n, True, fail, warns)
+    return {'ok': not fails and not drafts, 'failures': fails, 'warnings': warns, 'drafts': drafts, 'curated': curated}
+
+
+def check_entry(k, e, reg, i18n, strict, fail, warns):
+    """P02, P05-P10, P13 of one entry; P11 and P14 when strict"""
+    vi = e.get('vi', '')
+    if line_key(vi) != k:
+        fail('P02', k, f'text changed (key of the text is {line_key(vi)}): {vi[:60]}')
+    if e.get('status', 'draft') == 'draft':
+        return
+    facts = e.get('facts') or []
+    if not facts:
+        fail('P05', k, 'no facts')
+        return
+    for i, f in enumerate(facts):
+        where = f'fact {i}'
+        if f.get('level') not in LEVELS:
+            fail('P05', k, f'{where}: level {f.get("level")!r}')
             continue
-        facts = e.get('facts') or []
-        if not facts:
-            fail('P05', k, 'no facts')
-            continue
-        for i, f in enumerate(facts):
-            where = f'fact {i}'
-            if f.get('level') not in LEVELS:
-                fail('P05', k, f'{where}: level {f.get("level")!r}')
+        if not f.get('text_vi'):
+            fail('P05', k, f'{where}: no text_vi')
+        kinds = []
+        for r in f.get('refs') or []:
+            rec = resolve(r, reg)
+            if rec is None:
+                fail('P06', k, f'{where}: ref {r!r} does not resolve (unknown, denied or pin not unique)')
+            else:
+                kinds.append(rec['kind'])
+                if f['level'] == 'sourced' and rec['kind'] == 'claim' and isinstance(rec['value'], (int, float)):
+                    v = f'{rec["value"]:g}'.replace('.', ',')
+                    if v not in numbers_in(f['text_vi']) and len(v) > 1:
+                        warns.append({'code': 'W1', 'key': k, 'detail': f'{where}: {r} value {v} not in the fact text'})
+                if f['level'] == 'sourced' and rec['kind'] == 'photo' and not rec['brand'].startswith(('ZE', 'KM')):
+                    warns.append({'code': 'W2', 'key': k, 'detail': f'{where}: {r} shows another brand ({rec["brand"][:40]})'})
+        if f['level'] == 'sourced' and not any(x in PUBLIC_EVIDENCE for x in kinds):
+            fail('P07', k, f'{where}: sourced needs a claim, catalogue figure or photo')
+        if f['level'] == 'derived' and not f.get('refs'):
+            fail('P08', k, f'{where}: derived needs a ref')
+        if f['level'] == 'assumption' and not (f.get('reason_vi') and f.get('reason_ja')):
+            fail('P09', k, f'{where}: assumption needs reason_vi and reason_ja')
+        for fld in ('text_ja', 'reason_ja'):
+            if fld == 'reason_ja' and not f.get('reason_vi'):
                 continue
-            if not f.get('text_vi'):
-                fail('P05', k, f'{where}: no text_vi')
-            kinds = []
+            t, vi_t = f.get(fld) or '', f.get(fld.replace('_ja', '_vi')) or ''
+            # a language-neutral VI text (a formula) may stay as it is
+            neutral = t == vi_t and not has_vietnamese(vi_t)
+            if not t or has_vietnamese(t) or not (KANA_KANJI.search(t) or neutral):
+                fail('P10', k, f'{where}: {fld} is missing or not Japanese: {t[:40]!r}')
+        blob = json.dumps(f, ensure_ascii=False)
+        for s in DENY_STRINGS:
+            if s in blob:
+                fail('P13', k, f'{where}: contains {s!r}')
+    if strict:
+        covered = set(e.get('free_numbers') or [])
+        for f in facts:
+            # a fact about the whole line (e.g. an assumed element sequence) covers all its numbers
+            covered |= numbers_in(vi if f.get('whole_line') else f.get('text_vi', ''))
+        missing = sorted(numbers_in(vi) - covered)
+        if missing:
+            fail('P11', k, f'numbers without a fact: {", ".join(missing)}')
+        for f in facts:
             for r in f.get('refs') or []:
                 rec = resolve(r, reg)
-                if rec is None:
-                    fail('P06', k, f'{where}: ref {r!r} does not resolve (unknown, denied or pin not unique)')
-                else:
-                    kinds.append(rec['kind'])
-                    if f['level'] == 'sourced' and rec['kind'] == 'claim' and isinstance(rec['value'], (int, float)):
-                        v = f'{rec["value"]:g}'.replace('.', ',')
-                        if v not in numbers_in(f['text_vi']) and len(v) > 1:
-                            warns.append({'code': 'W1', 'key': k, 'detail': f'{where}: {r} value {v} not in the fact text'})
-                    if f['level'] == 'sourced' and rec['kind'] == 'photo' and not rec['brand'].startswith(('ZE', 'KM')):
-                        warns.append({'code': 'W2', 'key': k, 'detail': f'{where}: {r} shows another brand ({rec["brand"][:40]})'})
-            if f['level'] == 'sourced' and not any(x in PUBLIC_EVIDENCE for x in kinds):
-                fail('P07', k, f'{where}: sourced needs a claim, catalogue figure or photo')
-            if f['level'] == 'derived' and not f.get('refs'):
-                fail('P08', k, f'{where}: derived needs a ref')
-            if f['level'] == 'assumption' and not (f.get('reason_vi') and f.get('reason_ja')):
-                fail('P09', k, f'{where}: assumption needs reason_vi and reason_ja')
-            for fld in ('text_ja', 'reason_ja'):
-                if fld == 'reason_ja' and not f.get('reason_vi'):
-                    continue
-                t, vi_t = f.get(fld) or '', f.get(fld.replace('_ja', '_vi')) or ''
-                # a language-neutral VI text (a formula) may stay as it is
-                neutral = t == vi_t and not has_vietnamese(vi_t)
-                if not t or has_vietnamese(t) or not (KANA_KANJI.search(t) or neutral):
-                    fail('P10', k, f'{where}: {fld} is missing or not Japanese: {t[:40]!r}')
-            blob = json.dumps(f, ensure_ascii=False)
-            for s in DENY_STRINGS:
-                if s in blob:
-                    fail('P13', k, f'{where}: contains {s!r}')
-        if strict:
-            covered = set(e.get('free_numbers') or [])
-            for f in facts:
-                # a fact about the whole line (e.g. an assumed element sequence) covers all its numbers
-                covered |= numbers_in(vi if f.get('whole_line') else f.get('text_vi', ''))
-            missing = sorted(numbers_in(vi) - covered)
-            if missing:
-                fail('P11', k, f'numbers without a fact: {", ".join(missing)}')
-            for f in facts:
-                for r in f.get('refs') or []:
-                    rec = resolve(r, reg)
-                    if rec and rec['kind'] != 'claim' and not i18n_for(r, rec, i18n).get('ja_ok'):
-                        fail('P14', k, f'{r}: no Japanese title/caption in web/prov/sources.i18n.json')
-    return {'ok': not fails, 'failures': fails, 'warnings': warns}
+                if rec and rec['kind'] != 'claim' and not i18n_for(r, rec, i18n).get('ja_ok'):
+                    fail('P14', k, f'{r}: no Japanese title/caption in web/prov/sources.i18n.json')
 
 
 def i18n_for(ref, rec, i18n):
@@ -775,12 +797,54 @@ def report(rep, a):
     sys.exit(0 if rep['ok'] else 1)
 
 
-def load_i18n():
-    return load_json(os.path.join(WEB, 'prov', 'sources.i18n.json'))
+def load_i18n(group=None, prov_dir=os.path.join(WEB, 'prov')):
+    """sources.i18n.json; with a group, plus the entries its curator staged in prov/i18n-new/<group>.json
+    (curators run in parallel and never write the shared file; the staged entries are merged by hand)"""
+    out = load_json(os.path.join(prov_dir, 'sources.i18n.json'))
+    staged = os.path.join(prov_dir, 'i18n-new', f'{group}.json')
+    if group and os.path.isfile(staged):
+        for ref, rec in load_json(staged).items():
+            out[ref] = dict(out.get(ref, {}), **rec)
+    return out
+
+
+def show_ref(ref, reg, i18n):
+    """what a curator reads before citing a ref: the record, the image file to look at, the i18n entry"""
+    rec = resolve(ref, reg)
+    if rec is None:
+        return None
+    out = {k: v for k, v in rec.items() if k != 'units'}
+    if 'file' in rec:
+        out['path'] = os.path.join(WS, rec['file'])
+    out['i18n'] = {k: v for k, v in i18n_for(ref, rec, i18n).items() if k != 'ja_ok'}
+    return out
 
 
 def cmd_check(a):
+    if a.group:
+        return report_group(check_group(a.lines, a.group, build_registry(), load_i18n(a.group)), a)
     report(check(load_devices(a.devices), a.lines, build_registry(), load_i18n(), a.strict), a)
+
+
+def report_group(rep, a):
+    """prints only: parallel curators must not race on build/reports"""
+    codes = {}
+    for f in rep['failures']:
+        codes[f['code']] = codes.get(f['code'], 0) + 1
+    print(f'make_prov check --group {a.group}: curated {len(rep["curated"])} | drafts {len(rep["drafts"])} '
+          f'| failures {codes or 0} | warnings {len(rep["warnings"])}')
+    for f in rep['failures']:
+        print(f'  {f["code"]} {f["key"]} {f["detail"]}')
+    for w in rep['warnings']:
+        print(f'  {w["code"]} {w["key"]} {w["detail"]}')
+    sys.exit(0 if rep['ok'] else 1)
+
+
+def cmd_show(a):
+    reg, i18n = build_registry(), load_i18n(a.group)
+    for ref in a.refs:
+        print(json.dumps(show_ref(ref, reg, i18n) or {'ref': ref, 'error': 'does not resolve (unknown, denied or pin not unique)'},
+                         ensure_ascii=False, indent=1))
 
 
 def cmd_build(a):
@@ -801,14 +865,19 @@ def main():
     s = sub.add_parser('seed')
     c = sub.add_parser('check')
     b = sub.add_parser('build')
+    w = sub.add_parser('show', help='print refs as a curator reads them')
+    w.add_argument('refs', nargs='+')
+    w.add_argument('--group', help='also the i18n entries staged in prov/i18n-new/<group>.json')
     for p in (s, c, b):
         p.add_argument('--devices', default=DEVICES)
         p.add_argument('--lines', default=LINES)
     for p in (c, b):
         p.add_argument('--strict', action='store_true', help='every line verified, every number covered, Japanese titles (P03, P04, P11, P14)')
     b.add_argument('--no-images', action='store_true')
+    c.add_argument('--group', help='check one group file only, with the fact rules of --strict (curators, PLAN-PROV Task 7-8)')
     a = ap.parse_args()
-    {'registry': cmd_registry, 'selftest': cmd_selftest, 'seed': cmd_seed, 'check': cmd_check, 'build': cmd_build}[a.cmd](a)
+    {'registry': cmd_registry, 'selftest': cmd_selftest, 'seed': cmd_seed, 'check': cmd_check, 'build': cmd_build,
+     'show': cmd_show}[a.cmd](a)
 
 
 if __name__ == '__main__':

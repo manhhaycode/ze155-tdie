@@ -282,5 +282,67 @@ class Check(unittest.TestCase):
         self.assertTrue(drip['clauses'][0]['assumed'])
 
 
+class Curation(unittest.TestCase):
+    """tools of the parallel curators (PLAN-PROV Task 7-8): one group file each, no shared writes"""
+
+    def setUp(self):
+        import copy
+        import shutil
+        import tempfile
+        self.tmp = tempfile.mkdtemp(prefix='prov-cur-')
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.lines = os.path.join(self.tmp, 'lines')
+        M.seed(M.load_devices(), self.lines)
+        self.key = M.line_key(B3_FIGURE8)
+        path = os.path.join(self.lines, 'barrel.json')
+        doc = M.load_json(path)
+        doc['lines'][self.key].update(status='curated', facts=copy.deepcopy(GOOD_FACTS))
+        M.save_lines(path, doc)
+        # another curator is half-way through writing its file
+        with open(os.path.join(self.lines, 'melt.json'), 'w') as f:
+            f.write('{"version": 1, "lines": {')
+
+    def test_group_check_reads_only_its_file(self):
+        r = M.check_group(self.lines, 'barrel', REG, {'spec-1': {'title_ja': '仕様 §1'}})
+        self.assertEqual([f for f in r['failures'] if f['key'] == self.key], [])
+        self.assertIn(self.key, [k for k in r['curated']])
+        self.assertEqual(len(r['drafts']), 76)
+        self.assertFalse(r['ok'])
+
+    def test_group_check_is_strict_on_facts_not_status(self):
+        r = M.check_group(self.lines, 'barrel', REG, {})
+        self.assertEqual(sorted({f['code'] for f in r['failures'] if f['key'] == self.key}), ['P14'])
+        path = os.path.join(self.lines, 'barrel.json')
+        doc = M.load_json(path)
+        doc['lines'][self.key]['facts'][1]['text_vi'] = 'Tâm hai lỗ: a ≈ 142 = (D + d)/2'
+        M.save_lines(path, doc)
+        r = M.check_group(self.lines, 'barrel', REG, {'spec-1': {'title_ja': '仕様 §1'}})
+        self.assertEqual(sorted({f['code'] for f in r['failures'] if f['key'] == self.key}), ['P11'])
+
+    def test_staged_i18n_of_a_group_is_merged(self):
+        prov = os.path.join(self.tmp, 'prov')
+        os.makedirs(os.path.join(prov, 'i18n-new'))
+        with open(os.path.join(prov, 'sources.i18n.json'), 'w') as f:
+            json.dump({'spec-1': {'title_ja': '仕様'}, 'web-01': {'shows_ja': '旧'}}, f)
+        with open(os.path.join(prov, 'i18n-new', 'barrel.json'), 'w') as f:
+            json.dump({'web-01': {'shows_vi': 'mới', 'shows_ja': '新'}, 'cat-p05': {'caption_ja': '5 ページ'}}, f)
+        self.assertEqual(M.load_i18n(prov_dir=prov), {'spec-1': {'title_ja': '仕様'}, 'web-01': {'shows_ja': '旧'}})
+        got = M.load_i18n('barrel', prov_dir=prov)
+        self.assertEqual(got['web-01'], {'shows_vi': 'mới', 'shows_ja': '新'})
+        self.assertEqual(got['cat-p05'], {'caption_ja': '5 ページ'})
+        self.assertEqual(got['spec-1'], {'title_ja': '仕様'})
+
+    def test_show_ref(self):
+        c = M.show_ref('c001', REG, {})
+        self.assertEqual((c['kind'], c['value']), ('claim', 169))
+        p = M.show_ref('web-14', REG, {'web-14': {'shows_ja': 'ポンプ'}})
+        self.assertTrue(os.path.isfile(p['path']))
+        self.assertEqual(p['i18n'], {'shows_ja': 'ポンプ'})
+        d = M.show_ref('spec-1|Khoảng cách tâm hai trục vít', REG, {})
+        self.assertIn('142', d['excerpt'])
+        self.assertIsNone(M.show_ref('c999', REG, {}))
+        self.assertIsNone(M.show_ref('dec-2', REG, {}))
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=1)
