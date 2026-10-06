@@ -1,0 +1,1462 @@
+{
+ "version": 1,
+ "group": "base",
+ "lines": {
+  "ae4c028c7f24": {
+   "vi": "Đỡ xi lanh từ dưới, cho phép xi lanh giãn nở nhiệt trượt theo X (điểm cố định ở lantern X = 0).",
+   "used_by": [
+    "barrel_support_1:function",
+    "barrel_support_2:function",
+    "barrel_support_3:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xi lanh nằm trên các gối đỡ đúc gắn xuống khung đế (ảnh ZE 110 R; hình ZE 155 UT trang 9 vẽ gối ở vị trí clamp)",
+     "text_ja": "バレルはフレームに固定された鋳造サポートの上に載る(ZE 110 R の写真。9 ページの ZE 155 UT の図でもクランプ位置にサポートが描かれている)",
+     "refs": [
+      "web-02",
+      "web-01",
+      "cat-p09",
+      "meas-2.2|Gối đỡ barrel tại clamp"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh trượt tự do theo X trên gối; điểm cố định ở lantern X = 0",
+     "text_ja": "バレルはサポート上で X 方向に自由にスライドし、固定点はランタン X = 0",
+     "refs": [
+      "design-7|Ba gối đỡ dùng tấm trượt",
+      "design-4.1|Gối đỡ xi lanh"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách xi lanh ZE 155 giãn nở trên gối; chọn cố định ở lantern và gối có tấm trượt vì thép giãn ≈ 17 mm trên 5,75 m ở ΔT ≈ 250 K (kiến thức chung; bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "ZE 155 のバレルが支持台上でどのように膨張するかの公開資料はない。固定点をランタンに置き、サポートにスライドプレートを使う構成を選んだ。鋼は 5,75 m で ΔT ≈ 250 K のとき ≈ 17 mm 伸びる(一般知識で、資料セットに専用の資料はない)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "web-02 (gối đúc trắng hình chữ A có lỗ); vị trí giả định: giữa B2, B4, B6, tránh các mối nối bích"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": "Gối thấy trên ảnh là gối đúc trắng của ZE 110 R; ZE 155 chỉ có hình mẫu trang 9. Cách giãn nở (cố định ở lantern) là lựa chọn thiết kế.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "c05517a15aa5": {
+   "vi": "Gối đúc hình chữ A, tấm đế 700 × 250, lỗ tròn Ø120 giữa thân tại Z ≈ 800.",
+   "used_by": [
+    "barrel_support_1:details[0]",
+    "barrel_support_2:details[0]",
+    "barrel_support_3:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Gối đỡ là chi tiết đúc sơn trắng, có lỗ tròn xuyên ở phần thân, bắt bulông xuống tấm đế trên khung (ZE 110 R)",
+     "text_ja": "サポートは白塗りの鋳造部品で、本体に貫通する丸穴があり、フレーム上のベースプレートにボルト固定される(ZE 110 R)",
+     "refs": [
+      "web-02",
+      "web-01"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hình chữ A, tấm đế 700 × 250, lỗ tròn Ø120 giữa thân tại Z ≈ 800",
+     "text_ja": "A 字形、ベースプレート 700 × 250、胴体中央に Ø120 の丸穴(Z ≈ 800)",
+     "refs": [
+      "web-02"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước gối đỡ xi lanh ZE 155; ảnh web-02 chụp xiên, chỉ cho dáng chung (chân đế loe, lỗ tròn ở phần trên), không đo được. Dáng chữ A và các số này do thiết kế chọn.",
+     "reason_ja": "ZE 155 のバレルサポートの寸法に関する公開資料はない。写真 web-02 は斜めから撮影されており、全体の形(裾広がりの台座、上部の丸穴)しか分からず寸法は測れない。A 字形とこれらの数値は設計で選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "web-02 (gối đúc trắng hình chữ A có lỗ); vị trí giả định: giữa B2, B4, B6, tránh các mối nối bích"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": "Ảnh cho thấy gối dạng bracket đúc có lỗ; \"chữ A\" và các kích thước là cách hiểu của thiết kế, không đo được trên ảnh.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "c75491624c56": {
+   "vi": "Lòng đỡ cong bán kính 260 ôm đáy thân xi lanh, có tấm trượt (slide pad) mỏng.",
+   "used_by": [
+    "barrel_support_1:details[1]",
+    "barrel_support_2:details[1]",
+    "barrel_support_3:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Lòng đỡ cong bán kính 260 ôm đáy thân xi lanh",
+     "text_ja": "半径 260 の湾曲受け面がバレル胴体底部を抱える",
+     "refs": [
+      "design-9|Đường kính xi lanh"
+     ],
+     "reason_vi": "Không có tài liệu công khai về lòng gối; R 260 là nửa đường kính thân xi lanh Ø520, mà Ø520 cũng là giả định của thiết kế (suy từ lỗ số 8 rộng 311 cộng thành dày ≈ 105).",
+     "reason_ja": "サポート受け面の公開資料はない。R 260 はバレル胴体 Ø520 の半径で、Ø520 自体が設計の仮定(8の字穴の幅 311 に肉厚 ≈ 105 を加えた値)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tấm trượt (slide pad) mỏng giữa gối và thân xi lanh",
+     "text_ja": "サポートとバレル胴体の間に薄いスライドパッド(slide pad)",
+     "refs": [
+      "design-7|Ba gối đỡ dùng tấm trượt"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tấm trượt của ZE 155; chọn tấm trượt (đồng/PTFE) để xi lanh trượt theo X khi giãn nở, theo thực hành chung.",
+     "reason_ja": "ZE 155 のスライドパッドに関する公開資料はない。熱膨張で X 方向に滑らせるため、一般的な方法として銅/PTFE のスライドパッドを選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "web-02 (gối đúc trắng hình chữ A có lỗ); vị trí giả định: giữa B2, B4, B6, tránh các mối nối bích"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": "R 260 phụ thuộc Ø520 của thân xi lanh (cũng là giả định, xem dòng barrel).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "75f6274945a9": {
+   "vi": "Đệm trên của gối rộng 70 mm (X), tì vào băng thân trần rộng 74 mm giữa hai vỏ nhiệt của đoạn.",
+   "used_by": [
+    "barrel_support_1:details[2]",
+    "barrel_support_2:details[2]",
+    "barrel_support_3:details[2]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đệm trên rộng 70 mm (X) tì vào băng thân trần rộng 74 mm giữa hai vỏ nhiệt của đoạn",
+     "text_ja": "上部パッドは幅 70 mm (X)、区間の 2 つのヒーターシェルの間にある幅 74 mm の素地胴体バンドに当たる",
+     "refs": [
+      "rev-I1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đệm gối và cách bố trí vỏ nhiệt của ZE 155; hai số 70 và 74 do thiết kế chọn (review thiết kế I1 nhắc lại: đệm 70 mm tì vào băng trần 74 mm).",
+     "reason_ja": "ZE 155 のサポートパッドとヒーターシェル配置の公開資料はない。70 と 74 の 2 つの数値は設計で選んだ(設計レビュー I1 でも「幅 70 mm のパッドが幅 74 mm の素地バンドに当たる」と言及されている)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "web-02 (gối đúc trắng hình chữ A có lỗ); vị trí giả định: giữa B2, B4, B6, tránh các mối nối bích"
+    ],
+    "refs": [
+     "web-02"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "724d8fab4c84": {
+   "vi": "Hứng nước, dầu, nhựa rơi dưới xi lanh để không chảy vào hộp tủ.",
+   "used_by": [
+    "base_drip_tray:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khay hứng nước, dầu, nhựa rơi dưới xi lanh để không chảy vào hộp tủ",
+     "text_ja": "バレル下に落ちる水・油・樹脂を受け、キャビネットボックス内に流れ込まないようにするトレイ",
+     "refs": [
+      "web-01"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khay hứng của ZE 155 UT; chọn đặt khay vì chi tiết này thường có trên máy đùn. Ảnh web-01 chỉ cho thấy mặt khung kín dưới xi lanh, không thấy khay riêng.",
+     "reason_ja": "ZE 155 UT のドリップトレイの公開資料はない。押出機によくある部品のため設置を選んだ。写真 web-01 に写っているのはバレル下の閉じたフレーム上面だけで、専用のトレイは見えない。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: chi tiết thường có trên máy đùn (web-01 cho thấy mặt khung kín dưới xi lanh)"
+    ],
+    "refs": [
+     "web-01"
+    ]
+   },
+   "notes": "Ảnh web-01 không có khay; cả khay là giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "f53503cdc28d": {
+   "vi": "Tôn inox 3 mm, mép gập cao 40 mm, có lỗ xả ở đầu X = 5 900.",
+   "used_by": [
+    "base_drip_tray:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tôn inox 3 mm, mép gập cao 40 mm, lỗ xả ở đầu X = 5 900",
+     "text_ja": "ステンレス板 3 mm、折り縁の高さ 40 mm、X = 5 900 の端に排出穴",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về khay của ZE 155 UT; vật liệu, bề dày, mép gập và vị trí lỗ xả do thiết kế chọn theo thực hành chung, lỗ xả đặt ở đầu phía khuôn.",
+     "reason_ja": "ZE 155 UT のトレイの公開資料はない。材質、板厚、折り縁、排出穴の位置は一般的な方法に従って設計で選び、排出穴はダイ側の端に置いた。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: chi tiết thường có trên máy đùn (web-01 cho thấy mặt khung kín dưới xi lanh)"
+    ],
+    "refs": [
+     "web-01"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "aafa1c23d104": {
+   "vi": "Chỉnh cao và neo khung đế xuống nền, hấp thụ rung.",
+   "used_by": [
+    "base_feet:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đế ZE đứng trên các chân tròn dưới đáy khung (hình ZE UTX trang 8; hình ZE 155 UT trang 9 vẽ 12 vị trí chân)",
+     "text_ja": "ZE のベースフレームはフレーム下面の円形フットの上に載る(8 ページの ZE UTX の図。9 ページの ZE 155 UT の図にはフット 12 か所が描かれている)",
+     "refs": [
+      "crop-p08_base_frame_ze_utx_x3",
+      "cat-p09",
+      "meas-2.2|Tâm các chân đế"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chân chỉnh cao được, neo xuống nền bằng bulông, đệm giảm rung",
+     "text_ja": "フットは高さ調整が可能で、ボルトで床にアンカー固定し、振動を吸収する",
+     "refs": [
+      "crop-p18_ze_basic_full_side_x2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách chỉnh cao, neo và giảm rung của khung ZE 155 UT. Hình ZE Basic (trang 18) có chân tròn với trục ren, nhưng đó là dòng máy khác; chọn vít chỉnh, bulông neo và đệm cao su theo thực hành chung.",
+     "reason_ja": "ZE 155 UT のフレームの高さ調整、アンカー固定、防振の公開資料はない。18 ページの ZE Basic の図にはねじ軸付きの円形フットがあるが、別シリーズの機械。調整ねじ、アンカーボルト、ゴムパッドは一般的な方法として選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (chân cao 57 mm, 12 vị trí); số lượng và vị trí giả định theo chiều dài khung mới"
+    ],
+    "refs": [
+     "meas-2.2"
+    ]
+   },
+   "notes": "Phần \"chỉnh cao\" chỉ thấy rõ trên ZE Basic (máy nhỏ khác dòng); trên ZE UT chỉ thấy chân tròn.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "33b190624f43": {
+   "vi": "22 chân Ø200 × 60 (đĩa đệm cao su + vít chỉnh M30), mỗi bên 11 chân tại Y = ±900.",
+   "used_by": [
+    "base_feet:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Chân cao 60 ≈ 57 mm = 1,27 pt × 45,2 mm/pt (đo trên hình ZE 155 UT trang 9)",
+     "text_ja": "フット高さ 60 ≈ 57 mm = 1,27 pt × 45,2 mm/pt(9 ページの ZE 155 UT の図で計測)",
+     "refs": [
+      "meas-2.2|Tâm các chân đế",
+      "meas-4|Khung đế dài × cao",
+      "meas-3|bước barrel p = 4D"
+     ],
+     "reason_vi": "Chiều cao chân 1,27 pt đo trên hình trang 9 (meas §2.2) nhân 45,2 mm/pt ra ≈ 57 mm; thiết kế làm tròn 60. DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図で脚の高さ 1,27 pt(meas §2.2)に 45,2 mm/pt を掛けると ≈ 57 mm。設計は 60 に丸めた。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "22 chân, mỗi bên 11 chân tại Y = ±900",
+     "text_ja": "フット 22 個、左右各 11 個を Y = ±900 に配置",
+     "refs": [
+      "meas-2.2|Tâm các chân đế",
+      "design-4.1|Khung đế",
+      "spec-1|Chiều rộng máy (khung đế"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số chân và vị trí của ZE 155 UT; hình trang 9 chỉ vẽ 12 vị trí chân thấy trên hình cạnh. Thiết kế đặt 11 chân mỗi bên cho khung dài 11 100 mm và chọn Y = ±900 gần mép khung rộng 2 000 mm (bề rộng này cũng là ước lượng, specs §1).",
+     "reason_ja": "ZE 155 UT のフットの数と位置の公開資料はない。9 ページの図には側面から見えるフット 12 か所が描かれているだけ。設計では長さ 11 100 mm のフレームに左右各 11 個を置き、幅 2 000 mm のフレーム縁に近い Y = ±900 を選んだ(この幅も推定値、specs §1)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chân Ø200, đĩa đệm cao su + vít chỉnh M30",
+     "text_ja": "フット Ø200、ゴムパッド + M30 調整ねじ",
+     "refs": [
+      "crop-p18_ze_basic_full_side_x2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường kính và cấu tạo chân của ZE 155 UT; hình ZE Basic (trang 18) có chân tròn với trục ren nhưng không có kích thước. Ø200, đệm cao su và M30 do thiết kế chọn.",
+     "reason_ja": "ZE 155 UT のフットの径と構造の公開資料はない。18 ページの ZE Basic の図にはねじ軸付きの円形フットがあるが寸法はない。Ø200、ゴムパッド、M30 は設計で選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (chân cao 57 mm, 12 vị trí); số lượng và vị trí giả định theo chiều dài khung mới"
+    ],
+    "refs": [
+     "meas-2.2"
+    ]
+   },
+   "notes": "Chiều cao chân: meas ghi 57 mm, thiết kế làm tròn 60. Thang 45,2 mm/pt là giả thiết của meas, không phải bản vẽ.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "4dbd7dfa142f": {
+   "vi": "X = −5 050, −3 900, −2 700, −1 500, −300, 600, 1 700, 2 800, 3 900, 5 000, 5 850.",
+   "used_by": [
+    "base_feet:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "11 vị trí chân dọc khung đế, X = −5 050 … 5 850 (liệt kê trong dòng)",
+     "text_ja": "ベースフレームに沿ったフット 11 か所、X = −5 050 … 5 850(行内に列挙)",
+     "refs": [
+      "meas-2.2|Tâm các chân đế",
+      "design-4.1|Khung đế"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí chân của ZE 155 UT. Hình trang 9 vẽ 12 vị trí không đều trên khung ≈ 9 460 mm; khung của thiết kế dài hơn (11 100 mm) nên số lượng và vị trí do thiết kế chọn lại.",
+     "reason_ja": "ZE 155 UT のフット位置の公開資料はない。9 ページの図には長さ ≈ 9 460 mm のフレームに不規則な 12 か所が描かれている。設計のフレームはより長い(11 100 mm)ため、数と位置は設計で選び直した。",
+     "whole_line": true
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2 (chân cao 57 mm, 12 vị trí); số lượng và vị trí giả định theo chiều dài khung mới"
+    ],
+    "refs": [
+     "meas-2.2"
+    ]
+   },
+   "notes": "Vị trí chân không đo từ hình trang 9 (hình vẽ 12 chân, khung ngắn hơn).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "6886be8b84be": {
+   "vi": "Đỡ hộp số, động cơ, lantern, vỏ khớp nối và cụm dầu; truyền tải trọng xuống chân đế.",
+   "used_by": [
+    "base_frame_drive:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Trên hình ZE 155 UT trang 9, lantern, hộp số, vỏ khớp nối, động cơ và cụm dầu nằm trên đoạn khung đế phía dẫn động, khung đứng trên các chân",
+     "text_ja": "9 ページの ZE 155 UT の図では、ランタン、ギアボックス、カップリングカバー、モーター、油ユニットが駆動側のベースフレーム上に載り、フレームはフットの上に立つ",
+     "refs": [
+      "cat-p09",
+      "web-01"
+     ]
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "Hình trang 9 là hình mẫu chung cho nhiều cỡ UT (ZE 180 = ZE 155 × 1,05); dùng cho bố cục, không cho kích thước.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "a1be77cea0f9": {
+   "vi": "Dầm trên (top beam) hộp hàn Z 450–650, mặt trên gia công phẳng có các tấm đệm cho hộp số, đế động cơ, lantern.",
+   "used_by": [
+    "base_frame_drive:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đế hai tầng: dầm trên chạy suốt chiều dài đặt trên hộp tủ dưới có cửa (trang 9); ảnh ZE 110 R cho thấy khung thép tấm hàn dạng hộp",
+     "text_ja": "ベースフレームは 2 段構成で、全長にわたる上梁が扉付きの下部キャビネットボックスの上に載る(9 ページ)。ZE 110 R の写真では溶接した鋼板の箱形フレームが確認できる",
+     "refs": [
+      "cat-p09",
+      "web-01",
+      "meas-2.2|dầm trên (top beam)"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Z 450–650: dầm trên cao ≈ 210 = 4,69 pt × 45,2 mm/pt; đỉnh khung ≈ 660 làm tròn 650",
+     "text_ja": "Z 450–650:上梁の高さ ≈ 210 = 4,69 pt × 45,2 mm/pt、フレーム天面 ≈ 660 を 650 に丸めた",
+     "refs": [
+      "meas-4|Dầm trên / hộp tủ dưới (cao)",
+      "meas-4|Khung đế dài × cao",
+      "meas-2.2|dầm trên (top beam)"
+     ],
+     "reason_vi": "Chiều cao đo trên hình trang 9 (dầm trên 4,69 pt, hộp tủ 8,60 pt, chân 1,27 pt) nhân 45,2 mm/pt ra 212 / 389 / 57 mm; thiết kế làm tròn ranh Z 450, đỉnh Z 650. DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図で測った高さ(上部ビーム 4,69 pt、下部キャビネット 8,60 pt、脚 1,27 pt)に 45,2 mm/pt を掛けると 212 / 389 / 57 mm。設計は境界 Z 450、上端 Z 650 に丸めた。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt trên gia công phẳng, có các tấm đệm cho hộp số, đế động cơ, lantern",
+     "text_ja": "上面は平面加工され、ギアボックス、モーターベース、ランタン用のパッドがある",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về mặt trên khung đế ZE 155 UT; tấm đệm gia công để căn chỉnh thiết bị là thực hành chung, thiết kế chọn đặt ba tấm cho hộp số, đế động cơ và lantern.",
+     "reason_ja": "ZE 155 UT のフレーム上面の公開資料はない。機器の芯出し用に加工パッドを置くのは一般的な方法で、設計ではギアボックス、モーターベース、ランタン用に 3 枚を置いた。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "Mục \"hộp hàn\": ảnh web-01 thấy đường hàn dọc mép khung, trang 9 không nói rõ vật liệu. Thang 45,2 mm/pt là giả thiết của meas §3.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "732401ab4db6": {
+   "vi": "Hộp tủ dưới (cabinet box) Z 60–450 lùi vào 50 mm mỗi bên, cửa bản lề rộng 520 mm bước ≈ 860 mm, tay nắm lõm, hai bên ±Y.",
+   "used_by": [
+    "base_frame_drive:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đế có hộp tủ dưới với cửa ở mặt bên (hình ZE 155 UT trang 9; hình ZE Basic trang 18 cũng thấy cửa khung đế)",
+     "text_ja": "ベースフレームの下部にキャビネットボックスがあり、側面に扉がある(9 ページの ZE 155 UT の図。18 ページの ZE Basic の図にもフレーム扉が見える)",
+     "refs": [
+      "cat-p09",
+      "crop-p18_ze_basic_full_side_x2",
+      "meas-2.2|hộp tủ dưới (cửa, lỗ tròn)"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp tủ Z 60–450 (cao ≈ 390); cửa rộng 520 ≈ 11,45 pt, bước ≈ 860 ≈ 19,1 pt, đều × 45,2 mm/pt",
+     "text_ja": "キャビネットボックス Z 60–450(高さ ≈ 390)、扉幅 520 ≈ 11,45 pt、ピッチ ≈ 860 ≈ 19,1 pt(いずれも × 45,2 mm/pt)",
+     "refs": [
+      "meas-2.2|hộp tủ dưới (cửa, lỗ tròn)",
+      "meas-2.2|Cửa ở hộp tủ trái",
+      "meas-4|Dầm trên / hộp tủ dưới (cao)"
+     ],
+     "reason_vi": "Đo trên hình trang 9 (hộp tủ 8,60 pt; cửa 11,45 pt, khe 7,65 pt) nhân 45,2 mm/pt ra cao ≈ 389, cửa ≈ 518, bước ≈ 863; thiết kế làm tròn. DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図(下部キャビネット 8,60 pt、扉 11,45 pt、隙間 7,65 pt)に 45,2 mm/pt を掛けると高さ ≈ 389、扉 ≈ 518、ピッチ ≈ 863。設計が丸めた。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp tủ lùi vào 50 mm mỗi bên; cửa bản lề, tay nắm lõm, có ở cả hai bên ±Y",
+     "text_ja": "キャビネットボックスは両側 50 mm 後退し、ヒンジ扉と埋込ハンドルが ±Y の両側にある",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về mặt cắt khung đế ZE 155 UT: hình trang 9 chỉ nhìn một bên và không cho thấy độ lùi, bản lề hay tay nắm. Chọn lùi 50 mm, bản lề, tay nắm lõm và đối xứng hai bên theo thực hành chung.",
+     "reason_ja": "ZE 155 UT のフレーム断面の公開資料はない。9 ページの図は片側だけで、後退量、ヒンジ、ハンドルは見えない。50 mm の後退、ヒンジ、埋込ハンドル、両側対称は一般的な方法として選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "Thang 45,2 mm/pt (meas §3) khác thang 49,67 mm/pt dùng cho vị trí X của lỗ tròn và mối hàn (xem dòng lỗ tròn).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "831dc31a4591": {
+   "vi": "Lỗ tròn vận chuyển Ø140 có nút nhựa vàng tại X = −541 và −3 858, cả hai mặt bên (theo trang 9).",
+   "used_by": [
+    "base_frame_drive:details[2]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Mặt bên khung đế có lỗ tròn, một lỗ gắn chốt màu vàng (ZE 110 R); hình ZE 155 UT trang 9 cũng vẽ các lỗ tròn trên hộp tủ",
+     "text_ja": "フレーム側面に丸穴があり、1 つの穴に黄色いピンが入っている(ZE 110 R)。9 ページの ZE 155 UT の図にもキャビネットボックス上の丸穴が描かれている",
+     "refs": [
+      "web-01",
+      "cat-p09",
+      "meas-2.2|Tâm lỗ tròn trên hộp tủ"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "X = −541 và −3 858: 2 lỗ phía dẫn động đo trên hình trang 9, X = (449,10 − x) × 49,67 với x = 460,0 và 526,8 pt",
+     "text_ja": "X = −541 と −3 858:9 ページの図で計測した駆動側の穴 2 か所、X = (449,10 − x) × 49,67、x = 460,0 と 526,8 pt",
+     "refs": [
+      "meas-2.2|Tâm lỗ tròn trên hộp tủ",
+      "meas-2.3|Dài barrel",
+      "dec-9"
+     ],
+     "reason_vi": "Cách suy ra: x lấy từ hình trang 9 (meas §2.2); mối nối barrel/lantern ở x = 449,10 pt là X = 0. Thang 49,67 mm/pt = 5 746 / 115,68: barrel trên hình dài 115,68 pt (meas §2.3) được quy về 34D = 5 746 mm (DECISIONS 9). Hình trang 9 là hình mẫu chung nên chỉ lấy tỷ lệ tương đối.",
+     "reason_ja": "導出方法:x は 9 ページの図から取った値(meas §2.2)で、バレル/ランタン継手 x = 449,10 pt を X = 0 とする。スケール 49,67 mm/pt = 5 746 / 115,68:図上のバレル長 115,68 pt(meas §2.3)を 34D = 5 746 mm に合わせた(DECISIONS 9)。9 ページの図は共通のひな形なので、相対比率だけを使う。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø140 ≈ 3,1 pt × 45,2 mm/pt (đường kính lỗ đo trên hình trang 9)",
+     "text_ja": "Ø140 ≈ 3,1 pt × 45,2 mm/pt(9 ページの図で計測した穴径)",
+     "refs": [
+      "meas-2.2|Tâm lỗ tròn trên hộp tủ",
+      "meas-3|bước barrel p = 4D"
+     ],
+     "reason_vi": "Đường kính lỗ ≈ 3,1 pt trên hình trang 9 nhân 45,2 mm/pt ra ≈ 140 (theo thang 49,67 của chiều dài xi lanh thì ≈ 154). DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図で穴径 ≈ 3,1 pt に 45,2 mm/pt を掛けると ≈ 140(バレル長に基づく 49,67 mm/pt では ≈ 154)。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ dùng để vận chuyển, có nút nhựa vàng, có ở cả hai mặt bên",
+     "text_ja": "穴は運搬用で、黄色いプラスチックプラグが付き、両側面にある",
+     "refs": [
+      "web-01"
+     ],
+     "reason_vi": "Ảnh web-01 chỉ thấy một chốt hình trụ màu vàng cắm trong một lỗ, không xác định được vật liệu nhựa hay công dụng; hình trang 9 và ảnh đều nhìn một bên nên lỗ ở cả hai mặt là giả định đối xứng.",
+     "reason_ja": "写真 web-01 には 1 つの穴に黄色い円筒形のピンが入っているのが見えるだけで、プラスチックかどうかや用途は分からない。9 ページの図も写真も片側だけなので、両側面にあるというのは対称性の仮定。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "Thang 49,67 mm/pt không được ghi trong bộ nguồn: tôi dựng lại từ 5 746 / 115,68 pt (barrel 34D trên hình), khớp các số của thiết kế trong 0,2 %. Ø140 dùng thang 45,2 (≈ 154 mm ở thang 49,67).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "2a297cb7db2c": {
+   "vi": "Mối hàn dọc trên dầm trên bước ≈ 1 050 mm (theo trang 9).",
+   "used_by": [
+    "base_frame_drive:details[3]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Các mối chia trên dầm trên cách nhau ≈ 1 050 mm (20,98 pt × 49,67 mm/pt = 1 042, làm tròn), đo trên hình trang 9",
+     "text_ja": "上梁の分割線のピッチ ≈ 1 050 mm(20,98 pt × 49,67 mm/pt = 1 042 を丸めた値)、9 ページの図で計測",
+     "refs": [
+      "meas-2.2|Các mối dọc trên dầm trên",
+      "meas-2.3|Dài barrel",
+      "dec-9"
+     ],
+     "reason_vi": "Cách suy ra: 7 mối dọc trên dầm trên cách nhau ≈ 20,98 pt (meas §2.2); thang 49,67 mm/pt như dòng lỗ tròn (5 746 / 115,68 pt, DECISIONS 9). Ở thang 45,2 của meas §3 bước ra ≈ 948 mm. meas ghi bước ≈ 20,98 pt, nhưng hai khoảng ở hai đầu chỉ ≈ 17,2 pt (347,12 → 364,30 và 444,39 → 461,55).",
+     "reason_ja": "導出方法:上梁の縦の分割線 7 本の間隔 ≈ 20,98 pt(meas §2.2)に、丸穴の行と同じ 49,67 mm/pt(5 746 / 115,68 pt、DECISIONS 9)を掛ける。meas §3 の 45,2 mm/pt では ≈ 948 mm になる。meas はピッチ ≈ 20,98 pt としているが、両端の 2 区間は ≈ 17,2 pt(347,12 → 364,30、444,39 → 461,55)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Các đường chia trên dầm trên là mối hàn của hộp hàn",
+     "text_ja": "上梁の分割線は箱溶接構造の溶接部",
+     "refs": [
+      "web-01"
+     ],
+     "reason_vi": "Hình trang 9 chỉ vẽ đường chia, không nói đó là mối hàn; thiết kế hiểu là mối hàn các đoạn dầm. Ảnh web-01 chỉ cho thấy đường hàn dọc mép khung.",
+     "reason_ja": "9 ページの図は分割線を描いているだけで溶接部とは書かれていない。設計では梁セグメントの溶接部と解釈した。写真 web-01 で確認できるのはフレーム縁に沿った溶接線だけ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "Thang 49,67 mm/pt được dựng lại (xem dòng lỗ tròn). Ở thang 45,2 của meas bước chỉ ≈ 950 mm.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "7457dc2293a0": {
+   "vi": "Bên trong hộp tủ: kênh cáp ngang nối phía +Y với phía −Y (cho cáp HMI, side feeder, nút dừng khẩn).",
+   "used_by": [
+    "base_frame_drive:details[4]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đế chứa hệ bôi trơn, bộ điều nhiệt và thiết bị điều khiển điện (KM nêu cho ZE UTX)",
+     "text_ja": "ベースフレームに潤滑システム、温調器、電気制御機器が組み込まれている(KM は ZE UTX について記載)",
+     "refs": [
+      "c034"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kênh cáp ngang trong hộp tủ nối phía +Y với phía −Y, cho cáp HMI, side feeder, nút dừng khẩn",
+     "text_ja": "キャビネットボックス内の横方向ケーブルダクトが +Y 側と −Y 側を結び、HMI、サイドフィーダー、非常停止ボタンのケーブルを通す",
+     "refs": [
+      "design-4.2|Bảng HMI trên chân đế xoay",
+      "design-7|Một kênh cáp ngang nối hai phía"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp trong khung đế ZE; catalogue chỉ nói thiết bị điện và điều khiển nằm trong khung (c034). Thiết kế đặt HMI, side feeder và nút dừng khẩn ở phía +Y còn dãy tủ điện ở phía −Y, nên chọn một kênh cáp ngang nối hai phía.",
+     "reason_ja": "ZE のフレーム内ケーブル経路の公開資料はない。カタログには電気・制御機器がフレーム内にあるとだけ記載(c034)。設計では HMI、サイドフィーダー、非常停止ボタンを +Y 側、電気盤列を −Y 側に置いたため、両側を結ぶ横ダクトを 1 本設けた。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4 (khung 2 đoạn, dầm trên 210 / hộp dưới 390 mm, mối chia X ≈ +330); chiều rộng 2 000 giả định theo specs §1 (ZE 110 × 1,42)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "spec-1"
+    ]
+   },
+   "notes": "c034 do KM nêu cho ZE UTX, mức tin cậy trung bình trong claims.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "a38832d69035": {
+   "vi": "Đỡ các gối xi lanh, vỏ che, ống góp nước, máng cáp và hộp đấu dây suốt 34D.",
+   "used_by": [
+    "base_frame_process:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dọc khung đế ZE 110 R có gối xi lanh, ống góp nước, máng cáp mạ kẽm và hộp đấu dây vuông; vỏ che xi lanh đứng trên khung (ZE 155 UT, trang 9)",
+     "text_ja": "ZE 110 R ではフレームに沿ってバレルサポート、冷却水ヘッダー、亜鉛めっきケーブルトレイ、角形端子ボックスが並ぶ。バレルカバーはフレーム上に立つ(ZE 155 UT、9 ページ)",
+     "refs": [
+      "web-02",
+      "web-01",
+      "cat-p09"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Suốt 34D = 34 × 169 = 5 746 mm: chiều dài đoạn xi lanh mà khung đỡ",
+     "text_ja": "34D = 34 × 169 = 5 746 mm の全長:フレームが支えるバレル部の長さ",
+     "refs": [
+      "c001",
+      "dec-9",
+      "meas-4|Khung đế đoạn trái / phải"
+     ],
+     "reason_vi": "Cách suy ra: D = 169 mm là đường kính vít ZE 155 A UTi theo bảng KM (c001); 34D theo DECISIONS 9. Khung đoạn gia công trên hình trang 9 phủ từ mặt đầu ra tới mối chia X ≈ +330; thiết kế lấy X 330–5 950 (5 620 mm).",
+     "reason_ja": "導出方法:D = 169 mm は KM 技術データ表の ZE 155 A UTi のスクリュー径(c001)、34D は DECISIONS 9 による。9 ページの図では加工部フレームが出口端面から継手 X ≈ +330 までを覆い、設計では X 330–5 950(5 620 mm)とした。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4; chiều dài theo khoảng X đầu ra +5 922 của hình bóng quy đổi về 34D = 5 746 (DECISIONS 9)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "dec-9"
+    ]
+   },
+   "notes": "Khung đoạn gia công thực tế X 330–5 950, không tròn 34D (X 0–5 746); \"suốt 34D\" là cách nói gần đúng.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "2cf93346d40f": {
+   "vi": "Cùng tiết diện với đoạn truyền động: dầm trên Z 450–650, hộp tủ Z 60–450 có cửa và lỗ tròn Ø140 tại X = 1 185 và 5 170.",
+   "used_by": [
+    "base_frame_process:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cả hai đoạn khung có cùng hai tầng: dầm trên và hộp tủ dưới có cửa, lỗ tròn (hình ZE 155 UT trang 9)",
+     "text_ja": "9 ページの ZE 155 UT の図では、両方のフレーム区間が同じ 2 段構成(上梁と、扉・丸穴のあるキャビネットボックス)",
+     "refs": [
+      "cat-p09",
+      "meas-2.2|dầm trên (top beam)",
+      "meas-2.2|hộp tủ dưới (cửa, lỗ tròn)"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dầm trên Z 450–650, hộp tủ Z 60–450: cùng số đo với đoạn truyền động (dầm 4,69 pt, hộp 8,60 pt × 45,2 mm/pt)",
+     "text_ja": "上梁 Z 450–650、キャビネットボックス Z 60–450:駆動部と同じ寸法(梁 4,69 pt、ボックス 8,60 pt × 45,2 mm/pt)",
+     "refs": [
+      "meas-4|Dầm trên / hộp tủ dưới (cao)",
+      "meas-2.2|dầm trên (top beam)",
+      "meas-2.2|hộp tủ dưới (cửa, lỗ tròn)"
+     ],
+     "reason_vi": "Chiều cao đo trên hình trang 9 (dầm trên 4,69 pt, hộp tủ 8,60 pt, chân 1,27 pt) nhân 45,2 mm/pt ra 212 / 389 / 57 mm; thiết kế làm tròn ranh Z 450, đỉnh Z 650. DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図で測った高さ(上部ビーム 4,69 pt、下部キャビネット 8,60 pt、脚 1,27 pt)に 45,2 mm/pt を掛けると 212 / 389 / 57 mm。設計は境界 Z 450、上端 Z 650 に丸めた。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Lỗ tròn tại X = 1 185 và 5 170: 2 lỗ phía xi lanh đo trên hình trang 9, X = (449,10 − x) × 49,67 với x = 425,2 và 345,0 pt",
+     "text_ja": "丸穴の位置 X = 1 185 と 5 170:9 ページの図で計測したバレル側の穴 2 か所、X = (449,10 − x) × 49,67、x = 425,2 と 345,0 pt",
+     "refs": [
+      "meas-2.2|Tâm lỗ tròn trên hộp tủ",
+      "meas-2.3|Dài barrel",
+      "dec-9"
+     ],
+     "reason_vi": "Cách suy ra: x lấy từ hình trang 9 (meas §2.2); mối nối barrel/lantern ở x = 449,10 pt là X = 0. Thang 49,67 mm/pt = 5 746 / 115,68: barrel trên hình dài 115,68 pt (meas §2.3) được quy về 34D = 5 746 mm (DECISIONS 9). Hình trang 9 là hình mẫu chung nên chỉ lấy tỷ lệ tương đối.",
+     "reason_ja": "導出方法:x は 9 ページの図から取った値(meas §2.2)で、バレル/ランタン継手 x = 449,10 pt を X = 0 とする。スケール 49,67 mm/pt = 5 746 / 115,68:図上のバレル長 115,68 pt(meas §2.3)を 34D = 5 746 mm に合わせた(DECISIONS 9)。9 ページの図は共通のひな形なので、相対比率だけを使う。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø140 ≈ 3,1 pt × 45,2 mm/pt (đường kính lỗ đo trên hình trang 9)",
+     "text_ja": "Ø140 ≈ 3,1 pt × 45,2 mm/pt(9 ページの図で計測した穴径)",
+     "refs": [
+      "meas-2.2|Tâm lỗ tròn trên hộp tủ",
+      "meas-3|bước barrel p = 4D"
+     ],
+     "reason_vi": "Đường kính lỗ ≈ 3,1 pt trên hình trang 9 nhân 45,2 mm/pt ra ≈ 140 (theo thang 49,67 của chiều dài xi lanh thì ≈ 154). DECISIONS #9 không cho lấy thang tuyệt đối của hình mẫu chung trang 9, nên số này là giả định của thiết kế; phép đo chỉ để tham khảo.",
+     "reason_ja": "9 ページの図で穴径 ≈ 3,1 pt に 45,2 mm/pt を掛けると ≈ 140(バレル長に基づく 49,67 mm/pt では ≈ 154)。DECISIONS #9 により 9 ページの共通テンプレート図の絶対縮尺は使わないため、この値は設計の仮定とし、測定値は参考に留める。",
+     "was": "derived"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cùng bề rộng 2 000 mm với đoạn truyền động",
+     "text_ja": "幅も駆動部と同じ 2 000 mm",
+     "refs": [
+      "spec-1|Chiều rộng máy (khung đế"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chiều rộng khung ZE 155 UT; specs ước lượng ≈ 2 000 mm bằng bề rộng ZE 110 28D (1 400 mm, c021) nhân tỷ lệ 169/119 = 1,42. Hình cạnh trang 9 không cho thấy bề rộng.",
+     "reason_ja": "ZE 155 UT のフレーム幅の公開資料はない。仕様では ZE 110 28D の幅(1 400 mm、c021)に比 169/119 = 1,42 を掛けて ≈ 2 000 mm と推定した。9 ページの側面図では幅は分からない。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4; chiều dài theo khoảng X đầu ra +5 922 của hình bóng quy đổi về 34D = 5 746 (DECISIONS 9)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "dec-9"
+    ]
+   },
+   "notes": "Số liệu Z và lỗ tròn dùng chung cơ sở với khung đoạn truyền động; bề rộng 2 000 mm là ước lượng của specs.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "480bb97bdbad": {
+   "vi": "Trong hộp tủ chứa bộ điều nhiệt / phân phối nước (temperature control unit) như catalogue c034; cửa có lưới thông gió.",
+   "used_by": [
+    "base_frame_process:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đế chứa bộ điều nhiệt (temperature control unit); hình ZE Basic thấy bơm, bình, van và ống mềm trong khung",
+     "text_ja": "ベースフレームに温調ユニット(temperature control unit)が組み込まれている。ZE Basic の図ではフレーム内にポンプ、容器、バルブ、ホースが見える",
+     "refs": [
+      "c034",
+      "crop-p19_temperature_control_unit_in_base_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ điều nhiệt kèm phân phối nước đặt ở hộp tủ đoạn gia công",
+     "text_ja": "温調器と水分配ユニットは加工部側のキャビネットボックスに置く",
+     "refs": [
+      "design-7|Hộp tủ của đoạn gia công chứa bộ điều nhiệt"
+     ],
+     "reason_vi": "c034 chỉ nói bộ điều nhiệt nằm trong khung đế, không nói đoạn nào hay có phân phối nước; thiết kế chọn đoạn gia công vì các vùng nhiệt và van nước của xi lanh nằm trên đoạn này.",
+     "reason_ja": "c034 は温調器がベースフレーム内にあるとだけ述べ、どの区間か、水分配を含むかは書いていない。設計ではバレルの温度ゾーンと水バルブがこの区間にあるため、加工部側を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cửa có lưới thông gió",
+     "text_ja": "扉に通気ルーバーがある",
+     "refs": [
+      "crop-p18_ze_basic_full_side_x2"
+     ],
+     "reason_vi": "Hình ZE Basic (trang 18) có cửa khung đế gắn lưới thông gió, nhưng hình ZE 155 UT (trang 9) chỉ vẽ cửa chữ nhật, không rõ lưới; thiết kế lấy theo ZE Basic.",
+     "reason_ja": "18 ページの ZE Basic の図にはルーバー付きのフレーム扉があるが、9 ページの ZE 155 UT の図は長方形の扉を描くだけでルーバーの有無は分からない。設計では ZE Basic に倣った。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4; chiều dài theo khoảng X đầu ra +5 922 của hình bóng quy đổi về 34D = 5 746 (DECISIONS 9)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "dec-9"
+    ]
+   },
+   "notes": "Hình trang 19 và 18 là ZE Basic (máy nhỏ, khác dòng UT); c034 nêu cho ZE UTX.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "d9e17f1f498e": {
+   "vi": "Đầu khung phía khuôn (X = 5 950) có tấm bịt và 2 tai cẩu.",
+   "used_by": [
+    "base_frame_process:details[2]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "Đầu khung phía khuôn X = 5 950 ≈ 5 922 đo trên hình trang 9: (449,10 − 329,87) × 49,67",
+     "text_ja": "ダイ側のフレーム端 X = 5 950 ≈ 5 922(9 ページの図で計測:(449,10 − 329,87) × 49,67)",
+     "refs": [
+      "meas-2.2|Khung đế toàn bộ",
+      "meas-2.3|Dài barrel",
+      "dec-9"
+     ],
+     "reason_vi": "Cách suy ra: mép khung phía đầu ra ở x = 329,87 pt (meas §2.2), mối nối barrel/lantern ở 449,10 pt là X = 0; thang 49,67 mm/pt = 5 746 / 115,68 như các dòng trên. Thiết kế làm tròn 5 922 thành 5 950.",
+     "reason_ja": "導出方法:出口側のフレーム端は x = 329,87 pt(meas §2.2)、バレル/ランタン継手 449,10 pt を X = 0 とし、スケールは上の行と同じ 49,67 mm/pt = 5 746 / 115,68。設計では 5 922 を 5 950 に丸めた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đầu khung có tấm bịt và 2 tai cẩu",
+     "text_ja": "フレーム端に閉塞プレートと吊りラグ 2 個",
+     "refs": [
+      "web-01"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đầu khung ZE 155 UT: hình trang 9 chỉ vẽ khung kết thúc ở đầu ra. Tấm bịt và 2 tai cẩu do thiết kế chọn theo thực hành chung; ảnh web-01 chỉ cho thấy lỗ vận chuyển ở mặt bên.",
+     "reason_ja": "ZE 155 UT のフレーム端の公開資料はない。9 ページの図はフレームが出口側で終わることを示すだけ。閉塞プレートと吊りラグ 2 個は一般的な方法として設計で選んだ。写真 web-01 に見えるのは側面の運搬用の穴だけ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "pdf_measures §2.2/§4; chiều dài theo khoảng X đầu ra +5 922 của hình bóng quy đổi về 34D = 5 746 (DECISIONS 9)"
+    ],
+    "refs": [
+     "meas-2.2",
+     "meas-4",
+     "dec-9"
+    ]
+   },
+   "notes": "Thang 49,67 mm/pt được dựng lại (xem dòng lỗ tròn).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "5ad34e859e8d": {
+   "vi": "Đỡ ống nhựa và bộ trộn tĩnh, cho trượt theo X khi giãn nở.",
+   "used_by": [
+    "melt_pipe_saddles:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Gối chữ V đỡ ống nhựa và bộ trộn tĩnh, cho trượt theo X khi giãn nở",
+     "text_ja": "V 字サポートがメルト配管とスタティックミキサーを支え、熱膨張時の X 方向スライドを許容する",
+     "refs": [
+      "rev-I8",
+      "design-7|Giá van khởi động, giá bộ lọc và giá bơm có tấm trượt PTFE"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đỡ ống nhựa nóng và bộ trộn tĩnh; chọn gối cho trượt theo X vì đường chảy dài ≈ 3,4 m giãn thêm ≈ 10 mm khi nóng (kiến thức chung; review thiết kế I8 tính với hệ số giãn nở thép 12e-6 và ΔT ≈ 260 K).",
+     "reason_ja": "メルト配管とスタティックミキサーの支持方法の公開資料はない。流路は長さ ≈ 3,4 m で高温時に約 10 mm 伸びるため、X 方向にスライドできるサポートを選んだ(一般知識。設計レビュー I8 は鋼の線膨張係数 12e-6、ΔT ≈ 260 K で計算)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": "Toàn bộ là giả định (design ghi \"giả định\").",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "0420adfc4269": {
+   "vi": "2 gối chữ V 150 × 240 cao 80 tại X = 8 250 (ống) và 8 560 (bộ trộn), mặt trượt cho X.",
+   "used_by": [
+    "melt_pipe_saddles:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 gối chữ V 150 × 240 cao 80 tại X = 8 250 (đỡ ống) và 8 560 (đỡ bộ trộn), mặt trượt cho X",
+     "text_ja": "V 字サポート 2 個、150 × 240、高さ 80、X = 8 250(配管用)と 8 560(ミキサー用)、X 方向のスライド面",
+     "refs": [
+      "spec-4|Bộ trộn tĩnh",
+      "rev-I3",
+      "design-4.1|Xe đỡ khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về gối đỡ ống nhựa; kích thước do thiết kế chọn. X = 8 250 ở giữa ống (X 8 076–8 426); gối bộ trộn dời về X = 8 560 theo review thiết kế I3 để đế xe khuôn (X 8 700–9 380) luồn dưới bộ trộn. Ống và bộ trộn cũng là kích thước ước lượng (specs §4).",
+     "reason_ja": "メルト配管のサポートの公開資料はない。寸法は設計で選んだ。X = 8 250 は配管(X 8 076–8 426)の中央で、ミキサー用サポートは設計レビュー I3 に従い、ダイカートのベース(X 8 700–9 380)がミキサーの下に入るよう X = 8 560 に移した。配管とミキサーの寸法も推定値(specs §4)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định"
+    ],
+    "refs": []
+   },
+   "notes": "Vị trí gối bộ trộn (8 560) do review I3 dời; mọi kích thước là giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "959874b19375": {
+   "vi": "Đỡ bơm bánh răng, ống nhựa và bộ trộn tĩnh.",
+   "used_by": [
+    "melt_stand_pump:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bơm bánh răng, ống nhựa và bộ trộn tĩnh ngồi trên một khung thép riêng",
+     "text_ja": "ギアポンプ、メルト配管、スタティックミキサーは専用の鋼製フレームの上に載る",
+     "refs": [
+      "web-07",
+      "spec-4|Giá đỡ",
+      "rev-I3"
+     ],
+     "reason_vi": "Không có tài liệu công khai về giá đỡ bơm Maag GU. Ảnh web-07 chỉ cho thấy khung đỡ khuôn có chân và đế bắt nền, không thấy khung đỡ bơm; thiết kế chọn khung riêng và rút ngắn (review I3) để xe khuôn chạy vào dưới bộ trộn.",
+     "reason_ja": "Maag GU ポンプのスタンドの公開資料はない。写真 web-07 に見えるのは脚とベースプレート付きのダイ支持フレームだけで、ポンプ用フレームは見えない。設計では専用フレームを選び、ダイカートがミキサー下に入れるよう短縮した(設計レビュー I3)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: khung riêng cho bơm như ảnh web-07 (khung đỡ dưới đường chảy); rút ngắn để xe khuôn chạy vào dưới bộ trộn"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": "Design ghi \"như ảnh web-07 (khung đỡ dưới đường chảy)\", nhưng ảnh web-07 chỉ cho thấy khung đỡ khuôn, không thấy khung dưới bơm. Vì vậy để ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "1403754e210e": {
+   "vi": "Khung thép hộp 6 chân, mặt đỉnh 1 250 × 900, Z = 970; kết thúc ở X = 8 650 để chừa chỗ cho đế xe khuôn.",
+   "used_by": [
+    "melt_stand_pump:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khung thép hộp 6 chân, mặt đỉnh 1 250 × 900 tại Z = 970",
+     "text_ja": "6 脚の角形鋼管フレーム、天板 1 250 × 900、Z = 970",
+     "refs": [
+      "web-07"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khung đỡ bơm. Z = 970 = 1 200 − 460/2: đáy khối bơm (cao 460, kích thước là giả định) tựa trên mặt khung, trục bơm ở Z 1 200. Số chân và mặt đỉnh 1 250 × 900 do thiết kế chọn, đủ phủ bơm và hai gối ống.",
+     "reason_ja": "ポンプ用フレームの公開資料はない。Z = 970 = 1 200 − 460/2:ポンプブロック(高さ 460、寸法は仮定)の底面がフレーム天面に載り、ポンプ軸は Z 1 200。脚数と天板 1 250 × 900 は設計で選び、ポンプと 2 つの配管サポートを覆うようにした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khung kết thúc ở X = 8 650 để chừa chỗ cho đế xe khuôn (X 8 700–9 380)",
+     "text_ja": "フレームは X = 8 650 で終わり、ダイカートのベース(X 8 700–9 380)の場所を空ける",
+     "refs": [
+      "rev-I3",
+      "design-4.1|Xe đỡ khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về xe khuôn của dây chuyền này; review thiết kế I3 yêu cầu rút ngắn giá bơm tới X = 8 650 để đế xe khuôn luồn dưới bộ trộn.",
+     "reason_ja": "このラインのダイカートの公開資料はない。設計レビュー I3 は、ダイカートのベースがミキサーの下に入るよう、ポンプスタンドを X = 8 650 まで短縮することを求めた。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: khung riêng cho bơm như ảnh web-07 (khung đỡ dưới đường chảy); rút ngắn để xe khuôn chạy vào dưới bộ trộn"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": "Ảnh web-07 không cho thấy khung bơm (xem dòng chức năng).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "d54f3c58f68b": {
+   "vi": "Bơm đặt trên tấm trượt PTFE (tự do X ±40, dẫn hướng Y); chỉ tấm đế được neo.",
+   "used_by": [
+    "melt_stand_pump:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bơm trên tấm trượt PTFE, tự do X ±40 mm, dẫn hướng Y; chỉ tấm đế được neo",
+     "text_ja": "ポンプは PTFE スライドプレート上に載り、X 方向は ±40 mm 自由、Y 方向はガイド。ベースプレートのみアンカー固定",
+     "refs": [
+      "rev-I8",
+      "design-7|Giá van khởi động, giá bộ lọc và giá bơm có tấm trượt PTFE"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đặt bơm Maag GU; theo review thiết kế I8, tổng giãn nở xi lanh + đường chảy ≈ 28 mm nên chọn tấm trượt ±40 mm và chỉ neo tấm đế (hệ số giãn nở thép 12e-6 là kiến thức chung).",
+     "reason_ja": "Maag GU ポンプの据え付け方法の公開資料はない。設計レビュー I8 によりバレルと流路の膨張の合計が ≈ 28 mm のため、±40 mm のスライドプレートを選び、ベースプレートのみ固定した(鋼の線膨張係数 12e-6 は一般知識)。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: khung riêng cho bơm như ảnh web-07 (khung đỡ dưới đường chảy); rút ngắn để xe khuôn chạy vào dưới bộ trộn"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "07e1ac7f4036": {
+   "vi": "Đỡ bộ lọc lưới 3,8 t và giữ tâm dòng chảy ở Z = 1 200.",
+   "used_by": [
+    "melt_stand_sc:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bộ lọc Gneuss RSFgenius 200 nặng 3 800 kg ≈ 3,8 t",
+     "text_ja": "Gneuss RSFgenius 200 の質量は 3 800 kg ≈ 3,8 t",
+     "refs": [
+      "c050"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Tâm dòng chảy Z = 1 200 bằng cao trục vít (c006); sơ đồ catalogue vẽ melt line đồng trục với trục vít",
+     "text_ja": "流路中心 Z = 1 200 はスクリュー軸高さ(c006)と同じ。カタログの系統図ではメルトラインがスクリュー軸と同軸",
+     "refs": [
+      "c006",
+      "meas-5|Melt line",
+      "crop-p24-25_line_layout_spread"
+     ],
+     "reason_vi": "Cách suy ra: cao trục vít ZE 155 A UTi là 1 200 mm (c006); sơ đồ trang 24–25 vẽ melt line thẳng, đồng trục với trục barrel (meas §5), nên đặt đường chảy ở cùng cao độ. Sơ đồ không theo tỷ lệ, cao độ tuyệt đối là lựa chọn của thiết kế (specs §4).",
+     "reason_ja": "導出方法:ZE 155 A UTi のスクリュー軸高さは 1 200 mm(c006)。24–25 ページの系統図ではメルトラインが直線でバレル軸と同軸(meas §5)のため、流路を同じ高さに置いた。系統図は縮尺どおりではなく、絶対高さは設計の選択(specs §4)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ lọc đặt trên giá thép riêng; Gneuss giao giá kèm bộ lọc",
+     "text_ja": "スクリーンチェンジャーは専用の鋼製スタンドに載り、スタンドは Gneuss がチェンジャーとともに納入する",
+     "refs": [
+      "spec-4|Giá đỡ",
+      "web-13"
+     ],
+     "reason_vi": "Không có tài liệu công khai về giá đỡ RSFgenius hay việc Gneuss giao kèm khung; ảnh sản phẩm web-13 chỉ có thân bộ lọc, không có giá. Thiết kế giả định giá riêng, giao cùng bộ lọc.",
+     "reason_ja": "RSFgenius のスタンドや Gneuss がフレームを付属するかどうかの公開資料はない。製品写真 web-13 にはフィルター本体だけでスタンドはない。設計では専用スタンドがフィルターとともに納入されると仮定した。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: Gneuss giao bộ lọc kèm khung; chiều cao = 1 200 − D 550 (c050)"
+    ],
+    "refs": [
+     "c050"
+    ]
+   },
+   "notes": "Khối lượng 3,8 t ✓ (c050); cách đặt Z và giá riêng là lựa chọn thiết kế. RSFgenius 200 là lựa chọn của thiết kế, không phải thiết bị đã biết của dây chuyền.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "6e6bc715f493": {
+   "vi": "Khung thép hộp 4 chân, tấm đỉnh 800 × 1 200 × 30, giằng chéo hai bên.",
+   "used_by": [
+    "melt_stand_sc:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khung thép hộp 4 chân, tấm đỉnh 800 × 1 200 × 30, giằng chéo hai bên",
+     "text_ja": "4 脚の角形鋼管フレーム、天板 800 × 1 200 × 30、両側にクロスブレース",
+     "refs": [
+      "c050",
+      "spec-4|Bộ lọc lưới"
+     ],
+     "reason_vi": "Không có tài liệu công khai về giá của RSFgenius; số chân, tấm đỉnh và giằng do thiết kế chọn. Tấm đỉnh 800 × 1 200 lớn hơn đế thân bộ lọc 705 × 1 040 (B, E trong bảng Gneuss c050; cách hiểu B, E là giả định).",
+     "reason_ja": "RSFgenius のスタンドの公開資料はない。脚数、天板、ブレースは設計で選んだ。天板 800 × 1 200 はフィルター本体の底面 705 × 1 040(Gneuss 表 c050 の B、E。B、E の解釈は仮定)より大きい。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: Gneuss giao bộ lọc kèm khung; chiều cao = 1 200 − D 550 (c050)"
+    ],
+    "refs": [
+     "c050"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "37c3cf77cac3": {
+   "vi": "Mặt đỉnh Z = 650 trùng đáy thân bộ lọc; giữa bộ lọc và tấm đỉnh có tấm trượt PTFE: tự do theo X ±40 mm (giãn nở của xi lanh + đường chảy), dẫn hướng theo Y.",
+   "used_by": [
+    "melt_stand_sc:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Mặt đỉnh Z = 650 = 1 200 − D, với D = 550 (cao tâm nhựa trên đáy thân bộ lọc)",
+     "text_ja": "天面 Z = 650 = 1 200 − D、D = 550(フィルター本体底面から樹脂中心までの高さ)",
+     "refs": [
+      "c050",
+      "c006",
+      "design-9|Cách hiểu kích thước bộ lọc Gneuss"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ý nghĩa chữ D trong bảng Gneuss (hãng không ghi rõ); thiết kế hiểu D = 550 là cao tâm nhựa trên đáy thân nên đỉnh giá = 1 200 − 550 = 650. Hiểu khác thì Z đỉnh giá đổi theo.",
+     "reason_ja": "Gneuss 表の D の意味についての公開資料はない(メーカーは明記していない)。設計では D = 550 を本体底面から樹脂中心までの高さと解釈し、スタンド天面 = 1 200 − 550 = 650 とした。別の解釈ならスタンド天面の Z も変わる。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tấm trượt PTFE giữa bộ lọc và tấm đỉnh: tự do theo X ±40 mm, dẫn hướng theo Y",
+     "text_ja": "フィルターと天板の間の PTFE スライドプレート:X 方向は ±40 mm 自由、Y 方向はガイド",
+     "refs": [
+      "rev-I8",
+      "design-7|Giá van khởi động, giá bộ lọc và giá bơm có tấm trượt PTFE"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách gối bộ lọc Gneuss; review thiết kế I8 chỉ ra bộ lọc 3,8 t bị neo cứng trong khi xi lanh và đường chảy giãn ≈ 28 mm về phía khuôn, nên thêm tấm trượt ±40 mm.",
+     "reason_ja": "Gneuss フィルターの支持方法の公開資料はない。設計レビュー I8 は、3,8 t のフィルターが固定されているのにバレルと流路がダイ側へ ≈ 28 mm 伸びる点を指摘し、±40 mm のスライドプレートを追加した。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: Gneuss giao bộ lọc kèm khung; chiều cao = 1 200 − D 550 (c050)"
+    ],
+    "refs": [
+     "c050"
+    ]
+   },
+   "notes": "Z 650 phụ thuộc cách hiểu chữ D của bảng Gneuss (design §9 ghi \"hãng không ghi rõ\"): hai số 1 200 và 550 có nguồn nhưng phép trừ dựa trên một cách hiểu. Để ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "b133ff3de795": {
+   "vi": "Chỉ tấm đế (sole plate) được neo xuống sàn; mặt −Y mang hộp đấu nhiệt đường chảy.",
+   "used_by": [
+    "melt_stand_sc:details[2]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Chỉ tấm đế (sole plate) neo xuống sàn; mặt −Y mang hộp đấu nhiệt đường chảy",
+     "text_ja": "ベースプレート(sole plate)のみ床にアンカー固定、−Y 面にメルトライン用ヒーター端子ボックスを搭載",
+     "refs": [
+      "rev-I8",
+      "rev-I6",
+      "c050"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách neo và gá hộp nhiệt; chỉ neo tấm đế để bộ lọc trượt được (review thiết kế I8); hộp đấu nhiệt đường chảy đặt ở mặt −Y của giá (review thiết kế I6). Bộ lọc có gia nhiệt điện 39 kW chia 6 vùng (c050) nên cần hộp đấu.",
+     "reason_ja": "アンカー固定とヒーター端子ボックスの取り付けの公開資料はない。フィルターが滑れるようベースプレートのみ固定し(設計レビュー I8)、メルトライン用の端子ボックスはスタンドの −Y 面に置いた(設計レビュー I6)。フィルターは 39 kW・6 ゾーンの電気加熱(c050)のため端子ボックスが必要。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: Gneuss giao bộ lọc kèm khung; chiều cao = 1 200 − D 550 (c050)"
+    ],
+    "refs": [
+     "c050"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "1e9742d9ba8d": {
+   "vi": "Đỡ van khởi động và đầu xi lanh (≈ 1,3 t) đang treo ngoài gối đỡ cuối; con lăn/PTFE cho phép giãn nở theo X.",
+   "used_by": [
+    "melt_valve_support:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Chú giải sơ đồ dây chuyền trong catalogue KM (trang 27) có mục 21 van chuyển hướng (diverter valve), 22 khuôn khe, 23 trục cán láng",
+     "text_ja": "KM カタログ(27 ページ)のライン図の凡例に、21 ダイバーターバルブ、22 スロットダイ、23 スムージングロールがある",
+     "refs": [
+      "c035"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khối lượng van khởi động + đầu xi lanh ≈ 1,3 t",
+     "text_ja": "スタートアップバルブ + バレルヘッドの質量 ≈ 1,3 t",
+     "refs": [
+      "rev-I8",
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khối lượng van khởi động và đầu xi lanh; ≈ 1,3 t là ước lượng của thiết kế (khối van 450 × 520 × 520 và bích chuyển, kích thước cũng là giả định).",
+     "reason_ja": "スタートアップバルブとバレルヘッドの質量の公開資料はない。≈ 1,3 t は設計の推定値(バルブブロック 450 × 520 × 520 とアダプターフランジ。寸法も仮定)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Van và đầu xi lanh treo ngoài gối đỡ cuối, đỡ bằng giá có con lăn/PTFE cho giãn nở theo X",
+     "text_ja": "バルブとバレルヘッドは最終サポートの外側に張り出し、ローラー/PTFE 付きブラケットが支えて X 方向の膨張を許容する",
+     "refs": [
+      "rev-I8"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đỡ van khởi động; review thiết kế I8 nhận thấy van và đầu xi lanh nằm ≈ 1 m sau gối đỡ cuối (X 5 239) mà chưa có chỗ đỡ, nên đề xuất giá bắt vào tấm đầu khung với con lăn hoặc đệm PTFE.",
+     "reason_ja": "スタートアップバルブの支持方法の公開資料はない。設計レビュー I8 は、バルブとバレルヘッドが最終サポート(X 5 239)から ≈ 1 m 先にあるのに支えがない点を指摘し、フレーム端板に取り付けるローラーまたは PTFE パッド付きブラケットを提案した。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "review-01 I8; giả định"
+    ],
+    "refs": [
+     "rev-I8"
+    ]
+   },
+   "notes": "c035: chú giải nằm ở trang 27 (mục 18–20 thuộc dây chuyền tạo hạt); hình dây chuyền tấm trang 24–25 không đánh số 21, nên fact chỉ nói đúng chú giải. 1,3 t và cách đỡ là giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "f4e5085cdafb": {
+   "vi": "Hai tai thép chữ L tại Y = ±(150…260), bắt vào mặt đầu khung (Z 560–650) rồi vươn lên Z 940; mỗi tai mang 1 đệm PTFE 90 × 110.",
+   "used_by": [
+    "melt_valve_support:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hai tai thép chữ L tại Y = ±(150…260), bắt vào mặt đầu khung (Z 560–650) rồi vươn lên Z 940",
+     "text_ja": "L 字形の鋼製ラグ 2 個を Y = ±(150…260) に配置、フレーム端面(Z 560–650)に固定して Z 940 まで立ち上げる",
+     "refs": [
+      "rev-I8",
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu công khai về giá đỡ van khởi động; hình dạng do thiết kế chọn theo đề xuất của review I8 (giá từ tấm đầu khung lên đáy van). Z 940 là đáy van và Y tới ±260 là nửa bề rộng van 520, theo kích thước van của thiết kế (450 × 520 × 520).",
+     "reason_ja": "スタートアップバルブのブラケットの公開資料はない。形状は設計レビュー I8 の提案(フレーム端板からバルブ底面までのブラケット)に従って設計で選んだ。Z 940 はバルブ底面、Y ±260 はバルブ幅 520 の半分で、設計のバルブ寸法(450 × 520 × 520)による。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mỗi tai mang 1 đệm PTFE 90 × 110",
+     "text_ja": "各ラグに PTFE パッド 90 × 110 を 1 枚搭載",
+     "refs": [
+      "rev-I8"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đệm; review I8 đề xuất con lăn hoặc đệm PTFE để van trượt theo X; kích thước 90 × 110 do thiết kế chọn.",
+     "reason_ja": "パッドの公開資料はない。設計レビュー I8 はバルブが X 方向に滑れるようローラーまたは PTFE パッドを提案した。90 × 110 の寸法は設計で選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "review-01 I8; giả định"
+    ],
+    "refs": [
+     "rev-I8"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "b1f4f5c5f1d7": {
+   "vi": "Chừa giữa Y ±150 cho máng xả nhựa; đáy giá ở Z 560, trên miệng xe hứng (Z 520).",
+   "used_by": [
+    "melt_valve_support:details[1]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Chừa giữa Y ±150 cho máng xả nhựa; đáy giá ở Z 560, trên miệng xe hứng (Z 520)",
+     "text_ja": "Y ±150 の間は樹脂排出シュート用に空け、ブラケット底面は Z 560、受けカート口(Z 520)の上",
+     "refs": [
+      "design-7|Van khởi động kiểu chốt xoay"
+     ],
+     "reason_vi": "Không có tài liệu công khai về máng xả và xe hứng nhựa; thiết kế (design §7) chọn máng inox và xe hứng có bánh dưới van khởi động, nên chừa giữa ±150 và đặt đáy giá cao hơn miệng xe 40 mm.",
+     "reason_ja": "排出シュートと受けカートの公開資料はない。設計(design §7)ではスタートアップバルブの下にステンレス製シュートと車輪付き受けカートを置いたため、中央 ±150 を空け、ブラケット底面をカート口より 40 mm 高くした。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "review-01 I8; giả định"
+    ],
+    "refs": [
+     "rev-I8"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "d9fee3a1c668": {
+   "vi": "Đỡ hộp giảm tốc và động cơ bơm nhựa phía sau (−Y).",
+   "used_by": [
+    "pump_drive_pedestal:function"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bơm nhựa của dây chuyền KM có động cơ đứng gắn hộp giảm tốc đặt cạnh bơm, nối với bơm qua trục có vỏ che",
+     "text_ja": "KM のライン(ZE BluePower + スロットダイ)では、メルトポンプの横に縦形モーター付き減速機を置き、カバー付きシャフトでポンプにつなぐ",
+     "refs": [
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cụm hộp giảm tốc + động cơ đặt trên bệ riêng ở phía sau (−Y)",
+     "text_ja": "減速機とモーターは背面側(−Y)の専用ペデスタルに載る",
+     "refs": [
+      "web-07",
+      "spec-4|Động cơ bơm"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bệ đỡ cụm dẫn động bơm; ảnh web-07 cho thấy hộp giảm tốc và động cơ đứng cạnh bơm nhưng không thấy chân đế và không cho biết phía −Y. Thiết kế chọn bệ riêng đặt phía sau.",
+     "reason_ja": "ポンプ駆動ユニットの台座の公開資料はない。写真 web-07 にはポンプの横に減速機と縦形モーターが見えるが、脚部は見えず、−Y 側かどうかも分からない。設計では背面側に専用ペデスタルを置くことにした。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: bố trí như web-07 (hộp giảm tốc + động cơ đứng cạnh bơm)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": "Ảnh web-07 xác nhận cách bố trí (động cơ đứng + hộp giảm tốc cạnh bơm) nhưng không thấy bệ đỡ.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  },
+  "900967c17dec": {
+   "vi": "Khung hộp thép 500 × 450, cao 950.",
+   "used_by": [
+    "pump_drive_pedestal:details[0]"
+   ],
+   "status": "verified",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khung hộp thép 500 × 450, cao 950",
+     "text_ja": "角形鋼製フレーム 500 × 450、高さ 950",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về bệ; 500 × 450 bằng đế hộp giảm tốc của thiết kế (hộp góc 500 × 450 × 500, cũng là giả định); cao 950 để đầu ra hộp giảm tốc (Z 1 250) ngang trục bơm.",
+     "reason_ja": "ペデスタルの公開資料はない。500 × 450 は設計の減速機の底面(アングルギア 500 × 450 × 500、これも仮定)に合わせ、高さ 950 は減速機出力(Z 1 250)をポンプ軸と同じ高さにするために選んだ。"
+    }
+   ],
+   "seed": {
+    "sources": [
+     "giả định: bố trí như web-07 (hộp giảm tốc + động cơ đứng cạnh bơm)"
+    ],
+    "refs": [
+     "web-07"
+    ]
+   },
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-base.md"
+   }
+  }
+ }
+}

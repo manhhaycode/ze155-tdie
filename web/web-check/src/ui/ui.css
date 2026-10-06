@@ -1,7 +1,8 @@
 /* Overlay UI of the ZE 155 viewer (toolbar, device tree, info panel). Scoped to .ze-* classes.
    System fonts only (no external font, PLAN-DOT1 §4.2.10). The toolbar writes --ze-top on <html>. */
 
-.ze-panel {
+.ze-panel,
+.ze-dialog {
   --ze-bg: rgba(20, 24, 30, 0.88);
   --ze-bg-2: rgba(255, 255, 255, 0.06);
   --ze-bg-3: rgba(255, 255, 255, 0.12);
@@ -11,6 +12,13 @@
   --ze-sel: #ff8a1f;
   --ze-hov: #9fd3ff;
   --ze-gap: 8px;
+  /* PLAN-PROV source levels (each at least 6:1 on the panel and dialog backgrounds) */
+  --ze-ok: #6fd49a;
+  --ze-der: #c7a6ff;
+  --ze-asm: #ffbf47;
+  --ze-unk: #8b949e;
+}
+.ze-panel {
   position: fixed;
   z-index: 10;
   box-sizing: border-box;
@@ -196,6 +204,138 @@
 .ze-list { margin: 0; padding-left: 18px; }
 .ze-list li { margin-bottom: 3px; }
 .ze-hint { margin: 12px 0 0 !important; padding-top: 8px; border-top: 1px solid var(--ze-line); color: var(--ze-fg-2); font-size: 12px; }
+
+/* ---------- sources of the info-panel lines (PLAN-PROV): badge, summary, dialog */
+.ze-panel .ze-prov,
+.ze-dialog .ze-prov {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 5px;
+  padding: 0 3px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--lv);
+  font: 600 11px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  vertical-align: 1px;
+  cursor: pointer;
+}
+/* 26 px hit area around the 18 px mark */
+.ze-panel .ze-prov::after { content: ''; position: absolute; inset: -4px; }
+.ze-panel button.ze-prov:hover { background: rgba(255, 255, 255, 0.12); }
+[data-level='sourced'] { --lv: var(--ze-ok); }
+[data-level='derived'] { --lv: var(--ze-der); }
+[data-level='assumption'] { --lv: var(--ze-asm); }
+[data-level='unknown'] { --lv: var(--ze-unk); }
+.ze-nowrap { white-space: nowrap; }
+.ze-prov-sum { margin-top: 6px; }
+.ze-prov-counts { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 0 0 2px !important; font-size: 12px; }
+.ze-prov-count { display: inline-flex; align-items: baseline; gap: 3px; color: var(--ze-fg); cursor: help; }
+.ze-prov-glyph { color: var(--lv); font-weight: 700; }
+.ze-prov-hint { margin: 0 !important; color: var(--ze-fg-2); font-size: 11px; }
+
+.ze-dialog {
+  width: min(560px, calc(100vw - 16px));
+  max-width: none;
+  max-height: calc(100dvh - 16px);
+  padding: 0;
+  border: 1px solid var(--ze-line);
+  border-radius: 8px;
+  background: #181c23;
+  color: var(--ze-fg);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55);
+  font: 13px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+}
+.ze-dialog[open] { display: flex; flex-direction: column; }
+.ze-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+.ze-dialog *,
+.ze-dialog *::before,
+.ze-dialog *::after { box-sizing: border-box; }
+.ze-dialog p { margin: 0 0 4px; }
+.ze-dialog button { font: inherit; color: inherit; }
+.ze-dialog :focus-visible { outline: 2px solid var(--ze-hov); outline-offset: 1px; }
+.ze-dlg-head { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px 10px; border-bottom: 1px solid var(--ze-line); }
+.ze-dlg-headtext { flex: 1; min-width: 0; }
+.ze-dlg-kicker { color: var(--ze-fg-2); font-size: 12px; }
+.ze-dlg-title { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.4; }
+.ze-dlg-close {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--ze-line);
+  border-radius: 5px;
+  background: var(--ze-bg-2);
+  font-size: 18px !important;
+  line-height: 1;
+  cursor: pointer;
+}
+.ze-dlg-close:hover { background: var(--ze-bg-3); }
+.ze-dlg-body { flex: 1; min-height: 0; padding: 10px 14px 14px; overflow-y: auto; overscroll-behavior: contain; }
+.ze-dlg-level { padding-bottom: 8px; color: var(--ze-fg-2); }
+.ze-tag { display: inline-flex; gap: 4px; margin: 0 !important; color: var(--lv); font-size: 12px; font-weight: 600; }
+.ze-dlg-sub { margin: 4px 0 6px; font-size: 13px; font-weight: 600; }
+.ze-devsrc { padding-left: 10px; border-left: 3px solid var(--lv); }
+.ze-clauses { margin: 0 0 6px; padding-left: 16px; }
+.ze-clauses li { margin-bottom: 3px; }
+.ze-clause-tag { margin-left: 6px !important; font-weight: 500; }
+.ze-facts { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.ze-fact { padding-left: 10px; border-left: 3px solid var(--lv); }
+.ze-fact-text { font-size: 13px; }
+.ze-fact-reason { font-size: 12px; }
+.ze-src {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--ze-bg-2);
+}
+.ze-src[data-kind='claim'],
+.ze-src[data-kind='doc'] { grid-template-columns: minmax(0, 1fr); }
+.ze-src-text { min-width: 0; }
+.ze-src-title { font-weight: 600; }
+.ze-src-note { color: var(--ze-fg-2); font-size: 12px; }
+.ze-src-meta { color: var(--ze-fg-2); font-size: 12px; margin: 0 !important; }
+.ze-src-meta .ze-id { float: right; }
+.ze-src .ze-link { overflow-wrap: anywhere; }
+.ze-src-thumb {
+  align-self: start;
+  padding: 0;
+  border: 1px solid var(--ze-line);
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.ze-src-thumb img { display: block; width: 100%; height: auto; max-height: 150px; object-fit: contain; }
+.ze-quote {
+  margin: 4px 0;
+  padding: 3px 0 3px 9px;
+  border-left: 2px solid var(--ze-line);
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+.ze-zoom { display: grid; gap: 8px; justify-items: start; }
+.ze-zoom img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 220px);
+  background: #fff;
+  object-fit: contain;
+}
+.ze-zoom .ze-src { justify-self: stretch; grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 600px) {
+  .ze-src { grid-template-columns: minmax(0, 1fr); }
+  .ze-src-thumb { max-width: 240px; }
+}
 
 /* review M5: below 1600 px the toolbar is denser and the side panels narrower (1366 x 768 keeps a canvas of
    about 830 px between the panels; folding the tree gives about 1 060 px) */

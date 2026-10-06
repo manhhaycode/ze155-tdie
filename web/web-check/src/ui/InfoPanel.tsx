@@ -1,8 +1,11 @@
 // Info panel (right): texts of the selected device (PLAN-DOT1 §4.2.10).
-import { use } from 'react'
+import { use, useState } from 'react'
 import { dataPromise } from '../data'
 import { reg, useUi } from './bind'
 import { useLoc } from './i18n'
+import { useProv } from './prov'
+import { lineFor, panelLines, type LineKind, type ProvLine } from './provModel'
+import { ProvBadge, ProvDialog, ProvSummary, type OpenLine } from './Provenance'
 import { fmtInt } from './text'
 import './ui.css'
 
@@ -10,6 +13,12 @@ import './ui.css'
 function isHiddenInside(id: string): boolean {
   if (reg.devices.size === 0 || !reg.devices.has(id)) return false
   return reg.meshesOfDevice(id, true).length === 0
+}
+
+/** where the unbreakable tail of a line starts: its last word, or the last 2 characters of a Japanese line */
+function glueAt(text: string): number {
+  const sp = text.lastIndexOf(' ')
+  return sp >= 0 && text.length - sp <= 24 ? sp + 1 : Math.max(0, text.length - 2)
 }
 
 export function InfoPanel() {
@@ -31,6 +40,33 @@ export function InfoPanel() {
     select(id)
     zoomTo(id)
   }
+  // PLAN-PROV: sources of the function and details lines, fetched when the device is selected
+  const shown = dev && !dev.synthetic ? panelLines(dev.function_vi, dev.details_vi) : []
+  const prov = useProv(shown.length ? dev?.device_id : undefined)
+  const [open, setOpen] = useState<(OpenLine & { device: string; opener: HTMLElement }) | null>(null)
+  // the line text with its mark; the last word and the mark never wrap apart
+  const withMark = (kind: LineKind, index: number, vi: string, text: string, label: string) => {
+    if (!prov || !dev) return text
+    const cut = glueAt(text)
+    return (
+      <>
+        {text.slice(0, cut)}
+        <span className="ze-nowrap">
+          {text.slice(cut)}
+          <ProvBadge
+            line={lineFor(prov, kind, index, vi)}
+            loc={loc}
+            onOpen={(line: ProvLine | null, opener) => setOpen({ line, text, label, device: dev.device_id, opener })}
+          />
+        </span>
+      </>
+    )
+  }
+  const closeDialog = () => {
+    const opener = open?.opener
+    setOpen(null)
+    if (opener?.isConnected) opener.focus()
+  }
 
   return (
     <aside id="ze-info" className="ze-panel ze-info" aria-live="polite">
@@ -50,13 +86,14 @@ export function InfoPanel() {
             <span className="ze-muted">{T.info.group}: </span>{section ? loc.section(section) : dev.group}
             <code className="ze-id">{dev.device_id}</code>
           </p>
+          {prov && <ProvSummary prov={prov} shown={shown} loc={loc} />}
           {part && <p className="ze-info-part">{T.info.part(part)}</p>}
           {isHiddenInside(dev.device_id) && <p className="ze-info-inside">{T.info.inside}</p>}
 
           {dev.function_vi ? (
             <section className="ze-info-sec">
               <h3 className="ze-h3">{T.info.function}</h3>
-              <p>{loc.func(dev)}</p>
+              <p>{withMark('function', 0, dev.function_vi, loc.func(dev) ?? dev.function_vi, T.prov.lineFunction)}</p>
             </section>
           ) : (
             dev.synthetic && <p className="ze-muted">{T.info.synthetic}</p>
@@ -66,7 +103,9 @@ export function InfoPanel() {
             <section className="ze-info-sec">
               <h3 className="ze-h3">{T.info.details}</h3>
               <ul className="ze-list">
-                {loc.details(dev)?.map((t, i) => <li key={i}>{t}</li>)}
+                {loc.details(dev)?.map((t, i, all) => (
+                  <li key={i}>{withMark('details', i, dev.details_vi?.[i] ?? '', t, T.prov.lineDetail(i + 1, all.length))}</li>
+                ))}
               </ul>
             </section>
           )}
@@ -115,6 +154,9 @@ export function InfoPanel() {
         </>
       )}
       <p className="ze-hint">{T.info.hint}</p>
+      {open && prov && dev && open.device === dev.device_id && (
+        <ProvDialog prov={prov} open={open} device={loc.name(dev)} loc={loc} onClose={closeDialog} />
+      )}
     </aside>
   )
 }

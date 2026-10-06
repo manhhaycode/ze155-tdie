@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import type { RootState } from '@react-three/fiber'
-import { FIXED_STATE_IDS, type Axis, type FixedStateId, type StateId, type V3 } from '../data'
+import { dataPromise, FIXED_STATE_IDS, type Axis, type FixedStateId, type StateId, type V3 } from '../data'
 import { reg, isShown } from '../scene/rig'
 import { unfilteredMeshes, isHelper } from '../scene/Picking'
 import { statePlane, cutDebug } from '../scene/Cuts'
@@ -16,6 +16,9 @@ import { fillColorAt as fillColor, flowUniforms, toHex } from '../scene/FillMate
 import { sheetColorAt } from '../scene/SheetMaterial'
 import { heatRgb } from '../scene/heat'
 import { inSection } from '../scene/section'
+import { useLang } from '../ui/i18n'
+import { loadProv } from '../ui/prov'
+import { lineFor, panelLines } from '../ui/provModel'
 
 // PLAN-DOT1 §4.2.11 (window.__ze), minus the Đợt 1b items (AMENDMENTS): pickSweep and the perf trace.
 
@@ -1236,14 +1239,163 @@ export function installHooks(get: () => RootState) {
     }
     out.M3 = await rollCoreProbe()
     out.M1 = await freeCamTest()
+    out.P1 = await provCheck()
     await changeState('FULL', { camera: true, smooth: false })
     out.finished = new Date().toISOString()
+    return out
+  }
+
+  // ---------------------------------------------------------------------------------------------------
+  // PLAN-PROV Task 10: source badges of the info panel. Requests are read from Resource Timing, whose buffer
+  // (250 entries by default) is raised here, before the first selection.
+  performance.setResourceTimingBufferSize(5000)
+  const resources = () => performance.getEntriesByType('resource').map((e) => e.name)
+  const provJson = (id?: string) =>
+    resources().filter((n) => (id ? n.endsWith(`/data/prov/${encodeURIComponent(id)}.json`) : /\/data\/prov\/[^/]+\.json$/.test(n))).length
+  const provImg = (size: 't' | 'l') => resources().filter((n) => n.includes('/data/prov/img/') && n.endsWith(`.${size}.jpg`)).length
+  let provAtReady: number | null = null
+  void ready.then(() => (provAtReady = provJson()))
+  const waitFor = async (cond: () => boolean, ms = 4000) => {
+    const t0 = performance.now()
+    while (!cond()) {
+      if (performance.now() - t0 > ms) return false
+      await sleep(50)
+    }
+    return true
+  }
+  const JA = /[぀-ヿ一-鿿]/
+
+  const provCheck = async () => {
+    const data = await dataPromise
+    const ui = useUi.getState
+    const lang0 = useLang.getState().lang
+    useLang.getState().setLang('vi')
+    ui().clear()
+    await raf2()
+    const badges = () => [...document.querySelectorAll<HTMLButtonElement>('#ze-info .ze-prov')]
+    const dialog = () => document.querySelector<HTMLDialogElement>('dialog.ze-dialog[open]')
+    const closeDialog = async () => {
+      dialog()?.querySelector<HTMLButtonElement>('.ze-dlg-close')?.click()
+      await waitFor(() => !dialog(), 1000)
+      await raf2()
+    }
+    const lines = (id: string) => {
+      const d = data.deviceById.get(id)
+      return d && !d.synthetic ? (d.function_vi ? 1 : 0) + (d.details_vi?.length ?? 0) : 0
+    }
+    // a device whose file this page never asked for (the self-test and other hooks select devices too)
+    const prefer = ['gearbox', 'melt_screen_changer', 'vac_pump_unit', 'die_flex_lip', 'ctx_roll_middle']
+    const id = [...prefer, ...data.deviceById.keys()].find((d) => lines(d) > 0 && provJson(d) === 0)
+    if (!id) return { ok: false, error: 'every device file was already requested in this page; reload and run again' }
+    const out: Record<string, unknown> = { device: id, atReady: provAtReady }
+
+    // 1 request on the first selection, none on the second; no image before a dialog opens
+    const t0 = provImg('t')
+    ui().select(id)
+    await waitFor(() => badges().length > 0)
+    await sleep(300)
+    out.requests = provJson(id)
+    out.badges = badges().length
+    out.expectedBadges = lines(id)
+    ui().clear()
+    await raf2()
+    ui().select(id)
+    await waitFor(() => badges().length > 0)
+    await sleep(300)
+    out.requestsAfterReselect = provJson(id)
+    out.thumbsBeforeOpen = provImg('t') - t0
+
+    // every line of every device has a level once the strict build is published (no "?")
+    let unknown = 0
+    for (const d of data.deviceById.keys()) {
+      if (!lines(d)) continue
+      const p = await loadProv(d)
+      if (!p) {
+        unknown += lines(d)
+        continue
+      }
+      const dev = data.deviceById.get(d)!
+      for (const l of panelLines(dev.function_vi, dev.details_vi)) if (!lineFor(p, l.kind, l.index, l.vi)?.level) unknown++
+    }
+    out.unknownLines = unknown
+
+    // synthetic devices: no request, no badge
+    ui().select('x_takeoff')
+    await raf2()
+    await sleep(400)
+    out.synthetic = { requests: provJson('x_takeoff'), badges: badges().length }
+
+    // dialog: thumbnails load when it opens, the large image only on a click; Esc stays inside; focus returns
+    ui().select(id)
+    await waitFor(() => badges().length > 0)
+    let opened: HTMLButtonElement | null = null
+    for (const b of badges()) {
+      b.click()
+      await waitFor(() => !!dialog(), 1000)
+      if (dialog()?.querySelector('.ze-src-thumb')) {
+        opened = b
+        break
+      }
+      await closeDialog()
+    }
+    const dlg = dialog()
+    if (opened && dlg) {
+      const l0 = provImg('l')
+      await waitFor(() => [...dlg.querySelectorAll<HTMLImageElement>('.ze-src-thumb img')].every((i) => i.complete), 3000)
+      out.thumbsOnOpen = provImg('t') - t0
+      out.largeBeforeClick = provImg('l') - l0
+      dlg.querySelector<HTMLButtonElement>('.ze-src-thumb')!.click()
+      const big = await waitFor(() => !!dlg.querySelector<HTMLImageElement>('.ze-zoom img')?.naturalWidth, 4000)
+      out.largeOnClick = big
+      // the first Esc leaves the enlarged image, neither Esc may reach the viewer's shortcuts (window keydown)
+      dlg.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+      await raf2()
+      out.escLeavesZoom = !dlg.querySelector('.ze-zoom')
+      dlg.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+      await raf2()
+      out.escKeepsSelection = ui().selected === id
+      await closeDialog()
+      out.focusBack = document.activeElement === opened || document.activeElement?.className === 'ze-prov'
+      key('Escape') // control: outside the dialog, Esc does clear
+      await raf2()
+      out.escOutsideClears = ui().selected === null
+    } else out.dialog = 'no line of this device shows an image'
+
+    // Japanese: badge labels and the summary
+    ui().select(id)
+    useLang.getState().setLang('ja')
+    await waitFor(() => badges().length > 0 && JA.test(badges()[0].getAttribute('aria-label') ?? ''))
+    const sum = document.querySelector('#ze-info .ze-prov-sum')?.textContent ?? ''
+    out.ja = badges().every((b) => JA.test(b.getAttribute('aria-label') ?? '')) && JA.test(sum)
+    useLang.getState().setLang(lang0)
+    ui().clear()
+    await raf2()
+
+    const o = out as Record<string, number | boolean | { requests: number; badges: number }>
+    out.ok =
+      o.atReady === 0 &&
+      o.requests === 1 &&
+      o.requestsAfterReselect === 1 &&
+      o.badges === o.expectedBadges &&
+      o.thumbsBeforeOpen === 0 &&
+      o.unknownLines === 0 &&
+      (o.synthetic as { requests: number }).requests === 0 &&
+      (o.synthetic as { badges: number }).badges === 0 &&
+      (o.thumbsOnOpen as number) > 0 &&
+      o.largeBeforeClick === 0 &&
+      o.largeOnClick === true &&
+      o.escLeavesZoom === true &&
+      o.escKeepsSelection === true &&
+      o.focusBack === true &&
+      o.escOutsideClears === true &&
+      o.ja === true
     return out
   }
 
   const api = {
     ready,
     selftest,
+    provCheck,
     lastSelftest: null as unknown,
     selfcheck,
     stats,

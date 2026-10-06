@@ -1306,5 +1306,58 @@
     "selftest_seconds": 37.7
    }
   }
+ },
+ "prov": {
+  "generated": "2026-10-06",
+  "by": "PLAN-PROV Task 9-10: lead, after the strict publish (make -C web prov publish-prov)",
+  "url": "http://localhost:5188/?lang=vi (npm run dev, StrictMode), Chrome via chrome-devtools MCP",
+  "data": "public/data/prov: 186 device files, 118 images (7.5 MB), all 454 lines verified (line level: 15 sourced, 9 derived, 430 assumption; 534 shown lines: 15 / 14 / 505, 0 unknown); make_prov check --strict: 0 failures, 14 warnings (W1/W2, explained in the group evidence files)",
+  "P1": {
+   "device": "gearbox",
+   "atReady": 0,
+   "requests": 1,
+   "requestsAfterReselect": 1,
+   "badges": 6,
+   "expectedBadges": 6,
+   "thumbsBeforeOpen": 0,
+   "unknownLines": 0,
+   "synthetic": {
+    "requests": 0,
+    "badges": 0
+   },
+   "thumbsOnOpen": 1,
+   "largeBeforeClick": 0,
+   "largeOnClick": true,
+   "escLeavesZoom": true,
+   "escKeepsSelection": true,
+   "focusBack": true,
+   "escOutsideClears": true,
+   "ja": true,
+   "ok": true
+  },
+  "selftest": {
+   "D1": true,
+   "D3": true,
+   "D4": true,
+   "D5": true,
+   "D6": true,
+   "D7": true,
+   "D8": true,
+   "D9": true,
+   "D14_runtime": true,
+   "F2": true,
+   "F3": true,
+   "F4": true,
+   "F5": true,
+   "F6": true,
+   "F8": true,
+   "M1": true,
+   "M3": true,
+   "P1": true,
+   "D2_selectAll": 190,
+   "seconds": 41.7
+  },
+  "console": "0 errors, 0 warnings",
+  "tests": "python3 tools/test_make_prov.py: 31 OK; node tools/test_prov.mjs: 0 failures; make compare-drafts: 0 unexpected differences"
  }
 }

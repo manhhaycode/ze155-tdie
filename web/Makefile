@@ -4,8 +4,9 @@
 # compress gltf-transform 4.5.1: dedup --materials false -> prune --keep-leaves true -> meshopt --level high
 # analyze  node tools/check_glb.mjs analyze   -> build/reports/glb_analysis.json
 # data     python3 tools/make_data.py         -> build/data/*.json (5 files)
+# prov     python3 tools/make_prov.py build   -> build/prov/out (sources of the info-panel lines, PLAN-PROV)
 # verify   node tools/check_glb.mjs verify    -> build/reports/check.json (exit 1 on any failure, no publish)
-# publish  copy models + data into web-check/public/
+# publish  copy models + data + prov into web-check/public/
 #
 # Only one `make export` at a time (both write build/raw). Unsaved edits in an open Blender session
 # are NOT exported: the export reads the .blend as last saved on disk.
@@ -21,9 +22,13 @@ TLOG    := build/reports/timings.txt
 # stages must run in order (and never two exports at once), even under make -j
 .NOTPARALLEL:
 
-.PHONY: all export compress analyze data verify publish clean distclean deps compare-drafts verify-negative test-search
+.PHONY: all export compress analyze data prov verify publish clean distclean deps compare-drafts verify-negative test-search \
+        prov-seed publish-prov prov-negative test-prov
 
-all: export compress analyze data verify publish
+# PLAN-PROV: strict = every line verified; while curating, run with PROV_FLAGS= (drafts publish as "?")
+PROV_FLAGS ?= --strict
+
+all: export compress analyze data prov verify publish
 	@echo "MAKE ALL DONE"; cat $(TLOG)
 
 deps: tools/node_modules/.package-lock.json
@@ -66,6 +71,11 @@ data:
 	@t0=$(NOW); python3 tools/make_data.py || exit 1; \
 	echo "data $$(perl -e "printf '%.2f', $(NOW) - $$t0") s" >> $(TLOG)
 
+prov:
+	mkdir -p build/reports
+	@t0=$(NOW); python3 tools/make_prov.py build $(PROV_FLAGS) || exit 1; \
+	echo "prov $$(perl -e "printf '%.2f', $(NOW) - $$t0") s" >> $(TLOG)
+
 verify: deps
 	@t0=$(NOW); node tools/check_glb.mjs verify || exit 1; \
 	echo "verify $$(perl -e "printf '%.2f', $(NOW) - $$t0") s" >> $(TLOG)
@@ -75,6 +85,8 @@ publish:
 	mkdir -p web-check/public/models web-check/public/data
 	cp build/models/line.glb build/models/interior.glb web-check/public/models/
 	cp build/data/devices.json build/data/node_map.json build/data/cut_states.json build/data/rotors.json build/data/materials.json web-check/public/data/
+	python3 tools/make_prov.py check --strict
+	rm -rf web-check/public/data/prov && cp -R build/prov/out web-check/public/data/prov
 	@echo "published: $$(stat -f '%N %z' web-check/public/models/*.glb | tr '\n' ' ')"
 
 # task A4: build/data must equal web/dot1/*.dot1.json except the intended differences listed in make_data.py
@@ -90,6 +102,25 @@ verify-negative:
 # task A6: accent-insensitive device search ("xi lanh b3", "xi lanh", "bom", ...)
 test-search:
 	node tools/test_search.mjs
+
+# PLAN-PROV: refresh web/prov/lines/*.json from build/data/devices.json (keeps facts and status)
+prov-seed:
+	python3 tools/make_prov.py seed
+
+# PLAN-PROV curation loop: build prov against the published devices.json and copy only build/prov/out
+publish-prov: prov
+	cmp build/data/devices.json web-check/public/data/devices.json
+	rm -rf web-check/public/data/prov && cp -R build/prov/out web-check/public/data/prov
+	@echo "published prov: $$(ls web-check/public/data/prov/*.json | wc -l | tr -d ' ') device files, $$(du -sh web-check/public/data/prov | cut -f1)"
+
+# PLAN-PROV Task 3 negative test: a changed line, an unknown ref, a sourced fact without public evidence, a missing
+# Japanese text and a denied string must each fail the check (unit tests in tools/test_make_prov.py, class Check)
+prov-negative:
+	python3 tools/test_make_prov.py Check
+
+test-prov:
+	python3 tools/test_make_prov.py
+	node tools/test_prov.mjs
 
 clean:
 	rm -rf build/tmp
