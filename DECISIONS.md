@@ -148,3 +148,9 @@ Theo yêu cầu: tự làm, tự review, không hỏi lại. Mọi quyết đị
     - Lựa chọn của người dùng: xem tự do; hạt 3D thật cộng khối nhựa; mặt cắt Y = 0; chỉ màu; bản đủ cộng reviewer độc lập. Đổi nhãn mọi nút trạng thái sang kiểu "thấy gì", toạ độ chuyển vào tooltip.
     - Kế hoạch: `web/PLAN-FLOW.md` (spec) và `web/PLAN-FLOW-TASKS.md`. Không sửa Blender, không xuất lại GLB; chỉ `make_data.py` và code web.
     - Quyết định khi dựng: cắt luôn trục vít B ở Y = 0 (nguyên khối thì nó che kín khe nhìn vào nhựa); vẽ mặt cắt nhựa tại mặt phẳng cắt; mặt cắt thép và trục vít màu xám trong FLOW để màu nhiệt đọc được; tấm film tính chiều dài đường đi theo hình học thật của đoạn ra băng tải.
+34. **Nguồn cho từng dòng giải thích trong bảng thông tin (2026-10-06):**
+    - Người dùng: các phần giải thích từng thiết bị thiếu nguồn; muốn bấm vào để xem nguồn ở popup, phân biệt cái gì là giả định, cái gì là thật.
+    - Người dùng chọn: dấu trên từng dòng Chức năng/Chi tiết; 3 mức (✓ Có nguồn / ≈ Suy ra / ⚠ Giả định); chỉ trong bảng thông tin thiết bị; popup có ảnh thu nhỏ; tải lười (không tải gì thêm lúc mở trang).
+    - Ảnh thu nhỏ của bên thứ ba (catalogue KM, ảnh báo chí và trang sản phẩm) được đưa lên site theo lựa chọn của người dùng, sau khi đã được nhắc về bản quyền; luôn ghi xuất xứ, có link về trang gốc, web-11 ghi CC BY-SA 3.0. Không sao chép PDF lên site, chỉ link tới bản gốc.
+    - Nhắc lại #2: `22_3_160.pdf` không bao giờ được trích hay đưa lên web.
+    - Kế hoạch: `web/PLAN-PROV.md`. Làm trong worktree riêng, nhánh `prov-sources`, vì một phiên khác đang làm trên `flow-hat-film` cùng thư mục.
