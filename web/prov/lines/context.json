@@ -9,8 +9,31 @@
     "ctx_roll_middle:function",
     "ctx_roll_top:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm trục cán láng (smoothing roll, KM PlanetCalender) đặt ngay sau khuôn khe, cán bóng tấm nhựa",
+     "text_ja": "スムージングロール(KM PlanetCalender)はスロットダイの直後に置かれ、樹脂シートを艶出し圧延する",
+     "refs": [
+      "c035",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c044",
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Làm nguội tấm khi tiếp xúc các trục",
+     "text_ja": "ロールに接触する間にシートを冷却する",
+     "refs": [
+      "dec-8",
+      "spec-6"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách trục làm nguội tấm; kiến thức chung về đùn PET, bộ nguồn không có tài liệu riêng. Thiết kế gọi cụm này là trục làm nguội (chill roll).",
+     "reason_ja": "ロールがシートを冷却する仕組みに関する公開資料はない。PET 押出の一般知識で、資料セットに専用の資料はない。設計ではこのユニットをチルロールと呼んでいる。"
+    }
+   ],
    "seed": {
     "sources": [
      "c046 (Ø 400–800), c044 (PlanetCalender 3 trục); DECISIONS 10 (khe trục giữa–dưới tại cao độ môi khuôn)"
@@ -21,15 +44,102 @@
      "dec-10"
     ]
    },
-   "notes": ""
+   "notes": "Phần \"cán bóng\" dựa vào tên smoothing roll / polishing calender; phần \"làm nguội\" không có tài liệu riêng nên giữ giả định."
   },
   "d44c88e28cd7": {
    "vi": "Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 799.",
    "used_by": [
     "ctx_roll_bottom:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm cán láng có 3 trục xếp chồng đứng, cùng toạ độ X; môi khuôn chĩa vào khe giữa trục giữa và trục dưới",
+     "text_ja": "スムージングロールは 3 本を縦に積み、X 座標は同じ。ダイリップは中間ロールと下部ロールの間隙を向く",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c044"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Trục crôm bóng gương (như các trục PlanetCalender của KM trong ảnh)",
+     "text_ja": "鏡面仕上げのクロムロール(写真の KM PlanetCalender のロールと同様)",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø800, đầu trên của dải Ø 400–800 thường gặp",
+     "text_ja": "Ø800、一般的な Ø 400–800 の範囲の上限",
+     "refs": [
+      "c046",
+      "spec-6|Đường kính trục"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường kính trục của dây chuyền này; c046 (SML, hãng khác) chỉ nêu trục thường Ø 400–800 mm; chọn 800 mm, đầu trên của dải, vì năng suất cao (specs §6).",
+     "reason_ja": "このラインのロール径に関する公開資料はない。c046(SML、他社)は一般的なロール径を Ø 400–800 mm とするのみ。生産量が大きいため範囲の上限 800 mm を選んだ(specs §6)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt trục 2 600 (Y ±1 300) = khe môi 2 400 + 100 mỗi bên",
+     "text_ja": "ロール胴長 2 600(Y ±1 300)= ダイリップ幅 2 400 + 片側 100",
+     "refs": [
+      "spec-6|Chiều dài mặt trục",
+      "spec-0|Khổ tấm",
+      "c046"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng mặt trục của máy này; c046 (hãng khác) cho khổ trục thường 1 050–2 200 mm. Chọn 2 600 theo specs §6 (ước lượng), vượt dải đó vì khe môi 2 400 (ước lượng, specs §0) rộng hơn tấm 2 100.",
+     "reason_ja": "このマシンのロール胴長に関する公開資料はない。c046(他社)の一般的なロール幅は 1 050–2 200 mm。specs §6(推定)により 2 600 を選んだ。ダイリップ幅 2 400(推定、specs §0)がシート幅 2 100 より広いため、この範囲を超える。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cổ trục Ø300 tới Y ±1 600, thò ra ngoài mặt trục 300 mỗi bên",
+     "text_ja": "ジャーナル Ø300、Y ±1 600 まで(胴の両端から 300 ずつ張り出す)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cổ trục cán; kích thước do thiết kế chọn, kết thúc trong khung bên (Y 1 400…1 750) nơi đặt gối đỡ.",
+     "reason_ja": "ロールジャーナルに関する公開資料はない。寸法は設計で選び、軸受を置くサイドフレーム(Y 1 400…1 750)の中で終わる。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm X = 9 776 = môi khuôn 9 576 + khe gió 200",
+     "text_ja": "中心 X = 9 776 = ダイリップ 9 576 + エアギャップ 200",
+     "refs": [
+      "dec-11|khe khí 200 mm",
+      "design-4.1|Khe gió",
+      "design-7|Với trục Ø800",
+      "spec-6|Vị trí so với khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khoảng cách môi khuôn – khe trục: hình catalogue không theo tỉ lệ, specs §6 chỉ ước 50–150 mm theo ảnh web-18. Thiết kế chấp nhận khe gió 200 mm (trục Ø800, mũi khuôn vát 30°), môi khuôn tại X 9 576.",
+     "reason_ja": "ダイリップとロール間隙の距離に関する公開資料はない。カタログ図は縮尺なし、specs §6 は写真 web-18 から 50–150 mm と推定するのみ。設計ではエアギャップ 200 mm を採用(ロール Ø800、ダイ先端 30° の面取り)、ダイリップは X 9 576。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khe giữa–dưới ở Z = 1 200: môi khuôn chĩa thẳng vào khe, ngang tầm trục vít (1 200)",
+     "text_ja": "中間–下部ロールの間隙は Z = 1 200:ダイリップは間隙をまっすぐ向き、スクリュー軸と同じ高さ(1 200)",
+     "refs": [
+      "meas-5|Cách bố trí",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c006",
+      "spec-4|Cao độ đường tâm nhựa"
+     ],
+     "reason_vi": "Hình trang 24–25: môi die và khe trục cùng độ cao (nip y = 440,05 ≈ lip y = 440,2 pt), melt line đồng trục với barrel (meas-5); cao độ trục vít ZE 155 là 1 200 mm (c006).",
+     "reason_ja": "24–25 ページの図ではダイリップとロール間隙が同じ高さ(ニップ y = 440,05 ≈ リップ y = 440,2 pt)で、メルトラインはバレルと同軸(meas-5)。ZE 155 のスクリュー軸高さは 1 200 mm(c006)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Z = 799 = 1 200 − 400 − 1 (bán kính 400, nửa khe 2 mm)",
+     "text_ja": "Z = 799 = 1 200 − 400 − 1(半径 400、間隙の半分 2 mm)",
+     "refs": [
+      "dec-10",
+      "design-3|Cụm cán láng",
+      "meas-5|Smoothing roll 23"
+     ],
+     "reason_vi": "Hình học từ các giá trị thiết kế (Ø800 và khe 2 mm giữa các trục do thiết kế chọn); không có số của hãng. Hình catalogue (sơ đồ, không theo tỉ lệ) vẽ bước tâm ≈ 1,11 Ø (23 / 20,8 pt, meas-5).",
+     "reason_ja": "設計値(設計で選んだ Ø800 とロール間 2 mm の間隙)からの幾何計算で、メーカーの数値はない。カタログ図(模式図、縮尺なし)のロール中心間隔は ≈ 1,11 Ø(23 / 20,8 pt、meas-5)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c046 (Ø 400–800), c044 (PlanetCalender 3 trục); DECISIONS 10 (khe trục giữa–dưới tại cao độ môi khuôn)"
@@ -40,15 +150,37 @@
      "dec-10"
     ]
    },
-   "notes": ""
+   "notes": "Ø800 chỉ nằm trong dải 400–800 của c046 (SML, hãng khác), giữ giả định. Môi–khe 200 mm lệch ước 50–150 mm của specs §6; DECISIONS 11 chấp nhận. Sơ đồ catalogue vẽ bước tâm ≈ 1,11 Ø, thiết kế dùng khe 2 mm."
   },
   "031fdbd3e579": {
    "vi": "Quay 3 trục cán.",
    "used_by": [
     "ctx_roll_drives:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm cán láng KM PlanetCalender có 3 trục (trục 1 và 3 chỉnh quanh trục giữa 2)",
+     "text_ja": "KM PlanetCalender のロールスタックは 3 本(ロール 1 と 3 は中央のロール 2 に対して調整できる)",
+     "refs": [
+      "c044",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mỗi trục có một động cơ hộp số quay riêng",
+     "text_ja": "各ロールに専用のギアモーターが付き、回転させる",
+     "refs": [
+      "meas-5|Smoothing roll 23",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "web-09"
+     ],
+     "reason_vi": "Không có tài liệu công khai về truyền động trục cán của PlanetCalender; catalogue chỉ vẽ ba khối nhỏ sau khung mà meas-5 cho là có thể xi lanh ép hoặc truyền động, ảnh web-09 không ghi chú. Chọn mỗi trục một động cơ hộp số vì đó là cách thường dùng cho trục cán láng.",
+     "reason_ja": "PlanetCalender のロール駆動に関する公開資料はない。カタログはフレーム後ろに小さなブロック 3 個を描くのみで、meas-5 は押付けシリンダーか駆動部の可能性とする。写真 web-09 にも注記はない。圧延ロールは 1 本ずつ駆動するのが一般的なため、各ロールにギアモーター 1 台とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (3 khối nhỏ sau khung)"
@@ -57,15 +189,46 @@
      "cat-p24"
     ]
    },
-   "notes": ""
+   "notes": "Chức năng \"quay\" là giả định: hình catalogue không ghi nhãn ba khối nhỏ là động cơ."
   },
   "b57dd10af24f": {
    "vi": "3 động cơ hộp số 450 × 600 × 500 phía −Y, đồng trục với từng trục cán.",
    "used_by": [
     "ctx_roll_drives:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "derived",
+     "text_vi": "3 khối nhỏ sau khung, mỗi trục cán một khối (đếm trên hình trang 24–25)",
+     "text_ja": "フレーム後ろに小さなブロックが 3 個、ロール 1 本につき 1 個(24–25 ページの図で数えた)",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "meas-5|Smoothing roll 23"
+     ],
+     "reason_vi": "Đếm trên hình: 3 khối nhỏ ở mặt sau khung (x 644–652 pt), mỗi trục một khối (meas-5). meas-5 cho rằng đó có thể là xi lanh ép hoặc cụm truyền động, hình không ghi nhãn.",
+     "reason_ja": "図で数えた:フレーム背面(x 644–652 pt)に小さなブロックが 3 個、ロール 1 本につき 1 個(meas-5)。meas-5 は押付けシリンダーか駆動部の可能性とし、図に注記はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Là động cơ hộp số đặt phía −Y, đồng trục với từng trục cán",
+     "text_ja": "ギアモーターを −Y 側に、各ロールと同軸に配置",
+     "refs": [
+      "rev-C1",
+      "web-09"
+     ],
+     "reason_vi": "Không có tài liệu công khai về loại và vị trí bộ truyền động; hình catalogue là hình nhìn cạnh, ba khối nằm lệch sau khung nên không cho thấy đồng trục. Vị trí (9 776, −2 050) do thiết kế chốt khi bổ sung toạ độ (review thiết kế C1).",
+     "reason_ja": "駆動部の種類と位置に関する公開資料はない。カタログ図は側面図で、3 個のブロックはフレームの後ろにずれており同軸かどうかは分からない。位置(9 776, −2 050)は座標補完時に設計が決めた(設計レビュー C1)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cỡ 450 × 600 × 500",
+     "text_ja": "外形 450 × 600 × 500",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về kích thước bộ truyền động trục cán; hình catalogue không theo tỉ lệ; chọn cỡ động cơ hộp số này theo thiết kế.",
+     "reason_ja": "ロール駆動部の寸法に関する公開資料はない。カタログ図は縮尺なし。ギアモーターのこの外形は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (3 khối nhỏ sau khung)"
@@ -74,15 +237,102 @@
      "cat-p24"
     ]
    },
-   "notes": ""
+   "notes": "Hình catalogue vẽ 3 khối ở mặt sau khung (phía +X), thiết kế đặt động cơ ở phía −Y đồng trục: lựa chọn của thiết kế, không đọc ra từ hình."
   },
   "3c6e4af3f0cf": {
    "vi": "Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 1601.",
    "used_by": [
     "ctx_roll_middle:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm cán láng có 3 trục xếp chồng đứng, cùng toạ độ X; môi khuôn chĩa vào khe giữa trục giữa và trục dưới",
+     "text_ja": "スムージングロールは 3 本を縦に積み、X 座標は同じ。ダイリップは中間ロールと下部ロールの間隙を向く",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c044"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Trục crôm bóng gương (như các trục PlanetCalender của KM trong ảnh)",
+     "text_ja": "鏡面仕上げのクロムロール(写真の KM PlanetCalender のロールと同様)",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø800, đầu trên của dải Ø 400–800 thường gặp",
+     "text_ja": "Ø800、一般的な Ø 400–800 の範囲の上限",
+     "refs": [
+      "c046",
+      "spec-6|Đường kính trục"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường kính trục của dây chuyền này; c046 (SML, hãng khác) chỉ nêu trục thường Ø 400–800 mm; chọn 800 mm, đầu trên của dải, vì năng suất cao (specs §6).",
+     "reason_ja": "このラインのロール径に関する公開資料はない。c046(SML、他社)は一般的なロール径を Ø 400–800 mm とするのみ。生産量が大きいため範囲の上限 800 mm を選んだ(specs §6)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt trục 2 600 (Y ±1 300) = khe môi 2 400 + 100 mỗi bên",
+     "text_ja": "ロール胴長 2 600(Y ±1 300)= ダイリップ幅 2 400 + 片側 100",
+     "refs": [
+      "spec-6|Chiều dài mặt trục",
+      "spec-0|Khổ tấm",
+      "c046"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng mặt trục của máy này; c046 (hãng khác) cho khổ trục thường 1 050–2 200 mm. Chọn 2 600 theo specs §6 (ước lượng), vượt dải đó vì khe môi 2 400 (ước lượng, specs §0) rộng hơn tấm 2 100.",
+     "reason_ja": "このマシンのロール胴長に関する公開資料はない。c046(他社)の一般的なロール幅は 1 050–2 200 mm。specs §6(推定)により 2 600 を選んだ。ダイリップ幅 2 400(推定、specs §0)がシート幅 2 100 より広いため、この範囲を超える。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cổ trục Ø300 tới Y ±1 600, thò ra ngoài mặt trục 300 mỗi bên",
+     "text_ja": "ジャーナル Ø300、Y ±1 600 まで(胴の両端から 300 ずつ張り出す)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cổ trục cán; kích thước do thiết kế chọn, kết thúc trong khung bên (Y 1 400…1 750) nơi đặt gối đỡ.",
+     "reason_ja": "ロールジャーナルに関する公開資料はない。寸法は設計で選び、軸受を置くサイドフレーム(Y 1 400…1 750)の中で終わる。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm X = 9 776 = môi khuôn 9 576 + khe gió 200",
+     "text_ja": "中心 X = 9 776 = ダイリップ 9 576 + エアギャップ 200",
+     "refs": [
+      "dec-11|khe khí 200 mm",
+      "design-4.1|Khe gió",
+      "design-7|Với trục Ø800",
+      "spec-6|Vị trí so với khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khoảng cách môi khuôn – khe trục: hình catalogue không theo tỉ lệ, specs §6 chỉ ước 50–150 mm theo ảnh web-18. Thiết kế chấp nhận khe gió 200 mm (trục Ø800, mũi khuôn vát 30°), môi khuôn tại X 9 576.",
+     "reason_ja": "ダイリップとロール間隙の距離に関する公開資料はない。カタログ図は縮尺なし、specs §6 は写真 web-18 から 50–150 mm と推定するのみ。設計ではエアギャップ 200 mm を採用(ロール Ø800、ダイ先端 30° の面取り)、ダイリップは X 9 576。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khe giữa–dưới ở Z = 1 200: môi khuôn chĩa thẳng vào khe, ngang tầm trục vít (1 200)",
+     "text_ja": "中間–下部ロールの間隙は Z = 1 200:ダイリップは間隙をまっすぐ向き、スクリュー軸と同じ高さ(1 200)",
+     "refs": [
+      "meas-5|Cách bố trí",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c006",
+      "spec-4|Cao độ đường tâm nhựa"
+     ],
+     "reason_vi": "Hình trang 24–25: môi die và khe trục cùng độ cao (nip y = 440,05 ≈ lip y = 440,2 pt), melt line đồng trục với barrel (meas-5); cao độ trục vít ZE 155 là 1 200 mm (c006).",
+     "reason_ja": "24–25 ページの図ではダイリップとロール間隙が同じ高さ(ニップ y = 440,05 ≈ リップ y = 440,2 pt)で、メルトラインはバレルと同軸(meas-5)。ZE 155 のスクリュー軸高さは 1 200 mm(c006)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Z = 1601 = 1 200 + 400 + 1 (bán kính 400, nửa khe 2 mm)",
+     "text_ja": "Z = 1601 = 1 200 + 400 + 1(半径 400、間隙の半分 2 mm)",
+     "refs": [
+      "dec-10",
+      "design-3|Cụm cán láng",
+      "meas-5|Smoothing roll 23"
+     ],
+     "reason_vi": "Hình học từ các giá trị thiết kế (Ø800 và khe 2 mm giữa các trục do thiết kế chọn); không có số của hãng. Hình catalogue (sơ đồ, không theo tỉ lệ) vẽ bước tâm ≈ 1,11 Ø (23 / 20,8 pt, meas-5).",
+     "reason_ja": "設計値(設計で選んだ Ø800 とロール間 2 mm の間隙)からの幾何計算で、メーカーの数値はない。カタログ図(模式図、縮尺なし)のロール中心間隔は ≈ 1,11 Ø(23 / 20,8 pt、meas-5)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c046 (Ø 400–800), c044 (PlanetCalender 3 trục); DECISIONS 10 (khe trục giữa–dưới tại cao độ môi khuôn)"
@@ -93,15 +343,29 @@
      "dec-10"
     ]
    },
-   "notes": ""
+   "notes": "Ø800 chỉ nằm trong dải 400–800 của c046 (SML, hãng khác), giữ giả định. Môi–khe 200 mm lệch ước 50–150 mm của specs §6; DECISIONS 11 chấp nhận. Sơ đồ catalogue vẽ bước tâm ≈ 1,11 Ø, thiết kế dùng khe 2 mm."
   },
   "1ffdbe6b1a68": {
    "vi": "Cho cụm trục lùi theo +X.",
    "used_by": [
     "ctx_roll_rails:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cụm trục lùi theo +X trên ray sàn để mở chỗ trước khuôn",
+     "text_ja": "ロールスタックは床レール上を +X 方向へ後退し、ダイ前の空間を空ける",
+     "refs": [
+      "spec-6|Lùi ra",
+      "design-7|Cụm trục chạy trên ray",
+      "c044",
+      "web-09"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ray để lùi cụm trục: c044 và ảnh web-09 chỉ có khung xoay (swivel), không tịnh tiến; specs §6 ghi \"ước lượng\". Thiết kế chọn cụm chạy trên ray sàn theo +X, hành trình ≈ 1 000–1 500 mm, để mở chỗ trước khuôn vì khuôn nằm ngang và xe khuôn kéo ra theo +Y (design §7).",
+     "reason_ja": "ロールスタックを後退させるレールに関する公開資料はない。c044 と写真 web-09 にあるのは旋回するフレームだけで、並進はしない。specs §6 は「推定」と記す。設計では、ダイが水平でダイカートが +Y 方向に引き出されるため、ダイ前の空間を空ける目的で、スタックが床レール上を +X 方向に ≈ 1 000–1 500 mm 後退するものとした(design §7)。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §6 (lùi 1 000–1 500 mm)"
@@ -110,15 +374,37 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "KM PlanetCalender (c044, web-09) xoay khung chứ không tịnh tiến; ray lùi là lựa chọn của thiết kế."
   },
   "2b0e1e87a9a6": {
    "vi": "2 ray 60 × 60 dài 2 950 tại Y = ±1 550.",
    "used_by": [
     "ctx_roll_rails:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "2 ray tại Y = ±1 550, mỗi ray dưới một khung bên (Y 1 400…1 750)",
+     "text_ja": "レール 2 本を Y = ±1 550 に、サイドフレーム(Y 1 400…1 750)の下に 1 本ずつ",
+     "refs": [
+      "spec-6|Lùi ra"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí ray; mỗi ray đặt dưới một khung bên của mô hình (khung bên do thiết kế chọn, xem dòng khung).",
+     "reason_ja": "レール位置に関する公開資料はない。レールはモデルのサイドフレーム 1 枚ごとの下に置く(サイドフレームは設計で選んだ。フレームの項を参照)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tiết diện 60 × 60, dài 2 950 ≈ khung 1 660 + hành trình lùi ≈ 1 300",
+     "text_ja": "断面 60 × 60、長さ 2 950 ≈ フレーム 1 660 + 後退ストローク ≈ 1 300",
+     "refs": [
+      "spec-6|Lùi ra",
+      "rev-C1"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ray; tiết diện 60 × 60 do thiết kế chọn. Chiều dài khớp với chiều dài khung 1 660 (X 9 540…11 200) cộng hành trình lùi ≈ 1 300, nằm trong ước lượng 1 000–1 500 mm của specs §6; số liệu ray được bổ sung theo review thiết kế C1.",
+     "reason_ja": "レールのサイズに関する公開資料はない。断面 60 × 60 は設計で選んだ。長さはフレーム長 1 660(X 9 540…11 200)と後退ストローク ≈ 1 300 の和に一致し、specs §6 の推定 1 000–1 500 mm の範囲内。レールのデータは設計レビュー C1 で補われた。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §6 (lùi 1 000–1 500 mm)"
@@ -127,15 +413,36 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "Chiều dài 2 950 là tôi kiểm lại (1 660 + 1 300), thiết kế không ghi công thức này."
   },
   "5487837392f0": {
    "vi": "Đỡ 3 trục, chỉnh khe trục, chạy trên ray để lùi xa khuôn.",
    "used_by": [
     "ctx_roll_stand:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Khung đỡ 3 trục; trục 1 và 3 chỉnh được quanh trục giữa 2 (chỉnh khe trục)",
+     "text_ja": "フレームが 3 本のロールを支える。ロール 1 と 3 は中央のロール 2 に対して調整できる(ロール間隙の調整)",
+     "refs": [
+      "c044",
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khung chạy trên ray để lùi xa khuôn",
+     "text_ja": "フレームはレール上を走行し、ダイから離れる方向へ後退する",
+     "refs": [
+      "spec-6|Lùi ra",
+      "design-7|Cụm trục chạy trên ray"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ray để lùi cụm trục: c044 và ảnh web-09 chỉ có khung xoay (swivel), không tịnh tiến; specs §6 ghi \"ước lượng\". Thiết kế chọn cụm chạy trên ray sàn theo +X, hành trình ≈ 1 000–1 500 mm, để mở chỗ trước khuôn vì khuôn nằm ngang và xe khuôn kéo ra theo +Y (design §7).",
+     "reason_ja": "ロールスタックを後退させるレールに関する公開資料はない。c044 と写真 web-09 にあるのは旋回するフレームだけで、並進はしない。specs §6 は「推定」と記す。設計では、ダイが水平でダイカートが +Y 方向に引き出されるため、ダイ前の空間を空ける目的で、スタックが床レール上を +X 方向に ≈ 1 000–1 500 mm 後退するものとした(design §7)。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (khung đứng sau trục), web-09 (khung trắng dải xanh KM); kích thước giả định specs §6"
@@ -146,15 +453,63 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "Chỉnh khe và đỡ 3 trục có nguồn (c044); chạy trên ray là giả định của thiết kế."
   },
   "3e0e56adc474": {
    "vi": "2 khung bên dày 350 tại Y ±(1 400…1 750), dầm ngang phía sau, xi lanh ép khe trục, dải xanh KM có chữ KraussMaffei.",
    "used_by": [
     "ctx_roll_stand:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "2 khung bên đỡ các trục, như PlanetCalender của KM (khung KM hình chữ C xoay được; mô hình dựng khung hộp)",
+     "text_ja": "ロールを支える 2 枚のサイドフレーム(KM PlanetCalender と同様。KM のフレームは旋回できる C 形、モデルは簡略な箱形)",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Dải xanh KM có chữ KraussMaffei trên khung",
+     "text_ja": "フレームに KraussMaffei の文字入りの KM ブルーの帯",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khung dày 350 tại Y ±(1 400…1 750)",
+     "text_ja": "フレームの厚さ 350、Y ±(1 400…1 750)",
+     "refs": [
+      "spec-6|Khung tổng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước khung; specs §6 chỉ ước khung tổng ≈ rộng 3 800 (Y) × dài 2 500 (X) × cao 2 800 mm. Mô hình dùng rộng 3 500 (Y ±1 750); độ dày 350 do thiết kế chọn.",
+     "reason_ja": "フレーム寸法に関する公開資料はない。specs §6 はフレーム全体を ≈ 幅 3 800(Y)× 長さ 2 500(X)× 高さ 2 800 mm と推定するのみ。モデルは幅 3 500(Y ±1 750)を使い、厚さ 350 は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dầm ngang phía sau nối hai khung bên",
+     "text_ja": "2 枚のサイドフレームをつなぐ後部クロスビーム",
+     "refs": [
+      "web-09"
+     ],
+     "reason_vi": "Không có tài liệu công khai về dầm nối hai khung; ảnh web-09 chỉ thấy thanh ngang phía trên nối hai khung chữ C. Thiết kế chọn một dầm ngang phía sau để nối hai khung bên.",
+     "reason_ja": "2 枚のフレームをつなぐ梁に関する公開資料はない。写真 web-09 で見えるのは 2 枚の C 形フレームの上部をつなぐ横棒だけ。設計では後部に横梁を 1 本置いてサイドフレームを結んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Xi lanh ép khe trục",
+     "text_ja": "ロール間隙を加圧するシリンダー",
+     "refs": [
+      "c044",
+      "meas-5|Smoothing roll 23"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cơ cấu chỉnh khe; c044 chỉ nói trục 1 và 3 chỉnh được quanh trục giữa, meas-5 cho rằng khối nhỏ sau khung có thể là xi lanh ép. Thiết kế chọn xi lanh ép vì đó là cách thường dùng để ép khe trục cán.",
+     "reason_ja": "ロール間隙の調整機構に関する公開資料はない。c044 はロール 1 と 3 が中央ロールに対して調整できるとだけ述べ、meas-5 はフレーム後ろの小ブロックを押付けシリンダーの可能性とする。ロール間隙の加圧には押付けシリンダーが一般的なため、これを選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (khung đứng sau trục), web-09 (khung trắng dải xanh KM); kích thước giả định specs §6"
@@ -165,15 +520,48 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "Số khung 3 500 × 1 660 × 3 040 (parts.json) lệch ước 3 800 × 2 500 × 2 800 của specs §6 (ghi \"kích thước giả định specs §6\"). Khung KM thật hình chữ C xoay được, mô hình là khung hộp đơn giản."
   },
   "dcb65dc98ef9": {
    "vi": "Mép trước khung bên ở X 9 540 tại gối trục dưới và trục giữa, nhưng lõm vào tới X 9 800 trong dải Z 1 060–1 340 quanh khe trục, để núm deckle và tấm đầu khuôn có khe hở thật (≈ 280 mm).",
    "used_by": [
     "ctx_roll_stand:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Mép trước khung bên ở X 9 540, sau mặt trước các trục (X 9 376)",
+     "text_ja": "サイドフレーム前縁は X 9 540、ロール前面(X 9 376)より後ろ",
+     "refs": [
+      "spec-6|Khung tổng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hình khung bên của máy này; ảnh web-09 là khung chữ C. Thiết kế chọn khung hộp có mép trước X 9 540, lùi sau mặt trước các trục.",
+     "reason_ja": "このマシンのサイドフレーム形状に関する公開資料はない。写真 web-09 は C 形フレーム。設計では箱形フレームとし、前縁を X 9 540、ロール前面より後ろに置いた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lõm tới X 9 800 trong dải Z 1 060–1 340 (= 1 200 ± 140) quanh khe trục",
+     "text_ja": "ロール間隙まわりの Z 1 060–1 340(= 1 200 ± 140)では X 9 800 まで後退した凹形状",
+     "refs": [
+      "issue-3",
+      "rev-M6"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hình khung bên; chỗ lõm là sửa của thiết kế sau khi bản vẽ thấy khung chỉ cách núm deckle 20 mm (design_issues #3), theo gợi ý review thiết kế M6. Dải Z và độ sâu do thiết kế chọn.",
+     "reason_ja": "サイドフレーム形状に関する公開資料はない。この凹みは、図面作成でフレームがデッケルノブまで 20 mm しかないと分かった後に設計が加えた修正(design_issues #3)で、設計レビュー M6 の提案による。Z 範囲と深さは設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khe hở ≈ 280 = 9 800 − 9 520 (núm deckle không vượt X 9 520)",
+     "text_ja": "すき間 ≈ 280 = 9 800 − 9 520(デッケルノブは X 9 520 を超えない)",
+     "refs": [
+      "design-7|Cụm trục chạy trên ray",
+      "issue-3"
+     ],
+     "reason_vi": "Phép tính trên số của thiết kế: khung lõm tới X 9 800, núm deckle tới X 9 520 (design §7); không có số của hãng. design.md §10.1 ghi khe ≈ 300 mm, lệch nhỏ so với 280.",
+     "reason_ja": "設計値での計算:フレーム凹み X 9 800、デッケルノブは X 9 520 まで(design §7)。メーカーの数値はない。design.md §10.1 はすき間 ≈ 300 mm と記しており、280 とわずかに異なる。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (khung đứng sau trục), web-09 (khung trắng dải xanh KM); kích thước giả định specs §6"
@@ -184,15 +572,35 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "design.md §10.1 ghi khe tới núm deckle ≈ 300 mm, dòng này ghi ≈ 280 mm (9 800 − 9 520): lệch nhỏ."
   },
   "40a473039036": {
    "vi": "outline_mm là hình bên của khung +Y (Y 1 400…1 750); khung −Y đối xứng qua Y = 0.",
    "used_by": [
     "ctx_roll_stand:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hai khung bên giống nhau, đối xứng qua mặt giữa Y = 0 (như PlanetCalender trong ảnh)",
+     "text_ja": "2 枚のサイドフレームは同じ形で、中心面 Y = 0 に対して対称(写真の PlanetCalender と同様)",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hình bên (outline_mm) của khung +Y nằm ở Y 1 400…1 750",
+     "text_ja": "+Y 側フレームの側面形状(outline_mm)は Y 1 400…1 750 に置く",
+     "refs": [
+      "issue-3",
+      "spec-6|Khung tổng"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hình bên khung; outline_mm là cách thiết kế mô tả dữ liệu: một hình hộp có lõm quanh khe trục (design_issues #3), khác khung chữ C của KM.",
+     "reason_ja": "フレームの側面形状に関する公開資料はない。outline_mm は設計のデータ記述方法で、ロール間隙まわりに凹みのある箱形(design_issues #3)。KM の C 形フレームとは異なる。"
+    }
+   ],
    "seed": {
     "sources": [
      "p24-25 (khung đứng sau trục), web-09 (khung trắng dải xanh KM); kích thước giả định specs §6"
@@ -203,15 +611,102 @@
      "spec-6"
     ]
    },
-   "notes": ""
+   "notes": "Dòng mô tả dữ liệu (outline_mm), không phải đặc điểm của máy thật."
   },
   "aeeac684800e": {
    "vi": "Trục Ø800 mặt 2 600 (Y ±1 300) mạ crôm gương, cổ trục Ø300 tới Y ±1 600, tâm X = 9 776, Z = 2403.",
    "used_by": [
     "ctx_roll_top:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cụm cán láng có 3 trục xếp chồng đứng, cùng toạ độ X; môi khuôn chĩa vào khe giữa trục giữa và trục dưới",
+     "text_ja": "スムージングロールは 3 本を縦に積み、X 座標は同じ。ダイリップは中間ロールと下部ロールの間隙を向く",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c044"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Trục crôm bóng gương (như các trục PlanetCalender của KM trong ảnh)",
+     "text_ja": "鏡面仕上げのクロムロール(写真の KM PlanetCalender のロールと同様)",
+     "refs": [
+      "web-09"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø800, đầu trên của dải Ø 400–800 thường gặp",
+     "text_ja": "Ø800、一般的な Ø 400–800 の範囲の上限",
+     "refs": [
+      "c046",
+      "spec-6|Đường kính trục"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường kính trục của dây chuyền này; c046 (SML, hãng khác) chỉ nêu trục thường Ø 400–800 mm; chọn 800 mm, đầu trên của dải, vì năng suất cao (specs §6).",
+     "reason_ja": "このラインのロール径に関する公開資料はない。c046(SML、他社)は一般的なロール径を Ø 400–800 mm とするのみ。生産量が大きいため範囲の上限 800 mm を選んだ(specs §6)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt trục 2 600 (Y ±1 300) = khe môi 2 400 + 100 mỗi bên",
+     "text_ja": "ロール胴長 2 600(Y ±1 300)= ダイリップ幅 2 400 + 片側 100",
+     "refs": [
+      "spec-6|Chiều dài mặt trục",
+      "spec-0|Khổ tấm",
+      "c046"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng mặt trục của máy này; c046 (hãng khác) cho khổ trục thường 1 050–2 200 mm. Chọn 2 600 theo specs §6 (ước lượng), vượt dải đó vì khe môi 2 400 (ước lượng, specs §0) rộng hơn tấm 2 100.",
+     "reason_ja": "このマシンのロール胴長に関する公開資料はない。c046(他社)の一般的なロール幅は 1 050–2 200 mm。specs §6(推定)により 2 600 を選んだ。ダイリップ幅 2 400(推定、specs §0)がシート幅 2 100 より広いため、この範囲を超える。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cổ trục Ø300 tới Y ±1 600, thò ra ngoài mặt trục 300 mỗi bên",
+     "text_ja": "ジャーナル Ø300、Y ±1 600 まで(胴の両端から 300 ずつ張り出す)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cổ trục cán; kích thước do thiết kế chọn, kết thúc trong khung bên (Y 1 400…1 750) nơi đặt gối đỡ.",
+     "reason_ja": "ロールジャーナルに関する公開資料はない。寸法は設計で選び、軸受を置くサイドフレーム(Y 1 400…1 750)の中で終わる。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm X = 9 776 = môi khuôn 9 576 + khe gió 200",
+     "text_ja": "中心 X = 9 776 = ダイリップ 9 576 + エアギャップ 200",
+     "refs": [
+      "dec-11|khe khí 200 mm",
+      "design-4.1|Khe gió",
+      "design-7|Với trục Ø800",
+      "spec-6|Vị trí so với khuôn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khoảng cách môi khuôn – khe trục: hình catalogue không theo tỉ lệ, specs §6 chỉ ước 50–150 mm theo ảnh web-18. Thiết kế chấp nhận khe gió 200 mm (trục Ø800, mũi khuôn vát 30°), môi khuôn tại X 9 576.",
+     "reason_ja": "ダイリップとロール間隙の距離に関する公開資料はない。カタログ図は縮尺なし、specs §6 は写真 web-18 から 50–150 mm と推定するのみ。設計ではエアギャップ 200 mm を採用(ロール Ø800、ダイ先端 30° の面取り)、ダイリップは X 9 576。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Khe giữa–dưới ở Z = 1 200: môi khuôn chĩa thẳng vào khe, ngang tầm trục vít (1 200)",
+     "text_ja": "中間–下部ロールの間隙は Z = 1 200:ダイリップは間隙をまっすぐ向き、スクリュー軸と同じ高さ(1 200)",
+     "refs": [
+      "meas-5|Cách bố trí",
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "c006",
+      "spec-4|Cao độ đường tâm nhựa"
+     ],
+     "reason_vi": "Hình trang 24–25: môi die và khe trục cùng độ cao (nip y = 440,05 ≈ lip y = 440,2 pt), melt line đồng trục với barrel (meas-5); cao độ trục vít ZE 155 là 1 200 mm (c006).",
+     "reason_ja": "24–25 ページの図ではダイリップとロール間隙が同じ高さ(ニップ y = 440,05 ≈ リップ y = 440,2 pt)で、メルトラインはバレルと同軸(meas-5)。ZE 155 のスクリュー軸高さは 1 200 mm(c006)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Z = 2403 = 1601 + 802 (bước tâm = Ø800 + khe 2 mm)",
+     "text_ja": "Z = 2403 = 1601 + 802(中心間隔 = Ø800 + 間隙 2 mm)",
+     "refs": [
+      "dec-10",
+      "design-3|Cụm cán láng",
+      "meas-5|Smoothing roll 23"
+     ],
+     "reason_vi": "Hình học từ các giá trị thiết kế: bước tâm 802 = Ø800 + khe 2 mm giữa trục giữa và trục trên (do thiết kế chọn); không có số của hãng. Hình catalogue (sơ đồ, không theo tỉ lệ) vẽ bước tâm ≈ 1,11 Ø (23 / 20,8 pt, meas-5).",
+     "reason_ja": "設計値からの幾何計算:中心間隔 802 = Ø800 + 中間ロールと上部ロールの間隙 2 mm(設計で選択)。メーカーの数値はない。カタログ図(模式図、縮尺なし)のロール中心間隔は ≈ 1,11 Ø(23 / 20,8 pt、meas-5)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c046 (Ø 400–800), c044 (PlanetCalender 3 trục); DECISIONS 10 (khe trục giữa–dưới tại cao độ môi khuôn)"
@@ -222,15 +717,26 @@
      "dec-10"
     ]
    },
-   "notes": ""
+   "notes": "Ø800 chỉ nằm trong dải 400–800 của c046 (SML, hãng khác), giữ giả định. Môi–khe 200 mm lệch ước 50–150 mm của specs §6; DECISIONS 11 chấp nhận. Sơ đồ catalogue vẽ bước tâm ≈ 1,11 Ø, thiết kế dùng khe 2 mm."
   },
   "4555e0e84bc8": {
    "vi": "Màn nhựa từ môi khuôn vào khe trục giữa–dưới, ôm nửa +X trục giữa, ôm nửa −X trục trên rồi ra theo +X (đường chữ S).",
    "used_by": [
     "ctx_sheet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Màn nhựa đi từ môi khuôn vào khe giữa trục giữa và trục dưới, ôm nửa +X trục giữa đi lên, ôm nửa −X trục trên qua đỉnh rồi ra theo +X (đường chữ S)",
+     "text_ja": "溶融カーテンはダイリップから中間ロールと下部ロールの間隙に入り、中間ロールの +X 側半周に沿って上がり、上部ロールの −X 側半周に沿って頂部を越え、+X 方向へ出る(S 字経路)",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "cat-p24",
+      "meas-5|Cách bố trí"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §5 và p24-25_slot_die_smoothing_roll (đường tấm chữ S); specs §0 (tấm 2 100); review-01 M7"
@@ -242,15 +748,74 @@
      "rev-M7"
     ]
    },
-   "notes": ""
+   "notes": "Trên hình, sau trục trên tấm còn qua một con lăn nhỏ rồi mới vào băng con lăn làm nguội; mô hình cho tấm ra thẳng theo +X (băng không dựng). Review thiết kế M7 sửa đường tấm theo hình này."
   },
   "bbb8eba312d1": {
    "vi": "Tấm rộng 2 100, dày 1 mm; đường tâm trong path_mm (mặt XZ, Y = 0): môi khuôn (9 576, 1 200) → khe trục (9 776, 1 200) → ôm nửa +X trục giữa tới đỉnh (9 776, 2 002) → ôm nửa −X trục trên (qua X 9 375) tới đỉnh (9 776, 2 804) → ra +X ở Z 2 804.",
    "used_by": [
     "ctx_sheet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Màn nhựa đi từ môi khuôn vào khe giữa trục giữa và trục dưới, ôm nửa +X trục giữa đi lên, ôm nửa −X trục trên qua đỉnh rồi ra theo +X (đường chữ S)",
+     "text_ja": "溶融カーテンはダイリップから中間ロールと下部ロールの間隙に入り、中間ロールの +X 側半周に沿って上がり、上部ロールの −X 側半周に沿って頂部を越え、+X 方向へ出る(S 字経路)",
+     "refs": [
+      "crop-p24-25_slot_die_smoothing_roll_600dpi",
+      "cat-p24",
+      "meas-5|Cách bố trí"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tấm rộng 2 100, đặt đối xứng qua mặt giữa Y = 0",
+     "text_ja": "シート幅 2 100、中心面 Y = 0 に対して対称に置く",
+     "refs": [
+      "spec-0|Khổ tấm",
+      "c046",
+      "c041"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khổ tấm của máy này; specs §0 ghi \"ước lượng\". Chọn 2 100 vì nằm trong khổ trục thường 1 050–2 200 mm (c046) và trong khoảng 2–7,5 m của các dây chuyền tấm KM đã giao (c041).",
+     "reason_ja": "このマシンのシート幅に関する公開資料はない。specs §0 は「推定」と記す。2 100 は、一般的なロール幅 1 050–2 200 mm(c046)の範囲内で、KM が納入したシートラインの 2–7,5 m(c041)の範囲内でもあるため選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tấm dày 1 mm",
+     "text_ja": "シート厚さ 1 mm",
+     "refs": [
+      "spec-0|Khổ tấm",
+      "c041"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chiều dày tấm của máy này; specs §0 ước 0,3–1,5 mm. Chọn 1 mm, nằm trong dải 0,1–6 mm của các dây chuyền tấm KM (c041).",
+     "reason_ja": "このマシンのシート厚さに関する公開資料はない。specs §0 は 0,3–1,5 mm と推定。1 mm は KM のシートラインの 0,1–6 mm(c041)の範囲内で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Môi khuôn (9 576, 1 200) → khe trục (9 776, 1 200): khe gió 200",
+     "text_ja": "ダイリップ(9 576, 1 200)→ ロール間隙(9 776, 1 200):エアギャップ 200",
+     "refs": [
+      "design-4.1|môi tại X = 9 576",
+      "design-4.1|Khe gió",
+      "dec-11|khe khí 200 mm",
+      "spec-6|Vị trí so với khuôn",
+      "meas-5|Cách bố trí"
+     ],
+     "reason_vi": "Hình catalogue (không theo tỉ lệ) chỉ cho thấy môi khuôn chĩa vào khe trục, không có khoảng cách; specs §6 ước 50–150 mm theo ảnh web-18. Thiết kế chấp nhận khe gió 200 mm; môi khuôn tại X 9 576, Z 1 200 theo bố trí khuôn.",
+     "reason_ja": "カタログ図(縮尺なし)はダイリップがロール間隙を向くことを示すのみで、距離はない。specs §6 は写真 web-18 から 50–150 mm と推定。設計ではエアギャップ 200 mm を採用し、ダイリップは金型配置により X 9 576、Z 1 200。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đỉnh trục giữa Z 2 002 = 1601 + 400 + 1; mép −X trục trên X 9 375 = 9 776 − 400 − 1; đỉnh trục trên Z 2 804 = 2403 + 400 + 1 (tấm ra +X ở Z 2 804)",
+     "text_ja": "中間ロール頂部 Z 2 002 = 1601 + 400 + 1、上部ロール −X 端 X 9 375 = 9 776 − 400 − 1、上部ロール頂部 Z 2 804 = 2403 + 400 + 1(シートは Z 2 804 で +X 方向へ出る)",
+     "refs": [
+      "rev-M7",
+      "dec-10"
+     ],
+     "reason_vi": "Không có tài liệu công khai về toạ độ đường tấm; đây là kết quả hình học từ tâm và Ø trục (đều do thiết kế chọn, xem các dòng trục), tấm đi cách mặt trục 1 mm. Hình dạng chữ S theo hình catalogue (review thiết kế M7).",
+     "reason_ja": "シート経路の座標に関する公開資料はない。ロール中心と径(いずれも設計で選んだ。ロールの項を参照)からの幾何計算で、シートはロール面から 1 mm の位置を通る。S 字の形状はカタログ図による(設計レビュー M7)。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §5 và p24-25_slot_die_smoothing_roll (đường tấm chữ S); specs §0 (tấm 2 100); review-01 M7"
@@ -262,15 +827,28 @@
      "rev-M7"
     ]
    },
-   "notes": ""
+   "notes": "Lip→khe 200 mm lệch ước 50–150 mm của specs §6 (DECISIONS 11 chấp nhận). Review M7 ghi cửa ra Z 2803, đường tấm dùng 2804 (+1 mm cách mặt trục)."
   },
   "09f404be3be8": {
    "vi": "Đầu đo chiều dày quét ngang (traversing gauge) cho điều khiển profin đặt sau cụm trục, không dựng.",
    "used_by": [
     "ctx_sheet:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đầu đo chiều dày quét ngang (traversing gauge) đặt sau cụm trục để điều khiển profin; không dựng trong mô hình",
+     "text_ja": "プロファイル制御用のトラバース式厚さ計(traversing gauge)をロールスタックの後段に置く。モデルには含めない",
+     "refs": [
+      "rev-M7",
+      "design-7|Che chắn vùng khe trục",
+      "c054"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đầu đo chiều dày của dây chuyền này; thêm vì điều khiển profin tự động bằng bulông nhiệt (c054) cần đo chiều dày tấm (review thiết kế M7). Kiến thức chung về đùn tấm; bộ nguồn không có tài liệu riêng.",
+     "reason_ja": "このラインの厚さ計に関する公開資料はない。サーマルボルト(c054)による自動プロファイル制御にはシート厚さの測定が必要なため追加した(設計レビュー M7)。シート押出の一般知識で、資料セットに専用の資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §5 và p24-25_slot_die_smoothing_roll (đường tấm chữ S); specs §0 (tấm 2 100); review-01 M7"
@@ -282,7 +860,7 @@
      "rev-M7"
     ]
    },
-   "notes": ""
+   "notes": "Thiết bị không dựng; mức giả định dựa trên suy luận của review M7."
   }
  }
 }
