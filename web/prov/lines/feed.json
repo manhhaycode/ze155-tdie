@@ -7,8 +7,28 @@
    "used_by": [
     "feed_additive_feeder:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cân định lượng phụ gia cấp vào phễu chính của máy đùn (sơ đồ dây chuyền trong catalogue)",
+     "text_ja": "添加剤用フィーダーが押出機のメインホッパーへ定量供給する(カタログのライン系統図)",
+     "refs": [
+      "crop-p24-25_line_layout_spread",
+      "cat-p27"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Phụ gia là masterbatch và chất chống dính (anti-block), đưa vào nhánh Y của ống rơi chính",
+     "text_ja": "添加剤はマスターバッチとブロッキング防止剤で、メイン落下管の Y 分岐へ投入する",
+     "refs": [
+      "design-1|Cân phụ gia"
+     ],
+     "reason_vi": "Không có tài liệu công khai về loại phụ gia của dây chuyền này; chọn masterbatch và chất chống dính vì đây là phụ gia thường dùng cho tấm PET (kiến thức chung); đường vào nhánh Y theo design.md §1.",
+     "reason_ja": "このラインで使う添加剤の公開資料はない。PET シートで一般的な添加剤としてマスターバッチとブロッキング防止剤を選び、投入経路は design.md §1 の Y 分岐とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §2 (cân trục vít đôi nhỏ K-ML-D5-T35); giả định"
@@ -17,15 +37,27 @@
      "spec-2"
     ]
    },
-   "notes": ""
+   "notes": "Hình sơ đồ trang 24-25 chỉ vẽ ký hiệu cân phụ gia, không nói loại phụ gia; loại phụ gia là chọn của thiết kế."
   },
   "f49b454c9ee3": {
    "vi": "Cân trục vít đôi 700 × 500 × 600 + phễu Ø500 cao 600 trên đỉnh.",
    "used_by": [
     "feed_additive_feeder:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cân trục vít đôi cỡ nhỏ (loại K-ML-D5-T35), thân 700 × 500 × 600, phễu Ø500 cao 600: loại và kích thước đều giả định",
+     "text_ja": "小型ツインスクリュー式フィーダー(K-ML-D5-T35 クラス)、本体 700 × 500 × 600、ホッパー Ø500、高さ 600:機種も寸法も仮定",
+     "refs": [
+      "spec-2|Cân phụ gia"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cân phụ gia của dây chuyền; specs §2 ghi \"ước lượng\" loại K-ML-D5-T35; chọn thân 700 × 500 × 600 và phễu Ø500 × 600 cho lượng phụ gia nhỏ.",
+     "reason_ja": "添加剤フィーダーの公開資料はない。specs §2 は K-ML-D5-T35 を「見積り」としており、少量の添加剤向けに本体 700 × 500 × 600、ホッパー Ø500 × 600 を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "specs §2 (cân trục vít đôi nhỏ K-ML-D5-T35); giả định"
@@ -41,8 +73,20 @@
    "used_by": [
     "feed_additive_tube:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống phụ gia nối cửa xả cân phụ gia vào nhánh Y của ống rơi chính: cách nối do thiết kế chọn",
+     "text_ja": "添加剤管が添加剤フィーダーの排出口をメイン落下管の Y 分岐へつなぐ:接続方式は設計で選んだ",
+     "refs": [
+      "design-1|Cân phụ gia"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đưa phụ gia vào ống rơi; chọn nhánh Y vì phụ gia nhập vào dòng hạt chính ngay trên phễu nạp (design.md §1, bước 3).",
+     "reason_ja": "添加剤を落下管へ入れる方法の公開資料はない。供給ホッパーの直前で主流のペレットに合流させるため Y 分岐を選んだ(design.md §1、手順 3)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -56,8 +100,28 @@
    "used_by": [
     "feed_additive_tube:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox Ø80: cỡ ống do thiết kế chọn",
+     "text_ja": "ステンレス管 Ø80:管径は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống phụ gia; chọn Ø80 vì lượng phụ gia nhỏ so với ống rơi chính Ø250.",
+     "reason_ja": "添加剤管の寸法の公開資料はない。メイン落下管 Ø250 に比べて添加剤は少量なので Ø80 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bắt đầu ở Z 2 850: mặt sàn Z 3 000 trừ ống mềm cách cân dài 150 (review-01 M8)",
+     "text_ja": "Z 2 850 から開始:床面 Z 3 000 からフィーダー絶縁用フレキシブルスリーブの長さ 150 を引いた位置(review-01 M8)",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách tách ống khỏi cân; chọn bắt đầu ngay dưới ống mềm cách cân theo review-01 M8 (thực hành chung cho cân loss-in-weight).",
+     "reason_ja": "フィーダーから配管を切り離す方法の公開資料はない。ロスインウェイトフィーダーの一般的な実務として、review-01 M8 に従いフィーダー絶縁用スリーブの直下から始めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -71,23 +135,43 @@
    "used_by": [
     "feed_control_cabinet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tủ chứa bộ điều khiển các cân (KCM) và cấp nguồn máy hút liệu: chức năng do thiết kế chọn",
+     "text_ja": "フィーダー(KCM)のコントローラーを収め、ローダーへ給電する盤:機能は設計で定めた",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về tủ điều khiển cân của dây chuyền (tên KCM cũng không có trong bộ nguồn); chọn một tủ trên sàn thao tác vì mỗi cân loss-in-weight cần bộ điều khiển và máy hút liệu cần nguồn.",
+     "reason_ja": "このラインのフィーダー制御盤の公開資料はない(KCM という名称も資料にない)。各ロスインウェイトフィーダーにコントローラーが、ローダーに電源が要るため、作業プラットフォーム上に盤を 1 面置いた。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Tên \"KCM\" không xuất hiện trong claims, specs hay catalogue; coi là giả định."
   },
   "6fe478b351af": {
    "vi": "Tủ 600 × 300 × 1 400 RAL 7035 có màn hình nhỏ ở cửa.",
    "used_by": [
     "feed_control_cabinet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tủ 600 × 300 × 1 400, sơn RAL 7035, màn hình nhỏ ở cửa: kích thước, màu và cấu hình do thiết kế chọn",
+     "text_ja": "盤 600 × 300 × 1 400、塗装 RAL 7035、扉に小型ディスプレイ:寸法、色、構成は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về tủ này; chọn cỡ 600 × 300 × 1 400 vừa chỗ trên sàn thao tác và RAL 7035 (xám nhạt) như các tủ khác của thiết kế.",
+     "reason_ja": "この盤の公開資料はない。作業プラットフォーム上に収まる 600 × 300 × 1 400 とし、色は設計内の他の盤と同じ RAL 7035(明るい灰色)にした。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -101,23 +185,52 @@
    "used_by": [
     "feed_conveying_line:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sơ đồ dây chuyền catalogue: silo nối bằng ống vận chuyển tới phễu đặt trên phễu cân của dây chuyền",
+     "text_ja": "カタログのライン系統図:サイロから搬送配管が、計量ホッパー上の受けホッパーへつながる",
+     "refs": [
+      "crop-p24-25_line_layout_spread"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chỉ vẽ đoạn ống tới mép trên khung nhìn; phần nối tiếp tới silo không dựng",
+     "text_ja": "配管は視野上端までのみ描き、サイロまでの続きはモデル化しない",
+     "refs": [
+      "design-4.3|đỉnh phễu cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí silo của dây chuyền; chọn vẽ đoạn cụt tới Z 6 300 vì silo nằm ngoài phạm vi mô hình.",
+     "reason_ja": "このラインのサイロ位置の公開資料はない。サイロがモデルの範囲外なので、Z 6 300 までの短い配管だけを描くことにした。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Sơ đồ trang 24-25 là hình vẽ ký hiệu; chỉ dùng cho thứ tự thiết bị (silo, ống, phễu thu liệu), không cho kích thước."
   },
   "5367092983e1": {
    "vi": "Ống inox DN80 (OD 80), đầu trên để hở ký hiệu 'tới silo'.",
    "used_by": [
     "feed_conveying_line:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox DN80 (OD 80), đầu trên để hở ký hiệu \"tới silo\": cỡ ống và cách vẽ do thiết kế chọn",
+     "text_ja": "ステンレス管 DN80(OD 80)、上端は開放で「サイロへ」の表記:管径と描き方は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống hút liệu; chọn DN80 là cỡ thông dụng cho ống vận chuyển hạt (kiến thức chung về vận chuyển hạt nhựa; bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "吸引搬送管の寸法の公開資料はない。ペレット搬送でよく使う呼び径として DN80 を選んだ(樹脂ペレット搬送の一般知識で、資料セットに個別の文書はない)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -131,8 +244,27 @@
    "used_by": [
     "feed_downpipe:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Phễu inox nhỏ ở miệng nạp của máy nhận liệu qua ống đi xuống từ phía trên, dưới sàn tầng lửng bằng thép (ảnh ZE 110 UT)",
+     "text_ja": "供給口の小型ステンレスホッパーに、上から下りる配管で材料が入る。その上に鋼製の中二階がある(ZE 110 UT の写真)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cân cấp liệu đặt trên sàn thao tác cao 3 m ngay phía trên B1",
+     "text_ja": "フィーダーは B1 の真上、高さ 3 m の作業プラットフォーム上に置く",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cao độ sàn cân của dây chuyền ZE 155; specs §2 ước lượng mặt sàn 2 800–3 200 mm theo ảnh web-04/05; chọn Z 3 000.",
+     "reason_ja": "ZE 155 ラインのフィーダー床の高さの公開資料はない。specs §2 は web-04/05 の写真から床面を 2 800–3 200 mm と見積もっており、Z 3 000 を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
@@ -142,15 +274,56 @@
      "rev-M8"
     ]
    },
-   "notes": ""
+   "notes": "web-04 (ZE 110 UT, 2022): phễu inox nhỏ ở miệng nạp, ống trắng đi xuống phễu từ phía trên, dầm sàn tầng lửng ngay phía trên; ảnh không cho biết ống đó đang tải hạt từ cân hay từ nơi khác, và không thấy cân trên sàn, nên chỉ xếp có nguồn cho phần nhìn thấy."
   },
   "53bd607709ff": {
    "vi": "Ống inox Ø250: đoạn đứng từ Z 2 850 (dưới ống mềm cách cân) xuống Z 2 550, rồi nghiêng 45° xuống tới phễu; treo bằng giá dưới dầm sàn, vành chắn ở lỗ sàn không chạm ống.",
    "used_by": [
     "feed_downpipe:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox Ø250: cỡ ống do thiết kế chọn",
+     "text_ja": "ステンレス管 Ø250:管径は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống rơi; chọn Ø250 để khớp cổ nạp Ø250 của phễu (cũng là giả định) và đủ cho hạt 3 500 kg/h.",
+     "reason_ja": "落下管の寸法の公開資料はない。ホッパーの投入ネック Ø250(これも仮定)に合わせ、3 500 kg/h のペレットが通る径として Ø250 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đoạn đứng từ Z 2 850 (dưới ống mềm cách cân) xuống Z 2 550: cao độ do thiết kế chọn",
+     "text_ja": "Z 2 850(フィーダー絶縁スリーブの下)から Z 2 550 までの垂直部:高さは設計で選んだ",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai; Z 2 850 là điểm bắt đầu ống cứng theo review-01 M8; Z 2 550 chọn để ống bắt đầu nghiêng trên phễu.",
+     "reason_ja": "公開資料はない。Z 2 850 は review-01 M8 による剛性配管の開始位置で、Z 2 550 はホッパーへ向けて傾斜を始める高さとして選んだ。"
+    },
+    {
+     "level": "derived",
+     "text_vi": "Đoạn dưới nghiêng 45° xuống tới phễu, cùng góc với cổ nạp 45° của phễu",
+     "text_ja": "下側はホッパーまで 45° 傾斜し、ホッパーの 45° 投入ネックと同じ角度",
+     "refs": [
+      "meas-2.2|Phễu + ống nạp nghiêng 45°",
+      "cat-p09"
+     ],
+     "reason_vi": "Góc 45° lấy bằng góc cổ nạp phễu đo trên hình bóng trang 9 (xem dòng phễu nạp); ống rơi đi thẳng hàng với cổ đó, đây không phải số đo riêng của ống.",
+     "reason_ja": "45° はカタログ 9 ページのシルエットで計測したホッパー投入ネックの角度に合わせた(ホッパーの行を参照)。落下管はそのネックと一直線に配置しており、管自体の計測値ではない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Treo bằng giá dưới dầm sàn; vành chắn ở lỗ sàn không chạm ống",
+     "text_ja": "床梁の下のブラケットで吊り、床開口のガードリングは管に接触しない",
+     "refs": [
+      "rev-M8"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đỡ ống rơi; chọn treo dưới dầm sàn để ống không tựa lên sàn lưới hay phễu (review-01 M8).",
+     "reason_ja": "落下管の支持方法の公開資料はない。管がグレーチングやホッパーに載らないよう、床梁の下で吊ることにした(review-01 M8)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
@@ -160,15 +333,27 @@
      "rev-M8"
     ]
    },
-   "notes": ""
+   "notes": "Fact 45° xếp ≈ vì lấy theo cổ nạp phễu đo trên p09; tuyến ống là chọn của thiết kế, verifier cân nhắc có nên hạ xuống ⚠."
   },
   "f897e781d09a": {
    "vi": "Nhánh Y cho ống phụ gia tại Z = 2 700, cửa thăm có nắp.",
    "used_by": [
     "feed_downpipe:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nhánh Y cho ống phụ gia tại Z = 2 700, cửa thăm có nắp: vị trí và chi tiết do thiết kế chọn",
+     "text_ja": "添加剤管用の Y 分岐を Z = 2 700 に設け、蓋付き点検口を付ける:位置と詳細は設計で選んだ",
+     "refs": [
+      "design-1|Cân phụ gia"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chỗ ghép ống phụ gia; chọn nhánh Y ngay dưới điểm bắt đầu ống cứng Z 2 850 để phụ gia nhập vào dòng hạt trước khi xuống phễu (design.md §1, bước 3).",
+     "reason_ja": "添加剤管の合流位置の公開資料はない。剛性配管の開始位置 Z 2 850 のすぐ下に Y 分岐を置き、ホッパーへ下りる前に主流へ合流させる(design.md §1、手順 3)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (bố trí sàn cân trên cao theo web-04); ống mềm cách cân theo review-01 M8"
@@ -185,8 +370,21 @@
    "used_by": [
     "feed_feeder_sleeves:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống mềm cách cân tách cửa xả cân loss-in-weight khỏi ống cứng để giữ độ chính xác định lượng",
+     "text_ja": "フィーダー絶縁用フレキシブルスリーブが、ロスインウェイトフィーダーの排出口を剛性配管から切り離し、定量精度を保つ",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về ống mềm cách cân trong bộ nguồn; đây là thực hành chuẩn cho cân loss-in-weight do review-01 M8 đề xuất.",
+     "reason_ja": "資料セットにフィーダー絶縁スリーブの公開資料はない。ロスインウェイトフィーダーの標準的な実務として、review-01 M8 が提案した。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M8; giả định (thực hành chuẩn cho cân loss-in-weight)"
@@ -202,8 +400,29 @@
    "used_by": [
     "feed_feeder_sleeves:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "3 ống bạt trắng dài 150 (Z 2 850–3 000); Ø = Ø ống cứng + 20: 270 / 100 / 170 cho ống 250 / 80 / 150; mỗi ống 2 đai kẹp inox",
+     "text_ja": "白色帆布スリーブ 3 本、長さ 150(Z 2 850–3 000);径は剛性管 + 20:管 250 / 80 / 150 に対し 270 / 100 / 170;各スリーブにステンレスクランプバンド 2 個",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống mềm cách cân; chiều dài 150 theo review-01 M8, đường kính do thiết kế chọn bằng Ø ống cứng cộng 20 mm.",
+     "reason_ja": "フィーダー絶縁スリーブの寸法の公開資料はない。長さ 150 は review-01 M8 による。径は剛性管の径に 20 mm を足した値として設計で選んだ。",
+     "whole_line": true
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Đặt tại (−450, 0), (−650, 850), (1 350, 950): tâm cân chính, cân phụ gia, cân side feeder; số ống bằng số cân",
+     "text_ja": "(−450, 0)、(−650, 850)、(1 350, 950) に配置:メインフィーダー、添加剤フィーダー、サイドフィーダーの中心;スリーブ数はフィーダー数と同じ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về vị trí; thiết kế đặt mỗi ống mềm dưới tâm cửa xả của một cân.",
+     "reason_ja": "位置の公開資料はない。各スリーブを 1 台のフィーダーの排出口中心の下に置いた。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M8; giả định (thực hành chuẩn cho cân loss-in-weight)"
@@ -219,8 +438,18 @@
    "used_by": [
     "feed_flex_sleeve:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nối mềm ống rơi với phễu để cách rung và tháo nhanh: chức năng do thiết kế chọn",
+     "text_ja": "落下管とホッパーを柔軟に接続して振動を絶縁し、迅速な取外しを可能にする:機能は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về ống mềm nối phễu của dây chuyền; chọn một đoạn ống mềm hai đầu kẹp đai vì đây là cách nối thường gặp dưới cân cấp liệu (kiến thức chung về cấp liệu; bộ nguồn không có tài liệu riêng).",
+     "reason_ja": "このラインのホッパー接続スリーブの公開資料はない。フィーダー下でよく使う接続法として、両端をバンドで締めるフレキシブルスリーブを選んだ(給材の一般知識で、資料セットに個別の文書はない)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (ống mềm nối phổ biến dưới cân cấp liệu, thấy ở p01)"
@@ -229,15 +458,25 @@
      "cat-p01"
     ]
    },
-   "notes": ""
+   "notes": "Seed ghi \"thấy ở p01\": đã xem cat-p01, bìa chỉ thấy máng trắng dưới cân và phễu inox, không thấy rõ ống mềm; không dùng làm bằng chứng."
   },
   "995da586f670": {
    "vi": "Ống bạt trắng Ø260 dài 155 với 2 đai kẹp inox.",
    "used_by": [
     "feed_flex_sleeve:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống bạt trắng Ø260 dài 155 với 2 đai kẹp inox: kích thước do thiết kế chọn; 155 = √(110² + 110²) từ toạ độ hai đầu ống",
+     "text_ja": "白色帆布スリーブ Ø260、長さ 155、ステンレスクランプバンド 2 個:寸法は設計で選んだ。155 = √(110² + 110²)(両端の座標から)",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống mềm; Ø260 chọn lớn hơn ống rơi Ø250 là 10 mm; chiều dài tính từ chính toạ độ hai đầu (200, 0, 1 900) → (90, 0, 2 010) của thiết kế.",
+     "reason_ja": "フレキシブルスリーブの寸法の公開資料はない。Ø260 は落下管 Ø250 より 10 mm 大きく選び、長さは設計自身の両端座標 (200, 0, 1 900) → (90, 0, 2 010) から計算した。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (ống mềm nối phổ biến dưới cân cấp liệu, thấy ở p01)"
@@ -367,8 +606,28 @@
    "used_by": [
     "feed_main_feeder:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cân loss-in-weight cho hạt (pellet): Coperion K-Tron BSP-150-S, dải 34–6 700 dm³/h (bảng hãng)",
+     "text_ja": "ペレット用ロスインウェイトフィーダー:Coperion K-Tron BSP-150-S、34–6 700 dm³/h(メーカー仕様書)",
+     "refs": [
+      "c069"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 500 kg/h hạt PET: năng suất thiết kế do thiết kế ước lượng",
+     "text_ja": "3 500 kg/h の PET ペレット:設計生産能力は設計側の見積り",
+     "refs": [
+      "spec-0|Năng suất thiết kế",
+      "spec-2|Cân cấp liệu chính"
+     ],
+     "reason_vi": "Không có tài liệu công khai về năng suất của dây chuyền ZE 155 + khuôn T; chọn 3 500 kg/h trong dải 1 260–5 050 kg/h suy từ tỷ lệ mômen với ZE 180 A; 3 500 kg/h ÷ 0,8 kg/dm³ ≈ 4 400 dm³/h nằm trong dải của cân (0,8 là tỷ trọng khối giả định).",
+     "reason_ja": "ZE 155 + T ダイのライン生産能力の公開資料はない。ZE 180 A とのトルク比から導いた 1 260–5 050 kg/h の範囲内で 3 500 kg/h を選んだ。3 500 kg/h ÷ 0,8 kg/dm³ ≈ 4 400 dm³/h はフィーダーの範囲内(0,8 は仮定したかさ密度)。"
+    }
+   ],
    "seed": {
     "sources": [
      "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
@@ -377,15 +636,32 @@
      "c069"
     ]
    },
-   "notes": ""
+   "notes": "Dải 34–6 700 dm³/h là của BSP-150-S (c069); 3 500 kg/h và tỷ trọng khối 0,8 đều là giả định, chỉ kiểm tra chéo."
   },
   "7896f0a651fe": {
    "vi": "Thân bơm rắn BSP trên khung 3 cảm biến cân (load cells), động cơ hộp số phía −Y, hộp điều khiển KCM nhỏ phía +Y.",
    "used_by": [
     "feed_main_feeder:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Thân bơm rắn BSP (bulk solids pump) trên 3 cảm biến cân SFT; cân K-Tron BSP-150-S dải 34–6 700 dm³/h",
+     "text_ja": "BSP 固体ポンプ本体を 3 点式 SFT ロードセルの上に搭載(K-Tron BSP-150-S、34–6 700 dm³/h)",
+     "refs": [
+      "c069"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Động cơ hộp số đặt phía −Y, hộp điều khiển KCM nhỏ phía +Y: bố trí do thiết kế chọn",
+     "text_ja": "ギアモーターは −Y 側、小型の KCM 制御ボックスは +Y 側:配置は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cách bố trí motor và hộp điều khiển của cân này (tên KCM cũng không có trong bộ nguồn); chọn hộp điều khiển phía +Y là phía người vận hành.",
+     "reason_ja": "このフィーダーのモーターと制御ボックスの配置の公開資料はない(KCM という名称も資料にない)。制御ボックスは運転側の +Y に置くことにした。"
+    }
+   ],
    "seed": {
     "sources": [
      "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
@@ -401,8 +677,18 @@
    "used_by": [
     "feed_main_feeder:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cửa xả đáy tại X = −450, Y = 0: vị trí do thiết kế chọn, trùng trục ống rơi chính và đường cột sàn X −450",
+     "text_ja": "底部排出口は X = −450、Y = 0:位置は設計で選んだ。メイン落下管の軸および床の柱通り X −450 と一致",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cửa xả của BSP-150-S; chọn cửa xả ở đáy, X = −450, để ống rơi chính đi xuống thẳng tới phễu.",
+     "reason_ja": "BSP-150-S の排出口位置の公開資料はない。メイン落下管が真下へホッパーまで下りるよう、底部の X = −450 に排出口を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "c069 (K-Tron BSP-150-S, 34–6 700 dm³/h, 3 cảm biến cân); kích thước thân giả định"
@@ -418,8 +704,35 @@
    "used_by": [
     "feed_main_hopper:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cân BSP-150-S (34–6 700 dm³/h) có phễu nối thêm chứa hạt, bản hãng tới 320 dm³ (cao 1 684, Ø 600)",
+     "text_ja": "BSP-150-S(34–6 700 dm³/h)にはペレット貯留用の延長ホッパーがあり、メーカー仕様は 320 dm³ まで(高さ 1 684、Ø 600)",
+     "refs": [
+      "c069"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dung tích ≈ 450 L: do thiết kế chọn, lớn hơn 320 dm³ của hãng để thời gian nạp lại hợp lý",
+     "text_ja": "容量 ≈ 450 L:設計で選んだ。補給間隔を妥当にするため、メーカーの 320 dm³ より大きくした",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về phễu 450 L; chọn lớn hơn mức tối đa 320 dm³ của hãng để máy hút liệu không phải nạp quá thường; 450 L là dung tích làm việc, thấp hơn thể tích hình học của phễu (≈ 631 L tới miệng).",
+     "reason_ja": "450 L のホッパーの公開資料はない。ローダーの補給が頻繁になりすぎないよう、メーカー最大の 320 dm³ より大きく選んだ。450 L は作業容量で、ホッパーの幾何容積(縁まで ≈ 631 L)より小さい。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "≈ 6 phút ở 3,5 t/h: 450 L × 0,8 kg/L ÷ 3 500 kg/h × 60 ≈ 6 phút",
+     "text_ja": "3,5 t/h で ≈ 6 分:450 L × 0,8 kg/L ÷ 3 500 kg/h × 60 ≈ 6 分",
+     "refs": [
+      "spec-2|Cân cấp liệu chính"
+     ],
+     "reason_vi": "Phép tính từ ba giá trị giả định: 450 L (dung tích chọn), 0,8 kg/dm³ (tỷ trọng khối giả định, specs §2) và 3 500 kg/h (năng suất ước lượng); không đầu vào nào có nguồn.",
+     "reason_ja": "3 つの仮定値からの計算:450 L(選んだ容量)、0,8 kg/dm³(specs §2 で仮定したかさ密度)、3 500 kg/h(見積り能力)。出典のある入力はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c069 (phễu nối thêm); dung tích giả định lớn hơn 320 dm³ để thời gian nạp lại hợp lý"
@@ -428,15 +741,34 @@
      "c069"
     ]
    },
-   "notes": ""
+   "notes": "Thể tích hình học của profile_mm (côn 400 + trụ Ø900 cao 800) ≈ 631 L, không phải 450 L; 450 L chỉ khớp nếu mức đầy làm việc ≈ 515 mm trên đoạn trụ. Dòng nói \"≈ 450 L\" mà không nói rõ đó là dung tích làm việc."
   },
   "2b154d20dc55": {
    "vi": "Côn 400 + trụ Ø900 cao 800, kính thăm mức, cảm biến mức cao/thấp.",
    "used_by": [
     "feed_main_hopper:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Côn cao 400 + trụ Ø900 cao 800: hình học do thiết kế chọn, rộng hơn phễu nối thêm Ø600 của hãng",
+     "text_ja": "高さ 400 のコーン + Ø900、高さ 800 の円筒:形状は設計で選んだ。メーカーの延長ホッパー Ø600 より大きい",
+     "refs": [
+      "c069"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hình học phễu cân; chọn trụ Ø900 cao 800 và côn 400 để đạt dung tích ≈ 450 L, lớn hơn phễu nối thêm Ø600 theo bảng hãng.",
+     "reason_ja": "計量ホッパーの形状の公開資料はない。容量 ≈ 450 L を得るため Ø900、高さ 800 の円筒と高さ 400 のコーンを選び、メーカー仕様の延長ホッパー Ø600 より大きくした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kính thăm mức, cảm biến mức cao/thấp",
+     "text_ja": "レベルサイトグラス、高位・低位レベルセンサー",
+     "refs": [],
+     "reason_vi": "Chi tiết phụ thường có trên phễu cấp liệu; không có tài liệu cho phễu cân này.",
+     "reason_ja": "供給ホッパーによくある付属品。この計量ホッパーの資料はない。"
+    }
+   ],
    "seed": {
     "sources": [
      "c069 (phễu nối thêm); dung tích giả định lớn hơn 320 dm³ để thời gian nạp lại hợp lý"
@@ -453,8 +785,20 @@
     "feed_platform_columns_front:function",
     "feed_platform_columns_rear:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cột đỡ sàn thao tác xuống nền: kết cấu đỡ do thiết kế chọn",
+     "text_ja": "柱が作業プラットフォームを基礎まで支える:支持構造は設計で選んだ",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kết cấu đỡ sàn; chọn hai hàng cột thép vì sàn nằm cao ≈ 3 m trên nền (specs §2 ước lượng mặt sàn 2 800–3 200 mm).",
+     "reason_ja": "床の支持構造の公開資料はない。床が基礎から約 3 m 上にあるため、鋼製の柱 2 列を選んだ(specs §2 は床面を 2 800–3 200 mm と見積もっている)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -468,8 +812,20 @@
    "used_by": [
     "feed_platform_columns_front:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "3 cột HEB200 tại X = −2 600, −450, 1 750; Y = 1300; tấm đế 400 × 400, giằng góc: tiết diện và vị trí do thiết kế chọn",
+     "text_ja": "HEB200 柱 3 本、X = −2 600、−450、1 750、Y = 1300;ベースプレート 400 × 400、コーナーブレース:断面と位置は設計で選んだ",
+     "refs": [
+      "design-4.1|Sàn thao tác"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cột sàn; chọn HEB200 và tấm đế 400 × 400; 3 cột nằm dưới 3 đường dầm chính X −2 600, −450, 1 750; hàng trước ở mép sàn Y 1 300.",
+     "reason_ja": "床の柱の公開資料はない。HEB200 とベースプレート 400 × 400 を選び、柱 3 本は主梁 3 通り X −2 600、−450、1 750 の下、前列は床端の Y 1 300 に置いた。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -483,8 +839,21 @@
    "used_by": [
     "feed_platform_columns_rear:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "3 cột HEB200 tại X = −2 600, −450, 1 750; Y = -2600; tấm đế 400 × 400, giằng góc: tiết diện và vị trí do thiết kế chọn; hàng sau dời ra Y −2 600 theo review I2",
+     "text_ja": "HEB200 柱 3 本、X = −2 600、−450、1 750、Y = -2600;ベースプレート 400 × 400、コーナーブレース:断面と位置は設計で選んだ。後列は review I2 により Y −2 600 へ移動",
+     "refs": [
+      "rev-I2",
+      "design-10|Mép sau sàn thao tác ra Y −2 700"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cột sàn; chọn HEB200 và tấm đế 400 × 400; hàng cột sau ở Y −2 600 do review-01 I2 dời ra để lối đi phía −Y đủ rộng.",
+     "reason_ja": "床の柱の公開資料はない。HEB200 とベースプレート 400 × 400 を選んだ。後列の Y −2 600 は、−Y 側通路を確保するため review-01 I2 で外へ移した位置。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -498,8 +867,28 @@
    "used_by": [
     "feed_platform_deck:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sàn thép tầng lửng có lan can vàng nằm ngay trên khu cấp liệu của máy ZE 110 UT, có ống đi xuống phễu miệng nạp (ảnh)",
+     "text_ja": "ZE 110 UT の供給部のすぐ上に黄色い手すり付きの鋼製中二階があり、供給口のホッパーへ配管が下りる(写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Các cân cấp liệu và lối bảo trì nằm trên sàn này: bố trí do thiết kế chọn",
+     "text_ja": "フィーダーと保守通路がこの床の上にある:配置は設計で選んだ",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về sàn của dây chuyền ZE 155; specs §2 ghi \"ước lượng theo ảnh web-04/05\"; chọn sàn trên B1 chứa cả 3 cân và làm lối đi bảo trì.",
+     "reason_ja": "ZE 155 ラインの床の公開資料はない。specs §2 は「web-04/05 の写真から見積り」としており、B1 の上に 3 台のフィーダーを載せ保守通路を兼ねる床を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -510,15 +899,35 @@
      "spec-2"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-04/05 không thấy rõ cân đặt trên sàn; chỉ thấy sàn, lan can và ống rơi."
   },
   "6a2b57ff4b5d": {
    "vi": "Dầm chính HEA180 (Z 2 780–2 960) + sàn lưới mạ kẽm 40 mm (Z 2 960–3 000).",
    "used_by": [
     "feed_platform_deck:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sàn tầng lửng đỡ bằng dầm thép màu xám, có lan can vàng (ảnh ZE 110 UT)",
+     "text_ja": "中二階は灰色の鋼製梁で支えられ、黄色い手すりが付く(ZE 110 UT の写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dầm chính HEA180 (Z 2 780–2 960) + sàn lưới mạ kẽm 40 mm (Z 2 960–3 000): tiết diện, độ dày sàn và cao độ do thiết kế chọn",
+     "text_ja": "主梁 HEA180(Z 2 780–2 960)+ 溶融亜鉛めっきグレーチング床 40 mm(Z 2 960–3 000):断面、床厚、高さは設計で選んだ",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tiết diện dầm và sàn; chọn HEA180 và lưới dày 40 mm; mặt sàn Z 3 000 nằm trong khoảng 2 800–3 200 mm mà specs §2 ước lượng từ ảnh web-04/05.",
+     "reason_ja": "梁断面と床の公開資料はない。HEA180 と厚さ 40 mm のグレーチングを選んだ。床面 Z 3 000 は、specs §2 が web-04/05 から見積もった 2 800–3 200 mm の範囲内。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -529,15 +938,28 @@
      "spec-2"
     ]
    },
-   "notes": ""
+   "notes": "\"Mạ kẽm\" của dầm và lưới không xác nhận được trên ảnh; nằm trong fact giả định."
   },
   "d441779b90ed": {
    "vi": "Lỗ sàn có vành chắn cho ống mềm cách cân của ống rơi chính (X −450, Y 0), ống phụ gia (X −650, Y 850), ống side feeder (X 1 350, Y 950); vành không chạm ống.",
    "used_by": [
     "feed_platform_deck:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ sàn có vành chắn tại (−450, 0), (−650, 850), (1 350, 950) cho 3 ống mềm cách cân; vành không chạm ống",
+     "text_ja": "床開口とガードリングを (−450, 0)、(−650, 850)、(1 350, 950) に設け、フィーダー絶縁スリーブ 3 本用とする。リングは管に接触しない",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về lỗ sàn; vị trí trùng tâm cân chính, cân phụ gia, cân side feeder; vành không chạm ống theo review-01 M8 để ống không truyền tải trọng lên sàn.",
+     "reason_ja": "床開口の公開資料はない。位置はメインフィーダー、添加剤フィーダー、サイドフィーダーの中心と一致させた。管が床へ荷重を伝えないよう、リングは管に触れない(review-01 M8)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -555,8 +977,31 @@
    "used_by": [
     "feed_platform_deck:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Sàn 4 550 × 4 100 (Y −2 700 … 1 400), phủ trên lantern, hộp số, B1, B2: kích thước do thiết kế chọn",
+     "text_ja": "床面積 4 550 × 4 100(Y −2 700 … 1 400)で、ランタン、ギアボックス、B1、B2 の上を覆う:寸法は設計で選んだ",
+     "refs": [
+      "design-4.1|Sàn thao tác"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước sàn; chọn đủ phủ lantern, hộp số, B1, B2 và đặt 3 cân.",
+     "reason_ja": "床寸法の公開資料はない。ランタン、ギアボックス、B1、B2 を覆い、フィーダー 3 台を置ける大きさを選んだ。",
+     "whole_line": true
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mép sau lùi ra Y −2 700 để lối đi phía −Y rộng ≥ 950 (theo review-01 I2)",
+     "text_ja": "後縁を Y −2 700 へ後退させ、−Y 側の通路幅を 950 以上にする(review-01 I2 による)",
+     "refs": [
+      "rev-I2",
+      "design-10|Mép sau sàn thao tác ra Y −2 700"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bề rộng lối đi; review-01 I2 đòi nới lối đi hẹp 200–500 mm trước đó (thực hành nhà máy ≥ 800 mm theo review, không có nguồn công khai).",
+     "reason_ja": "通路幅の公開資料はない。review-01 I2 が、それまでの 200–500 mm の狭い通路を広げるよう求めた(工場の実務で 800 mm 以上という数字はレビューの記述で、公開資料はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -574,8 +1019,20 @@
    "used_by": [
     "feed_platform_deck:details[3]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dầm biên HEA180 theo X trên hai hàng cột (Y −2 600 và 1 300), dầm chính HEA180 theo Y trên X −2 600, −450, 1 750; tâm dầm Z 2 870: bố trí do thiết kế chọn",
+     "text_ja": "HEA180 の外周梁を X 方向に柱 2 列(Y −2 600 と 1 300)の上へ、HEA180 の主梁を Y 方向に X −2 600、−450、1 750 の上へ;梁中心 Z 2 870:配置は設計で選んだ",
+     "refs": [
+      "issue-2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí dầm sàn; sơ đồ dầm do thiết kế chọn và được vẽ từ trường beams_mm sau ghi chú #2 của drafter.",
+     "reason_ja": "床梁の配置の公開資料はない。梁の配置は設計で選び、作図担当の指摘 #2 の後、beams_mm フィールドから描かれている。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -593,8 +1050,20 @@
    "used_by": [
     "feed_platform_deck:details[4]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dầm chính X −450 ngắt tại Y ±260 quanh lỗ Ø270 của ống rơi chính; 2 dầm viền HEA180 đỡ đầu dầm, tựa lên 2 dầm phụ IPE160 (X −760, −140): kết cấu do thiết kế chọn",
+     "text_ja": "主梁 X −450 はメイン落下管の開口 Ø270 周りの Y ±260 で切断;ヘッダー梁 HEA180 2 本が切断端を受け、小梁 IPE160 2 本(X −760、−140)に載る:構造は設計で選んだ",
+     "refs": [
+      "issue-2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kết cấu quanh lỗ sàn; chọn dầm viền vì dầm chính X −450 cắt qua lỗ Ø270 của ống rơi chính (drawings/design_issues #2).",
+     "reason_ja": "床開口まわりの構造の公開資料はない。主梁 X −450 がメイン落下管の開口 Ø270 を横切るため、ヘッダー梁を設けた(drawings/design_issues #2)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -612,8 +1081,20 @@
    "used_by": [
     "feed_platform_deck:details[5]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dầm phụ IPE160 theo Y tại X −1 900, −1 200, 300, 1 000 đỡ tấm lưới (khoảng ≤ 750); lỗ (−650, 850) và (1 350, 950) nằm giữa các dầm phụ: bố trí do thiết kế chọn",
+     "text_ja": "Y 方向の小梁 IPE160 を X −1 900、−1 200、300、1 000 に置いてグレーチングを支える(間隔 ≤ 750);開口 (−650, 850) と (1 350, 950) は小梁の間:配置は設計で選んだ",
+     "refs": [
+      "issue-2"
+     ],
+     "reason_vi": "Không có tài liệu công khai về dầm phụ; chọn bước dầm ≤ 750 mm cho tấm lưới (giá trị chọn) và đặt hai lỗ ống nhỏ giữa các dầm phụ; khoảng cách giữa các dầm theo Y trong beams_mm đều ≤ 750 mm.",
+     "reason_ja": "小梁の公開資料はない。グレーチング用に梁間隔 ≤ 750 mm(選んだ値)とし、小径の 2 開口を小梁の間に置いた。beams_mm の Y 方向梁の間隔はすべて 750 mm 以下。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (cân trên tầng lửng); specs §2 (mặt sàn 2 800–3 200); kích thước giả định"
@@ -631,8 +1112,28 @@
    "used_by": [
     "feed_platform_railing:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Lan can vàng bao quanh sàn tầng lửng của dây chuyền ZE 110 UT (ảnh)",
+     "text_ja": "ZE 110 UT ラインの中二階の周囲に黄色い手すりがある(写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Sàn cao 3 m (Z 3 000): cao độ do thiết kế ước lượng",
+     "text_ja": "床の高さ 3 m(Z 3 000):高さは設計側の見積り",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cao độ sàn của dây chuyền; specs §2 ước lượng mặt sàn 2 800–3 200 mm từ ảnh web-04/05; chọn Z 3 000.",
+     "reason_ja": "このラインの床高さの公開資料はない。specs §2 は web-04/05 の写真から床面を 2 800–3 200 mm と見積もっており、Z 3 000 を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (lan can và tấm chắn chân màu vàng)"
@@ -649,8 +1150,27 @@
    "used_by": [
     "feed_platform_railing:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tay vịn ống có thanh giữa, sơn vàng an toàn (ảnh ZE 110 UT)",
+     "text_ja": "パイプ手すりに中間レールがあり、安全黄色に塗装されている(ZE 110 UT の写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tay vịn Ø42 cao 1 100, thanh giữa 550, tấm chắn chân 150, cột bước ≤ 1 500: kích thước do thiết kế chọn",
+     "text_ja": "手すり Ø42、高さ 1 100、中間レール 550、つま先板 150、支柱ピッチ ≤ 1 500:寸法は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về kích thước lan can trong ảnh; chọn các kích thước thông dụng của lan can công nghiệp (kiến thức chung; bộ nguồn không có tiêu chuẩn riêng); ảnh không thấy rõ tấm chắn chân màu vàng.",
+     "reason_ja": "写真の手すり寸法の公開資料はない。産業用手すりで一般的な寸法を選んだ(一般知識で、資料セットに規格はない)。写真では黄色のつま先板がはっきり見えない。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (lan can và tấm chắn chân màu vàng)"
@@ -660,15 +1180,28 @@
      "web-05"
     ]
    },
-   "notes": ""
+   "notes": "specs §9 và web/images.md ghi \"tấm chắn chân màu vàng\"; trên web-04/05 chỉ thấy rõ tay vịn vàng, không thấy rõ tấm chắn chân, nên tấm chắn chân để ở giả định."
   },
   "0b9157920c1b": {
    "vi": "Chừa lối lên cầu thang ở mép −X đoạn Y −2 650 … −1 950.",
    "used_by": [
     "feed_platform_railing:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Chừa lối lên cầu thang ở mép −X, đoạn Y −2 650 … −1 950: trùng bề rộng cầu thang 700",
+     "text_ja": "−X 縁の Y −2 650 … −1 950 の区間を階段への通路として空ける:幅は階段幅 700 と一致",
+     "refs": [
+      "rev-I2",
+      "design-10|Mép sau sàn thao tác ra Y −2 700"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí cầu thang; đoạn hở trùng cầu thang đã dời theo review-01 I2.",
+     "reason_ja": "階段位置の公開資料はない。開口区間は review-01 I2 で移した階段の位置に合わせた。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04/05 (lan can và tấm chắn chân màu vàng)"
@@ -685,8 +1218,26 @@
    "used_by": [
     "feed_stair:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cầu thang thép bậc lưới, tay vịn vàng, lên sàn tầng lửng cạnh máy (ảnh ZE 110 UT)",
+     "text_ja": "鋼製のグレーチング踏板の階段に黄色い手すりが付き、機械脇の中二階へ上がる(ZE 110 UT の写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Độ dốc 45°: do thiết kế chọn; ảnh không đo được góc",
+     "text_ja": "勾配 45°:設計で選んだ。写真から角度は測れない",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về góc cầu thang; chọn 45° là độ dốc tối đa thường dùng cho thang công nghiệp (kiến thức chung; bộ nguồn không có tiêu chuẩn riêng).",
+     "reason_ja": "階段角度の公開資料はない。産業用階段で一般的な最大勾配として 45° を選んだ(一般知識で、資料セットに規格はない)。"
+    }
+   ],
    "seed": {
     "sources": [
      "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
@@ -703,8 +1254,29 @@
    "used_by": [
     "feed_stair:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bậc dạng lưới, hai dầm thang màu sáng, tay vịn vàng hai bên (ảnh ZE 110 UT)",
+     "text_ja": "グレーチング踏板、明るい色のストリンガー 2 本、両側の黄色い手すり(ZE 110 UT の写真)",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Rộng 700, 45°, 15 bậc cao 200, thép mạ kẽm, tay vịn cao 1 000: kích thước do thiết kế chọn; 15 × 200 = 3 000 = cao độ sàn",
+     "text_ja": "幅 700、45°、グレーチング踏板 15 段(蹴上げ 200)、亜鉛めっき鋼、手すり高さ 1 000:寸法は設計で選んだ。15 × 200 = 3 000 = 床の高さ",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước cầu thang; chọn rộng 700 và 15 bậc × 200 để lên tới sàn Z 3 000 (cao độ ước lượng ở specs §2), tay vịn cao 1 000 theo thực hành chung.",
+     "reason_ja": "階段寸法の公開資料はない。幅 700 と 15 段 × 200 で床 Z 3 000(specs §2 の見積り高さ)に達するようにし、手すり高さ 1 000 は一般的な実務に従った。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
@@ -721,8 +1293,20 @@
    "used_by": [
     "feed_stair:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hình bao XZ của cầu thang: dầm thang (−5 400, 0) → (−2 700, 2 700), tay vịn (−5 700, 1 000) → (−2 700, 4 000); cả hai dốc 45°",
+     "text_ja": "階段の XZ 外形:ストリンガー (−5 400, 0) → (−2 700, 2 700)、手すり (−5 700, 1 000) → (−2 700, 4 000);どちらも 45° 勾配",
+     "refs": [
+      "design-4.1|Sàn thao tác"
+     ],
+     "reason_vi": "Không có tài liệu công khai; toạ độ do thiết kế chọn: chênh 2 700 / 2 700 và 3 000 / 3 000 cho góc 45°, đầu thang chạm sàn ở X −2 700.",
+     "reason_ja": "公開資料はない。座標は設計で選んだ:2 700 / 2 700 と 3 000 / 3 000 の差で 45° になり、階段上端は X −2 700 で床に達する。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "web-04 (cầu thang vàng cạnh máy); vị trí phía −Y, lùi ra theo review-01 I2 (lối đi 950 dọc khung, 850 trước ống cáp trung thế)"
@@ -739,8 +1323,31 @@
    "used_by": [
     "feed_throat:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp miệng nạp nối phễu với lỗ nạp B1: khối trung gian do thiết kế thêm",
+     "text_ja": "フィードスロートハウジングがホッパーと B1 の供給口をつなぐ:中間ブロックは設計で追加した",
+     "refs": [
+      "meas-2.2|Phễu + ống nạp nghiêng 45°",
+      "cat-p09"
+     ],
+     "reason_vi": "Hình bóng trang 9 cho thấy phễu đặt thẳng trên miệng nạp, không thấy hộp trung gian riêng; thiết kế thêm khối này để lắp áo nước và bắt phễu.",
+     "reason_ja": "9 ページのシルエットでは、ホッパーが供給口の直上に載り、独立した中間ハウジングは見えない。設計は水冷ジャケットとホッパー取付のためにこのブロックを加えた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Áo nước làm mát chống dính hạt (bridging)",
+     "text_ja": "水冷ジャケットでペレットの固着を防ぐ",
+     "refs": [
+      "rev-I7",
+      "design-10|I7 (nước cho phụ trợ)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về áo nước hộp miệng nạp của máy này; làm mát miệng nạp chống kẹt/dính hạt là thực hành chung (kiến thức chung về đùn nhựa; bộ nguồn không có tài liệu riêng); ống nước thêm theo review-01 I7.",
+     "reason_ja": "この機械のフィードスロート水冷ジャケットの公開資料はない。供給口を冷却してペレットの詰まりや固着を防ぐのは一般的な実務(押出の一般知識で、資料セットに個別の文書はない)。給水配管は review-01 I7 で追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (miệng nạp 300 × 250 theo specs §2, nới thành 360 × 300 cho D 169)"
@@ -749,15 +1356,45 @@
      "spec-2"
     ]
    },
-   "notes": ""
+   "notes": "Fact đầu: p09 chỉ cho thấy đáy phễu nằm đúng đỉnh barrel 1 (y = 473,90 pt); việc thêm hộp trung gian là quyết định của thiết kế."
   },
   "5534ccf4618b": {
    "vi": "Khối inox 500 × 420 × 185, lỗ trong 360 × 300, 2 đầu nối nước làm mát.",
    "used_by": [
     "feed_throat:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Khối inox 500 × 420 × 185: kích thước do thiết kế chọn",
+     "text_ja": "ステンレス製ブロック 500 × 420 × 185:寸法は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về hộp miệng nạp; chọn khối 500 × 420 × 185 vừa bích lỗ nạp B1 và đế phễu.",
+     "reason_ja": "フィードスロートハウジングの公開資料はない。B1 の供給口フランジとホッパー底に収まる 500 × 420 × 185 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ trong 360 × 300: nới từ 300 × 250 (ước lượng ở specs §2) cho vít D = 169",
+     "text_ja": "内孔 360 × 300:specs §2 の見積り 300 × 250 を、スクリュー径 D = 169 に合わせて拡大",
+     "refs": [
+      "spec-2|Miệng cấp liệu",
+      "c001"
+     ],
+     "reason_vi": "Không có tài liệu công khai về miệng nạp ZE 155 (specs §2 ghi \"chưa tìm thấy\", ≈ 300 × 250 là ước lượng); chọn nới lên 360 × 300 cho đường kính vít 169 mm.",
+     "reason_ja": "ZE 155 の供給口の公開資料はない(specs §2 は「未確認」とし、≈ 300 × 250 は見積り)。スクリュー径 169 mm に合わせて 360 × 300 に広げた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "2 đầu nối nước làm mát cho áo nước",
+     "text_ja": "冷却水接続口 2 か所(水冷ジャケット用)",
+     "refs": [
+      "rev-I7"
+     ],
+     "reason_vi": "Không có tài liệu công khai; hai đầu nối nước cho áo hộp miệng nạp theo review-01 I7 (2 ống DN20 từ trạm van).",
+     "reason_ja": "公開資料はない。フィードスロートのジャケット用の冷却水接続口 2 か所は review-01 I7 による(バルブステーションから DN20 管 2 本)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (miệng nạp 300 × 250 theo specs §2, nới thành 360 × 300 cho D 169)"
@@ -773,8 +1410,27 @@
    "used_by": [
     "feed_vacuum_loader:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sơ đồ dây chuyền catalogue: silo nối bằng ống vận chuyển tới phễu đặt cao hơn phễu cân, nạp liệu cho cân",
+     "text_ja": "カタログのライン系統図:サイロから搬送配管が、計量ホッパーより高い位置の受けホッパーへつながり、フィーダーへ供給する",
+     "refs": [
+      "crop-p24-25_line_layout_spread"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thiết bị hút/nhận liệu là máy hút liệu chân không đặt trên phễu cân: ước lượng của specs §2",
+     "text_ja": "吸引・受入装置は計量ホッパー上に置く真空ローダー:specs §2 の見積り",
+     "refs": [
+      "spec-2|Máy hút liệu"
+     ],
+     "reason_vi": "Không có tài liệu công khai về máy hút liệu của dây chuyền; specs §2 ghi \"đặt trên phễu từng cân — ước lượng\"; sơ đồ catalogue chỉ vẽ ký hiệu, không nói là máy hút chân không.",
+     "reason_ja": "このラインのローダーの公開資料はない。specs §2 は「各フィーダーのホッパー上に設置 — 見積り」としており、カタログの系統図は記号だけで真空ローダーとは書いていない。"
+    }
+   ],
    "seed": {
     "sources": [
      "specs §2 (máy hút liệu trên phễu); cỡ giả định"
@@ -783,15 +1439,27 @@
      "spec-2"
     ]
    },
-   "notes": ""
+   "notes": "Sơ đồ trang 24-25 là ký hiệu; mức có nguồn chỉ cho thứ tự silo, ống, phễu thu liệu, không cho loại máy hút."
   },
   "4ec95a187471": {
    "vi": "Bình Ø640 cao 900 với nắp lọc, van lật đáy, cổng liệu vào bên +Y, cổng hút khí trên nắp.",
    "used_by": [
     "feed_vacuum_loader:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Bình Ø640 cao 900 với nắp lọc, van lật đáy, cổng liệu vào bên +Y, cổng hút khí trên nắp: cỡ và cấu tạo do thiết kế chọn",
+     "text_ja": "容器 Ø640、高さ 900、フィルター付きカバー、底部フラップバルブ、+Y 側の材料入口、カバー上の吸気ポート:寸法と構成は設計で選んだ",
+     "refs": [
+      "spec-2|Máy hút liệu"
+     ],
+     "reason_vi": "Không có tài liệu công khai về máy hút liệu của dây chuyền; specs §2 ghi \"cỡ giả định\"; chọn Ø640 × 900 và cấu tạo thông thường của bình nhận liệu chân không (kiến thức chung).",
+     "reason_ja": "このラインのローダーの公開資料はない。specs §2 は「サイズは仮定」としており、Ø640 × 900 と真空受入容器の一般的な構成を選んだ(一般知識)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "specs §2 (máy hút liệu trên phễu); cỡ giả định"
@@ -807,8 +1475,29 @@
    "used_by": [
     "sidefeed_adapter:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Side feeder nối vào hông xi lanh bằng mặt bích bắt bulông (hình ZE UTX, trang 8)",
+     "text_ja": "サイドフィーダーはボルト締めのフランジでバレル側面に取り付けられる(ZE UTX の図、8 ページ)",
+     "refs": [
+      "crop-p08_side_feeder_x3",
+      "cat-p08"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cửa bên ở B2, phía +Y (người vận hành): vị trí do thiết kế chọn",
+     "text_ja": "サイドポートは B2 の +Y(運転側):位置は設計で選んだ",
+     "refs": [
+      "design-4.1|B2 (6D, mở bên)",
+      "cat-p13"
+     ],
+     "reason_vi": "Catalogue có đoạn xi lanh tổ hợp cấp phụ gia theo phương ngang nhưng không nêu đoạn nào hay phía nào; chọn B2 (6D, mở bên) và phía +Y.",
+     "reason_ja": "カタログには添加剤を横から供給する複合バレルがあるが、どのセクションのどちら側かは書かれていない。B2(6D、側面開口)の +Y 側を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder (mặt bích bắt bulông vào hông xi lanh)"
@@ -824,8 +1513,30 @@
    "used_by": [
     "sidefeed_adapter:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tấm thép 370 × 80 × 320: kích thước do thiết kế chọn",
+     "text_ja": "鋼板 370 × 80 × 320:寸法は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về kích thước tấm bích; chọn 370 × 80 × 320 để bao quanh thân side feeder 330 × 260 với 8 bulông M24.",
+     "reason_ja": "フランジ板寸法の公開資料はない。サイドフィーダー本体 330 × 260 を囲み M24 ボルト 8 本を配置できるよう 370 × 80 × 320 を選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ hình số 8: khớp thân side feeder hai trục vít",
+     "text_ja": "8 の字形の孔:2 本スクリューのサイドフィーダー本体に合わせる",
+     "refs": [
+      "crop-p08_side_feeder_x3"
+     ],
+     "reason_vi": "Catalogue cho thấy side feeder hai trục vít nhưng không cho thấy hình dạng lỗ của tấm bích; chọn lỗ hình số 8 cho khớp thân hai trục vít.",
+     "reason_ja": "カタログには 2 本スクリューのサイドフィーダーが写るが、フランジ板の孔の形は見えない。2 本スクリューの本体に合わせて 8 の字形の孔を選んだ。"
+    }
+   ],
+   "free_numbers": [
+    "8"
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder (mặt bích bắt bulông vào hông xi lanh)"
@@ -841,8 +1552,30 @@
    "used_by": [
     "sidefeed_barrel:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Side feeder trục vít đôi ép liệu rắn (phụ gia, bột) vào đoạn xi lanh có cửa bên cấp ngang (catalogue ZE)",
+     "text_ja": "ツインスクリュー式サイドフィーダーが固体原料(添加剤、粉体)を、横向き供給用バレルの側面ポートへ押し込む(ZE カタログ)",
+     "refs": [
+      "crop-p08_side_feeder_x3",
+      "cat-p07",
+      "cat-p13",
+      "cat-p27"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Liệu phụ là mảnh vụn biên tấm (edge trim) nghiền nhỏ: do thiết kế chọn",
+     "text_ja": "副原料はシート端材(エッジトリム)の粉砕品:設計で選んだ",
+     "refs": [
+      "design-1|Cân phụ gia"
+     ],
+     "reason_vi": "Catalogue chỉ nêu chung chất rắn (bột, hạt mịn, hạt, sợi); không có tài liệu về dùng mảnh biên tấm PET qua side feeder; chọn mảnh biên nghiền (rework) vì dây chuyền tấm phát sinh phần xén biên.",
+     "reason_ja": "カタログは固体原料(粉体、微粒子、ペレット、繊維)を一般的に挙げるだけで、PET シートの端材をサイドフィーダーで入れる資料はない。シートラインでは耳トリムが出るため、粉砕した端材(リワーク)を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
@@ -860,8 +1593,41 @@
    "used_by": [
     "sidefeed_barrel:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Side feeder có 2 trục vít đặt ngang song song, đi vào hông xi lanh (hình trang 8)",
+     "text_ja": "サイドフィーダーは 2 本のスクリューを平行に横置きし、バレル側面へ入る(8 ページの図)",
+     "refs": [
+      "crop-p08_side_feeder_x3",
+      "cat-p07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thân số 8 330 × 260, dài 770; 2 cung R130 tâm X 1 315 và 1 385, eo X 1 350; lỗ vít Ø112 tâm X 1 305 và 1 395: kích thước do thiết kế chọn",
+     "text_ja": "8 の字形本体 330 × 260、長さ 770;R130 の円弧 2 つ(中心 X 1 315 と 1 385)、くびれ X 1 350;スクリュー孔 Ø112(中心 X 1 305 と 1 395):寸法は設計で選んだ",
+     "refs": [
+      "c024",
+      "c001"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước thân side feeder; c024 chỉ nói ZE 110 R (D 127) dùng side feeder ZSFE 120, nên chọn cỡ ZSB 160 cho D 169 (169 × 120 / 127 ≈ 160) và tự vẽ hình số 8.",
+     "reason_ja": "サイドフィーダー本体の寸法の公開資料はない。c024 は ZE 110 R(D 127)が ZSFE 120 を使うとだけ述べており、D 169 向けに ZSB 160 サイズ(169 × 120 / 127 ≈ 160)を仮定し、8 の字の形状は自作した。",
+     "whole_line": true
+    },
+    {
+     "level": "derived",
+     "text_vi": "Trục side feeder ngang tầm trục vít chính: Z = 1 200 (cao trục ZE 155 UTi theo bảng KM)",
+     "text_ja": "サイドフィーダーの軸は主スクリューと同じ高さ Z = 1 200(KM の仕様表にある ZE 155 UTi の軸高さ)",
+     "refs": [
+      "c006",
+      "crop-p08_side_feeder_x3"
+     ],
+     "reason_vi": "Thiết kế đặt trục side feeder cùng mặt phẳng với trục vít chính; giá trị 1 200 mm lấy từ bảng KM (c006: cao trục vít 1 200 mm).",
+     "reason_ja": "設計はサイドフィーダー軸を主スクリュー軸と同じ水平面に置いた。1 200 mm は KM の仕様表(c006:スクリュー軸高さ 1 200 mm)の値。"
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
@@ -872,15 +1638,36 @@
      "c024"
     ]
    },
-   "notes": ""
+   "notes": "Cỡ ZSB 160 suy từ tỷ lệ c024 (ZSFE 120 cho D 127) nhân D 169 chỉ là ước lượng tỷ lệ; hình dạng và kích thước thân là tự vẽ."
   },
   "9a4c9f1048b2": {
    "vi": "Lỗ nạp đỉnh gần đầu ngoài, áo nước làm mát, bích hai đầu.",
    "used_by": [
     "sidefeed_barrel:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Lỗ nạp ở đỉnh thân (phễu nhỏ phía trên) và mặt bích bắt bulông nối vào xi lanh (hình trang 8)",
+     "text_ja": "本体上部の投入口(上の小型ホッパー)と、バレルへつなぐボルト締めフランジ(8 ページの図)",
+     "refs": [
+      "crop-p08_side_feeder_x3",
+      "cat-p08"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Lỗ nạp gần đầu ngoài, áo nước làm mát, bích ở đầu kia: chi tiết do thiết kế chọn",
+     "text_ja": "投入口は外側端寄り、水冷ジャケット、もう一方の端にもフランジ:詳細は設計で選んだ",
+     "refs": [
+      "rev-I7",
+      "design-10|I7 (nước cho phụ trợ)"
+     ],
+     "reason_vi": "Hình trang 8 không cho thấy áo nước hay đầu ngoài của thân; chọn lỗ nạp gần đầu ngoài và áo nước vì cần làm mát vùng nạp (review-01 I7: ống nước tới áo side feeder).",
+     "reason_ja": "8 ページの図では水冷ジャケットも本体の外側端も見えない。供給部の冷却のため、外側端寄りの投入口と水冷ジャケットを選んだ(review-01 I7:サイドフィーダー用の給水配管)。"
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder, p06 cutaway (side feeder 2 trục vít ngang vào hông xi lanh); c024 (ZE 110 dùng ZSFE 120) → cỡ 160 giả định"
@@ -898,8 +1685,26 @@
    "used_by": [
     "sidefeed_cart:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hộp số và động cơ side feeder đặt trên xe đẩy thép trắng có bánh xe (hình cắt trang 6–7; ảnh máy ZE BluePower)",
+     "text_ja": "サイドフィーダーのギアボックスとモーターは、白色鋼製のキャスター付き台車に載っている(6–7 ページの透視図、ZE BluePower の写真)",
+     "refs": [
+      "crop-p06_cutaway_side_feeder_cart",
+      "web-16"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kéo side feeder ra theo +Y khi bảo trì: hướng và cách bảo trì do thiết kế chọn",
+     "text_ja": "保守時にサイドフィーダーを +Y へ引き出す:方向と保守方法は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Catalogue chỉ cho thấy xe có bánh; không nêu hướng kéo ra; chọn kéo theo +Y (phía người vận hành) để chừa lối bảo trì phía +Y.",
+     "reason_ja": "カタログは車輪付き台車を示すだけで、引き出し方向は書かれていない。運転側の +Y に保守スペースを残すため、+Y 方向に引き出す設計とした。"
+    }
+   ],
    "seed": {
     "sources": [
      "p06_cutaway_side_feeder_cart (xe thép trắng có bánh xe)"
@@ -915,8 +1720,26 @@
    "used_by": [
     "sidefeed_cart:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Xe khung thép trắng có bánh xe và tem cảnh báo điện (hình cắt trang 6–7)",
+     "text_ja": "白色鋼製フレームのキャスター付き台車で、電気警告ラベルが付く(6–7 ページの透視図)",
+     "refs": [
+      "crop-p06_cutaway_side_feeder_cart"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khung 500 × 1 090 cao 1 000, 4 bánh xe có khoá: kích thước, số bánh và khoá do thiết kế chọn",
+     "text_ja": "フレーム 500 × 1 090、高さ 1 000、ロック付きキャスター 4 個:寸法、キャスター数、ロックは設計で選んだ",
+     "refs": [],
+     "reason_vi": "Hình chỉ thấy 3 bánh (bánh thứ 4 bị che) và không thấy cơ cấu khoá; không có tài liệu về kích thước xe; chọn khung 500 × 1 090 × 1 000 theo cỡ hộp số và động cơ.",
+     "reason_ja": "図ではキャスターは 3 個しか見えず(4 個目は隠れている)、ロック機構も見えない。台車寸法の資料もなく、ギアボックスとモーターの大きさに合わせて 500 × 1 090 × 1 000 を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "p06_cutaway_side_feeder_cart (xe thép trắng có bánh xe)"
@@ -932,8 +1755,27 @@
    "used_by": [
     "sidefeed_downpipe:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Sơ đồ dây chuyền catalogue: liệu từ cân (feeder) đi theo đường dẫn xuống phễu side feeder",
+     "text_ja": "カタログのライン系統図:フィーダーからの材料が、搬送ラインでサイドフィーダーのホッパーへ導かれる",
+     "refs": [
+      "crop-p24-25_line_layout_spread"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cân side feeder đặt trên sàn thao tác, ống rơi dài từ Z 2 850 xuống phễu: bố trí do thiết kế chọn",
+     "text_ja": "サイドフィーダー用フィーダーは作業プラットフォーム上にあり、落下管が Z 2 850 からホッパーまで続く:配置は設計で選んだ",
+     "refs": [
+      "spec-2|Sàn đặt cân"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí ống rơi side feeder; chọn đặt cân trên cùng sàn thao tác (Z 3 000) với các cân khác.",
+     "reason_ja": "サイドフィーダー落下管の配置の公開資料はない。他のフィーダーと同じ作業プラットフォーム(Z 3 000)上にフィーダーを置くことにした。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -947,23 +1789,46 @@
    "used_by": [
     "sidefeed_downpipe:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Ống inox Ø150 có đoạn ống mềm ở đáy (cân): cỡ ống do thiết kế chọn; ống mềm là ống mềm cách cân dưới cân",
+     "text_ja": "ステンレス管 Ø150、下端(フィーダー下)にフレキシブル管部あり:管径は設計で選んだ。フレキシブル部はフィーダー下のスリーブ",
+     "refs": [
+      "rev-M8",
+      "design-10|M8 (cách cân)"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ ống rơi side feeder; chọn Ø150 nhỏ hơn ống rơi chính Ø250 vì lượng liệu phụ ít hơn; đoạn ống mềm là ống mềm cách cân dưới cân theo review-01 M8.",
+     "reason_ja": "サイドフィーダー落下管の寸法の公開資料はない。副原料はメインより少ないので、メイン落下管 Ø250 より小さい Ø150 を選んだ。フレキシブル部は review-01 M8 によるフィーダー下の絶縁スリーブ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Dòng ghi ống mềm \"ở đáy\", nhưng theo parts.json ống mềm cách cân nằm ở đầu TRÊN của ống (Z 2 850–3 000, ngay dưới cân), đầu dưới nối thẳng cổ phễu. Có thể hiểu \"đáy\" là đáy cân; verifier xem lại câu chữ."
   },
   "c9144ccbd8c1": {
    "vi": "Định lượng liệu phụ cho side feeder.",
    "used_by": [
     "sidefeed_feeder:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Cân (feeder) định lượng liệu phụ vào side feeder (sơ đồ dây chuyền catalogue)",
+     "text_ja": "フィーダーが副原料を定量してサイドフィーダーへ供給する(カタログのライン系統図)",
+     "refs": [
+      "crop-p24-25_line_layout_spread",
+      "cat-p27"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (cân trục vít đôi cỡ K-ML-D5-T35)"
@@ -977,8 +1842,20 @@
    "used_by": [
     "sidefeed_feeder:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cân trục vít đôi (cỡ K-ML-D5-T35) trên 3 cảm biến cân, động cơ phía −X: loại, số cảm biến và bố trí đều giả định",
+     "text_ja": "3 点ロードセル上のツインスクリュー式フィーダー(K-ML-D5-T35 クラス)、モーターは −X 側:機種、センサー数、配置はすべて仮定",
+     "refs": [
+      "spec-2|Cân phụ gia"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cân của side feeder; chọn cân trục vít đôi cỡ nhỏ K-ML-D5-T35 như cân phụ gia (specs §2 \"ước lượng\"); 3 cảm biến theo kiểu BSP-150-S là giả định cho cân này.",
+     "reason_ja": "サイドフィーダー用フィーダーの公開資料はない。添加剤フィーダーと同じ小型ツインスクリュー式 K-ML-D5-T35 を選んだ(specs §2 は「見積り」)。ロードセル 3 点は BSP-150-S にならった仮定。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (cân trục vít đôi cỡ K-ML-D5-T35)"
@@ -992,8 +1869,18 @@
    "used_by": [
     "sidefeed_feeder_hopper:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Phễu chứa liệu phụ cho cân side feeder: chức năng do thiết kế chọn",
+     "text_ja": "副原料を貯留するサイドフィーダー用フィーダーホッパー:機能は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về phễu cân side feeder; mỗi cân loss-in-weight cần một phễu chứa (kiến thức chung về cân loss-in-weight).",
+     "reason_ja": "サイドフィーダー用フィーダーホッパーの公開資料はない。各ロスインウェイトフィーダーには貯留ホッパーが要る(一般知識)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -1007,8 +1894,18 @@
    "used_by": [
     "sidefeed_feeder_hopper:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Phễu Ø600 cao 700 có nắp: kích thước do thiết kế chọn",
+     "text_ja": "蓋付きホッパー Ø600、高さ 700:寸法は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về phễu cân side feeder; chọn Ø600 × 700 nhỏ hơn phễu cân chính (Ø900) vì lượng liệu phụ ít hơn.",
+     "reason_ja": "サイドフィーダー用フィーダーホッパーの公開資料はない。副原料は少ないので、メインの計量ホッパー(Ø900)より小さい Ø600 × 700 を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -1022,8 +1919,26 @@
    "used_by": [
     "sidefeed_gearbox:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Side feeder có hộp số và động cơ riêng dẫn 2 trục vít, đặt trên xe đẩy (hình cắt trang 6–7)",
+     "text_ja": "サイドフィーダーには専用のギアボックスとモーターがあり、2 本のスクリューを駆動する(6–7 ページの透視図)",
+     "refs": [
+      "crop-p06_cutaway_side_feeder_cart",
+      "cat-p07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Giảm tốc và chia mômen ra 2 trục vít: chức năng chung của hộp số trục vít đôi, không có tài liệu riêng về hộp số này",
+     "text_ja": "減速し、トルクを 2 本のスクリューへ分配する:二軸ギアボックスの一般的な機能で、このギアボックス個別の資料はない",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về hộp số side feeder; chia mômen ra hai trục là chức năng thường có của hộp số trục vít đôi (kiến thức chung).",
+     "reason_ja": "サイドフィーダーのギアボックスの公開資料はない。トルクを 2 軸へ分けるのは二軸用ギアボックスに一般的な機能(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "p06 cutaway (hộp số + động cơ xám nhỏ trên xe đẩy); màu giả định"
@@ -1039,8 +1954,18 @@
    "used_by": [
     "sidefeed_gearbox:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hộp 350 × 350 × 400, nút thăm dầu: kích thước và chi tiết do thiết kế chọn",
+     "text_ja": "ボックス 350 × 350 × 400、オイル点検プラグ付き:寸法と詳細は設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ hộp số side feeder (màu cũng là giả định); chọn hộp 350 × 350 × 400 cân đối với động cơ Ø360 × 600 và xe 500 × 1 090; hình trang 6 không thấy nút thăm dầu.",
+     "reason_ja": "サイドフィーダーのギアボックス寸法の公開資料はない(色も仮定)。モーター Ø360 × 600 と台車 500 × 1 090 に釣り合う 350 × 350 × 400 を選んだ。6 ページの図ではオイル点検プラグは見えない。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "p06 cutaway (hộp số + động cơ xám nhỏ trên xe đẩy); màu giả định"
@@ -1056,8 +1981,18 @@
    "used_by": [
     "sidefeed_hopper:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Side feeder có phễu nhỏ phía trên thân nhận liệu; sơ đồ dây chuyền vẽ cân cấp liệu vào phễu này",
+     "text_ja": "サイドフィーダーは本体上部に受入用の小型ホッパーを持ち、系統図ではそのホッパーへフィーダーが供給する",
+     "refs": [
+      "crop-p08_side_feeder_x3",
+      "crop-p24-25_line_layout_spread"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder"
@@ -1073,8 +2008,26 @@
    "used_by": [
     "sidefeed_hopper:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Phễu nhỏ ở đỉnh thân side feeder (hình trang 8)",
+     "text_ja": "サイドフィーダー本体上部の小型ホッパー(8 ページの図)",
+     "refs": [
+      "crop-p08_side_feeder_x3"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Phễu inox 300 × 260 cao 270, kính thăm: kích thước, vật liệu và kính thăm do thiết kế chọn",
+     "text_ja": "ステンレス製ホッパー 300 × 260、高さ 270、点検用サイトグラス付き:寸法、材質、サイトグラスは設計で選んだ",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về kích thước phễu side feeder; hình trang 8 không rõ vật liệu và không thấy kính thăm; chọn 300 × 260 × 270 vừa thân 330 × 260.",
+     "reason_ja": "サイドフィーダーホッパーの寸法の公開資料はない。8 ページの図では材質が分からずサイトグラスも見えない。本体 330 × 260 に合う 300 × 260 × 270 を選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "p08_side_feeder"
@@ -1090,8 +2043,17 @@
    "used_by": [
     "sidefeed_motor:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Động cơ điện nhỏ trên xe đẩy dẫn động side feeder qua hộp số (hình cắt trang 6–7)",
+     "text_ja": "台車上の小型電動モーターが、ギアボックスを介してサイドフィーダーを駆動する(6–7 ページの透視図)",
+     "refs": [
+      "crop-p06_cutaway_side_feeder_cart"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (động cơ AC 22 kW biến tần)"
@@ -1105,15 +2067,32 @@
    "used_by": [
     "sidefeed_motor:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Động cơ nằm ngang có nắp quạt ở đuôi và một hộp điện trên nóc (hình cắt trang 6–7)",
+     "text_ja": "モーターは横置きで、後端にファンカバー、上部に電装ボックスがある(6–7 ページの透視図)",
+     "refs": [
+      "crop-p06_cutaway_side_feeder_cart"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Ø360 dài 600: kích thước do thiết kế chọn cho động cơ 22 kW",
+     "text_ja": "Ø360、長さ 600:22 kW モーター向けに設計で選んだ寸法",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về động cơ side feeder; 22 kW biến tần cũng là giả định; Ø360 × 600 chọn theo cỡ động cơ 22 kW thông thường (kiến thức chung).",
+     "reason_ja": "サイドフィーダーモーターの公開資料はない。22 kW インバーター駆動も仮定で、Ø360 × 600 は一般的な 22 kW モーターの大きさとして選んだ(一般知識)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (động cơ AC 22 kW biến tần)"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Dòng ghi \"hộp đấu dây trên nóc\"; trên hình cắt chỉ thấy một hộp điện màu tối (có thể là hộp đấu dây hoặc bộ biến tần), nên fact ✓ viết \"hộp điện\"."
   }
  }
 }
