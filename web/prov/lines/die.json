@@ -7,7 +7,7 @@
    "used_by": [
     "die_body_bolts:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -36,14 +36,19 @@
      "drev-I4"
     ]
    },
-   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"thân khuôn gồm nhiều phần\". Lực tách 7 MN dựa trên 3 con số do reviewer chọn (2,4 m; 0,3 m; 10 MPa), không có nguồn."
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"thân khuôn gồm nhiều phần\". Lực tách 7 MN dựa trên 3 con số do reviewer chọn (2,4 m; 0,3 m; 10 MPa), không có nguồn.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "4cbc4d4be0f5": {
    "vi": "94 vít lục giác chìm M30 cấp 10.9 dài 260, đầu Ø45 nằm chìm trong lỗ khoét bậc Ø48 × 32 (mặt khuôn phẳng); positions_mm là tâm đầu vít (đầu cao 30).",
    "used_by": [
     "die_body_bolts:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -72,14 +77,19 @@
      "drev-I4"
     ]
    },
-   "notes": "Số vít 94 trùng với số bulông nhiệt (94) nhưng hai con số có cơ sở khác nhau."
+   "notes": "Số vít 94 trùng với số bulông nhiệt (94) nhưng hai con số có cơ sở khác nhau.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "7244bdbdb892": {
    "vi": "Mặt đỉnh nửa trên: hàng X 9 160 (24 vít, Y = −1 265 … +1 265 bước 110) và hàng X 9 210 (23 vít, Y = −1 210 … +1 210), cả hai nằm sau hàng bulông thanh chắn (X 9 240–9 270) và máng bulông nhiệt (X 9 285–9 345).",
    "used_by": [
     "die_body_bolts:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -103,14 +113,19 @@
      "drev-I4"
     ]
    },
-   "notes": "Bố trí vít cắt qua dải ống phân phối (design_issues #9, DECISIONS 21): đơn giản hoá đã biết."
+   "notes": "Bố trí vít cắt qua dải ống phân phối (design_issues #9, DECISIONS 21): đơn giản hoá đã biết.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "96ef01f4c947": {
    "vi": "Mặt đáy nửa dưới: hàng X 9 160 (23 vít, Y = −1 210 …) và hàng X 9 270 (24 vít, Y = −1 265 …), tức cách mép trước mặt đáy (X 9 330) 170 và 60 mm.",
    "used_by": [
     "die_body_bolts:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -133,14 +148,19 @@
      "drev-I4"
     ]
    },
-   "notes": "Xem dòng trước: đơn giản hoá đã biết (issue 9)."
+   "notes": "Xem dòng trước: đơn giản hoá đã biết (issue 9).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "03288894b5c7": {
    "vi": "Vít từ trên ren vào nửa dưới, vít từ dưới ren vào nửa trên; các hàng lệch nhau 55 mm theo Y nên thân vít đi song song không chạm nhau.",
    "used_by": [
     "die_body_bolts:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -161,14 +181,19 @@
      "drev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "b6ed7bb7b225": {
    "vi": "Lực kẹp ≈ 94 × 330 kN ≈ 31 MN, gấp ≈ 4 lần lực tách; ống phân phối (G) phải đi giữa và trước các hàng vít (xem design.md §9).",
    "used_by": [
     "die_body_bolts:details[4]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -203,14 +228,19 @@
      "drev-I4"
     ]
    },
-   "notes": "Dòng nói ống phân phối \"phải đi giữa và trước các hàng vít\", nhưng issue 9 và design §9 mục 6 thừa nhận các hàng vít thực tế cắt qua dải ống phân phối (đơn giản hoá đã biết, DECISIONS 21). Số 9 trong \"§9\" là tên mục."
+   "notes": "Dòng nói ống phân phối \"phải đi giữa và trước các hàng vít\", nhưng issue 9 và design §9 mục 6 thừa nhận các hàng vít thực tế cắt qua dải ống phân phối (đơn giản hoá đã biết, DECISIONS 21). Số 9 trong \"§9\" là tên mục.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "394abcf27fe3": {
    "vi": "Nửa dưới ống phân phối, môi dưới thay được.",
    "used_by": [
     "die_body_lower:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -238,14 +268,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "e25572f863a4": {
    "vi": "Cao 250 (Z 950–1 200); 9 vùng thanh nhiệt.",
    "used_by": [
     "die_body_lower:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -261,8 +296,8 @@
     },
     {
      "level": "sourced",
-     "text_vi": "Khuôn khe KM được gia nhiệt bằng thanh nhiệt cắm (cartridge heaters)",
-     "text_ja": "KM のスロットダイはカートリッジヒーターで加熱される",
+     "text_vi": "Khuôn khe KM (dây chuyền xốp) gia nhiệt bằng dầu 4 vùng cộng thêm thanh nhiệt cắm (cartridge heaters)",
+     "text_ja": "KM のスロットダイ(発泡ライン)は 4 ゾーンの油温調にカートリッジヒーターを加えて加熱する",
      "refs": [
       "c058"
      ]
@@ -285,14 +320,19 @@
     ],
     "refs": []
    },
-   "notes": "c058 là khuôn khe của dây chuyền xốp KM (độ tin cậy trung bình), chỉ dùng để nói khuôn khe có thanh nhiệt cắm."
+   "notes": "c058 là khuôn khe của dây chuyền xốp KM (độ tin cậy trung bình), chỉ dùng để nói khuôn khe có thanh nhiệt cắm.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "c7ec5e746502": {
    "vi": "Môi dưới (lower lip) là thanh chèn thay được dọc mũi, X 9 446–9 576 × cao 60, bắt 24 vít M12 lục giác chìm từ mặt vát dưới (bước 100).",
    "used_by": [
     "die_body_lower:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -319,14 +359,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "4c07e3e71b8c": {
    "vi": "Nửa trên ống phân phối móc áo (coat-hanger manifold), mang môi mềm, thanh chắn và bulông chỉnh.",
    "used_by": [
     "die_body_upper:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -367,14 +412,19 @@
      "web-20"
     ]
    },
-   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"môi mềm nằm trong nửa trên\"."
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn, fact này chỉ dùng ý \"môi mềm nằm trong nửa trên\".",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "991bac395012": {
    "vi": "Rộng 2 600 (Y ±1 300), cao 250 (Z 1 200–1 450), sâu 450 (X 9 126–9 576), mũi vát 30° về phía khe trục.",
    "used_by": [
     "die_body_upper:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -436,14 +486,19 @@
      "web-20"
     ]
    },
-   "notes": "Thân sâu 450 được thiết kế thừa nhận là quá chật (design §9 mục 6)."
+   "notes": "Thân sâu 450 được thiết kế thừa nhận là quá chật (design §9 mục 6).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "63454c318d31": {
    "vi": "Mạ crôm bóng; 9 vùng thanh nhiệt cắm từ mặt sau.",
    "used_by": [
     "die_body_upper:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -459,8 +514,8 @@
     },
     {
      "level": "sourced",
-     "text_vi": "Khuôn khe KM được gia nhiệt bằng thanh nhiệt cắm (cartridge heaters)",
-     "text_ja": "KM のスロットダイはカートリッジヒーターで加熱される",
+     "text_vi": "Khuôn khe KM (dây chuyền xốp) gia nhiệt bằng dầu 4 vùng cộng thêm thanh nhiệt cắm (cartridge heaters)",
+     "text_ja": "KM のスロットダイ(発泡ライン)は 4 ゾーンの油温調にカートリッジヒーターを加えて加熱する",
      "refs": [
       "c058"
      ]
@@ -491,14 +546,19 @@
      "web-20"
     ]
    },
-   "notes": "Lớp mạ crôm là lựa chọn của thiết kế (ảnh web-19/20 là hãng khác)."
+   "notes": "Lớp mạ crôm là lựa chọn của thiết kế (ảnh web-19/20 là hãng khác).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "6937b6e03651": {
    "vi": "Rãnh bản lề môi mềm (flex-lip hinge slot) hở, chạy suốt bề rộng 2 400 tại X 9 392–9 404 (rộng 12), cắt từ mặt vát xuống tới Z 1 212, để lại gân bản lề dày 12 mm trên mặt chảy (Z 1 200); phần sau rãnh là môi mềm. Đầu bulông nhiệt tì lên môi tại X 9 440, cách gân 36 mm.",
    "used_by": [
     "die_body_upper:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -555,14 +615,19 @@
      "web-20"
     ]
    },
-   "notes": "Hình học bản lề là sửa chữa theo review bản vẽ I5, không có nguồn công khai."
+   "notes": "Hình học bản lề là sửa chữa theo review bản vẽ I5, không có nguồn công khai.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "6d29e3fa00bd": {
    "vi": "Mặt đỉnh từ sau ra trước: hộp nhiệt mặt sau (X ≤ 9 126), tai cẩu ở tấm đầu, hàng bulông thanh chắn X 9 255 (thanh chắn trong thân X 9 240–9 270), máng bulông nhiệt X 9 285–9 345, rồi mặt vát mang 94 bulông nhiệt.",
    "used_by": [
     "die_body_upper:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -602,14 +667,19 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "76582454c207": {
    "vi": "Gom cáp 94 thanh nhiệt bulông và dẫn gió làm mát bulông.",
    "used_by": [
     "die_bolt_actuator_rail:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -645,14 +715,19 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "f6629fff8666": {
    "vi": "Máng inox 60 × 90 dài 2 500 trên dải trước của mặt đỉnh (X 9 285–9 345), ngay sau đầu trên các bulông nhiệt; trong máng: cáp 94 thanh nhiệt (tầng trên) và ống gió làm mát (tầng dưới).",
    "used_by": [
     "die_bolt_actuator_rail:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -677,14 +752,19 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "d7993c2292f4": {
    "vi": "2 ổ cắm nhiều chân đánh số ở đầu −Y; nắp máng tháo được để chừa lối vặn bulông thanh chắn ngay phía sau.",
    "used_by": [
     "die_bolt_actuator_rail:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -718,14 +798,19 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "d5b2340d1785": {
    "vi": "Dẫn cáp bulông nhiệt và cảm biến khuôn xuống hộp đấu dây khuôn; rút phích ra khi kéo khuôn đi.",
    "used_by": [
     "die_cable_harness:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -758,14 +843,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "c851bbefcdab": {
    "vi": "Ống luồn cáp mềm Ø60 đi xuống phía −Y rồi chéo về nóc hộp đấu dây khuôn; 2 phích nhiều chân đánh số ở đầu hộp.",
    "used_by": [
     "die_cable_harness:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -797,14 +887,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "de3fd7e85c5b": {
    "vi": "Đỡ khuôn ≈ 3,4 t, chỉnh cao ±50 mm bằng kích vít, tự do ±40 mm theo X (giãn nở), kéo khuôn ra theo +Y trên ray.",
    "used_by": [
     "die_cart:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -868,14 +963,19 @@
      "rev-I3"
     ]
    },
-   "notes": "Khối lượng 3,4 t (review I3, tính từ thể tích mô hình) cao hơn nhiều so với ước lượng cũ của specs (≈ 2 t) và khuôn Cloeren 62″ (≈ 1 t, 1 575 mm); chênh lệch chưa được đối chiếu."
+   "notes": "Khối lượng 3,4 t (review I3, tính từ thể tích mô hình) cao hơn nhiều so với ước lượng cũ của specs (≈ 2 t) và khuôn Cloeren 62″ (≈ 1 t, 1 575 mm); chênh lệch chưa được đối chiếu.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "1a5a00936cfb": {
    "vi": "Đế thép hộp rộng X 8 700–9 380, Z 60–300, luồn dưới bộ trộn và bích khuôn; 4 bánh: 2 bánh trụ trên ray phẳng X 8 760, 2 bánh rãnh V trên ray dẫn hướng X 9 320 (khổ 560).",
    "used_by": [
     "die_cart:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -918,14 +1018,19 @@
      "rev-I3"
     ]
    },
-   "notes": "Ảnh web-08 (xe khuôn KM) dùng bánh xe tự do (castor) và không thấy ray; thiết kế dùng bánh trụ và bánh rãnh V trên ray."
+   "notes": "Ảnh web-08 (xe khuôn KM) dùng bánh xe tự do (castor) và không thấy ray; thiết kế dùng bánh trụ và bánh rãnh V trên ray.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "10c4750cce5b": {
    "vi": "Hai cột kích vít có tay quay ở X 9 150–9 350, xà đỡ trên có bàn trượt ±40 mm theo X và 2 đệm tại Y = ±700.",
    "used_by": [
     "die_cart:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -957,14 +1062,19 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "ad0c8bfa3e55": {
    "vi": "Phía trước đế không vượt X 9 380 dưới Z 600 (trục dưới ở X ≥ 9 429 tại Z 600); khoá bánh khi chạy.",
    "used_by": [
     "die_cart:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -998,14 +1108,19 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "a781ea8512b1": {
    "vi": "Phải lùi cụm trục cán trước khi kéo khuôn ra theo +Y.",
    "used_by": [
     "die_cart:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1030,14 +1145,19 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "b450737aa45f": {
    "vi": "Dẫn xe khuôn ra phía +Y khi bảo trì.",
    "used_by": [
     "die_cart_rails:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1059,14 +1179,19 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "f901eebfafc7": {
    "vi": "2 ray dài 4 300 theo Y: ray phẳng tại X 8 760, ray có gờ dẫn hướng tại X 9 320 (khổ 560); khoá sàn ở vị trí làm việc.",
    "used_by": [
     "die_cart_rails:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1088,14 +1213,19 @@
      "rev-I3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "80f4064326e6": {
    "vi": "Chỉnh thô dòng chảy ngang khuôn qua thanh chắn (restrictor bar) nằm sau ống phân phối, trước vùng preland.",
    "used_by": [
     "die_choker_bolts:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1128,19 +1258,24 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "83d2c40b3839": {
    "vi": "33 bulông đầu đen Ø30 cao 80 đặt đứng trên mặt đỉnh tại X 9 255, ngay trên thanh chắn (X 9 240–9 270), Y = −1 200 + 75·k (k = 0…32), đai ốc khoá; bulông đẩy/kéo thẳng thanh chắn như khuôn môi mềm thông thường.",
    "used_by": [
     "die_choker_bolts:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
-     "text_vi": "Hàng bulông đầu đen đặt đứng trên mặt đỉnh nửa trên, ngay trên thanh chắn (quan sát ảnh khuôn hãng khác)",
-     "text_ja": "他社ダイでは、黒頭のボルト列が上半ダイ上面に直立し、チョーカーバーを調整する(写真で観察)",
+     "text_vi": "Hàng bulông đầu đen đặt đứng trên mặt đỉnh nửa trên, phía sau hàng bulông chỉnh môi (quan sát ảnh khuôn hãng khác)",
+     "text_ja": "上半の上面に黒頭ボルトの列が立ち、リップ調整ボルト列の後方にある(他社ダイの写真から観察)",
      "refs": [
       "web-19",
       "web-20"
@@ -1180,14 +1315,19 @@
      "issue-1"
     ]
    },
-   "notes": "Số 33 bulông (bước 75) là chọn của designer; specs ước lượng bước 50–75 mm."
+   "notes": "Số 33 bulông (bước 75) là chọn của designer; specs ước lượng bước 50–75 mm.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "9234e1cd5dd9": {
    "vi": "Vặn bằng khẩu từ trên xuống; khe 15 mm tới máng bulông nhiệt phía trước (X 9 285).",
    "used_by": [
     "die_choker_bolts:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1211,14 +1351,19 @@
      "issue-1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "9e9f98acc99a": {
    "vi": "Thu hẹp bề rộng màn nhựa ở hai đầu khi đổi khổ tấm.",
    "used_by": [
     "die_deckles:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1249,14 +1394,19 @@
      "rev-M6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "c380bd0c906d": {
    "vi": "Mỗi đầu 1 thanh Ø30 nhô 150 ngoài tấm đầu (tới |Y| 1 525) tại X 9 480, có núm vặn + thước; lưỡi deckle trong nằm trong khuôn, không vượt X 9 520 (tránh khung cụm trục).",
    "used_by": [
     "die_deckles:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1297,14 +1447,19 @@
      "rev-M6"
     ]
    },
-   "notes": "Dòng ghi Ø30, nhưng parts.json (die_deckles): item_mm [40, 150, 40] và bbox Z 1 180–1 220 (rộng 40), tức Ø40. Kiểm lại số nào đúng."
+   "notes": "Dòng ghi Ø30, nhưng parts.json (die_deckles): item_mm [40, 150, 40] và bbox Z 1 180–1 220 (rộng 40), tức Ø40. Kiểm lại số nào đúng.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "112b8899e7cf": {
    "vi": "Hứng nhựa rơi khi khởi động màn nhựa.",
    "used_by": [
     "die_drip_pan:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1321,14 +1476,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "e26e4beda322": {
    "vi": "Khay inox 324 × 2 700 cao 80.",
    "used_by": [
     "die_drip_pan:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1345,7 +1505,12 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "ccb3394ec07d": {
    "vi": "Bịt hai đầu ống phân phối, mang thanh deckle và hộp đấu nhiệt tấm đầu.",
@@ -1353,7 +1518,7 @@
     "die_end_plate_op:function",
     "die_end_plate_rear:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1393,7 +1558,12 @@
      "web-20"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "b32defec3e5c": {
    "vi": "Tấm thép 75 mm, khối đầu nối thanh nhiệt (terminal block) 6 lỗ, 1 vùng nhiệt.",
@@ -1401,7 +1571,7 @@
     "die_end_plate_op:details[0]",
     "die_end_plate_rear:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1445,14 +1615,19 @@
      "web-20"
     ]
    },
-   "notes": "Ảnh web-19/20 cho khối đầu nối 2 hàng × 5 = 10 lỗ, thiết kế ghi 6 lỗ: coi là giản lược, kiểm lại."
+   "notes": "Ảnh web-19/20 cho khối đầu nối 2 hàng × 5 = 10 lỗ, thiết kế ghi 6 lỗ: coi là giản lược, kiểm lại.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "f1a4b4879ce6": {
    "vi": "Chỉnh khe môi cục bộ (hành trình ≈ 1–2,5 mm) để đều chiều dày tấm.",
    "used_by": [
     "die_flex_lip:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1487,14 +1662,19 @@
      "drev-I5"
     ]
    },
-   "notes": "c055.value = 2275 (lb) là khối lượng khuôn Cloeren, không liên quan fact này; chỉ lấy 0,040″."
+   "notes": "c055.value = 2275 (lb) là khối lượng khuôn Cloeren, không liên quan fact này; chỉ lấy 0,040″.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "741321a5a47c": {
    "vi": "Dải môi rộng 2 400, khe làm việc 0,5–2 mm tại Z = 1 200, X = 9 576; là phần mũi của nửa trên phía sau rãnh bản lề hở (X 9 392–9 404, suốt bề rộng, gân 12 mm).",
    "used_by": [
     "die_flex_lip:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1552,14 +1732,19 @@
      "drev-I5"
     ]
    },
-   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn; trong fact đầu chỉ dùng ý \"môi mềm nằm trong nửa trên\"."
+   "notes": "W1 của c056: giá trị 3500 là dải bề rộng khuôn; trong fact đầu chỉ dùng ý \"môi mềm nằm trong nửa trên\".",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "c25ba16480ba": {
    "vi": "Bulông nhiệt bắc qua rãnh (ren trong thân phía trước rãnh), đầu bulông tì lên môi tại X 9 440 (cách gân 36 mm), nên môi uốn quanh gân.",
    "used_by": [
     "die_flex_lip:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1593,14 +1778,19 @@
      "drev-I5"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "905f0498f7a6": {
    "vi": "Đấu dây 20 vùng nhiệt khuôn (≈ 50 kW).",
    "used_by": [
     "die_heater_boxes:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1634,14 +1824,19 @@
      "c055"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "1eff208002ba": {
    "vi": "2 hộp dài (trên Z 1 330–1 440, dưới Z 960–1 070) chạy Y ±1 250, chừa giữa ±260 cho bích vào; tem cảnh báo vàng.",
    "used_by": [
     "die_heater_boxes:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1673,14 +1868,19 @@
      "c055"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "598f42a0ee60": {
    "vi": "Dẫn cáp 20 vùng nhiệt khuôn từ hộp đầu nối tới hộp đấu dây khuôn; có phích cắm để tách khuôn.",
    "used_by": [
     "die_heater_conduit:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1711,14 +1911,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "14e3c8bf0e23": {
    "vi": "Ống mềm kim loại Ø40.",
    "used_by": [
     "die_heater_conduit:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1737,14 +1942,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "d0a2ad9efc89": {
    "vi": "Tập trung cáp nhiệt khuôn (20 vùng), 94 mạch bulông nhiệt, cảm biến; phích cắm để tách khuôn; nút dừng khẩn.",
    "used_by": [
     "die_junction_box:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1797,14 +2007,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "fd1743a2ed52": {
    "vi": "Tủ đứng RAL 7035 600 × 300 × 1 000 trên sàn, cửa hướng +Y, đặt ngoài ray xe khuôn để không đi theo xe.",
    "used_by": [
     "die_junction_box:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1826,14 +2041,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "b94886ab16e5": {
    "vi": "Nóc: 2 ổ cắm nhiều chân cho bó cáp bulông nhiệt, 1 ổ cho cáp nhiệt khuôn; nút dừng khẩn đỏ trên cửa.",
    "used_by": [
     "die_junction_box:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1865,14 +2085,19 @@
      "rev-I6"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "563259d6b304": {
    "vi": "Cẩu khuôn khi lắp/tháo.",
    "used_by": [
     "die_lifting_lugs:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1892,14 +2117,19 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "4c3a618a552d": {
    "vi": "4 tai cẩu M36 cao 130, 2 trên mỗi tấm đầu tại X 9 190 và 9 470, |Y| = 1 337 (ngoài mặt trục ±1 300, trước cổ trục X ≥ 9 626).",
    "used_by": [
     "die_lifting_lugs:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1940,14 +2170,19 @@
      "rev-C1"
     ]
    },
-   "notes": "Ảnh web-07 (KM) có 2 tai cẩu ở giữa mặt đỉnh; thiết kế đặt 4 tai ở hai tấm đầu theo review C1."
+   "notes": "Ảnh web-07 (KM) có 2 tai cẩu ở giữa mặt đỉnh; thiết kế đặt 4 tai ở hai tấm đầu theo review C1.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "e83fcd682043": {
    "vi": "Đẩy môi mềm theo điều khiển tự động (giãn nở nhiệt), chỉnh profin chiều dày ngang tấm.",
    "used_by": [
     "die_thermal_bolts:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1988,14 +2223,19 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "c0ef067bde88": {
    "vi": "94 bulông, y = −1 181 + 25,4·k (k = 0…93); mỗi bulông Ø30 (thân Ø16 trong ống gia nhiệt 80 W) dài 170, trục từ (9 440, y, 1 295) tới (9 342, y, 1 434), tức 35° so với phương đứng, nằm dọc mặt vát của nửa trên.",
    "used_by": [
     "die_thermal_bolts:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -2061,14 +2301,19 @@
      "rev-C1"
     ]
    },
-   "notes": "Ø30 lớn hơn bước 25,4: nếu Ø30 là đường kính ngoài thì hai bulông kề nhau chồng nhau 4,6 mm; thân Ø16 trong ống gia nhiệt thì hợp lý. Kiểm lại số Ø30 (parts.json item_mm [30, 30, 170])."
+   "notes": "Ø30 lớn hơn bước 25,4: nếu Ø30 là đường kính ngoài thì hai bulông kề nhau chồng nhau 4,6 mm; thân Ø16 trong ống gia nhiệt thì hợp lý. Kiểm lại số Ø30 (parts.json item_mm [30, 30, 170]).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "b312e5fce503": {
    "vi": "Đầu bulông nằm trong rãnh phay, nhô tối đa 30 mm khỏi mặt vát, còn ≈ 20 mm khe hở tới trục giữa (đã kiểm tra bằng hình học).",
    "used_by": [
     "die_thermal_bolts:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -2094,14 +2339,19 @@
      "rev-C1"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   },
   "260e2898a4b7": {
    "vi": "positions_mm là tâm bulông; item_mm = [Ø, Ø, dài] theo hệ trục riêng của bulông, trục dài là item_axis.",
    "used_by": [
     "die_thermal_bolts:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -2127,7 +2377,12 @@
      "rev-C1"
     ]
    },
-   "notes": "Dòng quy ước dữ liệu của mô hình, không phải thông tin về máy thật; cân nhắc có nên hiện trong panel."
+   "notes": "Dòng quy ước dữ liệu của mô hình, không phải thông tin về máy thật; cân nhắc có nên hiện trong panel.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-die.md"
+   }
   }
  }
 }
