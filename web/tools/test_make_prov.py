@@ -268,6 +268,19 @@ class Check(unittest.TestCase):
         self.assertEqual(d['sources']['c001']['kind'], 'claim')
         self.assertNotIn('units', json.dumps(d))
 
+    def test_device_source_for_lines_without_facts(self):
+        out = os.path.join(self.tmp, 'out')
+        M.build(self.devices, os.path.join(self.tmp, 'lines'), REG, {}, False, out, images=False)
+        d = M.load_json(os.path.join(out, 'barrel_b3.json'))
+        ds = d['device_source']
+        self.assertIn('c001 D = 169', ds['clauses'][0]['text'])
+        self.assertEqual([c['assumed'] for c in ds['clauses']][-1], True)
+        self.assertIn('c001', ds['refs'])
+        for r in ds['refs']:
+            self.assertIn(r, d['sources'])
+        drip = M.load_json(os.path.join(out, 'base_drip_tray.json'))['device_source']
+        self.assertTrue(drip['clauses'][0]['assumed'])
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=1)

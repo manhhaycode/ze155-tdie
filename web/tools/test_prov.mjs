@@ -47,6 +47,8 @@ for (const d of devices) {
       for (const r of fact.refs ?? []) ok(r in prov.sources, `${d.device_id}: ref ${r} in sources`)
     }
   }
+  ok(Array.isArray(prov.device_source?.clauses), `${d.device_id}: device_source`)
+  for (const r of prov.device_source?.refs ?? []) ok(r in prov.sources, `${d.device_id}: device ref ${r} in sources`)
   ok(lineFor(prov, 'function', 0, (d.function_vi ?? '') + ' (đổi)') === null, `${d.device_id}: changed text gives no line (drift)`)
   const c = countLevels(prov, shown)
   ok(Object.values(c).reduce((a, b) => a + b, 0) === shown.length, `${d.device_id}: counts add up`)

@@ -227,7 +227,6 @@
 /* 26 px hit area around the 18 px mark */
 .ze-panel .ze-prov::after { content: ''; position: absolute; inset: -4px; }
 .ze-panel button.ze-prov:hover { background: rgba(255, 255, 255, 0.12); }
-.ze-panel span.ze-prov { cursor: help; }
 [data-level='sourced'] { --lv: var(--ze-ok); }
 [data-level='derived'] { --lv: var(--ze-der); }
 [data-level='assumption'] { --lv: var(--ze-asm); }
@@ -279,6 +278,11 @@
 .ze-dlg-body { flex: 1; min-height: 0; padding: 10px 14px 14px; overflow-y: auto; overscroll-behavior: contain; }
 .ze-dlg-level { padding-bottom: 8px; color: var(--ze-fg-2); }
 .ze-tag { display: inline-flex; gap: 4px; margin: 0 !important; color: var(--lv); font-size: 12px; font-weight: 600; }
+.ze-dlg-sub { margin: 4px 0 6px; font-size: 13px; font-weight: 600; }
+.ze-devsrc { padding-left: 10px; border-left: 3px solid var(--lv); }
+.ze-clauses { margin: 0 0 6px; padding-left: 16px; }
+.ze-clauses li { margin-bottom: 3px; }
+.ze-clause-tag { margin-left: 6px !important; font-weight: 500; }
 .ze-facts { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
 .ze-fact { padding-left: 10px; border-left: 3px solid var(--lv); }
 .ze-fact-text { font-size: 13px; }

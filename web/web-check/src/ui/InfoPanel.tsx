@@ -56,7 +56,7 @@ export function InfoPanel() {
           <ProvBadge
             line={lineFor(prov, kind, index, vi)}
             loc={loc}
-            onOpen={(line: ProvLine, opener) => setOpen({ line, text, label, device: dev.device_id, opener })}
+            onOpen={(line: ProvLine | null, opener) => setOpen({ line, text, label, device: dev.device_id, opener })}
           />
         </span>
       </>

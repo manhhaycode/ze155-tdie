@@ -53,7 +53,15 @@ export interface DocSource {
   pin?: string
 }
 export type ProvSource = ClaimSource | FigureSource | PhotoSource | DocSource
-export interface ProvDevice { version: number; device_id: string; lines: ProvLine[]; sources: Record<string, ProvSource> }
+/** the device's own source note in the design (design/parts.json `source`), split at ';'; shown for lines without facts */
+export interface DeviceSource { clauses: { text: string; assumed: boolean }[]; refs: string[] }
+export interface ProvDevice {
+  version: number
+  device_id: string
+  lines: ProvLine[]
+  device_source?: DeviceSource
+  sources: Record<string, ProvSource>
+}
 
 /** a line the panel shows: the function (index 0) or a details line */
 export interface PanelLine { kind: LineKind; index: number; vi: string }

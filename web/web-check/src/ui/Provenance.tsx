@@ -8,26 +8,19 @@ import './ui.css'
 const GLYPH: Record<LevelOrUnknown, string> = { sourced: '✓', derived: '≈', assumption: '⚠', unknown: '?' }
 const SUMMARY_ORDER: LevelOrUnknown[] = ['sourced', 'derived', 'assumption', 'unknown']
 
-/** the mark at the end of a line; "?" (not a button) when the line has no published source */
-export function ProvBadge({ line, loc, onOpen }: { line: ProvLine | null; loc: Loc; onOpen(line: ProvLine, opener: HTMLElement): void }) {
+/** the mark at the end of a line; "?" when the line has no facts yet: it opens the device's own source note */
+export function ProvBadge({ line, loc, onOpen }: { line: ProvLine | null; loc: Loc; onOpen(line: ProvLine | null, opener: HTMLElement): void }) {
   const P = loc.T.prov
-  if (!line?.level) {
-    return (
-      <span className="ze-prov" data-level="unknown" role="img" aria-label={P.level.unknown} title={P.levelHint.unknown}>
-        ?
-      </span>
-    )
-  }
-  const level = line.level
+  const level = line?.level ?? 'unknown'
   return (
     <button
       type="button"
       className="ze-prov"
       data-level={level}
       aria-haspopup="dialog"
-      aria-label={P.open(P.level[level])}
+      aria-label={line?.level ? P.open(P.level[level]) : P.unknownOpen}
       title={`${P.level[level]}: ${P.levelHint[level]}`}
-      onClick={(e) => onOpen(line, e.currentTarget)}
+      onClick={(e) => onOpen(line?.level ? line : null, e.currentTarget)}
     >
       {GLYPH[level]}
     </button>
@@ -53,7 +46,8 @@ export function ProvSummary({ prov, shown, loc }: { prov: ProvDevice; shown: Pan
 }
 
 export interface OpenLine {
-  line: ProvLine
+  /** null: the line has no facts yet, the dialog shows the device's source note */
+  line: ProvLine | null
   /** the line as the panel shows it (Japanese when there is a translation) */
   text: string
   /** "Chức năng" / "Chi tiết 3/6" */
@@ -120,6 +114,8 @@ export function ProvDialog({ prov, open, device, loc, onClose }: { prov: ProvDev
             <img src={z.large} width={z.w} height={z.h} alt={z.kind === 'figure' ? P.catalogue(z.page) : z.title} />
             <SourceCard id={zoom!} src={z} loc={loc} />
           </div>
+        ) : !line?.level ? (
+          <DeviceSourceView prov={prov} loc={loc} onZoom={setZoom} />
         ) : (
           <>
             {line.level && (
@@ -140,6 +136,42 @@ export function ProvDialog({ prov, open, device, loc, onClose }: { prov: ProvDev
       </div>
     </dialog>,
     document.body,
+  )
+}
+
+function DeviceSourceView({ prov, loc, onZoom }: { prov: ProvDevice; loc: Loc; onZoom(id: string): void }) {
+  const P = loc.T.prov
+  const ds = prov.device_source
+  return (
+    <>
+      <p className="ze-dlg-level" data-level="unknown">
+        <span className="ze-tag">
+          <span aria-hidden="true">{GLYPH.unknown}</span> {P.level.unknown}
+        </span>{' '}
+        {P.deviceSourceNote}
+      </p>
+      {ds?.clauses.length ? (
+        <section className="ze-devsrc" data-level="unknown">
+          <h3 className="ze-dlg-sub">{P.deviceSourceTitle}</h3>
+          <ul className="ze-clauses" lang="vi">
+            {ds.clauses.map((c, i) => (
+              <li key={i}>
+                {c.text}
+                {c.assumed && (
+                  <span className="ze-tag ze-clause-tag" data-level="assumption" lang={loc.lang}>
+                    <span aria-hidden="true">{GLYPH.assumption}</span> {P.designSaysAssumed}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+          {P.original('vi') && <p className="ze-src-meta">{P.original('vi')}</p>}
+          {ds.refs.map((r) => prov.sources[r] && <SourceCard key={r} id={r} src={prov.sources[r]} loc={loc} onZoom={onZoom} />)}
+        </section>
+      ) : (
+        <p className="ze-muted">{P.noDeviceSource}</p>
+      )}
+    </>
   )
 }
 

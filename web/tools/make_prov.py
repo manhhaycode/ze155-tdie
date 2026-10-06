@@ -656,10 +656,16 @@ def build(devices, lines_dir, reg, i18n, strict, out_dir=OUT, images=True):
     os.makedirs(out_dir, exist_ok=True)
     img_dir = os.path.join(out_dir, 'img')
     by_dev, cache = {}, {}
+    part_src = {p['id']: p.get('source', '') for p in parts()}
     for ln in device_lines(devices):
         by_dev.setdefault(ln['device'], []).append(ln)
     for dev, lns in by_dev.items():
         lines, refs = [], []
+        # the device's own source note (design/parts.json), shown for lines without facts ("?")
+        src_text = part_src.get(dev, '')
+        dev_refs = [t for t in tokens_of(src_text) if resolve(t, reg)]
+        device_source = {'clauses': [{'text': c.strip(), 'assumed': bool(re.search(r'giả định|ước', c))}
+                                     for c in src_text.split(';') if c.strip()], 'refs': dev_refs}
         for ln in lns:
             _g, e = entries[line_key(ln['vi'])]
             on = e.get('status') in ('curated', 'verified') and e.get('facts')
@@ -669,12 +675,13 @@ def build(devices, lines_dir, reg, i18n, strict, out_dir=OUT, images=True):
                 refs += [r for r in f.get('refs') or [] if r not in refs]
             lines.append({'kind': ln['kind'], 'index': ln['index'], 'vi': ln['vi'],
                           'level': weakest(e['facts']) if on else None, 'facts': facts})
+        refs += [r for r in dev_refs if r not in refs]
         sources = {}
         for r in refs:
             if r not in cache:
                 cache[r] = public_source(r, reg, i18n, img_dir, images)
             sources[r] = cache[r]
-        doc = {'version': 1, 'device_id': dev, 'lines': lines, 'sources': sources}
+        doc = {'version': 1, 'device_id': dev, 'lines': lines, 'device_source': device_source, 'sources': sources}
         blob = json.dumps(doc, ensure_ascii=False, sort_keys=True)
         for s in DENY_STRINGS:
             if s in blob:
