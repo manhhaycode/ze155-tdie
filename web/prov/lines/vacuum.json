@@ -7,7 +7,7 @@
    "used_by": [
     "vac_bellows:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -46,14 +46,19 @@
      "cat-p01"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "1646edcb8130": {
    "vi": "Cút 90° DN150 từ đỉnh van (Z 2 260) lên tâm Z 2 300 rồi quay về −Y; ống xếp inox DN150 dài 200 (Y −120 … −320), 2 bích.",
    "used_by": [
     "vac_bellows:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -94,14 +99,19 @@
      "cat-p01"
     ]
    },
-   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, nhưng mô hình đặt ống xếp nằm ngang sau cút (Y −120 … −320). Ống mềm thật trên trang 1 dài và cong, mô hình dùng đoạn ngắn thẳng."
+   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, nhưng mô hình đặt ống xếp nằm ngang sau cút (Y −120 … −320). Ống mềm thật trên trang 1 dài và cong, mô hình dùng đoạn ngắn thẳng.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "d586c87e4ec0": {
    "vi": "Hấp thụ giãn nở nhiệt giữa vòm B3 và ống.",
    "used_by": [
     "vac_bellows_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -131,14 +141,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "7be59abbfb78": {
    "vi": "Ống xếp inox DN100 dài 160.",
    "used_by": [
     "vac_bellows_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -168,14 +183,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "e0808603f109": {
    "vi": "Chỉnh mức chân không chung và phá chân không trước khi mở vòm.",
    "used_by": [
     "vac_bleed_valve:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -194,14 +214,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "c2c6f611d3ae": {
    "vi": "Van kim + van bi nhỏ tay đỏ trên đỉnh ống ra, cao ≈ 1,7 m để thao tác từ sàn.",
    "used_by": [
     "vac_bleed_valve:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -231,14 +256,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "092b97df51d4": {
    "vi": "Khởi động bơm, đo áp, khoá liên động.",
    "used_by": [
     "vac_control_box:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -267,14 +297,19 @@
      "web-15"
     ]
    },
-   "notes": "web-15 là cụm Busch (hãng khác, W2) nên chỉ xếp ≈, không ✓. Bộ nguồn không có tài liệu về khoá liên động của cụm chân không."
+   "notes": "web-15 là cụm Busch (hãng khác, W2) nên chỉ xếp ≈, không ✓. Bộ nguồn không có tài liệu về khoá liên động của cụm chân không.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "eb7794a1e051": {
    "vi": "Hộp 400 × 200 × 800, công tắc chính đỏ-vàng, đèn báo; mặt hướng +Y ra lối đi.",
    "used_by": [
     "vac_control_box:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -313,14 +348,19 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "94f471c4cbb3": {
    "vi": "Xả nước ngưng khi máy đang chạy mà không phá chân không.",
    "used_by": [
     "vac_drain:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -353,14 +393,19 @@
      "web-15"
     ]
    },
-   "notes": "web-15 là hãng khác (Busch), nên phần van xả đáy chỉ là ≈."
+   "notes": "web-15 là hãng khác (Busch), nên phần van xả đáy chỉ là ≈.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "236ddc5b5332": {
    "vi": "Nồi Ø300 cao 350 (Z 50–400) trên 3 chân ngắn, nằm giữa 3 chân bình tách.",
    "used_by": [
     "vac_drain:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -392,14 +437,19 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "65789067ec27": {
    "vi": "Van trên (thường mở) ở Z 400–450, van thông hơi trên nắp nồi, van xả đáy; 3 tay van màu đỏ.",
    "used_by": [
     "vac_drain:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -432,14 +482,19 @@
      "web-15"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "a2f4f986f6c0": {
    "vi": "Xả: đóng van trên, mở thông hơi, mở van xả; xong đóng lại rồi mở van trên.",
    "used_by": [
     "vac_drain:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -461,14 +516,19 @@
      "web-15"
     ]
    },
-   "notes": "Trình tự không có bước hút lại nồi trước khi mở van trên; bộ nguồn không có tài liệu để đối chiếu."
+   "notes": "Trình tự không có bước hút lại nồi trước khi mở van trên; bộ nguồn không có tài liệu để đối chiếu.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "0216f8032398": {
    "vi": "Xả khí sau bơm ra ngoài nhà xưởng.",
    "used_by": [
     "vac_exhaust:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -487,14 +547,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "e5055c305835": {
    "vi": "Ống DN100 đứng có bình giảm thanh, đầu trên để hở 'ra ngoài'.",
    "used_by": [
     "vac_exhaust:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -511,14 +576,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "1998be9374d6": {
    "vi": "Hiển thị mức chân không tại vòm cho người vận hành.",
    "used_by": [
     "vac_gauge_dome:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -539,14 +609,19 @@
      "cat-p01"
     ]
    },
-   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định."
+   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "9667f5bc1022": {
    "vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất tuyệt đối (truyền tín hiệu).",
    "used_by": [
     "vac_gauge_dome:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -573,14 +648,19 @@
      "cat-p01"
     ]
    },
-   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định."
+   "notes": "Ghi chú nguồn của thiết kế nói p01 có đồng hồ trên đường chân không, nhưng trang 1 catalogue không thấy đồng hồ chân không nào trên vòm hay ống; giữ giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "f25c32a32955": {
    "vi": "Hiển thị mức chân không vùng 1.",
    "used_by": [
     "vac_gauge_dome_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -601,14 +681,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "f009434beb8e": {
    "vi": "Đồng hồ Ø100 mặt hướng +Y + cảm biến áp suất.",
    "used_by": [
     "vac_gauge_dome_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -629,19 +714,24 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "dca1b510efe4": {
    "vi": "Dẫn hơi và khí từ vòm B5 tới bình tách ngưng.",
    "used_by": [
     "vac_pipe:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
-     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "text_vi": "Hệ khử khí Busch PLASTEX: bơm chân không với bình lọc đứng đặt trước bơm, giữ lại ngưng tụ và chất rắn",
+     "text_ja": "Busch PLASTEX 脱気システム:真空ポンプと、その上流で凝縮物と固形物を捕集する縦型フィルター",
      "refs": [
       "c060"
      ]
@@ -667,14 +757,19 @@
      "rev-M4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "9c13f0630912": {
    "vi": "Ống inox DN150 (OD 168) đi ngang theo −Y ở tâm Z 2 300 (đáy ống Z 2 216, trên lối đi 2 100), xuống bình tách tại Y −2 700.",
    "used_by": [
     "vac_pipe:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -717,30 +812,38 @@
      "rev-M4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "aee366ff2e86": {
    "vi": "Dẫn khí sau tách ngưng tới bơm Roots.",
    "used_by": [
     "vac_pipe_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
-     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "text_vi": "Hệ khử khí Busch PLASTEX: bơm chân không với bình lọc đứng đặt trước bơm, giữ lại ngưng tụ và chất rắn",
+     "text_ja": "Busch PLASTEX 脱気システム:真空ポンプと、その上流で凝縮物と固形物を捕集する縦型フィルター",
      "refs": [
       "c060"
      ]
     },
     {
-     "level": "sourced",
-     "text_vi": "Dây chuyền tấm PET không sấy dùng bơm Roots hai cấp (chân không tới hạn ≈ 10 Pa, nguồn nhà sản xuất TQ)",
-     "text_ja": "未乾燥 PET シートラインは二段ルーツ真空ポンプを使う(到達真空 ≈ 10 Pa、中国メーカー資料)",
+     "level": "derived",
+     "text_vi": "Bơm Roots hai cấp: chọn theo một nhà sản xuất dây chuyền tấm PET không sấy (chân không tới hạn ≈ 10 Pa)",
+     "text_ja": "2 段ルーツポンプ:未乾燥 PET シートラインのメーカー資料に基づいて選定(到達真空度 ≈ 10 Pa)",
      "refs": [
       "c062"
-     ]
+     ],
+     "was": "sourced",
+     "reason_vi": "c062 có độ tin cậy thấp (trang của một nhà sản xuất Trung Quốc) nên không xếp có nguồn; thiết kế chọn loại bơm Roots hai cấp dựa theo nguồn này. Không dùng cho cỡ bơm.",
+     "reason_ja": "c062 は信頼度が低い(中国メーカーのサイト)ため「出典あり」とはしない。設計はこの資料に基づいて 2 段ルーツポンプを選んだ。ポンプの大きさには使わない。"
     }
    ],
    "seed": {
@@ -751,14 +854,19 @@
      "drev-M1"
     ]
    },
-   "notes": "c062 có độ tin cậy thấp (trang web nhà sản xuất Trung Quốc); chỉ dùng để nói loại bơm Roots hai cấp, không dùng cho cỡ bơm."
+   "notes": "c062 độ tin cậy thấp: fact bơm Roots hạ xuống ≈ (kiểm 2026-10-06).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "bc1ae05e11e8": {
    "vi": "Ống inox DN150 (OD 168), bằng cỡ bích hút của bơm Roots; vận tốc ≈ 30 m/s ở 2 000 m³/h.",
    "used_by": [
     "vac_pipe_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -789,19 +897,24 @@
      "drev-M1"
     ]
    },
-   "notes": "v tính với đường kính trong danh nghĩa 150 mm (≈ 31 m/s). Nếu dùng OD 168 trừ thành ≈ 3 mm thì ≈ 27 m/s; số ≈ 30 vẫn đúng bậc."
+   "notes": "v tính với đường kính trong danh nghĩa 150 mm (≈ 31 m/s). Nếu dùng OD 168 trừ thành ≈ 3 mm thì ≈ 27 m/s; số ≈ 30 vẫn đúng bậc.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "0dc6cc3c1f2f": {
    "vi": "Dẫn hơi nước từ vòm B3 tới cổng bên của bình tách ngưng.",
    "used_by": [
     "vac_pipe_3:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
-     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "text_vi": "Hệ khử khí Busch PLASTEX: bơm chân không với bình lọc đứng đặt trước bơm, giữ lại ngưng tụ và chất rắn",
+     "text_ja": "Busch PLASTEX 脱気システム:真空ポンプと、その上流で凝縮物と固形物を捕集する縦型フィルター",
      "refs": [
       "c060"
      ]
@@ -826,14 +939,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "f2d070074b9e": {
    "vi": "Ống inox DN100 (OD 114): lên đứng ngoài vỏ che tại Y −560 tới Z 2 250, đi ngang về −Y tới Y −2 700, theo +X tới X 3 700, xuống tới Z 1 400 rồi vào bình tách.",
    "used_by": [
     "vac_pipe_3:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -864,14 +982,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "fbe265ecb6e0": {
    "vi": "Đỡ đoạn ống ngang DN150.",
    "used_by": [
     "vac_pipe_support:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -890,14 +1013,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "d6614929f365": {
    "vi": "Ống thép Ø100 có tấm đế và đai ôm trên đỉnh, tại Y −1 900 (ngoài lối đi dọc khung).",
    "used_by": [
     "vac_pipe_support:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -924,19 +1052,24 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "2d8d6e2b1f51": {
    "vi": "Tạo chân không 5–20 mbar cho vòm B5 và ≈ 50 mbar (qua van tiết lưu) cho vòm B3.",
    "used_by": [
     "vac_pump_unit:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
-     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "text_vi": "Hệ khử khí Busch PLASTEX: bơm chân không với bình lọc đứng đặt trước bơm, giữ lại ngưng tụ và chất rắn",
+     "text_ja": "Busch PLASTEX 脱気システム:真空ポンプと、その上流で凝縮物と固形物を捕集する縦型フィルター",
      "refs": [
       "c060"
      ]
@@ -966,22 +1099,30 @@
      "design-7"
     ]
    },
-   "notes": "spec-3 ghi \"1–10 mbar\" dẫn c062, nhưng c062 nêu 10 Pa (≈ 0,1 mbar, mức tới hạn): lệch bậc so với specs. Thiết kế dùng 5–20 mbar, không khớp cả hai số."
+   "notes": "spec-3 ghi \"1–10 mbar\" dẫn c062, nhưng c062 nêu 10 Pa (≈ 0,1 mbar, mức tới hạn): lệch bậc so với specs. Thiết kế dùng 5–20 mbar, không khớp cả hai số.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "64bdd57eaf2d": {
    "vi": "Khung skid thép đen 1 800 × 1 100: bơm Roots ≈ 2 000 m³/h trên bơm trục vít khô ≈ 400 m³/h làm mát bằng nước, động cơ, giảm thanh.",
    "used_by": [
     "vac_pump_unit:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
-     "level": "sourced",
-     "text_vi": "Dây chuyền tấm PET không sấy dùng bơm Roots hai cấp (chân không tới hạn ≈ 10 Pa, nguồn nhà sản xuất TQ)",
-     "text_ja": "未乾燥 PET シートラインは二段ルーツ真空ポンプを使う(到達真空 ≈ 10 Pa、中国メーカー資料)",
+     "level": "derived",
+     "text_vi": "Bơm Roots hai cấp: chọn theo một nhà sản xuất dây chuyền tấm PET không sấy (chân không tới hạn ≈ 10 Pa)",
+     "text_ja": "2 段ルーツポンプ:未乾燥 PET シートラインのメーカー資料に基づいて選定(到達真空度 ≈ 10 Pa)",
      "refs": [
       "c062"
-     ]
+     ],
+     "was": "sourced",
+     "reason_vi": "c062 có độ tin cậy thấp (trang của một nhà sản xuất Trung Quốc) nên không xếp có nguồn; thiết kế chọn loại bơm Roots hai cấp dựa theo nguồn này. Không dùng cho cỡ bơm.",
+     "reason_ja": "c062 は信頼度が低い(中国メーカーのサイト)ため「出典あり」とはしない。設計はこの資料に基づいて 2 段ルーツポンプを選んだ。ポンプの大きさには使わない。"
     },
     {
      "level": "derived",
@@ -1029,14 +1170,19 @@
      "design-7"
     ]
    },
-   "notes": "Cỡ 2 000 và 400 m³/h lớn gấp ≈ 10 lần bơm tham khảo (c059, c063); design §9 mục 4 nói chưa có nguồn đáng tin. c062 độ tin cậy thấp, chỉ dùng cho loại bơm Roots hai cấp."
+   "notes": "Cỡ 2 000 và 400 m³/h lớn gấp ≈ 10 lần bơm tham khảo (c059, c063); design §9 mục 4 nói chưa có nguồn đáng tin. c062 độ tin cậy thấp, chỉ dùng cho loại bơm Roots hai cấp.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "607049eac9ba": {
    "vi": "Vỏ bơm đen/cam như web-15; ống góp nước vào/ra ở mặt −X, Z 400.",
    "used_by": [
     "vac_pump_unit:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1070,14 +1216,19 @@
      "design-7"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "886ac2d691b1": {
    "vi": "Tiết lưu để vùng 1 giữ ≈ 50 mbar trong khi vùng 2 vẫn đạt 5–20 mbar trên cùng cụm bơm.",
    "used_by": [
     "vac_reg_valve_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1100,14 +1251,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "841436373582": {
    "vi": "Van tiết lưu tay quay DN100 trên đoạn ống đứng, tay quay hướng +Y ở cao 1,65 m; đồng hồ chân không nhỏ bên cạnh.",
    "used_by": [
     "vac_reg_valve_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1136,19 +1292,24 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "6627e3a84e16": {
    "vi": "Ngưng và gom hơi nước, oligome, bụi của cả hai vùng chân không trước bơm.",
    "used_by": [
     "vac_separator:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ hút chân không khi khử khí nóng chảy gồm bơm và bình lọc đứng đặt phía trước bơm, giữ ngưng tụ và chất rắn của dòng hút",
-     "text_ja": "溶融樹脂の脱気用真空システムは、ポンプとその上流の縦型フィルターから成り、凝縮物と固形分を捕集する",
+     "text_vi": "Hệ khử khí Busch PLASTEX: bơm chân không với bình lọc đứng đặt trước bơm, giữ lại ngưng tụ và chất rắn",
+     "text_ja": "Busch PLASTEX 脱気システム:真空ポンプと、その上流で凝縮物と固形物を捕集する縦型フィルター",
      "refs": [
       "c060"
      ]
@@ -1183,19 +1344,24 @@
      "c063"
     ]
    },
-   "notes": "Câu \"buồng ngưng điều nhiệt + bơm vòng nước\" nằm ở phần claim của c063, không nằm trong dòng quote (chỉ có hàng bảng TK-V 160); kiểm lại trên tài liệu gốc. Oligome là kiến thức chung nên xếp giả định."
+   "notes": "Câu \"buồng ngưng điều nhiệt + bơm vòng nước\" nằm ở phần claim của c063, không nằm trong dòng quote (chỉ có hàng bảng TK-V 160); kiểm lại trên tài liệu gốc. Oligome là kiến thức chung nên xếp giả định.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "5e594d3f311a": {
    "vi": "Bình đứng Ø600 cao 1 450 (Z 450–1 900) trên 3 chân cao 450 (nâng 150 để đặt nồi xả), nắp bích bắt bulông, ống xoắn làm mát bên trong (nước 10–15 °C), kính thăm mức, đồng hồ chân không.",
    "used_by": [
     "vac_separator:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Bình tách/lọc đứng đặt trước bơm chân không",
-     "text_ja": "ポンプの手前に置く縦型のセパレーター/フィルター容器",
+     "text_vi": "Bình lọc đứng đặt trước bơm chân không (hệ khử khí Busch PLASTEX)",
+     "text_ja": "真空ポンプの上流に置く縦型フィルター容器(Busch PLASTEX 脱気システム)",
      "refs": [
       "c060"
      ]
@@ -1260,14 +1426,19 @@
      "c063"
     ]
    },
-   "notes": "web-15 là hãng Busch (W2) nên chỉ xếp ≈; ✓ chỉ dựa vào c060 (bình lọc đứng đặt trước bơm)."
+   "notes": "web-15 là hãng Busch (W2) nên chỉ xếp ≈; ✓ chỉ dựa vào c060 (bình lọc đứng đặt trước bơm).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "a5dbc0cad4e6": {
    "vi": "Cổng: nắp (vùng 2, DN150), bên −X ở Z 1 400 (vùng 1, DN100), ra bên +X ở Z 1 600 (DN150), 2 cổng nước bên +X ở Z 1 000 và 1 100.",
    "used_by": [
     "vac_separator:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1312,14 +1483,19 @@
      "c063"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "f3b8d288264e": {
    "vi": "Cách ly vòm B5 với đường hút khi mở vòm hoặc khởi động.",
    "used_by": [
     "vac_valve:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1340,14 +1516,19 @@
      "rev-M4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "2920662277c6": {
    "vi": "Van bướm DN150 đặt đứng trên nắp vòm (Z 2 150–2 260), bộ tác động khí nén vuông nằm ngang phía −Y (Y −300 … −110).",
    "used_by": [
     "vac_valve:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1385,14 +1566,19 @@
      "rev-M4"
     ]
    },
-   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, mô hình đặt van Z 2 150–2 260 rồi cút (xem dòng của vac_bellows)."
+   "notes": "Review M4 viết van và ống xếp đứng trên Z 2 150–2 400, mô hình đặt van Z 2 150–2 260 rồi cút (xem dòng của vac_bellows).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "a74b371a86ff": {
    "vi": "Ống khí Ø12 tới bộ tác động (util_air_tube_vac).",
    "used_by": [
     "vac_valve:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1414,14 +1600,19 @@
      "rev-M4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "86d6972b8463": {
    "vi": "Cách ly vòm B3 với đường hút.",
    "used_by": [
     "vac_valve_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1442,14 +1633,19 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   },
   "58d0c5ccc3bb": {
    "vi": "Van bi DN100 tay gạt đỏ.",
    "used_by": [
     "vac_valve_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1471,7 +1667,12 @@
      "rev-I4"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-vacuum.md"
+   }
   }
  }
 }
