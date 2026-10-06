@@ -7,23 +7,53 @@
    "used_by": [
     "ctrl_cable_drop:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Máy ZE có máng cáp thép mạ kẽm dọc khung đế mang cáp nhiệt; cáp từ khung chạy xuống sàn",
+     "text_ja": "ZE にはベースフレーム沿いに亜鉛めっき鋼製のケーブルトレイがあり、ヒーターケーブルを通す。ケーブルはフレームから床へ降りている",
+     "refs": [
+      "web-01",
+      "web-02"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Máng đứng nối máng cáp trên khung với hào sàn",
+     "text_ja": "垂直ダクトでフレーム上部のケーブルトレイと床トレンチをつなぐ",
+     "refs": [
+      "rev-I2|covered floor trench"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách đưa cáp từ máng khung xuống hào của máy này; chọn máng đứng nối máng khung với hào phẳng sàn vì dây chuyền đi cáp trong hào có nắp (review thiết kế I2).",
+     "reason_ja": "このマシンでフレーム上のトレイから床トレンチへケーブルを導く方法についての公開資料はない。蓋付きトレンチでケーブルを通す方針(設計レビュー I2)に合わせ、垂直ダクトで接続する案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Phần ✓ chỉ nói máy ZE thật có máng cáp mạ kẽm trên khung (web-01/02); máng đứng và đường xuống hào là thiết kế."
   },
   "477a4c72c90c": {
    "vi": "Máng đứng 300 × 100 áp mặt bên khung.",
    "used_by": [
     "ctrl_cable_drop:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Máng đứng 300 × 100 áp mặt bên khung",
+     "text_ja": "垂直ダクト 300 × 100 をフレーム側面に沿わせる",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về máng cáp đứng của máy ZE; kích thước 300 × 100 và vị trí áp mặt bên khung do thiết kế chọn (nguồn ghi \"giả định\"), không có phép tính đi kèm.",
+     "reason_ja": "ZE の垂直ケーブルダクトに関する公開資料はない。寸法 300 × 100 とフレーム側面への配置は設計で選んだ(出典欄に「仮定」と明記)。裏付けとなる計算はない。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -37,8 +67,19 @@
    "used_by": [
     "ctrl_cable_mv:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cáp trung thế đi trong hào rồi dựng lên hộp đấu dây động cơ",
+     "text_ja": "中圧ケーブルをトレンチ内に通し、立ち上げてモーター端子箱へ接続する",
+     "refs": [
+      "rev-I2|covered floor trench"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp động cơ của dây chuyền này; chọn hào có nắp phẳng sàn rồi dựng lên hộp đấu dây vì review thiết kế I2 chỉ ra cáp nằm trên sàn vắt qua lối đi.",
+     "reason_ja": "このラインのモーターケーブル経路についての公開資料はない。設計レビュー I2 でケーブルが床上で通路を横切っていると指摘されたため、蓋付き床トレンチを通して端子箱へ立ち上げる案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -52,23 +93,75 @@
    "used_by": [
     "ctrl_cable_mv:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "3 cáp trung thế (3 pha) trong ống bảo vệ Ø80",
+     "text_ja": "中圧ケーブル 3 本(3 相)を Ø80 の保護管に通す",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cáp động cơ của dây chuyền này; chọn 3 cáp một lõi cho 3 pha và ống bảo vệ Ø80 theo thông lệ, không có phép tính tiết diện.",
+     "reason_ja": "このラインのモーターケーブルに関する公開資料はない。3 相に対し単芯ケーブル 3 本、保護管 Ø80 は一般的な慣行に沿って選んだ。断面積の計算はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Dựng lên sát mặt bên khung (Y −1 100) rồi vào đáy hộp đấu dây",
+     "text_ja": "フレーム側面(Y −1 100)に沿って立ち上げ、端子箱の底面から入れる",
+     "refs": [
+      "rev-I2|MV cable and floor duct"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí đường dựng; Y −1 100 do thiết kế chọn, review thiết kế I2 dùng đúng vị trí này khi tính lối đi (350 mm tới cầu thang) và chuyển cáp vào hào có nắp.",
+     "reason_ja": "立ち上げ位置についての公開資料はない。Y −1 100 は設計で選んだ位置で、設計レビュー I2 はこの位置を基準に通路幅(階段まで 350 mm)を検討し、ケーブルを蓋付きトレンチへ移すよう指示した。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "Số 3 là 3 pha (thông lệ), không đếm trên ảnh."
   },
   "7fddb076a16c": {
    "vi": "Điều khiển 94 thanh nhiệt bulông theo profin chiều dày (bộ điều khiển riêng của hệ bulông nhiệt).",
    "used_by": [
     "ctrl_die_bolt_cabinet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Bulông nhiệt (bước 25,4 mm) tự động chỉnh môi khuôn theo profin chiều dày; màn hình điều khiển hiện chiều dày từng phần tử",
+     "text_ja": "サーマルボルト(ピッチ 25,4 mm)がダイリップを厚さプロファイルに応じて自動調整する。制御画面に各エレメントの厚さを表示する",
+     "refs": [
+      "c054",
+      "web-17"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "94 bulông nhiệt ≈ 2 400 / 25,4: khe môi rộng 2 400 chia cho bước bulông 25,4 mm",
+     "text_ja": "サーマルボルト 94 本 ≈ 2 400 / 25,4:リップ幅 2 400 をボルトピッチ 25,4 mm で割った値",
+     "refs": [
+      "c054",
+      "spec-5|≈ 94 bulông",
+      "spec-0|2 400"
+     ],
+     "reason_vi": "Bước 25,4 mm có trong c054, nhưng bề rộng khe môi 2 400 do thiết kế ước lượng (specs §0 ghi \"ước lượng\"), không có tài liệu về khuôn này; nên số 94 là giả định.",
+     "reason_ja": "ピッチ 25,4 mm は c054 にあるが、リップ幅 2 400 は設計上の推定値(仕様 §0 に「推定」と明記)で、このダイの資料はない。そのため 94 本は仮定。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Bộ điều khiển riêng của hệ bulông nhiệt, đặt trong tủ riêng",
+     "text_ja": "サーマルボルト専用のコントローラーを専用盤に収める",
+     "refs": [
+      "rev-I6|Real thermal-bolt systems come with their own controller cabinet",
+      "rev-I6|Thermal-bolt controller"
+     ],
+     "reason_vi": "Không có tài liệu công khai nói hệ bulông nhiệt cần tủ riêng; review thiết kế I6 nêu hệ bulông nhiệt thật đi kèm tủ điều khiển riêng và thêm ctrl_die_bolt_cabinet vào dãy tủ.",
+     "reason_ja": "サーマルボルトシステムに専用盤が必要だとする公開資料はない。設計レビュー I6 が「実機には専用コントローラー盤が付属する」として盤を追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; c054 (bulông nhiệt 80 W)"
@@ -78,15 +171,52 @@
      "c054"
     ]
    },
-   "notes": ""
+   "notes": "W2: web-17 là ảnh SBI Mechatronik (hãng khác), dùng cho ✓ vì thiết kế chọn đúng loại bulông nhiệt của SBI (c054: 80 W, bước 25,4; specs §5). Ảnh có màn hình \"Dickenmessung Regelung\" hiện chiều dày từng phần tử (≈ 60). Số 94 phụ thuộc bề rộng môi 2 400 do thiết kế ước nên để ⚠."
   },
   "21f184e2f48c": {
    "vi": "Tủ 800 × 600 × 2 000 RAL 7035, màn hình profin trên cửa.",
    "used_by": [
     "ctrl_die_bolt_cabinet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Tủ 800 × 600 × 2 000",
+     "text_ja": "盤 800 × 600 × 2 000",
+     "refs": [
+      "rev-I6|Thermal-bolt controller"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ tủ điều khiển bulông nhiệt; 800 × 600 × 2 000 do review thiết kế I6 chọn khi thêm tủ vào dãy tủ.",
+     "reason_ja": "サーマルボルト制御盤の寸法についての公開資料はない。800 × 600 × 2 000 は設計レビュー I6 が盤を盤列に追加する際に選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Màu RAL 7035 (xám sáng)",
+     "text_ja": "色は RAL 7035(ライトグレー)",
+     "refs": [
+      "web-06"
+     ],
+     "reason_vi": "Không có tài liệu công khai về mã RAL của KM; ảnh web-06 chỉ cho thấy tủ trắng / xám rất nhạt. Chọn RAL 7035 vì là xám sáng thông dụng cho tủ điện.",
+     "reason_ja": "KM の RAL コードについての公開資料はない。写真 web-06 では白〜ごく薄いグレーの盤が見えるだけ。RAL 7035 は制御盤で一般的な明るいグレーのため選んだ。"
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Màn hình hiện profin chiều dày (cột theo từng phần tử bulông) là giao diện của hệ bulông nhiệt tự động",
+     "text_ja": "厚さプロファイル(ボルトエレメントごとの棒グラフ)を表示する画面は、自動サーマルボルトシステムの操作画面",
+     "refs": [
+      "web-17"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Màn hình gắn trên cửa tủ",
+     "text_ja": "画面は盤の扉に取り付ける",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về chỗ gắn màn hình; chọn gắn trên cửa tủ vì đó là cách thường gặp với tủ điều khiển có màn hình.",
+     "reason_ja": "画面の取付位置についての公開資料はない。画面付き制御盤では扉に付けるのが一般的なため選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I6; c054 (bulông nhiệt 80 W)"
@@ -96,15 +226,39 @@
      "c054"
     ]
    },
-   "notes": ""
+   "notes": "W2 như dòng chức năng: web-17 là ảnh SBI (hãng khác), dùng cho ✓ vì đó là hệ bulông nhiệt thiết kế đã chọn. Ảnh chỉ cho thấy màn hình, không cho thấy nó nằm trên cửa tủ."
   },
   "1acbb1ec452a": {
    "vi": "Biến tần điều khiển tốc độ động cơ chính 1 500 kW.",
    "used_by": [
     "ctrl_drive_cabinet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Biến tần (VFD) điều khiển tốc độ động cơ chính",
+     "text_ja": "インバーター(VFD)で主モーターの速度を制御する",
+     "refs": [
+      "c003"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bộ truyền động của dây chuyền này; chọn động cơ AC chạy biến tần vì cần đổi tốc độ trục vít (tối đa 400 v/ph, c003); kiến thức chung về đùn, bộ nguồn không có tài liệu riêng.",
+     "reason_ja": "このラインの駆動方式についての公開資料はない。スクリュー回転数を変える必要がある(最大 400 rpm、c003)ため、AC モーターのインバーター駆動を選んだ。押出の一般知識で、資料セットに専用の資料はない。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Công suất động cơ chính 1 500 kW",
+     "text_ja": "主モーター出力 1 500 kW",
+     "refs": [
+      "design-3.1|Chọn cấp tiêu chuẩn kế tiếp là",
+      "c004",
+      "c013",
+      "c065"
+     ],
+     "reason_vi": "Catalogue chỉ cho công suất truyền động tối đa 2 930 kW của ZE 155 A UTi (c004) và nói công suất lắp đặt chọn theo bài toán (c013). Thiết kế chọn 1 500 kW: ≈ 800 kW cho 3 500 kg/h PET cộng dự phòng thành ≈ 1 400 kW, lên cấp chuẩn 1 500 kW trong khung AMI 450L4 (c065).",
+     "reason_ja": "カタログにあるのは ZE 155 A UTi の最大駆動出力 2 930 kW(c004)と、設置出力は工程に応じて選ぶという注記(c013)だけ。設計では 3 500 kg/h の PET に ≈ 800 kW、余裕を加えて ≈ 1 400 kW とし、AMI 450L4 フレーム(c065)の標準出力 1 500 kW を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (biến tần trung thế 3 kV ≈ 3,6 m; thường đặt phòng điện, ở đây đặt sau máy để thể hiện); mặt cửa ở Y −3 700 theo review-01 I2"
@@ -120,8 +274,37 @@
    "used_by": [
     "ctrl_drive_cabinet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "6 khoang RAL 7035: rộng 600, sâu 1 200, cao 2 400 kể cả đế",
+     "text_ja": "6 区画、RAL 7035、幅 600、奥行 1 200、ベース込みで高さ 2 400",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ tủ biến tần trung thế; thiết kế ước biến tần 3 kV dài ≈ 3,6 m = 6 × 600 và đặt sau máy để thể hiện (nguồn ghi \"giả định\").",
+     "reason_ja": "中圧インバーター盤の寸法についての公開資料はない。設計では 3 kV インバーターを ≈ 3,6 m = 6 × 600 と見積もり、見せるため機械の後方に置いた(出典欄に「仮定」と明記)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cửa mở về +Y, có lưới thông gió và đèn báo",
+     "text_ja": "扉は +Y 側に開き、通気グリルと表示灯を付ける",
+     "refs": [
+      "rev-I2|Cabinets:"
+     ],
+     "reason_vi": "Không có tài liệu công khai; chọn lưới thông gió và đèn báo vì tủ biến tần cần tản nhiệt và báo trạng thái. Mặt cửa ở Y −3 700 theo review thiết kế I2.",
+     "reason_ja": "公開資料はない。インバーター盤には放熱と状態表示が必要なため通気グリルと表示灯を選んだ。扉面は設計レビュー I2 により Y −3 700。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Trước cửa chừa ≥ 1 000 mm",
+     "text_ja": "扉の前に ≥ 1 000 mm の空間を確保",
+     "refs": [
+      "rev-I2|Plant practice is ≥ 1 000 mm in front of cabinets"
+     ],
+     "reason_vi": "Không có tài liệu công khai về khoảng trống trước tủ; review thiết kế I2 lấy \"thông lệ nhà máy ≥ 1 000 mm\" (không dẫn nguồn công khai) và dời cửa tủ ra Y −3 700.",
+     "reason_ja": "盤前の空間についての公開資料はない。設計レビュー I2 は「工場の通例として ≥ 1 000 mm」(公開資料の引用なし)とし、扉面を Y −3 700 に移した。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định (biến tần trung thế 3 kV ≈ 3,6 m; thường đặt phòng điện, ở đây đặt sau máy để thể hiện); mặt cửa ở Y −3 700 theo review-01 I2"
@@ -137,8 +320,19 @@
    "used_by": [
     "ctrl_estop_die:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nút dừng khẩn đặt ở khuôn, phía vận hành",
+     "text_ja": "非常停止ボタンをダイ部のオペレーター側に置く",
+     "refs": [
+      "drev-I2|There is none on the operator side of the melt line"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chỗ đặt nút dừng khẩn ở khuôn; chọn đặt ở khuôn phía +Y vì review bản vẽ I2 chỉ ra chưa có nút nào ở khuôn và deckle.",
+     "reason_ja": "ダイ部での非常停止ボタンの設置位置についての公開資料はない。図面レビュー I2 でダイとデッケル付近にボタンがないと指摘されたため、+Y 側のダイ部に置く案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -154,8 +348,53 @@
    "used_by": [
     "ctrl_estop_die:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn dạng nấm đỏ là thiết bị có trên dây chuyền ZE (thấy trên vỏ HMI của ZE 110 UT)",
+     "text_ja": "赤いキノコ型の非常停止ボタンは ZE のラインに実在する(ZE 110 UT の HMI 筐体で確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp vàng 100 × 80 × 140",
+     "text_ja": "黄色ボックス 100 × 80 × 140",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ hộp dừng khẩn; chọn 100 × 80 × 140, màu vàng an toàn, dùng chung cho mọi hộp dừng khẩn của thiết kế.",
+     "reason_ja": "非常停止ボックスの寸法についての公開資料はない。100 × 80 × 140、安全色の黄色を選び、設計内の全非常停止ボックスで共通にした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm (9 250, 1 450, 1 100)",
+     "text_ja": "中心 (9 250, 1 450, 1 100)",
+     "refs": [
+      "drev-I2|Add e-stop pushbuttons"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí; review bản vẽ I2 yêu cầu thêm nút dừng khẩn ở khuôn và deckle tại X ≈ 9 300, phía +Y; thiết kế đặt tâm tại (9 250, 1 450, 1 100).",
+     "reason_ja": "位置についての公開資料はない。図面レビュー I2 がダイとデッケルの X ≈ 9 300、+Y 側への追加を求め、設計は中心を (9 250, 1 450, 1 100) とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Trên cột ống Ø50 dựng từ tay đòn thấp (Z 300–400) gá vào đầu +Y của xe khuôn",
+     "text_ja": "低位アーム(Z 300–400)から立ち上げた Ø50 のパイプ支柱上、ダイカートの +Y 端に取り付ける",
+     "refs": [
+      "rev-I3|Electrics:"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cách gá nút dừng khẩn ở khuôn; tay đòn thấp trên xe khuôn do thiết kế chọn. Review I3 yêu cầu thiết bị điện không đi theo xe, nên cáp phải nối bằng phích cắm (dòng sau).",
+     "reason_ja": "ダイ部の非常停止ボタンの取付方法についての公開資料はない。ダイカート上の低位アームは設計で選んだ。設計レビュー I3 は電装品をカートに載せないよう求めているため、ケーブルはプラグ接続とする(次の行)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nằm ngoài tấm đầu khuôn (|Y| > 1 375) và trước khung cụm trục",
+     "text_ja": "ダイ端板の外側(|Y| > 1 375)で、ロールスタックフレームの手前に置く",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai; vị trí tránh va chạm do thiết kế chọn theo hình học mô hình (tấm đầu khuôn, khung cụm trục).",
+     "reason_ja": "公開資料はない。ダイ端板やロールスタックフレームとの干渉を避ける位置を、モデルの幾何に合わせて設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -164,15 +403,28 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "Hộp dừng khẩn gá trên xe khuôn, trong khi review thiết kế I3 yêu cầu không để thiết bị điện đi theo xe (die_junction_box đã dời xuống sàn); thiết kế xử lý bằng phích cắm (dòng details[1]) nên không mâu thuẫn hẳn."
   },
   "2805359b44ae": {
    "vi": "Cáp nối bằng phích cắm qua hộp đấu dây khuôn để xe khuôn kéo đi được.",
    "used_by": [
     "ctrl_estop_die:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cáp nối bằng phích cắm qua hộp đấu dây khuôn để xe khuôn kéo đi được",
+     "text_ja": "ケーブルはダイ端子箱経由のプラグ接続とし、ダイカートを引き出せるようにする",
+     "refs": [
+      "rev-I3|Electrics:",
+      "rev-I6|plug-in harness",
+      "web-17"
+     ],
+     "reason_vi": "Không có tài liệu công khai về dây nối nút dừng khẩn; chọn phích cắm vì xe khuôn phải rút ra được (review thiết kế I3, I6). Ảnh web-17 (hãng khác) chỉ cho thấy phích cắm nhiều chân trên cáp khuôn.",
+     "reason_ja": "非常停止ボタンの配線についての公開資料はない。ダイカートを引き出せるようにするためプラグ接続を選んだ(設計レビュー I3、I6)。写真 web-17(他社製)はダイのケーブルに付いた多極コネクターを示すだけ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -188,8 +440,18 @@
    "used_by": [
     "ctrl_estop_die:details[2]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hình bao theo mặt YZ là chữ L: tay đòn thấp Y 1 200–1 475, Z 300–400; cột Y 1 425–1 475 lên Z 1 030; hộp Y 1 410–1 490, Z 1 030–1 170",
+     "text_ja": "YZ 面の外形は L 字形:低位アーム Y 1 200–1 475、Z 300–400、支柱 Y 1 425–1 475 から Z 1 030 まで、ボックス Y 1 410–1 490、Z 1 030–1 170",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai; đây là hình bao dựng mô hình do thiết kế vẽ để ôm tay đòn, cột và hộp dừng khẩn.",
+     "reason_ja": "公開資料はない。アーム、支柱、非常停止ボックスを包むようモデル作成用に設計が描いた外形。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -198,15 +460,26 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "Dòng này là ghi chú dữ liệu mô hình (có tên trường outline_mm), không phải thông tin thiết bị thật; chỉ nên coi là giả định hình học."
   },
   "92ca1beb2358": {
    "vi": "Dừng khẩn khi thay lưới / xử lý ở bộ lọc phía vận hành.",
    "used_by": [
     "ctrl_estop_melt:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nút dừng khẩn đặt ở bộ lọc, phía vận hành",
+     "text_ja": "非常停止ボタンをスクリーンチェンジャー部のオペレーター側に置く",
+     "refs": [
+      "drev-I2|There is none on the operator side of the melt line"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chỗ đặt nút dừng khẩn ở bộ lọc; chọn đặt phía +Y vì review bản vẽ I2 chỉ ra chưa có nút nào ở chỗ thay lưới (X ≈ 6 900–7 200, +Y).",
+     "reason_ja": "スクリーンチェンジャー部の非常停止ボタンの設置位置についての公開資料はない。図面レビュー I2 でスクリーン交換位置(X ≈ 6 900–7 200、+Y)にボタンがないと指摘されたため、+Y 側に置く案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -222,8 +495,43 @@
    "used_by": [
     "ctrl_estop_melt:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn dạng nấm đỏ là thiết bị có trên dây chuyền ZE (thấy trên vỏ HMI của ZE 110 UT)",
+     "text_ja": "赤いキノコ型の非常停止ボタンは ZE のラインに実在する(ZE 110 UT の HMI 筐体で確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp vàng 100 × 80 × 140",
+     "text_ja": "黄色ボックス 100 × 80 × 140",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ hộp dừng khẩn; chọn 100 × 80 × 140, màu vàng an toàn, dùng chung cho mọi hộp dừng khẩn của thiết kế.",
+     "reason_ja": "非常停止ボックスの寸法についての公開資料はない。100 × 80 × 140、安全色の黄色を選び、設計内の全非常停止ボックスで共通にした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm (7 320, 650, 1 100)",
+     "text_ja": "中心 (7 320, 650, 1 100)",
+     "refs": [
+      "drev-I2|Add e-stop pushbuttons"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí; review bản vẽ I2 yêu cầu thêm nút dừng khẩn tại khoảng (7 000, +Y); thiết kế đặt tâm tại (7 320, 650, 1 100).",
+     "reason_ja": "位置についての公開資料はない。図面レビュー I2 が (7 000, +Y) 付近への追加を求め、設計は中心を (7 320, 650, 1 100) とした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Trên cột 60 × 60 gá vào mặt +Y của giá bộ lọc, ngay sau cụm xả ngược (X ≤ 7 200)",
+     "text_ja": "60 × 60 の支柱上、スクリーンチェンジャー架台の +Y 面に取り付け、バックフラッシュユニット(X ≤ 7 200)のすぐ後ろに置く",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai; cột 60 × 60 gá vào giá bộ lọc và vị trí sau cụm xả ngược do thiết kế chọn để đứng ở chỗ thay lưới là với tới nút.",
+     "reason_ja": "公開資料はない。60 × 60 の支柱をスクリーンチェンジャー架台に取り付け、バックフラッシュユニットの後ろに置く配置は、スクリーン交換位置から手が届くよう設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định"
@@ -239,8 +547,19 @@
    "used_by": [
     "ctrl_estop_platform:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nút dừng khẩn đặt trên sàn thao tác của cân cấp liệu",
+     "text_ja": "原料供給計量プラットフォーム上に非常停止ボタンを置く",
+     "refs": [
+      "rev-M3|Add an E-stop box on a mezzanine railing post"
+     ],
+     "reason_vi": "Không có tài liệu công khai về nút dừng khẩn trên sàn cân cấp liệu; design.md §1 liệt kê nút này nhưng ban đầu chưa có chi tiết, review thiết kế M3 yêu cầu thêm.",
+     "reason_ja": "計量プラットフォーム上の非常停止ボタンについての公開資料はない。design.md §1 に記載がありながら部品がなかったため、設計レビュー M3 が追加を求めた。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M3"
@@ -256,8 +575,35 @@
    "used_by": [
     "ctrl_estop_platform:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn dạng nấm đỏ là thiết bị có trên dây chuyền ZE (thấy trên vỏ HMI của ZE 110 UT)",
+     "text_ja": "赤いキノコ型の非常停止ボタンは ZE のラインに実在する(ZE 110 UT の HMI 筐体で確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Hộp vàng 100 × 80 × 140",
+     "text_ja": "黄色ボックス 100 × 80 × 140",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về cỡ hộp dừng khẩn; chọn 100 × 80 × 140, màu vàng an toàn, dùng chung cho mọi hộp dừng khẩn của thiết kế.",
+     "reason_ja": "非常停止ボックスの寸法についての公開資料はない。100 × 80 × 140、安全色の黄色を選び、設計内の全非常停止ボックスで共通にした。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Gắn trên cột lan can mép +Y của sàn thao tác",
+     "text_ja": "作業プラットフォームの +Y 縁の手すり支柱に取り付ける",
+     "refs": [
+      "rev-M3|Add an E-stop box on a mezzanine railing post"
+     ],
+     "reason_vi": "Không có tài liệu công khai về chỗ gắn; review thiết kế M3 chọn cột lan can mép +Y, tại (−450, 1 380, 4 000).",
+     "reason_ja": "取付位置についての公開資料はない。設計レビュー M3 が +Y 縁の手すり支柱、位置 (−450, 1 380, 4 000) を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 M3"
@@ -273,8 +619,19 @@
    "used_by": [
     "ctrl_estops:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dừng khẩn toàn dây chuyền từ các hộp đặt dọc máy phía vận hành, ở tầm tay",
+     "text_ja": "オペレーター側のライン沿いに置いたボックスから、手の届く高さでライン全体を非常停止する",
+     "refs": [
+      "rev-M3|Typical mounting is 0.6–1.7 m"
+     ],
+     "reason_vi": "Không có tài liệu công khai về bố trí nút dừng khẩn của dây chuyền ZE; chọn đặt dọc phía +Y, ở tầm 1,0–1,2 m theo \"thông lệ\" của review thiết kế M3 (không dẫn nguồn công khai).",
+     "reason_ja": "ZE ラインの非常停止ボタン配置についての公開資料はない。+Y 側のライン沿い、高さ 1,0–1,2 m を選んだ。高さは設計レビュー M3 の「通例」(公開資料の引用なし)による。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; cao độ theo review-01 M3"
@@ -290,8 +647,45 @@
    "used_by": [
     "ctrl_estops:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn dạng nấm đỏ là thiết bị có trên dây chuyền ZE (thấy trên vỏ HMI của ZE 110 UT)",
+     "text_ja": "赤いキノコ型の非常停止ボタンは ZE のラインに実在する(ZE 110 UT の HMI 筐体で確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "3 hộp vàng 100 × 80 × 140",
+     "text_ja": "黄色ボックス 3 個、100 × 80 × 140",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về số hộp và cỡ hộp dừng khẩn; chọn 3 hộp 100 × 80 × 140, màu vàng an toàn.",
+     "reason_ja": "非常停止ボックスの数と寸法についての公開資料はない。安全色の黄色で 100 × 80 × 140 を 3 個選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tâm Z 1 120 (tầm 1,05–1,19 m)",
+     "text_ja": "中心 Z 1 120(高さ 1,05–1,19 m)",
+     "refs": [
+      "rev-M3|Typical mounting is 0.6–1.7 m"
+     ],
+     "reason_vi": "Không có tài liệu công khai; review thiết kế M3 nâng hộp từ Z 480–620 lên Z 1 050–1 190 theo \"thông lệ 1,0–1,2 m\" (không dẫn nguồn công khai).",
+     "reason_ja": "公開資料はない。設計レビュー M3 が「通例 1,0–1,2 m」(公開資料の引用なし)に合わせ、ボックスを Z 480–620 から Z 1 050–1 190 に上げた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "X 600 trên cột gá 60 × 60 từ mặt khung (vùng nạp để lộ); X 3 700 trên tấm dưới vỏ C4; X 5 700 trên tấm dưới vỏ C1",
+     "text_ja": "X 600 はフレーム面から出した 60 × 60 の取付支柱上(供給部は開放のまま)、X 3 700 は C4 カバーの下板上、X 5 700 は C1 カバーの下板上",
+     "refs": [
+      "drev-I2|There is none on the operator side of the melt line"
+     ],
+     "reason_vi": "Không có tài liệu công khai về vị trí; ba vị trí X 600 / 3 700 / 5 700 do thiết kế chọn dọc phía +Y (review bản vẽ I2 ghi lại đúng ba vị trí này).",
+     "reason_ja": "位置についての公開資料はない。X 600 / 3 700 / 5 700 の 3 か所は設計で +Y 側のライン沿いに選んだ(図面レビュー I2 もこの 3 か所を記録している)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; cao độ theo review-01 M3"
@@ -307,8 +701,29 @@
    "used_by": [
     "ctrl_estops:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn nấm đỏ trên vỏ HMI (thấy trên dây chuyền ZE 110 UT)",
+     "text_ja": "HMI 筐体に赤いキノコ型の非常停止ボタン(ZE 110 UT のラインで確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Thêm nút ở tủ đầu máy, hộp đấu dây khuôn (−Y), lan can sàn thao tác, khuôn phía +Y và bộ lọc phía +Y",
+     "text_ja": "追加のボタンを機端盤、ダイ端子箱(−Y)、作業プラットフォームの手すり、+Y 側のダイ、+Y 側のスクリーンチェンジャーに置く",
+     "refs": [
+      "drev-I2|The design text puts extra e-stops",
+      "rev-M3|Add an E-stop box on a mezzanine railing post",
+      "design-1|Dừng khẩn"
+     ],
+     "reason_vi": "Không có tài liệu công khai về các vị trí này; thiết kế tự đặt, review bản vẽ I2 bổ sung nút ở khuôn và bộ lọc, review thiết kế M3 thêm nút trên lan can sàn.",
+     "reason_ja": "これらの設置位置についての公開資料はない。設計で自ら配置し、図面レビュー I2 がダイとスクリーンチェンジャーのボタンを、設計レビュー M3 が手すり上のボタンを追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; cao độ theo review-01 M3"
@@ -324,8 +739,19 @@
    "used_by": [
     "ctrl_floor_duct:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hào cáp từ máy về tủ điều khiển, nắp phẳng sàn",
+     "text_ja": "機械から制御盤へケーブルを導くトレンチ、蓋は床面と面一",
+     "refs": [
+      "rev-I2|covered floor trench"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp của dây chuyền; chọn hào có nắp phẳng sàn thay vì cáp nằm trên sàn theo review thiết kế I2.",
+     "reason_ja": "このラインのケーブル経路についての公開資料はない。設計レビュー I2 に従い、床上配線ではなく床面と面一の蓋付きトレンチを選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; hào phẳng sàn theo review-01 I2"
@@ -341,8 +767,19 @@
    "used_by": [
     "ctrl_floor_duct:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hào có nắp tôn mạ kẽm chống trượt rộng 400, phẳng sàn, nắp dày 10",
+     "text_ja": "幅 400 の亜鉛めっき滑り止め鋼板蓋付きトレンチ、床面と面一、蓋厚 10",
+     "refs": [
+      "rev-I2|covered floor trench"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hào cáp của dây chuyền; bề rộng 400 và nắp mạ kẽm phẳng sàn do review thiết kế I2 chọn, độ dày nắp 10 do thiết kế chọn.",
+     "reason_ja": "このラインのケーブルトレンチについての公開資料はない。幅 400 と床面と面一の亜鉛めっき蓋は設計レビュー I2 が選び、蓋厚 10 は設計で選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định; hào phẳng sàn theo review-01 I2"
@@ -358,8 +795,19 @@
    "used_by": [
     "ctrl_floor_trench:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hào dẫn cáp động lực/tín hiệu tới bơm nhựa, hộp nhiệt đường chảy, HPU, cụm chân không, khuôn",
+     "text_ja": "動力・信号ケーブルを溶融ポンプ、メルトライン加熱ボックス、HPU、真空ユニット、ダイへ導くトレンチ",
+     "refs": [
+      "rev-I6|Melt-line junction box"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp tới các thiết bị này; các thiết bị nhận cáp do thiết kế đặt, hộp nhiệt đường chảy được thêm theo review thiết kế I6 và nhận cáp từ tủ điều khiển qua hào.",
+     "reason_ja": "これらの機器へのケーブル経路についての公開資料はない。受け側の機器は設計で配置し、メルトライン加熱ボックスは設計レビュー I6 で追加されて制御盤からトレンチ経由で受電する。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -373,8 +821,27 @@
    "used_by": [
     "ctrl_floor_trench:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nắp tôn chống trượt rộng 200 phẳng sàn",
+     "text_ja": "幅 200 の滑り止め鋼板蓋、床面と面一",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về hào dọc dây chuyền; bề rộng 200 do thiết kế chọn (nguồn ghi \"giả định\").",
+     "reason_ja": "ライン沿いのトレンチについての公開資料はない。幅 200 は設計で選んだ(出典欄に「仮定」と明記)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kết thúc ở X 8 700, trước ray xe khuôn",
+     "text_ja": "X 8 700 で終端し、ダイカートレールの手前に置く",
+     "refs": [
+      "rev-I3|Rails:"
+     ],
+     "reason_vi": "Không có tài liệu công khai; hào dừng ở X 8 700 để không cắt ray xe khuôn, ray ở X 8 760 và 9 320 theo review thiết kế I3.",
+     "reason_ja": "公開資料はない。ダイカートのレールを横切らないよう X 8 700 で止めた。レールは設計レビュー I3 により X 8 760 と 9 320。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -388,8 +855,41 @@
    "used_by": [
     "ctrl_heater_cabinet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ điều khiển ZE theo yêu cầu khách dựa trên PLC Siemens Simatic S7 và WinCC",
+     "text_ja": "ZE の制御システムは顧客要求に合わせ、Siemens Simatic S7 の PLC と WinCC をベースにする",
+     "refs": [
+      "cat-p22"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Bộ điều nhiệt và thiết bị điều khiển điện là một phần của máy ZE (catalogue đặt chúng trong khung đế UTX; thiết kế tách thành tủ riêng)",
+     "text_ja": "温調ユニットと電気制御機器は ZE の一部(カタログでは UTX のベースフレーム内。設計では別盤に分けた)",
+     "refs": [
+      "c034"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Rơ-le bán dẫn đóng cắt các vùng nhiệt xi lanh / đường chảy / khuôn",
+     "text_ja": "バレル/メルトライン/ダイの加熱ゾーンをソリッドステートリレーで開閉する",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về thiết bị đóng cắt gia nhiệt của dây chuyền; chọn rơ-le bán dẫn (SSR) vì là cách đóng cắt thanh nhiệt và băng nhiệt phổ biến (kiến thức chung).",
+     "reason_ja": "このラインの加熱開閉機器についての公開資料はない。カートリッジヒーターやバンドヒーターの開閉に一般的なソリッドステートリレー(SSR)を選んだ(一般知識)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Khởi động động cơ phụ (MCC) đặt chung trong tủ này",
+     "text_ja": "補機モーターの始動器(MCC)を同じ盤に収める",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai; các động cơ phụ (bơm dầu, bơm nhựa, thuỷ lực, chân không) do thiết kế đặt, chọn gom khởi động vào tủ điều khiển + nhiệt.",
+     "reason_ja": "公開資料はない。補機モーター(油ポンプ、溶融ポンプ、油圧、真空)は設計で配置し、始動器を制御・ヒーター盤にまとめる案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "c034 (tủ điện), giả định; mặt cửa ở Y −3 700 theo review-01 I2"
@@ -399,15 +899,46 @@
      "rev-I2"
     ]
    },
-   "notes": ""
+   "notes": "c034 nói thiết bị điện nằm trong khung đế (cho ZE UTX); thiết kế đặt thành dãy tủ rời sau máy (specs §7 ghi \"trong khung đế hoặc đặt sát máy\"). cat-p22 là trang chữ của catalogue (Simatic S7)."
   },
   "f531f8b31062": {
    "vi": "4 khoang 600 × 600 × 2 200 RAL 7035, khoang đầu có dải xanh KM và logo; cửa mở về +Y.",
    "used_by": [
     "ctrl_heater_cabinet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tủ điện nhiều khoang của máy ZE có dải xanh KM với chữ KraussMaffei trắng",
+     "text_ja": "ZE の多区画の電気盤には、白文字 KraussMaffei 入りの KM ブルーの帯がある",
+     "refs": [
+      "web-06",
+      "web-07",
+      "crop-p07_cutaway_blue_end_cabinet"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "4 khoang 600 × 600 × 2 200 RAL 7035, dải xanh ở khoang đầu",
+     "text_ja": "600 × 600 × 2 200、RAL 7035 の 4 区画、先頭区画に青い帯",
+     "refs": [
+      "web-06"
+     ],
+     "reason_vi": "Không có tài liệu công khai về số khoang, cỡ tủ và mã RAL; do thiết kế chọn (RAL 7035 xám sáng thay cho màu trắng / xám nhạt thấy trên ảnh). Ảnh KM chỉ cho thấy dải xanh ở cuối dãy tủ.",
+     "reason_ja": "区画数、盤寸法、RAL コードについての公開資料はない。設計で選んだ(RAL 7035 のライトグレーは、写真に見える白〜薄いグレーの代わり)。KM の写真では青い帯は盤列の端にあるだけ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Cửa mở về +Y",
+     "text_ja": "扉は +Y 側に開く",
+     "refs": [
+      "rev-I2|Cabinets:"
+     ],
+     "reason_vi": "Không có tài liệu công khai; mặt cửa đặt ở Y −3 700 theo review thiết kế I2 để có ≥ 1 000 mm trước cửa.",
+     "reason_ja": "公開資料はない。扉面は設計レビュー I2 により Y −3 700 とし、扉の前に ≥ 1 000 mm を確保した。"
+    }
+   ],
    "seed": {
     "sources": [
      "c034 (tủ điện), giả định; mặt cửa ở Y −3 700 theo review-01 I2"
@@ -424,8 +955,34 @@
    "used_by": [
     "ctrl_hmi:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Điều khiển bằng màn hình cảm ứng kết hợp bàn phím màng",
+     "text_ja": "タッチスクリーンとメンブレンキーパッドの組み合わせで操作する",
+     "refs": [
+      "cat-p23",
+      "crop-p22-23_hmi_panel_touch_keypad"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Vận hành và hiển thị tập trung toàn bộ quá trình đùn: mọi thiết bị của dây chuyền hiện trên các trang màn hình",
+     "text_ja": "押出工程全体を一元的に操作・表示し、ライン全機器を画面ページに表示する",
+     "refs": [
+      "cat-p22"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn nấm đỏ trên vỏ HMI (thấy trên dây chuyền ZE 110 UT)",
+     "text_ja": "HMI 筐体に赤いキノコ型の非常停止ボタン(ZE 110 UT のラインで確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
@@ -437,15 +994,63 @@
      "web-05"
     ]
    },
-   "notes": ""
+   "notes": "Tấm HMI trong catalogue (trang 22–23) có 2 nút tròn (đen \"0\", xanh lá \"I\") và 2 nút xanh dương, không có nút dừng khẩn đỏ; nút đỏ thấy ở ảnh web-04 (HMI dây chuyền Lanxess ZE 110 UT)."
   },
   "64e42041d94b": {
    "vi": "Chân đế ống Ø120 cao 1 300 có khớp xoay đen, tay xoay ngắn; tấm HMI 800 × 510 × 120 nghiêng 15°, mặt hướng +Y.",
    "used_by": [
     "ctrl_hmi:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "HMI gắn trên ống đỡ trắng xám có khớp xoay đen; màn hình HMI trên tay xoay cũng thấy trên máy ZE hiện đại",
+     "text_ja": "HMI は黒い旋回ジョイント付きの白灰色の支柱に取り付けられている。旋回アーム上の HMI モニターは新しい ZE にも見られる",
+     "refs": [
+      "crop-p22-23_hmi_panel_touch_keypad",
+      "web-06",
+      "web-07"
+     ]
+    },
+    {
+     "level": "sourced",
+     "text_vi": "HMI đặt cạnh máy ở phía vận hành, mặt hướng +Y ra lối đứng của người vận hành",
+     "text_ja": "HMI は機械脇のオペレーター側に置かれ、画面は +Y 向きでオペレーターの立ち位置に向く",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Tỷ lệ tấm HMI 800 : 510 ≈ 1,57 : 1: đo viền ngoài tấm trên hình ghép trang 22–23",
+     "text_ja": "HMI パネルの縦横比 800 : 510 ≈ 1,57 : 1:22–23 ページの合成図でパネル外枠を計測",
+     "refs": [
+      "crop-p22-23_hmi_panel_touch_keypad"
+     ],
+     "reason_vi": "Đo viền ngoài của tấm trên hình ghép p22_5 + p23_4: ≈ 1 380 × 880 px, tỷ lệ 1,57; 800 / 510 = 1,57.",
+     "reason_ja": "p22_5 と p23_4 の合成図でパネル外枠を計測:≈ 1 380 × 880 px、比 1,57。800 / 510 = 1,57。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Kích thước tuyệt đối 800 × 510 × 120, nghiêng 15°",
+     "text_ja": "実寸 800 × 510 × 120、15° 傾斜",
+     "refs": [],
+     "reason_vi": "Catalogue không ghi kích thước thật của tấm HMI; chọn rộng 800 rồi nhân tỷ lệ đo được (510 = 800 / 1,57); độ dày 120 và góc nghiêng 15° do thiết kế chọn.",
+     "reason_ja": "カタログには HMI パネルの実寸がない。幅 800 を選び、計測した比で高さを決めた(510 = 800 / 1,57)。厚さ 120 と傾斜 15° は設計で選んだ。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Chân đế ống Ø120 cao 1 300, tay xoay ngắn",
+     "text_ja": "高さ 1 300 の Ø120 パイプペデスタルと短い旋回アーム",
+     "refs": [
+      "crop-p22-23_hmi_panel_touch_keypad"
+     ],
+     "reason_vi": "Không có tài liệu công khai về kích thước chân đế; Ø120 và chiều cao 1 300 do thiết kế chọn, hình catalogue chỉ cho thấy dạng ống đỡ có khớp xoay.",
+     "reason_ja": "ペデスタルの寸法についての公開資料はない。Ø120 と高さ 1 300 は設計で選んだ。カタログ図で分かるのは旋回ジョイント付きの支柱という形だけ。"
+    }
+   ],
    "seed": {
     "sources": [
      "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
@@ -457,15 +1062,24 @@
      "web-05"
     ]
    },
-   "notes": ""
+   "notes": "Ảnh web-04/05 là HMI dạng hộp trên bệ cạnh cầu thang (ZE 110 UT), không phải tay xoay như catalogue; dùng chỉ để chứng minh HMI nằm phía vận hành cạnh máy."
   },
   "9d0f3fb36e32": {
    "vi": "Nút dừng khẩn đỏ trên vỏ HMI.",
    "used_by": [
     "ctrl_hmi:details[1]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Nút dừng khẩn nấm đỏ trên vỏ HMI (thấy trên dây chuyền ZE 110 UT)",
+     "text_ja": "HMI 筐体に赤いキノコ型の非常停止ボタン(ZE 110 UT のラインで確認できる)",
+     "refs": [
+      "web-04"
+     ]
+    }
+   ],
    "seed": {
     "sources": [
      "p22_5/p23_4 (tấm HMI ngang ≈ 1,57 : 1, viền xám đen, phím màng, 2 nút tròn, logo KM, ống đỡ có khớp xoay); web-04/05 (HMI trên chân đế phía vận hành)"
@@ -477,15 +1091,26 @@
      "web-05"
     ]
    },
-   "notes": ""
+   "notes": "Tấm HMI catalogue trang 22–23 không có nút dừng khẩn đỏ; ✓ dựa trên ảnh web-04 (nút nấm đỏ, đế vàng, góc dưới trái của vỏ HMI)."
   },
   "f70178806fb4": {
    "vi": "Đưa cáp hạ thế 400 V từ tủ phân phối nhà máy vào tủ điều khiển + nhiệt.",
    "used_by": [
     "ctrl_infeed_lv:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cáp hạ thế 400 V từ tủ phân phối nhà máy vào tủ điều khiển + nhiệt",
+     "text_ja": "400 V の低圧ケーブルを工場の配電盤から制御・ヒーター盤へ引き込む",
+     "refs": [
+      "drev-I2|Add a plant infeed"
+     ],
+     "reason_vi": "Không có tài liệu công khai về nguồn cấp của nhà máy; chọn 400 V ba pha (điện áp hạ thế thông dụng) cho tải ≈ 500 kVA (nhiệt ≈ 260 kW + động cơ phụ, giả định). Tuyến cấp vào do review bản vẽ I2 bổ sung.",
+     "reason_ja": "工場側の受電についての公開資料はない。負荷 ≈ 500 kVA(ヒーター ≈ 260 kW + 補機、仮定)に対し、一般的な低圧の 3 相 400 V を選んだ。受電経路は図面レビュー I2 が追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định (≈ 500 kVA: nhiệt ≈ 260 kW + động cơ phụ)"
@@ -501,8 +1126,20 @@
    "used_by": [
     "ctrl_infeed_lv:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở \"từ tủ phân phối\"",
+     "text_ja": "盤の後方に、幅 400・長さ 200 の床面と面一の蓋付きトレンチ区間。外側端は「配電盤より」として開放",
+     "refs": [
+      "drev-I2|No incoming MV/LV power feed"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tuyến cấp điện; chỉ vẽ đoạn 200 sau tủ, phần còn lại thuộc nhà xưởng. Đoạn hào được thêm theo review bản vẽ I2 (\"chưa có nguồn cấp vào\").",
+     "reason_ja": "受電経路についての公開資料はない。盤の後方 200 だけを描き、以降は工場側の範囲とした。図面レビュー I2(受電が描かれていない)を受けて追加した。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định (≈ 500 kVA: nhiệt ≈ 260 kW + động cơ phụ)"
@@ -518,8 +1155,20 @@
    "used_by": [
     "ctrl_infeed_mv:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Cáp trung thế 3 kV từ trạm biến áp nhà máy vào tủ biến tần",
+     "text_ja": "3 kV の中圧ケーブルを工場の変電所からインバーター盤へ引き込む",
+     "refs": [
+      "c064",
+      "drev-I2|Add a plant infeed"
+     ],
+     "reason_vi": "Không có tài liệu công khai về điện áp nguồn của nhà máy; chọn 3 kV vì catalogue ABB AMI (c064) có động cơ 4 cực 3 kV 50 Hz cùng họ khung với động cơ chính. Tuyến cấp vào do review bản vẽ I2 bổ sung.",
+     "reason_ja": "工場側の電源電圧についての公開資料はない。ABB AMI カタログ(c064)に主モーターと同系列の 4 極 3 kV 50 Hz モーターがあるため 3 kV を選んだ。受電経路は図面レビュー I2 が追加した。"
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định (≈ 1,8 MVA)"
@@ -528,15 +1177,27 @@
      "drev-I2"
     ]
    },
-   "notes": ""
+   "notes": "c064 chỉ cho biết họ động cơ AMI có bản 3 kV (AMI 500L4A); không nói điện áp lưới của nhà máy nên giữ ⚠."
   },
   "23236ec228af": {
    "vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở 'từ trạm biến áp' (tuyến tiếp theo thuộc nhà xưởng).",
    "used_by": [
     "ctrl_infeed_mv:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Đoạn hào có nắp rộng 400 phẳng sàn dài 200 sau tủ, đầu ngoài để hở \"từ trạm biến áp\"",
+     "text_ja": "盤の後方に、幅 400・長さ 200 の床面と面一の蓋付きトレンチ区間。外側端は「変電所より」として開放",
+     "refs": [
+      "drev-I2|No incoming MV/LV power feed"
+     ],
+     "reason_vi": "Không có tài liệu công khai về tuyến cấp điện; chỉ vẽ đoạn 200 sau tủ, phần còn lại thuộc nhà xưởng. Đoạn hào được thêm theo review bản vẽ I2 (\"chưa có nguồn cấp vào\").",
+     "reason_ja": "受電経路についての公開資料はない。盤の後方 200 だけを描き、以降は工場側の範囲とした。図面レビュー I2(受電が描かれていない)を受けて追加した。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "drawing review-01 I2; giả định (≈ 1,8 MVA)"
@@ -552,8 +1213,28 @@
    "used_by": [
     "ctrl_machine_cabinet:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Hệ bôi trơn, bộ điều nhiệt và thiết bị điều khiển điện của ZE UTX đều nằm ngay trên khung đế máy",
+     "text_ja": "ZE UTX の潤滑装置、温調ユニット、電気制御機器はすべて機械のベースフレームに組み込まれている",
+     "refs": [
+      "c034"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tủ đấu dây tại chỗ cho truyền động: cấp nguồn cụm dầu, encoder, cảm biến hộp số, an toàn",
+     "text_ja": "駆動部の現場端子盤:油ユニット電源、エンコーダー、ギアボックスセンサー、安全回路",
+     "refs": [
+      "meas-4|chữ nhật trơn",
+      "rev-M11"
+     ],
+     "reason_vi": "Catalogue không cho biết khối cao cuối máy ở trang 9 là gì; pdf_measures nêu ứng viên là tủ điện/biến tần, quạt làm mát hoặc cột HMI và đề nghị mô hình hoá như tủ điện hoặc bỏ qua. Chức năng đấu dây cho cụm dầu, encoder, cảm biến, an toàn do thiết kế đặt.",
+     "reason_ja": "カタログは 9 ページの機端の背高ブロックが何かを示していない。測定資料の候補は電気盤/インバーター盤、冷却ファン、HMI 支柱で、電気盤として扱うか省略することを勧めている。油ユニット、エンコーダー、センサー、安全回路の配線を受け持たせる機能は設計で与えた。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2/§4 ghi chú 3 (khối cao trơn sau động cơ); web-06/07 (tủ trắng có dải xanh KM ở đầu dẫn động)"
@@ -565,15 +1246,58 @@
      "web-07"
     ]
    },
-   "notes": ""
+   "notes": "Chức năng của tủ đầu máy là suy diễn của thiết kế; ✓ ở trên chỉ nói thiết bị điện của ZE nằm trên máy (c034), không chứng minh vị trí/chức năng của tủ này."
   },
   "2efd9e47befa": {
    "vi": "Tủ 500 × 1 000 × 2 000, mặt +Y và −X sơn xanh KM có chữ KraussMaffei trắng chạy dọc, còn lại trắng; nút dừng khẩn trên mặt +Y.",
    "used_by": [
     "ctrl_machine_cabinet:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Tủ điện của máy ZE sơn xanh KM, chữ KraussMaffei trắng viết dọc",
+     "text_ja": "ZE の電気盤は KM ブルー塗装で、白文字の KraussMaffei を縦書きにしている",
+     "refs": [
+      "crop-p07_cutaway_blue_end_cabinet",
+      "web-06",
+      "web-07"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Tủ 500 × 1 000 × 2 000",
+     "text_ja": "盤 500 × 1 000 × 2 000",
+     "refs": [
+      "meas-4|430 rộng × 1380 cao",
+      "rev-M11",
+      "dec-13|Hoãn M2"
+     ],
+     "reason_vi": "Hình trang 9 cho khối 430 rộng × 1 380 cao, Z 316–1 695, không chạm sàn (pdf_measures §4); thiết kế không theo số đo này mà dùng tủ đứng sàn 500 × 1 000 × 2 000. Review thiết kế M11 chỉ ra chỗ lệch, DECISIONS #13 hoãn sửa.",
+     "reason_ja": "9 ページの図は幅 430 × 高さ 1 380、Z 316–1 695 で床から浮いたブロックを示す(測定資料 §4)。設計はこの値に従わず、床置きの 500 × 1 000 × 2 000 とした。設計レビュー M11 がずれを指摘し、DECISIONS #13 で修正は見送られた。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Mặt +Y và −X sơn xanh KM, các mặt còn lại trắng",
+     "text_ja": "+Y 面と −X 面は KM ブルー塗装、その他の面は白",
+     "refs": [
+      "web-06"
+     ],
+     "reason_vi": "Không có tài liệu công khai về mặt nào sơn xanh; ảnh web-06/07 chỉ có dải xanh đứng trên tủ trắng, hình catalogue trang 7 có khối xanh toàn mặt. Thiết kế chọn hai mặt xanh (nguồn ghi \"giả định\").",
+     "reason_ja": "どの面を青にするかについての公開資料はない。写真 web-06/07 は白い盤に縦の青い帯があるだけで、7 ページの図は面全体が青。設計で 2 面を青にした(出典欄に「仮定」と明記)。"
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Nút dừng khẩn trên mặt +Y",
+     "text_ja": "+Y 面に非常停止ボタン",
+     "refs": [
+      "drev-I2|The design text puts extra e-stops"
+     ],
+     "reason_vi": "Không có tài liệu công khai; thiết kế đặt thêm nút dừng khẩn ở tủ đầu máy, review bản vẽ I2 ghi nhận nút này chưa được vẽ.",
+     "reason_ja": "公開資料はない。設計が機端盤にも非常停止ボタンを追加した。図面レビュー I2 はこのボタンがまだ図面にないと指摘した。"
+    }
+   ],
    "seed": {
     "sources": [
      "pdf_measures §2.2/§4 ghi chú 3 (khối cao trơn sau động cơ); web-06/07 (tủ trắng có dải xanh KM ở đầu dẫn động)"
@@ -585,15 +1309,33 @@
      "web-07"
     ]
    },
-   "notes": ""
+   "notes": "Lệch giữa thiết kế (500 × 1 000 × 2 000, đặt sàn) và số đo hình trang 9 (430 × 1 380, treo cách sàn 316): review M11 chỉ ra, DECISIONS #13 hoãn; vì vậy kích thước để ⚠, không để ≈."
   },
   "909a8d19c6c2": {
    "vi": "Báo trạng thái máy (đỏ/vàng/xanh/còi).",
    "used_by": [
     "ctrl_signal_tower:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "sourced",
+     "text_vi": "Dây chuyền ZE có đèn tháp nhiều tầng (thấy tầng đỏ và xanh lá) và còi báo",
+     "text_ja": "ZE のラインには多段のシグナルタワー(赤と緑の段が見える)と警報ホーンがある",
+     "refs": [
+      "web-04",
+      "web-05"
+     ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Báo trạng thái máy bằng ba màu đỏ / vàng / xanh và còi",
+     "text_ja": "赤/黄/緑の 3 色とブザーで機械の状態を知らせる",
+     "refs": [],
+     "reason_vi": "Không có tài liệu công khai về mã màu đèn tháp của dây chuyền này; ảnh chỉ thấy tầng đỏ và xanh lá. Chọn đỏ / vàng / xanh + còi vì là bộ đèn báo trạng thái thông dụng (nguồn ghi \"giả định\").",
+     "reason_ja": "このラインのシグナルタワーの色割り当てについての公開資料はない。写真では赤と緑の段しか確認できない。一般的な状態表示灯として赤/黄/緑 + ブザーを選んだ(出典欄に「仮定」と明記)。"
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -607,8 +1349,20 @@
    "used_by": [
     "ctrl_signal_tower:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "4 tầng đèn Ø70 + còi, cột Ø40",
+     "text_ja": "Ø70 の表示灯 4 段 + ブザー、Ø40 ポール",
+     "refs": [
+      "web-04"
+     ],
+     "reason_vi": "Không có tài liệu công khai về cỡ đèn tháp; ảnh web-04 chỉ cho thấy đèn tháp nhiều tầng (thấy tầng đỏ và xanh), không đếm được số tầng hay đo được đường kính. Số tầng, Ø70 và cột Ø40 do thiết kế chọn.",
+     "reason_ja": "シグナルタワーの寸法についての公開資料はない。写真 web-04 は多段のタワーを示すだけで、段数も直径も読み取れない。段数、Ø70、ポール Ø40 は設計で選んだ。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "giả định"
@@ -622,8 +1376,20 @@
    "used_by": [
     "ctrl_trench_die_branch:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hào nhánh đưa cáp từ hào chính tới hộp đấu dây khuôn đặt trên sàn",
+     "text_ja": "主トレンチから床置きのダイ端子箱へケーブルを導く分岐トレンチ",
+     "refs": [
+      "rev-I3|Electrics:",
+      "rev-I6|Die junction box"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp tới khuôn; hộp đấu dây khuôn đặt sàn, ngoài ray xe khuôn theo review thiết kế I3 và I6, nên cần một nhánh hào tới hộp.",
+     "reason_ja": "ダイへのケーブル経路についての公開資料はない。設計レビュー I3、I6 によりダイ端子箱は床置きでダイカートのレール外に置くため、箱までの分岐トレンチが必要になった。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I3/I6; giả định"
@@ -640,8 +1406,20 @@
    "used_by": [
     "ctrl_trench_die_branch:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Nắp tôn rộng 200 phẳng sàn",
+     "text_ja": "幅 200 の鋼板蓋、床面と面一",
+     "refs": [
+      "rev-I6|Die junction box"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hào nhánh; bề rộng 200 do thiết kế chọn, cùng cỡ với hào dọc dây chuyền (nguồn ghi \"giả định\").",
+     "reason_ja": "分岐トレンチについての公開資料はない。幅 200 は設計で選び、ライン沿いの主トレンチと同じにした(出典欄に「仮定」と明記)。",
+     "whole_line": true
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I3/I6; giả định"
@@ -658,8 +1436,19 @@
    "used_by": [
     "ctrl_trench_mv:function"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Dẫn cáp trung thế từ tủ biến tần tới động cơ dưới sàn, không vắt qua lối đi",
+     "text_ja": "中圧ケーブルをインバーター盤から床下を通してモーターまで導き、通路を横切らない",
+     "refs": [
+      "rev-I2|MV cable and floor duct"
+     ],
+     "reason_vi": "Không có tài liệu công khai về đường cáp trung thế; chọn đi hào có nắp dưới sàn vì review thiết kế I2 chỉ ra cáp nằm trên sàn vắt qua lối đi.",
+     "reason_ja": "中圧ケーブルの経路についての公開資料はない。設計レビュー I2 でケーブルが床上で通路を横切っていると指摘されたため、床下の蓋付きトレンチを通す案を選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I2; giả định"
@@ -675,8 +1464,19 @@
    "used_by": [
     "ctrl_trench_mv:details[0]"
    ],
-   "status": "draft",
-   "facts": [],
+   "status": "curated",
+   "facts": [
+    {
+     "level": "assumption",
+     "text_vi": "Hào có nắp tôn mạ kẽm rộng 400 phẳng sàn",
+     "text_ja": "幅 400 の亜鉛めっき鋼板蓋付きトレンチ、床面と面一",
+     "refs": [
+      "rev-I2|MV cable and floor duct"
+     ],
+     "reason_vi": "Không có tài liệu công khai về hào cáp trung thế; bề rộng 400 và nắp mạ kẽm phẳng sàn do review thiết kế I2 chọn.",
+     "reason_ja": "中圧ケーブルトレンチについての公開資料はない。幅 400 と床面と面一の亜鉛めっき蓋は設計レビュー I2 が選んだ。"
+    }
+   ],
    "seed": {
     "sources": [
      "review-01 I2; giả định"
