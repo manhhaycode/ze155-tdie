@@ -4,12 +4,16 @@ import './gate.css'
 // Password gate in front of the viewer. A static site has no server to check a password, so this only keeps
 // casual visitors out: the models stay reachable by direct URL, and the check can be bypassed in the browser.
 // Real protection needs a server-side check (e.g. Vercel middleware). The password itself is not in the source,
-// only a salted SHA-256; a correct entry is remembered per browser (localStorage) so returning visitors and
-// the test drivers are not asked again.
+// only a salted SHA-256; unlocking lasts only until this page is reloaded.
 
 const SALT = 'ze155-virtual-factory:'
 const HASH = '2f1ec37f1201ea1af31ea4f402a9d1abfef5e6cc16bfcd6500179c31a315627d'
-const KEY = 'ze-unlock'
+
+try {
+  localStorage.removeItem('ze-unlock')
+} catch {
+  // Storage may be unavailable.
+}
 
 /** SHA-256 of a UTF-8 string, hex (pure JS: crypto.subtle is missing on plain-http LAN addresses) */
 function sha256(text: string): string {
@@ -57,16 +61,8 @@ function sha256(text: string): string {
   return H.map((v) => v.toString(16).padStart(8, '0')).join('')
 }
 
-const remembered = () => {
-  try {
-    return localStorage.getItem(KEY) === HASH
-  } catch {
-    return false
-  }
-}
-
 export function PasswordGate({ children }: { children: ReactNode }) {
-  const [open, setOpen] = useState(remembered)
+  const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
   const [wrong, setWrong] = useState(false)
   if (open) return <>{children}</>
@@ -75,11 +71,6 @@ export function PasswordGate({ children }: { children: ReactNode }) {
     if (sha256(SALT + value) !== HASH) {
       setWrong(true)
       return
-    }
-    try {
-      localStorage.setItem(KEY, HASH)
-    } catch {
-      // private window or blocked storage: unlocked for this visit only
     }
     setOpen(true)
   }
