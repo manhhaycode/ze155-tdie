@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import type { RootState } from '@react-three/fiber'
-import { FIXED_STATE_IDS, type Axis, type FixedStateId, type StateId } from '../data'
+import { FIXED_STATE_IDS, type Axis, type FixedStateId, type StateId, type V3 } from '../data'
 import { reg, isShown } from '../scene/rig'
 import { unfilteredMeshes, isHelper } from '../scene/Picking'
 import { statePlane, cutDebug } from '../scene/Cuts'
@@ -15,6 +15,7 @@ import { flowDebug, flowRates, K_ROLL, K_SCREW } from '../scene/Flow'
 import { fillColorAt as fillColor, flowUniforms, toHex } from '../scene/FillMaterial'
 import { sheetColorAt } from '../scene/SheetMaterial'
 import { heatRgb } from '../scene/heat'
+import { inSection } from '../scene/section'
 
 // PLAN-DOT1 §4.2.11 (window.__ze), minus the Đợt 1b items (AMENDMENTS): pickSweep and the perf trace.
 
@@ -779,6 +780,143 @@ export function installHooks(get: () => RootState) {
     return { cases, ok: cases.every((c) => c.ok) }
   }
 
+  /** render now and read the whole canvas once (sRGB bytes); at(x, y) takes buffer pixels, y from the top */
+  const readFrame = () => {
+    const s = get()
+    s.gl.render(s.scene, s.camera)
+    const g = s.gl.getContext()
+    const w = g.drawingBufferWidth
+    const h = g.drawingBufferHeight
+    const buf = new Uint8Array(w * h * 4)
+    g.readPixels(0, 0, w, h, g.RGBA, g.UNSIGNED_BYTE, buf)
+    const at = (x: number, y: number): [number, number, number] => {
+      const i = ((h - 1 - y) * w + x) * 4
+      return [buf[i], buf[i + 1], buf[i + 2]]
+    }
+    return { w, h, at }
+  }
+  /**
+   * review-flow-01 M3 + N1: every pixel whose view ray meets the cut plane inside a roll's section (profile shrunk
+   * by 10 mm, away from the edges) must show the state's steel cap colour, hatched (x 1 or x 0.72); at most 0.05 %
+   * may differ (the 1 px N1 curtain line was 562 of 306 296 = 0.18 %). Dark marker pixels, a 2 px ring around
+   * them and marker / cap mixes (antialiased edges) are skipped. Plus: the marker stays dark at the FLOW
+   * preset, and a ray at the middle roll's centre picks the roll, not the stand behind it.
+   */
+  const rollCoreProbe = async () => {
+    const ui = useUi.getState
+    const mode = ui().rotorMode
+    const frozen = ui().frozen
+    ui().setRotorMode('off')
+    ui().setFrozen(true)
+    const rolls = (['bottom', 'middle', 'top'] as const).map((k) => reg.data.nodes[`ctx_roll_${k}`].section!)
+    const views: Record<string, unknown>[] = []
+    const tonesOf = (hex: string) =>
+      [1, 0.72].map((k) => {
+        const o = { r: 0, g: 0, b: 0 }
+        new THREE.Color(hex).multiplyScalar(k).getRGB(o, THREE.SRGBColorSpace)
+        return [o.r * 255, o.g * 255, o.b * 255]
+      })
+    // a far, thin marker has no pixel dark enough for the 2 px ring: its antialiased pixels are a mix of the
+    // marker (7, 10, 12) and a cap tone, a + k (t - a) with 0 < k < 1 (measured: k 0.43 .. 0.77). Skip those too.
+    const MARKER = [7, 10, 12]
+    const markerEdge = (c: number[], tones: number[][]) =>
+      tones.some((t) => {
+        const d = t.map((q, j) => q - MARKER[j])
+        const k = d.reduce((acc, q, j) => acc + q * (c[j] - MARKER[j]), 0) / d.reduce((acc, q) => acc + q * q, 0)
+        return k > 0 && k < 1 && d.every((q, j) => Math.abs(MARKER[j] + k * q - c[j]) <= 8)
+      })
+    const ray = new THREE.Raycaster()
+    const ndc = new THREE.Vector2()
+    const P = new THREE.Vector3()
+    const scan = async (name: string, pos: V3, target: V3, plane: () => THREE.Plane, capHex: string) => {
+      ;(controlsRef.current!.camera as THREE.PerspectiveCamera).setFocalLength(35)
+      await controlsRef.current!.setLookAt(...pos, ...target, false)
+      await raf2()
+      const t0 = performance.now()
+      const s = get()
+      const f = readFrame()
+      const dpr = f.w / s.size.width
+      const tones = tonesOf(capHex)
+      const pl = plane()
+      const dark = (x: number, y: number) => Math.max(...f.at(x, y)) < 70
+      // screen box of the rolls' bounding boxes (conservative), clamped to the buffer
+      let x0 = f.w
+      let y0 = f.h
+      let x1 = 0
+      let y1 = 0
+      for (const r of rolls)
+        for (const sx of [-1, 1])
+          for (const sy of [-1, 1])
+            for (const sz of [-1, 1]) {
+              const v = new THREE.Vector3(r.centre[0] + sx * 0.4, r.centre[1] + sy * 0.4, r.centre[2] + sz * 1.6).project(s.camera)
+              const px = ((v.x + 1) / 2) * f.w
+              const py = ((1 - v.y) / 2) * f.h
+              x0 = Math.min(x0, px)
+              x1 = Math.max(x1, px)
+              y0 = Math.min(y0, py)
+              y1 = Math.max(y1, py)
+            }
+      x0 = Math.max(2, Math.floor(x0))
+      y0 = Math.max(2, Math.floor(y0))
+      x1 = Math.min(f.w - 3, Math.ceil(x1))
+      y1 = Math.min(f.h - 3, Math.ceil(y1))
+      let n = 0
+      let bad = 0
+      const badAt: unknown[] = []
+      for (let y = y0; y <= y1; y++)
+        for (let x = x0; x <= x1; x++) {
+          ndc.set(((x + 0.5) / f.w) * 2 - 1, -((y + 0.5) / f.h) * 2 + 1)
+          ray.setFromCamera(ndc, s.camera)
+          if (!ray.ray.intersectPlane(pl, P) || !rolls.some((r) => inSection(P, r, 0.01))) continue
+          let nearDark = false
+          for (let dy = -2; dy <= 2 && !nearDark; dy++) for (let dx = -2; dx <= 2 && !nearDark; dx++) nearDark = dark(x + dx, y + dy)
+          if (nearDark) continue
+          const c = f.at(x, y)
+          if (!tones.some((t) => Math.max(...t.map((q, j) => Math.abs(q - c[j]))) <= 8) && markerEdge(c, tones)) continue
+          n++
+          if (!tones.some((t) => Math.max(...t.map((q, j) => Math.abs(q - c[j]))) <= 8)) {
+            bad++
+            if (badAt.length < 6) badAt.push({ x: Math.round(x / dpr), y: Math.round(y / dpr), rgb: c })
+          }
+        }
+      views.push({ name, pixels: n, bad, badAt, ms: Math.round(performance.now() - t0), ok: n >= 2000 && bad / n <= 0.0005 })
+    }
+    await changeState('FLOW', { camera: true, smooth: false })
+    const flowPlane = () => statePlane('FLOW')!
+    const capFlow = reg.data.states.FLOW.cap_colors!.steel
+    await scan('FLOW axis', [10.05, 1.85, -3.2], [9.776, 1.601, 0], flowPlane, capFlow)
+    // a ray 0.10 m from the middle roll's axis (inside the journal radius) picks the roll, not the stand behind it
+    // (review-plan I4; at r = 0 the ray hits the journal's end-cap fan instead)
+    const c = new THREE.Vector3(9.776, 1.701, 0).project(get().camera)
+    const pick = pickAt(((c.x + 1) / 2) * get().size.width, ((1 - c.y) / 2) * get().size.height)
+    views.push({ name: 'FLOW axis pick', object: pick?.object ?? null, ok: pick?.device_id === 'ctx_roll_middle' })
+    await scan('FLOW oblique (N1)', [11.6, 2.6, -2.4], [9.78, 1.6, 0.2], flowPlane, capFlow)
+    // the marker stays dark at the FLOW preset (cap 8 depth steps behind the plane, marker 0.7 mm in front, 25 m away)
+    await applyPreset(reg.data.states.FLOW.camera!, false)
+    await raf2()
+    const mk = reg.parts.get('anim_roll_markers_middle_aa')
+    const mc = mk ? reg.boxOfMeshes(mk.meshes).getCenter(new THREE.Vector3()).project(get().camera) : null
+    const fr = readFrame()
+    const markerRgb = mc ? fr.at(Math.round(((mc.x + 1) / 2) * fr.w), Math.round(((1 - mc.y) / 2) * fr.h)) : null
+    views.push({ name: 'FLOW preset marker', rgb: markerRgb, ok: !!markerRgb && Math.max(...markerRgb) < 70 })
+    const capSteel = reg.data.materials.cap_colors.steel!
+    ui().setFree({ axis: 'z', offset: 0, flip: false })
+    await changeState('FREE')
+    await queueDrained()
+    await scan('FREE z=0 axis', [10.05, 1.85, -3.2], [9.776, 1.601, 0], () => freePlane, capSteel)
+    ui().setFree({ axis: 'z', offset: 0, flip: true })
+    await queueDrained()
+    await scan('FREE z=0 flip, from +z', [10.05, 1.85, 3.2], [9.776, 1.601, 0], () => freePlane, capSteel)
+    ui().setFree({ axis: 'x', offset: 9.776, flip: false })
+    await queueDrained()
+    // plane through the 3 axes: body and journal bands (the stand showed through the journal before the fix)
+    await scan('FREE x=9.776', [13.2, 1.9, -1.2], [9.776, 1.601, 0], () => freePlane, capSteel)
+    await changeState('FULL', { camera: true, smooth: false })
+    ui().setFrozen(frozen)
+    ui().setRotorMode(mode)
+    return { views, ok: views.every((v) => v.ok) }
+  }
+
   const selftest = async () => {
     const out: Record<string, unknown> = { started: new Date().toISOString() }
     api.lastSelftest = out
@@ -1005,6 +1143,7 @@ export function installHooks(get: () => RootState) {
       precompile_ms: round(precompileStats.ms),
       ok: sf.fps >= 45 && sf.calls <= 1000 && sf.triangles <= 1.7e6 && (sf.heap_mb ?? 0) <= 600,
     }
+    out.M3 = await rollCoreProbe()
     out.M1 = await freeCamTest()
     await changeState('FULL', { camera: true, smooth: false })
     out.finished = new Date().toISOString()
@@ -1055,6 +1194,7 @@ export function installHooks(get: () => RootState) {
     cutRoundTrip,
     capCheck,
     freeCamTest,
+    rollCoreProbe,
     rotors,
     rotorTest,
     camera: async (id: FixedStateId) => {

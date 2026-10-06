@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import type { FixedStateId } from '../data'
+import type { FixedStateId, SolidSectionRec } from '../data'
 import { reg, isShown, type Part } from './rig'
 import { ghostMaterial } from './GhostMaterial'
 import { applyPreset } from './CameraRig'
@@ -15,9 +15,20 @@ const original = new Map<THREE.Mesh, THREE.Material>()
 const changedVis = new Map<THREE.Object3D, boolean>()
 const statePlanes = new Map<string, THREE.Plane>()
 
-/** Clip variant of a material (DoubleSide; back faces of closed meshes drawn as a flat/hatched cap). */
-export function cutVariant(src: THREE.Material, planes: THREE.Plane[], key: string, cap: string | null, hatch: boolean) {
-  const id = `${src.uuid}|${key}|${cap}|${hatch ? 1 : 0}`
+/**
+ * Clip variant of a material (DoubleSide; back faces of closed meshes drawn as a flat/hatched cap). section: the
+ * mesh's solid of revolution (node_map section): inside it the cap is drawn on the plane (review-flow-01 M3).
+ */
+export function cutVariant(
+  src: THREE.Material,
+  planes: THREE.Plane[],
+  key: string,
+  cap: string | null,
+  hatch: boolean,
+  section: SolidSectionRec | null = null,
+) {
+  const sec = section ? `${section.centre.join(',')}/${section.profile.flat().join(',')}` : '-'
+  const id = `${src.uuid}|${key}|${cap}|${hatch ? 1 : 0}|${sec}`
   let m = variants.get(id)
   if (m) return m
   if ((src as THREE.ShaderMaterial).isShaderMaterial) {
@@ -32,6 +43,8 @@ export function cutVariant(src: THREE.Material, planes: THREE.Plane[], key: stri
   if (cap) {
     const uCap = { value: new THREE.Color(cap) }
     const uHatch = { value: hatch ? 1 : 0 }
+    const uSecC = { value: new THREE.Vector3(...(section?.centre ?? [0, 0, 0])) }
+    const uSecP = { value: (section?.profile ?? [[0, 0], [0, 0], [0, 0]]).map(([h, r]) => new THREE.Vector2(h, r)) }
     m.onBeforeCompile = (shader) => {
       shader.uniforms.uCapColor = uCap
       shader.uniforms.uCapHatch = uHatch
@@ -41,13 +54,19 @@ export function cutVariant(src: THREE.Material, planes: THREE.Plane[], key: stri
       // therefore writes a depth pulled 0.6 mm towards the camera so it wins those ties. The bias must stay
       // below the thinnest sheet wall (1.5 mm), or caps leak through thin panels of uncut parts in FREE.
       const bias = shader.fragmentShader.includes('varying vec3 vViewPosition')
+      const onPlane = bias && !!section
+      if (onPlane) {
+        shader.uniforms.uSecC = uSecC
+        shader.uniforms.uSecP = uSecP
+      }
       shader.fragmentShader = shader.fragmentShader
         .replace(
           '#include <clipping_planes_pars_fragment>',
           `#include <clipping_planes_pars_fragment>
 uniform vec3 uCapColor;
 uniform float uCapHatch;
-${bias ? 'uniform mat4 projectionMatrix;' : ''}`,
+${bias ? 'uniform mat4 projectionMatrix;' : ''}
+${onPlane ? SECTION_GLSL : ''}`,
         )
         .replace(
           '#include <clipping_planes_fragment>',
@@ -64,16 +83,44 @@ ${bias ? 'uniform mat4 projectionMatrix;' : ''}`,
     gl_FragDepth = clamp(zeC.z / zeC.w * 0.5 + 0.5, 0.0, 1.0);`
         : ''
     }
+    ${onPlane ? SECTION_DEPTH_GLSL : ''}
     return;
   }`,
         )
     }
-    m.customProgramCacheKey = () => 'ze-cap'
+    m.customProgramCacheKey = () => (section ? 'ze-cap-sec' : 'ze-cap') // one program for every roll: uniforms
     m.userData.zeCap = cap
   }
   variants.set(id, m)
   return m
 }
+
+/** review-flow-01 M3: is a world point inside the solid (3 bands, uniforms; JS twin: section.ts inSection) */
+const SECTION_GLSL = `uniform vec3 uSecC;
+uniform vec2 uSecP[3];
+bool zeInSection(vec3 w) {
+  float r = length(w.xy - uSecC.xy);
+  float h = abs(w.z - uSecC.z);
+  for (int i = 0; i < 3; i++) if (h <= uSecP[i].x && r <= uSecP[i].y) return true;
+  return false;
+}`
+/**
+ * review-flow-01 M3: inside the solid the section lies ON the plane. Draw the cap there, 8 depth steps behind the
+ * plane (24-bit buffer) so the roll markers 0.7 mm in front still win, and anything inside the volume (roll stand,
+ * journal) stays hidden. Only when the eye is on the removed side (w < 0) and the plane lies between eye and
+ * fragment (den > 0). clippingPlanes[0] is this material's plane (view space): renderer.clippingPlanes stays empty.
+ */
+const SECTION_DEPTH_GLSL = `vec3 zeQ = -vViewPosition;
+    vec4 zePl = clippingPlanes[0];
+    float zeDen = dot(zePl.xyz, zeQ);
+    if (zePl.w < 0.0 && zeDen > 1e-6) {
+      vec3 zeP = zeQ * (-zePl.w / zeDen);
+      vec3 zeW = (zeP - viewMatrix[3].xyz) * mat3(viewMatrix);
+      if (zeInSection(zeW)) {
+        vec4 zeS = projectionMatrix * vec4(zeP, 1.0);
+        gl_FragDepth = clamp(zeS.z / zeS.w * 0.5 + 0.5 + 4.8e-7, 0.0, 1.0);
+      }
+    }`
 
 export function statePlane(id: string): THREE.Plane | null {
   const s = reg.data.states[id as FixedStateId]
@@ -140,7 +187,7 @@ export function clipPart(p: Part, planes: THREE.Plane[], key: string, style: Cut
     const src = recolour(base, style.materials?.[base.name])
     const own = (mesh.userData.zeCapColor as string | null) ?? null
     const cap = mesh.userData.zeClosed && own ? (capColors?.[mesh.userData.zeCapClass as string] ?? own) : null
-    setMaterial(mesh, cutVariant(src, planes, key, cap, !!mesh.userData.zeHatch && !!cap))
+    setMaterial(mesh, cutVariant(src, planes, key, cap, !!mesh.userData.zeHatch && !!cap, mesh.userData.zeSection ?? null))
   }
 }
 

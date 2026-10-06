@@ -55,6 +55,7 @@ export function prepareMesh(mesh: THREE.Mesh, meta: NodeRec | null, data: Data) 
   mesh.userData.zeCapClass = rec?.cap_class ?? null
   mesh.userData.zeHatch = rec?.cap_class === 'steel'
   mesh.userData.zeClosed = closed
+  mesh.userData.zeSection = meta?.section ?? null // review-flow-01 M3: cap drawn on the plane inside this solid
 
   let base = src
   if (rec?.web === 'override' && rec.three_override) {

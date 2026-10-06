@@ -3,6 +3,8 @@ import type { ThreeEvent } from '@react-three/fiber'
 import { MeshBVH, CENTER, acceleratedRaycast } from 'three-mesh-bvh'
 import { reg } from './rig'
 import { useUi } from '../store'
+import { inSection } from './section'
+import type { SolidSectionRec } from '../data'
 
 // PLAN-DOT1 §4.2.5 = r3f-snippets §3 (C1/N1): the filter lives inside mesh.raycast, there is no drei <Bvh>,
 // and "installed" means `mesh.raycast === filteredRaycast` (function identity, not a userData flag).
@@ -38,7 +40,27 @@ export const filteredRaycast = function (this: THREE.Mesh, raycaster: THREE.Rayc
     if (!cut && hasGlobal) for (const pl of global!) if (pl.distanceToPoint(p) < 0) { cut = true; break }
     if (cut) hits.splice(i, 1) // the removed side
   }
+  // review-flow-01 M3: a capped solid with a section draws its cap ON the plane (Cuts.ts). A back-face hit behind
+  // the plane is that cap when the ray crosses the plane inside the solid: report it there, so a click selects
+  // what the pixel shows (the roll, not the stand inside its journal volume). three sorts the hits afterwards.
+  const section = this.userData.zeSection as SolidSectionRec | null
+  if (!section || !hasLocal || !m.userData.zeCap || hits.length === start) return
+  const ray = raycaster.ray
+  const P = ray.intersectPlane(local![0], _secP)
+  if (!P || !inSection(P, section)) return
+  const t = ray.origin.distanceTo(P)
+  _secNm.getNormalMatrix(this.matrixWorld)
+  for (let i = start; i < hits.length; i++) {
+    const h = hits[i]
+    if (!h.face || h.distance <= t) continue
+    if (_secN.copy(h.face.normal).applyMatrix3(_secNm).dot(ray.direction) <= 0) continue // a front face
+    h.distance = t
+    h.point.copy(P)
+  }
 } as unknown as THREE.Object3D['raycast']
+const _secP = new THREE.Vector3()
+const _secN = new THREE.Vector3()
+const _secNm = new THREE.Matrix3()
 
 /** Marks everything below a part mesh (drei Outlines hulls) as a non-raycast helper. */
 function markHelpersBelow(mesh: THREE.Object3D) {
