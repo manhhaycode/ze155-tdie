@@ -131,12 +131,23 @@
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Bulông nhiệt (bước 25,4 mm) tự động chỉnh môi khuôn theo profin chiều dày; màn hình điều khiển hiện chiều dày từng phần tử",
-     "text_ja": "サーマルボルト(ピッチ 25,4 mm)がダイリップを厚さプロファイルに応じて自動調整する。制御画面に各エレメントの厚さを表示する",
+     "text_vi": "Bulông nhiệt (tự động) của khuôn có bước 30, 28 hoặc 25,4 mm: bảng thông số SBI Mechatronik",
+     "text_ja": "ダイのサーマル(自動)ボルトのピッチは 30、28 または 25,4 mm:SBI Mechatronik の仕様表",
      "refs": [
-      "c054",
-      "web-17"
+      "c054"
      ]
+    },
+    {
+     "level": "derived",
+     "text_vi": "Điều khiển theo profin chiều dày: màn hình hiện chiều dày từng phần tử bulông (hệ SBI Mechatronik trên khuôn phẳng hãng khác)",
+     "text_ja": "厚さプロファイルによる制御:各ボルトエレメントの厚さを表示する画面(他社製フラットダイ上の SBI Mechatronik システム)",
+     "refs": [
+      "web-17",
+      "c054"
+     ],
+     "reason_vi": "Cách suy ra: thiết kế lấy cách điều khiển bulông nhiệt tự động theo hệ SBI Mechatronik (c054; ảnh web-17: hàng bulông nhiệt dọc môi và màn hình 'Dickenmessung Regelung' hiện chiều dày từng phần tử). Thiết kế không nêu SBI là sản phẩm đã chọn (khác bơm Maag) và ảnh chụp khuôn phẳng hãng khác, nên chỉ là tham chiếu, không phải có nguồn trực tiếp.",
+     "reason_ja": "導出方法:設計はサーマルボルトの自動制御を SBI Mechatronik のシステム(c054;写真 web-17:リップに沿ったサーマルボルト列と、各エレメントの厚さを表示する「Dickenmessung Regelung」画面)に倣った。設計は SBI を選定製品として指定しておらず(Maag ポンプとは異なる)、写真も他社製フラットダイなので、参考情報にとどまり、直接の出典とはしない。",
+     "was": "sourced"
     },
     {
      "level": "assumption",
@@ -171,7 +182,7 @@
      "c054"
     ]
    },
-   "notes": "W2: web-17 là ảnh SBI Mechatronik (hãng khác), dùng cho ✓ vì thiết kế chọn đúng loại bulông nhiệt của SBI (c054: 80 W, bước 25,4; specs §5). Ảnh có màn hình \"Dickenmessung Regelung\" hiện chiều dày từng phần tử (≈ 60). Số 94 phụ thuộc bề rộng môi 2 400 do thiết kế ước nên để ⚠."
+   "notes": "Đã xử lý W2 khi kiểm: design.md không nêu tên SBI làm sản phẩm đã chọn (bơm thì ghi rõ Maag), nên web-17 không dùng cho ✓. ✓ còn lại chỉ dựa c054 (bước 25,4 mm); phần màn hình chiều dày hạ xuống ≈. Số 94 phụ thuộc bề rộng môi 2 400 do thiết kế ước nên ⚠."
   },
   "21f184e2f48c": {
    "vi": "Tủ 800 × 600 × 2 000 RAL 7035, màn hình profin trên cửa.",
@@ -201,12 +212,15 @@
      "reason_ja": "KM の RAL コードについての公開資料はない。写真 web-06 では白〜ごく薄いグレーの盤が見えるだけ。RAL 7035 は制御盤で一般的な明るいグレーのため選んだ。"
     },
     {
-     "level": "sourced",
-     "text_vi": "Màn hình hiện profin chiều dày (cột theo từng phần tử bulông) là giao diện của hệ bulông nhiệt tự động",
-     "text_ja": "厚さプロファイル(ボルトエレメントごとの棒グラフ)を表示する画面は、自動サーマルボルトシステムの操作画面",
+     "level": "derived",
+     "text_vi": "Màn hình hiện profin chiều dày (cột theo từng phần tử bulông) là giao diện điều khiển của hệ bulông nhiệt tự động (ảnh SBI Mechatronik)",
+     "text_ja": "厚さプロファイル(ボルトエレメントごとの棒グラフ)を表示する画面は、自動サーマルボルトシステムの操作画面(SBI Mechatronik の写真)",
      "refs": [
       "web-17"
-     ]
+     ],
+     "reason_vi": "Cách suy ra: ảnh web-17 là màn hình 'Dickenmessung Regelung' của hệ SBI Mechatronik, biểu đồ cột chiều dày theo từng phần tử. Thiết kế không nêu SBI là sản phẩm đã chọn và ảnh chụp khuôn phẳng hãng khác, nên màn hình trong tủ chỉ là suy ra theo tham chiếu này.",
+     "reason_ja": "導出方法:写真 web-17 は SBI Mechatronik のシステムの「Dickenmessung Regelung」画面で、エレメントごとの厚さ棒グラフを示す。設計は SBI を選定製品として指定しておらず、写真も他社製フラットダイなので、盤内の画面はこの参考からの導出にとどまる。",
+     "was": "sourced"
     },
     {
      "level": "assumption",
@@ -226,7 +240,7 @@
      "c054"
     ]
    },
-   "notes": "W2 như dòng chức năng: web-17 là ảnh SBI (hãng khác), dùng cho ✓ vì đó là hệ bulông nhiệt thiết kế đã chọn. Ảnh chỉ cho thấy màn hình, không cho thấy nó nằm trên cửa tủ."
+   "notes": "Đã xử lý W2 khi kiểm: web-17 là ảnh SBI (hãng khác), thiết kế không chọn đích danh SBI, nên fact màn hình hạ ≈. Ảnh chỉ cho thấy màn hình, không cho thấy nó nằm trên cửa tủ (F3 vẫn ⚠)."
   },
   "1acbb1ec452a": {
    "vi": "Biến tần điều khiển tốc độ động cơ chính 1 500 kW.",
@@ -255,8 +269,8 @@
       "c013",
       "c065"
      ],
-     "reason_vi": "Catalogue chỉ cho công suất truyền động tối đa 2 930 kW của ZE 155 A UTi (c004) và nói công suất lắp đặt chọn theo bài toán (c013). Thiết kế chọn 1 500 kW: ≈ 800 kW cho 3 500 kg/h PET cộng dự phòng thành ≈ 1 400 kW, lên cấp chuẩn 1 500 kW trong khung AMI 450L4 (c065).",
-     "reason_ja": "カタログにあるのは ZE 155 A UTi の最大駆動出力 2 930 kW(c004)と、設置出力は工程に応じて選ぶという注記(c013)だけ。設計では 3 500 kg/h の PET に ≈ 800 kW、余裕を加えて ≈ 1 400 kW とし、AMI 450L4 フレーム(c065)の標準出力 1 500 kW を選んだ。"
+     "reason_vi": "Catalogue chỉ cho công suất truyền động tối đa 2 930 kW của ZE 155 A UTi (c004) và nói công suất lắp đặt chọn theo bài toán (c013). Thiết kế chọn 1 500 kW: 3 500 kg/h cần ≈ 800 kW (0,23 kWh/kg, kiến thức chung), dải mở rộng 5 000 kg/h cần ≈ 1 150 kW, cộng tổn hao hộp số 2–3 % và dự phòng 15–20 % thành ≈ 1 400 kW, lên cấp chuẩn 1 500 kW trong khung AMI 450L4 (c065).",
+     "reason_ja": "カタログにあるのは ZE 155 A UTi の最大駆動出力 2 930 kW(c004)と、設置出力は工程に応じて選ぶという注記(c013)だけ。設計は 1 500 kW を選んだ:3 500 kg/h に必要な ≈ 800 kW(0,23 kWh/kg、一般知識)、拡張範囲 5 000 kg/h に必要な ≈ 1 150 kW、ギアボックス損失 2–3 %、余裕 15–20 % を加えて ≈ 1 400 kW とし、AMI 450L4 フレーム(c065)の標準出力 1 500 kW に切り上げた。"
     }
    ],
    "seed": {
@@ -859,8 +873,8 @@
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Hệ điều khiển ZE theo yêu cầu khách dựa trên PLC Siemens Simatic S7 và WinCC",
-     "text_ja": "ZE の制御システムは顧客要求に合わせ、Siemens Simatic S7 の PLC と WinCC をベースにする",
+     "text_vi": "Hệ điều khiển phức tạp của ZE, làm theo yêu cầu khách, dựa trên Siemens Simatic S7 (họ PLC) và WinCC: catalogue trang 22",
+     "text_ja": "ZE の複雑な制御システムは顧客要求に合わせて作られ、Siemens Simatic S7(PLC シリーズ)と WinCC をベースにする(カタログ 22 ページ)",
      "refs": [
       "cat-p22"
      ]
@@ -910,8 +924,8 @@
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Tủ điện nhiều khoang của máy ZE có dải xanh KM với chữ KraussMaffei trắng",
-     "text_ja": "ZE の多区画の電気盤には、白文字 KraussMaffei 入りの KM ブルーの帯がある",
+     "text_vi": "Tủ điện nhiều khoang của máy ZE (ảnh dựng ZE BluePower của KM) có dải xanh KM với chữ KraussMaffei trắng",
+     "text_ja": "ZE(KM 制作の ZE BluePower レンダリング)の多区画電気盤には、白文字 KraussMaffei 入りの KM ブルーの帯がある",
      "refs": [
       "web-06",
       "web-07",
@@ -1015,8 +1029,8 @@
     },
     {
      "level": "sourced",
-     "text_vi": "HMI đặt cạnh máy ở phía vận hành, mặt hướng +Y ra lối đứng của người vận hành",
-     "text_ja": "HMI は機械脇のオペレーター側に置かれ、画面は +Y 向きでオペレーターの立ち位置に向く",
+     "text_vi": "HMI đặt cạnh máy trên chân đế ở phía vận hành, mặt quay ra chỗ người vận hành đứng (phía vận hành là +Y theo quy ước thiết kế)",
+     "text_ja": "HMI は機械脇のペデスタル上、オペレーター側に置かれ、画面はオペレーターの立つ側を向く(オペレーター側は設計上の座標で +Y)",
      "refs": [
       "web-04",
       "web-05"
@@ -1257,8 +1271,8 @@
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Tủ điện của máy ZE sơn xanh KM, chữ KraussMaffei trắng viết dọc",
-     "text_ja": "ZE の電気盤は KM ブルー塗装で、白文字の KraussMaffei を縦書きにしている",
+     "text_vi": "Tủ điện của máy ZE sơn xanh KM, chữ KraussMaffei trắng viết dọc (hình cắt ZE UTX trang 7; ảnh dựng ZE BluePower)",
+     "text_ja": "ZE の電気盤は KM ブルー塗装で、白文字の KraussMaffei を縦書きにしている(7 ページの ZE UTX 切断図、ZE BluePower のレンダリング)",
      "refs": [
       "crop-p07_cutaway_blue_end_cabinet",
       "web-06",
