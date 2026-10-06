@@ -1242,6 +1242,51 @@
    "D4_CUT_FEED": "10/10 cap pixels at the new preset (was 22/22 at the old, closer one)",
    "console": "0 errors, 1 known library warning",
    "network": "only 127.0.0.1:5178"
+  },
+  "fix_round_2": {
+   "plan": "web/PLAN-FLOW-M1-M3.md (plan review: web/review/flow/review-plan-m1-m3.md, 2 C 5 I 7 M, all handled in the plan)",
+   "fixed": {
+    "M1": "FREE camera faces the section on entry, axis change and flip: end pose, signed facing test, mirrored preset for flipped cuts; freeCamTest 26/26",
+    "M3": "roll cap drawn on the cut plane inside node_map section; the stand no longer shows through the journal; FLOW axis view 0 non-cap pixels of 374 737 (was ~30 000)",
+    "N1": "curtain line on the middle roll section gone: FLOW oblique 2 non-cap pixels of 306 271 (was 457-562)",
+    "picking": "a click 0.10 m from the middle roll axis selects ctx_roll_middle (was ctx_roll_stand_1)"
+   },
+   "M3_views": {
+    "FLOW axis": "0 / 374 737",
+    "FLOW oblique (N1)": "2 / 306 271",
+    "FLOW preset marker": "rgb (7, 10, 12), still dark",
+    "FREE z=0 axis": "8 / 382 815",
+    "FREE z=0 flip, from +z": "0 / 374 994",
+    "FREE x=9.776": "41 / 1 455 913 (a 1 px dashed line at a journal end)"
+   },
+   "selftest": {
+    "D1": true,
+    "D3": true,
+    "D4": true,
+    "D5": true,
+    "D6": true,
+    "D7": true,
+    "D8": true,
+    "D9": true,
+    "D14_runtime": true,
+    "F2": true,
+    "F3": true,
+    "F4": true,
+    "F5": true,
+    "F6": true,
+    "F8": true,
+    "M1": true,
+    "M3": true,
+    "D2_selectAll": 190,
+    "seconds": 36.8
+   },
+   "D4": "unchanged: FREE x 56/56, y 58/58, z 207/207 (capCheck FREE now waits for the queue and uses 35 mm)",
+   "F3_ctx_roll_middle": "100/100 cap pixels (was 82; hits at the plane point now count as cap)",
+   "F8": "120 fps, 743 calls, 1 062 937 triangles, heap 182 MB after the selftest, precompile 137 ms",
+   "precompile_warm": "115-120 ms, 32 programs (before: 114 ms, 31 programs): one shared program ze-cap-sec",
+   "data": "make -C web data verify: ok; compare-drafts: 3 intended node_map diffs, 0 unexpected; GLBs byte-identical",
+   "console": "0 errors, 1 known library warning",
+   "network": "only 127.0.0.1:5178"
   }
  }
 }

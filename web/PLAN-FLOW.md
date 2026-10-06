@@ -364,7 +364,19 @@ Những điểm dưới đây khác với §2–§6. Reviewer chấm theo bản 
 9. **Sửa theo `web/review/flow/review-flow-01.md`:**
    - **I1:** shader `ze-sheet` bỏ mảnh tấm nằm sau mặt cắt trục cán, tức tia nhìn cắt mặt phẳng trong vòng tròn của một trong 3 trục. Dữ liệu thêm `sheet.rolls_xy` và `sheet.roll_r_m`, lấy từ bbox `ctx_roll_*`.
    - **I2:** ở FLOW, chú thích "Màu nắp cắt" bỏ ô nhựa, vì FLOW không có nắp lớp melt.
-   - **M1:** vào FREE mà camera đứng ở phía bị giữ lại hoặc nhìn dọc mặt cắt (|hướng · pháp tuyến| < 0,3) thì dùng preset đầu tiên của trạng thái cố định nhìn được mặt cắt: FULL cho X và Z, FLOW cho Y.
+   - **M1:** vào FREE mà camera đứng ở phía bị giữ lại hoặc nhìn dọc mặt cắt (|hướng · pháp tuyến| < 0,3) thì dùng preset đầu tiên của trạng thái cố định nhìn được mặt cắt: FULL cho X, CUT_Z_BARREL cho Z (Blender; y của three), FLOW hoặc FULL cho Y. Mục 10 thay phép thử này bằng phép thử có dấu.
    - **M2:** camera CUT_FEED nằm trong `CAMERA_OVERRIDES`. Hướng và ống kính giữ như S03b, lùi ra 3,6 m, target 1,9 m.
    - **M4:** `FLOW.material_colors` đổi `ze_copper` (chỉ dùng ở tấm đệm của `barrel_support_1…3`) sang xám.
    - **M3** (lõi rỗng của trục cán) chỉ sửa được trong Blender: chưa làm.
+10. **Sửa vòng 2** (`web/PLAN-FLOW-M1-M3.md`, review kế hoạch `web/review/flow/review-plan-m1-m3.md`):
+   - **M1:**
+     - `faceFreeCut` đọc điểm dừng của camera (giá trị đích của camera-controls), không đọc vị trí hiện tại. Lý do: ngay sau một preset tức thời, `camera.position` vẫn còn giá trị cũ.
+     - Phép thử nhìn thấy mặt cắt có dấu: `hướng · pháp tuyến ≥ 0,3`.
+     - Mặt cắt đã lật mà không preset nào đứng ở phía bị bỏ thì dùng ảnh gương qua mặt phẳng của preset đầu tiên nhìn được mặt cắt chưa lật. Target của ảnh gương được đặt lên mặt cắt.
+     - `setFree` xếp lại phép chọn camera khi đổi hướng cắt hoặc lật, không xếp khi kéo thanh trượt.
+     - Kiểm bằng `__ze.freeCamTest()`: 26 ca.
+   - **M3** (và N1):
+     - "Lõi rỗng" thật ra là gối đỡ `ctx_roll_stand_1` nằm trong thể tích cổ trục, lộ qua nắp vẽ ở thành xa.
+     - `node_map` có thêm `section` (profile tròn xoay) cho 3 trục cán. Trong profile, nắp được vẽ trên mặt phẳng cắt, lùi 8 bước độ sâu. Nhờ vậy gối đỡ, vệt tấm film ở FREE và vạch màn nhựa (N1) không còn lộ ra.
+     - Bấm vào mặt cắt thì chọn trục cán.
+     - Kiểm bằng `__ze.rollCoreProbe()`.
