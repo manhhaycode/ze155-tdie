@@ -105,3 +105,40 @@ Tổng: 0 C, 2 I, 4 M.
 - **Hạt:** đổi màu ngay cả khi đang freeze (ghi lại mỗi khung). Rotor "Tắt" và `freeze` làm hạt, sọc, vít đứng yên. Chỉ có 1 InstancedMesh, không raycast, `rayUnfiltered` 0.
 - **Chọn trong FLOW:** viền và bbox hiện đúng trên phần đã cắt và phần cắt sẵn.
 - **Không lỗi hiển thị:** ghost bộ lọc trong suốt, không che kênh nhựa; không có bản ngoài hiện cùng bản rỗng (vòm, đầu, van, bộ lọc, bơm, khuôn).
+
+## Kiểm lại sau sửa (vòng 1)
+
+Reviewer, 2026-10-06, kiểm commit `b84deb1` (PLAN-FLOW §10 mục 9).
+
+**Môi trường:** như vòng 1. Chrome riêng, profile mới, cổng 9411, tải lại trang trước khi đo. Không sửa code, dữ liệu hay plan.
+
+**Kiểm dữ liệu:** `make -C web data verify` exit 0, `failures: []`. 5 file `public/data` trùng từng byte với bản vừa sinh.
+
+Ảnh ở `web/review/flow/reviewer/recheck-01/`.
+
+**Kết luận mới: Đạt.** 0 C, 0 I, 3 M:
+- M1 còn một phần;
+- M3 chỉ sửa được trong Blender;
+- một M mới rất nhỏ (N1).
+
+I1, I2, M2, M4 đã sửa. F7 nay đạt; vẫn còn M3 (lõi trục cán).
+
+| Mục | Trạng thái | Bằng chứng |
+|---|---|---|
+| I1 tấm đè mặt cắt trục cán | **Đã sửa** | Lấy mẫu lưới 120 × 68, giữ các pixel mà tia chạm đầu tiên là mặt sau (nắp) của `ctx_roll_*`. So từng pixel giữa ảnh có tấm và ảnh ẩn tấm: **0 pixel nắp đổi màu** ở 5 góc nhìn (obliqueDie, nipOblique, rolls, sheet, nip) × pha / nhiệt × 1920. Ở 1366 cũng 0, trừ 1 pixel mép ở góc "sheet". Tấm vẫn hiện đúng ở phần ôm ngoài mép trục, đoạn sang con lăn dẫn và trên băng tải. `sheetProbe` trong `selftest` vẫn đạt. `I1-*-{phase,heat}-{1920,1366}.png`, ví dụ `I1-nipOblique-heat-1920.png`, `I1-sheet-heat-1920.png`, `I1-obliqueDie-phase-1366.png` |
+| I2 hai ô nhựa ở chú thích | **Đã sửa** | Ở FLOW, "Màu nắp cắt" chỉ còn Thép, Trục vít, Cao su, Cách nhiệt (JA: 鋼, スクリュー, ゴム, 断熱材), ở cả pha và nhiệt, 1920 và 1366, VI và JA. CUT_Z_BARREL và FREE vẫn giữ "Nhựa nóng chảy" / 溶融樹脂 #ED9E38. `I2-toolbar-FLOW-{phase,heat}-{vi,ja}-{1920,1366}.png` |
+| M1 vào FREE không thấy mặt cắt | **Sửa một phần** | **Khi vào FREE (đạt):** FLOW → FREE "Cắt ngang" chuyển sang preset FULL, thấy nắp. FLOW → FREE "Bổ dọc" giữ góc FLOW, thấy 140 mẫu nắp. FLOW → FREE "Cắt nằm" chuyển sang **preset CUT_Z_BARREL** (971 mẫu nắp), không phải FULL như §10.9 ghi: FULL có \|hướng · n\| = 0,28 < 0,3 nên bị bỏ qua. Cách chạy này hợp lý; chỉ cần sửa lời trong §10.9. FULL → FREE X và CUT_X2450 → FREE X không đổi camera, đúng yêu cầu. CUT_FEED → FREE X chuyển sang FULL. **Còn lại (M):** đổi hướng ngay trong FREE thì camera không xoay. Vào FREE "Bổ dọc" từ FLOW rồi bấm "Cắt ngang": camera vẫn ở góc FLOW, mặt cắt X nằm dọc tia nhìn, chỉ 16 mẫu nắp, không đọc được. Đề xuất: gọi `faceFreeCut` cả khi đổi trục trong `setFree` (web code). `M1-FLOW-to-FREE-{X,Y,Z}-vi-1920.png`, `M1-FULL-to-FREE-X-vi-1920.png`, `M1-X2450-to-FREE-X-vi-1920.png`, `M1-FEED-to-FREE-X-vi-1920.png`, `M1-FREE-switch-to-X-after-FLOW-vi-1920.png` |
+| M2 phễu CUT_FEED dưới toolbar | **Đã sửa** | Camera mới: pos [1,67; 2,692; −3,166], 40 mm. Toạ độ chiếu lên màn: mép phễu y 511–532 px với toolbar đáy 70 px (1920), và y 363–378 với đáy 86–88 (1366). Khuỷu ống xả (−0,45; 2,45) ở y 201 (1920) và y 143 (1366), nằm giữa hai panel. Phần ống thẳng đứng phía trên khuỷu vẫn đi ra khỏi mép trên, chấp nhận được. VI và JA cho số như nhau. D4 CUT_FEED/feed_throat 3/3 lần đạt, 10/10 pixel nắp, click chọn đúng. `M2-CUT_FEED-{vi,ja}-{1920,1366}.png` |
+| M3 lõi trục cán | **Chưa sửa** (Blender only, như builder đã ghi) | Đĩa xám vẫn thấy trong `I1-sheet-phase-1920.png` |
+| M4 tấm đệm đồng | **Đã sửa ở FLOW** | Trong FLOW, `barrel_support_1..3_3` có màu #8E959C. Ô dưới lỗ xi lanh nay là xám sáng, không còn màu cam. FULL, CUT_Z_BARREL và FREE vẫn #B8734D. *Ghi chú:* tấm đệm vẫn chồng lên thân xi lanh trong mô hình, nên ở FREE Y = 0 vẫn thấy ô đồng xuyên qua mặt cắt đỏ. Gốc lỗi ở Blender, ngoài phạm vi FLOW. `M4-support-before-FLOW-after-FLOW-FREE.png` (trái: FLOW trước sửa; giữa: FLOW sau sửa; phải: FREE Y = 0), `M4-FLOW-barrel-phase-1920.png` |
+| **N1 (mới, M)** | Màn nhựa lộ qua nắp trục giữa | Ở góc nhìn xiên vào khe cán, một đường cam mảnh khoảng 1 px chạy chéo qua mặt cắt trục giữa. Ẩn tạm `ctx_melt_curtain` thì đường này mất. Cùng cơ chế với I1: màn nhựa chạm thành trục, và nắp vẽ ở thành xa. Trước đây lớp tấm phủ lên nên không thấy. Rất nhỏ. Đề xuất: áp cùng phép `discard` của I1 cho vật liệu `ze-fill-curtain` (web code). `NEW-curtain-line-through-roll-cap-with-vs-hidden.png` (trái: có màn; phải: ẩn màn), `I1-nipOblique-heat-1920.png` |
+
+**Hồi quy:**
+- `__ze.selftest()` (34,5 s): D1–D9, D14, F2–F6, F8 đều true.
+  - D4 6/6: CUT_FEED/throat 10/10, Z_BARREL/b3 40/40, X2450/b3 89/89, X4120/b5 33/33, X2450/screws 31/31, FREE x 3,0/b4 56/56.
+  - F8: 120 fps, 743 call, 1 062 937 tam giác, heap 136 MB, precompile 535 ms (profile mới).
+  - `selfcheck`: unknown 0, missing 0, orphans 0, `rayUnfiltered` 0, devices 190.
+- Console 0 lỗi; chỉ có cảnh báo "THREE.Clock … deprecated" đã biết.
+- 62 request, tất cả tới `http://127.0.0.1:5178`.
+
+Tổng sau sửa: 0 C, 0 I, 3 M (M1 phần đổi hướng trong FREE, M3 Blender, N1).
