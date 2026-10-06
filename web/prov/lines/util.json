@@ -7,7 +7,7 @@
    "used_by": [
     "util_air_drop:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -38,14 +38,19 @@
      "c054"
     ]
    },
-   "notes": "Seed ghi 'c054 (bulông nhiệt có làm mát gió)' nhưng c054 chỉ có bước bulông và 80 W, không nói làm mát gió, nên không dùng c054 cho ý này. Làm mát gió chỉ thấy ở ảnh web-18 (hãng SBI, khuôn khác): xếp ≈, không xếp ✓ vì khác hãng (W2)."
+   "notes": "Seed ghi 'c054 (bulông nhiệt có làm mát gió)' nhưng c054 chỉ có bước bulông và 80 W, không nói làm mát gió, nên không dùng c054 cho ý này. Làm mát gió chỉ thấy ở ảnh web-18 (hãng SBI, khuôn khác): xếp ≈, không xếp ✓ vì khác hãng (W2).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "64aab58b966c": {
    "vi": "Ống thép mạ Ø30, đầu trên để hở 'từ đường khí nhà máy'.",
    "used_by": [
     "util_air_drop:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -66,14 +71,19 @@
      "c054"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "7fc44db13aa4": {
    "vi": "Cấp khí nén cho van chân không và thiết bị cấp liệu.",
    "used_by": [
     "util_air_drop_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -95,14 +105,19 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "5dfb9c26828c": {
    "vi": "Ống thép mạ Ø30 dọc cột sàn X −450, Y −2 600, xuyên sàn; đầu trên để hở 'từ đường khí nhà máy'.",
    "used_by": [
     "util_air_drop_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -133,14 +148,19 @@
      "rev-M10"
     ]
    },
-   "notes": "parts.json: tâm ống ở X −300 (sát mặt +X của cột; FRL gá mặt +X cột tại X −350). 'X −450' trong dòng là toạ độ cột theo rev-M10, không phải tâm ống."
+   "notes": "parts.json: tâm ống ở X −300 (sát mặt +X của cột; FRL gá mặt +X cột tại X −350). 'X −450' trong dòng là toạ độ cột theo rev-M10, không phải tâm ống.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "3ebaf8f7f465": {
    "vi": "Dẫn khí làm mát tới ống gió của thanh bulông nhiệt.",
    "used_by": [
     "util_air_hose_die:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -161,14 +181,19 @@
      "web-18"
     ]
    },
-   "notes": "Ảnh web-18 khác hãng (SBI) nên xếp ≈, không xếp ✓ (W2)."
+   "notes": "Ảnh web-18 khác hãng (SBI) nên xếp ≈, không xếp ✓ (W2).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "f3d6fd6efdfe": {
    "vi": "Ống mềm PU Ø24, khớp nối nhanh ở đầu thanh để tách khuôn.",
    "used_by": [
     "util_air_hose_die:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -207,14 +232,19 @@
      "web-18"
     ]
    },
-   "notes": "Ảnh web-18 thấy ống mềm đen gợn sóng, chưa chắc là PU; 'PU Ø24' để ⚠."
+   "notes": "Ảnh web-18 thấy ống mềm đen gợn sóng, chưa chắc là PU; 'PU Ø24' để ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "8f7c0fefff38": {
    "vi": "Cấp khí cho van lật xả của máy hút liệu và van nạp của cân.",
    "used_by": [
     "util_air_tube_loader:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -235,14 +265,19 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "e46e6a3b4bf9": {
    "vi": "Ống PU Ø12 lên dọc cột, đi trên mặt sàn, rồi dọc phễu cân lên van máy hút liệu.",
    "used_by": [
     "util_air_tube_loader:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -273,14 +308,19 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "7392919161f0": {
    "vi": "Cấp khí cho bộ tác động van bướm chân không vùng 2.",
    "used_by": [
     "util_air_tube_vac:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -304,14 +344,19 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "510111e136f1": {
    "vi": "Ống PU Ø12 đi trên máng nhỏ dưới sàn thao tác ở Z 2 450 rồi tới bộ tác động van.",
    "used_by": [
     "util_air_tube_vac:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -342,19 +387,24 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "8e7e20b6f6e6": {
    "vi": "Cấp/hồi nước cho bộ làm mát dầu hộp số.",
    "used_by": [
     "util_cw_lube_hoses:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Cụm dầu hộp số của máy ZE có bộ làm mát dạng tấm inox, ống mềm đen nối vào các cổng",
-     "text_ja": "ZE のギアボックス潤滑油ユニットにはステンレスのプレート式クーラーがあり、黒いフレキシブルホースがポートに接続されている",
+     "text_vi": "Cụm dầu hộp số của máy ZE 110 R có bộ làm mát dạng tấm inox (nhãn cổng F2, F3, F4): ống mềm đen nối ở F3, ống thép sơn xanh ở F2 và F4",
+     "text_ja": "ZE 110 R のギアボックス潤滑油ユニットにはステンレスのプレート式クーラー(ポート表示 F2、F3、F4)があり、F3 に黒いフレキシブルホース、F2 と F4 に青色塗装の鋼管が接続されている",
      "refs": [
       "web-03"
      ]
@@ -378,19 +428,24 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "352ae4132fbf": {
    "vi": "2 ống mềm DN25 chạy ngoài mép +Y của khung: cấp ở Y 1 060, Z 380; hồi ở Y 1 130, Z 440; lên và vào cổng F2/F4 của bộ làm mát.",
    "used_by": [
     "util_cw_lube_hoses:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
-     "text_vi": "Ống mềm đen nối vào các cổng của bộ làm mát dầu tấm (ảnh thấy nhãn cổng F2, F3, F4)",
-     "text_ja": "黒いフレキシブルホースがプレート式油クーラーのポートに接続(写真にポート表示 F2、F3、F4)",
+     "text_vi": "Cụm dầu hộp số của máy ZE 110 R có bộ làm mát dạng tấm inox (nhãn cổng F2, F3, F4): ống mềm đen nối ở F3, ống thép sơn xanh ở F2 và F4",
+     "text_ja": "ZE 110 R のギアボックス潤滑油ユニットにはステンレスのプレート式クーラー(ポート表示 F2、F3、F4)があり、F3 に黒いフレキシブルホース、F2 と F4 に青色塗装の鋼管が接続されている",
      "refs": [
       "web-03"
      ]
@@ -422,14 +477,19 @@
      "web-03"
     ]
    },
-   "notes": "Cần kiểm: ảnh web-03 cho thấy ống dầu sơn xanh nối ở F2 và F4, ống mềm đen (nước?) ở F3; thiết kế đặt nước ở F2/F4 và dầu ra ở F3 (lube_oil_cooler). Không chắc nên không sửa, chỉ ghi."
+   "notes": "Cần kiểm: ảnh web-03 cho thấy ống dầu sơn xanh nối ở F2 và F4, ống mềm đen (nước?) ở F3; thiết kế đặt nước ở F2/F4 và dầu ra ở F3 (lube_oil_cooler). Không chắc nên không sửa, chỉ ghi.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "2a0b258c0b80": {
    "vi": "Van bi tay đỏ trên mỗi ống ngay trước bộ làm mát; van điều nhiệt nước trên ống hồi.",
    "used_by": [
     "util_cw_lube_hoses:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -468,14 +528,19 @@
      "web-03"
     ]
    },
-   "notes": "Van bi tay đỏ: ✓ cho loại van trên mạch nước máy ZE; vị trí 'ngay trước bộ làm mát' là ⚠. Trên ảnh web-03 van nước thấy được là van nhỏ có cuộn, không có tay gạt đỏ."
+   "notes": "Van bi tay đỏ: ✓ cho loại van trên mạch nước máy ZE; vị trí 'ngay trước bộ làm mát' là ⚠. Trên ảnh web-03 van nước thấy được là van nhỏ có cuộn, không có tay gạt đỏ.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "318e096fcd33": {
    "vi": "Cấp/hồi nước cho bộ làm mát gió–nước trên nóc động cơ chính (IC81W).",
    "used_by": [
     "util_cw_motor_hoses:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -516,14 +581,19 @@
      "rev-M9"
     ]
    },
-   "notes": "c024 là bản rao máy ZE 110 R (động cơ 250 kW), chỉ nói 'water-cooled'; cảnh báo W1 (value 127 là đường kính vít, không liên quan fact này) là chủ ý. Kiểu IC81W cho 1 500 kW là giả định của thiết kế."
+   "notes": "c024 là bản rao máy ZE 110 R (động cơ 250 kW), chỉ nói 'water-cooled'; cảnh báo W1 (value 127 là đường kính vít, không liên quan fact này) là chủ ý. Kiểu IC81W cho 1 500 kW là giả định của thiết kế.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "3b874ab4e2e5": {
    "vi": "2 ống inox DN40 (OD 48) chạy thấp ngoài mép +Y khung (cấp Y 1 060 Z 250, hồi Y 1 130 Z 150), dựng lên tại X −3 500 / −3 700 cạnh cụm dầu, rồi vào bích trên mặt +Y bộ làm mát động cơ ở Z 2 300 / 2 400; van bi tay đỏ ở mỗi ống.",
    "used_by": [
     "util_cw_motor_hoses:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -564,14 +634,19 @@
      "rev-M9"
     ]
    },
-   "notes": "Van bi tay đỏ: ✓ cho loại van; vị trí 'ở mỗi ống' nằm trong fact tuyến (⚠). DN40 có OD chuẩn 48,3 là kiến thức chung, không có tài liệu trong bộ nguồn."
+   "notes": "Van bi tay đỏ: ✓ cho loại van; vị trí 'ở mỗi ống' nằm trong fact tuyến (⚠). DN40 có OD chuẩn 48,3 là kiến thức chung, không có tài liệu trong bộ nguồn.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "657f4696647c": {
    "vi": "Trả nước hồi về đường ống nhà máy.",
    "used_by": [
     "util_cw_return_riser:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -596,14 +671,19 @@
     ],
     "refs": []
    },
-   "notes": "Ảnh web-02: hai ống góp bọc cách nhiệt có mũi tên chiều dòng, nối xuống sàn bằng hai ống đứng có bích; không phân biệt được chắc ống nào là cấp, ống nào là hồi."
+   "notes": "Ảnh web-02: hai ống góp bọc cách nhiệt có mũi tên chiều dòng, nối xuống sàn bằng hai ống đứng có bích; không phân biệt được chắc ống nào là cấp, ống nào là hồi.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "2fca6309b1a7": {
    "vi": "DN50 có van bi tay đỏ và nhiệt kế.",
    "used_by": [
     "util_cw_return_riser:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -639,14 +719,19 @@
     ],
     "refs": []
    },
-   "notes": "Ảnh web-02: van bi ở ống đứng có tay gạt xanh, các van từng vùng có tay đỏ; ✓ chỉ cho loại van tay đỏ trên mạch nước máy ZE (c023)."
+   "notes": "Ảnh web-02: van bi ở ống đứng có tay gạt xanh, các van từng vùng có tay đỏ; ✓ chỉ cho loại van tay đỏ trên mạch nước máy ZE (c023).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "431a865448fb": {
    "vi": "Làm mát thân side feeder.",
    "used_by": [
     "util_cw_sidefeed_hoses:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -667,14 +752,19 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "cf5cba094b06": {
    "vi": "2 ống mềm inox DN15 từ đỉnh cụm van 2 vào mặt dưới thân side feeder.",
    "used_by": [
     "util_cw_sidefeed_hoses:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -707,14 +797,19 @@
      "rev-I7"
     ]
    },
-   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới nối cụm van với xi lanh (web-02, trang 5); cỡ, số lượng, điểm nối vào side feeder là ⚠. Review I7 đề xuất đích (1 350, 1 000, 1 150); thiết kế vào mặt dưới (1 300, 900, 1 070)."
+   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới nối cụm van với xi lanh (web-02, trang 5); cỡ, số lượng, điểm nối vào side feeder là ⚠. Review I7 đề xuất đích (1 350, 1 000, 1 150); thiết kế vào mặt dưới (1 300, 900, 1 070).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "a5cf643a1f98": {
    "vi": "Đưa nước làm mát (≈ 15 °C, 4 bar) từ đường ống nhà máy lên ống góp.",
    "used_by": [
     "util_cw_supply_riser:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -741,14 +836,19 @@
     ],
     "refs": []
    },
-   "notes": "Nhãn trên ống ở web-02 đọc được một phần ('hilled W…'), tôi hiểu là 'Chilled Water'."
+   "notes": "Nhãn trên ống ở web-02 đọc được một phần ('hilled W…'), tôi hiểu là 'Chilled Water'.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "07689f91cda1": {
    "vi": "DN50 có van bi tay đỏ, lọc Y và đồng hồ áp ở đoạn đứng.",
    "used_by": [
     "util_cw_supply_riser:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -784,14 +884,19 @@
     ],
     "refs": []
    },
-   "notes": "✓ chỉ cho loại van tay đỏ và đồng hồ áp trên ống góp nước máy ZE; việc đặt chúng ở đoạn đứng của ống cấp và lọc Y là ⚠."
+   "notes": "✓ chỉ cho loại van tay đỏ và đồng hồ áp trên ống góp nước máy ZE; việc đặt chúng ở đoạn đứng của ống cấp và lọc Y là ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "1186e94fe70c": {
    "vi": "Làm mát hộp miệng nạp để hạt không dính chảy ở miệng.",
    "used_by": [
     "util_cw_throat_hoses:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -812,14 +917,19 @@
      "rev-I7"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "0ba4d8f63f35": {
    "vi": "2 ống mềm inox DN20 từ đỉnh cụm van 1 lên Z 1 550/1 600 rồi vào mặt +Y hộp miệng nạp.",
    "used_by": [
     "util_cw_throat_hoses:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -852,14 +962,19 @@
      "rev-I7"
     ]
    },
-   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới (web-02, trang 5); cỡ, số lượng và cao độ là ⚠."
+   "notes": "✓ chỉ cho loại ống mềm inox bọc lưới (web-02, trang 5); cỡ, số lượng và cao độ là ⚠.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "7782e23ae1dd": {
    "vi": "Cấp/hồi nước cho ống xoắn ngưng của bình tách và cho bơm Roots/bơm khô làm mát nước.",
    "used_by": [
     "util_cw_vac_hoses:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -891,14 +1006,19 @@
      "rev-I7"
     ]
    },
-   "notes": "c063 chỉ nói 'temperature-controlled condensate chamber', không nói ống xoắn nước: không xếp ✓. Seed không có c063; thêm làm ngữ cảnh."
+   "notes": "c063 chỉ nói 'temperature-controlled condensate chamber', không nói ống xoắn nước: không xếp ✓. Seed không có c063; thêm làm ngữ cảnh.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "c2612a13336b": {
    "vi": "4 ống inox DN25 (OD 32) đứng lên từ hai cặp đầu nối sàn giữa bình tách và skid: cặp cho bình tách vào Z 1 000 / ra Z 1 100, cặp cho skid vào/ra ở Z 400; van bi tay đỏ ở chân mỗi ống.",
    "used_by": [
     "util_cw_vac_hoses:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -939,14 +1059,19 @@
      "rev-I7"
     ]
    },
-   "notes": "Thiết kế khác review I7: I7 đề xuất 2 × DN25 đi từ đầu ống góp xuống hào sàn; parts.json dùng 4 ống lấy nước tại chỗ qua đầu nối sàn (ghi trong nguồn của device). 'DN25 (OD 32)': OD chuẩn của DN25 inox là 33,7 (kiến thức chung); mô hình dùng 32."
+   "notes": "Thiết kế khác review I7: I7 đề xuất 2 × DN25 đi từ đầu ống góp xuống hào sàn; parts.json dùng 4 ống lấy nước tại chỗ qua đầu nối sàn (ghi trong nguồn của device). 'DN25 (OD 32)': OD chuẩn của DN25 inox là 33,7 (kiến thức chung); mô hình dùng 32.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "265d0ee335b8": {
    "vi": "Lọc, điều áp khí làm mát bulông nhiệt.",
    "used_by": [
     "util_frl:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -973,14 +1098,19 @@
     ],
     "refs": []
    },
-   "notes": "Bộ lọc–điều áp ở web-05 gắn ở phía trước dây chuyền ZE 110 UT, không phải ở khuôn: ✓ chỉ cho loại thiết bị, không cho vị trí. Làm mát bulông nhiệt bằng gió chỉ thấy ở web-18 (khác hãng): ≈."
+   "notes": "Bộ lọc–điều áp ở web-05 gắn ở phía trước dây chuyền ZE 110 UT, không phải ở khuôn: ✓ chỉ cho loại thiết bị, không cho vị trí. Làm mát bulông nhiệt bằng gió chỉ thấy ở web-18 (khác hãng): ≈.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "ab6e01afa56b": {
    "vi": "Bộ lọc + van điều áp + đồng hồ, van khoá tay.",
    "used_by": [
     "util_frl:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -997,14 +1127,19 @@
     ],
     "refs": []
    },
-   "notes": "Ảnh web-05 (góc dưới trái): bầu lọc, núm điều áp, đồng hồ áp và một van bi tay gạt đỏ phía trước."
+   "notes": "Ảnh web-05 (góc dưới trái): bầu lọc, núm điều áp, đồng hồ áp và một van bi tay gạt đỏ phía trước.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "f09951259964": {
    "vi": "Lọc, điều áp khí cho van bướm chân không, van nạp máy hút liệu, van cân.",
    "used_by": [
     "util_frl_2:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1033,14 +1168,19 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   },
   "4c7c42150b50": {
    "vi": "Bộ lọc + van điều áp + đồng hồ, van khoá tay, cao 1,35–1,6 m.",
    "used_by": [
     "util_frl_2:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1069,7 +1209,12 @@
      "rev-M10"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-util.md"
+   }
   }
  }
 }
