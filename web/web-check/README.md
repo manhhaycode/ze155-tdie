@@ -31,6 +31,7 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | FREE directions | "Cắt ngang" / "Bổ dọc" / "Cắt nằm" (横断 / 縦断 / 水平). The tooltip names the Blender axis: X along the flow, Y across the line ("Y = 0" = the feed-column plane), Z height ("Z = 1 200" = the barrel axis plane); the slider readout keeps "X = 3 000 mm". Unflipped, the part with the Blender coordinate ≤ the value is kept; the flip tooltip says which side. Internally the store and the hooks keep three axes: Blender X = three `x`, Blender Y = three `−z` (`data-axis="z"`), Blender Z = three `y` |
 | Quy trình: hạt → film (FLOW) | The whole line cut at Y = 0, seen from the operator side: pellets fall through the feed column into the bore of screw B, melt over X 1.52–1.90 m, the melt runs through valve, screen changer, pump, pipe and T-die, then the sheet wraps the rolls and runs onto the conveyor. Free view: orbit and zoom in to see the pellets. "Màu:" switches between **Pha** (pellet / melt / PET sheet) and **Nhiệt độ** (zone set points on a 20–300 °C scale, assumed). Stripes drift at the conveying speed; rotor "Tắt" stops everything. Steel and screw sections are grey in this state so the melt colours read |
 | VI / 日本語 (toolbar, right) | Switches the overlay language (Vietnamese / Japanese). Remembered in `localStorage` (`ze-lang`); `?lang=vi` or `?lang=ja` in the URL wins. Japanese device texts come from `public/i18n/devices.ja.json`, any missing field falls back to Vietnamese. In Japanese the device search also matches the Japanese names |
+| ✓ / ≈ / ⚠ at the end of an info line | Opens the sources of that line (PLAN-PROV): each fact with its level (✓ public document, ≈ derived from one, ⚠ assumption with its reason) and its sources: claim quote and link, catalogue page with a thumbnail and "open PDF at page N", web photo with credit and link, or an internal document excerpt. Click a thumbnail for the large image. Esc closes the dialog first, a second Esc clears the selection. The counts under the device name sum the marks |
 | ▲ next to the device count | Folds the device tree to its header (useful below 1600 px, where the panels are also narrower) |
 
 ## Code map (`src/`)
@@ -55,6 +56,7 @@ npm run dev -- --port 5178 --strictPort      # http://localhost:5178/
 | `scene/Models.tsx` | `LineModel` and `InteriorLoader` (mounted only after the first state that needs the interior) |
 | `test/hooks.ts` | `window.__ze`, see below |
 | `ui/*` | Builder A's Toolbar, DeviceTree and InfoPanel |
+| `ui/prov.ts`, `ui/provModel.ts`, `ui/Provenance.tsx` | Source badges: lazy loader of `/data/prov/<device_id>.json` (on the first selection of a device, never at start), the pure model (`lineFor` returns nothing when the line text changed, so a stale file shows no mark rather than a wrong one), badges, counts and the `<dialog>`. The files come from `make -C web prov publish-prov` (`../tools/make_prov.py`, hand-sourced lines in `../prov/lines/`) |
 | `ui/i18n.ts`, `ui/text.ts` | Language store `useLang`, `useLoc()` accessors (names, texts, sections, state labels, sort order); `T` (vi) and `T_JA` UI strings |
 | `public/brand/toyobo-official.svg` | Customer logo shown at the left of the toolbar |
 
@@ -79,7 +81,8 @@ Always start with `await __ze.ready`.
 | `freeCamTest()`, `rollCoreProbe()` | Fix round 2 (PLAN-FLOW-M1-M3): the FREE camera faces the section after entry, axis change and flip (end pose, 26 cases); roll sections show only cap colour (dense pixel scan of 5 views), the marker stays visible, a click at a roll section picks the roll |
 | `rotors()`, `rotorTest(s)` | Rotors |
 | `camera(id)`, `cam()`, `orbitTest()` | Camera |
-| `selftest()` | Runs the in-page part of D1–D9, D14 and FLOW F2–F6, F8. Takes about 70 s |
+| `provCheck()` | Source badges of the info panel (PLAN-PROV): no `/data/prov/` request at `ready`, 1 request on the first selection of a device and none on the next, one badge per function/details line, no "?" line left, no request for a synthetic device, thumbnails only once a dialog opens and the large image only on a click, Esc inside the dialog never clears the selection, focus returns to the badge, Japanese labels. Needs a fresh page (it picks a device whose file was not requested yet). About 2 s |
+| `selftest()` | Runs the in-page part of D1–D9, D14, FLOW F2–F6, F8 and `provCheck()` (P1). Takes about 70 s |
 
 The latest self-test results are in `SELFTEST.json`. Screenshots: `selftest/` (builder B, before the review fixes) and `../review/dot1/fix-01/` (after fixer round 1).
 
