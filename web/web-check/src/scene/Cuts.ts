@@ -110,10 +110,34 @@ export function onResetCuts(fn: () => void) {
   if (!resetHooks.includes(fn)) resetHooks.push(fn)
 }
 
-/** per-mesh clip variant; cap only on closed meshes with a cap colour (capColors: per-state colour by cap class) */
-export function clipPart(p: Part, planes: THREE.Plane[], key: string, capColors?: Record<string, string>) {
+/** a state's surface colour for a source material (cut_states material_colors); shared per material + colour */
+const recoloured = new Map<string, THREE.Material>()
+function recolour(src: THREE.Material, color: string | undefined): THREE.Material {
+  if (!color) return src
+  const id = `${src.uuid}|${color}`
+  let m = recoloured.get(id)
+  if (!m) {
+    m = src.clone()
+    m.name = src.name
+    ;(m as THREE.MeshStandardMaterial).color?.set(color)
+    recoloured.set(id, m)
+  }
+  return m
+}
+
+export interface CutStyle {
+  /** section colour by cap class */
+  caps?: Record<string, string>
+  /** surface colour by source material name */
+  materials?: Record<string, string>
+}
+
+/** per-mesh clip variant; cap only on closed meshes with a cap colour (style: per-state colours, FLOW) */
+export function clipPart(p: Part, planes: THREE.Plane[], key: string, style: CutStyle = {}) {
+  const capColors = style.caps
   for (const mesh of p.meshes) {
-    const src = original.get(mesh) ?? (mesh.material as THREE.Material)
+    const base = original.get(mesh) ?? (mesh.material as THREE.Material)
+    const src = recolour(base, style.materials?.[base.name])
     const own = (mesh.userData.zeCapColor as string | null) ?? null
     const cap = mesh.userData.zeClosed && own ? (capColors?.[mesh.userData.zeCapClass as string] ?? own) : null
     setMaterial(mesh, cutVariant(src, planes, key, cap, !!mesh.userData.zeHatch && !!cap))
@@ -151,7 +175,7 @@ export async function applyState(id: FixedStateId, o: ApplyOpts = {}): Promise<v
   resetCuts(reg.gl) // step 1
   const plane = statePlane(id)
   const planes = plane ? [plane] : []
-  const caps = s.cap_colors
+  const caps: CutStyle = { caps: s.cap_colors, materials: s.material_colors }
   for (const n of s.hide) {
     const p = part(n)
     if (p) setPartVisible(p, false)

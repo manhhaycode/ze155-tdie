@@ -361,3 +361,10 @@ Những điểm dưới đây khác với §2–§6. Reviewer chấm theo bản 
    - `pickAt` không tự đóng băng vì là phép bắn tia tức thời; `capCheck` có tự đóng băng;
    - nhãn nhóm FREE đổi thành "Hướng cắt" / 「切断方向」;
    - vùng rải hạt có biên an toàn để cả hạt lẫn độ lắc nằm trong lỗ.
+9. **Sửa theo `web/review/flow/review-flow-01.md`:**
+   - **I1:** shader `ze-sheet` bỏ mảnh tấm nằm sau mặt cắt trục cán, tức tia nhìn cắt mặt phẳng trong vòng tròn của một trong 3 trục. Dữ liệu thêm `sheet.rolls_xy` và `sheet.roll_r_m`, lấy từ bbox `ctx_roll_*`.
+   - **I2:** ở FLOW, chú thích "Màu nắp cắt" bỏ ô nhựa, vì FLOW không có nắp lớp melt.
+   - **M1:** vào FREE mà camera đứng ở phía bị giữ lại hoặc nhìn dọc mặt cắt (|hướng · pháp tuyến| < 0,3) thì dùng preset đầu tiên của trạng thái cố định nhìn được mặt cắt: FULL cho X và Z, FLOW cho Y.
+   - **M2:** camera CUT_FEED nằm trong `CAMERA_OVERRIDES`. Hướng và ống kính giữ như S03b, lùi ra 3,6 m, target 1,9 m.
+   - **M4:** `FLOW.material_colors` đổi `ze_copper` (chỉ dùng ở tấm đệm của `barrel_support_1…3`) sang xám.
+   - **M3** (lõi rỗng của trục cán) chỉ sửa được trong Blender: chưa làm.

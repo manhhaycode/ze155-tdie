@@ -40,6 +40,8 @@ export interface CutState {
   cut_only_from?: string[]
   /** FLOW: section colour per cap class, replacing materials.json cap_colors (runtime caps and pre-cut za_cap_*) */
   cap_colors?: Record<string, string>
+  /** FLOW: surface colour per source material name (clipped parts), e.g. the copper support pads */
+  material_colors?: Record<string, string>
   /** FLOW only: simulation parameters (PLAN-FLOW §3.6) */
   flow?: FlowParams
 }
@@ -75,6 +77,9 @@ export interface FlowParams {
     takeoff_xy: [number, number][]
     /** points beyond the rolls (x > this) always lie on the take-off run */
     roll_x_max_m: number
+    /** roll centres (three x, y) and radius: the sheet is hidden behind their sections */
+    rolls_xy: [number, number][]
+    roll_r_m: number
     stripe_m: number
     stripe_width: number
     speed_m_s_real: number

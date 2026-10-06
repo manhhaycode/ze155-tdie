@@ -1209,6 +1209,39 @@
     "1366": "FULL 2, cut states / FLOW / FREE 3 (vi and ja)"
    },
    "colour_mode_kept_on_language_switch": true
+  },
+  "fix_round_1": {
+   "after": "web/review/flow/review-flow-01.md (0 C, 2 I, 4 M)",
+   "fixed": {
+    "I1": "sheet discarded behind roll sections (ze-sheet shader)",
+    "I2": "no melt swatch in the FLOW cut legend",
+    "M1": "entering FREE faces the cut (FULL preset for X/Z, FLOW for Y) when the current camera cannot see it",
+    "M2": "CUT_FEED camera override: hopper rim y 367 px, elbow y 141 px at 1366 (toolbar 87 px)",
+    "M4": "ze_copper support pads grey in FLOW"
+   },
+   "not_fixed": {
+    "M3": "roll hollow core: Blender only"
+   },
+   "selftest": {
+    "D3": true,
+    "D4": true,
+    "D9": true,
+    "D7": true,
+    "D6": true,
+    "D8": true,
+    "D5": true,
+    "D1": true,
+    "D14_runtime": true,
+    "F2": true,
+    "F3": true,
+    "F4": true,
+    "F5": true,
+    "F6": true,
+    "F8": true
+   },
+   "D4_CUT_FEED": "10/10 cap pixels at the new preset (was 22/22 at the old, closer one)",
+   "console": "0 errors, 1 known library warning",
+   "network": "only 127.0.0.1:5178"
   }
  }
 }

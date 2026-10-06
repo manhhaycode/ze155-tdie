@@ -130,6 +130,29 @@ function fragment(flow: FlowParams) {
 `
 }
 
+/**
+ * review-flow-01 I1: the sheet hugs the roll walls (r 0.4005 around r 0.400), while a roll's runtime section is
+ * drawn at the depth of its far wall, so the sheet won the depth test over the section. A sheet fragment behind
+ * the cut plane whose view ray crosses the plane inside a roll circle lies behind that roll's section: discard.
+ */
+function behindRolls(plane: THREE.Plane, flow: FlowParams) {
+  const n = plane.normal
+  const tests = flow.sheet.rolls_xy
+    .map(([x, y]) => `length(zeP.xy - vec2(${f(x)}, ${f(y)})) < ${f(flow.sheet.roll_r_m)}`)
+    .join(' || ')
+  return `
+  {
+    vec3 zePN = vec3(${f(n.x)}, ${f(n.y)}, ${f(n.z)});
+    float zeSide = dot(zePN, cameraPosition) + ${f(plane.constant)};
+    if (zeSide < 0.0) {
+      vec3 zeD = vZeWorld - cameraPosition;
+      vec3 zeP = cameraPosition + zeD * clamp(-zeSide / dot(zePN, zeD), 0.0, 1.0);
+      if (${tests}) discard;
+    }
+  }
+`
+}
+
 export function makeSheetMaterial(plane: THREE.Plane, flow: FlowParams): THREE.MeshStandardMaterial {
   if (shared) return shared
   const m = new THREE.MeshStandardMaterial({
@@ -143,7 +166,7 @@ export function makeSheetMaterial(plane: THREE.Plane, flow: FlowParams): THREE.M
   m.name = 'ze-sheet'
   m.userData = { zeFlow: 'sheet' }
   const h = header(flow)
-  const frag = fragment(flow)
+  const frag = behindRolls(plane, flow) + fragment(flow)
   m.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, flowUniforms)
     injectWorldPos(shader)

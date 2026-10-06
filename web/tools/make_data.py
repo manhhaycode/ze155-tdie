@@ -61,6 +61,10 @@ FREE_EXTRA_HIDE = COVERS
 # I2 / M1: camera presets that replace the shots.json ones (three coordinates, metres; lens on a 36 mm gauge).
 # Tuned in the sandbox at 1920 x 1080 so the subject fits the canvas area between the side panels.
 CAMERA_OVERRIDES = {
+    'CUT_FEED': {'pos': [1.67, 2.692, -3.166], 'target': [0.15, 1.9, 0.0], 'lens_mm': 40,
+                 'source': 'web override (review-flow-01 M2): direction and lens of shots.json S03b key 2, 3.6 m instead '
+                           'of 2.27 m and target raised to 1.9 m, so the hopper rim and the downpipe elbow sit below the '
+                           'toolbar at 1920 and 1366 px (rim y 367 px, elbow y 141 px, toolbar 87 px at 1366)'},
     'FULL': {'pos': [19.2, 8.61, -17.28], 'target': [5.0, 2.0, 0.9], 'lens_mm': 35,
              'source': 'web override (review M1): hero-like view of the whole line from the die end, operator side, '
                        'like out/renders/ze155-hero.png (35 mm, elevation 16 deg); the camera is on the +X side, so '
@@ -111,6 +115,9 @@ FLOW_SOLID_HIDE = {
 }
 # FLOW only: steel and screw sections in neutral greys (runtime caps by cap class, pre-cut za_cap_* materials)
 FLOW_CAP_COLORS = {'steel': '#8E959C', 'screw': '#5C636B'}
+# FLOW only (review-flow-01 M4): the copper pads of barrel_support_1..3 (the only ze_copper users) overlap the barrel
+# body and show through its section as an orange square under the bore, which reads as melt. Grey in FLOW.
+FLOW_MATERIAL_COLORS = {'ze_copper': '#8E959C'}
 # solids that stay clipped after the visual check of §7 step 2 (any other solid prints a warning). Checked in the
 # sandbox at the FLOW preset and close up (2026-10-06): none of them lies in front of the material path.
 _DRIVE = 'drive train upstream of the feed (x < 0): its section reads as the cut drive, no melt path behind it'
@@ -511,6 +518,11 @@ def build_flow(states, files, con, names, key):
         'curtain': {'x_m': [9.576, 9.776], 'temp_c': [270, 250], 'speed_m_s_real': 0.347, 'stripe_m': 0.05,
                     'source': fl['speeds']['roll_lip'] + '; temperatures assumed'},
         'sheet': {'path_three_xy': sh['path_three_xy'][:2], 'takeoff_xy': takeoff, 'roll_x_max_m': 10.18,
+                  # review-flow-01 I1: the sheet hugs the roll walls; behind a roll section (seen through the cut) it is hidden
+                  'rolls_xy': [[round((b[0] + b[3]) / 2, 4), round((b[1] + b[4]) / 2, 4)] for b in
+                               (an_line[f'ctx_roll_{k}']['bbox'] for k in ('bottom', 'middle', 'top'))],
+                  'roll_r_m': round(max((an_line[f'ctx_roll_{k}']['bbox'][3] - an_line[f'ctx_roll_{k}']['bbox'][0]) / 2
+                                        for k in ('bottom', 'middle', 'top')), 4),
                   'select_rule': 'x > roll_x_max_m, or y > 2.79 and x > 9.776 -> take-off polyline; else y < 2.002 -> '
                                  'middle wrap; else top wrap',
                   'stripe_m': sh['stripe_m'], 'stripe_width': sh['stripe_width'],
@@ -552,6 +564,7 @@ def build_flow(states, files, con, names, key):
                                                      'source': FLOW_CAMERA['source']},
             'cut_only_from': FLOW_CUT_ONLY_FROM,
             'cap_colors': FLOW_CAP_COLORS,
+            'material_colors': FLOW_MATERIAL_COLORS,
             'cap_colors_source': 'web choice (PLAN-FLOW review): neutral section colours in FLOW only, so the melt phase '
                                  'and heat colours read; the red steel / screw caps match the 270-300 °C end of the heat scale',
             'counts': counts,

@@ -216,7 +216,8 @@ export function Toolbar() {
           )}
           <div className="ze-group ze-legend" role="group" aria-label={T.toolbar.capLegend}>
             <span className="ze-label">{T.toolbar.capLegend}:</span>
-            {CAP_ORDER.filter((k) => capColors[k]).map((k) => (
+            {/* FLOW draws no melt-class section (its fills use the FLOW colours shown in its own legend) */}
+            {CAP_ORDER.filter((k) => capColors[k] && !(state === 'FLOW' && k === 'melt')).map((k) => (
               <span key={k} className="ze-legend-item">
                 <span
                   className={`ze-swatch${k === 'steel' ? ' ze-swatch-hatch' : ''}`}

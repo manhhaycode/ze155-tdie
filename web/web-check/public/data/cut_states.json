@@ -75,18 +75,19 @@
    },
    "camera": {
     "pos": [
-     1.3,
-     1.95,
-     -2.0
+     1.67,
+     2.692,
+     -3.166
     ],
     "target": [
-     0.34,
-     1.45,
+     0.15,
+     1.9,
      0.0
     ],
     "lens_mm": 40,
     "sensor_mm": 36,
-    "source": "shots.json S03b key 2 (frame 900)"
+    "source": "web override (review-flow-01 M2): direction and lens of shots.json S03b key 2, 3.6 m instead of 2.27 m and target raised to 1.9 m, so the hopper rim and the downpipe elbow sit below the toolbar at 1920 and 1366 px (rim y 367 px, elbow y 141 px, toolbar 87 px at 1366)",
+    "replaces": "shots.json S03b key 2 (frame 900)"
    },
    "tooltip_vi": "Bổ dọc phễu và cột nạp, thấy đường hạt rơi vào xi lanh (mặt cắt Y = 0)"
   },
@@ -1278,6 +1279,9 @@
     "steel": "#8E959C",
     "screw": "#5C636B"
    },
+   "material_colors": {
+    "ze_copper": "#8E959C"
+   },
    "cap_colors_source": "web choice (PLAN-FLOW review): neutral section colours in FLOW only, so the melt phase and heat colours read; the red steel / screw caps match the 270-300 °C end of the heat scale",
    "counts": {
     "bbox_hide": 81,
@@ -1794,6 +1798,21 @@
       ]
      ],
      "roll_x_max_m": 10.18,
+     "rolls_xy": [
+      [
+       9.776,
+       0.799
+      ],
+      [
+       9.776,
+       1.601
+      ],
+      [
+       9.776,
+       2.403
+      ]
+     ],
+     "roll_r_m": 0.4001,
      "select_rule": "x > roll_x_max_m, or y > 2.79 and x > 9.776 -> take-off polyline; else y < 2.002 -> middle wrap; else top wrap",
      "stripe_m": 0.3,
      "stripe_width": 0.12,

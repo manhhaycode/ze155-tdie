@@ -32,7 +32,7 @@ const PRECUT_CAP_CLASS: Record<string, string> = {
   za_cap_shaft: 'screw',
 }
 const recoloured = new Map<string, THREE.Material>()
-function recolour(src: THREE.Material, color: string) {
+function recolourCap(src: THREE.Material, color: string) {
   const id = `${src.uuid}|${color}`
   let m = recoloured.get(id)
   if (!m) {
@@ -84,7 +84,7 @@ export function enterFlowLayer() {
         const m = mesh.material as THREE.Material
         const cls = PRECUT_CAP_CLASS[m.name]
         // only uncut pre-cut parts: a runtime clip variant must keep its onBeforeCompile (no clone of it)
-        if (cls && caps[cls] && !m.clippingPlanes?.length) setMaterial(mesh, recolour(m, caps[cls]))
+        if (cls && caps[cls] && !m.clippingPlanes?.length) setMaterial(mesh, recolourCap(m, caps[cls]))
       }
     }
   for (const m of reg.parts.get('int_sc_channels')?.meshes ?? []) setOrder(m, ORDER.channels)

@@ -85,7 +85,7 @@ The latest self-test results are in `SELFTEST.json`. Screenshots: `selftest/` (b
 ## Known points
 
 - **Barrel covers.** `barrel_cover_c1..c6` are solid closed boxes with an internal panel-joint face. Their caps hid the barrel and the joint face crossed the screw bore (the old D4 X2450/screws failure). `tools/make_data.py` now hides them in CUT_Z_BARREL, CUT_X2450, CUT_X4120 and FREE (tables `CLIP_TO_HIDE`, `EXTRA_HIDE`, `FREE_EXTRA_HIDE`), as in the A1a look renders. D4 passes 6/6.
-- **Camera presets.** FULL is a hero-like view of the whole line from the die end (camera on the +X side, so the FREE default cut X = 3 000 faces it). CUT_X2450 and CUT_X4120 are wider than shots.json ST2 / ST3. All three come from `CAMERA_OVERRIDES` in `tools/make_data.py`; `anim/shots.json` is unchanged.
+- **Camera presets.** CUT_FEED is pulled back (review-flow-01 M2) so the hopper sits below the toolbar at 1366 px. FULL is a hero-like view of the whole line from the die end (camera on the +X side, so the FREE default cut X = 3 000 faces it). CUT_X2450 and CUT_X4120 are wider than shots.json ST2 / ST3. All three come from `CAMERA_OVERRIDES` in `tools/make_data.py`; `anim/shots.json` is unchanged.
 - **The peel animation is deferred** to Đợt 1b. So are `pickSweep` and the performance trace (AMENDMENTS).
 - **Cap depth bias.** Cap fragments write a depth 0.6 mm towards the camera. This stops them z-fighting with abutting solids, such as stacked screw elements or barrel flanges cut by FREE. A cap is drawn by the back faces of the far inner wall, so an uncut solid inside a cut part's volume hides the cap (the reason cover C6 is hidden in CUT_X2450).
 - **Console.** R3F 9.8.1 on three r186 logs one library warning: "THREE.Clock … deprecated".
