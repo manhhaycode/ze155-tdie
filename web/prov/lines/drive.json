@@ -7,7 +7,7 @@
    "used_by": [
     "drive_coupling_guard:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -40,14 +40,19 @@
      "web-12"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "d18eb2ae3e54": {
    "vi": "Tôn 3 mm, tấm hông +Y tháo được có ô lưới quan sát, móc cẩu trên nóc.",
    "used_by": [
     "drive_coupling_guard:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -81,14 +86,19 @@
      "web-12"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "99b9767401df": {
    "vi": "Công tắc liên động (interlock) cấm chạy khi mở nắp.",
    "used_by": [
     "drive_coupling_guard:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -111,14 +121,19 @@
      "web-12"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "342c454985d7": {
    "vi": "Đo tốc độ / vị trí trục động cơ cho biến tần điều khiển vector.",
    "used_by": [
     "drive_encoder:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -138,14 +153,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "bffa8b5c224c": {
    "vi": "Vỏ Ø160 × 100, đầu cáp tín hiệu.",
    "used_by": [
     "drive_encoder:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -163,14 +183,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "b017d60be888": {
    "vi": "Bù lệch tâm giữa trục động cơ và trục vào hộp số, giảm va đập.",
    "used_by": [
     "drive_flex_coupling:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -191,14 +216,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "791448ce5e9d": {
    "vi": "Hai moay-ơ thép + bộ đĩa lò xo, Ø560.",
    "used_by": [
     "drive_flex_coupling:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -218,14 +248,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "a2ab8e1d15a3": {
    "vi": "Động cơ cảm ứng trung thế 4 cực, chạy biến tần, quay trục vít qua khớp nối và hộp số; bộ làm mát gió–nước trên nóc thải nhiệt vào nước, không thổi gió nóng vào xưởng.",
    "used_by": [
     "drive_motor:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -283,14 +318,19 @@
      "rev-M9"
     ]
    },
-   "notes": "Công suất 1 500 kW và điện áp 3 kV của khung 450 là suy từ họ AMI, không có hàng riêng trong c064/c065."
+   "notes": "Công suất 1 500 kW và điện áp 3 kV của khung 450 là suy từ họ AMI, không có hàng riêng trong c064/c065.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "8b1527f516b8": {
    "vi": "Thân hộp có gân Z 750–1 680; trên nóc là hộp bộ làm mát gió–nước (IC81W top air-to-water cooler) Z 1 680–2 610, X −4 800 … −3 300: vỏ hộp kín, 2 nắp thăm ống trao đổi nhiệt ở đầu −X, không có cửa gió hở.",
    "used_by": [
     "drive_motor:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -329,14 +369,19 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "e3a8ec1d4957": {
    "vi": "Hai bích nước DN40 trên mặt +Y của hộp làm mát: vào tại X −3 500, Z 2 300; ra tại X −3 700, Z 2 400; cảm biến rò nước ở đáy hộp.",
    "used_by": [
     "drive_motor:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -363,14 +408,19 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "40a9bab71fd4": {
    "vi": "Đầu trục Ø140 dài 200 ở phía hộp số; nắp ổ NDE nhô 75 mm mang encoder.",
    "used_by": [
     "drive_motor:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -397,14 +447,19 @@
      "rev-M9"
     ]
    },
-   "notes": "Quote c066 còn một dãy số khác (… 200 125 210 32 114 …) có thể là kích thước đầu trục/then của ABB, không khớp Ø140 × 200 của thiết kế; claim không nêu cột nên không dùng. Nên đối chiếu bảng ABB gốc."
+   "notes": "Quote c066 còn một dãy số khác (… 200 125 210 32 114 …) có thể là kích thước đầu trục/then của ABB, không khớp Ø140 × 200 của thiết kế; claim không nêu cột nên không dùng. Nên đối chiếu bảng ABB gốc.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "13c980231bbc": {
    "vi": "4 tai cẩu, biển tên, cọc tiếp địa; tâm trục Z = 1 200 (H 450 trên mặt đế Z 750).",
    "used_by": [
     "drive_motor:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -454,14 +509,19 @@
      "rev-M9"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "7ded4e4e6484": {
    "vi": "Nâng động cơ để tâm trục khớp Z = 1 200, cho phép căn chỉnh đồng tâm.",
    "used_by": [
     "drive_motor_base:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -491,14 +551,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "8e112926859e": {
    "vi": "Hai ray thép dày 100 có vít đẩy (jack screws) căn chỉnh ngang.",
    "used_by": [
     "drive_motor_base:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -526,14 +591,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "e3c524effa27": {
    "vi": "Đấu cáp trung thế từ biến tần vào động cơ.",
    "used_by": [
     "drive_motor_terminal_box:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -555,14 +625,19 @@
      "c066"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "1ef6608ddd0c": {
    "vi": "Hộp thép 600 × 350 × 500, nắp 12 vít, ốc siết cáp ở đáy.",
    "used_by": [
     "drive_motor_terminal_box:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -582,14 +657,19 @@
      "c066"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "96c8c6cc3498": {
    "vi": "Tách động cơ khỏi hộp số khi quá tải (vít kẹt, vật lạ) để bảo vệ trục vít và hộp số.",
    "used_by": [
     "drive_safety_coupling:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -622,14 +702,19 @@
      "cat-p19"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "050d1d30b14e": {
    "vi": "Đĩa thép bạc Ø640 có rãnh vòng (như ảnh p19), vòng bulông 12 lỗ, công tắc giám sát nhả khớp.",
    "used_by": [
     "drive_safety_coupling:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -671,14 +756,19 @@
      "cat-p19"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "657dbc19a725": {
    "vi": "Giảm tốc từ động cơ (≈ 1 490 v/ph) xuống tối đa 400 v/ph và chia mômen 2 × 35 kNm ra hai trục vít đồng hướng.",
    "used_by": [
     "gearbox:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -730,14 +820,19 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "589a08335ace": {
    "vi": "Vỏ gang hộp có gân, phần bướu trên cao Z 1 720 bao 2 trục ra ở đầu X −1 250 … −750.",
    "used_by": [
     "gearbox:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -773,14 +868,19 @@
      "c023"
     ]
    },
-   "notes": "web-11 có phần nhô cao ở đầu vào (xa hai trục ra), thiết kế đặt bướu ở đầu ra X −1 250 … −750; hình bóng trang 9 là khối trơn. Nên xem lại."
+   "notes": "web-11 có phần nhô cao ở đầu vào (xa hai trục ra), thiết kế đặt bướu ở đầu ra X −1 250 … −750; hình bóng trang 9 là khối trơn. Nên xem lại.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "61e322d81d0f": {
    "vi": "Nắp ổ trục vào tròn Ø500 nhô 50 mm ở đầu X = −2 300 quanh Z = 1 200.",
    "used_by": [
     "gearbox:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -812,14 +912,19 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "90e917b97eeb": {
    "vi": "4 tai cẩu (lifting eyes) trên nóc, nắp thăm chữ nhật trên nóc, ống thở (breather), kính thăm mức dầu phía +Y, nút xả dầu ở đáy.",
    "used_by": [
     "gearbox:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -864,14 +969,19 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "444bc64ef099": {
    "vi": "Biển tên, tem cảnh báo vàng; cảm biến nhiệt dầu PT100 cạnh cổng dầu.",
    "used_by": [
     "gearbox:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -906,14 +1016,19 @@
      "c023"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "b8b69657e571": {
    "vi": "Tỷ số truyền ≈ 3,73 (1 490/400).",
    "used_by": [
     "gearbox:details[4]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -952,14 +1067,19 @@
      "c023"
     ]
    },
-   "notes": "design §3 ghi tỷ số này là \"giả định\": phép chia 1 490 / 400 là số học từ hai số có nguồn, còn việc chọn tỷ số theo cách đó là giả định (tách thành hai fact)."
+   "notes": "design §3 ghi tỷ số này là \"giả định\": phép chia 1 490 / 400 là số học từ hai số có nguồn, còn việc chọn tỷ số theo cách đó là giả định (tách thành hai fact).",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "268f691e497c": {
    "vi": "Nối mặt bích ra hộp số với xi lanh B1; chứa khớp then hoa nối trục ra hộp số với trục vít; có cửa thăm.",
    "used_by": [
     "lantern:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1001,14 +1121,19 @@
      "web-01"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "b479684fb571": {
    "vi": "Cửa thăm chữ nhật bo góc 380 × 250 trên mặt +Y, tâm X = −375, Z = 1 200, 8 vít + tay nắm.",
    "used_by": [
     "lantern:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1052,14 +1177,19 @@
      "web-01"
     ]
    },
-   "notes": "Chỉ dùng tỉ lệ tương đối trên hình bóng (DECISIONS 9); kích thước tuyệt đối 380 × 250 vẫn do thiết kế chọn, pdf_measures §4 từng ghi cửa 345 × 225 ở thang 45,2 mm/pt."
+   "notes": "Chỉ dùng tỉ lệ tương đối trên hình bóng (DECISIONS 9); kích thước tuyệt đối 380 × 250 vẫn do thiết kế chọn, pdf_measures §4 từng ghi cửa 345 × 225 ở thang 45,2 mm/pt.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "3dd99305cfdb": {
    "vi": "Vành mặt bích Ø700 dày 60 ở đầu X = 0: 20 lỗ ren M24 trên PCD 560 nhận bulông cấy từ bích B1 (đai ốc 12 cạnh nằm phía B1).",
    "used_by": [
     "lantern:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1090,14 +1220,19 @@
      "web-01"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "7f1755080ec3": {
    "vi": "Ống xả dầu rò rỉ ở đáy, tai cẩu trên nóc.",
    "used_by": [
     "lantern:details[2]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1118,14 +1253,19 @@
      "web-01"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "c09ecacae4f9": {
    "vi": "Trong: 2 khớp then hoa (spline coupling) tại Y = ±71.",
    "used_by": [
     "lantern:details[3]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "derived",
@@ -1168,14 +1308,19 @@
      "web-01"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "e43931fbad30": {
    "vi": "Lọc dầu, đổi bầu lọc khi máy chạy.",
    "used_by": [
     "lube_filter_duplex:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1205,14 +1350,19 @@
      "meas-2.2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "e1289ac2a4b6": {
    "vi": "2 bầu lọc đứng Ø110, tay gạt chuyển đổi, chỉ báo chênh áp, đồng hồ áp.",
    "used_by": [
     "lube_filter_duplex:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1250,14 +1400,19 @@
      "meas-2.2"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "6c6409c43802": {
    "vi": "Giải nhiệt dầu hộp số bằng nước làm mát.",
    "used_by": [
     "lube_oil_cooler:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1286,14 +1441,19 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "f18ab3460bf9": {
    "vi": "Khối tấm hàn inox 350 × 250 × 350, 4 cổng ren F1–F4 trên mặt +Y.",
    "used_by": [
     "lube_oil_cooler:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1330,14 +1490,19 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "0fd30a110e25": {
    "vi": "Dẫn dầu đã lọc, làm mát tới hệ phun trong hộp số.",
    "used_by": [
     "lube_pipe_pressure:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1367,14 +1532,19 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "251c33292e66": {
    "vi": "Ống thép DN32 (OD 42) sơn xanh; công tắc áp suất (PS, khoá khởi động truyền động) gần cổng vào hộp số, tín hiệu về tủ đầu máy (s_14).",
    "used_by": [
     "lube_pipe_pressure:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1411,14 +1581,19 @@
      "web-03"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "bf5b703ad445": {
    "vi": "Dẫn dầu từ carter hộp số về bơm.",
    "used_by": [
     "lube_pipe_return:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1438,14 +1613,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "36796d9dbd33": {
    "vi": "Ống thép DN40 (OD 50) chạy dọc mép +Y của khung, Z = 760.",
    "used_by": [
     "lube_pipe_return:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1463,14 +1643,19 @@
     ],
     "refs": []
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "5a105513f9aa": {
    "vi": "Hút dầu từ carter hộp số và đẩy qua lọc, bộ làm mát tới vòi phun bánh răng/ổ trục.",
    "used_by": [
     "lube_pump_motor:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1502,14 +1687,19 @@
      "img-p19_3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "84595cfc133a": {
    "vi": "Động cơ 4 kW đặt đứng Ø260 có nắp quạt, chuông nối, bơm bánh răng ở đáy; 2 đồng hồ áp.",
    "used_by": [
     "lube_pump_motor:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1548,14 +1738,19 @@
      "img-p19_3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "dec23ec96c6b": {
    "vi": "Van an toàn (relief valve) tích hợp trên thân bơm xả về carter; lọc hút (suction strainer) trên ống hút ngay trước bơm.",
    "used_by": [
     "lube_pump_motor:details[1]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "assumption",
@@ -1576,14 +1771,19 @@
      "img-p19_3"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "9e07d51e4055": {
    "vi": "Đế và khay hứng dầu cho cụm bơm, lọc, làm mát dầu hộp số.",
    "used_by": [
     "lube_unit_frame:function"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1612,14 +1812,19 @@
      "c034"
     ]
    },
-   "notes": ""
+   "notes": "",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   },
   "ed33b46fb0ab": {
    "vi": "Khay có mép gập, tấm thấm dầu vàng như web-03.",
    "used_by": [
     "lube_unit_frame:details[0]"
    ],
-   "status": "curated",
+   "status": "verified",
    "facts": [
     {
      "level": "sourced",
@@ -1628,6 +1833,16 @@
      "refs": [
       "web-03"
      ]
+    },
+    {
+     "level": "assumption",
+     "text_vi": "Vật thấm dầu dạng tấm phẳng (trong ảnh web-03 là ống thấm dạng xúc xích)",
+     "text_ja": "吸油材は平らなシート(web-03 の写真ではソーセージ状のチューブ)",
+     "refs": [
+      "web-03"
+     ],
+     "reason_vi": "Không có tài liệu công khai về dạng vật thấm dầu của máy này; thiết kế vẽ tấm phẳng, khác với ống thấm dạng xúc xích thấy trên web-03.",
+     "reason_ja": "この機械の吸油材の形についての公開資料はない。設計は平らなシートとしたが、web-03 ではソーセージ状のチューブである。"
     }
    ],
    "seed": {
@@ -1640,7 +1855,12 @@
      "c034"
     ]
    },
-   "notes": "Trên web-03 vật thấm dầu màu vàng có dạng ống/xúc xích, không phải tấm phẳng như dòng mô tả; chỉ màu và việc đặt trong khay là có nguồn."
+   "notes": "Trên web-03 vật thấm dầu màu vàng có dạng ống/xúc xích, không phải tấm phẳng như dòng mô tả; chỉ màu và việc đặt trong khay là có nguồn.",
+   "verified": {
+    "by": "lead (Opus, inline; Sonnet limit reached)",
+    "at": "2026-10-06",
+    "review": "web/review/prov/verify-drive.md"
+   }
   }
  }
 }
